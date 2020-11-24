@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+  <DUT Name="ST_SBValveStatuses" Id="{c4db38d4-4d8c-4f0e-88e3-c2a24c7cbb5d}">
+    <Declaration><![CDATA[(* Statuses of the valves for the switchbox *)
+TYPE ST_SBValveStatuses :
+STRUCT
+	// Valve statuses
+	bGateValveOpen : BOOL; // LXLHN:PP:VGC
+	bVentValveOpen : BOOL; // LXLHN:PP:VVC
+	bORingPumpValveOpen : BOOL; // LXLHN:PP:VRC:1
+	bForelineValveOpen : BOOL; // LXLHN:PP:VRC:2
+	bSlowPumpValveOpen : BOOL; // LXLHN:PP:VRC:3
+	bSBVentOpen : BOOL; // LXLHN:VP:VVC1
+	bSBSlowVentOpen : BOOL; // LXLHN:VP:VVC:2
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

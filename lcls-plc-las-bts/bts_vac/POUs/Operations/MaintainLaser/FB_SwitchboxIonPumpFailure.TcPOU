@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+  <POU Name="FB_SwitchboxIonPumpFailure" Id="{58844151-53f2-4d22-a14e-02a27d7ddcbb}" SpecialFunc="None">
+    <Declaration><![CDATA[(* Called to attempt to keep the laser on as long as safely possible in the event of an Ion Pump failure *)
+FUNCTION_BLOCK FB_SwitchboxIonPumpFailure EXTENDS FB_MaintainLaserOperation
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	fbVentSwitchbox: FB_VentSwitchbox;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[SUPER^(iq_sMessageBuffer := iq_sMessageBuffer);
+
+CASE eStep OF
+E_OpStep.IDLE: // Do nothing
+
+E_OpStep.START: // Turn on roughing pump
+	M_RunTimeoutTimer(PUMP_TIMEOUT);
+	M_SetMessage('Turning on roughing pump');
+	
+	GVL_BTS_VAC.fb_PP_PTM.M_Run(TRUE);
+	
+	IF GVL_BTS_VAC.fb_PP_PTM.iq_stPTM.eState = E_PumpState.pumpRUNNING THEN
+		M_ResetTimeoutTimer();
+		M_SetMessage('Turning off pumping station ion pump');
+		eStep := E_OpStep.BOIP_TURN_OFF_ION_PUMP;
+	END_IF
+	
+E_OpStep.BOIP_TURN_OFF_ION_PUMP:
+	M_RunTimeoutTimer(PUMP_TIMEOUT);
+	GVL_BTS_VAC.fb_PP_PIP.M_Run(FALSE);
+	
+	IF NOT GVL_BTS_VAC.fb_PP_PIP.i_xSP_DI THEN
+		M_ResetTimeoutTimer();
+		IF ABS(GVL_BTS_VAC.fb_PP_GPI_1.PG.rPRESS - GVL_BTS_VAC.fb_DP_GPI.PG.rPRESS) < 1E-4 THEN
+			M_SetMessage('Opening pump station valve');
+			eStep := E_OpStep.BOIP_OPEN_SB_VALVE;
+		ELSE
+			M_SetMessage('Unable to maintain vacuum');
+			M_ShutdownLaser();
+			eStep := E_OpStep.BOIP_VENT_SB;
+		END_IF
+	END_IF
+	
+E_OpStep.BOIP_OPEN_SB_VALVE:
+	M_RunTimeoutTimer(VALVE_TIMEOUT);
+	GVL_BTS_VAC.fb_PP_VGC.M_Set_OPN_SW(TRUE);
+	
+	IF GVL_BTS_VAC.fb_PP_VGC.M_IsOpen() THEN
+		M_ResetTimeoutTimer();
+		M_SetMessage('Maintaining vacuum');
+		eStep := E_OpStep.BOIP_HOLD;
+	END_IF
+	
+E_OpStep.BOIP_HOLD:
+	// Hold vacuum as long as possible.
+	IF GVL_BTS_VAC.fb_DP_GCC.IG.rPRESS > 1E-4 THEN
+		// Shutdown laser
+		M_ShutdownLaser();
+		M_SetMessage('Vacuum lost. Closing transport tubes');
+		eStep := E_OpStep.BOIP_CLOSE_TRANSPORT_TUBE_VALVES;
+	END_IF
+
+E_OpStep.BOIP_CLOSE_TRANSPORT_TUBE_VALVES:
+	M_RunTimeoutTimer(VALVE_TIMEOUT);
+	M_CloseAllTransportTubeValves();
+	
+	IF M_AllTransportTubeValvesClosed() THEN
+		M_ResetTimeoutTimer();
+		M_SetMessage('Closing switchbox valve');
+		eStep := E_OpStep.BOIP_CLOSE_SB_VALVE;
+	END_IF
+	
+E_OpStep.BOIP_CLOSE_SB_VALVE:
+	M_RunTimeoutTimer(VALVE_TIMEOUT);
+	GVL_BTS_VAC.fb_PP_VGC.M_Set_OPN_SW(FALSE);
+	
+	IF GVL_BTS_VAC.fb_PP_VGC.M_IsClosed() THEN
+		M_ResetTimeoutTimer();
+		M_SetMessage('Turning off switchbox pumps');
+		eStep := E_OpStep.BOIP_TURN_OFF_PUMPS;
+	END_IF
+
+E_OpStep.BOIP_TURN_OFF_PUMPS:
+	M_RunTimeoutTimer(PUMP_TIMEOUT);
+	GVL_BTS_VAC.fb_PP_PTM.M_Run(FALSE);
+	GVL_BTS_VAC.fb_PP_PMF.M_Run(FALSE);
+
+	IF GVL_BTS_VAC.fb_PP_PTM.iq_stPTM.eState = E_PumpState.pumpSTOPPED AND GVL_BTS_VAC.fb_PP_PMF.q_stPump.eState = E_PumpState.pumpSTOPPED THEN
+		M_ResetTimeoutTimer();
+		M_SetMessage('Closing pump station valves');
+		eStep := E_OpStep.BOIP_CLOSE_PP_VALVES;
+	END_IF
+
+E_OpStep.BOIP_CLOSE_PP_VALVES:
+	M_RunTimeoutTimer(VALVE_TIMEOUT);
+	GVL_BTS_VAC.fb_PP_VRC_1.M_Set_OPN_SW(FALSE);
+	GVL_BTS_VAC.fb_PP_VRC_2.M_Set_OPN_SW(FALSE);
+	
+	IF GVL_BTS_VAC.fb_PP_VRC_1.iq_stValve.eState = E_ValvePositionState.CLOSED AND GVL_BTS_VAC.fb_PP_VRC_2.iq_stValve.eState = E_ValvePositionState.CLOSED THEN
+		M_ResetTimeoutTimer();
+		M_SetMessage('Venting switchbox');
+		eStep := E_OpStep.BOIP_VENT_SB;	
+	END_IF
+	
+E_OpStep.BOIP_VENT_SB:
+	M_DeferCancel(TRUE);
+	fbVentSwitchbox(i_bExecute := TRUE,
+		i_bCancel := i_bCancel,
+		iq_sMessageBuffer := iq_sMessageBuffer);
+		
+	IF fbVentSwitchbox.q_bError THEN
+		M_DeferCancel(FALSE);
+		M_FatalError('Error while venting switchbox');
+	ELSIF NOT fbVentSwitchbox.q_bBusy THEN
+		M_DeferCancel(FALSE);
+		M_Finish();
+	END_IF
+	
+ELSE
+	M_FatalError('Operation is in invalid state');
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="FB_SwitchboxIonPumpFailure">
+      <LineId Id="9" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="15" Count="1" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="19" Count="5" />
+      <LineId Id="27" Count="1" />
+      <LineId Id="25" Count="1" />
+      <LineId Id="29" Count="5" />
+      <LineId Id="159" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="160" Count="0" />
+      <LineId Id="136" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="45" Count="2" />
+      <LineId Id="49" Count="2" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="56" Count="4" />
+      <LineId Id="64" Count="2" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="81" Count="0" />
+      <LineId Id="62" Count="0" />
+      <LineId Id="98" Count="0" />
+      <LineId Id="82" Count="0" />
+      <LineId Id="97" Count="0" />
+      <LineId Id="99" Count="1" />
+      <LineId Id="102" Count="1" />
+      <LineId Id="101" Count="0" />
+      <LineId Id="104" Count="1" />
+      <LineId Id="107" Count="0" />
+      <LineId Id="109" Count="0" />
+      <LineId Id="111" Count="0" />
+      <LineId Id="110" Count="0" />
+      <LineId Id="112" Count="0" />
+      <LineId Id="114" Count="1" />
+      <LineId Id="113" Count="0" />
+      <LineId Id="117" Count="0" />
+      <LineId Id="106" Count="0" />
+      <LineId Id="118" Count="2" />
+      <LineId Id="122" Count="0" />
+      <LineId Id="121" Count="0" />
+      <LineId Id="123" Count="0" />
+      <LineId Id="125" Count="1" />
+      <LineId Id="124" Count="0" />
+      <LineId Id="127" Count="0" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="129" Count="4" />
+      <LineId Id="139" Count="0" />
+      <LineId Id="156" Count="0" />
+      <LineId Id="134" Count="1" />
+      <LineId Id="140" Count="6" />
+      <LineId Id="148" Count="5" />
+      <LineId Id="147" Count="0" />
+      <LineId Id="128" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

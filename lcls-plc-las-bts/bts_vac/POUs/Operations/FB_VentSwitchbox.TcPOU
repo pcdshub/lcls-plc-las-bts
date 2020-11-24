@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+  <POU Name="FB_VentSwitchbox" Id="{cc05ccf2-f224-45e9-ae68-6a84af39253c}" SpecialFunc="None">
+    <Declaration><![CDATA[(* Operation for venting the switchbox *)
+FUNCTION_BLOCK FB_VentSwitchbox EXTENDS FB_Operation
+VAR_STAT CONSTANT
+	(* Expected system states before operation starts*)
+	stExpPumpStatus : ST_SBPumpStatuses := (
+		bRoughingPumpOn:= TRUE, 
+		bTurboPumpOn:= FALSE, 
+		bIonPumpOn:= TRUE);
+	
+	stExpValveStatus : ST_SBValveStatuses := (
+		bGateValveOpen:= TRUE, 
+		bVentValveOpen:= FALSE, 
+		bORingPumpValveOpen:= TRUE, 
+		bForelineValveOpen:= TRUE,
+		bSlowPumpValveOpen:= FALSE,
+		bSBVentOpen:= FALSE,  
+		bSBSlowVentOpen:= FALSE);
+	
+	stExpGaugeReadings : ST_SBGaugeReadings := (
+		eDPPiraniState:= E_PressureState.ValidLo,
+		fDPColdCathodeVal:= 1E-5,
+		ePumpStationPirani1State:= E_PressureState.ValidLo,
+		ePumpStationPirani2State:= E_PressureState.ValidLo,
+		fPumpStationColdCathodeVal:= 1E-5
+	);
+	stGaugeReadingsOp : ST_SBGaugeReadingsOp := (
+		eDPPiraniOp:= E_GaugeCompOp.STATE, 
+		eDPColdCathodeOp:= E_GaugeCompOp._LTE, 
+		ePumpStationPirani1Op:= E_GaugeCompOp.STATE, 
+		ePumpStationPirani2Op:= E_GaugeCompOp.STATE, 
+		ePumpStationColdCathodeOp:= E_GaugeCompOp._LTE);
+		
+	stExpTTStatus : ST_TransportTubeStatuses := (bGateValveOpen:= FALSE);
+	stTTOp : ST_TransportTubeOps := (bIonPumpIgnore:= TRUE);
+		
+	(* Expected system states after operation finishes *)
+	stFinExpPumpStatus : ST_SBPumpStatuses := (
+		bRoughingPumpOn:= FALSE, 
+		bTurboPumpOn:= FALSE, 
+		bIonPumpOn:= FALSE);
+	
+	stFinExpValveStatus : ST_SBValveStatuses := (
+		bGateValveOpen:= FALSE, 
+		bVentValveOpen:= FALSE, 
+		bORingPumpValveOpen:= FALSE, 
+		bForelineValveOpen:= FALSE, 
+		bSlowPumpValveOpen:= FALSE,
+		bSBVentOpen:= FALSE,  
+		bSBSlowVentOpen:= FALSE);
+	
+	stFinExpGaugeReadings : ST_SBGaugeReadings := (
+		eDPColdCathodeState := E_PressureState.Off,
+		ePumpStationColdCathodeState := E_PressureState.Off
+	);
+	stFinGaugeReadingsOp : ST_SBGaugeReadingsOp := (
+		eDPPiraniOp:= E_GaugeCompOp.ATM, 
+		eDPColdCathodeOp:= E_GaugeCompOp.STATE, 
+		ePumpStationPirani1Op:= E_GaugeCompOp.ATM, 
+		ePumpStationPirani2Op:= E_GaugeCompOp.ATM, 
+		ePumpStationColdCathodeOp:= E_GaugeCompOp.STATE);
+		
+	stFinExpTTStatus : ST_TransportTubeStatuses := (bGateValveOpen:= FALSE);
+	stFinTTOp : ST_TransportTubeOps := (bIonPumpIgnore:= TRUE);
+		
+	(* Timeout constants *)
+	VENT_TIMEOUT : TIME := T#20M;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[SUPER^(iq_sMessageBuffer := iq_sMessageBuffer);
+
+CASE eStep OF
+E_OpStep.IDLE: // Do nothing
+
+E_OpStep.START: // Verify system status
+	M_RunTimeoutTimer(STATUS_CHECK_TIMEOUT);
+	M_SetMessage('Verifying system status');
+	
+	IF F_VerifySBPumpStatuses(stExpStatus := stExpPumpStatus, bEnforce := TRUE)
+		AND F_VerifySBValveStatuses(stExpStatus := stExpValveStatus, bEnforce := TRUE)
+		AND F_VerifySBGaugeReadings(stExpReadings := stExpGaugeReadings, stReadingsOp := stGaugeReadingsOp)
+		AND F_VerifyAllTransportTubeStatuses(stExpStatus := stExpTTStatus, 
+			stStatusOp := stTTOp,
+			bEnforce := TRUE)
+	THEN // System status check 
+		M_ResetTimeoutTimer();
+		M_SetMessage('Closing gate valve');
+		eStep := E_OpStep.VSB_CLOSE_GATE_VALVE;
+	END_IF
+	
+E_OpStep.VSB_CLOSE_GATE_VALVE:
+	M_RunTimeoutTimer(VALVE_TIMEOUT);
+	
+	// Close gate valve to pump station to isolate pumps
+	GVL_BTS_VAC.fb_PP_VGC.M_Set_OPN_SW(FALSE);
+	
+	IF GVL_BTS_VAC.fb_PP_VGC.M_IsClosed() THEN
+		M_ResetTimeoutTimer();
+		M_SetMessage('Closing foreline valve');
+		eStep := E_OpStep.VSB_CLOSE_FORELINE_VALVE;
+	END_IF
+	
+E_OpStep.VSB_CLOSE_FORELINE_VALVE:
+	M_RunTimeoutTimer(VALVE_TIMEOUT);
+	
+	// Close valves to pumping station to isolate pumps
+	GVL_BTS_VAC.fb_PP_VRC_2.M_Set_OPN_SW(FALSE);
+	
+	IF GVL_BTS_VAC.fb_PP_VRC_2.iq_stValve.eState = E_ValvePositionState.CLOSED THEN
+		M_ResetTimeoutTimer();
+		M_SetMessage('Turning off roughing and ion pump');
+		eStep := E_OpStep.VSB_TURN_OFF_PUMPS;
+	END_IF
+	
+E_OpStep.VSB_TURN_OFF_PUMPS:
+	M_RunTimeoutTimer(PUMP_TIMEOUT);
+	
+	// Turn off pumping station pumps
+	GVL_BTS_VAC.fb_PP_PMF.M_Run(FALSE);
+	GVL_BTS_VAC.fb_PP_PIP.M_Run(FALSE);
+	
+	IF GVL_BTS_VAC.fb_PP_PMF.q_stPump.eState = E_PumpState.pumpSTOPPED AND NOT GVL_BTS_VAC.fb_PP_PIP.stPump.i_xSP_DI THEN
+		M_ResetTimeoutTimer();
+		M_SetMessage('Closing O-Ring valve');
+		eStep := E_OpStep.VSB_CLOSE_ORING_VALVE;
+	END_IF
+	
+E_OpStep.VSB_CLOSE_ORING_VALVE:
+	M_RunTimeoutTimer(VALVE_TIMEOUT);
+	
+	// Close O-Ring pump valve
+	GVL_BTS_VAC.fb_PP_VRC_1.M_Set_OPN_SW(FALSE);
+
+	IF GVL_BTS_VAC.fb_PP_VRC_1.iq_stValve.eState = E_ValvePositionState.CLOSED THEN
+		M_ResetTimeoutTimer();
+		M_SetMessage('Venting');
+		eStep := E_OpStep.VSB_VENT;
+	END_IF
+	
+E_OpStep.VSB_VENT:
+	M_RunTimeoutTimer(VENT_TIMEOUT);
+		
+	// Open switchbox vent
+	GVL_BTS_VAC.fb_VP_VVC_1.M_Close(FALSE);
+	
+	// Vent until atmospheric pressure reached in the switchbox
+	IF F_Atm(GVL_BTS_VAC.fb_DP_GPI.PG.rPRESS) THEN
+		M_ResetTimeoutTimer();
+		eStep := E_OpStep.VSB_CLOSE_VENT;
+	END_IF
+	
+
+E_OpStep.VSB_CLOSE_VENT:
+	GVL_BTS_VAC.fb_VP_VVC_1.M_Close(TRUE);
+	// How to verfiy the vent is closed?
+	eStep := E_OpStep.VSB_FINISH;
+	
+E_OpStep.VSB_FINISH:
+	IF F_VerifySBPumpStatuses(stExpStatus := stFinExpPumpStatus, bEnforce := FALSE)
+		AND F_VerifySBValveStatuses(stExpStatus := stFinExpValveStatus, bEnforce := FALSE)
+		AND F_VerifySBGaugeReadings(stExpReadings := stFinExpGaugeReadings, stReadingsOp := stFinGaugeReadingsOp)
+		AND F_VerifyAllTransportTubeStatuses(stExpStatus := stFinExpTTStatus, 
+			stStatusOp := stFinTTOp,
+			bEnforce := FALSE)
+	THEN
+		M_Finish();
+	ELSE
+		M_FatalError('End system status check failed');
+	END_IF
+	
+ELSE
+	M_FatalError('Operation is in invalid state');
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="FB_VentSwitchbox">
+      <LineId Id="9" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="652" Count="1" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="504" Count="1" />
+      <LineId Id="102" Count="0" />
+      <LineId Id="43" Count="1" />
+      <LineId Id="95" Count="1" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="103" Count="0" />
+      <LineId Id="506" Count="0" />
+      <LineId Id="292" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="111" Count="0" />
+      <LineId Id="109" Count="0" />
+      <LineId Id="297" Count="0" />
+      <LineId Id="299" Count="0" />
+      <LineId Id="303" Count="0" />
+      <LineId Id="302" Count="0" />
+      <LineId Id="304" Count="2" />
+      <LineId Id="507" Count="0" />
+      <LineId Id="308" Count="0" />
+      <LineId Id="307" Count="0" />
+      <LineId Id="309" Count="2" />
+      <LineId Id="300" Count="1" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="312" Count="2" />
+      <LineId Id="508" Count="0" />
+      <LineId Id="316" Count="0" />
+      <LineId Id="315" Count="0" />
+      <LineId Id="317" Count="1" />
+      <LineId Id="122" Count="0" />
+      <LineId Id="319" Count="0" />
+      <LineId Id="123" Count="0" />
+      <LineId Id="117" Count="1" />
+      <LineId Id="320" Count="1" />
+      <LineId Id="323" Count="0" />
+      <LineId Id="509" Count="0" />
+      <LineId Id="325" Count="0" />
+      <LineId Id="324" Count="0" />
+      <LineId Id="326" Count="6" />
+      <LineId Id="119" Count="0" />
+      <LineId Id="333" Count="0" />
+      <LineId Id="510" Count="0" />
+      <LineId Id="335" Count="0" />
+      <LineId Id="334" Count="0" />
+      <LineId Id="336" Count="2" />
+      <LineId Id="125" Count="3" />
+      <LineId Id="343" Count="0" />
+      <LineId Id="339" Count="0" />
+      <LineId Id="342" Count="0" />
+      <LineId Id="340" Count="1" />
+      <LineId Id="113" Count="0" />
+      <LineId Id="131" Count="0" />
+      <LineId Id="130" Count="0" />
+      <LineId Id="142" Count="0" />
+      <LineId Id="432" Count="0" />
+      <LineId Id="143" Count="2" />
+      <LineId Id="189" Count="4" />
+      <LineId Id="199" Count="4" />
+      <LineId Id="146" Count="0" />
+      <LineId Id="582" Count="0" />
+      <LineId Id="584" Count="0" />
+      <LineId Id="583" Count="0" />
+      <LineId Id="40" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

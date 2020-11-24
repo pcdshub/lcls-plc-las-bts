@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+  <DUT Name="ST_TransportTubeConfig" Id="{8992122d-47b4-43be-a476-1a9903008ec1}">
+    <Declaration><![CDATA[TYPE ST_TransportTubeConfig :
+STRUCT
+	{attribute 'pytmc' := '
+		pv: NAME
+		io: i
+	'}
+	sName : STRING(EPICS_STRING_SIZE);
+	
+	bInput : BOOL; // True for input tube, false for output tube
+	
+	stDevices : ST_TransportTubeDevices;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

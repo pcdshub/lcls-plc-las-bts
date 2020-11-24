@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+  <GVL Name="GVL_Operation" Id="{2dd51a79-7824-0563-37ec-bbc7ba082317}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	// Execute flags for vacuum system operations
+	{attribute 'pytmc' := '
+		pv: PLC_LAS_BTS_VAC:OPERATION:CANCEL
+		io: o
+	'}
+	i_bCancel : BOOL;
+	
+	{attribute 'pytmc' := '
+		pv: PLC_LAS_BTS_VAC:OPERATION
+		io: io
+	'}
+	iq_eOperation : E_Op;
+	
+	{attribute 'pytmc' := '
+		pv: PLC_LAS_BTS_VAC:OPERATION:TRANSPORT_TUBE
+		io: io
+	'}
+	iq_eTransportTube : E_TransportTube;
+	
+	{attribute 'pytmc' := '
+		pv: PLC_LAS_BTS_VAC:OPERATION:BUSY
+		io: i
+		field: ZNAM NOT_BUSY
+		field: ONAM BUSY
+	'}
+	q_bBusy : BOOL;
+	
+	{attribute 'pytmc' := '
+		pv: PLC_LAS_BTS_VAC:OPERATION:ERROR
+		io: i
+		field: ZNAM OK
+		field: ONAM ERROR
+		field: ZSV NO_ALARM
+		field: OSV MAJOR
+	'}
+	q_bError : BOOL;
+	
+	{attribute 'pytmc' := '
+		pv: PLC_LAS_BTS_VAC:OPERATION:MESSAGE
+		io: i
+	'}
+	q_sMessage : STRING(EPICS_STRING_SIZE);
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

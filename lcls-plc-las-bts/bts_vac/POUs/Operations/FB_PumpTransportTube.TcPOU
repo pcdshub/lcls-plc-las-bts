@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+  <POU Name="FB_PumpTransportTube" Id="{18af31ad-0ef4-4293-b083-bfbe97dbfcd2}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_PumpTransportTube EXTENDS FB_TTOperation
+VAR_STAT CONSTANT
+	(* Expected system states before operation starts*)		
+	stExpTTStatus : ST_TransportTubeStatuses := (
+		bIonPumpOn:= FALSE,
+		bGateValveOpen:= FALSE,
+		eColdCathodeState:= E_PressureState.Off);
+	stTTOp : ST_TransportTubeOps := (
+		ePiraniOp := E_GaugeCompOp.ATM,
+		eColdCathodeOp := E_GaugeCompOp.STATE
+	);
+		
+	(* Expected system states after operation finishes *)		
+	stFinExpTTStatus : ST_TransportTubeStatuses := (
+		bIonPumpOn:= TRUE,
+		bGateValveOpen:= FALSE,
+		ePiraniState:= E_PressureState.ValidLo,
+		fColdCathodeVal:= 1E-5);
+	stFinTTOp : ST_TransportTubeOps := (
+		ePiraniOp := E_GaugeCompOp.STATE,
+		eColdCathodeOp := E_GaugeCompOp._LTE
+	);
+		
+	(* Timeout constants *);
+	PUMP_CART_TIMEOUT : TIME := T#20M;
+	ION_PUMP_TIMEOUT : TIME := T#15M;
+	
+	(* Pressure constants *)
+	ION_READY_PRESS : REAL := 1E-4; // Pressure at which to initiate ion pump
+	ION_FINISHED_PRESS : REAL := 1E-5; // Pressure at which pressure has reached desired state
+END_VAR
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[SUPER^(iq_sMessageBuffer := iq_sMessageBuffer);
+
+CASE eStep OF
+E_OpStep.IDLE: // Do nothing
+
+E_OpStep.START: // Verify system status
+	M_RunTimeoutTimer(STATUS_CHECK_TIMEOUT);
+	
+	M_SetMessage('Verifying system status');
+	
+	IF F_VerifyTransportTubeStatuses(stExpStatus := stExpTTStatus,
+		eTransportTube := eTT,
+		stStatusOp := stTTOp, 
+		bEnforce := TRUE)
+	THEN // System status check 
+		M_ResetTimeoutTimer();
+		M_SetMessage('OPERATOR: Rough chamber w/ pump cart'); 
+		eStep := E_OpStep.POT_WAIT_PUMP_CART;
+	END_IF
+	
+E_OpStep.POT_WAIT_PUMP_CART:
+	M_RunTimeoutTimer(PUMP_CART_TIMEOUT);
+	(* At this point the system must wait for the transport tube to be roughed by the pump cart.
+	   The pump cart is manually operated, so we will wait until the desired pressure is reached.
+	*)
+	
+	// Check that pressure is low enough to turn on ion pump
+	IF fbTT.q_stConfig.stDevices.refPiraniGauge.PG.rPRESS <= ION_READY_PRESS THEN
+		M_ResetTimeoutTimer();
+		M_SetMessage('Turning on ion pump');
+		eStep := E_OpStep.POT_TURN_ON_PUMP;
+	END_IF
+	
+E_OpStep.POT_TURN_ON_PUMP:
+	M_RunTimeoutTimer(ION_PUMP_TIMEOUT);
+	
+	fbTT.q_stConfig.stDevices.refIonPump.M_Run(TRUE);
+	// Check that desired pressure has been reached
+	IF fbTT.q_stConfig.stDevices.refColdCathode.IG.eState <> E_PressureState.Off
+	AND fbTT.q_stConfig.stDevices.refColdCathode.IG.rPRESS <= ION_FINISHED_PRESS
+	THEN
+		M_ResetTimeoutTimer();
+		eStep := E_OpStep.POT_FINISH;
+	END_IF
+	
+E_OpStep.POT_FINISH:
+	IF F_VerifyTransportTubeStatuses(stExpStatus := stFinExpTTStatus,
+		eTransportTube := eTT,
+		stStatusOp := stFinTTOp, 
+		bEnforce := FALSE)
+	THEN
+		M_Finish();
+	ELSE
+		M_FatalError('End system status check failed');
+	END_IF
+	
+ELSE
+	M_FatalError('Operation is in invalid state');
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="FB_PumpTransportTube">
+      <LineId Id="171" Count="2" />
+      <LineId Id="420" Count="0" />
+      <LineId Id="419" Count="0" />
+      <LineId Id="174" Count="1" />
+      <LineId Id="386" Count="0" />
+      <LineId Id="295" Count="0" />
+      <LineId Id="196" Count="0" />
+      <LineId Id="176" Count="5" />
+      <LineId Id="296" Count="0" />
+      <LineId Id="182" Count="5" />
+      <LineId Id="214" Count="0" />
+      <LineId Id="213" Count="0" />
+      <LineId Id="188" Count="0" />
+      <LineId Id="211" Count="0" />
+      <LineId Id="189" Count="0" />
+      <LineId Id="218" Count="0" />
+      <LineId Id="297" Count="0" />
+      <LineId Id="217" Count="0" />
+      <LineId Id="199" Count="0" />
+      <LineId Id="191" Count="0" />
+      <LineId Id="219" Count="0" />
+      <LineId Id="223" Count="0" />
+      <LineId Id="227" Count="0" />
+      <LineId Id="220" Count="0" />
+      <LineId Id="224" Count="1" />
+      <LineId Id="222" Count="0" />
+      <LineId Id="228" Count="0" />
+      <LineId Id="230" Count="0" />
+      <LineId Id="236" Count="0" />
+      <LineId Id="229" Count="0" />
+      <LineId Id="237" Count="0" />
+      <LineId Id="249" Count="0" />
+      <LineId Id="242" Count="0" />
+      <LineId Id="252" Count="0" />
+      <LineId Id="243" Count="5" />
+      <LineId Id="238" Count="0" />
+      <LineId Id="339" Count="0" />
+      <LineId Id="341" Count="0" />
+      <LineId Id="340" Count="0" />
+      <LineId Id="20" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

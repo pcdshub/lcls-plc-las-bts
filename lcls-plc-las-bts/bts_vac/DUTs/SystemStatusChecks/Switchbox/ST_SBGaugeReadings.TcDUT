@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+  <DUT Name="ST_SBGaugeReadings" Id="{64272b40-03eb-4133-bbf3-046df264c7f8}">
+    <Declaration><![CDATA[(* Statuses of the gauges for the switchbox *)
+TYPE ST_SBGaugeReadings :
+STRUCT
+	(* Gauge readings *)
+	
+	fDPPiraniVal : REAL; // LXLHN:DP:GPI
+	eDPPiraniState : E_PressureState;
+	
+	fDPColdCathodeVal : REAL; // LXLHN:DP:GCC
+	eDPColdCathodeState : E_PressureState;
+	
+	fPumpStationPirani1Val : REAL; // LXLHN:PP:GPI:1
+	ePumpStationPirani1State : E_PressureState;
+	
+	fPumpStationPirani2Val : REAL; // LXLHN:PP:GPI:2
+	ePumpStationPirani2State : E_PressureState;
+	
+	fPumpStationColdCathodeVal : REAL; // LXLHN:PP:GCC
+	ePumpStationColdCathodeState : E_PressureState;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

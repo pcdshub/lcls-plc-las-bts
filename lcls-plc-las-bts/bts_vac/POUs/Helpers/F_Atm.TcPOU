@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+  <POU Name="F_Atm" Id="{79f6dbdc-f5aa-4b39-b5b3-c2f56ea5db42}" SpecialFunc="None">
+    <Declaration><![CDATA[// Verifies if a pressure (TORR) is near atmospheric pressure
+FUNCTION F_Atm : BOOL
+VAR_INPUT
+	fPressure : REAL;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Check that fPressure is within our error range for atmospheric pressure
+F_Atm := ABS(ATM_PRESS - fPressure) <= ATM_PRESS_ERR_RNG;]]></ST>
+    </Implementation>
+    <LineIds Name="F_Atm">
+      <LineId Id="10" Count="0" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

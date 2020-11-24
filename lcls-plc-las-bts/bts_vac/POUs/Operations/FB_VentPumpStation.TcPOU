@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+  <POU Name="FB_VentPumpStation" Id="{c9ceb88b-4172-4db0-aa81-a45d82eabc15}" SpecialFunc="None">
+    <Declaration><![CDATA[(* Operation for venting the pumping station *)
+FUNCTION_BLOCK FB_VentPumpStation EXTENDS FB_Operation
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR_STAT CONSTANT
+	(* Expected system states before operation starts*)
+	stExpPumpStatus : ST_SBPumpStatuses := (
+		bRoughingPumpOn:= TRUE, 
+		bTurboPumpOn:= FALSE, 
+		bIonPumpOn:= FALSE);
+	
+	stExpValveStatus : ST_SBValveStatuses := (
+		bGateValveOpen:= FALSE, 
+		bVentValveOpen:= FALSE, 
+		bORingPumpValveOpen:= TRUE, 
+		bForelineValveOpen:= TRUE,
+		bSlowPumpValveOpen:= FALSE,
+		bSBVentOpen:= FALSE,  
+		bSBSlowVentOpen:= FALSE);
+	
+	stExpGaugeReadings : ST_SBGaugeReadings := (
+		eDPColdCathodeState:= E_PressureState.Off,
+		ePumpStationPirani1State:= E_PressureState.ValidLo,
+		fPumpStationColdCathodeVal:= 1E-5
+	);
+	stGaugeReadingsOp : ST_SBGaugeReadingsOp := (
+		eDPPiraniOp:= E_GaugeCompOp.ATM, 
+		eDPColdCathodeOp:= E_GaugeCompOp.STATE, 
+		ePumpStationPirani1Op:= E_GaugeCompOp.STATE, 
+		ePumpStationPirani2Op:= E_GaugeCompOp.IGNORE, 
+		ePumpStationColdCathodeOp:= E_GaugeCompOp._LTE);
+			
+	stExpTTStatus : ST_TransportTubeStatuses := (bGateValveOpen:= FALSE);
+	stTTOp : ST_TransportTubeOps := (bIonPumpIgnore:= TRUE);
+		
+	(* Expected system states after operation finishes *)
+	stFinExpPumpStatus : ST_SBPumpStatuses := (
+		bRoughingPumpOn:= FALSE, 
+		bTurboPumpOn:= FALSE, 
+		bIonPumpOn:= FALSE);
+	
+	stFinExpValveStatus : ST_SBValveStatuses := (
+		bGateValveOpen:= FALSE, 
+		bVentValveOpen:= FALSE, 
+		bORingPumpValveOpen:= TRUE, 
+		bForelineValveOpen:= TRUE, 
+		bSlowPumpValveOpen:= FALSE,
+		bSBVentOpen:= FALSE,  
+		bSBSlowVentOpen:= FALSE);
+	
+	stFinExpGaugeReadings : ST_SBGaugeReadings := (
+		eDPColdCathodeState := E_PressureState.Off,
+		ePumpStationColdCathodeState := E_PressureState.Off
+	);
+	stFinGaugeReadingsOp : ST_SBGaugeReadingsOp := (
+		eDPPiraniOp:= E_GaugeCompOp.ATM, 
+		eDPColdCathodeOp:= E_GaugeCompOp.STATE, 
+		ePumpStationPirani1Op:= E_GaugeCompOp.ATM, 
+		ePumpStationPirani2Op:= E_GaugeCompOp.ATM, 
+		ePumpStationColdCathodeOp:= E_GaugeCompOp.STATE);
+		
+	stFinExpTTStatus : ST_TransportTubeStatuses := (bGateValveOpen:= FALSE);
+	stFinTTOp : ST_TransportTubeOps := (bIonPumpIgnore:= TRUE);
+
+	(* Timeout constants *)
+	VENT_TIMEOUT : TIME := T#20S;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[SUPER^(iq_sMessageBuffer := iq_sMessageBuffer);
+
+CASE eStep OF
+E_OpStep.IDLE: // Do nothing
+
+E_OpStep.START: // System Status Check
+	M_RunTimeoutTimer(STATUS_CHECK_TIMEOUT);
+	M_SetMessage('Verifying system status');
+	
+	IF F_VerifySBPumpStatuses(stExpStatus := stExpPumpStatus, bEnforce := TRUE)
+		AND F_VerifySBValveStatuses(stExpStatus := stExpValveStatus, bEnforce := TRUE)
+		AND F_VerifySBGaugeReadings(stExpReadings := stExpGaugeReadings, stReadingsOp := stGaugeReadingsOp)
+		AND F_VerifyAllTransportTubeStatuses(stExpStatus := stExpTTStatus, 
+			stStatusOp := stTTOp, 
+			bEnforce := TRUE)
+	THEN // System status check passed
+		M_ResetTimeoutTimer();
+		M_SetMessage('Venting');
+		eStep := E_OpStep.VPS_VENT;
+	END_IF
+	
+E_OpStep.VPS_VENT: // Vent pump station to atmospheric pressure
+	M_RunTimeoutTimer(VENT_TIMEOUT);
+
+	// Redundant equipment safety checks
+	GVL_BTS_VAC.fb_PP_PTM.M_Run(FALSE);
+	GVL_BTS_VAC.fb_PP_PMF.M_Run(FALSE);
+	IF GVL_BTS_VAC.fb_PP_VGC.M_IsClosed() THEN		
+		// Open pump station vent
+		GVL_BTS_VAC.fb_PP_VVC.M_Open(TRUE);
+		
+		// Vent until atmoshperic pressure reached
+		IF F_Atm(GVL_BTS_VAC.fb_PP_GPI_1.PG.rPRESS) THEN
+			M_ResetTimeoutTimer();
+			M_SetMessage('Venting finished. Closing vent');
+			eStep := E_OpStep.VPS_CLOSE_VENT;
+		END_IF
+	ELSE
+		M_FatalError('Gate valve is open');
+	END_IF
+	
+E_OpStep.VPS_CLOSE_VENT:
+	M_RunTimeoutTimer(VALVE_TIMEOUT);
+
+	// Close vent
+	GVL_BTS_VAC.fb_PP_VVC.M_Open(FALSE);
+	
+	IF GVL_BTS_VAC.fb_PP_VVC.M_IsClosed() THEN
+		M_ResetTimeoutTimer();
+		eStep := E_OpStep.VPS_FINISH;
+	END_IF
+	
+E_OpStep.VPS_FINISH: // System status check
+	IF F_VerifySBPumpStatuses(stExpStatus := stFinExpPumpStatus, bEnforce := FALSE)
+	AND F_VerifySBValveStatuses(stExpStatus := stFinExpValveStatus, bEnforce := FALSE)
+	AND F_VerifySBGaugeReadings(stExpReadings := stFinExpGaugeReadings, stReadingsOp := stFinGaugeReadingsOp)
+	AND F_VerifyAllTransportTubeStatuses(stExpStatus := stFinExpTTStatus, 
+		stStatusOp := stFinTTOp,
+		bEnforce := FALSE)
+	THEN
+		M_Finish();
+	ELSE
+		M_FatalError('End system status check failed');
+	END_IF
+	
+ELSE
+	M_FatalError('Operation is in invalid state');
+END_CASE
+]]></ST>
+    </Implementation>
+    <LineIds Name="FB_VentPumpStation">
+      <LineId Id="55" Count="0" />
+      <LineId Id="91" Count="0" />
+      <LineId Id="89" Count="0" />
+      <LineId Id="548" Count="1" />
+      <LineId Id="183" Count="1" />
+      <LineId Id="402" Count="1" />
+      <LineId Id="185" Count="4" />
+      <LineId Id="195" Count="2" />
+      <LineId Id="404" Count="0" />
+      <LineId Id="200" Count="0" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="112" Count="1" />
+      <LineId Id="294" Count="0" />
+      <LineId Id="290" Count="0" />
+      <LineId Id="115" Count="0" />
+      <LineId Id="306" Count="1" />
+      <LineId Id="116" Count="0" />
+      <LineId Id="202" Count="0" />
+      <LineId Id="124" Count="0" />
+      <LineId Id="297" Count="0" />
+      <LineId Id="301" Count="1" />
+      <LineId Id="304" Count="0" />
+      <LineId Id="406" Count="0" />
+      <LineId Id="305" Count="0" />
+      <LineId Id="298" Count="0" />
+      <LineId Id="118" Count="1" />
+      <LineId Id="114" Count="0" />
+      <LineId Id="203" Count="1" />
+      <LineId Id="311" Count="1" />
+      <LineId Id="310" Count="0" />
+      <LineId Id="212" Count="0" />
+      <LineId Id="313" Count="2" />
+      <LineId Id="317" Count="0" />
+      <LineId Id="316" Count="0" />
+      <LineId Id="126" Count="1" />
+      <LineId Id="318" Count="4" />
+      <LineId Id="328" Count="4" />
+      <LineId Id="128" Count="0" />
+      <LineId Id="476" Count="0" />
+      <LineId Id="478" Count="0" />
+      <LineId Id="477" Count="0" />
+      <LineId Id="93" Count="0" />
+      <LineId Id="11" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

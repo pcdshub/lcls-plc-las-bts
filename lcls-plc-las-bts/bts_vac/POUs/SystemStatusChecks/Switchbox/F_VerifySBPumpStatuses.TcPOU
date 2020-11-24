@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+  <POU Name="F_VerifySBPumpStatuses" Id="{f4b16073-0e15-47a9-978a-2d5792f30146}" SpecialFunc="None">
+    <Declaration><![CDATA[(* Verify that the statuses of the switchbox pumps match the expected statuses *)
+FUNCTION F_VerifySBPumpStatuses : BOOL
+VAR_INPUT
+	stExpStatus : ST_SBPumpStatuses; // The expected state of the system
+	bEnforce : BOOL; // Whether to try forcing the states
+END_VAR
+VAR
+	stStatus : ST_SBPumpStatuses;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[stStatus := F_GetSBPumpStatuses();
+
+IF bEnforce THEN
+	// Try setting system states to the expected states
+	F_SetSBPumpStatuses(stExpStatus);
+END_IF
+
+// Return true if the expected status matches the actual status
+F_VerifySBPumpStatuses := stExpStatus.bRoughingPumpOn = stStatus.bRoughingPumpOn
+	AND stExpStatus.bTurboPumpOn = stStatus.bTurboPumpOn
+	AND stExpStatus.bIonPumpOn = stStatus.bIonPumpOn;]]></ST>
+    </Implementation>
+    <LineIds Name="F_VerifySBPumpStatuses">
+      <LineId Id="69" Count="0" />
+      <LineId Id="102" Count="0" />
+      <LineId Id="101" Count="0" />
+      <LineId Id="125" Count="0" />
+      <LineId Id="103" Count="1" />
+      <LineId Id="135" Count="0" />
+      <LineId Id="115" Count="0" />
+      <LineId Id="71" Count="1" />
+      <LineId Id="80" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

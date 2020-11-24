@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+  <DUT Name="E_Op" Id="{82df33cb-6124-040d-1ef3-9023a4ebf986}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_Op :
+(
+	NONE := 0, // No operation
+	PSB := 1, // Pump switchbox
+	VSB := 2, // Vent switchbox
+	VPS := 3, // Vent pumping station
+	PTT := 4, // Transport tube pump down
+	VTT := 5, // Transport tube vent
+	LTT := 6, // Turn on laser for transport tube
+	SPSB := 7, // Slow Pump Switchbox
+	SVSB := 8 // Slow Vent switchbox
+	//OTT, // Open transport tube gate valve
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

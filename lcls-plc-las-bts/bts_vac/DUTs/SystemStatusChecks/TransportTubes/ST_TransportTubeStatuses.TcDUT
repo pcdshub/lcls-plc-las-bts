@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+  <DUT Name="ST_TransportTubeStatuses" Id="{aa3ada0e-610c-0be5-2cbb-33936e779cce}">
+    <Declaration><![CDATA[(* Statuses of the pumps, valves, and gauges for the for the BO4 Output tube *)
+TYPE ST_TransportTubeStatuses :
+STRUCT
+	// Pump statuses
+	bIonPumpOn : BOOL;
+	
+	// Valve statuses
+	bGateValveOpen : BOOL;
+	
+	// Gauge statuses
+	fPiraniVal : REAL;
+	ePiraniState : E_PressureState;
+	fColdCathodeVal : REAL;
+	eColdCathodeState : E_PressureState;
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

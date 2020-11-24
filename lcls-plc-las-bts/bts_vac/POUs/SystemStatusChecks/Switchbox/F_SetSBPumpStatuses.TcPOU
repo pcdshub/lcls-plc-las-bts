@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+  <POU Name="F_SetSBPumpStatuses" Id="{b84ef4b3-32da-49d5-b9da-dd56cc2c945f}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_SetSBPumpStatuses : BOOL
+VAR_INPUT
+	stExpStatus : ST_SBPumpStatuses;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[GVL_BTS_VAC.fb_PP_PMF.M_Run(stExpStatus.bRoughingPumpOn); 
+GVL_BTS_VAC.fb_PP_PTM.M_Run(stExpStatus.bTurboPumpOn);
+GVL_BTS_VAC.fb_PP_PIP.M_Run(stExpStatus.bIonPumpOn);]]></ST>
+    </Implementation>
+    <LineIds Name="F_SetSBPumpStatuses">
+      <LineId Id="17" Count="1" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

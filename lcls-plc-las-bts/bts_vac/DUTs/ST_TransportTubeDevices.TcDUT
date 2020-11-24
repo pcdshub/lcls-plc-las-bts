@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+  <DUT Name="ST_TransportTubeDevices" Id="{6a2602a8-689a-418e-9174-00d8c3d9a730}">
+    <Declaration><![CDATA[(* Devices common to all transport tubes. *)
+TYPE ST_TransportTubeDevices :
+STRUCT
+	// Pumps
+	refIonPump : REFERENCE TO FB_PIP_GAMMA;
+	
+	// Valves
+	refGateValve : REFERENCE TO FB_VGC;
+	
+	// Gauges
+	refPiraniGauge : REFERENCE TO FB_MKS275;
+	refColdCathode : REFERENCE TO FB_MKS500;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

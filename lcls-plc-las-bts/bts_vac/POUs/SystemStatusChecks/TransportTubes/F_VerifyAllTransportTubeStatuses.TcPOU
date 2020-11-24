@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+  <POU Name="F_VerifyAllTransportTubeStatuses" Id="{358b5524-2bc6-4c0c-884c-f5fe5398d76e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_VerifyAllTransportTubeStatuses : BOOL
+VAR_INPUT
+	stExpStatus : ST_TransportTubeStatuses;
+	stStatusOp : ST_TransportTubeOps;
+	bEnforce : BOOL;
+END_VAR
+VAR
+	nIter : UINT;
+	bResult : BOOL := TRUE;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[FOR nIter := 1 TO GVL_TransportTubes.NUM_TRANSPORT_TUBES DO
+	bResult := bResult AND F_VerifyTransportTubeStatuses(
+		stExpStatus := stExpStatus,
+		stStatusOp := stStatusOp,
+		eTransportTube := GVL_TransportTubes.aTubes[nIter],
+		bEnforce := bEnforce);
+END_FOR
+
+F_VerifyAllTransportTubeStatuses := bResult;]]></ST>
+    </Implementation>
+    <LineIds Name="F_VerifyAllTransportTubeStatuses">
+      <LineId Id="7" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="20" Count="2" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="17" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

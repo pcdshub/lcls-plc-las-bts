@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+  <GVL Name="GVL_TransportTubes" Id="{2d08e4d9-019a-40af-9ac5-58f5518fa595}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL CONSTANT
+	// When adding transport tubes make sure to update F_GetTransportTube!
+	
+	NUM_TRANSPORT_TUBES : UINT := 10;
+	
+	aTubes : ARRAY [1..NUM_TRANSPORT_TUBES] OF T_TransportTube := [
+		(* Input transport tubes *)
+		E_TransportTube.LS1,
+		E_TransportTube.LS5,
+		E_TransportTube.LS8, 
+		
+		(* Output transport tubes *)
+		E_TransportTube.LD2,
+		E_TransportTube.LD4,
+		E_TransportTube.LD6,
+		E_TransportTube.LD8,
+		E_TransportTube.LD9,
+		E_TransportTube.LD10,
+		E_TransportTube.LD14
+	];
+	
+	(* Transport tube configs *)
+	
+	stLS1 : ST_TransportTubeConfig := (
+		sName:= 'LS1',
+		bInput := TRUE,
+		stDevices:= (
+			refIonPump := GVL_BTS_VAC.fb_LS1_PIP,
+			refGateValve := GVL_BTS_VAC.fb_LS1_VGC,
+			refPiraniGauge := GVL_BTS_VAC.fb_LS1_GPI,
+			refColdCathode := GVL_BTS_VAC.fb_LS1_GCC)
+	);
+	
+	stLS5 : ST_TransportTubeConfig := (
+		sName:= 'LS5',
+		bInput := TRUE,
+		stDevices:= (
+			refIonPump := GVL_BTS_VAC.fb_LS5_PIP,
+			refGateValve := GVL_BTS_VAC.fb_LS5_VGC,
+			refPiraniGauge := GVL_BTS_VAC.fb_LS5_GPI,
+			refColdCathode := GVL_BTS_VAC.fb_LS5_GCC)
+	);
+	
+	stLS8 : ST_TransportTubeConfig := (
+		sName:= 'LS8',
+		bInput := TRUE,
+		stDevices:= (
+			refIonPump := GVL_BTS_VAC.fb_LS8_PIP,
+			refGateValve := GVL_BTS_VAC.fb_LS8_VGC,
+			refPiraniGauge := GVL_BTS_VAC.fb_LS8_GPI,
+			refColdCathode := GVL_BTS_VAC.fb_LS8_GCC)
+	);	
+	
+	stLD2 : ST_TransportTubeConfig := (
+		sName:= 'LD2',
+		bInput := FALSE,
+		stDevices:= (
+			refIonPump := GVL_BTS_VAC.fb_LD2_PIP,
+			refGateValve := GVL_BTS_VAC.fb_LD2_VGC,
+			refPiraniGauge := GVL_BTS_VAC.fb_LD2_GPI,
+			refColdCathode := GVL_BTS_VAC.fb_LD2_GCC)
+	);
+	
+	stLD4 : ST_TransportTubeConfig := (
+		sName:= 'LD4',
+		bInput := FALSE,
+		stDevices:= (
+			refIonPump := GVL_BTS_VAC.fb_LD4_PIP,
+			refGateValve := GVL_BTS_VAC.fb_LD4_VGC,
+			refPiraniGauge := GVL_BTS_VAC.fb_LD4_GPI,
+			refColdCathode := GVL_BTS_VAC.fb_LD4_GCC)
+	);
+	
+	stLD6 : ST_TransportTubeConfig := (
+		sName:= 'LD6',
+		bInput := FALSE,
+		stDevices:= (
+			refIonPump := GVL_BTS_VAC.fb_LD6_PIP,
+			refGateValve := GVL_BTS_VAC.fb_LD6_VGC,
+			refPiraniGauge := GVL_BTS_VAC.fb_LD6_GPI,
+			refColdCathode := GVL_BTS_VAC.fb_LD6_GCC)
+	);
+	
+	stLD14 : ST_TransportTubeConfig := (
+		sName:= 'LD14',
+		bInput := FALSE,
+		stDevices:= (
+			refIonPump := GVL_BTS_VAC.fb_LD14_PIP,
+			refGateValve := GVL_BTS_VAC.fb_LD14_VGC,
+			refPiraniGauge := GVL_BTS_VAC.fb_LD14_GPI,
+			refColdCathode := GVL_BTS_VAC.fb_LD14_GCC)
+	);
+	
+	stLD10 : ST_TransportTubeConfig := (
+		sName:= 'LD10',
+		bInput := FALSE,
+		stDevices:= (
+			refIonPump := GVL_BTS_VAC.fb_LD10_PIP,
+			refGateValve := GVL_BTS_VAC.fb_LD10_VGC,
+			refPiraniGauge := GVL_BTS_VAC.fb_LD10_GPI,
+			refColdCathode := GVL_BTS_VAC.fb_LD10_GCC)
+	);
+	
+	stLD9 : ST_TransportTubeConfig := (
+		sName:= 'LD9',
+		bInput := FALSE,
+		stDevices:= (
+			refIonPump := GVL_BTS_VAC.fb_LD9_PIP,
+			refGateValve := GVL_BTS_VAC.fb_LD9_VGC,
+			refPiraniGauge := GVL_BTS_VAC.fb_LD9_GPI,
+			refColdCathode := GVL_BTS_VAC.fb_LD9_GCC)
+	);
+	
+	stLD8 : ST_TransportTubeConfig := (
+		sName:= 'LD8',
+		bInput := FALSE,
+		stDevices:= (
+			refIonPump := GVL_BTS_VAC.fb_LD8_PIP,
+			refGateValve := GVL_BTS_VAC.fb_LD8_VGC,
+			refPiraniGauge := GVL_BTS_VAC.fb_LD8_GPI,
+			refColdCathode := GVL_BTS_VAC.fb_LD8_GCC)
+	);
+
+END_VAR
+VAR_GLOBAL
+	{attribute 'pytmc' := '
+		pv: LTLHN:LS1
+	'}
+	fbLS1 : FB_TransportTube;
+	{attribute 'pytmc' := '
+		pv: LTLHN:LS5
+	'}
+	fbLS5 : FB_TransportTube;
+	{attribute 'pytmc' := '
+		pv: LTLHN:LS8
+	'}
+	fbLS8 : FB_TransportTube;
+
+	{attribute 'pytmc' := '
+		pv: LTLHN:LD2
+	'}
+	fbLD2 : FB_TransportTube;
+	{attribute 'pytmc' := '
+		pv: LTLHN:LD4
+	'}
+	fbLD4 : FB_TransportTube;
+	{attribute 'pytmc' := '
+		pv: LTLHN:LD6
+	'}
+	fbLD6 : FB_TransportTube;
+	{attribute 'pytmc' := '
+		pv: LTLHN:LD14
+	'}
+	fbLD14 : FB_TransportTube;
+	{attribute 'pytmc' := '
+		pv: LTLHN:LD10
+	'}
+	fbLD10 : FB_TransportTube;
+	{attribute 'pytmc' := '
+		pv: LTLHN:LD9
+	'}
+	fbLD9 : FB_TransportTube;
+	{attribute 'pytmc' := '
+		pv: LTLHN:LD8
+	'}
+	fbLD8 : FB_TransportTube;
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

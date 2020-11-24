@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+  <POU Name="F_GetSBGaugeReadings" Id="{87a652bb-93d8-46d8-bd90-4b26a57bdd2d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_GetSBGaugeReadings : ST_SBGaugeReadings
+VAR_INPUT
+END_VAR
+VAR
+	stReadings : ST_SBGaugeReadings := (
+		fDPPiraniVal:= GVL_BTS_VAC.fb_DP_GPI.PG.rPRESS,
+		eDPPiraniState:= GVL_BTS_VAC.fb_DP_GPI.PG.eState,
+		fDPColdCathodeVal:= GVL_BTS_VAC.fb_DP_GCC.IG.rPRESS,
+		eDPColdCathodeState:= GVL_BTS_VAC.fb_DP_GCC.IG.eState,
+		fPumpStationPirani1Val:= GVL_BTS_VAC.fb_PP_GPI_1.PG.rPRESS,
+		ePumpStationPirani1State:= GVL_BTS_VAC.fb_PP_GPI_1.PG.eState,
+		fPumpStationPirani2Val:= GVL_BTS_VAC.fb_PP_GPI_2.PG.rPRESS, 
+		ePumpStationPirani2State:= GVL_BTS_VAC.fb_PP_GPI_2.PG.eState,
+		fPumpStationColdCathodeVal:= GVL_BTS_VAC.fb_PP_GCC.IG.rPRESS,
+		ePumpStationColdCathodeState:= GVL_BTS_VAC.fb_PP_GCC.IG.eState);
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[F_GetSBGaugeReadings := stReadings;]]></ST>
+    </Implementation>
+    <LineIds Name="F_GetSBGaugeReadings">
+      <LineId Id="7" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

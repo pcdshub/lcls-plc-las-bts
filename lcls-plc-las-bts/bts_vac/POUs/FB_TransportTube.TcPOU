@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+  <POU Name="FB_TransportTube" Id="{4b66ee4b-c91a-4936-b397-8ff461536138}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_TransportTube
+VAR_INPUT
+	i_stConfig : ST_TransportTubeConfig;
+	i_bLaserExtIntl : BOOL; // external interlock for laser
+END_VAR
+VAR_OUTPUT	
+	{attribute 'pytmc' := '
+		pv: LASER_OK
+		io: o
+		field: ZNAM LASER_NOT_OK
+		field: ONAM LASER_OK
+	'}
+	q_bLaserOk : BOOL; // Whether the laser is ok for operation
+	
+	{attribute 'pytmc' := '
+		pv:
+	'}
+	q_stConfig : ST_TransportTubeConfig;
+END_VAR
+VAR
+	bLaserOk : BOOL;
+END_VAR
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[q_stConfig := i_stConfig;
+q_bLaserOk := i_bLaserExtIntl AND bLaserOk;]]></ST>
+    </Implementation>
+    <Method Name="M_SetLaserOk" Id="{edae87a2-aeaf-4afa-b84e-38dce6a2b658}">
+      <Declaration><![CDATA[METHOD PUBLIC M_SetLaserOk
+VAR_INPUT
+	i_bVal : BOOL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bLaserOk := i_bVal;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_TransportTube">
+      <LineId Id="111" Count="0" />
+      <LineId Id="64" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_TransportTube.M_SetLaserOk">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

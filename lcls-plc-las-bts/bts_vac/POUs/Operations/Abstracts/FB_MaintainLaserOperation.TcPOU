@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+  <POU Name="FB_MaintainLaserOperation" Id="{01f4e0f9-508d-4564-920a-841ec286a4bd}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_MaintainLaserOperation EXTENDS FB_Operation
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+	q_bShutdownLaser : BOOL;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Let FB_Operation do its thing 
+SUPER^(iq_sMessageBuffer := iq_sMessageBuffer);]]></ST>
+    </Implementation>
+    <Method Name="M_AllTransportTubeValvesClosed" Id="{ccc571c6-4175-48f1-8d3e-bdd491494d87}">
+      <Declaration><![CDATA[METHOD PROTECTED M_AllTransportTubeValvesClosed : BOOL
+VAR_INPUT
+END_VAR
+VAR
+	nIter : UINT;
+	eTT : T_TransportTube;
+	fbTT : REFERENCE TO FB_TransportTube;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[M_AllTransportTubeValvesClosed := TRUE;
+
+FOR nIter := 1 TO GVL_TransportTubes.NUM_TRANSPORT_TUBES DO
+	eTT := GVL_TransportTubes.aTubes[nIter];
+	fbTT REF= F_GetTransportTube(eTT);
+
+	IF NOT fbTT.q_stConfig.stDevices.refGateValve.M_IsClosed() THEN
+		M_AllTransportTubeValvesClosed := FALSE;
+		RETURN;
+	END_IF
+END_FOR]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="M_CloseAllTransportTubeValves" Id="{f0574d64-0945-4a16-96d0-702f95d9f806}">
+      <Declaration><![CDATA[METHOD PROTECTED M_CloseAllTransportTubeValves
+VAR_INPUT
+END_VAR
+VAR
+	nIter : UINT;
+	eTT : T_TransportTube;
+	fbTT : REFERENCE TO FB_TransportTube;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[FOR nIter := 1 TO GVL_TransportTubes.NUM_TRANSPORT_TUBES DO
+	eTT := GVL_TransportTubes.aTubes[nIter];
+	fbTT REF= F_GetTransportTube(eTT);
+
+	fbTT.q_stConfig.stDevices.refGateValve.M_Set_OPN_SW(FALSE);
+END_FOR]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="M_FatalError" Id="{3e3c79d9-a8f3-419e-a59c-ac88697e8597}">
+      <Declaration><![CDATA[METHOD PROTECTED M_FatalError
+VAR_INPUT
+	i_ErrorMessage : STRING;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SUPER^.M_FatalError(i_ErrorMessage);
+M_ShutdownLaser();
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="M_ResetError" Id="{c086e734-a4ca-4ff5-a730-57ac81287e91}">
+      <Declaration><![CDATA[METHOD PUBLIC M_ResetError
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[SUPER^.M_ResetError();
+q_bShutdownLaser := FALSE;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="M_ShutdownLaser" Id="{665d0026-87e9-4768-8d69-0114183a526c}">
+      <Declaration><![CDATA[METHOD PROTECTED M_ShutdownLaser
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[q_bShutdownLaser := TRUE;
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_MaintainLaserOperation">
+      <LineId Id="12" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_MaintainLaserOperation.M_AllTransportTubeValvesClosed">
+      <LineId Id="29" Count="9" />
+      <LineId Id="6" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_MaintainLaserOperation.M_CloseAllTransportTubeValves">
+      <LineId Id="6" Count="4" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_MaintainLaserOperation.M_FatalError">
+      <LineId Id="6" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="8" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_MaintainLaserOperation.M_ResetError">
+      <LineId Id="5" Count="2" />
+    </LineIds>
+    <LineIds Name="FB_MaintainLaserOperation.M_ShutdownLaser">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

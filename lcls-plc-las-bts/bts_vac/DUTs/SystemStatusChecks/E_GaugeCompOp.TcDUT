@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+  <DUT Name="E_GaugeCompOp" Id="{77a018a2-427f-4ea3-b7d3-327723561752}">
+    <Declaration><![CDATA[(* Comparison operators that can be used to compare gauge readings *)
+{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_GaugeCompOp :
+(
+	IGNORE, // Ignore the gauge reading
+	ATM, // Check that gauge is at atmospheric pressure
+	_LTE, // Check that gauge is less than or equal to value
+	_GTE, // Check that gauge is greater than or equal to value
+	STATE // Check that gauge has a specific state
+):= IGNORE;
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

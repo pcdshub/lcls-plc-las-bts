@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+  <POU Name="F_SetSBValveStatuses" Id="{937eb12d-9a70-46ca-b732-601ecef42969}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_SetSBValveStatuses : BOOL
+VAR_INPUT
+	stExpStatuses : ST_SBValveStatuses;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[GVL_BTS_VAC.fb_PP_VGC.M_Set_OPN_SW(stExpStatuses.bGateValveOpen);
+GVL_BTS_VAC.fb_PP_VVC.M_Open(stExpStatuses.bVentValveOpen);
+GVL_BTS_VAC.fb_PP_VRC_1.M_Set_OPN_SW(stExpStatuses.bORingPumpValveOpen); 
+GVL_BTS_VAC.fb_PP_VRC_2.M_Set_OPN_SW(stExpStatuses.bForelineValveOpen);
+GVL_BTS_VAC.fb_PP_VRC_3.M_Set_OPN_SW(stExpStatuses.bSBSlowVentOpen);
+GVL_BTS_VAC.fb_VP_VVC_1.M_Close(NOT stExpStatuses.bSBVentOpen);
+GVL_BTS_VAC.fb_VP_VVC_2.M_Close(NOT stExpStatuses.bSBSlowVentOpen);]]></ST>
+    </Implementation>
+    <LineIds Name="F_SetSBValveStatuses">
+      <LineId Id="8" Count="3" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="17" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

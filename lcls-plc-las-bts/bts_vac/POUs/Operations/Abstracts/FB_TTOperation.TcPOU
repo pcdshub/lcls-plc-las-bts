@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+  <POU Name="FB_TTOperation" Id="{3fa8f12c-915c-431e-a6af-214c82e223c6}" SpecialFunc="None">
+    <Declaration><![CDATA[// Operate on a transport tube
+FUNCTION_BLOCK FB_TTOperation EXTENDS FB_Operation
+VAR_INPUT
+	i_eTransportTube : T_TransportTube;
+END_VAR
+VAR
+	fbTT : REFERENCE TO FB_TransportTube;
+	eTT : T_TransportTube; 
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// If going from idle to starting a new operation then update the transport tube reference
+// We do this before running the parent class because the eStep has not changed yet.
+IF eStep = E_OpStep.IDLE AND i_bExecute = TRUE THEN
+	eTT := i_eTransportTube; // Copy the input to ensure transport tube doesn't get changed from the outside
+	fbTT REF= F_GetTransportTube(eTT);
+END_IF;
+
+// Let FB_Operation do its thing 
+SUPER^(iq_sMessageBuffer := iq_sMessageBuffer);
+
+// Check that reference to transport tube is valid
+// We do this after the parent class has run so that the fatal error does not get overriden
+IF eStep <> E_OpStep.IDLE AND NOT __ISVALIDREF(fbTT) THEN
+	M_FatalError('Invalid transport tube');
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="FB_TTOperation">
+      <LineId Id="51" Count="13" />
+      <LineId Id="23" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

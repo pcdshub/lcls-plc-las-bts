@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+  <Task Name="PlcTask" Id="{9883ec27-767d-47cb-8963-f3f3c274a90a}">
+    <!--CycleTime in micro seconds.-->
+    <CycleTime>10000</CycleTime>
+    <Priority>20</Priority>
+    <PouCall>
+      <Name>MAIN</Name>
+    </PouCall>
+    <PouCall>
+      <Name>Operate</Name>
+    </PouCall>
+    <PouCall>
+      <Name>MaintainLaser</Name>
+    </PouCall>
+    <TaskFBGuid>{30dd97d1-89ff-413b-a79f-5c6de3d0e274}</TaskFBGuid>
+    <Fb_init>{479cd64e-f131-44b9-abf9-c53c2ad7d582}</Fb_init>
+    <Fb_exit>{fbfabea3-2aef-4778-b33e-9568443b91e9}</Fb_exit>
+    <CycleUpdate>{9710141f-b250-45b3-b9be-835062dc4b5e}</CycleUpdate>
+    <PostCycleUpdate>{90b7044a-2e63-4938-bc37-0256d803c4f4}</PostCycleUpdate>
+  </Task>
+</TcPlcObject>
