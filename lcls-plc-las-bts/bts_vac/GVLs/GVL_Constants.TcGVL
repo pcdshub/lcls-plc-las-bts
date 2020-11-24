@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL_Constants" Id="{d11ce1ce-67df-4050-b028-330096f17141}">
     <Declaration><![CDATA[VAR_GLOBAL CONSTANT
 	ATM_PRESS : INT := 760; // Atmospheric pressure in Torr
