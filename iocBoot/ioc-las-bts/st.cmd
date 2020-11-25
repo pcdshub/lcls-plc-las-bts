@@ -5,9 +5,9 @@
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
-epicsEnvSet("IOCNAME", "ioc-bts-vac" )
+epicsEnvSet("IOCNAME", "ioc-las-bts" )
 epicsEnvSet("ENGINEER", "sfsyunus" )
-epicsEnvSet("LOCATION", "PLC:bts_vac" )
+epicsEnvSet("LOCATION", "PLC:las_bts" )
 epicsEnvSet("IOCSH_PS1", "$(IOCNAME)> " )
 
 # Run common startup commands for linux soft IOC's
@@ -55,8 +55,8 @@ adsAsynPortDriverConfigure("$(ASYN_PORT)", "$(IPADDR)", "$(AMSID)", "$(AMS_PORT)
 cd "$(ADS_IOC_TOP)/db"
 
 
-dbLoadRecords("iocSoft.db", "IOC=PLC:bts_vac")
-dbLoadRecords("save_restoreStatus.db", "P=PLC:bts_vac:")
+dbLoadRecords("iocSoft.db", "IOC=PLC:las_bts")
+dbLoadRecords("save_restoreStatus.db", "P=PLC:las_bts:")
 
 cd "$(IOC_TOP)"
 
@@ -68,7 +68,7 @@ cd "$(IOC_TOP)"
 set_savefile_path( "$(IOC_DATA)/$(IOC)/autosave" )
 set_requestfile_path( "$(IOC_TOP)/autosave" )
 
-save_restoreSet_status_prefix( "PLC:bts_vac:" )
+save_restoreSet_status_prefix( "PLC:las_bts:" )
 save_restoreSet_IncompleteSetsOk( 1 )
 save_restoreSet_DatedBackupFiles( 1 )
 set_pass0_restoreFile( "info_positions.sav" )

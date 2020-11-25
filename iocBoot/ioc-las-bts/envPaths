@@ -1,0 +1,2 @@
+epicsEnvSet("IOC_TOP", "/c/Users/sfsyunus/Documents/beam-transport/lcls-plc-las-bts/iocBoot/ioc-las-bts")
+epicsEnvSet("IOC_DATA", "C:\Users\sfsyunus/iocData")

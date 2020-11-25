@@ -6,7 +6,7 @@ PRODUCTION_IOC := 0
 
 PROJECT_NAME := lcls-plc-las-bts
 PROJECT_PATH := ../../lcls-plc-las-bts/lcls-plc-las-bts.tsproj
-PLC := bts_vac
+PLC := las_bts
 
 PYTMC_OPTS := 
 PREFIX := PLC:$(PLC)

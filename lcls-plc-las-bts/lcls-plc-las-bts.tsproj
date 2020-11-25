@@ -40,9 +40,9 @@
 			</Routes>
 		</System>
 		<Plc>
-			<Project GUID="{EAC29CE2-4106-4C9F-BF31-2F7AF9AD94F3}" Name="bts_vac" PrjFilePath="bts_vac\bts_vac.plcproj" TmcFilePath="bts_vac\bts_vac.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+			<Project GUID="{EAC29CE2-4106-4C9F-BF31-2F7AF9AD94F3}" Name="las_bts" PrjFilePath="las_bts\las_bts.plcproj" TmcFilePath="las_bts\las_bts.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
 				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="bts_vac\bts_vac.tmc">
-					<Name>bts_vac Instance</Name>
+					<Name>las_bts Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
@@ -1072,7 +1072,7 @@
 		</Io>
 	</Project>
 	<Mappings>
-		<OwnerA Name="TIPC^bts_vac^bts_vac Instance">
+		<OwnerA Name="TIPC^las_bts^las_bts Instance">
 			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL1124_01_06">
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS1_GCC.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS1_GCC.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
