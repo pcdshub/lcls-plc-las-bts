@@ -20,11 +20,8 @@
 			</Format>
 		</DataType>
 	</DataTypes>
-	<Project ProjectGUID="{1CC01732-1234-43E4-A951-74578F6FE584}" Target64Bit="true" ShowHideConfigurations="#x106">
+	<Project ProjectGUID="{1CC01732-1234-43E4-A951-74578F6FE584}" TargetNetId="172.21.35.49.1.1" ShowHideConfigurations="#x106">
 		<System>
-			<Settings MaxCpus="8" NonWinCpus="1">
-				<Cpu CpuId="7"/>
-			</Settings>
 			<Licenses>
 				<Target>
 					<ManualSelect>{D59230D3-7C55-4138-859C-234C1C6CFDA8}</ManualSelect>
