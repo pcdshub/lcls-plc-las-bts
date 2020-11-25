@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <DUT Name="ST_SBPumpStatuses" Id="{124a320c-8dda-4114-baf5-16158bec1af2}">
     <Declaration><![CDATA[(* Statuses of the pumps for the switchbox *)
 TYPE ST_SBPumpStatuses :
 STRUCT
 	// Pump statuses
-	bRoughingPumpOn : BOOL; // LXLHN:PP:PMF
-	bTurboPumpOn : BOOL; // LXLHN:PP:PTM
-	bIonPumpOn : BOOL; // LXLHN:PP:PIP
+	bRoughingPumpOn : BOOL; // LXLHN:PMF:01
+	bTurboPumpOn : BOOL; // LXLHN:PTM:01
+	bIonPumpOn : BOOL; // LXLHN:PIP:01
 END_STRUCT
 END_TYPE
 ]]></Declaration>

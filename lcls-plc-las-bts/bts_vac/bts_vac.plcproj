@@ -255,6 +255,11 @@
       <Namespace>PMPS</Namespace>
     </LibraryReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bts_vac.tmc">
+      <SubType>Content</SubType>
+    </None>
+  </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
