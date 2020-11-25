@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.0">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="F_GetSBValveStatuses" Id="{72b0c37a-5830-4ca1-849f-a410d971477c}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION F_GetSBValveStatuses : ST_SBValveStatuses
 VAR_INPUT
@@ -10,16 +10,13 @@ VAR
 		bVentValveOpen:= GVL_BTS_VAC.fb_PP_VVC.M_IsOpen(), 
 		bORingPumpValveOpen:= GVL_BTS_VAC.fb_PP_VRC_1.iq_stValve.eState = E_ValvePositionState.OPEN, 
 		bForelineValveOpen:= GVL_BTS_VAC.fb_PP_VRC_2.iq_stValve.eState = E_ValvePositionState.OPEN, 
-		bSBVentOpen:= NOT GVL_BTS_VAC.st_VP_VVC_1.xCLS_DO, 
+		bSBVentOpen:= GVL_BTS_VAC.fb_VP_VVC_1.q_xOPN_DO, 
 		bSlowPumpValveOpen:= GVL_BTS_VAC.fb_PP_VRC_3.iq_stValve.eState = E_ValvePositionState.OPEN, 
-		bSBSlowVentOpen:= NOT GVL_BTS_VAC.st_VP_VVC_2.xCLS_DO);
+		bSBSlowVentOpen:= GVL_BTS_VAC.fb_VP_VVC_2.q_xOPN_DO);
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[F_GetSBValveStatuses := stStatus;]]></ST>
     </Implementation>
-    <LineIds Name="F_GetSBValveStatuses">
-      <LineId Id="7" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

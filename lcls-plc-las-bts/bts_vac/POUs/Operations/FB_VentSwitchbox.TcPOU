@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.17">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_VentSwitchbox" Id="{cc05ccf2-f224-45e9-ae68-6a84af39253c}" SpecialFunc="None">
     <Declaration><![CDATA[(* Operation for venting the switchbox *)
 FUNCTION_BLOCK FB_VentSwitchbox EXTENDS FB_Operation
@@ -122,7 +122,7 @@ E_OpStep.VSB_TURN_OFF_PUMPS:
 	GVL_BTS_VAC.fb_PP_PMF.M_Run(FALSE);
 	GVL_BTS_VAC.fb_PP_PIP.M_Run(FALSE);
 	
-	IF GVL_BTS_VAC.fb_PP_PMF.q_stPump.eState = E_PumpState.pumpSTOPPED AND NOT GVL_BTS_VAC.fb_PP_PIP.stPump.i_xSP_DI THEN
+	IF GVL_BTS_VAC.fb_PP_PMF.q_stPump.eState = E_PumpState.pumpSTOPPED AND NOT GVL_BTS_VAC.fb_PP_PIP.i_xSP_DI THEN
 		M_ResetTimeoutTimer();
 		M_SetMessage('Closing O-Ring valve');
 		eStep := E_OpStep.VSB_CLOSE_ORING_VALVE;
@@ -144,7 +144,7 @@ E_OpStep.VSB_VENT:
 	M_RunTimeoutTimer(VENT_TIMEOUT);
 		
 	// Open switchbox vent
-	GVL_BTS_VAC.fb_VP_VVC_1.M_Close(FALSE);
+	GVL_BTS_VAC.fb_VP_VVC_1.M_Open(TRUE);
 	
 	// Vent until atmospheric pressure reached in the switchbox
 	IF F_Atm(GVL_BTS_VAC.fb_DP_GPI.PG.rPRESS) THEN
@@ -154,7 +154,7 @@ E_OpStep.VSB_VENT:
 	
 
 E_OpStep.VSB_CLOSE_VENT:
-	GVL_BTS_VAC.fb_VP_VVC_1.M_Close(TRUE);
+	GVL_BTS_VAC.fb_VP_VVC_1.M_Open(FALSE);
 	// How to verfiy the vent is closed?
 	eStep := E_OpStep.VSB_FINISH;
 	
@@ -175,75 +175,5 @@ ELSE
 	M_FatalError('Operation is in invalid state');
 END_CASE]]></ST>
     </Implementation>
-    <LineIds Name="FB_VentSwitchbox">
-      <LineId Id="9" Count="0" />
-      <LineId Id="38" Count="0" />
-      <LineId Id="37" Count="0" />
-      <LineId Id="652" Count="1" />
-      <LineId Id="39" Count="0" />
-      <LineId Id="42" Count="0" />
-      <LineId Id="504" Count="1" />
-      <LineId Id="102" Count="0" />
-      <LineId Id="43" Count="1" />
-      <LineId Id="95" Count="1" />
-      <LineId Id="94" Count="0" />
-      <LineId Id="45" Count="0" />
-      <LineId Id="103" Count="0" />
-      <LineId Id="506" Count="0" />
-      <LineId Id="292" Count="0" />
-      <LineId Id="41" Count="0" />
-      <LineId Id="111" Count="0" />
-      <LineId Id="109" Count="0" />
-      <LineId Id="297" Count="0" />
-      <LineId Id="299" Count="0" />
-      <LineId Id="303" Count="0" />
-      <LineId Id="302" Count="0" />
-      <LineId Id="304" Count="2" />
-      <LineId Id="507" Count="0" />
-      <LineId Id="308" Count="0" />
-      <LineId Id="307" Count="0" />
-      <LineId Id="309" Count="2" />
-      <LineId Id="300" Count="1" />
-      <LineId Id="116" Count="0" />
-      <LineId Id="312" Count="2" />
-      <LineId Id="508" Count="0" />
-      <LineId Id="316" Count="0" />
-      <LineId Id="315" Count="0" />
-      <LineId Id="317" Count="1" />
-      <LineId Id="122" Count="0" />
-      <LineId Id="319" Count="0" />
-      <LineId Id="123" Count="0" />
-      <LineId Id="117" Count="1" />
-      <LineId Id="320" Count="1" />
-      <LineId Id="323" Count="0" />
-      <LineId Id="509" Count="0" />
-      <LineId Id="325" Count="0" />
-      <LineId Id="324" Count="0" />
-      <LineId Id="326" Count="6" />
-      <LineId Id="119" Count="0" />
-      <LineId Id="333" Count="0" />
-      <LineId Id="510" Count="0" />
-      <LineId Id="335" Count="0" />
-      <LineId Id="334" Count="0" />
-      <LineId Id="336" Count="2" />
-      <LineId Id="125" Count="3" />
-      <LineId Id="343" Count="0" />
-      <LineId Id="339" Count="0" />
-      <LineId Id="342" Count="0" />
-      <LineId Id="340" Count="1" />
-      <LineId Id="113" Count="0" />
-      <LineId Id="131" Count="0" />
-      <LineId Id="130" Count="0" />
-      <LineId Id="142" Count="0" />
-      <LineId Id="432" Count="0" />
-      <LineId Id="143" Count="2" />
-      <LineId Id="189" Count="4" />
-      <LineId Id="199" Count="4" />
-      <LineId Id="146" Count="0" />
-      <LineId Id="582" Count="0" />
-      <LineId Id="584" Count="0" />
-      <LineId Id="583" Count="0" />
-      <LineId Id="40" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

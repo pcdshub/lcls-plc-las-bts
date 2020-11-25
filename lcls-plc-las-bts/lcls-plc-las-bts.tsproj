@@ -50,14 +50,14 @@
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>L2SI_Vacuum_Library.Global_Variables.g_stSystem.I_EcatMaster1</Name>
+							<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
 							<Comment>
 								<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
 							</Comment>
 							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 						</Var>
 						<Var>
-							<Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
+							<Name>LCLS_Vacuum.Global_Variables.g_stSystem.I_EcatMaster1</Name>
 							<Comment>
 								<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
 							</Comment>
@@ -155,7 +155,7 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_PP_PIP.i_xSP_DI</Name>
 							<Comment>
-								<![CDATA[ NO contact // 'TcLinkTo' (EL1004) ^Input]]>
+								<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -240,7 +240,7 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_LS1_PIP.i_xSP_DI</Name>
 							<Comment>
-								<![CDATA[ NO contact // 'TcLinkTo' (EL1004) ^Input]]>
+								<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -290,7 +290,7 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_LS5_PIP.i_xSP_DI</Name>
 							<Comment>
-								<![CDATA[ NO contact // 'TcLinkTo' (EL1004) ^Input]]>
+								<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -340,7 +340,7 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_LS8_PIP.i_xSP_DI</Name>
 							<Comment>
-								<![CDATA[ NO contact // 'TcLinkTo' (EL1004) ^Input]]>
+								<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -390,7 +390,7 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_LD2_PIP.i_xSP_DI</Name>
 							<Comment>
-								<![CDATA[ NO contact // 'TcLinkTo' (EL1004) ^Input]]>
+								<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -440,7 +440,7 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_LD4_PIP.i_xSP_DI</Name>
 							<Comment>
-								<![CDATA[ NO contact // 'TcLinkTo' (EL1004) ^Input]]>
+								<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -490,7 +490,7 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_LD6_PIP.i_xSP_DI</Name>
 							<Comment>
-								<![CDATA[ NO contact // 'TcLinkTo' (EL1004) ^Input]]>
+								<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -523,100 +523,50 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD14_VGC.i_xOpnLS</Name>
+							<Name>GVL_BTS_VAC.fb_LD8_VGC.i_xOpnLS</Name>
 							<Comment>
 								<![CDATA[IO]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD14_VGC.i_xClsLS</Name>
+							<Name>GVL_BTS_VAC.fb_LD8_VGC.i_xClsLS</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD14_PIP.i_iPRESS</Name>
+							<Name>GVL_BTS_VAC.fb_LD8_PIP.i_iPRESS</Name>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD14_PIP.i_xSP_DI</Name>
+							<Name>GVL_BTS_VAC.fb_LD8_PIP.i_xSP_DI</Name>
 							<Comment>
-								<![CDATA[ NO contact // 'TcLinkTo' (EL1004) ^Input]]>
+								<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD14_GPI.i_iPRESS_R</Name>
+							<Name>GVL_BTS_VAC.fb_LD8_GPI.i_iPRESS_R</Name>
 							<Comment>
 								<![CDATA[ input Pressure // Link to analog Input]]>
 							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD14_GCC.i_iPRESS_R</Name>
+							<Name>GVL_BTS_VAC.fb_LD8_GCC.i_iPRESS_R</Name>
 							<Comment>
 								<![CDATA[ Controls and I/Os]]>
 							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD14_GCC.i_xHV_ON</Name>
+							<Name>GVL_BTS_VAC.fb_LD8_GCC.i_xHV_ON</Name>
 							<Comment>
 								<![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD14_GCC.i_xDisc_Active</Name>
-							<Comment>
-								<![CDATA[ Discharge Current Active // 'TcLinkTo' (EL1124) ^Input]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD10_VGC.i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD10_VGC.i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD10_PIP.i_iPRESS</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD10_PIP.i_xSP_DI</Name>
-							<Comment>
-								<![CDATA[ NO contact // 'TcLinkTo' (EL1004) ^Input]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD10_GPI.i_iPRESS_R</Name>
-							<Comment>
-								<![CDATA[ input Pressure // Link to analog Input]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD10_GCC.i_iPRESS_R</Name>
-							<Comment>
-								<![CDATA[ Controls and I/Os]]>
-							</Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD10_GCC.i_xHV_ON</Name>
-							<Comment>
-								<![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD10_GCC.i_xDisc_Active</Name>
+							<Name>GVL_BTS_VAC.fb_LD8_GCC.i_xDisc_Active</Name>
 							<Comment>
 								<![CDATA[ Discharge Current Active // 'TcLinkTo' (EL1124) ^Input]]>
 							</Comment>
@@ -640,7 +590,7 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_LD9_PIP.i_xSP_DI</Name>
 							<Comment>
-								<![CDATA[ NO contact // 'TcLinkTo' (EL1004) ^Input]]>
+								<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -673,50 +623,100 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD8_VGC.i_xOpnLS</Name>
+							<Name>GVL_BTS_VAC.fb_LD10_VGC.i_xOpnLS</Name>
 							<Comment>
 								<![CDATA[IO]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD8_VGC.i_xClsLS</Name>
+							<Name>GVL_BTS_VAC.fb_LD10_VGC.i_xClsLS</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD8_PIP.i_iPRESS</Name>
+							<Name>GVL_BTS_VAC.fb_LD10_PIP.i_iPRESS</Name>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD8_PIP.i_xSP_DI</Name>
+							<Name>GVL_BTS_VAC.fb_LD10_PIP.i_xSP_DI</Name>
 							<Comment>
-								<![CDATA[ NO contact // 'TcLinkTo' (EL1004) ^Input]]>
+								<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD8_GPI.i_iPRESS_R</Name>
+							<Name>GVL_BTS_VAC.fb_LD10_GPI.i_iPRESS_R</Name>
 							<Comment>
 								<![CDATA[ input Pressure // Link to analog Input]]>
 							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD8_GCC.i_iPRESS_R</Name>
+							<Name>GVL_BTS_VAC.fb_LD10_GCC.i_iPRESS_R</Name>
 							<Comment>
 								<![CDATA[ Controls and I/Os]]>
 							</Comment>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD8_GCC.i_xHV_ON</Name>
+							<Name>GVL_BTS_VAC.fb_LD10_GCC.i_xHV_ON</Name>
 							<Comment>
 								<![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD8_GCC.i_xDisc_Active</Name>
+							<Name>GVL_BTS_VAC.fb_LD10_GCC.i_xDisc_Active</Name>
+							<Comment>
+								<![CDATA[ Discharge Current Active // 'TcLinkTo' (EL1124) ^Input]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD14_VGC.i_xOpnLS</Name>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD14_VGC.i_xClsLS</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD14_PIP.i_iPRESS</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD14_PIP.i_xSP_DI</Name>
+							<Comment>
+								<![CDATA[ NO contact //function of relay set on the QPC to HV output state]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD14_GPI.i_iPRESS_R</Name>
+							<Comment>
+								<![CDATA[ input Pressure // Link to analog Input]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD14_GCC.i_iPRESS_R</Name>
+							<Comment>
+								<![CDATA[ Controls and I/Os]]>
+							</Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD14_GCC.i_xHV_ON</Name>
+							<Comment>
+								<![CDATA[  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD14_GCC.i_xDisc_Active</Name>
 							<Comment>
 								<![CDATA[ Discharge Current Active // 'TcLinkTo' (EL1124) ^Input]]>
 							</Comment>
@@ -753,14 +753,14 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_VP_VVC_1.xCLS_DO</Name>
+							<Name>GVL_BTS_VAC.fb_VP_VVC_1.q_xOPN_DO</Name>
 							<Comment>
 								<![CDATA[IO]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_VP_VVC_2.xCLS_DO</Name>
+							<Name>GVL_BTS_VAC.fb_VP_VVC_2.q_xOPN_DO</Name>
 							<Comment>
 								<![CDATA[IO]]>
 							</Comment>
@@ -769,7 +769,7 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_PP_PTM.q_RunDO</Name>
 							<Comment>
-								<![CDATA[ Start/Stop]]>
+								<![CDATA[ Start/Stop for TC110 link this output to the Pumping station bit]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -782,6 +782,10 @@
 						</Var>
 						<Var>
 							<Name>GVL_BTS_VAC.fb_PP_PTM.q_xRemote</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_PP_PTM.q_xReset</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -809,14 +813,14 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_PP_GCC.q_xHV_DIS</Name>
 							<Comment>
-								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EL2624) ^Output]]>
+								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>GVL_BTS_VAC.fb_DP_GCC.q_xHV_DIS</Name>
 							<Comment>
-								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EL2624) ^Output]]>
+								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -838,7 +842,7 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_LS1_GCC.q_xHV_DIS</Name>
 							<Comment>
-								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EL2624) ^Output]]>
+								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -860,7 +864,7 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_LS5_GCC.q_xHV_DIS</Name>
 							<Comment>
-								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EL2624) ^Output]]>
+								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -882,7 +886,7 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_LS8_GCC.q_xHV_DIS</Name>
 							<Comment>
-								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EL2624) ^Output]]>
+								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -904,7 +908,7 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_LD2_GCC.q_xHV_DIS</Name>
 							<Comment>
-								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EL2624) ^Output]]>
+								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -926,7 +930,7 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_LD4_GCC.q_xHV_DIS</Name>
 							<Comment>
-								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EL2624) ^Output]]>
+								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -948,73 +952,7 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_LD6_GCC.q_xHV_DIS</Name>
 							<Comment>
-								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EL2624) ^Output]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD14_VGC_FFOut.q_xFastFaultOut</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD14_VGC.q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD14_PIP.q_xHVEna_DO</Name>
-							<Comment>
-								<![CDATA[ Enable High Voltage when TRUE]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD14_GCC.q_xHV_DIS</Name>
-							<Comment>
-								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EL2624) ^Output]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD10_VGC_FFOut.q_xFastFaultOut</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD10_VGC.q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD10_PIP.q_xHVEna_DO</Name>
-							<Comment>
-								<![CDATA[ Enable High Voltage when TRUE]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD10_GCC.q_xHV_DIS</Name>
-							<Comment>
-								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EL2624) ^Output]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD9_VGC_FFOut.q_xFastFaultOut</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD9_VGC.q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD9_PIP.q_xHVEna_DO</Name>
-							<Comment>
-								<![CDATA[ Enable High Voltage when TRUE]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD9_GCC.q_xHV_DIS</Name>
-							<Comment>
-								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EL2624) ^Output]]>
+								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -1036,7 +974,73 @@
 						<Var>
 							<Name>GVL_BTS_VAC.fb_LD8_GCC.q_xHV_DIS</Name>
 							<Comment>
-								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EL2624) ^Output]]>
+								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD9_VGC_FFOut.q_xFastFaultOut</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD9_VGC.q_xOPN_DO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD9_PIP.q_xHVEna_DO</Name>
+							<Comment>
+								<![CDATA[ Enable High Voltage when TRUE]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD9_GCC.q_xHV_DIS</Name>
+							<Comment>
+								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD10_VGC_FFOut.q_xFastFaultOut</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD10_VGC.q_xOPN_DO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD10_PIP.q_xHVEna_DO</Name>
+							<Comment>
+								<![CDATA[ Enable High Voltage when TRUE]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD10_GCC.q_xHV_DIS</Name>
+							<Comment>
+								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD14_VGC_FFOut.q_xFastFaultOut</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD14_VGC.q_xOPN_DO</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD14_PIP.q_xHVEna_DO</Name>
+							<Comment>
+								<![CDATA[ Enable High Voltage when TRUE]]>
+							</Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_BTS_VAC.fb_LD14_GCC.q_xHV_DIS</Name>
+							<Comment>
+								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
@@ -1048,7 +1052,7 @@
 							<Comment>
 								<![CDATA[ Any time BPTM applies a new BP request which is confirmed]]>
 							</Comment>
-							<Type>ULINT</Type>
+							<Type>UDINT</Type>
 							<InOut>7</InOut>
 						</Var>
 						<Var>
@@ -1056,7 +1060,7 @@
 							<Comment>
 								<![CDATA[ Any time a FF occurs]]>
 							</Comment>
-							<Type>ULINT</Type>
+							<Type>UDINT</Type>
 							<InOut>7</InOut>
 						</Var>
 					</Vars>
@@ -1070,4 +1074,250 @@
 			<Device File="EtherCAT1.xti" Id="1"/>
 		</Io>
 	</Project>
+	<Mappings>
+		<OwnerA Name="TIPC^bts_vac^bts_vac Instance">
+			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL1124_01_06">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS1_GCC.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS1_GCC.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_GCC.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_GCC.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL1124_01_07">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_DP_GCC.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_DP_GCC.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD2_GCC.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD2_GCC.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL1124_01_08">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD8_GCC.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD8_GCC.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL2624_01_01">
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD8_GCC.q_xHV_DIS" VarB="Channel 4^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL2624_01_02">
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_DP_GCC.q_xHV_DIS" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD2_GCC.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LS1_GCC.q_xHV_DIS" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_PP_GCC.q_xHV_DIS" VarB="Channel 2^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL3174_01_09">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_DP_GCC.i_iPRESS_R" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD2_GCC.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS1_GCC.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_GCC.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL3174_01_10">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_DP_GPI.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD2_GPI.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS1_GPI.i_iPRESS_R" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_GPI_1.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL3174_01_11">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD8_GCC.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD8_GPI.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_GPI_2.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL1002_02_01">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_VRC_1.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_VRC_1.i_xOpnLS" VarB="Channel 2^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL1002_02_02">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_VRC_2.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_VRC_2.i_xOpnLS" VarB="Channel 2^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL1002_02_03">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_VRC_3.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_VRC_3.i_xOpnLS" VarB="Channel 2^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL1004_02_06">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD9_VGC.i_xClsLS" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD9_VGC.i_xOpnLS" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS1_VGC.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS1_VGC.i_xOpnLS" VarB="Channel 2^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL1004_02_07">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD10_VGC.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD10_VGC.i_xOpnLS" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD8_VGC.i_xClsLS" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD8_VGC.i_xOpnLS" VarB="Channel 4^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL1004_02_09">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS5_VGC.i_xClsLS" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS5_VGC.i_xOpnLS" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS8_VGC.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS8_VGC.i_xOpnLS" VarB="Channel 2^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL1004_02_10">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD14_VGC.i_xClsLS" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD14_VGC.i_xOpnLS" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD4_VGC.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD4_VGC.i_xOpnLS" VarB="Channel 2^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL1004_02_12">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD2_VGC.i_xClsLS" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD2_VGC.i_xOpnLS" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_VGC.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_VGC.i_xOpnLS" VarB="Channel 2^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL1004_02_13">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD6_VGC.i_xClsLS" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD6_VGC.i_xOpnLS" VarB="Channel 4^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL2004_02_04">
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_PP_VRC_1.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_PP_VRC_2.q_xOPN_DO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_PP_VRC_3.q_xOPN_DO" VarB="Channel 4^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL2004_02_05">
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_PP_VVC.q_xOPN_DO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_VP_VVC_1.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_VP_VVC_2.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL2004_02_08">
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD10_VGC.q_xOPN_DO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD8_VGC.q_xOPN_DO" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD9_VGC.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LS1_VGC.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL2004_02_11">
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD14_VGC.q_xOPN_DO" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD4_VGC.q_xOPN_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LS5_VGC.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LS8_VGC.q_xOPN_DO" VarB="Channel 3^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL2004_02_14">
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD2_VGC.q_xOPN_DO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD6_VGC.q_xOPN_DO" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_PP_VGC.q_xOPN_DO" VarB="Channel 2^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_03_00^EL1124_03_06">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD9_GCC.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD9_GCC.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_03_00^EL1124_03_07">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD10_GCC.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD10_GCC.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD14_GCC.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD14_GCC.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_03_00^EL1124_03_08">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS5_GCC.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS5_GCC.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS8_GCC.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS8_GCC.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_03_00^EL1124_03_09">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD4_GCC.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD4_GCC.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD6_GCC.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD6_GCC.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_03_00^EL2624_03_01">
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD10_GCC.q_xHV_DIS" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD14_GCC.q_xHV_DIS" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD9_GCC.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_03_00^EL2624_03_02">
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD4_GCC.q_xHV_DIS" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD6_GCC.q_xHV_DIS" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LS5_GCC.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LS8_GCC.q_xHV_DIS" VarB="Channel 2^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_03_00^EL3174_03_10">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD10_GCC.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD14_GCC.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD9_GCC.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_03_00^EL3174_03_11">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD4_GCC.i_iPRESS_R" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD6_GCC.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS5_GCC.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS8_GCC.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_03_00^EL3174_03_12">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD10_GPI.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD14_GPI.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD9_GPI.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_03_00^EL3174_03_13">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD4_GPI.i_iPRESS_R" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD6_GPI.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS5_GPI.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS8_GPI.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL1004_00_01">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PMF.i_xAlarm" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PMF.i_xIsRun" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PMF.i_xLocal" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PMF.i_xWarning" VarB="Channel 4^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL1004_00_03">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PTM.i_xAtSpd" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PTM.i_xFaultNC" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PTM.i_xRemote" VarB="Channel 2^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL1004_00_07">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD2_PIP.i_xSP_DI" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD8_PIP.i_xSP_DI" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS1_PIP.i_xSP_DI" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PIP.i_xSP_DI" VarB="Channel 3^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL1004_00_10">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD4_PIP.i_xSP_DI" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD6_PIP.i_xSP_DI" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS5_PIP.i_xSP_DI" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS8_PIP.i_xSP_DI" VarB="Channel 3^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL1004_00_13">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD10_PIP.i_xSP_DI" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD14_PIP.i_xSP_DI" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD9_PIP.i_xSP_DI" VarB="Channel 2^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL2004_00_04">
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_PP_PTM.q_PumpingStation" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_PP_PTM.q_RunDO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_PP_PTM.q_xRemote" VarB="Channel 2^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL2794_00_02">
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_PP_PMF.q_xLspdDo" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_PP_PMF.q_xResetDo" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_PP_PMF.q_xRunDO" VarB="Channel 1^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL2794_00_06">
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD2_PIP.q_xHVEna_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD8_PIP.q_xHVEna_DO" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LS1_PIP.q_xHVEna_DO" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_PP_PIP.q_xHVEna_DO" VarB="Channel 3^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL2794_00_09">
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD4_PIP.q_xHVEna_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD6_PIP.q_xHVEna_DO" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LS5_PIP.q_xHVEna_DO" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LS8_PIP.q_xHVEna_DO" VarB="Channel 3^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL2794_00_12">
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD10_PIP.q_xHVEna_DO" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD14_PIP.q_xHVEna_DO" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD9_PIP.q_xHVEna_DO" VarB="Channel 2^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL3064_00_08">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD2_PIP.i_iPRESS" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD8_PIP.i_iPRESS" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS1_PIP.i_iPRESS" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PIP.i_iPRESS" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL3064_00_11">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD4_PIP.i_iPRESS" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD6_PIP.i_iPRESS" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS5_PIP.i_iPRESS" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS8_PIP.i_iPRESS" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL3064_00_14">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD10_PIP.i_iPRESS" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD14_PIP.i_iPRESS" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD9_PIP.i_iPRESS" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
 </TcSmProject>
