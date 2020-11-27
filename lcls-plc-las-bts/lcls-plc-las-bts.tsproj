@@ -24,6 +24,7 @@
 		<System>
 			<Licenses>
 				<Target>
+					<ManualSelect>{3EBB9639-5FF3-42B6-8847-35C70DC013C8}</ManualSelect>
 					<ManualSelect>{D59230D3-7C55-4138-859C-234C1C6CFDA8}</ManualSelect>
 				</Target>
 			</Licenses>
