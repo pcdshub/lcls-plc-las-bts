@@ -122,10 +122,10 @@ VAR_GLOBAL
 	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_10]^AI Standard Channel 4^Value '}
 	fb_LS1_GPI : FB_MKS275; // Input tube LS1 ATM gauge
 	{attribute 'pytmc' 	  :=	' pv: LTLHN:LS1:GCC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_09]^AI Standard Channel 3^Value;
-								 .i_xHV_ON	    	:=	TIIB[EL1124_01_06]^Channel 3^Input;
-								 .i_xDisc_Active	:=	TIIB[EL1124_01_06]^Channel 4^Input;
-								 .q_xHV_DIS			:= 	TIIB[EL2624_01_02]^Channel 3^Output	'}
+	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_10]^AI Standard Channel 4^Value;
+								 .i_xHV_ON	    	:=	TIIB[EL1124_03_06]^Channel 3^Input;
+								 .i_xDisc_Active	:=	TIIB[EL1124_03_06]^Channel 4^Input;
+								 .q_xHV_DIS			:= 	TIIB[EL2624_03_01]^Channel 4^Output	'}
 	fb_LS1_GCC : FB_MKS500; // Input tube LS1, Cold Cathode gauge
 	
 	// LS5
@@ -257,7 +257,7 @@ VAR_GLOBAL
 	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_11]^AI Standard Channel 3^Value;
 								 .i_xHV_ON	    	:=	TIIB[EL1124_01_08]^Channel 1^Input;
 								 .i_xDisc_Active	:=	TIIB[EL1124_01_08]^Channel 2^Input;
-								 .q_xHV_DIS			:= 	TIIB[EL2624_01_01]^Channel 4^Output	'}
+								 .q_xHV_DIS			:= 	TIIB[EL2624_01_01]^Channel 1^Output	'}
 	fb_LD8_GCC : FB_MKS500; // Output tube LD8, Cold Cathode gauge
 	
 	// LD9

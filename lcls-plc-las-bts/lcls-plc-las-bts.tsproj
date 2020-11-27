@@ -20,7 +20,7 @@
 			</Format>
 		</DataType>
 	</DataTypes>
-	<Project ProjectGUID="{1CC01732-1234-43E4-A951-74578F6FE584}" TargetNetId="172.21.35.49.1.1" ShowHideConfigurations="#x106">
+	<Project ProjectGUID="{1CC01732-1234-43E4-A951-74578F6FE584}" TargetNetId="172.21.35.49.1.1" RelativeTargetNetId="true" RelativeIpAddresses="true" ShowHideConfigurations="#x106">
 		<System>
 			<Licenses>
 				<Target>
@@ -41,7 +41,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{EAC29CE2-4106-4C9F-BF31-2F7AF9AD94F3}" Name="las_bts" PrjFilePath="las_bts\las_bts.plcproj" TmcFilePath="las_bts\las_bts.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="bts_vac\bts_vac.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="las_bts\las_bts.tmc">
 					<Name>las_bts Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -1072,10 +1072,9 @@
 		</Io>
 	</Project>
 	<Mappings>
+		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^las_bts^las_bts Instance">
 			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL1124_01_06">
-				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS1_GCC.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS1_GCC.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_GCC.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_GCC.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
@@ -1090,18 +1089,16 @@
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD8_GCC.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL2624_01_01">
-				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD8_GCC.q_xHV_DIS" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD8_GCC.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL2624_01_02">
 				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_DP_GCC.q_xHV_DIS" VarB="Channel 4^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD2_GCC.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LS1_GCC.q_xHV_DIS" VarB="Channel 3^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_PP_GCC.q_xHV_DIS" VarB="Channel 2^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL3174_01_09">
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_DP_GCC.i_iPRESS_R" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD2_GCC.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS1_GCC.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_GCC.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL3174_01_10">
@@ -1191,6 +1188,8 @@
 			<OwnerB Name="TIID^EtherCAT1^EK1100_03_00^EL1124_03_06">
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD9_GCC.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD9_GCC.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS1_GCC.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS1_GCC.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1100_03_00^EL1124_03_07">
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD10_GCC.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
@@ -1214,6 +1213,7 @@
 				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD10_GCC.q_xHV_DIS" VarB="Channel 2^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD14_GCC.q_xHV_DIS" VarB="Channel 3^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD9_GCC.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LS1_GCC.q_xHV_DIS" VarB="Channel 4^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1100_03_00^EL2624_03_02">
 				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD4_GCC.q_xHV_DIS" VarB="Channel 4^Output" AutoLink="true"/>
@@ -1225,6 +1225,7 @@
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD10_GCC.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD14_GCC.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD9_GCC.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS1_GCC.i_iPRESS_R" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1100_03_00^EL3174_03_11">
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD4_GCC.i_iPRESS_R" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
