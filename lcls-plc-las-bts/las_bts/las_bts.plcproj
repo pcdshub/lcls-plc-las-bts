@@ -18,45 +18,6 @@
     <LibraryReferences>{dd36624e-f227-401d-9f04-428fdb350b4b}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DUTs\E_TransportTube.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\Operations\E_Op.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\Operations\E_OpStep.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\ST_TransportTubeConfig.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\ST_TransportTubeDevices.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\SystemStatusChecks\E_GaugeCompOp.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\SystemStatusChecks\Switchbox\ST_SBGaugeReadings.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\SystemStatusChecks\Switchbox\ST_SBGaugeReadingsOp.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\SystemStatusChecks\Switchbox\ST_SBPumpStatuses.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\SystemStatusChecks\Switchbox\ST_SBValveStatuses.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\SystemStatusChecks\TransportTubes\ST_TransportTubeOps.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\SystemStatusChecks\TransportTubes\ST_TransportTubeStatuses.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\T_TransportTube.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="GVLs\GVL_BTS_VAC.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
@@ -65,144 +26,28 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
-    <Compile Include="GVLs\GVL_MaintainLaser.TcGVL">
-      <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
-    </Compile>
-    <Compile Include="GVLs\GVL_Operation.TcGVL">
-      <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
-    </Compile>
-    <Compile Include="GVLs\GVL_TransportTubes.TcGVL">
-      <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
-    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_TransportTube.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\F_UpdateIO.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Helpers\F_Atm.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Helpers\F_GetTransportTube.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Helpers\F_PumpStationTurboPumpInterlock.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Helpers\F_SBVentInterlock.TcPOU">
+    <Compile Include="POUs\DIAGNOSTICS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\MaintainLaser.TcPOU">
+    <Compile Include="POUs\PRG_GAUGES.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Operate.TcPOU">
+    <Compile Include="POUs\PRG_PUMPS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Operations\Abstracts\FB_MaintainLaserOperation.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Operations\Abstracts\FB_Operation.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Operations\Abstracts\FB_TTOperation.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Operations\FB_LaserOn.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Operations\FB_OpenTransportTube.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Operations\FB_SlowPumpSwitchbox.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Operations\FB_SlowVentSwitchbox.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Operations\FB_VentTransportTube.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Operations\FB_VentPumpStation.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Operations\FB_PumpSwitchbox.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Operations\FB_VentSwitchbox.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Operations\FB_PumpTransportTube.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Operations\MaintainLaser\FB_SwitchboxIonPumpFailure.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Operations\MaintainLaser\FB_SwitchboxRoughingOrTurboPumpFailure.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\SystemStatusChecks\F_CompareGauge.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\SystemStatusChecks\Switchbox\F_GetSBGaugeReadings.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\SystemStatusChecks\Switchbox\F_GetSBPumpStatuses.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\SystemStatusChecks\Switchbox\F_GetSBValveStatuses.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\SystemStatusChecks\Switchbox\F_SetSBPumpStatuses.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\SystemStatusChecks\Switchbox\F_SetSBValveStatuses.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\SystemStatusChecks\Switchbox\F_VerifySBGaugeReadings.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\SystemStatusChecks\Switchbox\F_VerifySBPumpStatuses.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\SystemStatusChecks\Switchbox\F_VerifySBValveStatuses.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\SystemStatusChecks\TransportTubes\F_GetTransportTubeStatuses.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\SystemStatusChecks\TransportTubes\F_SetTransportTubeStatuses.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\SystemStatusChecks\TransportTubes\F_VerifyAllTransportTubeStatuses.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\SystemStatusChecks\TransportTubes\F_VerifyTransportTubeStatuses.TcPOU">
+    <Compile Include="POUs\PRG_VALVES.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
-    <Folder Include="DUTs\SystemStatusChecks\TransportTubes" />
-    <Folder Include="DUTs\Operations" />
-    <Folder Include="DUTs\SystemStatusChecks" />
-    <Folder Include="DUTs\SystemStatusChecks\Switchbox" />
     <Folder Include="GVLs" />
-    <Folder Include="POUs\Helpers" />
-    <Folder Include="POUs\Operations\MaintainLaser" />
-    <Folder Include="POUs\Operations" />
-    <Folder Include="POUs\Operations\Abstracts" />
-    <Folder Include="POUs\SystemStatusChecks" />
-    <Folder Include="POUs\SystemStatusChecks\Switchbox" />
-    <Folder Include="POUs\SystemStatusChecks\TransportTubes" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>

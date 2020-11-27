@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <GVL Name="GVL_BTS_VAC" Id="{29e65882-4122-461a-9001-9faecd304aa4}">
-    <Declaration><![CDATA[{attribute 'qualified_only'}
+    <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
 	(* Valves *)	
 	fb_PP_VGC_FFOut : FB_HardwareFFOutput;

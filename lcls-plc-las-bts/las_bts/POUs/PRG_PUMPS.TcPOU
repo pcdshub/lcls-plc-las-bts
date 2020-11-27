@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_PUMPS" Id="{bd78324c-f63c-467d-a180-8df2bcdb3c2e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_PUMPS
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Switchbox pumps *)
+fb_PP_PMF();
+
+//GVL_BTS_VAC.fb_PP_PTM(i_xExtIlkOK := F_PumpStationTurboPumpInterlock());
+
+fb_PP_PIP(i_stGauge := fb_DP_GCC.IG);
+
+(* Transport Tube pumps *)
+// LS1
+fb_LS1_PIP(i_stGauge := fb_LS1_GCC.IG, stPump=>);
+
+// LS5
+fb_LS5_PIP(i_stGauge := fb_LS5_GCC.IG, stPump=>);
+
+// LS8
+fb_LS8_PIP(i_stGauge := fb_LS8_GCC.IG, stPump=>);
+
+// LD2
+fb_LD2_PIP(i_stGauge := fb_LD2_GCC.IG, stPump=>);
+
+// LD4
+fb_LD4_PIP(i_stGauge := fb_LD4_GCC.IG, stPump=>);
+
+// LD6
+fb_LD6_PIP(i_stGauge := fb_LD6_GCC.IG, stPump=>);
+
+// LD8
+fb_LD8_PIP(i_stGauge := fb_LD8_GCC.IG, stPump=>);
+
+// LD9
+fb_LD9_PIP(i_stGauge := fb_LD9_GCC.IG, stPump=>);
+
+// LD10
+fb_LD10_PIP(i_stGauge := fb_LD10_GCC.IG, stPump=>);
+
+// LD14
+fb_LD14_PIP(i_stGauge := fb_LD14_GCC.IG, stPump=>);
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

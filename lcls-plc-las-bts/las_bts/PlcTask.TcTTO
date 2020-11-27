@@ -7,12 +7,6 @@
     <PouCall>
       <Name>MAIN</Name>
     </PouCall>
-    <PouCall>
-      <Name>Operate</Name>
-    </PouCall>
-    <PouCall>
-      <Name>MaintainLaser</Name>
-    </PouCall>
     <TaskFBGuid>{30dd97d1-89ff-413b-a79f-5c6de3d0e274}</TaskFBGuid>
     <Fb_init>{479cd64e-f131-44b9-abf9-c53c2ad7d582}</Fb_init>
     <Fb_exit>{fbfabea3-2aef-4778-b33e-9568443b91e9}</Fb_exit>

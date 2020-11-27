@@ -31,9 +31,6 @@
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
 				</Task>
-				<Task Id="5" Priority="22" CycleTime="100000" AmsPort="352" AdtTasks="true">
-					<Name>OperateTask</Name>
-				</Task>
 			</Tasks>
 			<Routes>
 				<Route Name="dev_env" Addr="192.168.74.145" NetId="192.168.74.145.1.1" TransType="1"/>
@@ -57,6 +54,20 @@
 							<Name>LCLS_Vacuum.Global_Variables.g_stSystem.I_EcatMaster1</Name>
 							<Comment>
 								<![CDATA[ AMS Net ID used for FB_EcatDiag, among others ]]>
+							</Comment>
+							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+						</Var>
+						<Var>
+							<Name>DIAGNOSTICS.i_sAMSNetID</Name>
+							<Comment>
+								<![CDATA[Link the sAMSNetID to the Etherat Master netID]]>
+							</Comment>
+							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+						</Var>
+						<Var>
+							<Name>DIAGNOSTICS.fbEcatDiag.I_AMSNetId</Name>
+							<Comment>
+								<![CDATA[Link to the AMSNETID name in the ethercat master info.]]>
 							</Comment>
 							<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
 						</Var>

@@ -3,63 +3,23 @@
   <POU Name="MAIN" Id="{e39c3acf-17bf-44fe-a884-c77329dee9c5}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+	fbLogHandler : FB_LogHandler;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[(* Update physical IO signals *)
-F_UpdateIO();
+      <ST><![CDATA[fbLogHandler();
 
-(* Update transport tubes *)
-GVL_TransportTubes.fbLS1(
-	i_stConfig := GVL_TransportTubes.stLS1, 
-	i_bLaserExtIntl := TRUE
-);
+// Run the Diagnostics PRG
+DIAGNOSTICS();
 
-GVL_TransportTubes.fbLS5(
-	i_stConfig := GVL_TransportTubes.stLS5, 
-	i_bLaserExtIntl := TRUE
-);
+// Run the Gauges PRG
+PRG_GAUGES();
 
-GVL_TransportTubes.fbLS8(
-	i_stConfig := GVL_TransportTubes.stLS8, 
-	i_bLaserExtIntl := TRUE
-);
+// Run the Valves PRG
+PRG_VALVES();
 
-GVL_TransportTubes.fbLD2(
-	i_stConfig := GVL_TransportTubes.stLD2,
-	i_bLaserExtIntl := TRUE
-);
-
-GVL_TransportTubes.fbLD4(
-	i_stConfig := GVL_TransportTubes.stLD4,
-	i_bLaserExtIntl := TRUE
-);
-
-GVL_TransportTubes.fbLD6(
-	i_stConfig := GVL_TransportTubes.stLD6,
-	i_bLaserExtIntl := TRUE
-);
-
-GVL_TransportTubes.fbLD14(
-	i_stConfig := GVL_TransportTubes.stLD14,
-	i_bLaserExtIntl := TRUE
-);
-
-GVL_TransportTubes.fbLD10(
-	i_stConfig := GVL_TransportTubes.stLD10,
-	i_bLaserExtIntl := TRUE
-);
-
-GVL_TransportTubes.fbLD9(
-	i_stConfig := GVL_TransportTubes.stLD9,
-	i_bLaserExtIntl := TRUE
-);
-
-GVL_TransportTubes.fbLD8(
-	i_stConfig := GVL_TransportTubes.stLD8,
-	i_bLaserExtIntl := TRUE
-);
-]]></ST>
+// Run the Pumps PRG
+PRG_PUMPS();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
