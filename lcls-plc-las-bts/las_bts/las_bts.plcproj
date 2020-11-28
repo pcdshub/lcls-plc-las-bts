@@ -100,11 +100,6 @@
       <Namespace>PMPS</Namespace>
     </LibraryReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="las_bts.tmc">
-      <SubType>Content</SubType>
-    </None>
-  </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
