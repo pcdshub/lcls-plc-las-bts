@@ -2184,7 +2184,7 @@ record(bi, "LXLHN:VVC:02:OPN_DO_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "LXLHN:VVC:032:OPN_SW_RBV") {
+record(bi, "LXLHN:VVC:03:OPN_SW_RBV") {
   # GVL_BTS_VAC.fb_VP_VVC_2.iq_stValve.pv_xOPN_SW
   field(DESC, "GVL_BTS_VAC.fb_VP_VV...tValve.pv_xOPN_SW")
   field(SCAN, "I/O Intr")
@@ -2197,7 +2197,7 @@ record(bi, "LXLHN:VVC:032:OPN_SW_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "LXLHN:VVC:032:OPN_SW") {
+record(bo, "LXLHN:VVC:03:OPN_SW") {
   # GVL_BTS_VAC.fb_VP_VVC_2.iq_stValve.pv_xOPN_SW
   field(DESC, "GVL_BTS_VAC.fb_VP_VV...tValve.pv_xOPN_SW")
   field(DTYP, "asynInt32")
@@ -2208,7 +2208,7 @@ record(bo, "LXLHN:VVC:032:OPN_SW") {
   info(archive, "VAL")
 }
 
-record(bi, "LXLHN:VVC:032:FORCE_OPN_RBV") {
+record(bi, "LXLHN:VVC:03:FORCE_OPN_RBV") {
   # GVL_BTS_VAC.fb_VP_VVC_2.iq_stValve.xOvrdOpn
   field(DESC, "GVL_BTS_VAC.fb_VP_VV..._stValve.xOvrdOpn")
   field(SCAN, "I/O Intr")
@@ -2221,7 +2221,7 @@ record(bi, "LXLHN:VVC:032:FORCE_OPN_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "LXLHN:VVC:032:FORCE_OPN") {
+record(bo, "LXLHN:VVC:03:FORCE_OPN") {
   # GVL_BTS_VAC.fb_VP_VVC_2.iq_stValve.xOvrdOpn
   field(DESC, "GVL_BTS_VAC.fb_VP_VV..._stValve.xOvrdOpn")
   field(DTYP, "asynInt32")
@@ -2232,7 +2232,7 @@ record(bo, "LXLHN:VVC:032:FORCE_OPN") {
   info(archive, "VAL")
 }
 
-record(bi, "LXLHN:VVC:032:OVRD_ON_RBV") {
+record(bi, "LXLHN:VVC:03:OVRD_ON_RBV") {
   # GVL_BTS_VAC.fb_VP_VVC_2.iq_stValve.xOverrideMode
   field(DESC, "GVL_BTS_VAC.fb_VP_VV...lve.xOverrideMode")
   field(SCAN, "I/O Intr")
@@ -2245,7 +2245,7 @@ record(bi, "LXLHN:VVC:032:OVRD_ON_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "LXLHN:VVC:032:OVRD_ON") {
+record(bo, "LXLHN:VVC:03:OVRD_ON") {
   # GVL_BTS_VAC.fb_VP_VVC_2.iq_stValve.xOverrideMode
   field(DESC, "GVL_BTS_VAC.fb_VP_VV...lve.xOverrideMode")
   field(DTYP, "asynInt32")
@@ -2256,7 +2256,7 @@ record(bo, "LXLHN:VVC:032:OVRD_ON") {
   info(archive, "VAL")
 }
 
-record(bi, "LXLHN:VVC:032:OPN_OK_RBV") {
+record(bi, "LXLHN:VVC:03:OPN_OK_RBV") {
   # GVL_BTS_VAC.fb_VP_VVC_2.iq_stValve.xOPN_OK
   field(DESC, "GVL_BTS_VAC.fb_VP_VV...q_stValve.xOPN_OK")
   field(SCAN, "I/O Intr")
@@ -2269,7 +2269,7 @@ record(bi, "LXLHN:VVC:032:OPN_OK_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "LXLHN:VVC:032:OPN_DO_RBV") {
+record(bi, "LXLHN:VVC:03:OPN_DO_RBV") {
   # GVL_BTS_VAC.fb_VP_VVC_2.iq_stValve.q_xOPN_DO
   field(DESC, "GVL_BTS_VAC.fb_VP_VV...stValve.q_xOPN_DO")
   field(SCAN, "I/O Intr")
