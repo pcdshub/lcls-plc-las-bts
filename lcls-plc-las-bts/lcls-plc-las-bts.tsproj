@@ -2,6 +2,62 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4022.30">
 	<DataTypes>
 		<DataType>
+			<Name GUID="{42B6E6F5-D179-46D5-95D2-6AA2164C358E}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6inData22B</Name>
+			<Comment>
+				<![CDATA[ This data type is corresponding to the
+   KL-6xxx data structure used in the
+   TwinCAT SystemManager
+   (KL-6xxx version using 5 data bytes / 
+    non-alternative (standard) output ) 
+]]>
+			</Comment>
+			<BitSize>192</BitSize>
+			<SubItem>
+				<Name>Status</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>D</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>22</Elements>
+				</ArrayInfo>
+				<BitSize>176</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{93EE68A6-909A-4526-A364-43F10EFB2555}" Namespace="Tc2_SerialCom" AutoDeleteType="true">EL6outData22B</Name>
+			<Comment>
+				<![CDATA[ This data type is corresponding to the
+   KL-6xxx data structure used in the
+   TwinCAT SystemManager
+   (KL-6xxx version using 5 data bytes / 
+    non-alternative (standard) output ) 
+]]>
+			</Comment>
+			<BitSize>192</BitSize>
+			<SubItem>
+				<Name>Ctrl</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>D</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>22</Elements>
+				</ArrayInfo>
+				<BitSize>176</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
 			<BitSize>48</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
@@ -32,6 +88,9 @@
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
 				</Task>
+				<Task Id="4" Priority="1" CycleTime="110000" AmsPort="351" AdtTasks="true">
+					<Name>ComTask</Name>
+				</Task>
 			</Tasks>
 			<Routes>
 				<Route Name="dev_env" Addr="192.168.74.145" NetId="192.168.74.145.1.1" TransType="1"/>
@@ -42,6 +101,23 @@
 				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="las_bts\las_bts.tmc">
 					<Name>las_bts Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>ComTask Inputs</Name>
+						<Var>
+							<Name>GVL_COM.PTM_stComIn</Name>
+							<Comment>
+								<![CDATA[SERIAL IO //EL6021_00_05]]>
+							</Comment>
+							<Type GUID="{42B6E6F5-D179-46D5-95D2-6AA2164C358E}" Namespace="Tc2_SerialCom">EL6inData22B</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>ComTask Outputs</Name>
+						<Var>
+							<Name>GVL_COM.PTM_stComOut</Name>
+							<Type GUID="{93EE68A6-909A-4526-A364-43F10EFB2555}" Namespace="Tc2_SerialCom">EL6outData22B</Type>
+						</Var>
+					</Vars>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
@@ -1074,7 +1150,8 @@
 						</Var>
 					</Vars>
 					<TaskPouOids>
-						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+						<TaskPouOid Prio="1" OTCID="#x08502001"/>
+						<TaskPouOid Prio="20" OTCID="#x08502002"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>
@@ -1085,6 +1162,7 @@
 	</Project>
 	<Mappings>
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
+		<MappingInfo Identifier="{00000000-2002-0850-0120-500831000403}" Id="#x02030020"/>
 		<OwnerA Name="TIPC^las_bts^las_bts Instance">
 			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL1124_01_06">
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_GCC.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
@@ -1327,6 +1405,53 @@
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD10_PIP.i_iPRESS" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD14_PIP.i_iPRESS" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD9_PIP.i_iPRESS" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL6021_00_05">
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[0]" VarB="COM TxPDO-Map Inputs^Data In 0" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[10]" VarB="COM TxPDO-Map Inputs^Data In 10" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[11]" VarB="COM TxPDO-Map Inputs^Data In 11" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[12]" VarB="COM TxPDO-Map Inputs^Data In 12" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[13]" VarB="COM TxPDO-Map Inputs^Data In 13" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[14]" VarB="COM TxPDO-Map Inputs^Data In 14" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[15]" VarB="COM TxPDO-Map Inputs^Data In 15" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[16]" VarB="COM TxPDO-Map Inputs^Data In 16" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[17]" VarB="COM TxPDO-Map Inputs^Data In 17" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[18]" VarB="COM TxPDO-Map Inputs^Data In 18" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[19]" VarB="COM TxPDO-Map Inputs^Data In 19" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[1]" VarB="COM TxPDO-Map Inputs^Data In 1" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[20]" VarB="COM TxPDO-Map Inputs^Data In 20" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[21]" VarB="COM TxPDO-Map Inputs^Data In 21" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[2]" VarB="COM TxPDO-Map Inputs^Data In 2" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[3]" VarB="COM TxPDO-Map Inputs^Data In 3" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[4]" VarB="COM TxPDO-Map Inputs^Data In 4" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[5]" VarB="COM TxPDO-Map Inputs^Data In 5" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[6]" VarB="COM TxPDO-Map Inputs^Data In 6" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[7]" VarB="COM TxPDO-Map Inputs^Data In 7" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[8]" VarB="COM TxPDO-Map Inputs^Data In 8" AutoLink="true"/>
+				<Link VarA="ComTask Inputs^GVL_COM.PTM_stComIn^D[9]" VarB="COM TxPDO-Map Inputs^Data In 9" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^Ctrl" VarB="COM RxPDO-Map Outputs^Ctrl" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[0]" VarB="COM RxPDO-Map Outputs^Data Out 0" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[10]" VarB="COM RxPDO-Map Outputs^Data Out 10" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[11]" VarB="COM RxPDO-Map Outputs^Data Out 11" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[12]" VarB="COM RxPDO-Map Outputs^Data Out 12" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[13]" VarB="COM RxPDO-Map Outputs^Data Out 13" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[14]" VarB="COM RxPDO-Map Outputs^Data Out 14" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[15]" VarB="COM RxPDO-Map Outputs^Data Out 15" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[16]" VarB="COM RxPDO-Map Outputs^Data Out 16" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[17]" VarB="COM RxPDO-Map Outputs^Data Out 17" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[18]" VarB="COM RxPDO-Map Outputs^Data Out 18" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[19]" VarB="COM RxPDO-Map Outputs^Data Out 19" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[1]" VarB="COM RxPDO-Map Outputs^Data Out 1" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[20]" VarB="COM RxPDO-Map Outputs^Data Out 20" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[21]" VarB="COM RxPDO-Map Outputs^Data Out 21" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[2]" VarB="COM RxPDO-Map Outputs^Data Out 2" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[3]" VarB="COM RxPDO-Map Outputs^Data Out 3" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[4]" VarB="COM RxPDO-Map Outputs^Data Out 4" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[5]" VarB="COM RxPDO-Map Outputs^Data Out 5" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[6]" VarB="COM RxPDO-Map Outputs^Data Out 6" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[7]" VarB="COM RxPDO-Map Outputs^Data Out 7" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[8]" VarB="COM RxPDO-Map Outputs^Data Out 8" AutoLink="true"/>
+				<Link VarA="ComTask Outputs^GVL_COM.PTM_stComOut^D[9]" VarB="COM RxPDO-Map Outputs^Data Out 9" AutoLink="true"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

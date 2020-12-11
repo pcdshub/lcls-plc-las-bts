@@ -18,7 +18,14 @@
     <LibraryReferences>{dd36624e-f227-401d-9f04-428fdb350b4b}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ComTask.TcTTO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GVLs\GVL_BTS_VAC.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\GVL_COM.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
@@ -33,6 +40,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_COM.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\PRG_GAUGES.TcPOU">
@@ -52,6 +62,10 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderReference Include="Tc2_SerialCom">
+      <DefaultResolution>Tc2_SerialCom, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_SerialCom</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_Standard</Namespace>
@@ -90,15 +104,20 @@
     <LibraryReference Include="LCLS General,2.4.2,SLAC">
       <Namespace>LCLS_General</Namespace>
     </LibraryReference>
-    <LibraryReference Include="LCLS Vacuum,1.4.0,SLAC - LCLS">
+    <LibraryReference Include="LCLS Vacuum,1.4.1,SLAC - LCLS">
       <Namespace>LCLS_Vacuum</Namespace>
     </LibraryReference>
     <LibraryReference Include="LCLSVacuumSerialDriverLib,1.2.2,SLAC - LCLS">
       <Namespace>LCLS_Vacuum_Serial</Namespace>
     </LibraryReference>
-    <LibraryReference Include="PMPS,0.15.3,SLAC - LCLS">
+    <LibraryReference Include="PMPS,0.16.0,SLAC - LCLS">
       <Namespace>PMPS</Namespace>
     </LibraryReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="las_bts.tmc">
+      <SubType>Content</SubType>
+    </None>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

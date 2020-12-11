@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_COM" Id="{b34d4e82-5727-4a29-885a-665d0a9d3503}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_COM
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//needs to run on a seperate task
+
+(*Instanitate Serial port com function *) 
+//LXLHN_PTM_01 
+PTM_fbSerialLineControl(
+	Mode:= SERIALLINEMODE_EL6_22B,
+	pComIn:= ADR(PTM_stComIn),
+	pComOut:=ADR(PTM_stComOut),
+	SizeComIn:= SIZEOF(PTM_stComOut),
+	TxBuffer:= PTM_SerialTXBuffer,
+	RxBuffer:= PTM_SerialRXBuffer,
+	Error=> ,
+	ErrorID=> );
+	]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

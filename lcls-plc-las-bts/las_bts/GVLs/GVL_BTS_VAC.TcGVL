@@ -59,6 +59,11 @@ VAR_GLOBAL
 								 .q_PumpingStation	:=	TIIB[EL2004_00_04]^Channel 3^Output;'}								
 	fb_PP_PTM : FB_PTM_Pfeiffer; // Turbo pump
 	
+	// Serial port
+	st_Pfeiffer_CTRL_PTM		: ARRAY[1..20] OF ST_PfeifferControl;
+	st_Pfeiffer_RBK_PTM			: ARRAY[1..20] OF ST_PfeifferStatus;
+	PTM_COM 					: FB_PFEIFFER_COM;
+	
 	{attribute 'pytmc' 	  := ' 	
 		pv: LXLHN:PMF:01
 		io: io 

@@ -43,7 +43,19 @@ fb_LD10_PIP(i_stGauge := fb_LD10_GCC.IG, stPump=>);
 
 // LD14
 fb_LD14_PIP(i_stGauge := fb_LD14_GCC.IG, stPump=>);
-]]></ST>
+
+
+(*Serial Interface*)
+(*Assign adresses to the pfeiffer controller connected to this serial terminal*)
+st_Pfeiffer_CTRL_PTM[1].iSerialAddress  :=1;	//LXLHN_PTM_01
+st_Pfeiffer_CTRL_PTM[1].xEnableComm 	:= TRUE;
+(* Instanitate the Function block for serial communication with Pfeiffer*)	
+PTM_COM(astPfeifferControl := st_Pfeiffer_CTRL_PTM,
+			    astPfeifferStatus:= st_Pfeiffer_RBK_PTM,
+				SerialRXBuffer:= PTM_SerialRXBuffer,
+				SerialTXBuffer:= PTM_SerialTXBuffer);
+(* Copy Status Pv's into the PTM structure*)
+fb_PP_PTM.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM[1],st_Pfeiffer_RBK:=st_Pfeiffer_RBK_PTM[1]);		]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
