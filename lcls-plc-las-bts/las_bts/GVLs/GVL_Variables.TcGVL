@@ -11,7 +11,7 @@ VAR_GLOBAL
 	xSystemOverrideMode_BTS	: BOOL := FALSE; (* Global system override for the BTS Vacuum System *)
 
 	{attribute 'pytmc' := 'pv: LXLHN:VAC:GCC:ENABLE'}
-	xGCC_Enable_SW: BOOL := FALSE;
+	xGCC_Enable_SW: BOOL := FALSE; (* Global enable for all GCCs *)
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
