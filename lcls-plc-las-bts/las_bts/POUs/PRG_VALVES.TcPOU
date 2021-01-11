@@ -14,24 +14,29 @@ fb_PP_VGC(
 	i_xEPS_OK := TRUE,
 	i_xPMPS_OK := TRUE,
 	i_xExt_OK := TRUE,
+	i_xOverrideMode := xSystemOverrideMode_BTS,
 	io_fbFFHWO := fb_PP_VGC_FFOut,
 	fbArbiter := g_fbArbiter
 );
 
 fb_PP_VVC(
-	i_xExtILK_OK := fb_PP_VGC.M_IsClosed()
+	i_xExtILK_OK := fb_PP_VGC.M_IsClosed(),
+	i_xOverrideMode := xSystemOverrideMode_BTS
 );
 
 GVL_BTS_VAC.fb_PP_VRC_1(
-	i_xExtILK_OK := TRUE
+	i_xExtILK_OK := TRUE,
+	i_xOverrideMode := xSystemOverrideMode_BTS
 );
 
 GVL_BTS_VAC.fb_PP_VRC_2(
-	i_xExtILK_OK := TRUE
+	i_xExtILK_OK := TRUE,
+	i_xOverrideMode := xSystemOverrideMode_BTS
 );
 
 fb_VP_VVC_1(
-	i_xExtILK_OK := TRUE
+	i_xExtILK_OK := TRUE,
+	i_xOverrideMode := xSystemOverrideMode_BTS
 );
 
 fb_VP_VVC_2(
@@ -47,6 +52,7 @@ fb_LS1_VGC(
 	i_xEPS_OK := TRUE,
 	i_xPMPS_OK := TRUE,
 	i_xExt_OK := TRUE,
+	i_xOverrideMode := xSystemOverrideMode_BTS,
 	io_fbFFHWO := fb_LS1_VGC_FFOut,
 	fbArbiter := g_fbArbiter,
 );
@@ -59,6 +65,7 @@ fb_LS5_VGC(
 	i_xEPS_OK := TRUE,
 	i_xPMPS_OK := TRUE,
 	i_xExt_OK := TRUE,
+	i_xOverrideMode := xSystemOverrideMode_BTS,
 	io_fbFFHWO := fb_LS5_VGC_FFOut,
 	fbArbiter := g_fbArbiter
 );
@@ -71,6 +78,7 @@ fb_LS8_VGC(
 	i_xEPS_OK := TRUE,
 	i_xPMPS_OK := TRUE,
 	i_xExt_OK := TRUE,
+	i_xOverrideMode := xSystemOverrideMode_BTS,
 	io_fbFFHWO := fb_LS8_VGC_FFOut,
 	fbArbiter := g_fbArbiter
 );
@@ -83,6 +91,7 @@ fb_LD2_VGC(
 	i_xEPS_OK := TRUE,
 	i_xPMPS_OK := TRUE,
 	i_xExt_OK := TRUE,
+	i_xOverrideMode := xSystemOverrideMode_BTS,
 	io_fbFFHWO := fb_LD2_VGC_FFOut,
 	fbArbiter := g_fbArbiter
 );
@@ -95,6 +104,7 @@ fb_LD4_VGC(
 	i_xEPS_OK := TRUE,
 	i_xPMPS_OK := TRUE,
 	i_xExt_OK := TRUE,
+	i_xOverrideMode := xSystemOverrideMode_BTS,
 	io_fbFFHWO := fb_LD4_VGC_FFOut,
 	fbArbiter := g_fbArbiter
 );
@@ -107,6 +117,7 @@ fb_LD6_VGC(
 	i_xEPS_OK := TRUE,
 	i_xPMPS_OK := TRUE,
 	i_xExt_OK := TRUE,
+	i_xOverrideMode := xSystemOverrideMode_BTS,
 	io_fbFFHWO := fb_LD6_VGC_FFOut,
 	fbArbiter := g_fbArbiter
 );
@@ -119,6 +130,7 @@ fb_LD8_VGC(
 	i_xEPS_OK := TRUE,
 	i_xPMPS_OK := TRUE,
 	i_xExt_OK := TRUE,
+	i_xOverrideMode := xSystemOverrideMode_BTS,
 	io_fbFFHWO := fb_LD8_VGC_FFOut,
 	fbArbiter := g_fbArbiter
 );
@@ -131,6 +143,7 @@ fb_LD9_VGC(
 	i_xEPS_OK := TRUE,
 	i_xPMPS_OK := TRUE,
 	i_xExt_OK := TRUE,
+	i_xOverrideMode := xSystemOverrideMode_BTS,
 	io_fbFFHWO := fb_LD9_VGC_FFOut,
 	fbArbiter := g_fbArbiter
 );
@@ -143,6 +156,7 @@ fb_LD10_VGC(
 	i_xEPS_OK := TRUE,
 	i_xPMPS_OK := TRUE,
 	i_xExt_OK := TRUE,
+	i_xOverrideMode := xSystemOverrideMode_BTS,
 	io_fbFFHWO := fb_LD10_VGC_FFOut,
 	fbArbiter := g_fbArbiter
 );
@@ -155,12 +169,10 @@ fb_LD14_VGC(
 	i_xEPS_OK := TRUE,
 	i_xPMPS_OK := TRUE,
 	i_xExt_OK := TRUE,
+	i_xOverrideMode := xSystemOverrideMode_BTS,
 	io_fbFFHWO := fb_LD14_VGC_FFOut,
 	fbArbiter := g_fbArbiter
 );
-
-{attribute 'pytmc'	  :=	' pv: LTLHN:LS1:VGC:01:OVERRIDE '}
-fb_LS8_VGC.i_xOverrideMode; // Gate valve, Input LS8 laser Table
 ]]></ST>
     </Implementation>
   </POU>

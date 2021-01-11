@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_Variables" Id="{4dff0040-bbb3-4a96-bb52-036850491acc}">
+    <Declaration><![CDATA[//{attribute 'qualified_only'}
+VAR_GLOBAL
+	{attribute 'pytmc' := '
+    pv: LXLHN:VAC:OVRD_ON
+	field: ZNAM Override Off ;
+	field: ONAM Override On ;
+	'}
+	xSystemOverrideMode_BTS	: BOOL := FALSE; (* Global system override for the BTS Vacuum System *)
+
+	{attribute 'pytmc' := 'pv: LXLHN:VAC:GCC:ENABLE'}
+	xGCC_Enable_SW: BOOL := FALSE;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

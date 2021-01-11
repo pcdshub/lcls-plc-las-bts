@@ -82,6 +82,27 @@ END_VAR
 	fb_LD14_GPI();
 	fb_LD14_GCC.M_SetBits(30518);
 	fb_LD14_GCC(PG := GVL_BTS_VAC.fb_LD14_GPI.PG , IG=> );
+	
+
+(* Auto switch on cold cathode gauges if interlock permits *)
+
+If xGCC_Enable_SW THEN
+	
+	fb_PP_GCC.M_HVE(TRUE);
+	fb_DP_GCC.M_HVE(TRUE);
+	fb_LS1_GCC.M_HVE(TRUE);
+	fb_LS5_GCC.M_HVE(TRUE);
+	fb_LS8_GCC.M_HVE(TRUE);
+	fb_LD2_GCC.M_HVE(TRUE);
+	fb_LD4_GCC.M_HVE(TRUE);
+	fb_LD6_GCC.M_HVE(TRUE);
+	fb_LD8_GCC.M_HVE(TRUE);
+	fb_LD9_GCC.M_HVE(TRUE);
+	fb_LD10_GCC.M_HVE(TRUE);
+	fb_LD14_GCC.M_HVE(TRUE);
+
+	xGCC_Enable_SW := False;
+END_IF
 ]]></ST>
     </Implementation>
   </POU>
