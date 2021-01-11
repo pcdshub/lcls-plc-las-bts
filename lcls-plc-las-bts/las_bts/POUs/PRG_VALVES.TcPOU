@@ -48,7 +48,7 @@ fb_LS1_VGC(
 	i_xPMPS_OK := TRUE,
 	i_xExt_OK := TRUE,
 	io_fbFFHWO := fb_LS1_VGC_FFOut,
-	fbArbiter := g_fbArbiter
+	fbArbiter := g_fbArbiter,
 );
 
 // LS5
@@ -158,6 +158,9 @@ fb_LD14_VGC(
 	io_fbFFHWO := fb_LD14_VGC_FFOut,
 	fbArbiter := g_fbArbiter
 );
+
+{attribute 'pytmc'	  :=	' pv: LTLHN:LS1:VGC:01:OVERRIDE '}
+fb_LS8_VGC.i_xOverrideMode; // Gate valve, Input LS8 laser Table
 ]]></ST>
     </Implementation>
   </POU>
