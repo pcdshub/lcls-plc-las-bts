@@ -105,16 +105,16 @@
     </PlaceholderResolution>
   </ItemGroup>
   <ItemGroup>
-    <LibraryReference Include="LCLS General,2.4.2,SLAC">
+    <LibraryReference Include="LCLS General,newest,SLAC">
       <Namespace>LCLS_General</Namespace>
     </LibraryReference>
-    <LibraryReference Include="LCLS Vacuum,1.4.1,SLAC - LCLS">
+    <LibraryReference Include="LCLS Vacuum,newest,SLAC - LCLS">
       <Namespace>LCLS_Vacuum</Namespace>
     </LibraryReference>
-    <LibraryReference Include="LCLSVacuumSerialDriverLib,1.2.2,SLAC - LCLS">
+    <LibraryReference Include="LCLSVacuumSerialDriverLib,newest,SLAC - LCLS">
       <Namespace>LCLS_Vacuum_Serial</Namespace>
     </LibraryReference>
-    <LibraryReference Include="PMPS,0.16.0,SLAC - LCLS">
+    <LibraryReference Include="PMPS,newest,SLAC - LCLS">
       <Namespace>PMPS</Namespace>
     </LibraryReference>
   </ItemGroup>
