@@ -77,7 +77,7 @@ VAR_GLOBAL
 								 .q_xResetDo		:=	TIIB[EL2794_00_02]^Channel 3^Output;'}	
 	fb_PP_PMF : FB_KashiyamaPump; // Roughing Pump
 	
-	{attribute 'pytmc'    := 	' pv: LXLHN:PP:PIP'}
+	{attribute 'pytmc'    := 	' pv: LXLHN:PIP:01'}
 	{attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_08]^AI Standard Channel 3^Value;
 								 .i_xSP_DI			:= 	TIIB[EL1004_00_07]^Channel 3^Input;
 								 .q_xHVEna_DO		:= 	TIIB[EL2794_00_06]^Channel 3^Output'}
