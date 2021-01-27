@@ -9,6 +9,9 @@ END_VAR
       <ST><![CDATA[(* Switchbox pumps *)
 fb_PP_PMF();
 
+fb_PP_PTM(i_xExtIlkOK := fb_PP_VVC.M_IsClosed());
+//F_TurboExtILKLogic_2(Turbo:=fb_PP_PTM.iq_stPTM,
+		//BackingGauge := , InletGauge:=, ScrollPump:=fb_PP_PMF.q_stPump));
 //GVL_BTS_VAC.fb_PP_PTM(i_xExtIlkOK := F_PumpStationTurboPumpInterlock());
 
 fb_PP_PIP(i_stGauge := fb_DP_GCC.IG);
