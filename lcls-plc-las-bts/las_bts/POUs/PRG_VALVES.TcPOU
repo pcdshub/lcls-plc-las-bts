@@ -46,7 +46,7 @@ fb_VP_VVC_2(
 (* Transport Tube vavles *)
 // LS1
 fb_LS1_VGC(
-	i_stUSG := fb_LS1_GCC.IG, 
+	i_stUSG := fb_LS1_GCC.IG,
 	i_stDSG := fb_DP_GCC.IG,
 	i_xDis_DPIlk := FALSE,
 	i_xEPS_OK := TRUE,
@@ -59,7 +59,7 @@ fb_LS1_VGC(
 
 // LS5
 fb_LS5_VGC(
-	i_stUSG := fb_LS5_GPI.PG, 
+	i_stUSG := fb_LS5_GPI.PG,
 	i_stDSG := fb_DP_GPI.PG,
 	i_xDis_DPIlk := FALSE,
 	i_xEPS_OK := TRUE,
@@ -72,7 +72,7 @@ fb_LS5_VGC(
 
 // LS8
 fb_LS8_VGC(
-	i_stUSG := fb_LS8_GCC.IG, 
+	i_stUSG := fb_LS8_GCC.IG,
 	i_stDSG := fb_DP_GCC.IG,
 	i_xDis_DPIlk := FALSE,
 	i_xEPS_OK := TRUE,
@@ -85,7 +85,7 @@ fb_LS8_VGC(
 
 // LD2
 fb_LD2_VGC(
-	i_stUSG := fb_LD2_GCC.IG, 
+	i_stUSG := fb_LD2_GCC.IG,
 	i_stDSG := fb_DP_GCC.IG,
 	i_xDis_DPIlk := FALSE,
 	i_xEPS_OK := TRUE,
@@ -98,7 +98,7 @@ fb_LD2_VGC(
 
 // LD4
 fb_LD4_VGC(
-	i_stUSG := fb_LD4_GCC.IG, 
+	i_stUSG := fb_LD4_GCC.IG,
 	i_stDSG := fb_DP_GCC.IG,
 	i_xDis_DPIlk := FALSE,
 	i_xEPS_OK := TRUE,
@@ -111,7 +111,7 @@ fb_LD4_VGC(
 
 // LD6
 fb_LD6_VGC(
-	i_stUSG := fb_LD6_GCC.IG, 
+	i_stUSG := fb_LD6_GCC.IG,
 	i_stDSG := fb_DP_GCC.IG,
 	i_xDis_DPIlk := FALSE,
 	i_xEPS_OK := TRUE,
@@ -124,7 +124,7 @@ fb_LD6_VGC(
 
 // LD8
 fb_LD8_VGC(
-	i_stUSG := fb_LD8_GCC.IG, 
+	i_stUSG := fb_LD8_GCC.IG,
 	i_stDSG := fb_DP_GCC.IG,
 	i_xDis_DPIlk := FALSE,
 	i_xEPS_OK := TRUE,
@@ -137,7 +137,7 @@ fb_LD8_VGC(
 
 // LD9
 fb_LD9_VGC(
-	i_stUSG := fb_LD9_GCC.IG, 
+	i_stUSG := fb_LD9_GCC.IG,
 	i_stDSG := fb_DP_GCC.IG,
 	i_xDis_DPIlk := FALSE,
 	i_xEPS_OK := TRUE,
@@ -150,7 +150,7 @@ fb_LD9_VGC(
 
 // LD10
 fb_LD10_VGC(
-	i_stUSG := fb_LD10_GCC.IG, 
+	i_stUSG := fb_LD10_GCC.IG,
 	i_stDSG := fb_DP_GCC.IG,
 	i_xDis_DPIlk := FALSE,
 	i_xEPS_OK := TRUE,
@@ -163,7 +163,7 @@ fb_LD10_VGC(
 
 // LD14
 fb_LD14_VGC(
-	i_stUSG := fb_LD14_GCC.IG, 
+	i_stUSG := fb_LD14_GCC.IG,
 	i_stDSG := fb_DP_GCC.IG,
 	i_xDis_DPIlk := FALSE,
 	i_xEPS_OK := TRUE,
@@ -172,8 +172,7 @@ fb_LD14_VGC(
 	i_xOverrideMode := xSystemOverrideMode_BTS,
 	io_fbFFHWO := fb_LD14_VGC_FFOut,
 	fbArbiter := g_fbArbiter
-);
-]]></ST>
+);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

@@ -14,29 +14,26 @@ VAR
 	fbEcatDiag:FB_EcatDiag;
 	{attribute 'pytmc' := ' pv:PLC:LAS:BTS:AllSlaveStateGood '}
 	bAllSlaveStateGood : BOOL;
-	{attribute 'pytmc' := ' pv:PLC:LAS:BTS:MasterStateGood '}	
+	{attribute 'pytmc' := ' pv:PLC:LAS:BTS:MasterStateGood '}
 	bMasterStateGood :BOOL;
 	iMasterState: WORD;
 	sMasterState:STRING;
 	nSlaveNumber : UINT;
 	aiSlaveStates: ARRAY[1..256] OF BYTE;
 	aEcSlaveInfo :  ARRAY[1..256] OF ST_EcDevice;
-END_VAR
-]]></Declaration>
+END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Instaniating a call to the fbEcatDiag
 fbEcatDiag(
-	I_AMSNetId:=i_sAMSNetID , 
-	i_xFirstPass:= _TaskInfo[1].FirstCycle, 
-	q_xAllSlaveStatesGood=> bAllSlaveStateGood , 
-	q_anTermStates=> aiSlaveStates, 
-	q_xMasterStateGood=>bMasterStateGood , 
-	q_nMasterState=> iMasterState, 
-	q_sMasterState=> sMasterState , 
-	q_astEcConfSlaveInfo=> aEcSlaveInfo , 
-	q_nSlaves=> nSlaveNumber);
-	
-	]]></ST>
+	I_AMSNetId:=i_sAMSNetID,
+	i_xFirstPass:= _TaskInfo[1].FirstCycle,
+	q_xAllSlaveStatesGood=> bAllSlaveStateGood,
+	q_anTermStates=> aiSlaveStates,
+	q_xMasterStateGood=>bMasterStateGood,
+	q_nMasterState=> iMasterState,
+	q_sMasterState=> sMasterState,
+	q_astEcConfSlaveInfo=> aEcSlaveInfo,
+	q_nSlaves=> nSlaveNumber);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

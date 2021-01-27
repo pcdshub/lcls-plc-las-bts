@@ -4,7 +4,7 @@
     <Declaration><![CDATA[VAR_GLOBAL CONSTANT
 	ATM_PRESS : INT := 760; // Atmospheric pressure in Torr
 	ATM_PRESS_ERR_RNG : INT := 10; // Error range that is still considered atmospheric pressure
-	
+
 	EPICS_STRING_SIZE : INT := 40;
 	PTM_INTERLOCK_SP : REAL := 1E-2;
 END_VAR]]></Declaration>

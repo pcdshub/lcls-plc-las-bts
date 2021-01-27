@@ -8,8 +8,8 @@ END_VAR
     <Implementation>
       <ST><![CDATA[//needs to run on a seperate task
 
-(*Instanitate Serial port com function *) 
-//LXLHN_PTM_01 
+(*Instanitate Serial port com function *)
+//LXLHN_PTM_01
 PTM_fbSerialLineControl(
 	Mode:= SERIALLINEMODE_EL6_22B,
 	pComIn:= ADR(PTM_stComIn),
@@ -18,8 +18,7 @@ PTM_fbSerialLineControl(
 	TxBuffer:= PTM_SerialTXBuffer,
 	RxBuffer:= PTM_SerialRXBuffer,
 	Error=> ,
-	ErrorID=> );
-	]]></ST>
+	ErrorID=> );]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

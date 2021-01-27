@@ -3,8 +3,7 @@
   <POU Name="PRG_GAUGES" Id="{0b20b6f1-bdbc-4509-9236-dee7f892110b}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_GAUGES
 VAR
-END_VAR
-]]></Declaration>
+END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* Switchbox Gauges *)
 	fb_PP_GPI_1.M_SetBits(30518);
@@ -18,9 +17,9 @@ END_VAR
 
 	fb_PP_GCC.M_SetBits(30518);
 	fb_PP_GCC(PG := GVL_BTS_VAC.fb_PP_GPI_1.PG , IG=> );
-	
+
 	fb_DP_GCC.M_SetBits(30518);
-	fb_DP_GCC(PG := GVL_BTS_VAC.fb_PP_GPI_1.PG , IG=> );	
+	fb_DP_GCC(PG := GVL_BTS_VAC.fb_PP_GPI_1.PG , IG=> );
 
 (* Transport Tube Gauges *)
 // LS1
@@ -82,12 +81,10 @@ END_VAR
 	fb_LD14_GPI();
 	fb_LD14_GCC.M_SetBits(30518);
 	fb_LD14_GCC(PG := GVL_BTS_VAC.fb_LD14_GPI.PG , IG=> );
-	
 
 (* Auto switch on cold cathode gauges if interlock permits *)
 
 If xGCC_Enable_SW THEN
-	
 	fb_PP_GCC.M_HVE(TRUE);
 	fb_DP_GCC.M_HVE(TRUE);
 	fb_LS1_GCC.M_HVE(TRUE);
@@ -102,8 +99,7 @@ If xGCC_Enable_SW THEN
 	fb_LD14_GCC.M_HVE(TRUE);
 
 	xGCC_Enable_SW := False;
-END_IF
-]]></ST>
+END_IF]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

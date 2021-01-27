@@ -4,11 +4,11 @@
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
 	// Define COM Ports/Buffers incl. library Tc2_SerialCom
-	
-	//LXLHN_PTM_01 
+
+	//LXLHN_PTM_01
 	PTM_SerialRXBuffer : ComBuffer;
 	PTM_SerialTXBuffer : ComBuffer;
-	
+
 	// Serial Terminal
 	PTM_fbSerialLineControl: SerialLineControl;
 
@@ -37,7 +37,7 @@ VAR_GLOBAL
 								 .D[20]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 20;
 								 .D[21]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 21;
 	'}
-	PTM_stComIn		AT %I*	:	EL6inData22B; 
+	PTM_stComIn		AT %I*	:	EL6inData22B;
 	{attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Ctrl;
 								 .D[0]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 0;
 								 .D[1]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 1;
@@ -63,7 +63,7 @@ VAR_GLOBAL
 								 .D[21]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 21;
 	'}
 	PTM_stComOut		AT %Q*	:	EL6outData22B;
-	
+
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
