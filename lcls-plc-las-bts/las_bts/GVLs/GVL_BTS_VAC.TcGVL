@@ -3,337 +3,337 @@
   <GVL Name="GVL_BTS_VAC" Id="{29e65882-4122-461a-9001-9faecd304aa4}">
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
-	(* Valves *)
-	fb_PP_VGC_FFOut : FB_HardwareFFOutput;
+    (* Valves *)
+    fb_PP_VGC_FFOut : FB_HardwareFFOutput;
 
-	{attribute 'pytmc'	  :=	' pv: LXLHN:VGC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_12]^Channel 2^Input;
-								 .i_xClsLS			:=	TIIB[EL1004_02_12]^Channel 1^Input;
-								 .q_xOPN_DO			:=	TIIB[EL2004_02_14]^Channel 2^Output'}
-	fb_PP_VGC : FB_VGC; // Gate valve, vacuum switchbox
+    {attribute 'pytmc'	  :=	' pv: LXLHN:VGC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_12]^Channel 2^Input;
+                                 .i_xClsLS			:=	TIIB[EL1004_02_12]^Channel 1^Input;
+                                 .q_xOPN_DO			:=	TIIB[EL2004_02_14]^Channel 2^Output'}
+    fb_PP_VGC : FB_VGC; // Gate valve, vacuum switchbox
 
-	{attribute 'pytmc' 	  :=	' pv: LXLHN:VVC:01 '}
-	{attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_05]^Channel 3^Output'}
-	fb_PP_VVC : FB_VVC; // Turbo N2 purge
-
-
-	{attribute 'pytmc'	  :=	' pv: LXLHN:VRC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1002_02_01]^Channel 2^Input;
-								 .i_xClsLS			:=	TIIB[EL1002_02_01]^Channel 1^Input;
-								 .q_xOPN_DO			:=	TIIB[EL2004_02_04]^Channel 1^Output'}
-	fb_PP_VRC_1 : FB_VRC; // O-ring diff pump valve
-
-	{attribute 'pytmc'	  :=	' pv: LXLHN:VRC:02 '}
-	{attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1002_02_02]^Channel 2^Input;
-								 .i_xClsLS			:=	TIIB[EL1002_02_02]^Channel 1^Input;
-								 .q_xOPN_DO			:=	TIIB[EL2004_02_04]^Channel 3^Output'}
-	fb_PP_VRC_2 : FB_VRC; // Foreline valve
-
-	{attribute 'pytmc'	  :=	' pv: LXLHN:VRC:03 '}
-	{attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1002_02_03]^Channel 2^Input;
-								 .i_xClsLS			:=	TIIB[EL1002_02_03]^Channel 1^Input;
-								 .q_xOPN_DO			:=	TIIB[EL2004_02_04]^Channel 4^Output'}
-	fb_PP_VRC_3 : FB_VRC; // Slow pump valve
-
-	st_VP_VVC_1 : ST_VVC;
-	{attribute 'pytmc' 	  :=	' pv: LXLHN:VVC:02 '}
-	{attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_05]^Channel 1^Output'}
-	fb_VP_VVC_1 : FB_VVC; // Vent valve, Switchbox
-
-	st_VP_VVC_2 : ST_VVC;
-	{attribute 'pytmc' 	  :=	' pv: LXLHN:VVC:03 '}
-	{attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_05]^Channel 2^Output'}
-	fb_VP_VVC_2 : FB_VVC; // Vent valve, Slow, Switchbox
+    {attribute 'pytmc' 	  :=	' pv: LXLHN:VVC:01 '}
+    {attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_05]^Channel 3^Output'}
+    fb_PP_VVC : FB_VVC; // Turbo N2 purge
 
 
-	(* Pumps *)
-	{attribute 'pytmc' 	  := '
-		pv: LXLHN:PTM:01
-		io: io
-	'}
-	{attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[EL1004_00_03]^Channel 3^Input;
-								 .i_xRemote			:=	TIIB[EL1004_00_03]^Channel 2^Input;
-								 .i_xFaultNC		:=	TIIB[EL1004_00_03]^Channel 1^Input;
-								 .q_RunDO			:=	TIIB[EL2004_00_04]^Channel 1^Output;
-								 .q_xRemote			:=	TIIB[EL2004_00_04]^Channel 2^Output;
-								 .q_PumpingStation	:=	TIIB[EL2004_00_04]^Channel 3^Output;'}
-	fb_PP_PTM : FB_PTM_Pfeiffer; // Turbo pump
+    {attribute 'pytmc'	  :=	' pv: LXLHN:VRC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1002_02_01]^Channel 2^Input;
+                                 .i_xClsLS			:=	TIIB[EL1002_02_01]^Channel 1^Input;
+                                 .q_xOPN_DO			:=	TIIB[EL2004_02_04]^Channel 1^Output'}
+    fb_PP_VRC_1 : FB_VRC; // O-ring diff pump valve
 
-	// Serial port
-	st_Pfeiffer_CTRL_PTM		: ARRAY[1..20] OF ST_PfeifferControl;
-	st_Pfeiffer_RBK_PTM			: ARRAY[1..20] OF ST_PfeifferStatus;
-	PTM_COM 					: FB_PFEIFFER_COM;
+    {attribute 'pytmc'	  :=	' pv: LXLHN:VRC:02 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1002_02_02]^Channel 2^Input;
+                                 .i_xClsLS			:=	TIIB[EL1002_02_02]^Channel 1^Input;
+                                 .q_xOPN_DO			:=	TIIB[EL2004_02_04]^Channel 3^Output'}
+    fb_PP_VRC_2 : FB_VRC; // Foreline valve
 
-	{attribute 'pytmc' 	  := '
-		pv: LXLHN:PMF:01
-		io: io
-	'}
-	{attribute 'TcLinkTo' := 	'.i_xWarning		:=	TIIB[EL1004_00_01]^Channel 4^Input;
-								 .i_xAlarm			:=	TIIB[EL1004_00_01]^Channel 3^Input;
-								 .i_xLocal			:=	TIIB[EL1004_00_01]^Channel 2^Input;
-								 .i_xIsRun			:=	TIIB[EL1004_00_01]^Channel 1^Input;
-								 .q_xRunDO			:=	TIIB[EL2794_00_02]^Channel 1^Output;
-								 .q_xLspdDO			:=	TIIB[EL2794_00_02]^Channel 2^Output;
-								 .q_xResetDo		:=	TIIB[EL2794_00_02]^Channel 3^Output;'}
-	fb_PP_PMF : FB_KashiyamaPump; // Roughing Pump
+    {attribute 'pytmc'	  :=	' pv: LXLHN:VRC:03 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1002_02_03]^Channel 2^Input;
+                                 .i_xClsLS			:=	TIIB[EL1002_02_03]^Channel 1^Input;
+                                 .q_xOPN_DO			:=	TIIB[EL2004_02_04]^Channel 4^Output'}
+    fb_PP_VRC_3 : FB_VRC; // Slow pump valve
 
-	{attribute 'pytmc'    := 	' pv: LXLHN:PIP:01'}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_08]^AI Standard Channel 3^Value;
-								 .i_xSP_DI			:= 	TIIB[EL1004_00_07]^Channel 3^Input;
-								 .q_xHVEna_DO		:= 	TIIB[EL2794_00_06]^Channel 3^Output'}
-	fb_PP_PIP : FB_PIP_Gamma; // Ion Pump, SW
+    st_VP_VVC_1 : ST_VVC;
+    {attribute 'pytmc' 	  :=	' pv: LXLHN:VVC:02 '}
+    {attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_05]^Channel 1^Output'}
+    fb_VP_VVC_1 : FB_VVC; // Vent valve, Switchbox
 
-	(* Gauges *)
-	{attribute 'pytmc' 	  :=	' pv: LXLHN:GPI:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_10]^AI Standard Channel 3^Value '}
-	fb_PP_GPI_1 : FB_MKS275; // Switchbox pumpline ATM gauge
+    st_VP_VVC_2 : ST_VVC;
+    {attribute 'pytmc' 	  :=	' pv: LXLHN:VVC:03 '}
+    {attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_05]^Channel 2^Output'}
+    fb_VP_VVC_2 : FB_VVC; // Vent valve, Slow, Switchbox
 
-	{attribute 'pytmc' 	  :=	' pv: LXLHN:GPI:02 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_11]^AI Standard Channel 1^Value '}
-	fb_PP_GPI_2 : FB_MKS275; // Foreline gauge
 
-	{attribute 'pytmc' 	  :=	' pv: LXLHN:GPI:03 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_10]^AI Standard Channel 2^Value '}
-	fb_DP_GPI : FB_MKS275; // Switchbox gauge
+    (* Pumps *)
+    {attribute 'pytmc' 	  := '
+        pv: LXLHN:PTM:01
+        io: io
+    '}
+    {attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[EL1004_00_03]^Channel 3^Input;
+                                 .i_xRemote			:=	TIIB[EL1004_00_03]^Channel 2^Input;
+                                 .i_xFaultNC		:=	TIIB[EL1004_00_03]^Channel 1^Input;
+                                 .q_RunDO			:=	TIIB[EL2004_00_04]^Channel 1^Output;
+                                 .q_xRemote			:=	TIIB[EL2004_00_04]^Channel 2^Output;
+                                 .q_PumpingStation	:=	TIIB[EL2004_00_04]^Channel 3^Output;'}
+    fb_PP_PTM : FB_PTM_Pfeiffer; // Turbo pump
 
-	{attribute 'pytmc' 	  :=	' pv: LXLHN:GCC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_09]^AI Standard Channel 2^Value;
-								 .i_xHV_ON	    	:=	TIIB[EL1124_01_06]^Channel 1^Input;
-								 .i_xDisc_Active	:=	TIIB[EL1124_01_06]^Channel 2^Input;
-								 .q_xHV_DIS			:= 	TIIB[EL2624_01_02]^Channel 2^Output	'}
-	fb_PP_GCC : FB_MKS500; // Switchbox pumpline Cold Cathode gauge
+    // Serial port
+    st_Pfeiffer_CTRL_PTM		: ARRAY[1..20] OF ST_PfeifferControl;
+    st_Pfeiffer_RBK_PTM			: ARRAY[1..20] OF ST_PfeifferStatus;
+    PTM_COM 					: FB_PFEIFFER_COM;
 
-	{attribute 'pytmc' 	  :=	' pv: LXLHN:GCC:02 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_09]^AI Standard Channel 4^Value;
-								 .i_xHV_ON	    	:=	TIIB[EL1124_01_07]^Channel 3^Input;
-								 .i_xDisc_Active	:=	TIIB[EL1124_01_07]^Channel 4^Input;
-								 .q_xHV_DIS			:= 	TIIB[EL2624_01_02]^Channel 4^Output	'}
-	fb_DP_GCC : FB_MKS500; // Switchbox Cold Cathode gauge
+    {attribute 'pytmc' 	  := '
+        pv: LXLHN:PMF:01
+        io: io
+    '}
+    {attribute 'TcLinkTo' := 	'.i_xWarning		:=	TIIB[EL1004_00_01]^Channel 4^Input;
+                                 .i_xAlarm			:=	TIIB[EL1004_00_01]^Channel 3^Input;
+                                 .i_xLocal			:=	TIIB[EL1004_00_01]^Channel 2^Input;
+                                 .i_xIsRun			:=	TIIB[EL1004_00_01]^Channel 1^Input;
+                                 .q_xRunDO			:=	TIIB[EL2794_00_02]^Channel 1^Output;
+                                 .q_xLspdDO			:=	TIIB[EL2794_00_02]^Channel 2^Output;
+                                 .q_xResetDo		:=	TIIB[EL2794_00_02]^Channel 3^Output;'}
+    fb_PP_PMF : FB_KashiyamaPump; // Roughing Pump
 
-	(* Transport Tubes *)
-	// LS1
-	fb_LS1_VGC_FFOut : FB_HardwareFFOutput;
-	{attribute 'pytmc'	  :=	' pv: LTLHN:LS1:VGC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_06]^Channel 2^Input;
-								 .i_xClsLS			:=	TIIB[EL1004_02_06]^Channel 1^Input;
-								 .q_xOPN_DO			:=	TIIB[EL2004_02_08]^Channel 1^Output'}
-	fb_LS1_VGC : FB_VGC; // Gate valve, Input LS1 laser Table
-	{attribute 'pytmc'    := 	' pv: LTLHN:LS1:PIP:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_08]^AI Standard Channel 2^Value;
-								 .i_xSP_DI			:= 	TIIB[EL1004_00_07]^Channel 2^Input;
-								 .q_xHVEna_DO		:= 	TIIB[EL2794_00_06]^Channel 2^Output'}
-	fb_LS1_PIP : FB_PIP_Gamma; // Ion Pump, input tube LS1
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LS1:GPI:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_10]^AI Standard Channel 4^Value '}
-	fb_LS1_GPI : FB_MKS275; // Input tube LS1 ATM gauge
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LS1:GCC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_10]^AI Standard Channel 4^Value;
-								 .i_xHV_ON	    	:=	TIIB[EL1124_03_06]^Channel 3^Input;
-								 .i_xDisc_Active	:=	TIIB[EL1124_03_06]^Channel 4^Input;
-								 .q_xHV_DIS			:= 	TIIB[EL2624_03_01]^Channel 4^Output	'}
-	fb_LS1_GCC : FB_MKS500; // Input tube LS1, Cold Cathode gauge
+    {attribute 'pytmc'    := 	' pv: LXLHN:PIP:01'}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_08]^AI Standard Channel 3^Value;
+                                 .i_xSP_DI			:= 	TIIB[EL1004_00_07]^Channel 3^Input;
+                                 .q_xHVEna_DO		:= 	TIIB[EL2794_00_06]^Channel 3^Output'}
+    fb_PP_PIP : FB_PIP_Gamma; // Ion Pump, SW
 
-	// LS5
-	fb_LS5_VGC_FFOut : FB_HardwareFFOutput;
-	{attribute 'pytmc'	  :=	' pv: LTLHN:LS5:VGC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_09]^Channel 4^Input;
-								 .i_xClsLS			:=	TIIB[EL1004_02_09]^Channel 3^Input;
-								 .q_xOPN_DO			:=	TIIB[EL2004_02_11]^Channel 2^Output'}
-	fb_LS5_VGC : FB_VGC; // Gate valve, Input LS5 laser Table
-	{attribute 'pytmc'    := 	' pv: LTLHN:LS5:PIP:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_11]^AI Standard Channel 4^Value;
-								 .i_xSP_DI			:= 	TIIB[EL1004_00_10]^Channel 4^Input;
-								 .q_xHVEna_DO		:= 	TIIB[EL2794_00_09]^Channel 4^Output'}
-	fb_LS5_PIP : FB_PIP_Gamma; // Ion Pump, input tube LS5
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LS5:GPI:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_13]^AI Standard Channel 1^Value '}
-	fb_LS5_GPI : FB_MKS275; // Input tube LS5 ATM gauge
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LS5:GCC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 1^Value;
-								 .i_xHV_ON	    	:=	TIIB[EL1124_03_08]^Channel 1^Input;
-								 .i_xDisc_Active	:=	TIIB[EL1124_03_08]^Channel 2^Input;
-								 .q_xHV_DIS			:= 	TIIB[EL2624_03_02]^Channel 1^Output	'}
-	fb_LS5_GCC : FB_MKS500; // Input tube LS5, Cold Cathode gauge
+    (* Gauges *)
+    {attribute 'pytmc' 	  :=	' pv: LXLHN:GPI:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_10]^AI Standard Channel 3^Value '}
+    fb_PP_GPI_1 : FB_MKS275; // Switchbox pumpline ATM gauge
 
-	// LS8
-	fb_LS8_VGC_FFOut : FB_HardwareFFOutput;
-	{attribute 'pytmc'	  :=	' pv: LTLHN:LS8:VGC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_09]^Channel 2^Input;
-								 .i_xClsLS			:=	TIIB[EL1004_02_09]^Channel 1^Input;
-								 .q_xOPN_DO			:=	TIIB[EL2004_02_11]^Channel 3^Output'}
-	fb_LS8_VGC : FB_VGC; // Gate valve, Input LS8 laser Table
-	{attribute 'pytmc'    := 	' pv: LTLHN:LS8:PIP:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_11]^AI Standard Channel 3^Value;
-								 .i_xSP_DI			:= 	TIIB[EL1004_00_10]^Channel 3^Input;
-								 .q_xHVEna_DO		:= 	TIIB[EL2794_00_09]^Channel 3^Output'}
-	fb_LS8_PIP : FB_PIP_Gamma; // Ion Pump, input tube LS8
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LS8:GPI:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_13]^AI Standard Channel 2^Value '}
-	fb_LS8_GPI : FB_MKS275; // Input tube LS8 ATM gauge
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LS8:GCC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 2^Value;
-								 .i_xHV_ON	    	:=	TIIB[EL1124_03_08]^Channel 3^Input;
-								 .i_xDisc_Active	:=	TIIB[EL1124_03_08]^Channel 4^Input;
-								 .q_xHV_DIS			:= 	TIIB[EL2624_03_02]^Channel 2^Output	'}
-	fb_LS8_GCC : FB_MKS500; // Input tube LS8, Cold Cathode gauge
+    {attribute 'pytmc' 	  :=	' pv: LXLHN:GPI:02 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_11]^AI Standard Channel 1^Value '}
+    fb_PP_GPI_2 : FB_MKS275; // Foreline gauge
 
-	// LD2
-	fb_LD2_VGC_FFOut : FB_HardwareFFOutput;
-	{attribute 'pytmc'	  :=	' pv: LTLHN:LD2:VGC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_12]^Channel 4^Input;
-								 .i_xClsLS			:=	TIIB[EL1004_02_12]^Channel 3^Input;
-								 .q_xOPN_DO			:=	TIIB[EL2004_02_14]^Channel 3^Output'}
-	fb_LD2_VGC : FB_VGC; // Gate valve, Output tube LD2 laser Table
-	{attribute 'pytmc'    := 	' pv: LTLHN:LD2:PIP:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_08]^AI Standard Channel 1^Value;
-								 .i_xSP_DI			:= 	TIIB[EL1004_00_07]^Channel 1^Input;
-								 .q_xHVEna_DO		:= 	TIIB[EL2794_00_06]^Channel 1^Output'}
-	fb_LD2_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD2
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LD2:GPI:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_10]^AI Standard Channel 1^Value '}
-	fb_LD2_GPI : FB_MKS275; // Output tube LD2 ATM gauge
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LD2:GCC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_09]^AI Standard Channel 1^Value;
-								 .i_xHV_ON	    	:=	TIIB[EL1124_01_07]^Channel 1^Input;
-								 .i_xDisc_Active	:=	TIIB[EL1124_01_07]^Channel 2^Input;
-								 .q_xHV_DIS			:= 	TIIB[EL2624_01_02]^Channel 1^Output	'}
-	fb_LD2_GCC : FB_MKS500; // Output tube LD2, Cold Cathode gauge
+    {attribute 'pytmc' 	  :=	' pv: LXLHN:GPI:03 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_10]^AI Standard Channel 2^Value '}
+    fb_DP_GPI : FB_MKS275; // Switchbox gauge
 
-	// LD4
-	fb_LD4_VGC_FFOut : FB_HardwareFFOutput;
-	{attribute 'pytmc'	  :=	' pv: LTLHN:LD4:VGC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_10]^Channel 2^Input;
-								 .i_xClsLS			:=	TIIB[EL1004_02_10]^Channel 1^Input;
-								 .q_xOPN_DO			:=	TIIB[EL2004_02_11]^Channel 1^Output'}
-	fb_LD4_VGC : FB_VGC; // Gate valve, Output tube LD4 laser Table
-	{attribute 'pytmc'    := 	' pv: LTLHN:LD4:PIP:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_11]^AI Standard Channel 1^Value;
-								 .i_xSP_DI			:= 	TIIB[EL1004_00_10]^Channel 1^Input;
-								 .q_xHVEna_DO		:= 	TIIB[EL2794_00_09]^Channel 1^Output'}
-	fb_LD4_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD4
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LD4:GPI:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_13]^AI Standard Channel 4^Value '}
-	fb_LD4_GPI : FB_MKS275; // Output tube LD4 ATM gauge
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LD4:GCC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 4^Value;
-								 .i_xHV_ON	    	:=	TIIB[EL1124_03_09]^Channel 3^Input;
-								 .i_xDisc_Active	:=	TIIB[EL1124_03_09]^Channel 4^Input;
-								 .q_xHV_DIS			:= 	TIIB[EL2624_03_02]^Channel 4^Output	'}
-	fb_LD4_GCC : FB_MKS500; // Output tube LD4, Cold Cathode gauge
+    {attribute 'pytmc' 	  :=	' pv: LXLHN:GCC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_09]^AI Standard Channel 2^Value;
+                                 .i_xHV_ON	    	:=	TIIB[EL1124_01_06]^Channel 1^Input;
+                                 .i_xDisc_Active	:=	TIIB[EL1124_01_06]^Channel 2^Input;
+                                 .q_xHV_DIS			:= 	TIIB[EL2624_01_02]^Channel 2^Output	'}
+    fb_PP_GCC : FB_MKS500; // Switchbox pumpline Cold Cathode gauge
 
-	// LD6
-	fb_LD6_VGC_FFOut : FB_HardwareFFOutput;
-	{attribute 'pytmc'	  :=	' pv: LTLHN:LD6:VGC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_13]^Channel 4^Input;
-								 .i_xClsLS			:=	TIIB[EL1004_02_13]^Channel 3^Input;
-								 .q_xOPN_DO			:=	TIIB[EL2004_02_14]^Channel 4^Output'}
-	fb_LD6_VGC : FB_VGC; // Gate valve, Output tube LD6 laser Table
-	{attribute 'pytmc'    := 	' pv: LTLHN:LD6:PIP:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_11]^AI Standard Channel 2^Value;
-								 .i_xSP_DI			:= 	TIIB[EL1004_00_10]^Channel 2^Input;
-								 .q_xHVEna_DO		:= 	TIIB[EL2794_00_09]^Channel 2^Output'}
-	fb_LD6_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD6
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LD6:GPI:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_13]^AI Standard Channel 3^Value '}
-	fb_LD6_GPI : FB_MKS275; // Output tube LD6 ATM gauge
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LD6:GCC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 3^Value;
-								 .i_xHV_ON	    	:=	TIIB[EL1124_03_09]^Channel 1^Input;
-								 .i_xDisc_Active	:=	TIIB[EL1124_03_09]^Channel 2^Input;
-								 .q_xHV_DIS			:= 	TIIB[EL2624_03_02]^Channel 3^Output	'}
-	fb_LD6_GCC : FB_MKS500; // Output tube LD6, Cold Cathode gauge
+    {attribute 'pytmc' 	  :=	' pv: LXLHN:GCC:02 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_09]^AI Standard Channel 4^Value;
+                                 .i_xHV_ON	    	:=	TIIB[EL1124_01_07]^Channel 3^Input;
+                                 .i_xDisc_Active	:=	TIIB[EL1124_01_07]^Channel 4^Input;
+                                 .q_xHV_DIS			:= 	TIIB[EL2624_01_02]^Channel 4^Output	'}
+    fb_DP_GCC : FB_MKS500; // Switchbox Cold Cathode gauge
 
-	// LD8
-	fb_LD8_VGC_FFOut : FB_HardwareFFOutput;
-	{attribute 'pytmc'	  :=	' pv: LTLHN:LD8:VGC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_07]^Channel 4^Input;
-								 .i_xClsLS			:=	TIIB[EL1004_02_07]^Channel 3^Input;
-								 .q_xOPN_DO			:=	TIIB[EL2004_02_08]^Channel 4^Output'}
-	fb_LD8_VGC : FB_VGC; // Gate valve, Output tube LD8 laser Table
-	{attribute 'pytmc'    := 	' pv: LTLHN:LD8:PIP:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_08]^AI Standard Channel 4^Value;
-								 .i_xSP_DI			:= 	TIIB[EL1004_00_07]^Channel 4^Input;
-								 .q_xHVEna_DO		:= 	TIIB[EL2794_00_06]^Channel 4^Output'}
-	fb_LD8_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD8
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LD8:GPI:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_11]^AI Standard Channel 2^Value '}
-	fb_LD8_GPI : FB_MKS275; // Output tube LD8 ATM gauge
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LD8:GCC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_11]^AI Standard Channel 3^Value;
-								 .i_xHV_ON	    	:=	TIIB[EL1124_01_08]^Channel 1^Input;
-								 .i_xDisc_Active	:=	TIIB[EL1124_01_08]^Channel 2^Input;
-								 .q_xHV_DIS			:= 	TIIB[EL2624_01_01]^Channel 1^Output	'}
-	fb_LD8_GCC : FB_MKS500; // Output tube LD8, Cold Cathode gauge
+    (* Transport Tubes *)
+    // LS1
+    fb_LS1_VGC_FFOut : FB_HardwareFFOutput;
+    {attribute 'pytmc'	  :=	' pv: LTLHN:LS1:VGC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_06]^Channel 2^Input;
+                                 .i_xClsLS			:=	TIIB[EL1004_02_06]^Channel 1^Input;
+                                 .q_xOPN_DO			:=	TIIB[EL2004_02_08]^Channel 1^Output'}
+    fb_LS1_VGC : FB_VGC; // Gate valve, Input LS1 laser Table
+    {attribute 'pytmc'    := 	' pv: LTLHN:LS1:PIP:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_08]^AI Standard Channel 2^Value;
+                                 .i_xSP_DI			:= 	TIIB[EL1004_00_07]^Channel 2^Input;
+                                 .q_xHVEna_DO		:= 	TIIB[EL2794_00_06]^Channel 2^Output'}
+    fb_LS1_PIP : FB_PIP_Gamma; // Ion Pump, input tube LS1
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LS1:GPI:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_10]^AI Standard Channel 4^Value '}
+    fb_LS1_GPI : FB_MKS275; // Input tube LS1 ATM gauge
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LS1:GCC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_10]^AI Standard Channel 4^Value;
+                                 .i_xHV_ON	    	:=	TIIB[EL1124_03_06]^Channel 3^Input;
+                                 .i_xDisc_Active	:=	TIIB[EL1124_03_06]^Channel 4^Input;
+                                 .q_xHV_DIS			:= 	TIIB[EL2624_03_01]^Channel 4^Output	'}
+    fb_LS1_GCC : FB_MKS500; // Input tube LS1, Cold Cathode gauge
 
-	// LD9
-	fb_LD9_VGC_FFOut : FB_HardwareFFOutput;
-	{attribute 'pytmc'	  :=	' pv: LTLHN:LD9:VGC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_06]^Channel 4^Input;
-								 .i_xClsLS			:=	TIIB[EL1004_02_06]^Channel 3^Input;
-								 .q_xOPN_DO			:=	TIIB[EL2004_02_08]^Channel 2^Output'}
-	fb_LD9_VGC : FB_VGC; // Gate valve, Output tube LD9 laser Table
-	{attribute 'pytmc'    := 	' pv: LTLHN:LD9:PIP:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_14]^AI Standard Channel 2^Value;
-								 .i_xSP_DI			:= 	TIIB[EL1004_00_13]^Channel 2^Input;
-								 .q_xHVEna_DO		:= 	TIIB[EL2794_00_12]^Channel 2^Output'}
-	fb_LD9_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD9
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LD9:GPI:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_12]^AI Standard Channel 1^Value '}
-	fb_LD9_GPI : FB_MKS275; // Output tube LD9 ATM gauge
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LD9:GCC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_10]^AI Standard Channel 1^Value;
-								 .i_xHV_ON	    	:=	TIIB[EL1124_03_06]^Channel 1^Input;
-								 .i_xDisc_Active	:=	TIIB[EL1124_03_06]^Channel 2^Input;
-								 .q_xHV_DIS			:= 	TIIB[EL2624_03_01]^Channel 1^Output	'}
-	fb_LD9_GCC : FB_MKS500; // Output tube LD9, Cold Cathode gauge
+    // LS5
+    fb_LS5_VGC_FFOut : FB_HardwareFFOutput;
+    {attribute 'pytmc'	  :=	' pv: LTLHN:LS5:VGC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_09]^Channel 4^Input;
+                                 .i_xClsLS			:=	TIIB[EL1004_02_09]^Channel 3^Input;
+                                 .q_xOPN_DO			:=	TIIB[EL2004_02_11]^Channel 2^Output'}
+    fb_LS5_VGC : FB_VGC; // Gate valve, Input LS5 laser Table
+    {attribute 'pytmc'    := 	' pv: LTLHN:LS5:PIP:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_11]^AI Standard Channel 4^Value;
+                                 .i_xSP_DI			:= 	TIIB[EL1004_00_10]^Channel 4^Input;
+                                 .q_xHVEna_DO		:= 	TIIB[EL2794_00_09]^Channel 4^Output'}
+    fb_LS5_PIP : FB_PIP_Gamma; // Ion Pump, input tube LS5
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LS5:GPI:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_13]^AI Standard Channel 1^Value '}
+    fb_LS5_GPI : FB_MKS275; // Input tube LS5 ATM gauge
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LS5:GCC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 1^Value;
+                                 .i_xHV_ON	    	:=	TIIB[EL1124_03_08]^Channel 1^Input;
+                                 .i_xDisc_Active	:=	TIIB[EL1124_03_08]^Channel 2^Input;
+                                 .q_xHV_DIS			:= 	TIIB[EL2624_03_02]^Channel 1^Output	'}
+    fb_LS5_GCC : FB_MKS500; // Input tube LS5, Cold Cathode gauge
 
-	// LD10
-	fb_LD10_VGC_FFOut : FB_HardwareFFOutput;
-	{attribute 'pytmc'	  :=	' pv: LTLHN:LD10:VGC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_07]^Channel 2^Input;
-								 .i_xClsLS			:=	TIIB[EL1004_02_07]^Channel 1^Input;
-								 .q_xOPN_DO			:=	TIIB[EL2004_02_08]^Channel 3^Output'}
-	fb_LD10_VGC : FB_VGC; // Gate valve, Output tube LD10 laser Table
-	{attribute 'pytmc'    := 	' pv: LTLHN:LD10:PIP:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_14]^AI Standard Channel 1^Value;
-								 .i_xSP_DI			:= 	TIIB[EL1004_00_13]^Channel 1^Input;
-								 .q_xHVEna_DO		:= 	TIIB[EL2794_00_12]^Channel 1^Output'}
-	fb_LD10_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD10
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LD10:GPI:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_12]^AI Standard Channel 2^Value '}
-	fb_LD10_GPI : FB_MKS275; // Output tube LD10 ATM gauge
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LD10:GCC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_10]^AI Standard Channel 2^Value;
-								 .i_xHV_ON	    	:=	TIIB[EL1124_03_07]^Channel 3^Input;
-								 .i_xDisc_Active	:=	TIIB[EL1124_03_07]^Channel 4^Input;
-								 .q_xHV_DIS			:= 	TIIB[EL2624_03_01]^Channel 2^Output	'}
-	fb_LD10_GCC : FB_MKS500; // Output tube LD10, Cold Cathode gauge	
+    // LS8
+    fb_LS8_VGC_FFOut : FB_HardwareFFOutput;
+    {attribute 'pytmc'	  :=	' pv: LTLHN:LS8:VGC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_09]^Channel 2^Input;
+                                 .i_xClsLS			:=	TIIB[EL1004_02_09]^Channel 1^Input;
+                                 .q_xOPN_DO			:=	TIIB[EL2004_02_11]^Channel 3^Output'}
+    fb_LS8_VGC : FB_VGC; // Gate valve, Input LS8 laser Table
+    {attribute 'pytmc'    := 	' pv: LTLHN:LS8:PIP:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_11]^AI Standard Channel 3^Value;
+                                 .i_xSP_DI			:= 	TIIB[EL1004_00_10]^Channel 3^Input;
+                                 .q_xHVEna_DO		:= 	TIIB[EL2794_00_09]^Channel 3^Output'}
+    fb_LS8_PIP : FB_PIP_Gamma; // Ion Pump, input tube LS8
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LS8:GPI:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_13]^AI Standard Channel 2^Value '}
+    fb_LS8_GPI : FB_MKS275; // Input tube LS8 ATM gauge
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LS8:GCC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 2^Value;
+                                 .i_xHV_ON	    	:=	TIIB[EL1124_03_08]^Channel 3^Input;
+                                 .i_xDisc_Active	:=	TIIB[EL1124_03_08]^Channel 4^Input;
+                                 .q_xHV_DIS			:= 	TIIB[EL2624_03_02]^Channel 2^Output	'}
+    fb_LS8_GCC : FB_MKS500; // Input tube LS8, Cold Cathode gauge
 
-	// LD14
-	fb_LD14_VGC_FFOut : FB_HardwareFFOutput;
-	{attribute 'pytmc'	  :=	' pv: LTLHN:LD14:VGC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_10]^Channel 4^Input;
-								 .i_xClsLS			:=	TIIB[EL1004_02_10]^Channel 3^Input;
-								 .q_xOPN_DO			:=	TIIB[EL2004_02_11]^Channel 4^Output'}
-	fb_LD14_VGC : FB_VGC; // Gate valve, Output tube LD14 laser Table
-	{attribute 'pytmc'    := 	' pv: LTLHN:LD14:PIP:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_14]^AI Standard Channel 3^Value;
-								 .i_xSP_DI			:= 	TIIB[EL1004_00_13]^Channel 3^Input;
-								 .q_xHVEna_DO		:= 	TIIB[EL2794_00_12]^Channel 3^Output'}
-	fb_LD14_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD14
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LD14:GPI:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_12]^AI Standard Channel 3^Value '}
-	fb_LD14_GPI : FB_MKS275; // Output tube LD14 ATM gauge
-	{attribute 'pytmc' 	  :=	' pv: LTLHN:LD14:GCC:01 '}
-	{attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_10]^AI Standard Channel 3^Value;
-								 .i_xHV_ON	    	:=	TIIB[EL1124_03_07]^Channel 1^Input;
-								 .i_xDisc_Active	:=	TIIB[EL1124_03_07]^Channel 2^Input;
-								 .q_xHV_DIS			:= 	TIIB[EL2624_03_01]^Channel 3^Output	'}
-	fb_LD14_GCC : FB_MKS500; // Output tube LD14, Cold Cathode gauge
+    // LD2
+    fb_LD2_VGC_FFOut : FB_HardwareFFOutput;
+    {attribute 'pytmc'	  :=	' pv: LTLHN:LD2:VGC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_12]^Channel 4^Input;
+                                 .i_xClsLS			:=	TIIB[EL1004_02_12]^Channel 3^Input;
+                                 .q_xOPN_DO			:=	TIIB[EL2004_02_14]^Channel 3^Output'}
+    fb_LD2_VGC : FB_VGC; // Gate valve, Output tube LD2 laser Table
+    {attribute 'pytmc'    := 	' pv: LTLHN:LD2:PIP:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_08]^AI Standard Channel 1^Value;
+                                 .i_xSP_DI			:= 	TIIB[EL1004_00_07]^Channel 1^Input;
+                                 .q_xHVEna_DO		:= 	TIIB[EL2794_00_06]^Channel 1^Output'}
+    fb_LD2_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD2
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LD2:GPI:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_10]^AI Standard Channel 1^Value '}
+    fb_LD2_GPI : FB_MKS275; // Output tube LD2 ATM gauge
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LD2:GCC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_09]^AI Standard Channel 1^Value;
+                                 .i_xHV_ON	    	:=	TIIB[EL1124_01_07]^Channel 1^Input;
+                                 .i_xDisc_Active	:=	TIIB[EL1124_01_07]^Channel 2^Input;
+                                 .q_xHV_DIS			:= 	TIIB[EL2624_01_02]^Channel 1^Output	'}
+    fb_LD2_GCC : FB_MKS500; // Output tube LD2, Cold Cathode gauge
 
-	//Preemptive Arbiter Content
-	g_fbArbiter    :   FB_Arbiter(1);
-	
+    // LD4
+    fb_LD4_VGC_FFOut : FB_HardwareFFOutput;
+    {attribute 'pytmc'	  :=	' pv: LTLHN:LD4:VGC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_10]^Channel 2^Input;
+                                 .i_xClsLS			:=	TIIB[EL1004_02_10]^Channel 1^Input;
+                                 .q_xOPN_DO			:=	TIIB[EL2004_02_11]^Channel 1^Output'}
+    fb_LD4_VGC : FB_VGC; // Gate valve, Output tube LD4 laser Table
+    {attribute 'pytmc'    := 	' pv: LTLHN:LD4:PIP:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_11]^AI Standard Channel 1^Value;
+                                 .i_xSP_DI			:= 	TIIB[EL1004_00_10]^Channel 1^Input;
+                                 .q_xHVEna_DO		:= 	TIIB[EL2794_00_09]^Channel 1^Output'}
+    fb_LD4_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD4
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LD4:GPI:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_13]^AI Standard Channel 4^Value '}
+    fb_LD4_GPI : FB_MKS275; // Output tube LD4 ATM gauge
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LD4:GCC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 4^Value;
+                                 .i_xHV_ON	    	:=	TIIB[EL1124_03_09]^Channel 3^Input;
+                                 .i_xDisc_Active	:=	TIIB[EL1124_03_09]^Channel 4^Input;
+                                 .q_xHV_DIS			:= 	TIIB[EL2624_03_02]^Channel 4^Output	'}
+    fb_LD4_GCC : FB_MKS500; // Output tube LD4, Cold Cathode gauge
+
+    // LD6
+    fb_LD6_VGC_FFOut : FB_HardwareFFOutput;
+    {attribute 'pytmc'	  :=	' pv: LTLHN:LD6:VGC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_13]^Channel 4^Input;
+                                 .i_xClsLS			:=	TIIB[EL1004_02_13]^Channel 3^Input;
+                                 .q_xOPN_DO			:=	TIIB[EL2004_02_14]^Channel 4^Output'}
+    fb_LD6_VGC : FB_VGC; // Gate valve, Output tube LD6 laser Table
+    {attribute 'pytmc'    := 	' pv: LTLHN:LD6:PIP:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_11]^AI Standard Channel 2^Value;
+                                 .i_xSP_DI			:= 	TIIB[EL1004_00_10]^Channel 2^Input;
+                                 .q_xHVEna_DO		:= 	TIIB[EL2794_00_09]^Channel 2^Output'}
+    fb_LD6_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD6
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LD6:GPI:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_13]^AI Standard Channel 3^Value '}
+    fb_LD6_GPI : FB_MKS275; // Output tube LD6 ATM gauge
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LD6:GCC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 3^Value;
+                                 .i_xHV_ON	    	:=	TIIB[EL1124_03_09]^Channel 1^Input;
+                                 .i_xDisc_Active	:=	TIIB[EL1124_03_09]^Channel 2^Input;
+                                 .q_xHV_DIS			:= 	TIIB[EL2624_03_02]^Channel 3^Output	'}
+    fb_LD6_GCC : FB_MKS500; // Output tube LD6, Cold Cathode gauge
+
+    // LD8
+    fb_LD8_VGC_FFOut : FB_HardwareFFOutput;
+    {attribute 'pytmc'	  :=	' pv: LTLHN:LD8:VGC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_07]^Channel 4^Input;
+                                 .i_xClsLS			:=	TIIB[EL1004_02_07]^Channel 3^Input;
+                                 .q_xOPN_DO			:=	TIIB[EL2004_02_08]^Channel 4^Output'}
+    fb_LD8_VGC : FB_VGC; // Gate valve, Output tube LD8 laser Table
+    {attribute 'pytmc'    := 	' pv: LTLHN:LD8:PIP:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_08]^AI Standard Channel 4^Value;
+                                 .i_xSP_DI			:= 	TIIB[EL1004_00_07]^Channel 4^Input;
+                                 .q_xHVEna_DO		:= 	TIIB[EL2794_00_06]^Channel 4^Output'}
+    fb_LD8_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD8
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LD8:GPI:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_11]^AI Standard Channel 2^Value '}
+    fb_LD8_GPI : FB_MKS275; // Output tube LD8 ATM gauge
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LD8:GCC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_11]^AI Standard Channel 3^Value;
+                                 .i_xHV_ON	    	:=	TIIB[EL1124_01_08]^Channel 1^Input;
+                                 .i_xDisc_Active	:=	TIIB[EL1124_01_08]^Channel 2^Input;
+                                 .q_xHV_DIS			:= 	TIIB[EL2624_01_01]^Channel 1^Output	'}
+    fb_LD8_GCC : FB_MKS500; // Output tube LD8, Cold Cathode gauge
+
+    // LD9
+    fb_LD9_VGC_FFOut : FB_HardwareFFOutput;
+    {attribute 'pytmc'	  :=	' pv: LTLHN:LD9:VGC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_06]^Channel 4^Input;
+                                 .i_xClsLS			:=	TIIB[EL1004_02_06]^Channel 3^Input;
+                                 .q_xOPN_DO			:=	TIIB[EL2004_02_08]^Channel 2^Output'}
+    fb_LD9_VGC : FB_VGC; // Gate valve, Output tube LD9 laser Table
+    {attribute 'pytmc'    := 	' pv: LTLHN:LD9:PIP:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_14]^AI Standard Channel 2^Value;
+                                 .i_xSP_DI			:= 	TIIB[EL1004_00_13]^Channel 2^Input;
+                                 .q_xHVEna_DO		:= 	TIIB[EL2794_00_12]^Channel 2^Output'}
+    fb_LD9_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD9
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LD9:GPI:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_12]^AI Standard Channel 1^Value '}
+    fb_LD9_GPI : FB_MKS275; // Output tube LD9 ATM gauge
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LD9:GCC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_10]^AI Standard Channel 1^Value;
+                                 .i_xHV_ON	    	:=	TIIB[EL1124_03_06]^Channel 1^Input;
+                                 .i_xDisc_Active	:=	TIIB[EL1124_03_06]^Channel 2^Input;
+                                 .q_xHV_DIS			:= 	TIIB[EL2624_03_01]^Channel 1^Output	'}
+    fb_LD9_GCC : FB_MKS500; // Output tube LD9, Cold Cathode gauge
+
+    // LD10
+    fb_LD10_VGC_FFOut : FB_HardwareFFOutput;
+    {attribute 'pytmc'	  :=	' pv: LTLHN:LD10:VGC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_07]^Channel 2^Input;
+                                 .i_xClsLS			:=	TIIB[EL1004_02_07]^Channel 1^Input;
+                                 .q_xOPN_DO			:=	TIIB[EL2004_02_08]^Channel 3^Output'}
+    fb_LD10_VGC : FB_VGC; // Gate valve, Output tube LD10 laser Table
+    {attribute 'pytmc'    := 	' pv: LTLHN:LD10:PIP:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_14]^AI Standard Channel 1^Value;
+                                 .i_xSP_DI			:= 	TIIB[EL1004_00_13]^Channel 1^Input;
+                                 .q_xHVEna_DO		:= 	TIIB[EL2794_00_12]^Channel 1^Output'}
+    fb_LD10_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD10
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LD10:GPI:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_12]^AI Standard Channel 2^Value '}
+    fb_LD10_GPI : FB_MKS275; // Output tube LD10 ATM gauge
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LD10:GCC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_10]^AI Standard Channel 2^Value;
+                                 .i_xHV_ON	    	:=	TIIB[EL1124_03_07]^Channel 3^Input;
+                                 .i_xDisc_Active	:=	TIIB[EL1124_03_07]^Channel 4^Input;
+                                 .q_xHV_DIS			:= 	TIIB[EL2624_03_01]^Channel 2^Output	'}
+    fb_LD10_GCC : FB_MKS500; // Output tube LD10, Cold Cathode gauge
+
+    // LD14
+    fb_LD14_VGC_FFOut : FB_HardwareFFOutput;
+    {attribute 'pytmc'	  :=	' pv: LTLHN:LD14:VGC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_10]^Channel 4^Input;
+                                 .i_xClsLS			:=	TIIB[EL1004_02_10]^Channel 3^Input;
+                                 .q_xOPN_DO			:=	TIIB[EL2004_02_11]^Channel 4^Output'}
+    fb_LD14_VGC : FB_VGC; // Gate valve, Output tube LD14 laser Table
+    {attribute 'pytmc'    := 	' pv: LTLHN:LD14:PIP:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_14]^AI Standard Channel 3^Value;
+                                 .i_xSP_DI			:= 	TIIB[EL1004_00_13]^Channel 3^Input;
+                                 .q_xHVEna_DO		:= 	TIIB[EL2794_00_12]^Channel 3^Output'}
+    fb_LD14_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD14
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LD14:GPI:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_12]^AI Standard Channel 3^Value '}
+    fb_LD14_GPI : FB_MKS275; // Output tube LD14 ATM gauge
+    {attribute 'pytmc' 	  :=	' pv: LTLHN:LD14:GCC:01 '}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_10]^AI Standard Channel 3^Value;
+                                 .i_xHV_ON	    	:=	TIIB[EL1124_03_07]^Channel 1^Input;
+                                 .i_xDisc_Active	:=	TIIB[EL1124_03_07]^Channel 2^Input;
+                                 .q_xHV_DIS			:= 	TIIB[EL2624_03_01]^Channel 3^Output	'}
+    fb_LD14_GCC : FB_MKS500; // Output tube LD14, Cold Cathode gauge
+
+    //Preemptive Arbiter Content
+    g_fbArbiter    :   FB_Arbiter(1);
+
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

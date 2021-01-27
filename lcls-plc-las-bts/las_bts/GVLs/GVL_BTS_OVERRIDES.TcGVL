@@ -3,12 +3,12 @@
   <GVL Name="GVL_BTS_OVERRIDES" Id="{f55be108-cc20-45ff-a5e5-29ed15a33c84}">
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
-	{attribute 'pytmc' := '
+    {attribute 'pytmc' := '
     pv: LXLHN:VAC:OVERRIDE
-	field: ZNAM OVERRIDE OFF ;
-	field: ONAM OVERRIDE ON ;
-	'}
-	xSystemOverrideMode_LAS : BOOL := FALSE;
+    field: ZNAM OVERRIDE OFF ;
+    field: ONAM OVERRIDE ON ;
+    '}
+    xSystemOverrideMode_LAS : BOOL := FALSE;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

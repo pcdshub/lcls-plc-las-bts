@@ -3,26 +3,26 @@
   <POU Name="Serial" Id="{893f175e-5a5c-4e2a-a383-b460a32427d2}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Serial
 VAR
-	(*
-	fbPfeifferSerialDriver : FB_PfeifferSerialDriver;
-	fbPolling : TON;
-	stPfeifferControl : lclsvacuumserialdriverlib.ST_PfeifferControl := (
-		xEnableComm:= TRUE, 
-		iSerialAddress:= 0
-		//xPumpingStation_010:= , 
-		//xMotorPump_023:= , 
-		//iGasMode_027:= , 
-		//xIlk:= , 
-		//xRunSW:= , 
-		//xErrorAck_009:= , 
-		//uiPowerPct_708:= 
-	);
-	stRxBuffer : ComBuffer;
-	stTxBuffer : ComBuffer;*)
+    (*
+    fbPfeifferSerialDriver : FB_PfeifferSerialDriver;
+    fbPolling : TON;
+    stPfeifferControl : lclsvacuumserialdriverlib.ST_PfeifferControl := (
+        xEnableComm:= TRUE,
+        iSerialAddress:= 0
+        //xPumpingStation_010:= ,
+        //xMotorPump_023:= ,
+        //iGasMode_027:= ,
+        //xIlk:= ,
+        //xRunSW:= ,
+        //xErrorAck_009:= ,
+        //uiPowerPct_708:=
+    );
+    stRxBuffer : ComBuffer;
+    stTxBuffer : ComBuffer;*)
 END_VAR
 VAR CONSTANT
-	POLL_RATE : TIME := T#100MS;
-	TIMEOUT : TIME := T#5S;
+    POLL_RATE : TIME := T#100MS;
+    TIMEOUT : TIME := T#5S;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -30,22 +30,12 @@ END_VAR
 fbPolling(IN := fbPfeifferSerialDriver.q_xDone, PT := POLL_RATE);
 
 fbPfeifferSerialDriver(
-	i_xExecute := fbPolling.Q,
-	i_tTimeOut := TIMEOUT,
-	i_stControl := stPfeifferControl,
-	iq_stSerialRXBuffer := stRxBuffer,
-	iq_stSerialTXBuffer := stTxBuffer);
+    i_xExecute := fbPolling.Q,
+    i_tTimeOut := TIMEOUT,
+    i_stControl := stPfeifferControl,
+    iq_stSerialRXBuffer := stRxBuffer,
+    iq_stSerialTXBuffer := stTxBuffer);
 *)]]></ST>
     </Implementation>
-    <LineIds Name="Serial">
-      <LineId Id="65" Count="0" />
-      <LineId Id="8" Count="0" />
-      <LineId Id="13" Count="0" />
-      <LineId Id="22" Count="1" />
-      <LineId Id="20" Count="0" />
-      <LineId Id="38" Count="0" />
-      <LineId Id="41" Count="1" />
-      <LineId Id="17" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>
