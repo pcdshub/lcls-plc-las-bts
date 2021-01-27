@@ -533,6 +533,50 @@ record(waveform, "$(PREFIX)K:eVRangeCnst_RBV") {
   info(archive, "monitor 1: VAL")
 }
 
+record(bi, "LXLHN:VAC:OVRD_ON_RBV") {
+  field(DESC, "GVL_Variables.xSystemOverrideMode_BTS")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Variables.xSystemOverrideMode_BTS?")
+  field(ZNAM, "Override Off")
+  field(ONAM, "Override On")
+  info(archive, "VAL")
+}
+
+record(bo, "LXLHN:VAC:OVRD_ON") {
+  field(DESC, "GVL_Variables.xSystemOverrideMode_BTS")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Variables.xSystemOverrideMode_BTS=")
+  field(ZNAM, "Override Off")
+  field(ONAM, "Override On")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "LXLHN:VAC:GCC:ENABLE_RBV") {
+  field(DESC, "GVL_Variables.xGCC_Enable_SW")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Variables.xGCC_Enable_SW?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "LXLHN:VAC:GCC:ENABLE") {
+  field(DESC, "GVL_Variables.xGCC_Enable_SW")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Variables.xGCC_Enable_SW=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
 record(bi, "LXLHN:VGC:01:Dis_DPIlk_RBV") {
   field(DESC, "GVL_BTS_VAC.fb_PP_VGC.i_xDis_DPIlk")
   field(SCAN, "I/O Intr")
@@ -2921,7 +2965,7 @@ record(bo, "LXLHN:PMF:01:LSPD_SW") {
   info(archive, "VAL")
 }
 
-record(bi, "LXLHN:PP:PIP:ILK_OK_RBV") {
+record(bi, "LXLHN:PIP:01:ILK_OK_RBV") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.xILKOk")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -2933,7 +2977,7 @@ record(bi, "LXLHN:PP:PIP:ILK_OK_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "LXLHN:PP:PIP:ERROR_RBV") {
+record(bi, "LXLHN:PIP:01:ERROR_RBV") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.xError")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -2945,7 +2989,7 @@ record(bi, "LXLHN:PP:PIP:ERROR_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "LXLHN:PP:PIP:AT_VAC_SP_RBV") {
+record(ai, "LXLHN:PIP:01:AT_VAC_SP_RBV") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.rHVEna_SP")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -2961,7 +3005,7 @@ record(ai, "LXLHN:PP:PIP:AT_VAC_SP_RBV") {
   info(archive, "VAL")
 }
 
-record(ao, "LXLHN:PP:PIP:AT_VAC_SP") {
+record(ao, "LXLHN:PIP:01:AT_VAC_SP") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.rHVEna_SP")
   field(PINI, "1")
   field(DTYP, "asynFloat64")
@@ -2975,7 +3019,7 @@ record(ao, "LXLHN:PP:PIP:AT_VAC_SP") {
   info(archive, "VAL")
 }
 
-record(waveform, "LXLHN:PP:PIP:ILK_DEVICE_RBV") {
+record(waveform, "LXLHN:PIP:01:ILK_DEVICE_RBV") {
   # GVL_BTS_VAC.fb_PP_PIP.stPump.sIlkDeviceName
   field(DESC, "GVL_BTS_VAC.fb_PP_PI...mp.sIlkDeviceName")
   field(SCAN, "I/O Intr")
@@ -2988,7 +3032,7 @@ record(waveform, "LXLHN:PP:PIP:ILK_DEVICE_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "LXLHN:PP:PIP:HV_SW_RBV") {
+record(bi, "LXLHN:PIP:01:HV_SW_RBV") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.xHVEna_SW")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -3000,7 +3044,7 @@ record(bi, "LXLHN:PP:PIP:HV_SW_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "LXLHN:PP:PIP:HV_SW") {
+record(bo, "LXLHN:PIP:01:HV_SW") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.xHVEna_SW")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTS_VAC.fb_PP_PIP.stPump.xHVEna_SW=")
@@ -3010,7 +3054,7 @@ record(bo, "LXLHN:PP:PIP:HV_SW") {
   info(archive, "VAL")
 }
 
-record(bi, "LXLHN:PP:PIP:Auto_On_RBV") {
+record(bi, "LXLHN:PIP:01:Auto_On_RBV") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.xAutoOn")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -3022,7 +3066,7 @@ record(bi, "LXLHN:PP:PIP:Auto_On_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "LXLHN:PP:PIP:OVRD_ON_RBV") {
+record(bi, "LXLHN:PIP:01:OVRD_ON_RBV") {
   # GVL_BTS_VAC.fb_PP_PIP.stPump.xOverrideMode
   field(DESC, "GVL_BTS_VAC.fb_PP_PI...ump.xOverrideMode")
   field(SCAN, "I/O Intr")
@@ -3035,7 +3079,7 @@ record(bi, "LXLHN:PP:PIP:OVRD_ON_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "LXLHN:PP:PIP:OVRD_ON") {
+record(bo, "LXLHN:PIP:01:OVRD_ON") {
   # GVL_BTS_VAC.fb_PP_PIP.stPump.xOverrideMode
   field(DESC, "GVL_BTS_VAC.fb_PP_PI...ump.xOverrideMode")
   field(DTYP, "asynInt32")
@@ -3046,7 +3090,7 @@ record(bo, "LXLHN:PP:PIP:OVRD_ON") {
   info(archive, "VAL")
 }
 
-record(bi, "LXLHN:PP:PIP:FORCE_START_RBV") {
+record(bi, "LXLHN:PIP:01:FORCE_START_RBV") {
   # GVL_BTS_VAC.fb_PP_PIP.stPump.pv_xOvrdStart
   field(DESC, "GVL_BTS_VAC.fb_PP_PI...ump.pv_xOvrdStart")
   field(SCAN, "I/O Intr")
@@ -3059,7 +3103,7 @@ record(bi, "LXLHN:PP:PIP:FORCE_START_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "LXLHN:PP:PIP:FORCE_START") {
+record(bo, "LXLHN:PIP:01:FORCE_START") {
   # GVL_BTS_VAC.fb_PP_PIP.stPump.pv_xOvrdStart
   field(DESC, "GVL_BTS_VAC.fb_PP_PI...ump.pv_xOvrdStart")
   field(DTYP, "asynInt32")
@@ -3070,7 +3114,7 @@ record(bo, "LXLHN:PP:PIP:FORCE_START") {
   info(archive, "VAL")
 }
 
-record(ai, "LXLHN:PP:PIP:SP_HYS_RBV") {
+record(ai, "LXLHN:PIP:01:SP_HYS_RBV") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.rHYS_PR")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -3086,7 +3130,7 @@ record(ai, "LXLHN:PP:PIP:SP_HYS_RBV") {
   info(archive, "VAL")
 }
 
-record(ao, "LXLHN:PP:PIP:SP_HYS") {
+record(ao, "LXLHN:PIP:01:SP_HYS") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.rHYS_PR")
   field(PINI, "1")
   field(DTYP, "asynFloat64")
@@ -3100,7 +3144,7 @@ record(ao, "LXLHN:PP:PIP:SP_HYS") {
   info(archive, "VAL")
 }
 
-record(longin, "LXLHN:PP:PIP:AI_Offset_RBV") {
+record(longin, "LXLHN:PIP:01:AI_Offset_RBV") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.iOffset")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -3110,7 +3154,7 @@ record(longin, "LXLHN:PP:PIP:AI_Offset_RBV") {
   info(archive, "VAL")
 }
 
-record(longout, "LXLHN:PP:PIP:AI_Offset") {
+record(longout, "LXLHN:PIP:01:AI_Offset") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.iOffset")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTS_VAC.fb_PP_PIP.stPump.iOffset=")
@@ -3118,7 +3162,7 @@ record(longout, "LXLHN:PP:PIP:AI_Offset") {
   info(archive, "VAL")
 }
 
-record(bi, "LXLHN:PP:PIP:Inverted_RBV") {
+record(bi, "LXLHN:PIP:01:Inverted_RBV") {
   # GVL_BTS_VAC.fb_PP_PIP.stPump.bOutputInverted
   field(DESC, "GVL_BTS_VAC.fb_PP_PI...p.bOutputInverted")
   field(SCAN, "I/O Intr")
@@ -3131,7 +3175,7 @@ record(bi, "LXLHN:PP:PIP:Inverted_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "LXLHN:PP:PIP:Inverted") {
+record(bo, "LXLHN:PIP:01:Inverted") {
   # GVL_BTS_VAC.fb_PP_PIP.stPump.bOutputInverted
   field(DESC, "GVL_BTS_VAC.fb_PP_PI...p.bOutputInverted")
   field(DTYP, "asynInt32")
@@ -3142,7 +3186,7 @@ record(bo, "LXLHN:PP:PIP:Inverted") {
   info(archive, "VAL")
 }
 
-record(bi, "LXLHN:PP:PIP:HV_DO_RBV") {
+record(bi, "LXLHN:PIP:01:HV_DO_RBV") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.q_xHVEna_DO")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -3154,7 +3198,7 @@ record(bi, "LXLHN:PP:PIP:HV_DO_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "LXLHN:PP:PIP:PRESS_RBV") {
+record(ai, "LXLHN:PIP:01:PRESS_RBV") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.rPRESS")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -3169,7 +3213,7 @@ record(ai, "LXLHN:PP:PIP:PRESS_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "LXLHN:PP:PIP:PRESS_AI_RBV") {
+record(ai, "LXLHN:PIP:01:PRESS_AI_RBV") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.i_iPRESS")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -3181,7 +3225,7 @@ record(ai, "LXLHN:PP:PIP:PRESS_AI_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "LXLHN:PP:PIP:HV_DI_RBV") {
+record(bi, "LXLHN:PIP:01:HV_DI_RBV") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.i_xHV_DI")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -3193,7 +3237,7 @@ record(bi, "LXLHN:PP:PIP:HV_DI_RBV") {
   info(archive, "VAL")
 }
 
-record(mbbi, "LXLHN:PP:PIP:STATE_RBV") {
+record(mbbi, "LXLHN:PIP:01:STATE_RBV") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.eState")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -3213,7 +3257,7 @@ record(mbbi, "LXLHN:PP:PIP:STATE_RBV") {
   info(archive, "VAL")
 }
 
-record(bi, "LXLHN:PP:PIP:LOGGER_RBV") {
+record(bi, "LXLHN:PIP:01:LOGGER_RBV") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.xLog")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
@@ -3225,7 +3269,7 @@ record(bi, "LXLHN:PP:PIP:LOGGER_RBV") {
   info(archive, "VAL")
 }
 
-record(bo, "LXLHN:PP:PIP:LOGGER") {
+record(bo, "LXLHN:PIP:01:LOGGER") {
   field(DESC, "GVL_BTS_VAC.fb_PP_PIP.stPump.xLog")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTS_VAC.fb_PP_PIP.stPump.xLog=")
