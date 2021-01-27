@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="MAIN" Id="{e39c3acf-17bf-44fe-a884-c77329dee9c5}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+    fbLogHandler : FB_LogHandler;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbLogHandler();
+
+// Run the Diagnostics PRG
+DIAGNOSTICS();
+
+// Run the Gauges PRG
+PRG_GAUGES();
+
+// Run the Valves PRG
+PRG_VALVES();
+
+// Run the Pumps PRG
+PRG_PUMPS();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_PUMPS" Id="{bd78324c-f63c-467d-a180-8df2bcdb3c2e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_PUMPS
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Switchbox pumps *)
+fb_PP_PMF();
+
+fb_PP_PTM(i_xExtIlkOK := fb_PP_VVC.M_IsClosed());
+//F_TurboExtILKLogic_2(Turbo:=fb_PP_PTM.iq_stPTM,
+//BackingGauge := , InletGauge:=, ScrollPump:=fb_PP_PMF.q_stPump));
+//GVL_BTS_VAC.fb_PP_PTM(i_xExtIlkOK := F_PumpStationTurboPumpInterlock());
+
+fb_PP_PIP(i_stGauge := fb_DP_GCC.IG);
+
+(* Transport Tube pumps *)
+// LS1
+fb_LS1_PIP(i_stGauge := fb_LS1_GCC.IG, stPump=>);
+
+// LS5
+fb_LS5_PIP(i_stGauge := fb_LS5_GCC.IG, stPump=>);
+
+// LS8
+fb_LS8_PIP(i_stGauge := fb_LS8_GCC.IG, stPump=>);
+
+// LD2
+fb_LD2_PIP(i_stGauge := fb_LD2_GCC.IG, stPump=>);
+
+// LD4
+fb_LD4_PIP(i_stGauge := fb_LD4_GCC.IG, stPump=>);
+
+// LD6
+fb_LD6_PIP(i_stGauge := fb_LD6_GCC.IG, stPump=>);
+
+// LD8
+fb_LD8_PIP(i_stGauge := fb_LD8_GCC.IG, stPump=>);
+
+// LD9
+fb_LD9_PIP(i_stGauge := fb_LD9_GCC.IG, stPump=>);
+
+// LD10
+fb_LD10_PIP(i_stGauge := fb_LD10_GCC.IG, stPump=>);
+
+// LD14
+fb_LD14_PIP(i_stGauge := fb_LD14_GCC.IG, stPump=>);
+
+(*Serial Interface*)
+(*Assign adresses to the pfeiffer controller connected to this serial terminal*)
+st_Pfeiffer_CTRL_PTM[1].iSerialAddress  :=1;	//LXLHN_PTM_01
+st_Pfeiffer_CTRL_PTM[1].xEnableComm 	:= TRUE;
+(* Instanitate the Function block for serial communication with Pfeiffer*)
+PTM_COM(astPfeifferControl := st_Pfeiffer_CTRL_PTM,
+                astPfeifferStatus:= st_Pfeiffer_RBK_PTM,
+                SerialRXBuffer:= PTM_SerialRXBuffer,
+                SerialTXBuffer:= PTM_SerialTXBuffer);
+(* Copy Status Pv's into the PTM structure*)
+fb_PP_PTM.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM[1],st_Pfeiffer_RBK:=st_Pfeiffer_RBK_PTM[1]);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

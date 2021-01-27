@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_VALVES" Id="{ba00eb5d-cf41-4398-aa63-3ea5e5b61133}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_VALVES
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Switchbox valves *)
+fb_PP_VGC(
+    i_stUSG := fb_PP_GCC.IG,
+    i_stDSG := fb_DP_GCC.IG,
+    i_xDis_DPIlk := FALSE,
+    i_xEPS_OK := TRUE,
+    i_xPMPS_OK := TRUE,
+    i_xExt_OK := TRUE,
+    i_xOverrideMode := xSystemOverrideMode_BTS,
+    io_fbFFHWO := fb_PP_VGC_FFOut,
+    fbArbiter := g_fbArbiter
+);
+
+fb_PP_VVC(
+    i_xExtILK_OK := fb_PP_VGC.M_IsClosed(),
+    i_xOverrideMode := xSystemOverrideMode_BTS
+);
+
+GVL_BTS_VAC.fb_PP_VRC_1(
+    i_xExtILK_OK := TRUE,
+    i_xOverrideMode := xSystemOverrideMode_BTS
+);
+
+GVL_BTS_VAC.fb_PP_VRC_2(
+    i_xExtILK_OK := TRUE,
+    i_xOverrideMode := xSystemOverrideMode_BTS
+);
+
+fb_VP_VVC_1(
+    i_xExtILK_OK := TRUE,
+    i_xOverrideMode := xSystemOverrideMode_BTS
+);
+
+fb_VP_VVC_2(
+    i_xExtILK_OK := TRUE
+);
+
+(* Transport Tube vavles *)
+// LS1
+fb_LS1_VGC(
+    i_stUSG := fb_LS1_GCC.IG,
+    i_stDSG := fb_DP_GCC.IG,
+    i_xDis_DPIlk := FALSE,
+    i_xEPS_OK := TRUE,
+    i_xPMPS_OK := TRUE,
+    i_xExt_OK := TRUE,
+    i_xOverrideMode := xSystemOverrideMode_BTS,
+    io_fbFFHWO := fb_LS1_VGC_FFOut,
+    fbArbiter := g_fbArbiter,
+);
+
+// LS5
+fb_LS5_VGC(
+    i_stUSG := fb_LS5_GPI.PG,
+    i_stDSG := fb_DP_GPI.PG,
+    i_xDis_DPIlk := FALSE,
+    i_xEPS_OK := TRUE,
+    i_xPMPS_OK := TRUE,
+    i_xExt_OK := TRUE,
+    i_xOverrideMode := xSystemOverrideMode_BTS,
+    io_fbFFHWO := fb_LS5_VGC_FFOut,
+    fbArbiter := g_fbArbiter
+);
+
+// LS8
+fb_LS8_VGC(
+    i_stUSG := fb_LS8_GCC.IG,
+    i_stDSG := fb_DP_GCC.IG,
+    i_xDis_DPIlk := FALSE,
+    i_xEPS_OK := TRUE,
+    i_xPMPS_OK := TRUE,
+    i_xExt_OK := TRUE,
+    i_xOverrideMode := xSystemOverrideMode_BTS,
+    io_fbFFHWO := fb_LS8_VGC_FFOut,
+    fbArbiter := g_fbArbiter
+);
+
+// LD2
+fb_LD2_VGC(
+    i_stUSG := fb_LD2_GCC.IG,
+    i_stDSG := fb_DP_GCC.IG,
+    i_xDis_DPIlk := FALSE,
+    i_xEPS_OK := TRUE,
+    i_xPMPS_OK := TRUE,
+    i_xExt_OK := TRUE,
+    i_xOverrideMode := xSystemOverrideMode_BTS,
+    io_fbFFHWO := fb_LD2_VGC_FFOut,
+    fbArbiter := g_fbArbiter
+);
+
+// LD4
+fb_LD4_VGC(
+    i_stUSG := fb_LD4_GCC.IG,
+    i_stDSG := fb_DP_GCC.IG,
+    i_xDis_DPIlk := FALSE,
+    i_xEPS_OK := TRUE,
+    i_xPMPS_OK := TRUE,
+    i_xExt_OK := TRUE,
+    i_xOverrideMode := xSystemOverrideMode_BTS,
+    io_fbFFHWO := fb_LD4_VGC_FFOut,
+    fbArbiter := g_fbArbiter
+);
+
+// LD6
+fb_LD6_VGC(
+    i_stUSG := fb_LD6_GCC.IG,
+    i_stDSG := fb_DP_GCC.IG,
+    i_xDis_DPIlk := FALSE,
+    i_xEPS_OK := TRUE,
+    i_xPMPS_OK := TRUE,
+    i_xExt_OK := TRUE,
+    i_xOverrideMode := xSystemOverrideMode_BTS,
+    io_fbFFHWO := fb_LD6_VGC_FFOut,
+    fbArbiter := g_fbArbiter
+);
+
+// LD8
+fb_LD8_VGC(
+    i_stUSG := fb_LD8_GCC.IG,
+    i_stDSG := fb_DP_GCC.IG,
+    i_xDis_DPIlk := FALSE,
+    i_xEPS_OK := TRUE,
+    i_xPMPS_OK := TRUE,
+    i_xExt_OK := TRUE,
+    i_xOverrideMode := xSystemOverrideMode_BTS,
+    io_fbFFHWO := fb_LD8_VGC_FFOut,
+    fbArbiter := g_fbArbiter
+);
+
+// LD9
+fb_LD9_VGC(
+    i_stUSG := fb_LD9_GCC.IG,
+    i_stDSG := fb_DP_GCC.IG,
+    i_xDis_DPIlk := FALSE,
+    i_xEPS_OK := TRUE,
+    i_xPMPS_OK := TRUE,
+    i_xExt_OK := TRUE,
+    i_xOverrideMode := xSystemOverrideMode_BTS,
+    io_fbFFHWO := fb_LD9_VGC_FFOut,
+    fbArbiter := g_fbArbiter
+);
+
+// LD10
+fb_LD10_VGC(
+    i_stUSG := fb_LD10_GCC.IG,
+    i_stDSG := fb_DP_GCC.IG,
+    i_xDis_DPIlk := FALSE,
+    i_xEPS_OK := TRUE,
+    i_xPMPS_OK := TRUE,
+    i_xExt_OK := TRUE,
+    i_xOverrideMode := xSystemOverrideMode_BTS,
+    io_fbFFHWO := fb_LD10_VGC_FFOut,
+    fbArbiter := g_fbArbiter
+);
+
+// LD14
+fb_LD14_VGC(
+    i_stUSG := fb_LD14_GCC.IG,
+    i_stDSG := fb_DP_GCC.IG,
+    i_xDis_DPIlk := FALSE,
+    i_xEPS_OK := TRUE,
+    i_xPMPS_OK := TRUE,
+    i_xExt_OK := TRUE,
+    i_xOverrideMode := xSystemOverrideMode_BTS,
+    io_fbFFHWO := fb_LD14_VGC_FFOut,
+    fbArbiter := g_fbArbiter
+);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

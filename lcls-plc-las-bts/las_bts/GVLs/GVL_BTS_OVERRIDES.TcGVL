@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_BTS_OVERRIDES" Id="{f55be108-cc20-45ff-a5e5-29ed15a33c84}">
+    <Declaration><![CDATA[//{attribute 'qualified_only'}
+VAR_GLOBAL
+    {attribute 'pytmc' := '
+    pv: LXLHN:VAC:OVERRIDE
+    field: ZNAM OVERRIDE OFF ;
+    field: ONAM OVERRIDE ON ;
+    '}
+    xSystemOverrideMode_LAS : BOOL := FALSE;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
