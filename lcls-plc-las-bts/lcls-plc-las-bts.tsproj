@@ -76,7 +76,7 @@
 			</Format>
 		</DataType>
 	</DataTypes>
-	<Project ProjectGUID="{1CC01732-1234-43E4-A951-74578F6FE584}" TargetNetId="172.21.35.49.1.1" RelativeTargetNetId="true" RelativeIpAddresses="true" ShowHideConfigurations="#x106">
+	<Project ProjectGUID="{1CC01732-1234-43E4-A951-74578F6FE584}" TargetNetId="172.21.160.49.1.1" RelativeTargetNetId="true" RelativeIpAddresses="true" ShowHideConfigurations="#x106">
 		<System>
 			<Licenses>
 				<Target>
@@ -215,7 +215,7 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_PP_PMF.i_xLocal</Name>
+							<Name>GVL_BTS_VAC.fb_PP_PMF.i_xRemote</Name>
 							<Comment>
 								<![CDATA[ Input ]]>
 							</Comment>
@@ -1149,6 +1149,13 @@
 							<InOut>7</InOut>
 						</Var>
 					</Vars>
+					<UnrestoredVarLinks ImportTime="2021-04-28T10:52:47">
+						<OwnerA Name="InputDst" Prefix="TIPC^las_bts^las_bts Instance" Type="1">
+							<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL1004_00_01">
+								<Link VarA="GVL_BTS_VAC.fb_PP_PMF.i_xLocal" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
 					<TaskPouOids>
 						<TaskPouOid Prio="1" OTCID="#x08502001"/>
 						<TaskPouOid Prio="20" OTCID="#x08502002"/>
@@ -1337,7 +1344,6 @@
 			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL1004_00_01">
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PMF.i_xAlarm" VarB="Channel 3^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PMF.i_xIsRun" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PMF.i_xLocal" VarB="Channel 2^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PMF.i_xWarning" VarB="Channel 4^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL1004_00_03">
