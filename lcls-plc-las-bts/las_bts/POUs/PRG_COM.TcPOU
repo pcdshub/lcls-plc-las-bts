@@ -11,14 +11,14 @@ END_VAR
 (*Instanitate Serial port com function *)
 //LXLHN_PTM_01
 PTM_fbSerialLineControl(
-	Mode:= SERIALLINEMODE_EL6_22B,
-	pComIn:= ADR(PTM_stComIn),
-	pComOut:=ADR(PTM_stComOut),
-	SizeComIn:= SIZEOF(PTM_stComOut),
-	TxBuffer:= PTM_SerialTXBuffer,
-	RxBuffer:= PTM_SerialRXBuffer,
-	Error=> ,
-	ErrorID=> );]]></ST>
+    Mode:= SERIALLINEMODE_EL6_22B,
+    pComIn:= ADR(PTM_stComIn),
+    pComOut:=ADR(PTM_stComOut),
+    SizeComIn:= SIZEOF(PTM_stComOut),
+    TxBuffer:= PTM_SerialTXBuffer,
+    RxBuffer:= PTM_SerialRXBuffer,
+    Error=> ,
+    ErrorID=> );]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

@@ -6,99 +6,99 @@ VAR
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[(* Switchbox Gauges *)
-	fb_PP_GPI_1.M_SetBits(30518);
-	fb_PP_GPI_1();
-	
-	fb_PP_GPI_2.M_SetBits(30518);
-	fb_PP_GPI_2();
+    fb_PP_GPI_1.M_SetBits(30518);
+    fb_PP_GPI_1();
 
-	fb_DP_GPI.M_SetBits(30518);
-	fb_DP_GPI();
+    fb_PP_GPI_2.M_SetBits(30518);
+    fb_PP_GPI_2();
 
-	fb_PP_GCC.M_SetBits(30518);
-	fb_PP_GCC(PG := GVL_BTS_VAC.fb_PP_GPI_1.PG , IG=> );
+    fb_DP_GPI.M_SetBits(30518);
+    fb_DP_GPI();
 
-	fb_DP_GCC.M_SetBits(30518);
-	fb_DP_GCC(PG := GVL_BTS_VAC.fb_PP_GPI_1.PG , IG=> );
+    fb_PP_GCC.M_SetBits(30518);
+    fb_PP_GCC(PG := GVL_BTS_VAC.fb_PP_GPI_1.PG , IG=> );
+
+    fb_DP_GCC.M_SetBits(30518);
+    fb_DP_GCC(PG := GVL_BTS_VAC.fb_PP_GPI_1.PG , IG=> );
 
 (* Transport Tube Gauges *)
 // LS1
-	fb_LS1_GPI.M_SetBits(30518);
-	fb_LS1_GPI();
-	fb_LS1_GCC.M_SetBits(30518);
-	fb_LS1_GCC(PG := GVL_BTS_VAC.fb_LS1_GPI.PG , IG=> );
+    fb_LS1_GPI.M_SetBits(30518);
+    fb_LS1_GPI();
+    fb_LS1_GCC.M_SetBits(30518);
+    fb_LS1_GCC(PG := GVL_BTS_VAC.fb_LS1_GPI.PG , IG=> );
 
 // LS5
-	fb_LS5_GPI.M_SetBits(30518);
-	fb_LS5_GPI();
-	fb_LS5_GCC.M_SetBits(30518);
-	fb_LS5_GCC(PG := GVL_BTS_VAC.fb_LS5_GPI.PG , IG=> );
+    fb_LS5_GPI.M_SetBits(30518);
+    fb_LS5_GPI();
+    fb_LS5_GCC.M_SetBits(30518);
+    fb_LS5_GCC(PG := GVL_BTS_VAC.fb_LS5_GPI.PG , IG=> );
 
 // LS8
-	fb_LS8_GPI.M_SetBits(30518);
-	fb_LS8_GPI();
-	fb_LS8_GCC.M_SetBits(30518);
-	fb_LS8_GCC(PG := GVL_BTS_VAC.fb_LS8_GPI.PG , IG=> );
+    fb_LS8_GPI.M_SetBits(30518);
+    fb_LS8_GPI();
+    fb_LS8_GCC.M_SetBits(30518);
+    fb_LS8_GCC(PG := GVL_BTS_VAC.fb_LS8_GPI.PG , IG=> );
 
 // LD2
-	fb_LD2_GPI.M_SetBits(30518);
-	fb_LD2_GPI();
-	fb_LD2_GCC.M_SetBits(30518);
-	fb_LD2_GCC(PG := GVL_BTS_VAC.fb_LD2_GPI.PG , IG=> );
+    fb_LD2_GPI.M_SetBits(30518);
+    fb_LD2_GPI();
+    fb_LD2_GCC.M_SetBits(30518);
+    fb_LD2_GCC(PG := GVL_BTS_VAC.fb_LD2_GPI.PG , IG=> );
 
 // LD4
-	fb_LD4_GPI.M_SetBits(30518);
-	fb_LD4_GPI();
-	fb_LD4_GCC.M_SetBits(30518);
-	fb_LD4_GCC(PG := GVL_BTS_VAC.fb_LD4_GPI.PG , IG=> );
+    fb_LD4_GPI.M_SetBits(30518);
+    fb_LD4_GPI();
+    fb_LD4_GCC.M_SetBits(30518);
+    fb_LD4_GCC(PG := GVL_BTS_VAC.fb_LD4_GPI.PG , IG=> );
 
 // LD6
-	fb_LD6_GPI.M_SetBits(30518);
-	fb_LD6_GPI();
-	fb_LD6_GCC.M_SetBits(30518);
-	fb_LD6_GCC(PG := GVL_BTS_VAC.fb_LD6_GPI.PG , IG=> );
+    fb_LD6_GPI.M_SetBits(30518);
+    fb_LD6_GPI();
+    fb_LD6_GCC.M_SetBits(30518);
+    fb_LD6_GCC(PG := GVL_BTS_VAC.fb_LD6_GPI.PG , IG=> );
 
 // LD8
-	fb_LD8_GPI.M_SetBits(30518);
-	fb_LD8_GPI();
-	fb_LD8_GCC.M_SetBits(30518);
-	fb_LD8_GCC(PG := GVL_BTS_VAC.fb_LD8_GPI.PG , IG=> );
+    fb_LD8_GPI.M_SetBits(30518);
+    fb_LD8_GPI();
+    fb_LD8_GCC.M_SetBits(30518);
+    fb_LD8_GCC(PG := GVL_BTS_VAC.fb_LD8_GPI.PG , IG=> );
 
 // LD9
-	fb_LD9_GPI.M_SetBits(30518);
-	fb_LD9_GPI();
-	fb_LD9_GCC.M_SetBits(30518);
-	fb_LD9_GCC(PG := GVL_BTS_VAC.fb_LD9_GPI.PG , IG=> );
+    fb_LD9_GPI.M_SetBits(30518);
+    fb_LD9_GPI();
+    fb_LD9_GCC.M_SetBits(30518);
+    fb_LD9_GCC(PG := GVL_BTS_VAC.fb_LD9_GPI.PG , IG=> );
 
 // LD10
-	fb_LD10_GPI.M_SetBits(30518);
-	fb_LD10_GPI();
-	fb_LD10_GCC.M_SetBits(30518);
-	fb_LD10_GCC(PG := GVL_BTS_VAC.fb_LD10_GPI.PG , IG=> );
+    fb_LD10_GPI.M_SetBits(30518);
+    fb_LD10_GPI();
+    fb_LD10_GCC.M_SetBits(30518);
+    fb_LD10_GCC(PG := GVL_BTS_VAC.fb_LD10_GPI.PG , IG=> );
 
 // LD14
-	fb_LD14_GPI.M_SetBits(30518);
-	fb_LD14_GPI();
-	fb_LD14_GCC.M_SetBits(30518);
-	fb_LD14_GCC(PG := GVL_BTS_VAC.fb_LD14_GPI.PG , IG=> );
+    fb_LD14_GPI.M_SetBits(30518);
+    fb_LD14_GPI();
+    fb_LD14_GCC.M_SetBits(30518);
+    fb_LD14_GCC(PG := GVL_BTS_VAC.fb_LD14_GPI.PG , IG=> );
 
 (* Auto switch on cold cathode gauges if interlock permits *)
 
 If xGCC_Enable_SW THEN
-	fb_PP_GCC.M_HVE(TRUE);
-	fb_DP_GCC.M_HVE(TRUE);
-	fb_LS1_GCC.M_HVE(TRUE);
-	fb_LS5_GCC.M_HVE(TRUE);
-	fb_LS8_GCC.M_HVE(TRUE);
-	fb_LD2_GCC.M_HVE(TRUE);
-	fb_LD4_GCC.M_HVE(TRUE);
-	fb_LD6_GCC.M_HVE(TRUE);
-	fb_LD8_GCC.M_HVE(TRUE);
-	fb_LD9_GCC.M_HVE(TRUE);
-	fb_LD10_GCC.M_HVE(TRUE);
-	fb_LD14_GCC.M_HVE(TRUE);
+    fb_PP_GCC.M_HVE(TRUE);
+    fb_DP_GCC.M_HVE(TRUE);
+    fb_LS1_GCC.M_HVE(TRUE);
+    fb_LS5_GCC.M_HVE(TRUE);
+    fb_LS8_GCC.M_HVE(TRUE);
+    fb_LD2_GCC.M_HVE(TRUE);
+    fb_LD4_GCC.M_HVE(TRUE);
+    fb_LD6_GCC.M_HVE(TRUE);
+    fb_LD8_GCC.M_HVE(TRUE);
+    fb_LD9_GCC.M_HVE(TRUE);
+    fb_LD10_GCC.M_HVE(TRUE);
+    fb_LD14_GCC.M_HVE(TRUE);
 
-	xGCC_Enable_SW := False;
+    xGCC_Enable_SW := False;
 END_IF]]></ST>
     </Implementation>
   </POU>
