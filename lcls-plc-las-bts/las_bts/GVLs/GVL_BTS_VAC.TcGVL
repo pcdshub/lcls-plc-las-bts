@@ -4,7 +4,7 @@
     <Declaration><![CDATA[//{attribute 'qualified_only'}
 VAR_GLOBAL
     (* Valves *)
-    fb_PP_VGC_FFOut : FB_HardwareFFOutput;
+    g_FFOut : FB_HardwareFFOutput;
 
     {attribute 'pytmc'	  :=	' pv: LXLHN:VGC:01 '}
     {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_12]^Channel 2^Input;
@@ -24,10 +24,11 @@ VAR_GLOBAL
     fb_PP_VRC_1 : FB_VRC; // O-ring diff pump valve
 
     {attribute 'pytmc'	  :=	' pv: LXLHN:VRC:02 '}
-    {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1002_02_02]^Channel 2^Input;
+    {attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_04]^Channel 3^Output'}
+								(*'.i_xOpnLS			:=	TIIB[EL1002_02_02]^Channel 2^Input;
                                  .i_xClsLS			:=	TIIB[EL1002_02_02]^Channel 1^Input;
-                                 .q_xOPN_DO			:=	TIIB[EL2004_02_04]^Channel 3^Output'}
-    fb_PP_VRC_2 : FB_VRC; // Foreline valve
+                                 .q_xOPN_DO			:=	TIIB[EL2004_02_04]^Channel 3^Output'}		*)
+    fb_PP_VRC_2 : FB_VVC; // Foreline valve //valve has bad readouts so using VVC
 
     {attribute 'pytmc'	  :=	' pv: LXLHN:VRC:03 '}
     {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1002_02_03]^Channel 2^Input;
@@ -56,7 +57,7 @@ VAR_GLOBAL
                                  .i_xFaultNC		:=	TIIB[EL1004_00_03]^Channel 1^Input;
                                  .q_RunDO			:=	TIIB[EL2004_00_04]^Channel 1^Output;
                                  .q_xRemote			:=	TIIB[EL2004_00_04]^Channel 2^Output;
-                                 .q_PumpingStation	:=	TIIB[EL2004_00_04]^Channel 3^Output;'}
+                                 .q_PumpingStation	:=	TIIB[EL2004_00_04]^Channel 3^Output'}
     fb_PP_PTM : FB_PTM_Pfeiffer; // Turbo pump
 
     // Serial port
@@ -70,11 +71,11 @@ VAR_GLOBAL
     '}
     {attribute 'TcLinkTo' := 	'.i_xWarning		:=	TIIB[EL1004_00_01]^Channel 4^Input;
                                  .i_xAlarm			:=	TIIB[EL1004_00_01]^Channel 3^Input;
-                                 .i_xLocal			:=	TIIB[EL1004_00_01]^Channel 2^Input;
+                                 .i_xRemote			:=	TIIB[EL1004_00_01]^Channel 2^Input;
                                  .i_xIsRun			:=	TIIB[EL1004_00_01]^Channel 1^Input;
                                  .q_xRunDO			:=	TIIB[EL2794_00_02]^Channel 1^Output;
                                  .q_xLspdDO			:=	TIIB[EL2794_00_02]^Channel 2^Output;
-                                 .q_xResetDo		:=	TIIB[EL2794_00_02]^Channel 3^Output;'}
+                                 .q_xResetDo		:=	TIIB[EL2794_00_02]^Channel 3^Output'}
     fb_PP_PMF : FB_KashiyamaPump; // Roughing Pump
 
     {attribute 'pytmc'    := 	' pv: LXLHN:PIP:01'}
@@ -112,7 +113,6 @@ VAR_GLOBAL
 
     (* Transport Tubes *)
     // LS1
-    fb_LS1_VGC_FFOut : FB_HardwareFFOutput;
     {attribute 'pytmc'	  :=	' pv: LTLHN:LS1:VGC:01 '}
     {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_06]^Channel 2^Input;
                                  .i_xClsLS			:=	TIIB[EL1004_02_06]^Channel 1^Input;
@@ -134,7 +134,6 @@ VAR_GLOBAL
     fb_LS1_GCC : FB_MKS500; // Input tube LS1, Cold Cathode gauge
 
     // LS5
-    fb_LS5_VGC_FFOut : FB_HardwareFFOutput;
     {attribute 'pytmc'	  :=	' pv: LTLHN:LS5:VGC:01 '}
     {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_09]^Channel 4^Input;
                                  .i_xClsLS			:=	TIIB[EL1004_02_09]^Channel 3^Input;
@@ -156,7 +155,6 @@ VAR_GLOBAL
     fb_LS5_GCC : FB_MKS500; // Input tube LS5, Cold Cathode gauge
 
     // LS8
-    fb_LS8_VGC_FFOut : FB_HardwareFFOutput;
     {attribute 'pytmc'	  :=	' pv: LTLHN:LS8:VGC:01 '}
     {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_09]^Channel 2^Input;
                                  .i_xClsLS			:=	TIIB[EL1004_02_09]^Channel 1^Input;
@@ -178,7 +176,6 @@ VAR_GLOBAL
     fb_LS8_GCC : FB_MKS500; // Input tube LS8, Cold Cathode gauge
 
     // LD2
-    fb_LD2_VGC_FFOut : FB_HardwareFFOutput;
     {attribute 'pytmc'	  :=	' pv: LTLHN:LD2:VGC:01 '}
     {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_12]^Channel 4^Input;
                                  .i_xClsLS			:=	TIIB[EL1004_02_12]^Channel 3^Input;
@@ -200,7 +197,6 @@ VAR_GLOBAL
     fb_LD2_GCC : FB_MKS500; // Output tube LD2, Cold Cathode gauge
 
     // LD4
-    fb_LD4_VGC_FFOut : FB_HardwareFFOutput;
     {attribute 'pytmc'	  :=	' pv: LTLHN:LD4:VGC:01 '}
     {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_10]^Channel 2^Input;
                                  .i_xClsLS			:=	TIIB[EL1004_02_10]^Channel 1^Input;
@@ -222,7 +218,6 @@ VAR_GLOBAL
     fb_LD4_GCC : FB_MKS500; // Output tube LD4, Cold Cathode gauge
 
     // LD6
-    fb_LD6_VGC_FFOut : FB_HardwareFFOutput;
     {attribute 'pytmc'	  :=	' pv: LTLHN:LD6:VGC:01 '}
     {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_13]^Channel 4^Input;
                                  .i_xClsLS			:=	TIIB[EL1004_02_13]^Channel 3^Input;
@@ -244,7 +239,6 @@ VAR_GLOBAL
     fb_LD6_GCC : FB_MKS500; // Output tube LD6, Cold Cathode gauge
 
     // LD8
-    fb_LD8_VGC_FFOut : FB_HardwareFFOutput;
     {attribute 'pytmc'	  :=	' pv: LTLHN:LD8:VGC:01 '}
     {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_07]^Channel 4^Input;
                                  .i_xClsLS			:=	TIIB[EL1004_02_07]^Channel 3^Input;
@@ -266,7 +260,6 @@ VAR_GLOBAL
     fb_LD8_GCC : FB_MKS500; // Output tube LD8, Cold Cathode gauge
 
     // LD9
-    fb_LD9_VGC_FFOut : FB_HardwareFFOutput;
     {attribute 'pytmc'	  :=	' pv: LTLHN:LD9:VGC:01 '}
     {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_06]^Channel 4^Input;
                                  .i_xClsLS			:=	TIIB[EL1004_02_06]^Channel 3^Input;
@@ -288,7 +281,6 @@ VAR_GLOBAL
     fb_LD9_GCC : FB_MKS500; // Output tube LD9, Cold Cathode gauge
 
     // LD10
-    fb_LD10_VGC_FFOut : FB_HardwareFFOutput;
     {attribute 'pytmc'	  :=	' pv: LTLHN:LD10:VGC:01 '}
     {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_07]^Channel 2^Input;
                                  .i_xClsLS			:=	TIIB[EL1004_02_07]^Channel 1^Input;
@@ -310,7 +302,6 @@ VAR_GLOBAL
     fb_LD10_GCC : FB_MKS500; // Output tube LD10, Cold Cathode gauge
 
     // LD14
-    fb_LD14_VGC_FFOut : FB_HardwareFFOutput;
     {attribute 'pytmc'	  :=	' pv: LTLHN:LD14:VGC:01 '}
     {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_10]^Channel 4^Input;
                                  .i_xClsLS			:=	TIIB[EL1004_02_10]^Channel 3^Input;

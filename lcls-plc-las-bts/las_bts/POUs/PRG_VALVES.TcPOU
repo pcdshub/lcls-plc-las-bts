@@ -15,7 +15,7 @@ fb_PP_VGC(
     i_xPMPS_OK := TRUE,
     i_xExt_OK := TRUE,
     i_xOverrideMode := xSystemOverrideMode_BTS,
-    io_fbFFHWO := fb_PP_VGC_FFOut,
+    io_fbFFHWO := g_FFOut,
     fbArbiter := g_fbArbiter
 );
 
@@ -53,7 +53,7 @@ fb_LS1_VGC(
     i_xPMPS_OK := TRUE,
     i_xExt_OK := TRUE,
     i_xOverrideMode := xSystemOverrideMode_BTS,
-    io_fbFFHWO := fb_LS1_VGC_FFOut,
+    io_fbFFHWO := g_FFOut,
     fbArbiter := g_fbArbiter,
 );
 
@@ -66,7 +66,7 @@ fb_LS5_VGC(
     i_xPMPS_OK := TRUE,
     i_xExt_OK := TRUE,
     i_xOverrideMode := xSystemOverrideMode_BTS,
-    io_fbFFHWO := fb_LS5_VGC_FFOut,
+    io_fbFFHWO := g_FFOut,
     fbArbiter := g_fbArbiter
 );
 
@@ -79,7 +79,7 @@ fb_LS8_VGC(
     i_xPMPS_OK := TRUE,
     i_xExt_OK := TRUE,
     i_xOverrideMode := xSystemOverrideMode_BTS,
-    io_fbFFHWO := fb_LS8_VGC_FFOut,
+    io_fbFFHWO := g_FFOut,
     fbArbiter := g_fbArbiter
 );
 
@@ -92,7 +92,7 @@ fb_LD2_VGC(
     i_xPMPS_OK := TRUE,
     i_xExt_OK := TRUE,
     i_xOverrideMode := xSystemOverrideMode_BTS,
-    io_fbFFHWO := fb_LD2_VGC_FFOut,
+    io_fbFFHWO := g_FFOut,
     fbArbiter := g_fbArbiter
 );
 
@@ -105,7 +105,7 @@ fb_LD4_VGC(
     i_xPMPS_OK := TRUE,
     i_xExt_OK := TRUE,
     i_xOverrideMode := xSystemOverrideMode_BTS,
-    io_fbFFHWO := fb_LD4_VGC_FFOut,
+    io_fbFFHWO := g_FFOut,
     fbArbiter := g_fbArbiter
 );
 
@@ -118,7 +118,7 @@ fb_LD6_VGC(
     i_xPMPS_OK := TRUE,
     i_xExt_OK := TRUE,
     i_xOverrideMode := xSystemOverrideMode_BTS,
-    io_fbFFHWO := fb_LD6_VGC_FFOut,
+    io_fbFFHWO := g_FFOut,
     fbArbiter := g_fbArbiter
 );
 
@@ -131,7 +131,7 @@ fb_LD8_VGC(
     i_xPMPS_OK := TRUE,
     i_xExt_OK := TRUE,
     i_xOverrideMode := xSystemOverrideMode_BTS,
-    io_fbFFHWO := fb_LD8_VGC_FFOut,
+    io_fbFFHWO := g_FFOut,
     fbArbiter := g_fbArbiter
 );
 
@@ -144,7 +144,7 @@ fb_LD9_VGC(
     i_xPMPS_OK := TRUE,
     i_xExt_OK := TRUE,
     i_xOverrideMode := xSystemOverrideMode_BTS,
-    io_fbFFHWO := fb_LD9_VGC_FFOut,
+    io_fbFFHWO := g_FFOut,
     fbArbiter := g_fbArbiter
 );
 
@@ -157,7 +157,7 @@ fb_LD10_VGC(
     i_xPMPS_OK := TRUE,
     i_xExt_OK := TRUE,
     i_xOverrideMode := xSystemOverrideMode_BTS,
-    io_fbFFHWO := fb_LD10_VGC_FFOut,
+    io_fbFFHWO := g_FFOut,
     fbArbiter := g_fbArbiter
 );
 
@@ -170,9 +170,13 @@ fb_LD14_VGC(
     i_xPMPS_OK := TRUE,
     i_xExt_OK := TRUE,
     i_xOverrideMode := xSystemOverrideMode_BTS,
-    io_fbFFHWO := fb_LD14_VGC_FFOut,
+    io_fbFFHWO := g_FFOut,
     fbArbiter := g_fbArbiter
 );]]></ST>
     </Implementation>
+    <LineIds Name="PRG_VALVES">
+      <LineId Id="3" Count="165" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

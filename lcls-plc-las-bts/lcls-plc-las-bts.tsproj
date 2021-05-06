@@ -76,7 +76,7 @@
 			</Format>
 		</DataType>
 	</DataTypes>
-	<Project ProjectGUID="{1CC01732-1234-43E4-A951-74578F6FE584}" TargetNetId="172.21.35.49.1.1" RelativeTargetNetId="true" RelativeIpAddresses="true" ShowHideConfigurations="#x106">
+	<Project ProjectGUID="{1CC01732-1234-43E4-A951-74578F6FE584}" TargetNetId="172.21.160.49.1.1" RelativeTargetNetId="true" RelativeIpAddresses="true" ShowHideConfigurations="#x106">
 		<System>
 			<Licenses>
 				<Target>
@@ -88,7 +88,7 @@
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
 				</Task>
-				<Task Id="4" Priority="1" CycleTime="110000" AmsPort="351" AdtTasks="true">
+				<Task Id="4" Disabled="true" Priority="1" CycleTime="110000" AmsPort="351" AdtTasks="true">
 					<Name>ComTask</Name>
 				</Task>
 			</Tasks>
@@ -171,17 +171,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_PP_VRC_2.i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_PP_VRC_2.i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL_BTS_VAC.fb_PP_VRC_3.i_xOpnLS</Name>
 							<Comment>
 								<![CDATA[IO]]>
@@ -215,7 +204,7 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_PP_PMF.i_xLocal</Name>
+							<Name>GVL_BTS_VAC.fb_PP_PMF.i_xRemote</Name>
 							<Comment>
 								<![CDATA[ Input ]]>
 							</Comment>
@@ -811,7 +800,7 @@
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_PP_VGC_FFOut.q_xFastFaultOut</Name>
+							<Name>GVL_BTS_VAC.g_FFOut.q_xFastFaultOut</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -831,6 +820,9 @@
 						</Var>
 						<Var>
 							<Name>GVL_BTS_VAC.fb_PP_VRC_2.q_xOPN_DO</Name>
+							<Comment>
+								<![CDATA[IO]]>
+							</Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -910,10 +902,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LS1_VGC_FFOut.q_xFastFaultOut</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL_BTS_VAC.fb_LS1_VGC.q_xOPN_DO</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -929,10 +917,6 @@
 							<Comment>
 								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LS5_VGC_FFOut.q_xFastFaultOut</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -954,10 +938,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LS8_VGC_FFOut.q_xFastFaultOut</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL_BTS_VAC.fb_LS8_VGC.q_xOPN_DO</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -973,10 +953,6 @@
 							<Comment>
 								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD2_VGC_FFOut.q_xFastFaultOut</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -998,10 +974,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD4_VGC_FFOut.q_xFastFaultOut</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL_BTS_VAC.fb_LD4_VGC.q_xOPN_DO</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -1017,10 +989,6 @@
 							<Comment>
 								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD6_VGC_FFOut.q_xFastFaultOut</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -1042,10 +1010,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD8_VGC_FFOut.q_xFastFaultOut</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL_BTS_VAC.fb_LD8_VGC.q_xOPN_DO</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -1061,10 +1025,6 @@
 							<Comment>
 								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD9_VGC_FFOut.q_xFastFaultOut</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -1086,10 +1046,6 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTS_VAC.fb_LD10_VGC_FFOut.q_xFastFaultOut</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>GVL_BTS_VAC.fb_LD10_VGC.q_xOPN_DO</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -1105,10 +1061,6 @@
 							<Comment>
 								<![CDATA[ Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output]]>
 							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTS_VAC.fb_LD14_VGC_FFOut.q_xFastFaultOut</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
@@ -1149,6 +1101,21 @@
 							<InOut>7</InOut>
 						</Var>
 					</Vars>
+					<UnrestoredVarLinks ImportTime="2021-04-28T10:52:47">
+						<OwnerA Name="InputDst" Prefix="TIPC^las_bts^las_bts Instance" Type="1">
+							<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL1004_00_01">
+								<Link VarA="GVL_BTS_VAC.fb_PP_PMF.i_xLocal" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
+					<UnrestoredVarLinks ImportTime="2021-04-30T17:06:26">
+						<OwnerA Name="InputDst" Prefix="TIPC^las_bts^las_bts Instance" Type="1">
+							<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL1002_02_02">
+								<Link VarA="GVL_BTS_VAC.fb_PP_VRC_2.i_xClsLS" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_BTS_VAC.fb_PP_VRC_2.i_xOpnLS" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
 					<TaskPouOids>
 						<TaskPouOid Prio="1" OTCID="#x08502001"/>
 						<TaskPouOid Prio="20" OTCID="#x08502002"/>
@@ -1205,10 +1172,6 @@
 			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL1002_02_01">
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_VRC_1.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_VRC_1.i_xOpnLS" VarB="Channel 2^Input" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL1002_02_02">
-				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_VRC_2.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_VRC_2.i_xOpnLS" VarB="Channel 2^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL1002_02_03">
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_VRC_3.i_xClsLS" VarB="Channel 1^Input" AutoLink="true"/>
@@ -1337,7 +1300,7 @@
 			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL1004_00_01">
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PMF.i_xAlarm" VarB="Channel 3^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PMF.i_xIsRun" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PMF.i_xLocal" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PMF.i_xRemote" VarB="Channel 2^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PMF.i_xWarning" VarB="Channel 4^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL1004_00_03">
