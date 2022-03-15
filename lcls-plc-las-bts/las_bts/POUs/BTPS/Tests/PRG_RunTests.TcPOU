@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_RunTests" Id="{ad02aa03-9ff9-4ff4-bd78-c8e4c4fadc0f}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_RunTests
+VAR
+    fbRangeComparison : FB_TestRangeComparison;
+    fbShutterSafety : FB_TestShutterSafety;
+	fbCentroidTest : FB_Test_EpicsCentroidMonitor;
+    fbMotorTest : FB_Test_EpicsMotorMonitor;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[TcUnit.RUN();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

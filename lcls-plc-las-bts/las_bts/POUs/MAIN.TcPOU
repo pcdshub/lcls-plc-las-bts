@@ -18,7 +18,10 @@ PRG_GAUGES();
 PRG_VALVES();
 
 // Run the Pumps PRG
-PRG_PUMPS();]]></ST>
+PRG_PUMPS();
+
+// Run the beam transport protection system code (BTPS)
+PRG_BTPS();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
