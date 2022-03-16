@@ -5,7 +5,7 @@
 VAR
     fbRangeComparison : FB_TestRangeComparison;
     fbShutterSafety : FB_TestShutterSafety;
-	fbCentroidTest : FB_Test_EpicsCentroidMonitor;
+    fbCentroidTest : FB_Test_EpicsCentroidMonitor;
     fbMotorTest : FB_Test_EpicsMotorMonitor;
 
 END_VAR

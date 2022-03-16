@@ -174,9 +174,5 @@ fb_LD14_VGC(
     fbArbiter := g_fbArbiter
 );]]></ST>
     </Implementation>
-    <LineIds Name="PRG_VALVES">
-      <LineId Id="3" Count="165" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

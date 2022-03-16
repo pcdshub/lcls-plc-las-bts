@@ -7,10 +7,10 @@ END_VAR
 VAR_OUTPUT
 END_VAR
 VAR
-	fbShutter : FB_ShutterSafety;
-	fbDestinations : ARRAY [1..GVL_BTPS_Constants.nDestinations] OF FB_DestinationDataStore;
-	nDest : UINT;
-	nSource : UINT;
+    fbShutter : FB_ShutterSafety;
+    fbDestinations : ARRAY [1..GVL_BTPS_Constants.nDestinations] OF FB_DestinationDataStore;
+    nDest : UINT;
+    nSource : UINT;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -130,7 +130,7 @@ fbShutter.nSourceIndex := 1;
 fbShutter(fbDestinations:=fbDestinations);
 
 FOR nDest := 1 TO GVL_BTPS_Constants.nDestinations DO
-	fbDestinations[nDest].stSourceDataStore[nSource].bChecksOK := FALSE;
+    fbDestinations[nDest].stSourceDataStore[nSource].bChecksOK := FALSE;
 END_FOR
 
 WRITE_PROTECTED_BOOL(ADR(fbShutter.bLatchedError), FALSE);
