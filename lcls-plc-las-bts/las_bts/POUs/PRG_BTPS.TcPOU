@@ -42,10 +42,12 @@ GVL_BTPS.fbShutterSafety3(nSourceIndex:=3, fbDestinations:=GVL_BTPS.fbDestinatio
 GVL_BTPS.fbShutterSafety4(nSourceIndex:=4, fbDestinations:=GVL_BTPS.fbDestinations);
 
 (* Based on the shutter safety result; send open or close request to shutters *)
-GVL_Shutters.fbBay1.bOpenRequest := GVL_BTPS.fbShutterSafety1.bOpenSignal;
-// GVL_Shutters.fbBay2.bOpenRequest := GVL_BTPS.fbShutterSafety2.bOpenSignal;
-GVL_Shutters.fbBay3.bOpenRequest := GVL_BTPS.fbShutterSafety3.bOpenSignal;
-GVL_Shutters.fbBay4.bOpenRequest := GVL_BTPS.fbShutterSafety4.bOpenSignal;
+IF NOT GVL_BTPS_Retain.bSystemOverride THEN
+    GVL_Shutters.fbBay1.bOpenRequest := GVL_BTPS.fbShutterSafety1.bOpenSignal;
+    // GVL_Shutters.fbBay2.bOpenRequest := GVL_BTPS.fbShutterSafety2.bOpenSignal;
+    GVL_Shutters.fbBay3.bOpenRequest := GVL_BTPS.fbShutterSafety3.bOpenSignal;
+    GVL_Shutters.fbBay4.bOpenRequest := GVL_BTPS.fbShutterSafety4.bOpenSignal;
+END_IF
 
 (* Periodically save persistent variables with source/destination store information *)
 PRG_SavePeristentVariables();]]></ST>

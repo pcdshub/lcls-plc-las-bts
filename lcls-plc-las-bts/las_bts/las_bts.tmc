@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{7DA7EA02-5967-BAF3-0D33-ED6F2B755919}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{F90FE66D-5483-20F1-3F75-E483A5E6A1FD}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="Tc2_SerialCom">ComBuffer</Name>
@@ -21810,115 +21810,6 @@ And saves them in the array q_aEcConfSlaveInfo.
       </Properties>
     </DataType>
     <DataType>
-      <Name>ST_EpicsMotorMSTA</Name>
-      <BitSize>16</BitSize>
-      <SubItem>
-        <Name>bPositiveDirection</Name>
-        <Type>BIT</Type>
-        <Comment> DIRECTION: last raw direction; (0:Negative, 1:Positive) </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>0</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bDone</Name>
-        <Type>BIT</Type>
-        <Comment> DONE: motion is complete. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>1</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bPlusLimitSwitch</Name>
-        <Type>BIT</Type>
-        <Comment> PLUS_LS: plus limit switch has been hit. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>2</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bHomeLimitSwitch</Name>
-        <Type>BIT</Type>
-        <Comment> HOMELS: state of the home limit switch. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>3</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bUnused0</Name>
-        <Type>BIT</Type>
-        <Comment> Unused </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>4</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bClosedLoop</Name>
-        <Type>BIT</Type>
-        <Comment> POSITION: closed-loop position control is enabled. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>5</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bSlipStall</Name>
-        <Type>BIT</Type>
-        <Comment> SLIP_STALL: Slip/Stall detected (eg. fatal following error) </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>6</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bHome</Name>
-        <Type>BIT</Type>
-        <Comment> HOME: if at home position. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>7</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bEncoderPresent</Name>
-        <Type>BIT</Type>
-        <Comment> PRESENT: encoder is present. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>8</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bHardwareProblem</Name>
-        <Type>BIT</Type>
-        <Comment> PROBLEM: driver stopped polling, or hardware problem </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>9</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bMoving</Name>
-        <Type>BIT</Type>
-        <Comment> MOVING: non-zero velocity present. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>10</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bGainSupport</Name>
-        <Type>BIT</Type>
-        <Comment> GAIN_SUPPORT: motor supports closed-loop position control. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>11</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bCommError</Name>
-        <Type>BIT</Type>
-        <Comment> COMM_ERR: Controller communication error. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>12</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bMinusLimitSwitch</Name>
-        <Type>BIT</Type>
-        <Comment> MINUS_LS: minus limit switch has been hit. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>13</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bHomed</Name>
-        <Type>BIT</Type>
-        <Comment> HOMED: the motor has been homed. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>14</BitOffs>
-      </SubItem>
-    </DataType>
-    <DataType>
       <Name Namespace="LCLS_General">FB_LREALFromEPICS</Name>
       <Comment>
 Function block to link an analog value from EPICS to an LREAL on the PLC
@@ -22059,142 +21950,6 @@ be up-to-date and valid within `tTimeout` seconds.
         <Default>
           <Value>9223372036854775807</Value>
         </Default>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>FB_EpicsMotorMonitor</Name>
-      <Comment>
-    EPICS Motor Record Monitoring tool
-
-    Requires a "link" pragma to specify the motor record prefix.
-
-</Comment>
-      <BitSize>3072</BitSize>
-      <SubItem>
-        <Name>bEnable</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>32</BitOffs>
-        <Default>
-          <Value>1</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bIsMoving</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>40</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fPosition</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>64</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>nMSTA_Raw</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>128</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stMSTA</Name>
-        <Type>ST_EpicsMotorMSTA</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>144</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bValid</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>160</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbRBVCheck</Name>
-        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
-        <BitSize>960</BitSize>
-        <BitOffs>192</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: RBV_
-        link: .RBV
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbMovingCheck</Name>
-        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
-        <BitSize>960</BitSize>
-        <BitOffs>1152</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Dmov_
-        link: .DMOV
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbMotorStatusCheck</Name>
-        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
-        <BitSize>960</BitSize>
-        <BitOffs>2112</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Msta_
-        link: .MSTA
-    </Value>
-          </Property>
-        </Properties>
       </SubItem>
       <Properties>
         <Property>
@@ -22473,6 +22228,12 @@ be up-to-date and valid within `tTimeout` seconds.
         <Comment> Do we have a new frame? Has the array count updated, and position change above fNewFrameMinimumChange?</Comment>
         <BitSize>8</BitSize>
         <BitOffs>3664</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: HaveNewFrame; io: i</Value>
+          </Property>
+        </Properties>
       </SubItem>
       <SubItem>
         <Name>bAboveThreshold</Name>
@@ -22480,6 +22241,257 @@ be up-to-date and valid within `tTimeout` seconds.
         <Comment> For this new frame, is it above the threshold fMinimumValidChange?</Comment>
         <BitSize>8</BitSize>
         <BitOffs>3672</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: AboveThreshold; io: i</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name>ST_EpicsMotorMSTA</Name>
+      <BitSize>16</BitSize>
+      <SubItem>
+        <Name>bPositiveDirection</Name>
+        <Type>BIT</Type>
+        <Comment> DIRECTION: last raw direction; (0:Negative, 1:Positive) </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bDone</Name>
+        <Type>BIT</Type>
+        <Comment> DONE: motion is complete. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>1</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bPlusLimitSwitch</Name>
+        <Type>BIT</Type>
+        <Comment> PLUS_LS: plus limit switch has been hit. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>2</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bHomeLimitSwitch</Name>
+        <Type>BIT</Type>
+        <Comment> HOMELS: state of the home limit switch. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>3</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bUnused0</Name>
+        <Type>BIT</Type>
+        <Comment> Unused </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>4</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bClosedLoop</Name>
+        <Type>BIT</Type>
+        <Comment> POSITION: closed-loop position control is enabled. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>5</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bSlipStall</Name>
+        <Type>BIT</Type>
+        <Comment> SLIP_STALL: Slip/Stall detected (eg. fatal following error) </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>6</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bHome</Name>
+        <Type>BIT</Type>
+        <Comment> HOME: if at home position. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>7</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bEncoderPresent</Name>
+        <Type>BIT</Type>
+        <Comment> PRESENT: encoder is present. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>8</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bHardwareProblem</Name>
+        <Type>BIT</Type>
+        <Comment> PROBLEM: driver stopped polling, or hardware problem </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>9</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bMoving</Name>
+        <Type>BIT</Type>
+        <Comment> MOVING: non-zero velocity present. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>10</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bGainSupport</Name>
+        <Type>BIT</Type>
+        <Comment> GAIN_SUPPORT: motor supports closed-loop position control. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>11</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bCommError</Name>
+        <Type>BIT</Type>
+        <Comment> COMM_ERR: Controller communication error. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>12</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bMinusLimitSwitch</Name>
+        <Type>BIT</Type>
+        <Comment> MINUS_LS: minus limit switch has been hit. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>13</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bHomed</Name>
+        <Type>BIT</Type>
+        <Comment> HOMED: the motor has been homed. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>14</BitOffs>
+      </SubItem>
+    </DataType>
+    <DataType>
+      <Name>FB_EpicsMotorMonitor</Name>
+      <Comment>
+    EPICS Motor Record Monitoring tool
+
+    Requires a "link" pragma to specify the motor record prefix.
+
+</Comment>
+      <BitSize>3072</BitSize>
+      <SubItem>
+        <Name>bEnable</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>32</BitOffs>
+        <Default>
+          <Value>1</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bIsMoving</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>40</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fPosition</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>64</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>nMSTA_Raw</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>128</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stMSTA</Name>
+        <Type>ST_EpicsMotorMSTA</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>144</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bValid</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>160</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbRBVCheck</Name>
+        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
+        <BitSize>960</BitSize>
+        <BitOffs>192</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: RBV_
+        link: .RBV
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbMovingCheck</Name>
+        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
+        <BitSize>960</BitSize>
+        <BitOffs>1152</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Dmov_
+        link: .DMOV
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbMotorStatusCheck</Name>
+        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
+        <BitSize>960</BitSize>
+        <BitOffs>2112</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Msta_
+        link: .MSTA
+    </Value>
+          </Property>
+        </Properties>
       </SubItem>
       <Properties>
         <Property>
@@ -46573,6 +46585,137 @@ LXLHN_PTM_01</Comment>
             <BitOffs>330975104</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>GVL_BTPS.fbBay1NearFieldCamStats</Name>
+            <Comment> Near field camera stats plugins, per bay </Comment>
+            <BitSize>3712</BitSize>
+            <BaseType>FB_EpicsCentroidMonitor</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: @(BTPS):Chk:NF1
+        link: @(SIM)LAS:LHN:BAY1:CAM:01:Stats2:
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>330975360</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS.fbBay3NearFieldCamStats</Name>
+            <BitSize>3712</BitSize>
+            <BaseType>FB_EpicsCentroidMonitor</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: @(BTPS):Chk:NF3
+        link: @(SIM)LAS:LHN:BAY3:CAM:01:Stats2:
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>330979072</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS.fbBay4NearFieldCamStats</Name>
+            <BitSize>3712</BitSize>
+            <BaseType>FB_EpicsCentroidMonitor</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: @(BTPS):Chk:NF4
+        link: @(SIM)LAS:LHN:BAY4:CAM:01:Stats2:
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>330982784</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS.fbBay1FarFieldCamStats</Name>
+            <Comment> Far-field camera stats plugins, per bay </Comment>
+            <BitSize>3712</BitSize>
+            <BaseType>FB_EpicsCentroidMonitor</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: @(BTPS):Chk:FF1
+        link: @(SIM)LAS:LHN:BAY1:CAM:02:Stats2:
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>330986496</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS.fbBay3FarFieldCamStats</Name>
+            <BitSize>3712</BitSize>
+            <BaseType>FB_EpicsCentroidMonitor</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: @(BTPS):Chk:FF3
+        link: @(SIM)LAS:LHN:BAY3:CAM:02:Stats2:
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>330990208</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS.fbBay4FarFieldCamStats</Name>
+            <BitSize>3712</BitSize>
+            <BaseType>FB_EpicsCentroidMonitor</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: @(BTPS):Chk:FF4
+        link: @(SIM)LAS:LHN:BAY4:CAM:02:Stats2:
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>330993920</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS_Retain.bSystemOverride</Name>
+            <BitSize>8</BitSize>
+            <BaseType>BOOL</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcPersistent</Name>
+              </Property>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: @(BTPS):Config:SystemOverride
+        field: DESC Full system-level override
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>331031136</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>GVL_BTPS.fbBay1Linear</Name>
             <Comment>
     Motor - Linear
@@ -46751,116 +46894,6 @@ LXLHN_PTM_01</Comment>
               </Property>
             </Properties>
             <BitOffs>465337984</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTPS.fbBay1NearFieldCamStats</Name>
-            <Comment> Near field camera stats plugins, per bay </Comment>
-            <BitSize>3712</BitSize>
-            <BaseType>FB_EpicsCentroidMonitor</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: @(BTPS):Chk:NF1
-        link: @(SIM)LAS:LHN:BAY1:CAM:01:Stats2:
-    </Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>465341056</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTPS.fbBay3NearFieldCamStats</Name>
-            <BitSize>3712</BitSize>
-            <BaseType>FB_EpicsCentroidMonitor</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: @(BTPS):Chk:NF3
-        link: @(SIM)LAS:LHN:BAY3:CAM:01:Stats2:
-    </Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>465344768</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTPS.fbBay4NearFieldCamStats</Name>
-            <BitSize>3712</BitSize>
-            <BaseType>FB_EpicsCentroidMonitor</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: @(BTPS):Chk:NF4
-        link: @(SIM)LAS:LHN:BAY4:CAM:01:Stats2:
-    </Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>465348480</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTPS.fbBay1FarFieldCamStats</Name>
-            <Comment> Far-field camera stats plugins, per bay </Comment>
-            <BitSize>3712</BitSize>
-            <BaseType>FB_EpicsCentroidMonitor</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: @(BTPS):Chk:FF1
-        link: @(SIM)LAS:LHN:BAY1:CAM:02:Stats2:
-    </Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>465352192</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTPS.fbBay3FarFieldCamStats</Name>
-            <BitSize>3712</BitSize>
-            <BaseType>FB_EpicsCentroidMonitor</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: @(BTPS):Chk:FF3
-        link: @(SIM)LAS:LHN:BAY3:CAM:02:Stats2:
-    </Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>465355904</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTPS.fbBay4FarFieldCamStats</Name>
-            <BitSize>3712</BitSize>
-            <BaseType>FB_EpicsCentroidMonitor</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>
-        pv: @(BTPS):Chk:FF4
-        link: @(SIM)LAS:LHN:BAY4:CAM:02:Stats2:
-    </Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>465359616</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTPS.fbShutterSafety1</Name>
@@ -49272,7 +49305,7 @@ LXLHN_PTM_01</Comment>
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2022-03-17T15:28:56</Value>
+          <Value>2022-03-17T15:54:29</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
