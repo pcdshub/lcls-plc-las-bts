@@ -118,11 +118,11 @@ stDataSource.fbFFCentroidY.bInputValid := fbFarField.bValid AND fbFarField.bIsUp
 
 (* Motors *)
 stDataSource.fbLinear.fValue := fbLinear.fPosition;
-stDataSource.fbLinear.bInputValid := fbLinear.bValid AND fbLinear.stMSTA.bHomed;
+stDataSource.fbLinear.bInputValid := fbLinear.bValid AND fbLinear.stMSTA.bHomed (* AND fbLinear.stMSTA.bClosedLoop *);
 stDataSource.fbRotary.fValue := fbRotary.fPosition;
-stDataSource.fbRotary.bInputValid := fbRotary.bValid AND fbRotary.stMSTA.bHomed;
+stDataSource.fbRotary.bInputValid := fbRotary.bValid AND fbRotary.stMSTA.bHomed (* AND fbRotary.stMSTA.bClosedLoop *);
 stDataSource.fbGoniometer.fValue := fbGoniometer.fPosition;
-stDataSource.fbGoniometer.bInputValid := fbGoniometer.bValid AND fbGoniometer.stMSTA.bHomed;
+stDataSource.fbGoniometer.bInputValid := fbGoniometer.bValid AND fbGoniometer.stMSTA.bHomed (* AND fbGoniometer.stMSTA.bClosedLoop *);
 
 (* Run the range comparisons *)
 stDataSource.fbNFCentroidX();

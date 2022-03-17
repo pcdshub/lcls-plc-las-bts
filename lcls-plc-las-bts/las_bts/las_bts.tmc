@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{D307D196-7A4F-4477-8EA0-4B4B16178B34}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{7DA7EA02-5967-BAF3-0D33-ED6F2B755919}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="Tc2_SerialCom">ComBuffer</Name>
@@ -8277,11 +8277,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_BOOL</Name>
@@ -8414,11 +8409,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8578,11 +8568,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>CalculateAndSetNumberOfAssertsForTest</Name>
@@ -8717,11 +8702,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8880,11 +8860,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9390,11 +9365,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10170,11 +10140,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_TIME</Name>
@@ -10553,11 +10518,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_INT</Name>
@@ -10649,11 +10609,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10781,11 +10736,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LWORD</Name>
@@ -10887,11 +10837,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -11206,11 +11151,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AreAllTestsFinished</Name>
@@ -11380,11 +11320,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -11569,11 +11504,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LREAL</Name>
@@ -11671,11 +11601,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -21885,78 +21810,140 @@ And saves them in the array q_aEcConfSlaveInfo.
       </Properties>
     </DataType>
     <DataType>
-      <Name>FB_RangeComparison</Name>
-      <BitSize>448</BitSize>
+      <Name>ST_EpicsMotorMSTA</Name>
+      <BitSize>16</BitSize>
       <SubItem>
-        <Name>fLow</Name>
-        <Type>LREAL</Type>
-        <Comment> The low part of the range. </Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>64</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>TcPersistent</Name>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: Low</Value>
-          </Property>
-        </Properties>
+        <Name>bPositiveDirection</Name>
+        <Type>BIT</Type>
+        <Comment> DIRECTION: last raw direction; (0:Negative, 1:Positive) </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>0</BitOffs>
       </SubItem>
       <SubItem>
-        <Name>fHigh</Name>
-        <Type>LREAL</Type>
-        <Comment> The high part of the range. </Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>128</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>TcPersistent</Name>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: High</Value>
-          </Property>
-        </Properties>
+        <Name>bDone</Name>
+        <Type>BIT</Type>
+        <Comment> DONE: motion is complete. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>1</BitOffs>
       </SubItem>
       <SubItem>
-        <Name>fNominal</Name>
-        <Type>LREAL</Type>
-        <Comment> Nominal value for this.  User-facing value. </Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>192</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>TcPersistent</Name>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Nominal
-        io: io
-        field: DESC Nominal value for setting
-    </Value>
-          </Property>
-        </Properties>
+        <Name>bPlusLimitSwitch</Name>
+        <Type>BIT</Type>
+        <Comment> PLUS_LS: plus limit switch has been hit. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>2</BitOffs>
       </SubItem>
       <SubItem>
-        <Name>bInclusive</Name>
-        <Type>BOOL</Type>
-        <Comment> Are the limits inclusive? </Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>256</BitOffs>
+        <Name>bHomeLimitSwitch</Name>
+        <Type>BIT</Type>
+        <Comment> HOMELS: state of the home limit switch. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>3</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bUnused0</Name>
+        <Type>BIT</Type>
+        <Comment> Unused </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>4</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bClosedLoop</Name>
+        <Type>BIT</Type>
+        <Comment> POSITION: closed-loop position control is enabled. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>5</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bSlipStall</Name>
+        <Type>BIT</Type>
+        <Comment> SLIP_STALL: Slip/Stall detected (eg. fatal following error) </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>6</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bHome</Name>
+        <Type>BIT</Type>
+        <Comment> HOME: if at home position. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>7</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bEncoderPresent</Name>
+        <Type>BIT</Type>
+        <Comment> PRESENT: encoder is present. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>8</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bHardwareProblem</Name>
+        <Type>BIT</Type>
+        <Comment> PROBLEM: driver stopped polling, or hardware problem </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>9</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bMoving</Name>
+        <Type>BIT</Type>
+        <Comment> MOVING: non-zero velocity present. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>10</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bGainSupport</Name>
+        <Type>BIT</Type>
+        <Comment> GAIN_SUPPORT: motor supports closed-loop position control. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>11</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bCommError</Name>
+        <Type>BIT</Type>
+        <Comment> COMM_ERR: Controller communication error. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>12</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bMinusLimitSwitch</Name>
+        <Type>BIT</Type>
+        <Comment> MINUS_LS: minus limit switch has been hit. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>13</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bHomed</Name>
+        <Type>BIT</Type>
+        <Comment> HOMED: the motor has been homed. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>14</BitOffs>
+      </SubItem>
+    </DataType>
+    <DataType>
+      <Name Namespace="LCLS_General">FB_LREALFromEPICS</Name>
+      <Comment>
+Function block to link an analog value from EPICS to an LREAL on the PLC
+
+Usage:
+
+	{attribute 'pytmc' := '
+		pv: INTERNAL:RECORD
+		link: PV:NAME:TO:LINK:TO
+	'}
+	fbLinkedValue1 : FB_LREALFromEPICS;
+	
+Such that when PV:NAME:TO:LINK:TO changes in EPICS, the INTERNAL:RECORD will be used to
+push a value through to the PLC with this function block. 
+
+As this block takes care of IOC heartbeat signals and monitors the link and value severity,
+the end-user should then only have to look at `.bValid` and `.fValue`. These are guaranteed to
+be up-to-date and valid within `tTimeout` seconds.
+</Comment>
+      <BitSize>960</BitSize>
+      <SubItem>
+        <Name>iMaximumValidSeverity</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>32</BitOffs>
         <Default>
           <Value>1</Value>
         </Default>
@@ -21965,82 +21952,246 @@ And saves them in the array q_aEcConfSlaveInfo.
             <Name>ItemType</Name>
             <Value>Input</Value>
           </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bValid</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>48</BitOffs>
+        <Properties>
           <Property>
-            <Name>TcPersistent</Name>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Inclusive
-        field: ZNAM Exclusive
-        field: ONAM Inclusive
-    </Value>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
           </Property>
         </Properties>
       </SubItem>
       <SubItem>
         <Name>fValue</Name>
         <Type>LREAL</Type>
-        <Comment> The input value for comparison </Comment>
         <BitSize>64</BitSize>
-        <BitOffs>320</BitOffs>
+        <BitOffs>64</BitOffs>
         <Properties>
           <Property>
             <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: Value; io: input</Value>
+            <Value>Output</Value>
           </Property>
         </Properties>
       </SubItem>
       <SubItem>
-        <Name>bInputValid</Name>
-        <Type>BOOL</Type>
-        <Comment> Should the input value be trusted? </Comment>
-        <BitSize>8</BitSize>
+        <Name>iValueInvalidate</Name>
+        <Type PointerTo="1">ULINT</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>128</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>tonValueTimeout</Name>
+        <Type Namespace="Tc2_Standard">TON</Type>
+        <BitSize>224</BitSize>
+        <BitOffs>160</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>tonSeverityTimeout</Name>
+        <Type Namespace="Tc2_Standard">TON</Type>
+        <BitSize>224</BitSize>
         <BitOffs>384</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fLastValidValue</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>640</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>iLastValidSeverity</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>704</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fPLCInternalValue</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>768</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+		pv: EPICSLink
+		link:
+		field: DESC Internal variable used to monitor EPICS PV in PLC
+	</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>iPLCInternalSeverity</Name>
+        <Type>INT</Type>
+        <Comment> Use special link syntax for now to get EPICSLink.SEVR here:</Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>832</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+		pv: EPICSLink:LinkSeverity
+		link: *EPICSLink.SEVR
+		field: DESC Internal variable used to monitor EPICS PV severity in PLC
+	</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>tTimeout</Name>
+        <Type>TIME</Type>
+        <Comment> The timeout will trip after `tTimeout` if EPICS doesn't write in that time period:</Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>864</BitOffs>
         <Default>
-          <Value>0</Value>
+          <Value>2000</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>NAN_VALUE</Name>
+        <Type>ULINT</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>896</BitOffs>
+        <Default>
+          <Value>9223372036854775807</Value>
+        </Default>
+      </SubItem>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name>FB_EpicsMotorMonitor</Name>
+      <Comment>
+    EPICS Motor Record Monitoring tool
+
+    Requires a "link" pragma to specify the motor record prefix.
+
+</Comment>
+      <BitSize>3072</BitSize>
+      <SubItem>
+        <Name>bEnable</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>32</BitOffs>
+        <Default>
+          <Value>1</Value>
         </Default>
         <Properties>
           <Property>
             <Name>ItemType</Name>
             <Value>Input</Value>
           </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Valid
-        io: input
-        field: ZNAM Data Invalid
-        field: ONAM Data Valid
-        field: ZSV MAJOR
-        field: OSV NO_ALARM
-    </Value>
-          </Property>
         </Properties>
       </SubItem>
       <SubItem>
-        <Name>bInRange</Name>
+        <Name>bIsMoving</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <BitOffs>392</BitOffs>
+        <BitOffs>40</BitOffs>
         <Properties>
           <Property>
             <Name>ItemType</Name>
             <Value>Output</Value>
           </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fPosition</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>64</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>nMSTA_Raw</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>128</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stMSTA</Name>
+        <Type>ST_EpicsMotorMSTA</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>144</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bValid</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>160</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbRBVCheck</Name>
+        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
+        <BitSize>960</BitSize>
+        <BitOffs>192</BitOffs>
+        <Properties>
           <Property>
             <Name>pytmc</Name>
             <Value>
-        pv: InRange
-        io: input
-        field: ZNAM Out of range
-        field: ONAM In range
-        field: ZSV MAJOR
-        field: OSV NO_ALARM
+        pv: RBV_
+        link: .RBV
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbMovingCheck</Name>
+        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
+        <BitSize>960</BitSize>
+        <BitOffs>1152</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Dmov_
+        link: .DMOV
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbMotorStatusCheck</Name>
+        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
+        <BitSize>960</BitSize>
+        <BitOffs>2112</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Msta_
+        link: .MSTA
     </Value>
           </Property>
         </Properties>
@@ -22053,22 +22204,287 @@ And saves them in the array q_aEcConfSlaveInfo.
       </Properties>
     </DataType>
     <DataType>
-      <Name>FB_TestRangeComparison</Name>
-      <BitSize>33552192</BitSize>
-      <ExtendsType Namespace="TcUnit">FB_TestSuite</ExtendsType>
+      <Name>FB_EpicsCentroidMonitor</Name>
+      <Comment>
+    EPICS AreaDetector Stats Plugin Centroid Monitor
+
+    Requires a "link" pragma to specify the full plugin prefix.
+
+</Comment>
+      <BitSize>3712</BitSize>
       <SubItem>
-        <Name>fbRange</Name>
-        <Type>FB_RangeComparison</Type>
-        <BitSize>448</BitSize>
-        <BitOffs>33551744</BitOffs>
+        <Name>fMaximumFrameTime</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>64</BitOffs>
+        <Default>
+          <Value>0.2</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fMinimumValidChange</Name>
+        <Type>LREAL</Type>
+        <Comment> Minimum change to be considered updating correctly - buggy detectors may need this. </Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>128</BitOffs>
+        <Default>
+          <Value>1E-06</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fNewFrameMinimumChange</Name>
+        <Type>LREAL</Type>
+        <Comment> Minimum change in pixels to be considered a new value for X, Y </Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>192</BitOffs>
+        <Default>
+          <Value>1E-06</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bEnable</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>256</BitOffs>
+        <Default>
+          <Value>1</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bIsUpdating</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>264</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: IsUpdating
+        io: input
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fCentroidX</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>320</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: CentroidX
+        io: input
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fCentroidY</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>384</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: CentroidY
+        io: input
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>nArrayCount</Name>
+        <Type>UDINT</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>448</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: ArrayCount
+        io: input
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bValid</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>480</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fFrameTime</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>512</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: FrameTime
+        io: input
+        field: DESC Time between frame updates
+        field: EGU sec
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbCentroidX</Name>
+        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
+        <BitSize>960</BitSize>
+        <BitOffs>576</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: CX_
+        link: CentroidX_RBV
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbCentroidY</Name>
+        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
+        <BitSize>960</BitSize>
+        <BitOffs>1536</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: CY_
+        link: CentroidY_RBV
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fLastCentroidX</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>2496</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fLastCentroidY</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>2560</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fbArrayCounter</Name>
+        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
+        <BitSize>960</BitSize>
+        <BitOffs>2624</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Cnt_
+        link: ArrayCounter_RBV
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>nLastArrayCount</Name>
+        <Type>UDINT</Type>
+        <Comment> Last array count value</Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>3584</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>tLastUpdate</Name>
+        <Type>TIME</Type>
+        <Comment> Time of the last frame update</Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>3616</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bInit</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>3648</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bSawFrame</Name>
+        <Type>BOOL</Type>
+        <Comment> Did we see a frame update yet? (FALSE at startup; TRUE after first frame.)</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>3656</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bHaveNewFrame</Name>
+        <Type>BOOL</Type>
+        <Comment> Do we have a new frame? Has the array count updated, and position change above fNewFrameMinimumChange?</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>3664</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bAboveThreshold</Name>
+        <Type>BOOL</Type>
+        <Comment> For this new frame, is it above the threshold fMinimumValidChange?</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>3672</BitOffs>
       </SubItem>
       <Properties>
         <Property>
           <Name>PouType</Name>
           <Value>FunctionBlock</Value>
-        </Property>
-        <Property>
-          <Name>call_after_init</Name>
         </Property>
       </Properties>
     </DataType>
@@ -27825,6 +28241,174 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
       </Properties>
     </DataType>
     <DataType>
+      <Name>FB_RangeComparison</Name>
+      <BitSize>448</BitSize>
+      <SubItem>
+        <Name>fLow</Name>
+        <Type>LREAL</Type>
+        <Comment> The low part of the range. </Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>64</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>TcPersistent</Name>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: Low</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fHigh</Name>
+        <Type>LREAL</Type>
+        <Comment> The high part of the range. </Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>128</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>TcPersistent</Name>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: High</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fNominal</Name>
+        <Type>LREAL</Type>
+        <Comment> Nominal value for this.  User-facing value. </Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>192</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>TcPersistent</Name>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Nominal
+        io: io
+        field: DESC Nominal value for setting
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bInclusive</Name>
+        <Type>BOOL</Type>
+        <Comment> Are the limits inclusive? </Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>256</BitOffs>
+        <Default>
+          <Value>1</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>TcPersistent</Name>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Inclusive
+        field: ZNAM Exclusive
+        field: ONAM Inclusive
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fValue</Name>
+        <Type>LREAL</Type>
+        <Comment> The input value for comparison </Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>320</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: Value; io: input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bInputValid</Name>
+        <Type>BOOL</Type>
+        <Comment> Should the input value be trusted? </Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>384</BitOffs>
+        <Default>
+          <Value>0</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Valid
+        io: input
+        field: ZNAM Data Invalid
+        field: ONAM Data Valid
+        field: ZSV MAJOR
+        field: OSV NO_ALARM
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bInRange</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>392</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: InRange
+        io: input
+        field: ZNAM Out of range
+        field: ONAM In range
+        field: ZSV MAJOR
+        field: OSV NO_ALARM
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
       <Name>ST_SourceDataStore</Name>
       <BitSize>3904</BitSize>
       <SubItem>
@@ -27987,685 +28571,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           </Property>
         </Properties>
       </SubItem>
-    </DataType>
-    <DataType>
-      <Name Namespace="LCLS_General">FB_LREALFromEPICS</Name>
-      <Comment>
-Function block to link an analog value from EPICS to an LREAL on the PLC
-
-Usage:
-
-	{attribute 'pytmc' := '
-		pv: INTERNAL:RECORD
-		link: PV:NAME:TO:LINK:TO
-	'}
-	fbLinkedValue1 : FB_LREALFromEPICS;
-	
-Such that when PV:NAME:TO:LINK:TO changes in EPICS, the INTERNAL:RECORD will be used to
-push a value through to the PLC with this function block. 
-
-As this block takes care of IOC heartbeat signals and monitors the link and value severity,
-the end-user should then only have to look at `.bValid` and `.fValue`. These are guaranteed to
-be up-to-date and valid within `tTimeout` seconds.
-</Comment>
-      <BitSize>960</BitSize>
-      <SubItem>
-        <Name>iMaximumValidSeverity</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>32</BitOffs>
-        <Default>
-          <Value>1</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bValid</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>48</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fValue</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>64</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>iValueInvalidate</Name>
-        <Type PointerTo="1">ULINT</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>128</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>tonValueTimeout</Name>
-        <Type Namespace="Tc2_Standard">TON</Type>
-        <BitSize>224</BitSize>
-        <BitOffs>160</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>tonSeverityTimeout</Name>
-        <Type Namespace="Tc2_Standard">TON</Type>
-        <BitSize>224</BitSize>
-        <BitOffs>384</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fLastValidValue</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>640</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>iLastValidSeverity</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>704</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fPLCInternalValue</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>768</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-		pv: EPICSLink
-		link:
-		field: DESC Internal variable used to monitor EPICS PV in PLC
-	</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>iPLCInternalSeverity</Name>
-        <Type>INT</Type>
-        <Comment> Use special link syntax for now to get EPICSLink.SEVR here:</Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>832</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-		pv: EPICSLink:LinkSeverity
-		link: *EPICSLink.SEVR
-		field: DESC Internal variable used to monitor EPICS PV severity in PLC
-	</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>tTimeout</Name>
-        <Type>TIME</Type>
-        <Comment> The timeout will trip after `tTimeout` if EPICS doesn't write in that time period:</Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>864</BitOffs>
-        <Default>
-          <Value>2000</Value>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>NAN_VALUE</Name>
-        <Type>ULINT</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>896</BitOffs>
-        <Default>
-          <Value>9223372036854775807</Value>
-        </Default>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>FB_EpicsCentroidMonitor</Name>
-      <Comment>
-    EPICS AreaDetector Stats Plugin Centroid Monitor
-
-    Requires a "link" pragma to specify the full plugin prefix.
-
-</Comment>
-      <BitSize>3712</BitSize>
-      <SubItem>
-        <Name>fMaximumFrameTime</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>64</BitOffs>
-        <Default>
-          <Value>0.2</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fMinimumValidChange</Name>
-        <Type>LREAL</Type>
-        <Comment> Minimum change to be considered updating correctly - buggy detectors may need this. </Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>128</BitOffs>
-        <Default>
-          <Value>1E-06</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fNewFrameMinimumChange</Name>
-        <Type>LREAL</Type>
-        <Comment> Minimum change in pixels to be considered a new value for X, Y </Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>192</BitOffs>
-        <Default>
-          <Value>1E-06</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bEnable</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>256</BitOffs>
-        <Default>
-          <Value>1</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bIsUpdating</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>264</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: IsUpdating
-        io: input
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fCentroidX</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>320</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: CentroidX
-        io: input
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fCentroidY</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>384</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: CentroidY
-        io: input
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>nArrayCount</Name>
-        <Type>UDINT</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>448</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: ArrayCount
-        io: input
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bValid</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>480</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fFrameTime</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>512</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: FrameTime
-        io: input
-        field: DESC Time between frame updates
-        field: EGU sec
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbCentroidX</Name>
-        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
-        <BitSize>960</BitSize>
-        <BitOffs>576</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: CX_
-        link: CentroidX_RBV
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbCentroidY</Name>
-        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
-        <BitSize>960</BitSize>
-        <BitOffs>1536</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: CY_
-        link: CentroidY_RBV
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fLastCentroidX</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>2496</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fLastCentroidY</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>2560</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fbArrayCounter</Name>
-        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
-        <BitSize>960</BitSize>
-        <BitOffs>2624</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Cnt_
-        link: ArrayCounter_RBV
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>nLastArrayCount</Name>
-        <Type>UDINT</Type>
-        <Comment> Last array count value</Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>3584</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>tLastUpdate</Name>
-        <Type>TIME</Type>
-        <Comment> Time of the last frame update</Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>3616</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bInit</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>3648</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bSawFrame</Name>
-        <Type>BOOL</Type>
-        <Comment> Did we see a frame update yet? (FALSE at startup; TRUE after first frame.)</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>3656</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bHaveNewFrame</Name>
-        <Type>BOOL</Type>
-        <Comment> Do we have a new frame? Has the array count updated, and position change above fNewFrameMinimumChange?</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>3664</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bAboveThreshold</Name>
-        <Type>BOOL</Type>
-        <Comment> For this new frame, is it above the threshold fMinimumValidChange?</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>3672</BitOffs>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>ST_EpicsMotorMSTA</Name>
-      <BitSize>16</BitSize>
-      <SubItem>
-        <Name>bPositiveDirection</Name>
-        <Type>BIT</Type>
-        <Comment> DIRECTION: last raw direction; (0:Negative, 1:Positive) </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>0</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bDone</Name>
-        <Type>BIT</Type>
-        <Comment> DONE: motion is complete. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>1</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bPlusLimitSwitch</Name>
-        <Type>BIT</Type>
-        <Comment> PLUS_LS: plus limit switch has been hit. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>2</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bHomeLimitSwitch</Name>
-        <Type>BIT</Type>
-        <Comment> HOMELS: state of the home limit switch. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>3</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bUnused0</Name>
-        <Type>BIT</Type>
-        <Comment> Unused </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>4</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bClosedLoop</Name>
-        <Type>BIT</Type>
-        <Comment> POSITION: closed-loop position control is enabled. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>5</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bSlipStall</Name>
-        <Type>BIT</Type>
-        <Comment> SLIP_STALL: Slip/Stall detected (eg. fatal following error) </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>6</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bHome</Name>
-        <Type>BIT</Type>
-        <Comment> HOME: if at home position. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>7</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bEncoderPresent</Name>
-        <Type>BIT</Type>
-        <Comment> PRESENT: encoder is present. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>8</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bHardwareProblem</Name>
-        <Type>BIT</Type>
-        <Comment> PROBLEM: driver stopped polling, or hardware problem </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>9</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bMoving</Name>
-        <Type>BIT</Type>
-        <Comment> MOVING: non-zero velocity present. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>10</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bGainSupport</Name>
-        <Type>BIT</Type>
-        <Comment> GAIN_SUPPORT: motor supports closed-loop position control. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>11</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bCommError</Name>
-        <Type>BIT</Type>
-        <Comment> COMM_ERR: Controller communication error. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>12</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bMinusLimitSwitch</Name>
-        <Type>BIT</Type>
-        <Comment> MINUS_LS: minus limit switch has been hit. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>13</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bHomed</Name>
-        <Type>BIT</Type>
-        <Comment> HOMED: the motor has been homed. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>14</BitOffs>
-      </SubItem>
-    </DataType>
-    <DataType>
-      <Name>FB_EpicsMotorMonitor</Name>
-      <Comment>
-    EPICS Motor Record Monitoring tool
-
-    Requires a "link" pragma to specify the motor record prefix.
-
-</Comment>
-      <BitSize>3072</BitSize>
-      <SubItem>
-        <Name>bEnable</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>32</BitOffs>
-        <Default>
-          <Value>1</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bIsMoving</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>40</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fPosition</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>64</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>nMSTA_Raw</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>128</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stMSTA</Name>
-        <Type>ST_EpicsMotorMSTA</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>144</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bValid</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>160</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbRBVCheck</Name>
-        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
-        <BitSize>960</BitSize>
-        <BitOffs>192</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: RBV_
-        link: .RBV
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbMovingCheck</Name>
-        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
-        <BitSize>960</BitSize>
-        <BitOffs>1152</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Dmov_
-        link: .DMOV
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbMotorStatusCheck</Name>
-        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
-        <BitSize>960</BitSize>
-        <BitOffs>2112</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Msta_
-        link: .MSTA
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
     </DataType>
     <DataType>
       <Name>FB_DestinationDataStore</Name>
@@ -29077,229 +28982,6 @@ be up-to-date and valid within `tTimeout` seconds.
         <Property>
           <Name>PouType</Name>
           <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>FB_TestShutterSafety</Name>
-      <BitSize>33667328</BitSize>
-      <ExtendsType Namespace="TcUnit">FB_TestSuite</ExtendsType>
-      <SubItem>
-        <Name>fbShutter</Name>
-        <Type>FB_ShutterSafety</Type>
-        <BitSize>384</BitSize>
-        <BitOffs>33551744</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fbDestinations</Name>
-        <Type>FB_DestinationDataStore</Type>
-        <ArrayInfo>
-          <LBound>1</LBound>
-          <Elements>7</Elements>
-        </ArrayInfo>
-        <BitSize>115136</BitSize>
-        <BitOffs>33552128</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>nDest</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>33667264</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>nSource</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>33667280</BitOffs>
-      </SubItem>
-      <Action>
-        <Name>Reset</Name>
-      </Action>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>FB_Test_EpicsCentroidMonitor</Name>
-      <BitSize>33555520</BitSize>
-      <ExtendsType Namespace="TcUnit">FB_TestSuite</ExtendsType>
-      <SubItem>
-        <Name>__TESTBASICS__FBMONITOR</Name>
-        <Type>FB_EpicsCentroidMonitor</Type>
-        <BitSize>3712</BitSize>
-        <BitOffs>33551744</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>__TESTBASICS__NCOUNT</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>33555456</BitOffs>
-        <Default>
-          <Value>0</Value>
-        </Default>
-      </SubItem>
-      <Method>
-        <Name>TestBasics</Name>
-        <Local>
-          <Name>fbMonitor</Name>
-          <Type>FB_EpicsCentroidMonitor</Type>
-          <BitSize>3712</BitSize>
-          <Properties>
-            <Property>
-              <Name>uselocation</Name>
-              <Value>__TESTBASICS__FBMONITOR</Value>
-            </Property>
-          </Properties>
-        </Local>
-        <Local>
-          <Name>nCount</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-          <Properties>
-            <Property>
-              <Name>uselocation</Name>
-              <Value>__TESTBASICS__NCOUNT</Value>
-            </Property>
-          </Properties>
-        </Local>
-      </Method>
-      <Method>
-        <Name>WriteCentroidValue</Name>
-        <Parameter>
-          <Name>fbMonitor</Name>
-          <Type ReferenceTo="true">FB_EpicsCentroidMonitor</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>fX</Name>
-          <Type>LREAL</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>fY</Name>
-          <Type>LREAL</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nCount</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nX_Severity</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nY_Severity</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nCount_Severity</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>tLastUpdate</Name>
-          <Type>TIME</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-        <Property>
-          <Name>call_after_init</Name>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>FB_Test_EpicsMotorMonitor</Name>
-      <BitSize>33554816</BitSize>
-      <ExtendsType Namespace="TcUnit">FB_TestSuite</ExtendsType>
-      <SubItem>
-        <Name>__TESTBASICS__FBMONITOR</Name>
-        <Type>FB_EpicsMotorMonitor</Type>
-        <BitSize>3072</BitSize>
-        <BitOffs>33551744</BitOffs>
-      </SubItem>
-      <Method>
-        <Name>TestBasics</Name>
-        <Local>
-          <Name>fbMonitor</Name>
-          <Type>FB_EpicsMotorMonitor</Type>
-          <BitSize>3072</BitSize>
-          <Properties>
-            <Property>
-              <Name>uselocation</Name>
-              <Value>__TESTBASICS__FBMONITOR</Value>
-            </Property>
-          </Properties>
-        </Local>
-      </Method>
-      <Method>
-        <Name>WriteData</Name>
-        <Parameter>
-          <Name>fbMonitor</Name>
-          <Type ReferenceTo="true">FB_EpicsMotorMonitor</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>fRBV</Name>
-          <Type>LREAL</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nMoving</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nStatus</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nRBV_Severity</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nStatus_Severity</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nMoving_Severity</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-      </Method>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-        <Property>
-          <Name>call_after_init</Name>
         </Property>
       </Properties>
     </DataType>
@@ -46891,30 +46573,6 @@ LXLHN_PTM_01</Comment>
             <BitOffs>330975104</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>PRG_RunTests.fbRangeComparison</Name>
-            <BitSize>33552192</BitSize>
-            <BaseType>FB_TestRangeComparison</BaseType>
-            <BitOffs>330983552</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_RunTests.fbShutterSafety</Name>
-            <BitSize>33667328</BitSize>
-            <BaseType>FB_TestShutterSafety</BaseType>
-            <BitOffs>364535744</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_RunTests.fbCentroidTest</Name>
-            <BitSize>33555520</BitSize>
-            <BaseType>FB_Test_EpicsCentroidMonitor</BaseType>
-            <BitOffs>398203072</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>PRG_RunTests.fbMotorTest</Name>
-            <BitSize>33554816</BitSize>
-            <BaseType>FB_Test_EpicsMotorMonitor</BaseType>
-            <BitOffs>431758592</BitOffs>
-          </Symbol>
-          <Symbol>
             <Name>GVL_BTPS.fbBay1Linear</Name>
             <Comment>
     Motor - Linear
@@ -49614,15 +49272,15 @@ LXLHN_PTM_01</Comment>
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2022-03-17T14:47:28</Value>
+          <Value>2022-03-17T15:28:56</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
-          <Value>651264</Value>
+          <Value>626688</Value>
         </Property>
         <Property>
           <Name>GlobalDataSize</Name>
-          <Value>58654720</Value>
+          <Value>41861120</Value>
         </Property>
       </Properties>
     </Module>
