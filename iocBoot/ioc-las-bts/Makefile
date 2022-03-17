@@ -13,6 +13,6 @@ PREFIX := PLC:LAS:BTS
 
 # With two $$, as in $$(IOC) below, this will be expanded in the
 # environment of st.cmd:
-DB_PARAMETERS := 'SIM=,BTPS=LAS:BTPS,PREFIX=$(PREFIX):,IOCNAME=$$(IOC),IOC=$$(IOC)'
+DB_PARAMETERS := 'SIM=,BTPS=LTLHN:BTPS,PREFIX=$(PREFIX):,IOCNAME=$$(IOC),IOC=$$(IOC)'
 
 include $(IOC_TOP)/iocBoot/templates/Makefile.base
