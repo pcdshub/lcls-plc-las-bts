@@ -13,6 +13,33 @@ VAR_GLOBAL
     {attribute 'pytmc' := 'pv: LTLHN:LS1:LST'}
     fbBay1 : ST_ShutterControl;
 
+    {attribute 'TcLinkTo' := '
+        .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_01^Channel 2^Output;
+        .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_02^Channel 3^Input;
+        .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_02^Channel 4^Input;
+        .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_04^Channel 2^Input;
+    '}
+    {attribute 'pytmc' := 'pv: LTLHN:LS3:LST'}
+    fbBay2 : ST_ShutterControl;
+
+    {attribute 'TcLinkTo' := '
+        .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_01^Channel 3^Output;
+        .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_03^Channel 1^Input;
+        .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_03^Channel 2^Input;
+        .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_04^Channel 3^Input;
+    '}
+    {attribute 'pytmc' := 'pv: LTLHN:LS5:LST'}
+    fbBay3 : ST_ShutterControl;
+
+    {attribute 'TcLinkTo' := '
+        .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_01^Channel 4^Output;
+        .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_03^Channel 3^Input;
+        .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_03^Channel 4^Input;
+        .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_04^Channel 4^Input;
+    '}
+    {attribute 'pytmc' := 'pv: LTLHN:LS8:LST'}
+    fbBay4 : ST_ShutterControl;
+
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
