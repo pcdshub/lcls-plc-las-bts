@@ -132,16 +132,20 @@ IF bHaveNewFrame THEN
         ABS(fLastCentroidY - fCentroidY) >= fMinimumValidChange
     );
 
-    fFrameTime := TIME_TO_LREAL(TIME() - tLastUpdate) * 0.001; // Milliseconds -> seconds
-    tLastUpdate := TIME();
+    IF bAboveThreshold THEN
+        fFrameTime := TIME_TO_LREAL(TIME() - tLastUpdate) * 0.001; // Milliseconds -> seconds
+        tLastUpdate := TIME();
+
+        fLastCentroidX := fCentroidX;
+        fLastCentroidY := fCentroidY;
+    END_IF
+
     nLastArrayCount := nArrayCount;
     bSawFrame := TRUE;
 
-    fLastCentroidX := fCentroidX;
-    fLastCentroidY := fCentroidY;
 END_IF
 
-bIsUpdating := bSawFrame AND (fFrameTime <= fMaximumFrameTime) AND bAboveThreshold;]]></ST>
+bIsUpdating := bSawFrame AND (fFrameTime <= fMaximumFrameTime);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>
