@@ -22048,360 +22048,6 @@ record(longout, "$(BTPS):Chk:FF4:Cnt_:EPICSLink:LinkSeverity") {
   info(archive, "VAL")
 }
 
-record(bi, "$(BTPS):Shutter:01:LSS:Permission_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety1.bLssPermission")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety1.bLssPermission?")
-  field(ZNAM, "No permission")
-  field(ONAM, "Permission")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:01:Acknowledge_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety1.bAcknowledge")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety1.bAcknowledge?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bo, "$(BTPS):Shutter:01:Acknowledge") {
-  field(DESC, "GVL_BTPS.fbShutterSafety1.bAcknowledge")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety1.bAcknowledge=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:01:UserOpen_RBV") {
-  # GVL_BTPS.fbShutterSafety1.bUserOpenRequest
-  field(DESC, "GVL_BTPS.fbShutterSa....bUserOpenRequest")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety1.bUserOpenRequest?")
-  field(ZNAM, "Close")
-  field(ONAM, "Open")
-  info(archive, "VAL")
-}
-
-record(bo, "$(BTPS):Shutter:01:UserOpen") {
-  # GVL_BTPS.fbShutterSafety1.bUserOpenRequest
-  field(DESC, "GVL_BTPS.fbShutterSa....bUserOpenRequest")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety1.bUserOpenRequest=")
-  field(ZNAM, "Close")
-  field(ONAM, "Open")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:01:Override_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety1.bOverride")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety1.bOverride?")
-  field(ZNAM, "Normal mode")
-  field(ONAM, "Override mode")
-  info(archive, "VAL")
-}
-
-record(bo, "$(BTPS):Shutter:01:Override") {
-  field(DESC, "GVL_BTPS.fbShutterSafety1.bOverride")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety1.bOverride=")
-  field(ZNAM, "Normal mode")
-  field(ONAM, "Override mode")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:01:Safe_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety1.bSafeToOpen")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety1.bSafeToOpen?")
-  field(ZNAM, "Unsafe")
-  field(ONAM, "Safe")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:01:Error_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety1.bLatchedError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety1.bLatchedError?")
-  field(ZSV, "NO_ALARM")
-  field(OSV, "MAJOR")
-  field(ZNAM, "No error")
-  field(ONAM, "Error")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:01:LSS:OpenRequest_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety1.bOpenSignal")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety1.bOpenSignal?")
-  field(ZNAM, "Request close")
-  field(ONAM, "Request open")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:03:LSS:Permission_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety3.bLssPermission")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety3.bLssPermission?")
-  field(ZNAM, "No permission")
-  field(ONAM, "Permission")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:03:Acknowledge_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety3.bAcknowledge")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety3.bAcknowledge?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bo, "$(BTPS):Shutter:03:Acknowledge") {
-  field(DESC, "GVL_BTPS.fbShutterSafety3.bAcknowledge")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety3.bAcknowledge=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:03:UserOpen_RBV") {
-  # GVL_BTPS.fbShutterSafety3.bUserOpenRequest
-  field(DESC, "GVL_BTPS.fbShutterSa....bUserOpenRequest")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety3.bUserOpenRequest?")
-  field(ZNAM, "Close")
-  field(ONAM, "Open")
-  info(archive, "VAL")
-}
-
-record(bo, "$(BTPS):Shutter:03:UserOpen") {
-  # GVL_BTPS.fbShutterSafety3.bUserOpenRequest
-  field(DESC, "GVL_BTPS.fbShutterSa....bUserOpenRequest")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety3.bUserOpenRequest=")
-  field(ZNAM, "Close")
-  field(ONAM, "Open")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:03:Override_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety3.bOverride")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety3.bOverride?")
-  field(ZNAM, "Normal mode")
-  field(ONAM, "Override mode")
-  info(archive, "VAL")
-}
-
-record(bo, "$(BTPS):Shutter:03:Override") {
-  field(DESC, "GVL_BTPS.fbShutterSafety3.bOverride")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety3.bOverride=")
-  field(ZNAM, "Normal mode")
-  field(ONAM, "Override mode")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:03:Safe_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety3.bSafeToOpen")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety3.bSafeToOpen?")
-  field(ZNAM, "Unsafe")
-  field(ONAM, "Safe")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:03:Error_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety3.bLatchedError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety3.bLatchedError?")
-  field(ZSV, "NO_ALARM")
-  field(OSV, "MAJOR")
-  field(ZNAM, "No error")
-  field(ONAM, "Error")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:03:LSS:OpenRequest_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety3.bOpenSignal")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety3.bOpenSignal?")
-  field(ZNAM, "Request close")
-  field(ONAM, "Request open")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:04:LSS:Permission_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety4.bLssPermission")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety4.bLssPermission?")
-  field(ZNAM, "No permission")
-  field(ONAM, "Permission")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:04:Acknowledge_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety4.bAcknowledge")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety4.bAcknowledge?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bo, "$(BTPS):Shutter:04:Acknowledge") {
-  field(DESC, "GVL_BTPS.fbShutterSafety4.bAcknowledge")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety4.bAcknowledge=")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:04:UserOpen_RBV") {
-  # GVL_BTPS.fbShutterSafety4.bUserOpenRequest
-  field(DESC, "GVL_BTPS.fbShutterSa....bUserOpenRequest")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety4.bUserOpenRequest?")
-  field(ZNAM, "Close")
-  field(ONAM, "Open")
-  info(archive, "VAL")
-}
-
-record(bo, "$(BTPS):Shutter:04:UserOpen") {
-  # GVL_BTPS.fbShutterSafety4.bUserOpenRequest
-  field(DESC, "GVL_BTPS.fbShutterSa....bUserOpenRequest")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety4.bUserOpenRequest=")
-  field(ZNAM, "Close")
-  field(ONAM, "Open")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:04:Override_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety4.bOverride")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety4.bOverride?")
-  field(ZNAM, "Normal mode")
-  field(ONAM, "Override mode")
-  info(archive, "VAL")
-}
-
-record(bo, "$(BTPS):Shutter:04:Override") {
-  field(DESC, "GVL_BTPS.fbShutterSafety4.bOverride")
-  field(DTYP, "asynInt32")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety4.bOverride=")
-  field(ZNAM, "Normal mode")
-  field(ONAM, "Override mode")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:04:Safe_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety4.bSafeToOpen")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety4.bSafeToOpen?")
-  field(ZNAM, "Unsafe")
-  field(ONAM, "Safe")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:04:Error_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety4.bLatchedError")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety4.bLatchedError?")
-  field(ZSV, "NO_ALARM")
-  field(OSV, "MAJOR")
-  field(ZNAM, "No error")
-  field(ONAM, "Error")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Shutter:04:LSS:OpenRequest_RBV") {
-  field(DESC, "GVL_BTPS.fbShutterSafety4.bOpenSignal")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety4.bOpenSignal?")
-  field(ZNAM, "Request close")
-  field(ONAM, "Request open")
-  info(archive, "VAL")
-}
-
 record(waveform, "$(BTPS):DEST:01:Name_RBV") {
   field(DESC, "GVL_BTPS.fbDestinations[1].sName")
   field(SCAN, "I/O Intr")
@@ -71336,6 +70982,324 @@ record(bi, "$(BTPS):DEST:07:SRC:04:FFCenterY:InRange_RBV") {
   field(OSV, "NO_ALARM")
   field(ZNAM, "Out of range")
   field(ONAM, "In range")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:01:Acknowledge_RBV") {
+  field(DESC, "GVL_BTPS.fbShutterSafety1.bAcknowledge")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety1.bAcknowledge?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "$(BTPS):Shutter:01:Acknowledge") {
+  field(DESC, "GVL_BTPS.fbShutterSafety1.bAcknowledge")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety1.bAcknowledge=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:01:UserOpen_RBV") {
+  # GVL_BTPS.fbShutterSafety1.bUserOpenRequest
+  field(DESC, "GVL_BTPS.fbShutterSa....bUserOpenRequest")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety1.bUserOpenRequest?")
+  field(ZNAM, "Close")
+  field(ONAM, "Open")
+  info(archive, "VAL")
+}
+
+record(bo, "$(BTPS):Shutter:01:UserOpen") {
+  # GVL_BTPS.fbShutterSafety1.bUserOpenRequest
+  field(DESC, "GVL_BTPS.fbShutterSa....bUserOpenRequest")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety1.bUserOpenRequest=")
+  field(ZNAM, "Close")
+  field(ONAM, "Open")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:01:Override_RBV") {
+  field(DESC, "GVL_BTPS.fbShutterSafety1.bOverride")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety1.bOverride?")
+  field(ZNAM, "Normal mode")
+  field(ONAM, "Override mode")
+  info(archive, "VAL")
+}
+
+record(bo, "$(BTPS):Shutter:01:Override") {
+  field(DESC, "GVL_BTPS.fbShutterSafety1.bOverride")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety1.bOverride=")
+  field(ZNAM, "Normal mode")
+  field(ONAM, "Override mode")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:01:Safe_RBV") {
+  field(DESC, "GVL_BTPS.fbShutterSafety1.bSafeToOpen")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety1.bSafeToOpen?")
+  field(ZNAM, "Unsafe")
+  field(ONAM, "Safe")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:01:Error_RBV") {
+  field(DESC, "GVL_BTPS.fbShutterSafety1.bLatchedError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety1.bLatchedError?")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "MAJOR")
+  field(ZNAM, "No error")
+  field(ONAM, "Error")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:01:LSS:OpenRequest_RBV") {
+  field(DESC, "GVL_BTPS.fbShutterSafety1.bOpenSignal")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety1.bOpenSignal?")
+  field(ZNAM, "Request close")
+  field(ONAM, "Request open")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:03:Acknowledge_RBV") {
+  field(DESC, "GVL_BTPS.fbShutterSafety3.bAcknowledge")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety3.bAcknowledge?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "$(BTPS):Shutter:03:Acknowledge") {
+  field(DESC, "GVL_BTPS.fbShutterSafety3.bAcknowledge")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety3.bAcknowledge=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:03:UserOpen_RBV") {
+  # GVL_BTPS.fbShutterSafety3.bUserOpenRequest
+  field(DESC, "GVL_BTPS.fbShutterSa....bUserOpenRequest")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety3.bUserOpenRequest?")
+  field(ZNAM, "Close")
+  field(ONAM, "Open")
+  info(archive, "VAL")
+}
+
+record(bo, "$(BTPS):Shutter:03:UserOpen") {
+  # GVL_BTPS.fbShutterSafety3.bUserOpenRequest
+  field(DESC, "GVL_BTPS.fbShutterSa....bUserOpenRequest")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety3.bUserOpenRequest=")
+  field(ZNAM, "Close")
+  field(ONAM, "Open")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:03:Override_RBV") {
+  field(DESC, "GVL_BTPS.fbShutterSafety3.bOverride")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety3.bOverride?")
+  field(ZNAM, "Normal mode")
+  field(ONAM, "Override mode")
+  info(archive, "VAL")
+}
+
+record(bo, "$(BTPS):Shutter:03:Override") {
+  field(DESC, "GVL_BTPS.fbShutterSafety3.bOverride")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety3.bOverride=")
+  field(ZNAM, "Normal mode")
+  field(ONAM, "Override mode")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:03:Safe_RBV") {
+  field(DESC, "GVL_BTPS.fbShutterSafety3.bSafeToOpen")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety3.bSafeToOpen?")
+  field(ZNAM, "Unsafe")
+  field(ONAM, "Safe")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:03:Error_RBV") {
+  field(DESC, "GVL_BTPS.fbShutterSafety3.bLatchedError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety3.bLatchedError?")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "MAJOR")
+  field(ZNAM, "No error")
+  field(ONAM, "Error")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:03:LSS:OpenRequest_RBV") {
+  field(DESC, "GVL_BTPS.fbShutterSafety3.bOpenSignal")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety3.bOpenSignal?")
+  field(ZNAM, "Request close")
+  field(ONAM, "Request open")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:04:Acknowledge_RBV") {
+  field(DESC, "GVL_BTPS.fbShutterSafety4.bAcknowledge")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety4.bAcknowledge?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bo, "$(BTPS):Shutter:04:Acknowledge") {
+  field(DESC, "GVL_BTPS.fbShutterSafety4.bAcknowledge")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety4.bAcknowledge=")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:04:UserOpen_RBV") {
+  # GVL_BTPS.fbShutterSafety4.bUserOpenRequest
+  field(DESC, "GVL_BTPS.fbShutterSa....bUserOpenRequest")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety4.bUserOpenRequest?")
+  field(ZNAM, "Close")
+  field(ONAM, "Open")
+  info(archive, "VAL")
+}
+
+record(bo, "$(BTPS):Shutter:04:UserOpen") {
+  # GVL_BTPS.fbShutterSafety4.bUserOpenRequest
+  field(DESC, "GVL_BTPS.fbShutterSa....bUserOpenRequest")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety4.bUserOpenRequest=")
+  field(ZNAM, "Close")
+  field(ONAM, "Open")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:04:Override_RBV") {
+  field(DESC, "GVL_BTPS.fbShutterSafety4.bOverride")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety4.bOverride?")
+  field(ZNAM, "Normal mode")
+  field(ONAM, "Override mode")
+  info(archive, "VAL")
+}
+
+record(bo, "$(BTPS):Shutter:04:Override") {
+  field(DESC, "GVL_BTPS.fbShutterSafety4.bOverride")
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbShutterSafety4.bOverride=")
+  field(ZNAM, "Normal mode")
+  field(ONAM, "Override mode")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:04:Safe_RBV") {
+  field(DESC, "GVL_BTPS.fbShutterSafety4.bSafeToOpen")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety4.bSafeToOpen?")
+  field(ZNAM, "Unsafe")
+  field(ONAM, "Safe")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:04:Error_RBV") {
+  field(DESC, "GVL_BTPS.fbShutterSafety4.bLatchedError")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety4.bLatchedError?")
+  field(ZSV, "NO_ALARM")
+  field(OSV, "MAJOR")
+  field(ZNAM, "No error")
+  field(ONAM, "Error")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Shutter:04:LSS:OpenRequest_RBV") {
+  field(DESC, "GVL_BTPS.fbShutterSafety4.bOpenSignal")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbShutterSafety4.bOpenSignal?")
+  field(ZNAM, "Request close")
+  field(ONAM, "Request open")
   info(archive, "VAL")
 }
 
