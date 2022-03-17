@@ -796,6 +796,18 @@
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>GVL_Shutters.fbBay1.bOpenStatus</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Shutters.fbBay1.bCloseStatus</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>GVL_Shutters.fbBay1.bLssStatus</Name>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2">
 						<Name>PlcTask Outputs</Name>
@@ -1081,6 +1093,10 @@
 							</Comment>
 							<Type>BOOL</Type>
 						</Var>
+						<Var>
+							<Name>GVL_Shutters.fbBay1.bOpenRequest</Name>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="8">
 						<Name>PlcTask Retains</Name>
@@ -1296,6 +1312,16 @@
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD6_GPI.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS5_GPI.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS8_GPI.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL1004_04_02">
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay1.bCloseStatus" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay1.bOpenStatus" VarB="Channel 1^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL1004_04_04">
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay1.bLssStatus" VarB="Channel 1^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL2624_04_01">
+				<Link VarA="PlcTask Outputs^GVL_Shutters.fbBay1.bOpenRequest" VarB="Channel 1^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL1004_00_01">
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PMF.i_xAlarm" VarB="Channel 3^Input" AutoLink="true"/>

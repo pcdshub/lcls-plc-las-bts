@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL_Shutters" Id="{b02ba6ca-0869-4eb6-bcec-342502b1ac4f}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+
+    {attribute 'TcLinkTo' := '
+        .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_01^Channel 1^Output;
+        .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_02^Channel 1^Input;
+        .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_02^Channel 2^Input;
+        .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_04^Channel 1^Input;
+    '}
+    {attribute 'pytmc' := 'pv: LTLHN:LS1:LST'}
+    fbBay1 : ST_ShutterControl;
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
