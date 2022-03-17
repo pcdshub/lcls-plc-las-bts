@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{F90FE66D-5483-20F1-3F75-E483A5E6A1FD}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{8CD5E792-04C6-0E4C-771E-C36C50D8018C}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="Tc2_SerialCom">ComBuffer</Name>
@@ -46695,6 +46695,31 @@ LXLHN_PTM_01</Comment>
             <BitOffs>330993920</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>GVL_BTPS_Retain.fMinCentroidNewFrame</Name>
+            <BitSize>64</BitSize>
+            <BaseType>LREAL</BaseType>
+            <Default>
+              <Value>0.05</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcPersistent</Name>
+              </Property>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: @(BTPS):Config:MinCentroidNewFrame
+        field: DESC Minimum centroid change for new frame
+        field: EGU px
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>330997632</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>GVL_BTPS_Retain.bSystemOverride</Name>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
@@ -49305,7 +49330,7 @@ LXLHN_PTM_01</Comment>
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2022-03-17T15:54:29</Value>
+          <Value>2022-03-17T16:09:02</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
