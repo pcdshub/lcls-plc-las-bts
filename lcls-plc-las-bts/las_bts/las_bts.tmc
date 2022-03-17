@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{DA9EF745-EDA0-321E-DA12-12BC4E73983B}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{89C50559-3A1E-D5F9-1008-D5B73922C1AB}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="Tc2_SerialCom">ComBuffer</Name>
@@ -8277,11 +8277,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_BOOL</Name>
@@ -8414,11 +8409,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8578,11 +8568,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>CalculateAndSetNumberOfAssertsForTest</Name>
@@ -8717,11 +8702,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8880,11 +8860,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9390,11 +9365,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10170,11 +10140,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_TIME</Name>
@@ -10553,11 +10518,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_INT</Name>
@@ -10649,11 +10609,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10781,11 +10736,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LWORD</Name>
@@ -10887,11 +10837,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -11206,11 +11151,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AreAllTestsFinished</Name>
@@ -11380,11 +11320,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -11569,11 +11504,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LREAL</Name>
@@ -11671,11 +11601,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -22075,88 +22000,147 @@ And saves them in the array q_aEcConfSlaveInfo.
       </Properties>
     </DataType>
     <DataType>
-      <Name Namespace="LCLS_Vacuum">E_ValvePositionState</Name>
-      <BitSize>16</BitSize>
-      <BaseType>INT</BaseType>
-      <EnumInfo>
-        <Text>OPEN</Text>
-        <Enum>0</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>CLOSED</Text>
-        <Enum>1</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>MOVING</Text>
-        <Enum>2</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>INVALID</Text>
-        <Enum>3</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>OPEN_F</Text>
-        <Enum>4</Enum>
-      </EnumInfo>
-    </DataType>
-    <DataType>
-      <Name Namespace="LCLS_Vacuum">FB_Valve</Name>
-      <BitSize>81920</BitSize>
+      <Name Namespace="LCLS_General">FB_LREALFromEPICS</Name>
+      <Comment>
+Function block to link an analog value from EPICS to an LREAL on the PLC
+
+Usage:
+
+	{attribute 'pytmc' := '
+		pv: INTERNAL:RECORD
+		link: PV:NAME:TO:LINK:TO
+	'}
+	fbLinkedValue1 : FB_LREALFromEPICS;
+	
+Such that when PV:NAME:TO:LINK:TO changes in EPICS, the INTERNAL:RECORD will be used to
+push a value through to the PLC with this function block. 
+
+As this block takes care of IOC heartbeat signals and monitors the link and value severity,
+the end-user should then only have to look at `.bValid` and `.fValue`. These are guaranteed to
+be up-to-date and valid within `tTimeout` seconds.
+</Comment>
+      <BitSize>960</BitSize>
       <SubItem>
-        <Name>fbLogger</Name>
-        <Type Namespace="LCLS_General">FB_LogMessage</Type>
-        <Comment> For logging</Comment>
-        <BitSize>81600</BitSize>
-        <BitOffs>64</BitOffs>
-        <Default>
-          <SubItem>
-            <Name>.eSubsystem</Name>
-            <Value>1</Value>
-          </SubItem>
-          <SubItem>
-            <Name>.nMinTimeViolationAcceptable</Name>
-            <Value>10</Value>
-          </SubItem>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>ePrevState</Name>
-        <Type Namespace="LCLS_Vacuum">E_ValvePositionState</Type>
+        <Name>iMaximumValidSeverity</Name>
+        <Type>INT</Type>
         <BitSize>16</BitSize>
-        <BitOffs>81664</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>tErrorPresent</Name>
-        <Type Namespace="Tc2_Standard">R_TRIG</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>81696</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>tAction</Name>
-        <Type Namespace="Tc2_Standard">R_TRIG</Type>
-        <Comment> Primary action of this device (OPN_DO, etc.)</Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>81760</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>tOverrideActivated</Name>
-        <Type Namespace="Tc2_Standard">R_TRIG</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>81824</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bRestorePersistentData</Name>
-        <Type>BOOL</Type>
-        <Comment> For Persistent Data</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>81888</BitOffs>
+        <BitOffs>32</BitOffs>
         <Default>
           <Value>1</Value>
         </Default>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
       </SubItem>
-      <Action>
-        <Name>ACT_Logger</Name>
-      </Action>
+      <SubItem>
+        <Name>bValid</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>48</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fValue</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>64</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>iValueInvalidate</Name>
+        <Type PointerTo="1">ULINT</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>128</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>tonValueTimeout</Name>
+        <Type Namespace="Tc2_Standard">TON</Type>
+        <BitSize>224</BitSize>
+        <BitOffs>160</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>tonSeverityTimeout</Name>
+        <Type Namespace="Tc2_Standard">TON</Type>
+        <BitSize>224</BitSize>
+        <BitOffs>384</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fLastValidValue</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>640</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>iLastValidSeverity</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>704</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fPLCInternalValue</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>768</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+		pv: EPICSLink
+		link:
+		field: DESC Internal variable used to monitor EPICS PV in PLC
+	</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>iPLCInternalSeverity</Name>
+        <Type>INT</Type>
+        <Comment> Use special link syntax for now to get EPICSLink.SEVR here:</Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>832</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+		pv: EPICSLink:LinkSeverity
+		link: *EPICSLink.SEVR
+		field: DESC Internal variable used to monitor EPICS PV severity in PLC
+	</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>tTimeout</Name>
+        <Type>TIME</Type>
+        <Comment> The timeout will trip after `tTimeout` if EPICS doesn't write in that time period:</Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>864</BitOffs>
+        <Default>
+          <Value>2000</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>NAN_VALUE</Name>
+        <Type>ULINT</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>896</BitOffs>
+        <Default>
+          <Value>9223372036854775807</Value>
+        </Default>
+      </SubItem>
       <Properties>
         <Property>
           <Name>PouType</Name>
@@ -22165,537 +22149,715 @@ And saves them in the array q_aEcConfSlaveInfo.
       </Properties>
     </DataType>
     <DataType>
-      <Name Namespace="LCLS_Vacuum">E_VGC</Name>
-      <BitSize>16</BitSize>
-      <BaseType>INT</BaseType>
-      <EnumInfo>
-        <Text>Vented</Text>
-        <Enum>0</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>AtVacuum</Text>
-        <Enum>1</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>ERR_DiffPress</Text>
-        <Enum>2</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>ERR_LostVac</Text>
-        <Enum>3</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>ERR_ExtFault</Text>
-        <Enum>4</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>At_Vac</Text>
-        <Enum>5</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>Triggered</Text>
-        <Enum>6</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>Vac_Fault</Text>
-        <Enum>7</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>Cls_Timeout</Text>
-        <Enum>8</Enum>
-      </EnumInfo>
-      <EnumInfo>
-        <Text>Opn_Timeout</Text>
-        <Enum>9</Enum>
-      </EnumInfo>
-    </DataType>
-    <DataType>
-      <Name Namespace="LCLS_Vacuum">ST_ValveBase</Name>
-      <BitSize>800</BitSize>
+      <Name>FB_EpicsCentroidMonitor</Name>
+      <Comment>
+    EPICS AreaDetector Stats Plugin Centroid Monitor
+
+    Requires a "link" pragma to specify the full plugin prefix.
+
+</Comment>
+      <BitSize>3712</BitSize>
       <SubItem>
-        <Name>pv_xOPN_SW</Name>
-        <Type>BOOL</Type>
-        <Comment> EPICS Controls </Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>0</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-	pv: OPN_SW; 
-	field: ZNAM CLOSE; 
-	field: ONAM OPEN;
-	io: io ;
-	</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>pv_xAlmRst</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>8</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-    pv: ALM_RST;
-	io: io;
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>pv_xOvrdOpn</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>16</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-    pv: FORCE_OPN;
-	io: io;
-	field: ZNAM FALSE;
-	field: ONAM FORCE OPEN;
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>xOverrideMode</Name>
-        <Type>BOOL</Type>
-        <Comment> Shows the override status of this valve </Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>24</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-	pv: OVRD_ON ;
-	field: ZNAM Override OFF ;
-	field: ONAM Override ON;
-	io: io;
-	</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_xOpnLS</Name>
-        <Type>BOOL</Type>
-        <Comment> I/Os
- Readbacks </Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>32</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-	pv: OPN_DI;
-	io: i;
-	field: ZNAM FALSE;
-	field: ONAM OPEN;
-	</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>i_xClsLS</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>40</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-    pv: CLS_DI;
-	io: i;
-	field: ZNAM FALSE;
-	field: ONAM CLOSE;
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>q_xOPN_DO</Name>
-        <Type>BOOL</Type>
-        <Comment> Controls </Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>48</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-    pv: OPN_DO;
-	io: i;
-	field: ZNAM FALSE;
-	field: ONAM TRUE;
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>xEXT_OK</Name>
-        <Type>BOOL</Type>
-        <Comment> External interlock for custom interlocking in addition to regular DP ilk, this must be set true, or the interlock condition before calling the FB_VGC </Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>56</BitOffs>
-        <Default>
-          <Value>0</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-	pv: EXT_ILK_OK ;
-	field: ZNAM NOT OK ;
-	field: ONAM OK ;
-	io: i ;
-	</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>xOPN_OK</Name>
-        <Type>BOOL</Type>
-        <Comment> Final SUM of DP_OK and EXT_OK, needed because it allows the DP ilk to be switched off, see FB_VGC.Dis_DPIlk </Comment>
-        <BitSize>8</BitSize>
+        <Name>fMaximumFrameTime</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
         <BitOffs>64</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-    pv: OPN_OK;
-	field: ZNAM OPN ILK NOT OK ;
-	field: ONAM OPN ILK OK ;
-	io: i;
- 	</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>eState</Name>
-        <Type Namespace="LCLS_Vacuum">E_ValvePositionState</Type>
-        <Comment> States </Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>80</BitOffs>
         <Default>
-          <Value>3</Value>
+          <Value>0.2</Value>
         </Default>
         <Properties>
           <Property>
-            <Name>pytmc</Name>
-            <Value>
-	pv: POS_STATE;
-	type: mbbi ;
-	field: ZRST OPEN ;
-	field: ONST CLOSED ;
-	field: TWST MOVING ;
-	field: THST INVALID ;
-	field: FRST OPEN_F ;
-	io: i;
-	</Value>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
           </Property>
         </Properties>
       </SubItem>
       <SubItem>
-        <Name>eVGC_State</Name>
-        <Type Namespace="LCLS_Vacuum">E_VGC</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>96</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-	pv: STATE;
-	field: ZRST Vented;
-	field: ONST At Vacuum;
-	field: TWST Differential Pressure;
-	field: THST Lost Vacuum;
-	field: FRST Ext Fault;
-	field: FVST AT Vacuum;
-	field: SXST Triggered;
-	field: SVST Vacuum Fault;
-	field: EIST Close Timeout;
-	field: NIST Open Timeout;
-	io: i;
-	</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bErrorPresent</Name>
-        <Type>BOOL</Type>
-        <Comment> Error </Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>112</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-    pv: ERROR;
-	field: ZNAM NO ERROR ;
-	field: ONAM ERROR PRESENT ;
-	io: o;
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>iErrorCode</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
+        <Name>fMinimumValidChange</Name>
+        <Type>LREAL</Type>
+        <Comment> Minimum change to be considered updating correctly - buggy detectors may need this. </Comment>
+        <BitSize>64</BitSize>
         <BitOffs>128</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>sErrorMessage</Name>
-        <Type>STRING(80)</Type>
-        <BitSize>648</BitSize>
-        <BitOffs>144</BitOffs>
+        <Default>
+          <Value>1E-06</Value>
+        </Default>
         <Properties>
           <Property>
-            <Name>pytmc</Name>
-            <Value>
-    pv: ErrMsg;
-	io: o;
-    </Value>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
           </Property>
         </Properties>
       </SubItem>
       <SubItem>
-        <Name>xLog</Name>
+        <Name>fNewFrameMinimumChange</Name>
+        <Type>LREAL</Type>
+        <Comment> Minimum change in pixels to be considered a new value for X, Y </Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>192</BitOffs>
+        <Default>
+          <Value>1E-06</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bEnable</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <BitOffs>792</BitOffs>
+        <BitOffs>256</BitOffs>
         <Default>
           <Value>1</Value>
         </Default>
         <Properties>
           <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bIsUpdating</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>264</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
             <Name>pytmc</Name>
             <Value>
-    pv: LOGGER;
-	io: io;
-	field: ZNAM OFF ;
-	field: ONAM ON ;
+        pv: IsUpdating
+        io: input
     </Value>
           </Property>
         </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fCentroidX</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>320</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: CentroidX
+        io: input
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fCentroidY</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>384</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: CentroidY
+        io: input
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>nArrayCount</Name>
+        <Type>UDINT</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>448</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: ArrayCount
+        io: input
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bValid</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>480</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fFrameTime</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>512</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: FrameTime
+        io: input
+        field: DESC Time between frame updates
+        field: EGU sec
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbCentroidX</Name>
+        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
+        <BitSize>960</BitSize>
+        <BitOffs>576</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: CX_
+        link: CentroidX_RBV
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbCentroidY</Name>
+        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
+        <BitSize>960</BitSize>
+        <BitOffs>1536</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: CY_
+        link: CentroidY_RBV
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fLastCentroidX</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>2496</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fLastCentroidY</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>2560</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fbArrayCounter</Name>
+        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
+        <BitSize>960</BitSize>
+        <BitOffs>2624</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Cnt_
+        link: ArrayCounter_RBV
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>nLastArrayCount</Name>
+        <Type>UDINT</Type>
+        <Comment> Last array count value</Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>3584</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>tLastUpdate</Name>
+        <Type>TIME</Type>
+        <Comment> Time of the last frame update</Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>3616</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bInit</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>3648</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bSawFrame</Name>
+        <Type>BOOL</Type>
+        <Comment> Did we see a frame update yet? (FALSE at startup; TRUE after first frame.)</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>3656</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bHaveNewFrame</Name>
+        <Type>BOOL</Type>
+        <Comment> Do we have a new frame? Has the array count updated, and position change above fNewFrameMinimumChange?</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>3664</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bAboveThreshold</Name>
+        <Type>BOOL</Type>
+        <Comment> For this new frame, is it above the threshold fMinimumValidChange?</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>3672</BitOffs>
+      </SubItem>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name>FB_Test_EpicsCentroidMonitor</Name>
+      <BitSize>33555520</BitSize>
+      <ExtendsType Namespace="TcUnit">FB_TestSuite</ExtendsType>
+      <SubItem>
+        <Name>__TESTBASICS__FBMONITOR</Name>
+        <Type>FB_EpicsCentroidMonitor</Type>
+        <BitSize>3712</BitSize>
+        <BitOffs>33551744</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>__TESTBASICS__NCOUNT</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>33555456</BitOffs>
+        <Default>
+          <Value>0</Value>
+        </Default>
+      </SubItem>
+      <Method>
+        <Name>TestBasics</Name>
+        <Local>
+          <Name>fbMonitor</Name>
+          <Type>FB_EpicsCentroidMonitor</Type>
+          <BitSize>3712</BitSize>
+          <Properties>
+            <Property>
+              <Name>uselocation</Name>
+              <Value>__TESTBASICS__FBMONITOR</Value>
+            </Property>
+          </Properties>
+        </Local>
+        <Local>
+          <Name>nCount</Name>
+          <Type>INT</Type>
+          <BitSize>16</BitSize>
+          <Properties>
+            <Property>
+              <Name>uselocation</Name>
+              <Value>__TESTBASICS__NCOUNT</Value>
+            </Property>
+          </Properties>
+        </Local>
+      </Method>
+      <Method>
+        <Name>WriteCentroidValue</Name>
+        <Parameter>
+          <Name>fbMonitor</Name>
+          <Type ReferenceTo="true">FB_EpicsCentroidMonitor</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>fX</Name>
+          <Type>LREAL</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>fY</Name>
+          <Type>LREAL</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>nCount</Name>
+          <Type>INT</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>nX_Severity</Name>
+          <Type>INT</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>nY_Severity</Name>
+          <Type>INT</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>nCount_Severity</Name>
+          <Type>INT</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>tLastUpdate</Name>
+          <Type>TIME</Type>
+          <BitSize>32</BitSize>
+        </Parameter>
+      </Method>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+        <Property>
+          <Name>call_after_init</Name>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name>ST_EpicsMotorMSTA</Name>
+      <BitSize>16</BitSize>
+      <SubItem>
+        <Name>bPositiveDirection</Name>
+        <Type>BIT</Type>
+        <Comment> DIRECTION: last raw direction; (0:Negative, 1:Positive) </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bDone</Name>
+        <Type>BIT</Type>
+        <Comment> DONE: motion is complete. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>1</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bPlusLimitSwitch</Name>
+        <Type>BIT</Type>
+        <Comment> PLUS_LS: plus limit switch has been hit. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>2</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bHomeLimitSwitch</Name>
+        <Type>BIT</Type>
+        <Comment> HOMELS: state of the home limit switch. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>3</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bUnused0</Name>
+        <Type>BIT</Type>
+        <Comment> Unused </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>4</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bClosedLoop</Name>
+        <Type>BIT</Type>
+        <Comment> POSITION: closed-loop position control is enabled. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>5</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bSlipStall</Name>
+        <Type>BIT</Type>
+        <Comment> SLIP_STALL: Slip/Stall detected (eg. fatal following error) </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>6</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bHome</Name>
+        <Type>BIT</Type>
+        <Comment> HOME: if at home position. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>7</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bEncoderPresent</Name>
+        <Type>BIT</Type>
+        <Comment> PRESENT: encoder is present. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>8</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bHardwareProblem</Name>
+        <Type>BIT</Type>
+        <Comment> PROBLEM: driver stopped polling, or hardware problem </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>9</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bMoving</Name>
+        <Type>BIT</Type>
+        <Comment> MOVING: non-zero velocity present. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>10</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bGainSupport</Name>
+        <Type>BIT</Type>
+        <Comment> GAIN_SUPPORT: motor supports closed-loop position control. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>11</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bCommError</Name>
+        <Type>BIT</Type>
+        <Comment> COMM_ERR: Controller communication error. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>12</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bMinusLimitSwitch</Name>
+        <Type>BIT</Type>
+        <Comment> MINUS_LS: minus limit switch has been hit. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>13</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bHomed</Name>
+        <Type>BIT</Type>
+        <Comment> HOMED: the motor has been homed. </Comment>
+        <BitSize>1</BitSize>
+        <BitOffs>14</BitOffs>
       </SubItem>
     </DataType>
     <DataType>
-      <Name Namespace="LCLS_Vacuum">ST_VGC</Name>
-      <BitSize>2944</BitSize>
-      <ExtendsType Namespace="LCLS_Vacuum">ST_ValveBase</ExtendsType>
+      <Name>FB_EpicsMotorMonitor</Name>
+      <Comment>
+    EPICS Motor Record Monitoring tool
+
+    Requires a "link" pragma to specify the motor record prefix.
+
+</Comment>
+      <BitSize>3072</BitSize>
       <SubItem>
-        <Name>xDP_OK</Name>
+        <Name>bEnable</Name>
         <Type>BOOL</Type>
-        <Comment> Indicates the valve can be opened because the differential pressure is low enough</Comment>
         <BitSize>8</BitSize>
-        <BitOffs>800</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-    pv: DP_OK;
-	field: ZNAM DP NOT OK ;
-	field: ONAM DP OK ;
-	io: i;
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>rAT_VAC_SP</Name>
-        <Type>REAL</Type>
-        <Comment> Interlock setpoint for gauges on both sides of valve</Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>832</BitOffs>
+        <BitOffs>32</BitOffs>
         <Default>
-          <Value>1E-06</Value>
+          <Value>1</Value>
         </Default>
         <Properties>
           <Property>
-            <Name>pytmc</Name>
-            <Value>
-	pv: AT_VAC_SP;
-	io: o;
-	field: HOPR 1000
-	field: LOPR 0
-	field: PREC 2
-	field: EGU "TORR"
-	autosave_pass1: VAL DESC
-	</Value>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
           </Property>
         </Properties>
       </SubItem>
       <SubItem>
-        <Name>rAT_VAC_SP_LAST</Name>
-        <Type>REAL</Type>
-        <Comment> Interlock setpoint for gauges on both sides of valve</Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>864</BitOffs>
-        <Default>
-          <Value>1E-06</Value>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>rAT_VAC_HYS</Name>
-        <Type>REAL</Type>
-        <Comment> Hysteresis of the vacuum sp</Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>896</BitOffs>
-        <Default>
-          <Value>1E-06</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-    pv: AT_VAC_HYS;
-	io: o;
-	field: HOPR 1000
-	field: LOPR 0
-	field: PREC 2
-	field: EGU "TORR"
-	autosave_pass1: VAL DESC
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>rHYST_PERC</Name>
-        <Type>REAL</Type>
-        <Comment> Hysteresis percentage</Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>928</BitOffs>
-        <Default>
-          <Value>0.8</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-    pv: HYST_PERC ;
-	io: o;
-	autosave_pass1: VAL DESC
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>xAT_VAC</Name>
-        <Type>BOOL</Type>
-        <Comment>At vacuum setpoint</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>960</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-	pv: AT_VAC ; 
-	field: ZNAM NOT AT VAC ;
-	field: ONAM AT VAC ;
-	io: i;
-	</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>xERR_DifPres</Name>
-        <Type>BOOL</Type>
-        <Comment> Alarm Outputs </Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>968</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-    pv: ERR_DifPres;
-	field: ZNAM NO ERROR ;
-	field: ONAM Diffrential error present ;
-	io: i;
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>xERR_SP</Name>
+        <Name>bIsMoving</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <BitOffs>976</BitOffs>
+        <BitOffs>40</BitOffs>
         <Properties>
           <Property>
-            <Name>pytmc</Name>
-            <Value>
-    pv: ERR_SP;
-	field: ZNAM NO ERROR ;
-	field: ONAM Setpoint error present ;
-	io: i;
-    </Value>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
           </Property>
         </Properties>
       </SubItem>
       <SubItem>
-        <Name>xERR_ExtFault</Name>
+        <Name>fPosition</Name>
+        <Type>LREAL</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>64</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>nMSTA_Raw</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>128</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stMSTA</Name>
+        <Type>ST_EpicsMotorMSTA</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>144</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bValid</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <BitOffs>984</BitOffs>
+        <BitOffs>160</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbRBVCheck</Name>
+        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
+        <BitSize>960</BitSize>
+        <BitOffs>192</BitOffs>
         <Properties>
           <Property>
             <Name>pytmc</Name>
             <Value>
-    pv: ERR_Ext;
-	field: ZNAM NO ERROR ;
-	field: ONAM External error present ;
-	io: i;
+        pv: RBV_
+        link: .RBV
     </Value>
           </Property>
         </Properties>
       </SubItem>
       <SubItem>
-        <Name>xAlmSum</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>992</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>sDevName</Name>
-        <Type>STRING(80)</Type>
-        <BitSize>648</BitSize>
-        <BitOffs>1000</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>sIlkUSDeviceName</Name>
-        <Type>STRING(80)</Type>
-        <Comment>ILK Devices</Comment>
-        <BitSize>648</BitSize>
-        <BitOffs>1648</BitOffs>
+        <Name>fbMovingCheck</Name>
+        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
+        <BitSize>960</BitSize>
+        <BitOffs>1152</BitOffs>
         <Properties>
           <Property>
             <Name>pytmc</Name>
             <Value>
-    pv: ILK_DEVICE_US;
-	io: i;
+        pv: Dmov_
+        link: .DMOV
     </Value>
           </Property>
         </Properties>
       </SubItem>
       <SubItem>
-        <Name>sIlkDSDeviceName</Name>
-        <Type>STRING(80)</Type>
-        <BitSize>648</BitSize>
-        <BitOffs>2296</BitOffs>
+        <Name>fbMotorStatusCheck</Name>
+        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
+        <BitSize>960</BitSize>
+        <BitOffs>2112</BitOffs>
         <Properties>
           <Property>
             <Name>pytmc</Name>
             <Value>
-    pv: ILK_DEVICE_DS;
-	io: i;
+        pv: Msta_
+        link: .MSTA
     </Value>
           </Property>
         </Properties>
       </SubItem>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name>FB_Test_EpicsMotorMonitor</Name>
+      <BitSize>33554816</BitSize>
+      <ExtendsType Namespace="TcUnit">FB_TestSuite</ExtendsType>
+      <SubItem>
+        <Name>__TESTBASICS__FBMONITOR</Name>
+        <Type>FB_EpicsMotorMonitor</Type>
+        <BitSize>3072</BitSize>
+        <BitOffs>33551744</BitOffs>
+      </SubItem>
+      <Method>
+        <Name>TestBasics</Name>
+        <Local>
+          <Name>fbMonitor</Name>
+          <Type>FB_EpicsMotorMonitor</Type>
+          <BitSize>3072</BitSize>
+          <Properties>
+            <Property>
+              <Name>uselocation</Name>
+              <Value>__TESTBASICS__FBMONITOR</Value>
+            </Property>
+          </Properties>
+        </Local>
+      </Method>
+      <Method>
+        <Name>WriteData</Name>
+        <Parameter>
+          <Name>fbMonitor</Name>
+          <Type ReferenceTo="true">FB_EpicsMotorMonitor</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>fRBV</Name>
+          <Type>LREAL</Type>
+          <BitSize>64</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>nMoving</Name>
+          <Type>INT</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>nStatus</Name>
+          <Type>UINT</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>nRBV_Severity</Name>
+          <Type>INT</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>nStatus_Severity</Name>
+          <Type>INT</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>nMoving_Severity</Name>
+          <Type>INT</Type>
+          <BitSize>16</BitSize>
+        </Parameter>
+      </Method>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+        <Property>
+          <Name>call_after_init</Name>
+        </Property>
+      </Properties>
     </DataType>
     <DataType>
       <Name Namespace="PMPS">ST_FFInfo</Name>
@@ -25135,6 +25297,629 @@ And saves them in the array q_aEcConfSlaveInfo.
           <Name>reflection</Name>
         </Property>
       </Properties>
+    </DataType>
+    <DataType>
+      <Name Namespace="LCLS_Vacuum">E_ValvePositionState</Name>
+      <BitSize>16</BitSize>
+      <BaseType>INT</BaseType>
+      <EnumInfo>
+        <Text>OPEN</Text>
+        <Enum>0</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>CLOSED</Text>
+        <Enum>1</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>MOVING</Text>
+        <Enum>2</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>INVALID</Text>
+        <Enum>3</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>OPEN_F</Text>
+        <Enum>4</Enum>
+      </EnumInfo>
+    </DataType>
+    <DataType>
+      <Name Namespace="LCLS_Vacuum">FB_Valve</Name>
+      <BitSize>81920</BitSize>
+      <SubItem>
+        <Name>fbLogger</Name>
+        <Type Namespace="LCLS_General">FB_LogMessage</Type>
+        <Comment> For logging</Comment>
+        <BitSize>81600</BitSize>
+        <BitOffs>64</BitOffs>
+        <Default>
+          <SubItem>
+            <Name>.eSubsystem</Name>
+            <Value>1</Value>
+          </SubItem>
+          <SubItem>
+            <Name>.nMinTimeViolationAcceptable</Name>
+            <Value>10</Value>
+          </SubItem>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>ePrevState</Name>
+        <Type Namespace="LCLS_Vacuum">E_ValvePositionState</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>81664</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>tErrorPresent</Name>
+        <Type Namespace="Tc2_Standard">R_TRIG</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>81696</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>tAction</Name>
+        <Type Namespace="Tc2_Standard">R_TRIG</Type>
+        <Comment> Primary action of this device (OPN_DO, etc.)</Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>81760</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>tOverrideActivated</Name>
+        <Type Namespace="Tc2_Standard">R_TRIG</Type>
+        <BitSize>64</BitSize>
+        <BitOffs>81824</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bRestorePersistentData</Name>
+        <Type>BOOL</Type>
+        <Comment> For Persistent Data</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>81888</BitOffs>
+        <Default>
+          <Value>1</Value>
+        </Default>
+      </SubItem>
+      <Action>
+        <Name>ACT_Logger</Name>
+      </Action>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name Namespace="LCLS_Vacuum">E_VGC</Name>
+      <BitSize>16</BitSize>
+      <BaseType>INT</BaseType>
+      <EnumInfo>
+        <Text>Vented</Text>
+        <Enum>0</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>AtVacuum</Text>
+        <Enum>1</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>ERR_DiffPress</Text>
+        <Enum>2</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>ERR_LostVac</Text>
+        <Enum>3</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>ERR_ExtFault</Text>
+        <Enum>4</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>At_Vac</Text>
+        <Enum>5</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>Triggered</Text>
+        <Enum>6</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>Vac_Fault</Text>
+        <Enum>7</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>Cls_Timeout</Text>
+        <Enum>8</Enum>
+      </EnumInfo>
+      <EnumInfo>
+        <Text>Opn_Timeout</Text>
+        <Enum>9</Enum>
+      </EnumInfo>
+    </DataType>
+    <DataType>
+      <Name Namespace="LCLS_Vacuum">ST_ValveBase</Name>
+      <BitSize>800</BitSize>
+      <SubItem>
+        <Name>pv_xOPN_SW</Name>
+        <Type>BOOL</Type>
+        <Comment> EPICS Controls </Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>0</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+	pv: OPN_SW; 
+	field: ZNAM CLOSE; 
+	field: ONAM OPEN;
+	io: io ;
+	</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>pv_xAlmRst</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>8</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+    pv: ALM_RST;
+	io: io;
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>pv_xOvrdOpn</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>16</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+    pv: FORCE_OPN;
+	io: io;
+	field: ZNAM FALSE;
+	field: ONAM FORCE OPEN;
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>xOverrideMode</Name>
+        <Type>BOOL</Type>
+        <Comment> Shows the override status of this valve </Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>24</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+	pv: OVRD_ON ;
+	field: ZNAM Override OFF ;
+	field: ONAM Override ON;
+	io: io;
+	</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_xOpnLS</Name>
+        <Type>BOOL</Type>
+        <Comment> I/Os
+ Readbacks </Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>32</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+	pv: OPN_DI;
+	io: i;
+	field: ZNAM FALSE;
+	field: ONAM OPEN;
+	</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>i_xClsLS</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>40</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+    pv: CLS_DI;
+	io: i;
+	field: ZNAM FALSE;
+	field: ONAM CLOSE;
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>q_xOPN_DO</Name>
+        <Type>BOOL</Type>
+        <Comment> Controls </Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>48</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+    pv: OPN_DO;
+	io: i;
+	field: ZNAM FALSE;
+	field: ONAM TRUE;
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>xEXT_OK</Name>
+        <Type>BOOL</Type>
+        <Comment> External interlock for custom interlocking in addition to regular DP ilk, this must be set true, or the interlock condition before calling the FB_VGC </Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>56</BitOffs>
+        <Default>
+          <Value>0</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+	pv: EXT_ILK_OK ;
+	field: ZNAM NOT OK ;
+	field: ONAM OK ;
+	io: i ;
+	</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>xOPN_OK</Name>
+        <Type>BOOL</Type>
+        <Comment> Final SUM of DP_OK and EXT_OK, needed because it allows the DP ilk to be switched off, see FB_VGC.Dis_DPIlk </Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>64</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+    pv: OPN_OK;
+	field: ZNAM OPN ILK NOT OK ;
+	field: ONAM OPN ILK OK ;
+	io: i;
+ 	</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>eState</Name>
+        <Type Namespace="LCLS_Vacuum">E_ValvePositionState</Type>
+        <Comment> States </Comment>
+        <BitSize>16</BitSize>
+        <BitOffs>80</BitOffs>
+        <Default>
+          <Value>3</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+	pv: POS_STATE;
+	type: mbbi ;
+	field: ZRST OPEN ;
+	field: ONST CLOSED ;
+	field: TWST MOVING ;
+	field: THST INVALID ;
+	field: FRST OPEN_F ;
+	io: i;
+	</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>eVGC_State</Name>
+        <Type Namespace="LCLS_Vacuum">E_VGC</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>96</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+	pv: STATE;
+	field: ZRST Vented;
+	field: ONST At Vacuum;
+	field: TWST Differential Pressure;
+	field: THST Lost Vacuum;
+	field: FRST Ext Fault;
+	field: FVST AT Vacuum;
+	field: SXST Triggered;
+	field: SVST Vacuum Fault;
+	field: EIST Close Timeout;
+	field: NIST Open Timeout;
+	io: i;
+	</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bErrorPresent</Name>
+        <Type>BOOL</Type>
+        <Comment> Error </Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>112</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+    pv: ERROR;
+	field: ZNAM NO ERROR ;
+	field: ONAM ERROR PRESENT ;
+	io: o;
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>iErrorCode</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>128</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>sErrorMessage</Name>
+        <Type>STRING(80)</Type>
+        <BitSize>648</BitSize>
+        <BitOffs>144</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+    pv: ErrMsg;
+	io: o;
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>xLog</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>792</BitOffs>
+        <Default>
+          <Value>1</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+    pv: LOGGER;
+	io: io;
+	field: ZNAM OFF ;
+	field: ONAM ON ;
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+    </DataType>
+    <DataType>
+      <Name Namespace="LCLS_Vacuum">ST_VGC</Name>
+      <BitSize>2944</BitSize>
+      <ExtendsType Namespace="LCLS_Vacuum">ST_ValveBase</ExtendsType>
+      <SubItem>
+        <Name>xDP_OK</Name>
+        <Type>BOOL</Type>
+        <Comment> Indicates the valve can be opened because the differential pressure is low enough</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>800</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+    pv: DP_OK;
+	field: ZNAM DP NOT OK ;
+	field: ONAM DP OK ;
+	io: i;
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>rAT_VAC_SP</Name>
+        <Type>REAL</Type>
+        <Comment> Interlock setpoint for gauges on both sides of valve</Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>832</BitOffs>
+        <Default>
+          <Value>1E-06</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+	pv: AT_VAC_SP;
+	io: o;
+	field: HOPR 1000
+	field: LOPR 0
+	field: PREC 2
+	field: EGU "TORR"
+	autosave_pass1: VAL DESC
+	</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>rAT_VAC_SP_LAST</Name>
+        <Type>REAL</Type>
+        <Comment> Interlock setpoint for gauges on both sides of valve</Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>864</BitOffs>
+        <Default>
+          <Value>1E-06</Value>
+        </Default>
+      </SubItem>
+      <SubItem>
+        <Name>rAT_VAC_HYS</Name>
+        <Type>REAL</Type>
+        <Comment> Hysteresis of the vacuum sp</Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>896</BitOffs>
+        <Default>
+          <Value>1E-06</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+    pv: AT_VAC_HYS;
+	io: o;
+	field: HOPR 1000
+	field: LOPR 0
+	field: PREC 2
+	field: EGU "TORR"
+	autosave_pass1: VAL DESC
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>rHYST_PERC</Name>
+        <Type>REAL</Type>
+        <Comment> Hysteresis percentage</Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>928</BitOffs>
+        <Default>
+          <Value>0.8</Value>
+        </Default>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+    pv: HYST_PERC ;
+	io: o;
+	autosave_pass1: VAL DESC
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>xAT_VAC</Name>
+        <Type>BOOL</Type>
+        <Comment>At vacuum setpoint</Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>960</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+	pv: AT_VAC ; 
+	field: ZNAM NOT AT VAC ;
+	field: ONAM AT VAC ;
+	io: i;
+	</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>xERR_DifPres</Name>
+        <Type>BOOL</Type>
+        <Comment> Alarm Outputs </Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>968</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+    pv: ERR_DifPres;
+	field: ZNAM NO ERROR ;
+	field: ONAM Diffrential error present ;
+	io: i;
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>xERR_SP</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>976</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+    pv: ERR_SP;
+	field: ZNAM NO ERROR ;
+	field: ONAM Setpoint error present ;
+	io: i;
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>xERR_ExtFault</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>984</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+    pv: ERR_Ext;
+	field: ZNAM NO ERROR ;
+	field: ONAM External error present ;
+	io: i;
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>xAlmSum</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>992</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>sDevName</Name>
+        <Type>STRING(80)</Type>
+        <BitSize>648</BitSize>
+        <BitOffs>1000</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>sIlkUSDeviceName</Name>
+        <Type>STRING(80)</Type>
+        <Comment>ILK Devices</Comment>
+        <BitSize>648</BitSize>
+        <BitOffs>1648</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+    pv: ILK_DEVICE_US;
+	io: i;
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>sIlkDSDeviceName</Name>
+        <Type>STRING(80)</Type>
+        <BitSize>648</BitSize>
+        <BitOffs>2296</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+    pv: ILK_DEVICE_DS;
+	io: i;
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
     </DataType>
     <DataType>
       <Name Namespace="PMPS">I_HigherAuthority</Name>
@@ -27823,1515 +28608,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
         </Property>
         <Property>
           <Name>reflection</Name>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>ST_SourceDataStore</Name>
-      <BitSize>3904</BitSize>
-      <SubItem>
-        <Name>sName</Name>
-        <Type>STRING(80)</Type>
-        <BitSize>648</BitSize>
-        <BitOffs>0</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: Name; io: input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbSourceValve</Name>
-        <Type Namespace="LCLS_Vacuum" ReferenceTo="true">FB_VGC</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>672</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: Valve</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bDataValid</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>704</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Valid
-        io: input
-        field: ZNAM Data Invalid
-        field: ONAM Data Valid
-        field: ZSV MAJOR
-        field: OSV NO_ALARM
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bEntryValveReady</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>712</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: EntryValveReady
-        io: input
-        field: ZNAM Not ready
-        field: ONAM Ready
-        field: ZSV MAJOR
-        field: OSV NO_ALARM
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bChecksOK</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>720</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: ChecksOK
-        io: input
-        field: ZNAM Failed
-        field: ONAM Passed
-        field: ZSV MAJOR
-        field: OSV NO_ALARM
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbLinear</Name>
-        <Type>FB_RangeComparison</Type>
-        <BitSize>448</BitSize>
-        <BitOffs>768</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: Linear</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbRotary</Name>
-        <Type>FB_RangeComparison</Type>
-        <BitSize>448</BitSize>
-        <BitOffs>1216</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: Rotary</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbGoniometer</Name>
-        <Type>FB_RangeComparison</Type>
-        <BitSize>448</BitSize>
-        <BitOffs>1664</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: Goniometer</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbNFCentroidX</Name>
-        <Type>FB_RangeComparison</Type>
-        <BitSize>448</BitSize>
-        <BitOffs>2112</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: NFCenterX</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbNFCentroidY</Name>
-        <Type>FB_RangeComparison</Type>
-        <BitSize>448</BitSize>
-        <BitOffs>2560</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: NFCenterY</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbFFCentroidX</Name>
-        <Type>FB_RangeComparison</Type>
-        <BitSize>448</BitSize>
-        <BitOffs>3008</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: FFCenterX</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbFFCentroidY</Name>
-        <Type>FB_RangeComparison</Type>
-        <BitSize>448</BitSize>
-        <BitOffs>3456</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: FFCenterY</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-    </DataType>
-    <DataType>
-      <Name Namespace="LCLS_General">FB_LREALFromEPICS</Name>
-      <Comment>
-Function block to link an analog value from EPICS to an LREAL on the PLC
-
-Usage:
-
-	{attribute 'pytmc' := '
-		pv: INTERNAL:RECORD
-		link: PV:NAME:TO:LINK:TO
-	'}
-	fbLinkedValue1 : FB_LREALFromEPICS;
-	
-Such that when PV:NAME:TO:LINK:TO changes in EPICS, the INTERNAL:RECORD will be used to
-push a value through to the PLC with this function block. 
-
-As this block takes care of IOC heartbeat signals and monitors the link and value severity,
-the end-user should then only have to look at `.bValid` and `.fValue`. These are guaranteed to
-be up-to-date and valid within `tTimeout` seconds.
-</Comment>
-      <BitSize>960</BitSize>
-      <SubItem>
-        <Name>iMaximumValidSeverity</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>32</BitOffs>
-        <Default>
-          <Value>1</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bValid</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>48</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fValue</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>64</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>iValueInvalidate</Name>
-        <Type PointerTo="1">ULINT</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>128</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>tonValueTimeout</Name>
-        <Type Namespace="Tc2_Standard">TON</Type>
-        <BitSize>224</BitSize>
-        <BitOffs>160</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>tonSeverityTimeout</Name>
-        <Type Namespace="Tc2_Standard">TON</Type>
-        <BitSize>224</BitSize>
-        <BitOffs>384</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fLastValidValue</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>640</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>iLastValidSeverity</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>704</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fPLCInternalValue</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>768</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-		pv: EPICSLink
-		link:
-		field: DESC Internal variable used to monitor EPICS PV in PLC
-	</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>iPLCInternalSeverity</Name>
-        <Type>INT</Type>
-        <Comment> Use special link syntax for now to get EPICSLink.SEVR here:</Comment>
-        <BitSize>16</BitSize>
-        <BitOffs>832</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-		pv: EPICSLink:LinkSeverity
-		link: *EPICSLink.SEVR
-		field: DESC Internal variable used to monitor EPICS PV severity in PLC
-	</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>tTimeout</Name>
-        <Type>TIME</Type>
-        <Comment> The timeout will trip after `tTimeout` if EPICS doesn't write in that time period:</Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>864</BitOffs>
-        <Default>
-          <Value>2000</Value>
-        </Default>
-      </SubItem>
-      <SubItem>
-        <Name>NAN_VALUE</Name>
-        <Type>ULINT</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>896</BitOffs>
-        <Default>
-          <Value>9223372036854775807</Value>
-        </Default>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>FB_EpicsCentroidMonitor</Name>
-      <Comment>
-    EPICS AreaDetector Stats Plugin Centroid Monitor
-
-    Requires a "link" pragma to specify the full plugin prefix.
-
-</Comment>
-      <BitSize>3712</BitSize>
-      <SubItem>
-        <Name>fMaximumFrameTime</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>64</BitOffs>
-        <Default>
-          <Value>0.2</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fMinimumValidChange</Name>
-        <Type>LREAL</Type>
-        <Comment> Minimum change to be considered updating correctly - buggy detectors may need this. </Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>128</BitOffs>
-        <Default>
-          <Value>1E-06</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fNewFrameMinimumChange</Name>
-        <Type>LREAL</Type>
-        <Comment> Minimum change in pixels to be considered a new value for X, Y </Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>192</BitOffs>
-        <Default>
-          <Value>1E-06</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bEnable</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>256</BitOffs>
-        <Default>
-          <Value>1</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bIsUpdating</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>264</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: IsUpdating
-        io: input
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fCentroidX</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>320</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: CentroidX
-        io: input
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fCentroidY</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>384</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: CentroidY
-        io: input
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>nArrayCount</Name>
-        <Type>UDINT</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>448</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: ArrayCount
-        io: input
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bValid</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>480</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fFrameTime</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>512</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: FrameTime
-        io: input
-        field: DESC Time between frame updates
-        field: EGU sec
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbCentroidX</Name>
-        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
-        <BitSize>960</BitSize>
-        <BitOffs>576</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: CX_
-        link: CentroidX_RBV
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbCentroidY</Name>
-        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
-        <BitSize>960</BitSize>
-        <BitOffs>1536</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: CY_
-        link: CentroidY_RBV
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fLastCentroidX</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>2496</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fLastCentroidY</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>2560</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fbArrayCounter</Name>
-        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
-        <BitSize>960</BitSize>
-        <BitOffs>2624</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Cnt_
-        link: ArrayCounter_RBV
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>nLastArrayCount</Name>
-        <Type>UDINT</Type>
-        <Comment> Last array count value</Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>3584</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>tLastUpdate</Name>
-        <Type>TIME</Type>
-        <Comment> Time of the last frame update</Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>3616</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bInit</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>3648</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bSawFrame</Name>
-        <Type>BOOL</Type>
-        <Comment> Did we see a frame update yet? (FALSE at startup; TRUE after first frame.)</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>3656</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bHaveNewFrame</Name>
-        <Type>BOOL</Type>
-        <Comment> Do we have a new frame? Has the array count updated, and position change above fNewFrameMinimumChange?</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>3664</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bAboveThreshold</Name>
-        <Type>BOOL</Type>
-        <Comment> For this new frame, is it above the threshold fMinimumValidChange?</Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>3672</BitOffs>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>ST_EpicsMotorMSTA</Name>
-      <BitSize>16</BitSize>
-      <SubItem>
-        <Name>bPositiveDirection</Name>
-        <Type>BIT</Type>
-        <Comment> DIRECTION: last raw direction; (0:Negative, 1:Positive) </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>0</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bDone</Name>
-        <Type>BIT</Type>
-        <Comment> DONE: motion is complete. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>1</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bPlusLimitSwitch</Name>
-        <Type>BIT</Type>
-        <Comment> PLUS_LS: plus limit switch has been hit. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>2</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bHomeLimitSwitch</Name>
-        <Type>BIT</Type>
-        <Comment> HOMELS: state of the home limit switch. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>3</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bUnused0</Name>
-        <Type>BIT</Type>
-        <Comment> Unused </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>4</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bClosedLoop</Name>
-        <Type>BIT</Type>
-        <Comment> POSITION: closed-loop position control is enabled. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>5</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bSlipStall</Name>
-        <Type>BIT</Type>
-        <Comment> SLIP_STALL: Slip/Stall detected (eg. fatal following error) </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>6</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bHome</Name>
-        <Type>BIT</Type>
-        <Comment> HOME: if at home position. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>7</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bEncoderPresent</Name>
-        <Type>BIT</Type>
-        <Comment> PRESENT: encoder is present. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>8</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bHardwareProblem</Name>
-        <Type>BIT</Type>
-        <Comment> PROBLEM: driver stopped polling, or hardware problem </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>9</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bMoving</Name>
-        <Type>BIT</Type>
-        <Comment> MOVING: non-zero velocity present. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>10</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bGainSupport</Name>
-        <Type>BIT</Type>
-        <Comment> GAIN_SUPPORT: motor supports closed-loop position control. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>11</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bCommError</Name>
-        <Type>BIT</Type>
-        <Comment> COMM_ERR: Controller communication error. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>12</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bMinusLimitSwitch</Name>
-        <Type>BIT</Type>
-        <Comment> MINUS_LS: minus limit switch has been hit. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>13</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bHomed</Name>
-        <Type>BIT</Type>
-        <Comment> HOMED: the motor has been homed. </Comment>
-        <BitSize>1</BitSize>
-        <BitOffs>14</BitOffs>
-      </SubItem>
-    </DataType>
-    <DataType>
-      <Name>FB_EpicsMotorMonitor</Name>
-      <Comment>
-    EPICS Motor Record Monitoring tool
-
-    Requires a "link" pragma to specify the motor record prefix.
-
-</Comment>
-      <BitSize>3072</BitSize>
-      <SubItem>
-        <Name>bEnable</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>32</BitOffs>
-        <Default>
-          <Value>1</Value>
-        </Default>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bIsMoving</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>40</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fPosition</Name>
-        <Type>LREAL</Type>
-        <BitSize>64</BitSize>
-        <BitOffs>64</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>nMSTA_Raw</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>128</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stMSTA</Name>
-        <Type>ST_EpicsMotorMSTA</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>144</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bValid</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>160</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbRBVCheck</Name>
-        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
-        <BitSize>960</BitSize>
-        <BitOffs>192</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: RBV_
-        link: .RBV
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbMovingCheck</Name>
-        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
-        <BitSize>960</BitSize>
-        <BitOffs>1152</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Dmov_
-        link: .DMOV
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbMotorStatusCheck</Name>
-        <Type Namespace="LCLS_General">FB_LREALFromEPICS</Type>
-        <BitSize>960</BitSize>
-        <BitOffs>2112</BitOffs>
-        <Properties>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Msta_
-        link: .MSTA
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>FB_DestinationDataStore</Name>
-      <BitSize>16448</BitSize>
-      <SubItem>
-        <Name>sName</Name>
-        <Type>STRING(80)</Type>
-        <BitSize>648</BitSize>
-        <BitOffs>32</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: Name; io: input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbDestinationValve</Name>
-        <Type Namespace="LCLS_Vacuum" ReferenceTo="true">FB_VGC</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>704</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: DestValve</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bExitValveReady</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>736</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: ExitValveReady
-        io: input
-        field: ZNAM Not ready
-        field: ONAM Ready
-        field: ZSV MAJOR
-        field: OSV NO_ALARM
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>stSourceDataStore</Name>
-        <Type>ST_SourceDataStore</Type>
-        <ArrayInfo>
-          <LBound>1</LBound>
-          <Elements>4</Elements>
-        </ArrayInfo>
-        <BitSize>15616</BitSize>
-        <BitOffs>768</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>pv: SRC</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bDataValid</Name>
-        <Type>BOOL</Type>
-        <Comment> </Comment>
-        <BitSize>8</BitSize>
-        <BitOffs>16384</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>nIndex</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>16400</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>stSource</Name>
-        <Type ReferenceTo="true">ST_SourceDataStore</Type>
-        <BitSize>32</BitSize>
-        <BitOffs>16416</BitOffs>
-      </SubItem>
-      <Method>
-        <Name>Update</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>sName</Name>
-          <Type>STRING(80)</Type>
-          <BitSize>648</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>stDataSource</Name>
-          <Comment> The data source to update</Comment>
-          <Type ReferenceTo="true">ST_SourceDataStore</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>fbSourceValve</Name>
-          <Comment> The source information</Comment>
-          <Type Namespace="LCLS_Vacuum" ReferenceTo="true">FB_VGC</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>fbNearField</Name>
-          <Type ReferenceTo="true">FB_EpicsCentroidMonitor</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>fbFarField</Name>
-          <Type ReferenceTo="true">FB_EpicsCentroidMonitor</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>fbLinear</Name>
-          <Type ReferenceTo="true">FB_EpicsMotorMonitor</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>fbRotary</Name>
-          <Type ReferenceTo="true">FB_EpicsMotorMonitor</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>fbGoniometer</Name>
-          <Type ReferenceTo="true">FB_EpicsMotorMonitor</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-      </Method>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>FB_ShutterSafety</Name>
-      <BitSize>384</BitSize>
-      <SubItem>
-        <Name>bLssPermission</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>32</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: LSS:Permission
-        io: input
-        field: ZNAM No permission
-        field: ONAM Permission
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bAcknowledge</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>40</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Acknowledge
-        io: io
-        field: ZNAM FALSE
-        field: ONAM TRUE
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bUserOpenRequest</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>48</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: UserOpen
-        io: io
-        field: ZNAM Close
-        field: ONAM Open
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bOverride</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>56</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Override
-        io: io
-        field: ZNAM Normal mode
-        field: ONAM Override mode
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>nSourceIndex</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>64</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbDestinations</Name>
-        <Type>FB_DestinationDataStore</Type>
-        <ArrayInfo ReferenceTo="true">
-          <LBound>1</LBound>
-          <Elements>7</Elements>
-        </ArrayInfo>
-        <Comment> VAR_IN_OUT -&gt; reference to fbDestinations </Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>96</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>InOut</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bSafeToOpen</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>128</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Safe
-        io: input
-        field: ZNAM Unsafe
-        field: ONAM Safe
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bLatchedError</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>136</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Error
-        io: input
-        field: ZNAM No error
-        field: ONAM Error
-        field: ZSV NO_ALARM
-        field: OSV MAJOR
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bOpenSignal</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>144</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: LSS:OpenRequest
-        io: input
-        field: ZNAM Request close
-        field: ONAM Request open
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>rtError</Name>
-        <Type Namespace="Tc2_Standard">R_TRIG</Type>
-        <Comment> Rising trigger indicator of a new error condition. </Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>160</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>rtOverrideSet</Name>
-        <Type Namespace="Tc2_Standard">R_TRIG</Type>
-        <Comment> Rising trigger indicator of user requesting override. </Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>224</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>ftCloseRequest</Name>
-        <Type Namespace="Tc2_Standard">F_TRIG</Type>
-        <Comment> Falling trigger for a 'close shutter' request. </Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>288</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>nDestIndex</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>352</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bBtpsPermission</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>368</BitOffs>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>FB_TestShutterSafety</Name>
-      <BitSize>33667328</BitSize>
-      <ExtendsType Namespace="TcUnit">FB_TestSuite</ExtendsType>
-      <SubItem>
-        <Name>fbShutter</Name>
-        <Type>FB_ShutterSafety</Type>
-        <BitSize>384</BitSize>
-        <BitOffs>33551744</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>fbDestinations</Name>
-        <Type>FB_DestinationDataStore</Type>
-        <ArrayInfo>
-          <LBound>1</LBound>
-          <Elements>7</Elements>
-        </ArrayInfo>
-        <BitSize>115136</BitSize>
-        <BitOffs>33552128</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>nDest</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>33667264</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>nSource</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>33667280</BitOffs>
-      </SubItem>
-      <Action>
-        <Name>Reset</Name>
-      </Action>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>FB_Test_EpicsCentroidMonitor</Name>
-      <BitSize>33555520</BitSize>
-      <ExtendsType Namespace="TcUnit">FB_TestSuite</ExtendsType>
-      <SubItem>
-        <Name>__TESTBASICS__FBMONITOR</Name>
-        <Type>FB_EpicsCentroidMonitor</Type>
-        <BitSize>3712</BitSize>
-        <BitOffs>33551744</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>__TESTBASICS__NCOUNT</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>33555456</BitOffs>
-        <Default>
-          <Value>0</Value>
-        </Default>
-      </SubItem>
-      <Method>
-        <Name>TestBasics</Name>
-        <Local>
-          <Name>fbMonitor</Name>
-          <Type>FB_EpicsCentroidMonitor</Type>
-          <BitSize>3712</BitSize>
-          <Properties>
-            <Property>
-              <Name>uselocation</Name>
-              <Value>__TESTBASICS__FBMONITOR</Value>
-            </Property>
-          </Properties>
-        </Local>
-        <Local>
-          <Name>nCount</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-          <Properties>
-            <Property>
-              <Name>uselocation</Name>
-              <Value>__TESTBASICS__NCOUNT</Value>
-            </Property>
-          </Properties>
-        </Local>
-      </Method>
-      <Method>
-        <Name>WriteCentroidValue</Name>
-        <Parameter>
-          <Name>fbMonitor</Name>
-          <Type ReferenceTo="true">FB_EpicsCentroidMonitor</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>fX</Name>
-          <Type>LREAL</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>fY</Name>
-          <Type>LREAL</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nCount</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nX_Severity</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nY_Severity</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nCount_Severity</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>tLastUpdate</Name>
-          <Type>TIME</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-        <Property>
-          <Name>call_after_init</Name>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
-      <Name>FB_Test_EpicsMotorMonitor</Name>
-      <BitSize>33554816</BitSize>
-      <ExtendsType Namespace="TcUnit">FB_TestSuite</ExtendsType>
-      <SubItem>
-        <Name>__TESTBASICS__FBMONITOR</Name>
-        <Type>FB_EpicsMotorMonitor</Type>
-        <BitSize>3072</BitSize>
-        <BitOffs>33551744</BitOffs>
-      </SubItem>
-      <Method>
-        <Name>TestBasics</Name>
-        <Local>
-          <Name>fbMonitor</Name>
-          <Type>FB_EpicsMotorMonitor</Type>
-          <BitSize>3072</BitSize>
-          <Properties>
-            <Property>
-              <Name>uselocation</Name>
-              <Value>__TESTBASICS__FBMONITOR</Value>
-            </Property>
-          </Properties>
-        </Local>
-      </Method>
-      <Method>
-        <Name>WriteData</Name>
-        <Parameter>
-          <Name>fbMonitor</Name>
-          <Type ReferenceTo="true">FB_EpicsMotorMonitor</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>fRBV</Name>
-          <Type>LREAL</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nMoving</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nStatus</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nRBV_Severity</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nStatus_Severity</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nMoving_Severity</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-      </Method>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-        <Property>
-          <Name>call_after_init</Name>
         </Property>
       </Properties>
     </DataType>
@@ -34330,6 +33606,374 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
       </Properties>
     </DataType>
     <DataType>
+      <Name>ST_SourceDataStore</Name>
+      <BitSize>3904</BitSize>
+      <SubItem>
+        <Name>sName</Name>
+        <Type>STRING(80)</Type>
+        <BitSize>648</BitSize>
+        <BitOffs>0</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: Name; io: input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbSourceValve</Name>
+        <Type Namespace="LCLS_Vacuum" ReferenceTo="true">FB_VGC</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>672</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: Valve</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bDataValid</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>704</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Valid
+        io: input
+        field: ZNAM Data Invalid
+        field: ONAM Data Valid
+        field: ZSV MAJOR
+        field: OSV NO_ALARM
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bEntryValveReady</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>712</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: EntryValveReady
+        io: input
+        field: ZNAM Not ready
+        field: ONAM Ready
+        field: ZSV MAJOR
+        field: OSV NO_ALARM
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bChecksOK</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>720</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: ChecksOK
+        io: input
+        field: ZNAM Failed
+        field: ONAM Passed
+        field: ZSV MAJOR
+        field: OSV NO_ALARM
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbLinear</Name>
+        <Type>FB_RangeComparison</Type>
+        <BitSize>448</BitSize>
+        <BitOffs>768</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: Linear</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbRotary</Name>
+        <Type>FB_RangeComparison</Type>
+        <BitSize>448</BitSize>
+        <BitOffs>1216</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: Rotary</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbGoniometer</Name>
+        <Type>FB_RangeComparison</Type>
+        <BitSize>448</BitSize>
+        <BitOffs>1664</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: Goniometer</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbNFCentroidX</Name>
+        <Type>FB_RangeComparison</Type>
+        <BitSize>448</BitSize>
+        <BitOffs>2112</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: NFCenterX</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbNFCentroidY</Name>
+        <Type>FB_RangeComparison</Type>
+        <BitSize>448</BitSize>
+        <BitOffs>2560</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: NFCenterY</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbFFCentroidX</Name>
+        <Type>FB_RangeComparison</Type>
+        <BitSize>448</BitSize>
+        <BitOffs>3008</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: FFCenterX</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbFFCentroidY</Name>
+        <Type>FB_RangeComparison</Type>
+        <BitSize>448</BitSize>
+        <BitOffs>3456</BitOffs>
+        <Properties>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: FFCenterY</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+    </DataType>
+    <DataType>
+      <Name>FB_DestinationDataStore</Name>
+      <BitSize>16448</BitSize>
+      <SubItem>
+        <Name>sName</Name>
+        <Type>STRING(80)</Type>
+        <BitSize>648</BitSize>
+        <BitOffs>32</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: Name; io: input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbDestinationValve</Name>
+        <Type Namespace="LCLS_Vacuum" ReferenceTo="true">FB_VGC</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>704</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: DestValve</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bExitValveReady</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>736</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: ExitValveReady
+        io: input
+        field: ZNAM Not ready
+        field: ONAM Ready
+        field: ZSV MAJOR
+        field: OSV NO_ALARM
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>stSourceDataStore</Name>
+        <Type>ST_SourceDataStore</Type>
+        <ArrayInfo>
+          <LBound>1</LBound>
+          <Elements>4</Elements>
+        </ArrayInfo>
+        <BitSize>15616</BitSize>
+        <BitOffs>768</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>pv: SRC</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bDataValid</Name>
+        <Type>BOOL</Type>
+        <Comment> </Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>16384</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>nIndex</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>16400</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>stSource</Name>
+        <Type ReferenceTo="true">ST_SourceDataStore</Type>
+        <BitSize>32</BitSize>
+        <BitOffs>16416</BitOffs>
+      </SubItem>
+      <Method>
+        <Name>Update</Name>
+        <ReturnType>BOOL</ReturnType>
+        <ReturnBitSize>8</ReturnBitSize>
+        <Parameter>
+          <Name>sName</Name>
+          <Type>STRING(80)</Type>
+          <BitSize>648</BitSize>
+        </Parameter>
+        <Parameter>
+          <Name>stDataSource</Name>
+          <Comment> The data source to update</Comment>
+          <Type ReferenceTo="true">ST_SourceDataStore</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>fbSourceValve</Name>
+          <Comment> The source information</Comment>
+          <Type Namespace="LCLS_Vacuum" ReferenceTo="true">FB_VGC</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>fbNearField</Name>
+          <Type ReferenceTo="true">FB_EpicsCentroidMonitor</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>fbFarField</Name>
+          <Type ReferenceTo="true">FB_EpicsCentroidMonitor</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>fbLinear</Name>
+          <Type ReferenceTo="true">FB_EpicsMotorMonitor</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>fbRotary</Name>
+          <Type ReferenceTo="true">FB_EpicsMotorMonitor</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+        <Parameter>
+          <Name>fbGoniometer</Name>
+          <Type ReferenceTo="true">FB_EpicsMotorMonitor</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>InOut</Value>
+            </Property>
+          </Properties>
+        </Parameter>
+      </Method>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
       <Name>VERSION</Name>
       <BitSize>64</BitSize>
       <SubItem>
@@ -35223,6 +34867,266 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
         <Hide GUID="{9E76D1D7-D744-4E3D-B111-F6F94B60E6AB}"/>
       </Hides>
     </DataType>
+    <DataType>
+      <Name>FB_ShutterSafety</Name>
+      <BitSize>384</BitSize>
+      <SubItem>
+        <Name>bAcknowledge</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>32</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Acknowledge
+        io: io
+        field: ZNAM FALSE
+        field: ONAM TRUE
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bUserOpenRequest</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>40</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: UserOpen
+        io: io
+        field: ZNAM Close
+        field: ONAM Open
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bOverride</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>48</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Override
+        io: io
+        field: ZNAM Normal mode
+        field: ONAM Override mode
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>nSourceIndex</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>64</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbDestinations</Name>
+        <Type>FB_DestinationDataStore</Type>
+        <ArrayInfo ReferenceTo="true">
+          <LBound>1</LBound>
+          <Elements>7</Elements>
+        </ArrayInfo>
+        <Comment> VAR_IN_OUT -&gt; reference to fbDestinations </Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>96</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>InOut</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bSafeToOpen</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>128</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Safe
+        io: input
+        field: ZNAM Unsafe
+        field: ONAM Safe
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bLatchedError</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>136</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Error
+        io: input
+        field: ZNAM No error
+        field: ONAM Error
+        field: ZSV NO_ALARM
+        field: OSV MAJOR
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bOpenSignal</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>144</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: LSS:OpenRequest
+        io: input
+        field: ZNAM Request close
+        field: ONAM Request open
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>rtError</Name>
+        <Type Namespace="Tc2_Standard">R_TRIG</Type>
+        <Comment> Rising trigger indicator of a new error condition. </Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>160</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>rtOverrideSet</Name>
+        <Type Namespace="Tc2_Standard">R_TRIG</Type>
+        <Comment> Rising trigger indicator of user requesting override. </Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>224</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>ftCloseRequest</Name>
+        <Type Namespace="Tc2_Standard">F_TRIG</Type>
+        <Comment> Falling trigger for a 'close shutter' request. </Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>288</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>nDestIndex</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>352</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bBtpsPermission</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>368</BitOffs>
+      </SubItem>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name>FB_TestShutterSafety</Name>
+      <BitSize>33667328</BitSize>
+      <ExtendsType Namespace="TcUnit">FB_TestSuite</ExtendsType>
+      <SubItem>
+        <Name>fbShutter</Name>
+        <Type>FB_ShutterSafety</Type>
+        <BitSize>384</BitSize>
+        <BitOffs>33551744</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>fbDestinations</Name>
+        <Type>FB_DestinationDataStore</Type>
+        <ArrayInfo>
+          <LBound>1</LBound>
+          <Elements>7</Elements>
+        </ArrayInfo>
+        <BitSize>115136</BitSize>
+        <BitOffs>33552128</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>nDest</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>33667264</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>nSource</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>33667280</BitOffs>
+      </SubItem>
+      <Action>
+        <Name>Reset</Name>
+      </Action>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
   </DataTypes>
   <Modules>
     <Module GUID="{97BEB12C-531D-448A-BE72-706714BB6964}" TcSmClass="TComPlcObjDef">
@@ -35656,7 +35560,7 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>ComTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>60030976</ByteSize>
+          <ByteSize>64356352</ByteSize>
           <Symbol>
             <Name>GVL_COM.PTM_stComIn</Name>
             <Comment>SERIAL IO //EL6021_00_05</Comment>
@@ -35705,7 +35609,7 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>ComTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>60030976</ByteSize>
+          <ByteSize>64356352</ByteSize>
           <Symbol>
             <Name>GVL_COM.PTM_stComOut</Name>
             <BitSize>192</BitSize>
@@ -35753,7 +35657,7 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>ComTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>60030976</ByteSize>
+          <ByteSize>64356352</ByteSize>
           <Symbol>
             <Name>GVL_COM.PTM_SerialRXBuffer</Name>
             <Comment> Define COM Ports/Buffers incl. library Tc2_SerialCom
@@ -35858,7 +35762,7 @@ LXLHN_PTM_01</Comment>
           <AreaNo AreaType="InputDst" CreateSymbols="true">16</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>1</ContextId>
-          <ByteSize>60030976</ByteSize>
+          <ByteSize>64356352</ByteSize>
           <Symbol>
             <Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
             <Comment> AMS Net ID used for FB_EcatDiag, among others </Comment>
@@ -37514,7 +37418,7 @@ LXLHN_PTM_01</Comment>
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">17</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>1</ContextId>
-          <ByteSize>60030976</ByteSize>
+          <ByteSize>64356352</ByteSize>
           <Symbol>
             <Name>GVL_BTS_VAC.g_FFOut.q_xFastFaultOut</Name>
             <BitSize>8</BitSize>
@@ -38254,7 +38158,7 @@ LXLHN_PTM_01</Comment>
           <AreaNo AreaType="Internal" CreateSymbols="true">19</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>1</ContextId>
-          <ByteSize>60030976</ByteSize>
+          <ByteSize>64356352</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -46975,12 +46879,6 @@ LXLHN_PTM_01</Comment>
             <BitOffs>330983552</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>PRG_RunTests.fbShutterSafety</Name>
-            <BitSize>33667328</BitSize>
-            <BaseType>FB_TestShutterSafety</BaseType>
-            <BitOffs>364535744</BitOffs>
-          </Symbol>
-          <Symbol>
             <Name>PRG_RunTests.fbCentroidTest</Name>
             <BitSize>33555520</BitSize>
             <BaseType>FB_Test_EpicsCentroidMonitor</BaseType>
@@ -48818,51 +48716,6 @@ LXLHN_PTM_01</Comment>
             <BitOffs>473067008</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>GVL_BTPS.fbShutterSafety1</Name>
-            <BitSize>384</BitSize>
-            <BaseType>FB_ShutterSafety</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: @(BTPS):Shutter:01</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>474303936</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTPS.fbShutterSafety3</Name>
-            <BitSize>384</BitSize>
-            <BaseType>FB_ShutterSafety</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: @(BTPS):Shutter:03</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>474304320</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTPS.fbShutterSafety4</Name>
-            <BitSize>384</BitSize>
-            <BaseType>FB_ShutterSafety</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: @(BTPS):Shutter:04</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>474304704</BitOffs>
-          </Symbol>
-          <Symbol>
             <Name>GVL_BTPS.fbDestinations</Name>
             <BitSize>115136</BitSize>
             <BaseType>FB_DestinationDataStore</BaseType>
@@ -49571,12 +49424,63 @@ LXLHN_PTM_01</Comment>
             </Properties>
             <BitOffs>474470752</BitOffs>
           </Symbol>
+          <Symbol>
+            <Name>PRG_RunTests.fbShutterSafety</Name>
+            <BitSize>33667328</BitSize>
+            <BaseType>FB_TestShutterSafety</BaseType>
+            <BitOffs>479847296</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS.fbShutterSafety1</Name>
+            <BitSize>384</BitSize>
+            <BaseType>FB_ShutterSafety</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: @(BTPS):Shutter:01</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>513514624</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS.fbShutterSafety3</Name>
+            <BitSize>384</BitSize>
+            <BaseType>FB_ShutterSafety</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: @(BTPS):Shutter:03</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>513515008</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS.fbShutterSafety4</Name>
+            <BitSize>384</BitSize>
+            <BaseType>FB_ShutterSafety</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: @(BTPS):Shutter:04</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>513515392</BitOffs>
+          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">20</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>1</ContextId>
-          <ByteSize>60030976</ByteSize>
+          <ByteSize>64356352</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -49645,7 +49549,7 @@ LXLHN_PTM_01</Comment>
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2022-03-15T16:37:48</Value>
+          <Value>2022-03-17T10:08:57</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
