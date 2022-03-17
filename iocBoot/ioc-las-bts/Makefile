@@ -15,4 +15,11 @@ PREFIX := PLC:LAS:BTS
 # environment of st.cmd:
 DB_PARAMETERS := 'SIM=,BTPS=LTLHN:BTPS,PREFIX=$(PREFIX):,IOCNAME=$$(IOC),IOC=$$(IOC)'
 
+all: build paths clean fix_archive_file
+
+fix_archive_file:
+	msi -M $(DB_PARAMETERS),IOC=ioc-las-bts \
+		$(ARCHIVE_PATH)/las_bts.db.archive > $(ARCHIVE_PATH)/.las_bts.db.archive
+	install -p -m 0444 $(ARCHIVE_PATH)/.las_bts.db.archive $(ARCHIVE_PATH)/las_bts.db.archive
+
 include $(IOC_TOP)/iocBoot/templates/Makefile.base
