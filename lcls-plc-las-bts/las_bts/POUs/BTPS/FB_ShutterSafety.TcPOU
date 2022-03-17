@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_ShutterSafety" Id="{e2b40c9f-7bf0-413f-bb80-488b62056001}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_ShutterSafety
+VAR_INPUT
+
+    {attribute 'pytmc' := '
+        pv: Acknowledge
+        io: io
+        field: ZNAM FALSE
+        field: ONAM TRUE
+    '}
+    bAcknowledge : BOOL;
+
+    {attribute 'pytmc' := '
+        pv: UserOpen
+        io: io
+        field: ZNAM Close
+        field: ONAM Open
+    '}
+    bUserOpenRequest : BOOL;
+
+    {attribute 'pytmc' := '
+        pv: Override
+        io: io
+        field: ZNAM Normal mode
+        field: ONAM Override mode
+    '}
+    bOverride : BOOL;
+
+    nSourceIndex : UINT;
+
+END_VAR
+VAR_IN_OUT
+
+    (* VAR_IN_OUT -> reference to fbDestinations *)
+    fbDestinations : ARRAY [1..GVL_BTPS_Constants.nDestinations] OF FB_DestinationDataStore;
+
+END_VAR
+VAR_OUTPUT
+
+    {attribute 'pytmc' := '
+        pv: Safe
+        io: input
+        field: ZNAM Unsafe
+        field: ONAM Safe
+    '}
+    bSafeToOpen : BOOL;
+
+    {attribute 'pytmc' := '
+        pv: Error
+        io: input
+        field: ZNAM No error
+        field: ONAM Error
+        field: ZSV NO_ALARM
+        field: OSV MAJOR
+    '}
+    bLatchedError : BOOL;
+
+    {attribute 'pytmc' := '
+        pv: LSS:OpenRequest
+        io: input
+        field: ZNAM Request close
+        field: ONAM Request open
+    '}
+    bOpenSignal : BOOL;
+
+    (* Rising trigger indicator of a new error condition. *)
+    rtError : R_TRIG;
+    (* Rising trigger indicator of user requesting override. *)
+    rtOverrideSet : R_TRIG;
+    (* Falling trigger for a 'close shutter' request. *)
+    ftCloseRequest : F_TRIG;
+
+END_VAR
+VAR
+
+    nDestIndex : UINT;
+    bBtpsPermission : BOOL;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[bLatchedError R= bAcknowledge;
+bAcknowledge := FALSE;
+
+IF nSourceIndex >= 1 AND nSourceIndex <= GVL_BTPS_Constants.nSources THEN
+    bBtpsPermission := FALSE;
+    FOR nDestIndex := 1 TO GVL_BTPS_Constants.nDestinations DO
+        bBtpsPermission := (
+            bBtpsPermission OR
+            fbDestinations[nDestIndex].stSourceDataStore[nSourceIndex].bChecksOK
+        );
+    END_FOR
+ELSE
+    bBtpsPermission := FALSE;
+    bLatchedError := TRUE;
+END_IF
+
+(* Latch an error if we have no permission. *)
+bLatchedError S= NOT bBtpsPermission;
+rtError(CLK:=bLatchedError);
+
+(* Reset the user open request on a new error (if not in override mode) *)
+bUserOpenRequest R= rtError.Q AND NOT bOverride;
+
+(* If the user requesets a shutter close, clear override mode. *)
+ftCloseRequest(CLK:=bUserOpenRequest);
+bOverride R= ftCloseRequest.Q;
+
+(* Don't open immediately when in override mode.  Make the user request it. *)
+rtOverrideSet(CLK:=bOverride);
+bUserOpenRequest R= rtOverrideSet.Q AND NOT bBtpsPermission;
+
+(* Lose permission on a latched error. *)
+bBtpsPermission R= bLatchedError;
+
+(* It's safe to open IF in override mode (user says so!) or we determined it. *)
+bSafeToOpen := bOverride OR bBtpsPermission;
+
+(* Only open the shutter if requested and it's safe. *)
+bOpenSignal := bSafeToOpen AND bUserOpenRequest;
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

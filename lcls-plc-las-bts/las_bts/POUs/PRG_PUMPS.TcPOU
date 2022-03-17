@@ -15,8 +15,8 @@ fb_PP_PMF();
 //GVL_BTS_VAC.fb_PP_PTM(i_xExtIlkOK := F_PumpStationTurboPumpInterlock());
 
 fb_PP_PTM(i_xExtIlkOK := F_TurboExtILKLogic(Turbo:=fb_PP_PTM.iq_stPTM, BackingGauge:=fb_PP_GPI_2.PG,
-								InletGauge:=fb_PP_GPI_1.PG, VentValve:=fb_PP_VVC.iq_stValve, 
-								ScrollPump:=fb_PP_PMF.q_stPump));
+                                InletGauge:=fb_PP_GPI_1.PG, VentValve:=fb_PP_VVC.iq_stValve,
+                                ScrollPump:=fb_PP_PMF.q_stPump));
 
 fb_PP_PIP(i_stGauge := fb_DP_GCC.IG);
 
@@ -63,16 +63,5 @@ PTM_COM(astPfeifferControl := st_Pfeiffer_CTRL_PTM,
 (* Copy Status Pv's into the PTM structure*)
 fb_PP_PTM.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM[1],st_Pfeiffer_RBK:=st_Pfeiffer_RBK_PTM[1]);]]></ST>
     </Implementation>
-    <LineIds Name="PRG_PUMPS">
-      <LineId Id="3" Count="4" />
-      <LineId Id="60" Count="1" />
-      <LineId Id="72" Count="0" />
-      <LineId Id="70" Count="0" />
-      <LineId Id="73" Count="0" />
-      <LineId Id="79" Count="0" />
-      <LineId Id="78" Count="0" />
-      <LineId Id="11" Count="42" />
-      <LineId Id="2" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

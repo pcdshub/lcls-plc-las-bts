@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_TestShutterSafety" Id="{5fdd9bc7-dd8a-4697-baa1-890a4126976a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_TestShutterSafety EXTENDS TcUnit.FB_TestSuite
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+    fbShutter : FB_ShutterSafety;
+    fbDestinations : ARRAY [1..GVL_BTPS_Constants.nDestinations] OF FB_DestinationDataStore;
+    nDest : UINT;
+    nSource : UINT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[TEST('Bad source index');
+
+Reset();
+
+fbShutter.bAcknowledge := FALSE;
+fbShutter.bUserOpenRequest := FALSE;
+fbShutter.bOverride := FALSE;
+fbShutter.nSourceIndex := 0;
+
+fbShutter(fbDestinations:=fbDestinations);
+AssertFalse(fbShutter.bSafeToOpen, Message:='Bad source index');
+
+TEST_FINISHED();
+
+TEST('Safe to open');
+
+Reset();
+
+fbDestinations[1].stSourceDataStore[1].bChecksOK := TRUE;
+
+fbShutter.bAcknowledge := FALSE;
+fbShutter.bOverride := FALSE;
+
+fbShutter(nSourceIndex:=1, bUserOpenRequest:=FALSE, fbDestinations:=fbDestinations);
+AssertTrue(fbShutter.bSafeToOpen, Message:='Safe for source 1');
+AssertFalse(fbShutter.bOpenSignal, Message:='Safe for source 1; close');
+fbShutter(nSourceIndex:=1, bUserOpenRequest:=TRUE, fbDestinations:=fbDestinations);
+AssertTrue(fbShutter.bSafeToOpen, Message:='Safe for source 1');
+AssertTrue(fbShutter.bOpenSignal, Message:='Safe for source 1; open');
+
+fbShutter(nSourceIndex:=2, bUserOpenRequest:=TRUE, fbDestinations:=fbDestinations);
+AssertFalse(fbShutter.bSafeToOpen, Message:='Not safe for source 2');
+AssertFalse(fbShutter.bOpenSignal, Message:='Not safe for source 2; close');
+
+TEST_FINISHED();
+
+
+
+TEST('Acknowledge error');
+
+Reset();
+
+fbDestinations[1].stSourceDataStore[1].bChecksOK := FALSE;
+fbShutter(nSourceIndex:=1, bUserOpenRequest:=TRUE, fbDestinations:=fbDestinations, bAcknowledge:=False);
+AssertFalse(fbShutter.bSafeToOpen, Message:='Not safe yet');
+AssertFalse(fbShutter.bOpenSignal, Message:='Not safe yet; close');
+AssertFalse(fbShutter.bUserOpenRequest, Message:='Reset open request on fail');
+AssertTrue(fbShutter.bLatchedError, Message:='Latched error');
+
+fbDestinations[1].stSourceDataStore[1].bChecksOK := TRUE;
+fbShutter(nSourceIndex:=1, fbDestinations:=fbDestinations, bAcknowledge:=TRUE);
+AssertTrue(fbShutter.bSafeToOpen, Message:='Safe for source 2');
+AssertFalse(fbShutter.bOpenSignal, Message:='Open not yet requested');
+AssertFalse(fbShutter.bLatchedError, Message:='Latched error cleared');
+
+fbShutter(nSourceIndex:=1, bUserOpenRequest:=TRUE, fbDestinations:=fbDestinations, bAcknowledge:=FALSE);
+AssertTrue(fbShutter.bSafeToOpen, Message:='Safe for source 2');
+AssertTrue(fbShutter.bOpenSignal, Message:='Safe for source 2; open');
+AssertFalse(fbShutter.bLatchedError, Message:='Latched error cleared');
+
+TEST_FINISHED();
+
+
+
+TEST('Override error');
+
+Reset();
+
+fbDestinations[1].stSourceDataStore[1].bChecksOK := FALSE;
+fbShutter(nSourceIndex:=1, bUserOpenRequest:=TRUE, fbDestinations:=fbDestinations, bAcknowledge:=False);
+AssertFalse(fbShutter.bSafeToOpen, Message:='Not safe yet');
+AssertFalse(fbShutter.bOpenSignal, Message:='Not safe yet; close');
+AssertFalse(fbShutter.bUserOpenRequest, Message:='Reset open request on fail');
+AssertTrue(fbShutter.bLatchedError, Message:='Latched error');
+
+fbShutter.bOverride := TRUE;
+
+fbShutter(nSourceIndex:=1, fbDestinations:=fbDestinations);
+AssertTrue(fbShutter.bSafeToOpen, Message:='Safe for source 2');
+AssertFalse(fbShutter.bOpenSignal, Message:='Open not yet requested');
+AssertTrue(fbShutter.bLatchedError, Message:='Latched error overridden not cleared');
+
+fbShutter(nSourceIndex:=1, bUserOpenRequest:=TRUE, fbDestinations:=fbDestinations);
+AssertTrue(fbShutter.bSafeToOpen, Message:='Safe for source 2');
+AssertTrue(fbShutter.bOpenSignal, Message:='Safe for source 2; open');
+AssertFalse(fbShutter.bLatchedError, Message:='Latched error still there');
+
+fbShutter(nSourceIndex:=1, bUserOpenRequest:=FALSE, fbDestinations:=fbDestinations);
+AssertTrue(fbShutter.bSafeToOpen, Message:='Safe for source 2');
+AssertTrue(fbShutter.bOpenSignal, Message:='Safe for source 2; open');
+AssertFalse(fbShutter.bLatchedError, Message:='Latched error still there');
+AssertFalse(fbShutter.bOverride, Message:='Override set after shutter closure');
+
+TEST_FINISHED();]]></ST>
+    </Implementation>
+    <Action Name="Reset" Id="{669619b2-aed7-44a2-8b1c-2315fa727996}">
+      <Implementation>
+        <ST><![CDATA[fbShutter.bAcknowledge := TRUE;
+fbShutter.bUserOpenRequest := FALSE;
+fbShutter.bOverride := TRUE;
+fbShutter.nSourceIndex := 1;
+
+fbShutter(fbDestinations:=fbDestinations);
+
+fbShutter.bAcknowledge := FALSE;
+fbShutter.bUserOpenRequest := FALSE;
+fbShutter.bOverride := FALSE;
+fbShutter.nSourceIndex := 1;
+
+fbShutter(fbDestinations:=fbDestinations);
+
+FOR nDest := 1 TO GVL_BTPS_Constants.nDestinations DO
+    fbDestinations[nDest].stSourceDataStore[nSource].bChecksOK := FALSE;
+END_FOR
+
+WRITE_PROTECTED_BOOL(ADR(fbShutter.bLatchedError), FALSE);
+WRITE_PROTECTED_BOOL(ADR(fbShutter.bOpenSignal), FALSE);
+WRITE_PROTECTED_BOOL(ADR(fbShutter.bSafeToOpen), FALSE);]]></ST>
+      </Implementation>
+    </Action>
+  </POU>
+</TcPlcObject>

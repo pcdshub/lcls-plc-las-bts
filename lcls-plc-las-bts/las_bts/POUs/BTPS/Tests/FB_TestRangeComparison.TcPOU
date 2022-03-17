@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="FB_TestRangeComparison" Id="{d6e7e21e-586d-4a76-b10c-87aeb62117d9}" SpecialFunc="None">
+    <Declaration><![CDATA[{attribute 'call_after_init'}
+FUNCTION_BLOCK FB_TestRangeComparison EXTENDS TcUnit.FB_TestSuite
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+    fbRange : FB_RangeComparison;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[TEST('Inclusive valid data');
+
+fbRange.fLow := 0.0;
+fbRange.fHigh := 10.0;
+fbRange.fNominal := 0.0;
+fbRange.bInclusive := TRUE;
+fbRange.bInputValid := TRUE;
+
+fbRange(fValue:=0.0);
+AssertTrue(fbRange.bInRange, Message:='lower bound');
+fbRange(fValue:=10.0);
+AssertTrue(fbRange.bInRange, Message:='upper bound');
+fbRange(fValue:=5.0);
+AssertTrue(fbRange.bInRange, Message:='mid range');
+fbRange(fValue:=-1.0);
+AssertFalse(fbRange.bInRange, Message:='below range');
+fbRange(fValue:=11.0);
+AssertFalse(fbRange.bInRange, Message:='above range');
+
+TEST_FINISHED();
+
+TEST('Exclusive valid data');
+
+fbRange.fLow := 0.0;
+fbRange.fHigh := 10.0;
+fbRange.fNominal := 0.0;
+fbRange.bInclusive := FALSE;
+fbRange.bInputValid := TRUE;
+
+fbRange(fValue:=0.0);
+AssertFalse(fbRange.bInRange, Message:='lower bound');
+fbRange(fValue:=10.0);
+AssertFalse(fbRange.bInRange, Message:='upper bound');
+fbRange(fValue:=5.0);
+AssertTrue(fbRange.bInRange, Message:='mid range');
+fbRange(fValue:=-1.0);
+AssertFalse(fbRange.bInRange, Message:='below range');
+fbRange(fValue:=11.0);
+AssertFalse(fbRange.bInRange, Message:='above range');
+
+TEST_FINISHED();
+
+TEST('Invalid data');
+
+fbRange.fLow := 0.0;
+fbRange.fHigh := 10.0;
+fbRange.fNominal := 0.0;
+fbRange.bInclusive := TRUE;
+fbRange.bInputValid := FALSE;
+
+fbRange(fValue:=0.0);
+AssertFalse(fbRange.bInRange, Message:='lower bound');
+fbRange(fValue:=10.0);
+AssertFalse(fbRange.bInRange, Message:='upper bound');
+fbRange(fValue:=5.0);
+AssertFalse(fbRange.bInRange, Message:='mid range');
+fbRange(fValue:=-1.0);
+AssertFalse(fbRange.bInRange, Message:='below range');
+fbRange(fValue:=11.0);
+AssertFalse(fbRange.bInRange, Message:='above range');
+
+TEST_FINISHED();
+
+
+TEST('Bad range');
+
+fbRange.fLow := 0.0;
+fbRange.fHigh := 0.0;
+fbRange.fNominal := 0.0;
+fbRange.bInclusive := TRUE;
+fbRange.bInputValid := FALSE;
+
+fbRange(fValue:=0.0);
+AssertFalse(fbRange.bInRange, Message:='lower bound');
+fbRange(fValue:=10.0);
+AssertFalse(fbRange.bInRange, Message:='upper bound');
+fbRange(fValue:=5.0);
+AssertFalse(fbRange.bInRange, Message:='mid range');
+fbRange(fValue:=-1.0);
+AssertFalse(fbRange.bInRange, Message:='below range');
+fbRange(fValue:=11.0);
+AssertFalse(fbRange.bInRange, Message:='above range');
+
+TEST_FINISHED();
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

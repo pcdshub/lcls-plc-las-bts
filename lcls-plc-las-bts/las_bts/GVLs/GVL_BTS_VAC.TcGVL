@@ -25,7 +25,7 @@ VAR_GLOBAL
 
     {attribute 'pytmc'	  :=	' pv: LXLHN:VRC:02 '}
     {attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_04]^Channel 3^Output'}
-								(*'.i_xOpnLS			:=	TIIB[EL1002_02_02]^Channel 2^Input;
+                                (*'.i_xOpnLS			:=	TIIB[EL1002_02_02]^Channel 2^Input;
                                  .i_xClsLS			:=	TIIB[EL1002_02_02]^Channel 1^Input;
                                  .q_xOPN_DO			:=	TIIB[EL2004_02_04]^Channel 3^Output'}		*)
     fb_PP_VRC_2 : FB_VVC; // Foreline valve //valve has bad readouts so using VVC
