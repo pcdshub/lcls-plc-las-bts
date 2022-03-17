@@ -1,0 +1,2525 @@
+
+
+DUTs
+----
+
+
+ST_EpicsMotorMSTA
+^^^^^^^^^^^^^^^^^
+
+::
+
+    TYPE ST_EpicsMotorMSTA :
+    STRUCT
+
+        (* DIRECTION: last raw direction; (0:Negative, 1:Positive) *)
+        bPositiveDirection : BIT;
+        (* DONE: motion is complete. *)
+        bDone : BIT;
+        (* PLUS_LS: plus limit switch has been hit. *)
+        bPlusLimitSwitch : BIT;
+        (* HOMELS: state of the home limit switch. *)
+        bHomeLimitSwitch : BIT;
+        (* Unused *)
+        bUnused0 : BIT;
+        (* POSITION: closed-loop position control is enabled. *)
+        bClosedLoop : BIT;
+        (* SLIP_STALL: Slip/Stall detected (eg. fatal following error) *)
+        bSlipStall : BIT;
+        (* HOME: if at home position. *)
+        bHome : BIT;
+        (* PRESENT: encoder is present. *)
+        bEncoderPresent : BIT;
+        (* PROBLEM: driver stopped polling, or hardware problem *)
+        bHardwareProblem : BIT;
+        (* MOVING: non-zero velocity present. *)
+        bMoving : BIT;
+        (* GAIN_SUPPORT: motor supports closed-loop position control. *)
+        bGainSupport : BIT;
+        (* COMM_ERR: Controller communication error. *)
+        bCommError : BIT;
+        (* MINUS_LS: minus limit switch has been hit. *)
+        bMinusLimitSwitch : BIT;
+        (* HOMED: the motor has been homed. *)
+        bHomed : BIT;
+
+    END_STRUCT
+    END_TYPE
+
+
+Related:
+    * `ST_EpicsMotorMSTA`_
+
+
+ST_SourceDataStore
+^^^^^^^^^^^^^^^^^^
+
+::
+
+    TYPE ST_SourceDataStore :
+    STRUCT
+        {attribute 'pytmc' := 'pv: Name; io: input'}
+        sName : STRING;
+        {attribute 'pytmc' := 'pv: Valve'}
+        fbSourceValve : REFERENCE TO FB_VGC;
+        {attribute 'pytmc' := '
+            pv: Valid
+            io: input
+            field: ZNAM Data Invalid
+            field: ONAM Data Valid
+            field: ZSV MAJOR
+            field: OSV NO_ALARM
+        '}
+        bDataValid : BOOL;
+
+        {attribute 'pytmc' := '
+            pv: EntryValveReady
+            io: input
+            field: ZNAM Not ready
+            field: ONAM Ready
+            field: ZSV MAJOR
+            field: OSV NO_ALARM
+        '}
+        bEntryValveReady : BOOL;
+
+        {attribute 'pytmc' := '
+            pv: ChecksOK
+            io: input
+            field: ZNAM Failed
+            field: ONAM Passed
+            field: ZSV MAJOR
+            field: OSV NO_ALARM
+        '}
+        bChecksOK : BOOL;
+
+        {attribute 'pytmc' := 'pv: Linear'}
+        fbLinear : FB_RangeComparison;
+        {attribute 'pytmc' := 'pv: Rotary'}
+        fbRotary : FB_RangeComparison;
+        {attribute 'pytmc' := 'pv: Goniometer'}
+        fbGoniometer : FB_RangeComparison;
+        {attribute 'pytmc' := 'pv: NFCenterX'}
+        fbNFCentroidX : FB_RangeComparison;
+        {attribute 'pytmc' := 'pv: NFCenterY'}
+        fbNFCentroidY : FB_RangeComparison;
+        {attribute 'pytmc' := 'pv: FFCenterX'}
+        fbFFCentroidX : FB_RangeComparison;
+        {attribute 'pytmc' := 'pv: FFCenterY'}
+        fbFFCentroidY : FB_RangeComparison;
+
+    END_STRUCT
+    END_TYPE
+
+
+Related:
+    * `FB_RangeComparison`_
+
+
+GVLs
+----
+
+
+GVL_BTPS
+^^^^^^^^
+
+::
+
+    {attribute 'qualified_only'}
+    VAR_GLOBAL
+        (*
+        Motor - Linear
+            LAS:BTS:MCS2:01:m1 (ioc-las-bts-mcs1, las_bts_mcs2_01_m1)
+            LAS:BTS:MCS2:01:m4 (ioc-las-bts-mcs1, las_bts_mcs2_01_m4)
+            LAS:BTS:MCS2:01:m7 (ioc-las-bts-mcs1, las_bts_mcs2_01_m7)
+        *)
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Chk:B1Lin
+            link: @(SIM)LAS:BTS:MCS2:01:m1
+        '}
+        fbBay1Linear : FB_EpicsMotorMonitor;
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Chk:B3Lin
+            link: @(SIM)LAS:BTS:MCS2:01:m4
+        '}
+        fbBay3Linear : FB_EpicsMotorMonitor;
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Chk:B4Lin
+            link: @(SIM)LAS:BTS:MCS2:01:m7
+        '}
+        fbBay4Linear : FB_EpicsMotorMonitor;
+
+        (*
+            Motor - Rotary
+                LAS:BTS:MCS2:01:m2 (ioc-las-bts-mcs1, las_bts_mcs2_01_m2)
+                LAS:BTS:MCS2:01:m6 (ioc-las-bts-mcs1, las_bts_mcs2_01_m6)
+                LAS:BTS:MCS2:01:m8 (ioc-las-bts-mcs1, las_bts_mcs2_01_m8)
+        *)
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Chk:B1Rot
+            link: @(SIM)LAS:BTS:MCS2:01:m2
+        '}
+        fbBay1Rotary : FB_EpicsMotorMonitor;
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Chk:B3Rot
+            link: @(SIM)LAS:BTS:MCS2:01:m6
+        '}
+        fbBay3Rotary : FB_EpicsMotorMonitor;
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Chk:B4Rot
+            link: @(SIM)LAS:BTS:MCS2:01:m8
+        '}
+        fbBay4Rotary : FB_EpicsMotorMonitor;
+
+        (*
+            Motor - Goniometer
+                LAS:BTS:MCS2:01:m3 (ioc-las-bts-mcs1, las_bts_mcs2_01_m3)
+                LAS:BTS:MCS2:01:m5 (ioc-las-bts-mcs1, las_bts_mcs2_01_m5)
+                LAS:BTS:MCS2:01:m9 (ioc-las-bts-mcs1, las_bts_mcs2_01_m9)
+        *)
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Chk:B1Gon
+            link: @(SIM)LAS:BTS:MCS2:01:m3
+        '}
+        fbBay1Goniometer : FB_EpicsMotorMonitor;
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Chk:B3Gon
+            link: @(SIM)LAS:BTS:MCS2:01:m5
+        '}
+        fbBay3Goniometer : FB_EpicsMotorMonitor;
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Chk:B4Gon
+            link: @(SIM)LAS:BTS:MCS2:01:m9
+        '}
+        fbBay4Goniometer : FB_EpicsMotorMonitor;
+
+        (* Near field camera stats plugins, per bay *)
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Chk:NF1
+            link: @(SIM)LAS:LHN:BAY1:CAM:01:Stats2:
+        '}
+        fbBay1NearFieldCamStats : FB_EpicsCentroidMonitor;
+
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Chk:NF3
+            link: @(SIM)LAS:LHN:BAY3:CAM:01:Stats2:
+        '}
+        fbBay3NearFieldCamStats : FB_EpicsCentroidMonitor;
+
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Chk:NF4
+            link: @(SIM)LAS:LHN:BAY4:CAM:01:Stats2:
+        '}
+        fbBay4NearFieldCamStats : FB_EpicsCentroidMonitor;
+
+        (* Far-field camera stats plugins, per bay *)
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Chk:FF1
+            link: @(SIM)LAS:LHN:BAY1:CAM:02:Stats2:
+        '}
+        fbBay1FarFieldCamStats : FB_EpicsCentroidMonitor;
+
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Chk:FF3
+            link: @(SIM)LAS:LHN:BAY3:CAM:02:Stats2:
+        '}
+        fbBay3FarFieldCamStats : FB_EpicsCentroidMonitor;
+
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Chk:FF4
+            link: @(SIM)LAS:LHN:BAY4:CAM:02:Stats2:
+        '}
+        fbBay4FarFieldCamStats : FB_EpicsCentroidMonitor;
+
+        (* Temporary valves for testing *)
+        fbBay1SourceValve : FB_VGC;
+        fbBay3SourceValve : FB_VGC;
+        fbBay4SourceValve : FB_VGC;
+        fbDestinationValves : ARRAY [1..GVL_BTPS_Constants.nDestinations] OF FB_VGC;
+
+        {attribute 'pytmc' := 'pv: @(BTPS):Shutter:01'}
+        fbShutterSafety1 : FB_ShutterSafety;
+        {attribute 'pytmc' := 'pv: @(BTPS):Shutter:03'}
+        fbShutterSafety3 : FB_ShutterSafety;
+        {attribute 'pytmc' := 'pv: @(BTPS):Shutter:04'}
+        fbShutterSafety4 : FB_ShutterSafety;
+
+        {attribute 'pytmc' := 'pv: @(BTPS):DEST'}
+        fbDestinations : ARRAY [1..GVL_BTPS_Constants.nDestinations] OF FB_DestinationDataStore;
+
+    END_VAR
+
+
+Related:
+    * `FB_DestinationDataStore`_
+    * `FB_EpicsCentroidMonitor`_
+    * `FB_EpicsMotorMonitor`_
+    * `FB_ShutterSafety`_
+    * `GVL_BTPS_Constants`_
+
+
+GVL_BTPS_Constants
+^^^^^^^^^^^^^^^^^^
+
+::
+
+    {attribute 'qualified_only'}
+    VAR_GLOBAL CONSTANT
+        nSources : UINT := 4;
+        (* Destinations
+
+            LTLHN:LD8:VGC:01 (ioc-las-bts) - TMO - IP1
+            LTLHN:LD10:VGC:01 (ioc-las-bts) - TMO - IP2
+            LTLHN:LD2:VGC:01 (ioc-las-bts) - TMO - IP3
+
+            LTLHN:LD6:VGC:01 (ioc-las-bts) - RIX - qRIXS
+            LTLHN:LD4:VGC:01 (ioc-las-bts) - RIX - ChemRIXS
+            LTLHN:LD14:VGC:01 (ioc-las-bts) - XPP
+
+            LTLHN:LD9:VGC:01 (ioc-las-bts) - Laser Lab
+
+        *)
+        nDestinations: UINT := 7;
+    END_VAR
+
+
+
+
+GVL_BTPS_Retain
+^^^^^^^^^^^^^^^
+
+::
+
+    {attribute 'qualified_only'}
+    VAR_GLOBAL PERSISTENT
+
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Config:MaxFrameTime
+            field: DESC Maximum delay from frame to frame
+            field: EGU sec
+        '}
+        fMaximumFrameTime : LREAL := 5.0;
+
+        {attribute 'pytmc' := '
+            pv: @(BTPS):Config:MinCentroidChange
+            field: DESC Minimum centroid change to be considered valid
+            field: EGU px
+        '}
+        fMinCentroidChange : LREAL := 0.05;
+
+    END_VAR
+
+
+
+
+GVL_BTS_VAC
+^^^^^^^^^^^
+
+::
+
+    //{attribute 'qualified_only'}
+    VAR_GLOBAL
+        (* Valves *)
+        g_FFOut : FB_HardwareFFOutput;
+
+        {attribute 'pytmc'	  :=	' pv: LXLHN:VGC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_12]^Channel 2^Input;
+                                     .i_xClsLS			:=	TIIB[EL1004_02_12]^Channel 1^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_02_14]^Channel 2^Output'}
+        fb_PP_VGC : FB_VGC; // Gate valve, vacuum switchbox
+
+        {attribute 'pytmc' 	  :=	' pv: LXLHN:VVC:01 '}
+        {attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_05]^Channel 3^Output'}
+        fb_PP_VVC : FB_VVC; // Turbo N2 purge
+
+
+        {attribute 'pytmc'	  :=	' pv: LXLHN:VRC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1002_02_01]^Channel 2^Input;
+                                     .i_xClsLS			:=	TIIB[EL1002_02_01]^Channel 1^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_02_04]^Channel 1^Output'}
+        fb_PP_VRC_1 : FB_VRC; // O-ring diff pump valve
+
+        {attribute 'pytmc'	  :=	' pv: LXLHN:VRC:02 '}
+        {attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_04]^Channel 3^Output'}
+                                    (*'.i_xOpnLS			:=	TIIB[EL1002_02_02]^Channel 2^Input;
+                                     .i_xClsLS			:=	TIIB[EL1002_02_02]^Channel 1^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_02_04]^Channel 3^Output'}		*)
+        fb_PP_VRC_2 : FB_VVC; // Foreline valve //valve has bad readouts so using VVC
+
+        {attribute 'pytmc'	  :=	' pv: LXLHN:VRC:03 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1002_02_03]^Channel 2^Input;
+                                     .i_xClsLS			:=	TIIB[EL1002_02_03]^Channel 1^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_02_04]^Channel 4^Output'}
+        fb_PP_VRC_3 : FB_VRC; // Slow pump valve
+
+        st_VP_VVC_1 : ST_VVC;
+        {attribute 'pytmc' 	  :=	' pv: LXLHN:VVC:02 '}
+        {attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_05]^Channel 1^Output'}
+        fb_VP_VVC_1 : FB_VVC; // Vent valve, Switchbox
+
+        st_VP_VVC_2 : ST_VVC;
+        {attribute 'pytmc' 	  :=	' pv: LXLHN:VVC:03 '}
+        {attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_05]^Channel 2^Output'}
+        fb_VP_VVC_2 : FB_VVC; // Vent valve, Slow, Switchbox
+
+
+        (* Pumps *)
+        {attribute 'pytmc' 	  := '
+            pv: LXLHN:PTM:01
+            io: io
+        '}
+        {attribute 'TcLinkTo' := 	'.i_xAtSpd			:=	TIIB[EL1004_00_03]^Channel 3^Input;
+                                     .i_xRemote			:=	TIIB[EL1004_00_03]^Channel 2^Input;
+                                     .i_xFaultNC		:=	TIIB[EL1004_00_03]^Channel 1^Input;
+                                     .q_RunDO			:=	TIIB[EL2004_00_04]^Channel 1^Output;
+                                     .q_xRemote			:=	TIIB[EL2004_00_04]^Channel 2^Output;
+                                     .q_PumpingStation	:=	TIIB[EL2004_00_04]^Channel 3^Output'}
+        fb_PP_PTM : FB_PTM_Pfeiffer; // Turbo pump
+
+        // Serial port
+        st_Pfeiffer_CTRL_PTM		: ARRAY[1..20] OF ST_PfeifferControl;
+        st_Pfeiffer_RBK_PTM			: ARRAY[1..20] OF ST_PfeifferStatus;
+        PTM_COM 					: FB_PFEIFFER_COM;
+
+        {attribute 'pytmc' 	  := '
+            pv: LXLHN:PMF:01
+            io: io
+        '}
+        {attribute 'TcLinkTo' := 	'.i_xWarning		:=	TIIB[EL1004_00_01]^Channel 4^Input;
+                                     .i_xAlarm			:=	TIIB[EL1004_00_01]^Channel 3^Input;
+                                     .i_xRemote			:=	TIIB[EL1004_00_01]^Channel 2^Input;
+                                     .i_xIsRun			:=	TIIB[EL1004_00_01]^Channel 1^Input;
+                                     .q_xRunDO			:=	TIIB[EL2794_00_02]^Channel 1^Output;
+                                     .q_xLspdDO			:=	TIIB[EL2794_00_02]^Channel 2^Output;
+                                     .q_xResetDo		:=	TIIB[EL2794_00_02]^Channel 3^Output'}
+        fb_PP_PMF : FB_KashiyamaPump; // Roughing Pump
+
+        {attribute 'pytmc'    := 	' pv: LXLHN:PIP:01'}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_08]^AI Standard Channel 3^Value;
+                                     .i_xSP_DI			:= 	TIIB[EL1004_00_07]^Channel 3^Input;
+                                     .q_xHVEna_DO		:= 	TIIB[EL2794_00_06]^Channel 3^Output'}
+        fb_PP_PIP : FB_PIP_Gamma; // Ion Pump, SW
+
+        (* Gauges *)
+        {attribute 'pytmc' 	  :=	' pv: LXLHN:GPI:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_10]^AI Standard Channel 3^Value '}
+        fb_PP_GPI_1 : FB_MKS275; // Switchbox pumpline ATM gauge
+
+        {attribute 'pytmc' 	  :=	' pv: LXLHN:GPI:02 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_11]^AI Standard Channel 1^Value '}
+        fb_PP_GPI_2 : FB_MKS275; // Foreline gauge
+
+        {attribute 'pytmc' 	  :=	' pv: LXLHN:GPI:03 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_10]^AI Standard Channel 2^Value '}
+        fb_DP_GPI : FB_MKS275; // Switchbox gauge
+
+        {attribute 'pytmc' 	  :=	' pv: LXLHN:GCC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_09]^AI Standard Channel 2^Value;
+                                     .i_xHV_ON	    	:=	TIIB[EL1124_01_06]^Channel 1^Input;
+                                     .i_xDisc_Active	:=	TIIB[EL1124_01_06]^Channel 2^Input;
+                                     .q_xHV_DIS			:= 	TIIB[EL2624_01_02]^Channel 2^Output	'}
+        fb_PP_GCC : FB_MKS500; // Switchbox pumpline Cold Cathode gauge
+
+        {attribute 'pytmc' 	  :=	' pv: LXLHN:GCC:02 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_09]^AI Standard Channel 4^Value;
+                                     .i_xHV_ON	    	:=	TIIB[EL1124_01_07]^Channel 3^Input;
+                                     .i_xDisc_Active	:=	TIIB[EL1124_01_07]^Channel 4^Input;
+                                     .q_xHV_DIS			:= 	TIIB[EL2624_01_02]^Channel 4^Output	'}
+        fb_DP_GCC : FB_MKS500; // Switchbox Cold Cathode gauge
+
+        (* Transport Tubes *)
+        // LS1
+        {attribute 'pytmc'	  :=	' pv: LTLHN:LS1:VGC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_06]^Channel 2^Input;
+                                     .i_xClsLS			:=	TIIB[EL1004_02_06]^Channel 1^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_02_08]^Channel 1^Output'}
+        fb_LS1_VGC : FB_VGC; // Gate valve, Input LS1 laser Table
+        {attribute 'pytmc'    := 	' pv: LTLHN:LS1:PIP:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_08]^AI Standard Channel 2^Value;
+                                     .i_xSP_DI			:= 	TIIB[EL1004_00_07]^Channel 2^Input;
+                                     .q_xHVEna_DO		:= 	TIIB[EL2794_00_06]^Channel 2^Output'}
+        fb_LS1_PIP : FB_PIP_Gamma; // Ion Pump, input tube LS1
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LS1:GPI:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_10]^AI Standard Channel 4^Value '}
+        fb_LS1_GPI : FB_MKS275; // Input tube LS1 ATM gauge
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LS1:GCC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_10]^AI Standard Channel 4^Value;
+                                     .i_xHV_ON	    	:=	TIIB[EL1124_03_06]^Channel 3^Input;
+                                     .i_xDisc_Active	:=	TIIB[EL1124_03_06]^Channel 4^Input;
+                                     .q_xHV_DIS			:= 	TIIB[EL2624_03_01]^Channel 4^Output	'}
+        fb_LS1_GCC : FB_MKS500; // Input tube LS1, Cold Cathode gauge
+
+        // LS5
+        {attribute 'pytmc'	  :=	' pv: LTLHN:LS5:VGC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_09]^Channel 4^Input;
+                                     .i_xClsLS			:=	TIIB[EL1004_02_09]^Channel 3^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_02_11]^Channel 2^Output'}
+        fb_LS5_VGC : FB_VGC; // Gate valve, Input LS5 laser Table
+        {attribute 'pytmc'    := 	' pv: LTLHN:LS5:PIP:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_11]^AI Standard Channel 4^Value;
+                                     .i_xSP_DI			:= 	TIIB[EL1004_00_10]^Channel 4^Input;
+                                     .q_xHVEna_DO		:= 	TIIB[EL2794_00_09]^Channel 4^Output'}
+        fb_LS5_PIP : FB_PIP_Gamma; // Ion Pump, input tube LS5
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LS5:GPI:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_13]^AI Standard Channel 1^Value '}
+        fb_LS5_GPI : FB_MKS275; // Input tube LS5 ATM gauge
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LS5:GCC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 1^Value;
+                                     .i_xHV_ON	    	:=	TIIB[EL1124_03_08]^Channel 1^Input;
+                                     .i_xDisc_Active	:=	TIIB[EL1124_03_08]^Channel 2^Input;
+                                     .q_xHV_DIS			:= 	TIIB[EL2624_03_02]^Channel 1^Output	'}
+        fb_LS5_GCC : FB_MKS500; // Input tube LS5, Cold Cathode gauge
+
+        // LS8
+        {attribute 'pytmc'	  :=	' pv: LTLHN:LS8:VGC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_09]^Channel 2^Input;
+                                     .i_xClsLS			:=	TIIB[EL1004_02_09]^Channel 1^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_02_11]^Channel 3^Output'}
+        fb_LS8_VGC : FB_VGC; // Gate valve, Input LS8 laser Table
+        {attribute 'pytmc'    := 	' pv: LTLHN:LS8:PIP:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_11]^AI Standard Channel 3^Value;
+                                     .i_xSP_DI			:= 	TIIB[EL1004_00_10]^Channel 3^Input;
+                                     .q_xHVEna_DO		:= 	TIIB[EL2794_00_09]^Channel 3^Output'}
+        fb_LS8_PIP : FB_PIP_Gamma; // Ion Pump, input tube LS8
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LS8:GPI:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_13]^AI Standard Channel 2^Value '}
+        fb_LS8_GPI : FB_MKS275; // Input tube LS8 ATM gauge
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LS8:GCC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 2^Value;
+                                     .i_xHV_ON	    	:=	TIIB[EL1124_03_08]^Channel 3^Input;
+                                     .i_xDisc_Active	:=	TIIB[EL1124_03_08]^Channel 4^Input;
+                                     .q_xHV_DIS			:= 	TIIB[EL2624_03_02]^Channel 2^Output	'}
+        fb_LS8_GCC : FB_MKS500; // Input tube LS8, Cold Cathode gauge
+
+        // LD2
+        {attribute 'pytmc'	  :=	' pv: LTLHN:LD2:VGC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_12]^Channel 4^Input;
+                                     .i_xClsLS			:=	TIIB[EL1004_02_12]^Channel 3^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_02_14]^Channel 3^Output'}
+        fb_LD2_VGC : FB_VGC; // Gate valve, Output tube LD2 laser Table
+        {attribute 'pytmc'    := 	' pv: LTLHN:LD2:PIP:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_08]^AI Standard Channel 1^Value;
+                                     .i_xSP_DI			:= 	TIIB[EL1004_00_07]^Channel 1^Input;
+                                     .q_xHVEna_DO		:= 	TIIB[EL2794_00_06]^Channel 1^Output'}
+        fb_LD2_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD2
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LD2:GPI:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_10]^AI Standard Channel 1^Value '}
+        fb_LD2_GPI : FB_MKS275; // Output tube LD2 ATM gauge
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LD2:GCC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_09]^AI Standard Channel 1^Value;
+                                     .i_xHV_ON	    	:=	TIIB[EL1124_01_07]^Channel 1^Input;
+                                     .i_xDisc_Active	:=	TIIB[EL1124_01_07]^Channel 2^Input;
+                                     .q_xHV_DIS			:= 	TIIB[EL2624_01_02]^Channel 1^Output	'}
+        fb_LD2_GCC : FB_MKS500; // Output tube LD2, Cold Cathode gauge
+
+        // LD4
+        {attribute 'pytmc'	  :=	' pv: LTLHN:LD4:VGC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_10]^Channel 2^Input;
+                                     .i_xClsLS			:=	TIIB[EL1004_02_10]^Channel 1^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_02_11]^Channel 1^Output'}
+        fb_LD4_VGC : FB_VGC; // Gate valve, Output tube LD4 laser Table
+        {attribute 'pytmc'    := 	' pv: LTLHN:LD4:PIP:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_11]^AI Standard Channel 1^Value;
+                                     .i_xSP_DI			:= 	TIIB[EL1004_00_10]^Channel 1^Input;
+                                     .q_xHVEna_DO		:= 	TIIB[EL2794_00_09]^Channel 1^Output'}
+        fb_LD4_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD4
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LD4:GPI:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_13]^AI Standard Channel 4^Value '}
+        fb_LD4_GPI : FB_MKS275; // Output tube LD4 ATM gauge
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LD4:GCC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 4^Value;
+                                     .i_xHV_ON	    	:=	TIIB[EL1124_03_09]^Channel 3^Input;
+                                     .i_xDisc_Active	:=	TIIB[EL1124_03_09]^Channel 4^Input;
+                                     .q_xHV_DIS			:= 	TIIB[EL2624_03_02]^Channel 4^Output	'}
+        fb_LD4_GCC : FB_MKS500; // Output tube LD4, Cold Cathode gauge
+
+        // LD6
+        {attribute 'pytmc'	  :=	' pv: LTLHN:LD6:VGC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_13]^Channel 4^Input;
+                                     .i_xClsLS			:=	TIIB[EL1004_02_13]^Channel 3^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_02_14]^Channel 4^Output'}
+        fb_LD6_VGC : FB_VGC; // Gate valve, Output tube LD6 laser Table
+        {attribute 'pytmc'    := 	' pv: LTLHN:LD6:PIP:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_11]^AI Standard Channel 2^Value;
+                                     .i_xSP_DI			:= 	TIIB[EL1004_00_10]^Channel 2^Input;
+                                     .q_xHVEna_DO		:= 	TIIB[EL2794_00_09]^Channel 2^Output'}
+        fb_LD6_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD6
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LD6:GPI:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_13]^AI Standard Channel 3^Value '}
+        fb_LD6_GPI : FB_MKS275; // Output tube LD6 ATM gauge
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LD6:GCC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 3^Value;
+                                     .i_xHV_ON	    	:=	TIIB[EL1124_03_09]^Channel 1^Input;
+                                     .i_xDisc_Active	:=	TIIB[EL1124_03_09]^Channel 2^Input;
+                                     .q_xHV_DIS			:= 	TIIB[EL2624_03_02]^Channel 3^Output	'}
+        fb_LD6_GCC : FB_MKS500; // Output tube LD6, Cold Cathode gauge
+
+        // LD8
+        {attribute 'pytmc'	  :=	' pv: LTLHN:LD8:VGC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_07]^Channel 4^Input;
+                                     .i_xClsLS			:=	TIIB[EL1004_02_07]^Channel 3^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_02_08]^Channel 4^Output'}
+        fb_LD8_VGC : FB_VGC; // Gate valve, Output tube LD8 laser Table
+        {attribute 'pytmc'    := 	' pv: LTLHN:LD8:PIP:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_08]^AI Standard Channel 4^Value;
+                                     .i_xSP_DI			:= 	TIIB[EL1004_00_07]^Channel 4^Input;
+                                     .q_xHVEna_DO		:= 	TIIB[EL2794_00_06]^Channel 4^Output'}
+        fb_LD8_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD8
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LD8:GPI:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_11]^AI Standard Channel 2^Value '}
+        fb_LD8_GPI : FB_MKS275; // Output tube LD8 ATM gauge
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LD8:GCC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_11]^AI Standard Channel 3^Value;
+                                     .i_xHV_ON	    	:=	TIIB[EL1124_01_08]^Channel 1^Input;
+                                     .i_xDisc_Active	:=	TIIB[EL1124_01_08]^Channel 2^Input;
+                                     .q_xHV_DIS			:= 	TIIB[EL2624_01_01]^Channel 1^Output	'}
+        fb_LD8_GCC : FB_MKS500; // Output tube LD8, Cold Cathode gauge
+
+        // LD9
+        {attribute 'pytmc'	  :=	' pv: LTLHN:LD9:VGC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_06]^Channel 4^Input;
+                                     .i_xClsLS			:=	TIIB[EL1004_02_06]^Channel 3^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_02_08]^Channel 2^Output'}
+        fb_LD9_VGC : FB_VGC; // Gate valve, Output tube LD9 laser Table
+        {attribute 'pytmc'    := 	' pv: LTLHN:LD9:PIP:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_14]^AI Standard Channel 2^Value;
+                                     .i_xSP_DI			:= 	TIIB[EL1004_00_13]^Channel 2^Input;
+                                     .q_xHVEna_DO		:= 	TIIB[EL2794_00_12]^Channel 2^Output'}
+        fb_LD9_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD9
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LD9:GPI:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_12]^AI Standard Channel 1^Value '}
+        fb_LD9_GPI : FB_MKS275; // Output tube LD9 ATM gauge
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LD9:GCC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_10]^AI Standard Channel 1^Value;
+                                     .i_xHV_ON	    	:=	TIIB[EL1124_03_06]^Channel 1^Input;
+                                     .i_xDisc_Active	:=	TIIB[EL1124_03_06]^Channel 2^Input;
+                                     .q_xHV_DIS			:= 	TIIB[EL2624_03_01]^Channel 1^Output	'}
+        fb_LD9_GCC : FB_MKS500; // Output tube LD9, Cold Cathode gauge
+
+        // LD10
+        {attribute 'pytmc'	  :=	' pv: LTLHN:LD10:VGC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_07]^Channel 2^Input;
+                                     .i_xClsLS			:=	TIIB[EL1004_02_07]^Channel 1^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_02_08]^Channel 3^Output'}
+        fb_LD10_VGC : FB_VGC; // Gate valve, Output tube LD10 laser Table
+        {attribute 'pytmc'    := 	' pv: LTLHN:LD10:PIP:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_14]^AI Standard Channel 1^Value;
+                                     .i_xSP_DI			:= 	TIIB[EL1004_00_13]^Channel 1^Input;
+                                     .q_xHVEna_DO		:= 	TIIB[EL2794_00_12]^Channel 1^Output'}
+        fb_LD10_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD10
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LD10:GPI:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_12]^AI Standard Channel 2^Value '}
+        fb_LD10_GPI : FB_MKS275; // Output tube LD10 ATM gauge
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LD10:GCC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_10]^AI Standard Channel 2^Value;
+                                     .i_xHV_ON	    	:=	TIIB[EL1124_03_07]^Channel 3^Input;
+                                     .i_xDisc_Active	:=	TIIB[EL1124_03_07]^Channel 4^Input;
+                                     .q_xHV_DIS			:= 	TIIB[EL2624_03_01]^Channel 2^Output	'}
+        fb_LD10_GCC : FB_MKS500; // Output tube LD10, Cold Cathode gauge
+
+        // LD14
+        {attribute 'pytmc'	  :=	' pv: LTLHN:LD14:VGC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_10]^Channel 4^Input;
+                                     .i_xClsLS			:=	TIIB[EL1004_02_10]^Channel 3^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_02_11]^Channel 4^Output'}
+        fb_LD14_VGC : FB_VGC; // Gate valve, Output tube LD14 laser Table
+        {attribute 'pytmc'    := 	' pv: LTLHN:LD14:PIP:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_00_14]^AI Standard Channel 3^Value;
+                                     .i_xSP_DI			:= 	TIIB[EL1004_00_13]^Channel 3^Input;
+                                     .q_xHVEna_DO		:= 	TIIB[EL2794_00_12]^Channel 3^Output'}
+        fb_LD14_PIP : FB_PIP_Gamma; // Ion Pump, output tube LD14
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LD14:GPI:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_12]^AI Standard Channel 3^Value '}
+        fb_LD14_GPI : FB_MKS275; // Output tube LD14 ATM gauge
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LD14:GCC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_10]^AI Standard Channel 3^Value;
+                                     .i_xHV_ON	    	:=	TIIB[EL1124_03_07]^Channel 1^Input;
+                                     .i_xDisc_Active	:=	TIIB[EL1124_03_07]^Channel 2^Input;
+                                     .q_xHV_DIS			:= 	TIIB[EL2624_03_01]^Channel 3^Output	'}
+        fb_LD14_GCC : FB_MKS500; // Output tube LD14, Cold Cathode gauge
+
+        //Preemptive Arbiter Content
+        g_fbArbiter    :   FB_Arbiter(1);
+
+    END_VAR
+
+
+
+
+GVL_COM
+^^^^^^^
+
+::
+
+    //{attribute 'qualified_only'}
+    VAR_GLOBAL
+        // Define COM Ports/Buffers incl. library Tc2_SerialCom
+
+        //LXLHN_PTM_01
+        PTM_SerialRXBuffer : ComBuffer;
+        PTM_SerialTXBuffer : ComBuffer;
+
+        // Serial Terminal
+        PTM_fbSerialLineControl: SerialLineControl;
+
+        //SERIAL IO //EL6021_00_05
+        {attribute	'TcLinkTo'	:=	'.Status:=TIIB[EL6021_00_05)]^COM TxPDO-Map Inputs^Status;
+                                     .D[0]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 0;
+                                     .D[1]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 1;
+                                     .D[2]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 2;
+                                     .D[3]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 3;
+                                     .D[4]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 4;
+                                     .D[5]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 5;
+                                     .D[6]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 6;
+                                     .D[7]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 7;
+                                     .D[8]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 8;
+                                     .D[9]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 9;
+                                     .D[10]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 10;
+                                     .D[11]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 11;
+                                     .D[12]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 12;
+                                     .D[13]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 13;
+                                     .D[14]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 14;
+                                     .D[15]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 15;
+                                     .D[16]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 16;
+                                     .D[17]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 17;
+                                     .D[18]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 18;
+                                     .D[19]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 19;
+                                     .D[20]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 20;
+                                     .D[21]:=TIIB[EL6021_00_05]^COM TxPDO-Map Inputs^Data In 21;
+        '}
+        PTM_stComIn		AT %I*	:	EL6inData22B;
+        {attribute	'TcLinkTo'	:=	'.Ctrl:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Ctrl;
+                                     .D[0]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 0;
+                                     .D[1]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 1;
+                                     .D[2]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 2;
+                                     .D[3]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 3;
+                                     .D[4]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 4;
+                                     .D[5]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 5;
+                                     .D[6]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 6;
+                                     .D[7]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 7;
+                                     .D[8]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 8;
+                                     .D[9]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 9;
+                                     .D[10]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 10;
+                                     .D[11]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 11;
+                                     .D[12]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 12;
+                                     .D[13]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 13;
+                                     .D[14]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 14;
+                                     .D[15]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 15;
+                                     .D[16]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 16;
+                                     .D[17]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 17;
+                                     .D[18]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 18;
+                                     .D[19]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 19;
+                                     .D[20]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 20;
+                                     .D[21]:=TIIB[EL6021_00_05]^COM RxPDO-Map Outputs^Data Out 21;
+        '}
+        PTM_stComOut		AT %Q*	:	EL6outData22B;
+
+    END_VAR
+
+
+
+
+GVL_Constants
+^^^^^^^^^^^^^
+
+::
+
+    VAR_GLOBAL CONSTANT
+        ATM_PRESS : INT := 760; // Atmospheric pressure in Torr
+        ATM_PRESS_ERR_RNG : INT := 10; // Error range that is still considered atmospheric pressure
+
+        EPICS_STRING_SIZE : INT := 40;
+        PTM_INTERLOCK_SP : REAL := 1E-2;
+    END_VAR
+
+
+
+
+GVL_Variables
+^^^^^^^^^^^^^
+
+::
+
+    //{attribute 'qualified_only'}
+    VAR_GLOBAL
+        {attribute 'pytmc' := '
+        pv: LXLHN:VAC:OVRD_ON
+        field: ZNAM Override Off ;
+        field: ONAM Override On ;
+        '}
+        xSystemOverrideMode_BTS	: BOOL := FALSE; (* Global system override for the BTS Vacuum System *)
+
+        {attribute 'pytmc' := 'pv: LXLHN:VAC:GCC:ENABLE'}
+        xGCC_Enable_SW: BOOL := FALSE; (* Global enable for all GCCs *)
+    END_VAR
+
+
+
+
+POUs
+----
+
+
+DIAGNOSTICS
+^^^^^^^^^^^
+
+::
+
+    PROGRAM DIAGNOSTICS
+    VAR
+        //Change the PLC String Name to the actual PLC NAME
+        sPLCName :STRING := 'PLC-LAS-BTS';
+        //Link the sAMSNetID to the Etherat Master netID
+        i_sAMSNetID AT %I*: AMSNETID;
+        // DO NOT CHANGE
+        sAMSNetID : STRING; //used for EPICS PV
+        sLibVersion_LCLS_General : STRING;(* := stLibVersion_LCLS_General.sVersion*) ;
+
+        fbEcatDiag:FB_EcatDiag;
+        {attribute 'pytmc' := ' pv:PLC:LAS:BTS:AllSlaveStateGood '}
+        bAllSlaveStateGood : BOOL;
+        {attribute 'pytmc' := ' pv:PLC:LAS:BTS:MasterStateGood '}
+        bMasterStateGood :BOOL;
+        iMasterState: WORD;
+        sMasterState:STRING;
+        nSlaveNumber : UINT;
+        aiSlaveStates: ARRAY[1..256] OF BYTE;
+        aEcSlaveInfo :  ARRAY[1..256] OF ST_EcDevice;
+    END_VAR
+    // Instaniating a call to the fbEcatDiag
+    fbEcatDiag(
+        I_AMSNetId:=i_sAMSNetID,
+        i_xFirstPass:= _TaskInfo[1].FirstCycle,
+        q_xAllSlaveStatesGood=> bAllSlaveStateGood,
+        q_anTermStates=> aiSlaveStates,
+        q_xMasterStateGood=>bMasterStateGood,
+        q_nMasterState=> iMasterState,
+        q_sMasterState=> sMasterState,
+        q_astEcConfSlaveInfo=> aEcSlaveInfo,
+        q_nSlaves=> nSlaveNumber);
+
+    END_PROGRAM
+
+
+
+
+F_IsValveReady
+^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION F_IsValveReady : BOOL
+    VAR_IN_OUT
+        fbValve : FB_VGC;
+    END_VAR
+    VAR
+    END_VAR
+    F_IsValveReady := (
+        fbValve.iq_stValve.eState = E_ValvePositionState.OPEN AND
+        TRUE (*
+            * Placeholder for something else?
+            * TODO: Do we check eVGC_State for errors?
+            * TODO: Do we care if the laser is used at atmosphere?
+        *)
+    );
+
+    END_FUNCTION
+
+
+
+
+FB_DestinationDataStore
+^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_DestinationDataStore
+    VAR_INPUT
+        {attribute 'pytmc' := 'pv: Name; io: input'}
+        sName : STRING;
+        {attribute 'pytmc' := 'pv: DestValve'}
+        fbDestinationValve : REFERENCE TO FB_VGC;
+
+        {attribute 'pytmc' := '
+            pv: ExitValveReady
+            io: input
+            field: ZNAM Not ready
+            field: ONAM Ready
+            field: ZSV MAJOR
+            field: OSV NO_ALARM
+        '}
+        bExitValveReady : BOOL;
+
+        {attribute 'pytmc' := 'pv: SRC'}
+        stSourceDataStore : ARRAY [1..GVL_BTPS_Constants.nSources] OF ST_SourceDataStore;
+    END_VAR
+    VAR_OUTPUT
+        //
+        bDataValid : BOOL;
+    END_VAR
+    VAR
+        nIndex : UINT;
+        stSource: REFERENCE TO ST_SourceDataStore;
+    END_VAR
+    bExitValveReady := F_IsValveReady(fbDestinationValve);
+
+    Update(
+        stDataSource:=stSourceDataStore[1],
+        sName:='Source 1',
+        fbSourceValve:=GVL_BTPS.fbBay1SourceValve,
+        fbLinear:=GVL_BTPS.fbBay1Linear,
+        fbRotary:=GVL_BTPS.fbBay1Rotary,
+        fbGoniometer:=GVL_BTPS.fbBay1Goniometer,
+        fbNearField:=GVL_BTPS.fbBay1NearFieldCamStats,
+        fbFarField:=GVL_BTPS.fbBay1FarFieldCamStats
+    );
+
+    // Future use:
+    (*
+    Update(
+        stDataSource:=stSourceDataStore2,
+        sName:='Source 2',
+        fbSourceValve:=GVL_BTPS.fbBay2SourceValve,
+        fbLinear:=GVL_BTPS.fbBay2Linear,
+        fbRotary:=GVL_BTPS.fbBay2Rotary,
+        fbGoniometer:=GVL_BTPS.fbBay2Goniometer,
+        fbNearField:=GVL_BTPS.fbBay2NearFieldCamStats,
+        fbFarField:=GVL_BTPS.fbBay2FarFieldCamStats
+    );
+    *)
+
+    Update(
+        stDataSource:=stSourceDataStore[3],
+        sName:='Source 3',
+        fbSourceValve:=GVL_BTPS.fbBay3SourceValve,
+        fbLinear:=GVL_BTPS.fbBay3Linear,
+        fbRotary:=GVL_BTPS.fbBay3Rotary,
+        fbGoniometer:=GVL_BTPS.fbBay3Goniometer,
+        fbNearField:=GVL_BTPS.fbBay3NearFieldCamStats,
+        fbFarField:=GVL_BTPS.fbBay3FarFieldCamStats
+    );
+
+    Update(
+        stDataSource:=stSourceDataStore[4],
+        sName:='Source 4',
+        fbSourceValve:=GVL_BTPS.fbBay4SourceValve,
+        fbLinear:=GVL_BTPS.fbBay4Linear,
+        fbRotary:=GVL_BTPS.fbBay4Rotary,
+        fbGoniometer:=GVL_BTPS.fbBay4Goniometer,
+        fbNearField:=GVL_BTPS.fbBay4NearFieldCamStats,
+        fbFarField:=GVL_BTPS.fbBay4FarFieldCamStats
+    );
+
+    END_FUNCTION_BLOCK
+
+    METHOD Update : BOOL
+    VAR_INPUT
+        sName : STRING;
+    END_VAR
+    VAR_IN_OUT
+        // The data source to update
+        stDataSource : ST_SourceDataStore;
+
+        // The source information
+        fbSourceValve : FB_VGC;
+        fbNearField : FB_EpicsCentroidMonitor;
+        fbFarField : FB_EpicsCentroidMonitor;
+        fbLinear : FB_EpicsMotorMonitor;
+        fbRotary : FB_EpicsMotorMonitor;
+        fbGoniometer : FB_EpicsMotorMonitor;
+
+    END_VAR
+    stDataSource.sName := sName;
+    stDataSource.fbSourceValve REF= fbSourceValve;
+
+    stDataSource.bEntryValveReady := F_IsValveReady(fbSourceValve);
+
+    (* Update range comparisons with their source values *)
+    (* Cameras *)
+    stDataSource.fbNFCentroidX.fValue := fbNearField.fCentroidX;
+    stDataSource.fbNFCentroidX.bInputValid := fbNearField.bValid AND fbNearField.bIsUpdating;
+    stDataSource.fbNFCentroidY.fValue := fbNearField.fCentroidY;
+    stDataSource.fbNFCentroidY.bInputValid := fbNearField.bValid AND fbNearField.bIsUpdating;
+    stDataSource.fbFFCentroidX.fValue := fbFarField.fCentroidX;
+    stDataSource.fbFFCentroidX.bInputValid := fbFarField.bValid AND fbFarField.bIsUpdating;
+    stDataSource.fbFFCentroidY.fValue := fbFarField.fCentroidY;
+    stDataSource.fbFFCentroidY.bInputValid := fbFarField.bValid AND fbFarField.bIsUpdating;
+
+    (* Motors *)
+    stDataSource.fbLinear.fValue := fbLinear.fPosition;
+    stDataSource.fbLinear.bInputValid := fbLinear.bValid AND fbLinear.stMSTA.bHomed;
+    stDataSource.fbRotary.fValue := fbRotary.fPosition;
+    stDataSource.fbRotary.bInputValid := fbRotary.bValid AND fbRotary.stMSTA.bHomed;
+    stDataSource.fbGoniometer.fValue := fbGoniometer.fPosition;
+    stDataSource.fbGoniometer.bInputValid := fbGoniometer.bValid AND fbGoniometer.stMSTA.bHomed;
+
+    (* Run the range comparisons *)
+    stDataSource.fbNFCentroidX();
+    stDataSource.fbNFCentroidY();
+    stDataSource.fbFFCentroidX();
+    stDataSource.fbFFCentroidY();
+    stDataSource.fbLinear();
+    stDataSource.fbRotary();
+    stDataSource.fbGoniometer();
+
+    (* Data is valid overall if *all* range comparisons say so *)
+    stDataSource.bDataValid := (
+        stDataSource.fbNFCentroidX.bInputValid AND
+        stDataSource.fbNFCentroidY.bInputValid AND
+        stDataSource.fbFFCentroidX.bInputValid AND
+        stDataSource.fbFFCentroidY.bInputValid AND
+        stDataSource.fbLinear.bInputValid AND
+        stDataSource.fbRotary.bInputValid AND
+        stDataSource.fbGoniometer.bInputValid AND
+        TRUE
+    );
+
+    (* Checks only pass if data is valid and all comparisons are true *)
+    stDataSource.bChecksOK := (
+        stDataSource.bDataValid AND
+        stDataSource.fbNFCentroidX.bInRange AND
+        stDataSource.fbNFCentroidY.bInRange AND
+        stDataSource.fbFFCentroidX.bInRange AND
+        stDataSource.fbFFCentroidY.bInRange AND
+        stDataSource.fbLinear.bInRange AND
+        stDataSource.fbRotary.bInRange AND
+        stDataSource.fbGoniometer.bInRange AND
+        stDataSource.bEntryValveReady AND
+        bExitValveReady AND
+        TRUE
+    );
+    END_METHOD
+
+
+Related:
+    * `FB_EpicsCentroidMonitor`_
+    * `FB_EpicsMotorMonitor`_
+    * `F_IsValveReady`_
+    * `GVL_BTPS`_
+    * `GVL_BTPS_Constants`_
+    * `ST_SourceDataStore`_
+
+
+FB_EpicsCentroidMonitor
+^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    (*
+        EPICS AreaDetector Stats Plugin Centroid Monitor
+
+        Requires a "link" pragma to specify the full plugin prefix.
+
+    *)
+    FUNCTION_BLOCK FB_EpicsCentroidMonitor
+    VAR_INPUT
+        fMaximumFrameTime : LREAL := 0.2;
+        (* Minimum change to be considered updating correctly - buggy detectors may need this. *)
+        fMinimumValidChange : LREAL := 1E-6;
+        (* Minimum change in pixels to be considered a new value for X, Y *)
+        fNewFrameMinimumChange : LREAL := 1E-6;
+        bEnable : BOOL := TRUE;
+    END_VAR
+    VAR_OUTPUT
+        {attribute 'pytmc' := '
+            pv: IsUpdating
+            io: input
+        '}
+        bIsUpdating : BOOL;
+        {attribute 'pytmc' := '
+            pv: CentroidX
+            io: input
+        '}
+        fCentroidX : LREAL;
+        {attribute 'pytmc' := '
+            pv: CentroidY
+            io: input
+        '}
+        fCentroidY : LREAL;
+        {attribute 'pytmc' := '
+            pv: ArrayCount
+            io: input
+        '}
+        nArrayCount : UDINT;
+        bValid : BOOL;
+        {attribute 'pytmc' := '
+            pv: FrameTime
+            io: input
+            field: DESC Time between frame updates
+            field: EGU sec
+        '}
+        fFrameTime : LREAL;
+    END_VAR
+    VAR
+        {attribute 'pytmc' := '
+            pv: CX_
+            link: CentroidX_RBV
+        '}
+        fbCentroidX : FB_LREALFromEPICS;
+
+        {attribute 'pytmc' := '
+            pv: CY_
+            link: CentroidY_RBV
+        '}
+        fbCentroidY : FB_LREALFromEPICS;
+
+        fLastCentroidX : LREAL;
+        fLastCentroidY : LREAL;
+
+        {attribute 'pytmc' := '
+            pv: Cnt_
+            link: ArrayCounter_RBV
+        '}
+        fbArrayCounter : FB_LREALFromEPICS;
+
+        // Last array count value
+        nLastArrayCount : UDINT;
+        // Time of the last frame update
+        tLastUpdate: TIME;
+
+        bInit : BOOL;
+        // Did we see a frame update yet? (FALSE at startup; TRUE after first frame.)
+        bSawFrame : BOOL;
+        // Do we have a new frame? Has the array count updated, and position change above fNewFrameMinimumChange?
+        bHaveNewFrame : BOOL;
+        // For this new frame, is it above the threshold fMinimumValidChange?
+        bAboveThreshold : BOOL;
+
+    END_VAR
+    IF NOT bEnable THEN
+        bValid := FALSE;
+        RETURN;
+    END_IF
+
+    IF NOT bInit THEN
+        tLastUpdate := TIME();
+        fFrameTime := 1000.0;
+        bSawFrame := FALSE;
+        bInit := TRUE;
+    END_IF
+
+    fbCentroidX();
+    fbCentroidY();
+    fbArrayCounter();
+
+    bValid := (
+        fbCentroidX.bValid AND
+        fbCentroidY.bValid AND
+        fbArrayCounter.bValid
+    );
+
+    fCentroidX := fbCentroidX.fValue;
+    fCentroidY := fbCentroidY.fValue;
+    nArrayCount := LREAL_TO_UDINT(fbArrayCounter.fValue);
+
+    (*
+        Only consider that we have a new frame if:
+        1. The array count has been updated
+        2. X and Y values have changed even minimally
+            a. With background noise, this should not be a problem.
+            b. With an invalid black/white/stale image, this will indicate
+               'no new frame' despite an increasing array count.
+    *)
+    bHaveNewFrame := (
+        nArrayCount <> nLastArrayCount AND
+        ABS(fLastCentroidX - fCentroidX) >= fNewFrameMinimumChange AND
+        ABS(fLastCentroidY - fCentroidY) >= fNewFrameMinimumChange AND
+        TRUE
+    );
+
+    IF bHaveNewFrame THEN
+        bAboveThreshold := (
+            ABS(fLastCentroidX - fCentroidX) >= fMinimumValidChange AND
+            ABS(fLastCentroidY - fCentroidY) >= fMinimumValidChange
+        );
+
+        fFrameTime := TIME_TO_LREAL(TIME() - tLastUpdate) * 0.001; // Milliseconds -> seconds
+        tLastUpdate := TIME();
+        nLastArrayCount := nArrayCount;
+        bSawFrame := TRUE;
+
+        fLastCentroidX := fCentroidX;
+        fLastCentroidY := fCentroidY;
+    END_IF
+
+    bIsUpdating := bSawFrame AND (fFrameTime <= fMaximumFrameTime) AND bAboveThreshold;
+
+    END_FUNCTION_BLOCK
+
+
+
+
+FB_EpicsMotorMonitor
+^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    (*
+        EPICS Motor Record Monitoring tool
+
+        Requires a "link" pragma to specify the motor record prefix.
+
+    *)
+    FUNCTION_BLOCK FB_EpicsMotorMonitor
+    VAR_INPUT
+        bEnable : BOOL := TRUE;
+    END_VAR
+    VAR_OUTPUT
+        bIsMoving : BOOL;
+        fPosition : LREAL;
+        nMSTA_Raw : UINT;
+        stMSTA : ST_EpicsMotorMSTA;
+        bValid : BOOL;
+    END_VAR
+    VAR
+        {attribute 'pytmc' := '
+            pv: RBV_
+            link: .RBV
+        '}
+        fbRBVCheck : FB_LREALFromEPICS;
+
+        {attribute 'pytmc' := '
+            pv: Dmov_
+            link: .DMOV
+        '}
+        fbMovingCheck : FB_LREALFromEPICS;
+
+        {attribute 'pytmc' := '
+            pv: Msta_
+            link: .MSTA
+        '}
+        fbMotorStatusCheck : FB_LREALFromEPICS;
+    END_VAR
+    IF NOT bEnable THEN
+        bValid := FALSE;
+        RETURN;
+    END_IF
+
+    fbRBVCheck();
+    fbMovingCheck();
+    fbMotorStatusCheck();
+    bValid := (
+        fbRBVCheck.bValid AND
+        fbMovingCheck.bValid AND
+        fbMotorStatusCheck.bValid
+    );
+
+    (* Moving status is DMOV; this comes in as a floating point value
+         DMOV = 0 -> moving
+         DMOV = 1 -> done moving, or not moving
+    *)
+    bIsMoving := ABS(fbMovingCheck.fValue) < 1e-5;
+    fPosition := fbRBVCheck.fValue;
+
+    nMSTA_Raw := LREAL_TO_UINT(fbMotorStatusCheck.fValue);
+    stMSTA.bPositiveDirection := nMSTA_Raw.0;
+    stMSTA.bDone := nMSTA_Raw.1;
+    stMSTA.bPlusLimitSwitch := nMSTA_Raw.2;
+    stMSTA.bHomeLimitSwitch := nMSTA_Raw.3;
+    stMSTA.bUnused0 := nMSTA_Raw.4;
+    stMSTA.bClosedLoop := nMSTA_Raw.5;
+    stMSTA.bSlipStall := nMSTA_Raw.6;
+    stMSTA.bHome := nMSTA_Raw.7;
+    stMSTA.bEncoderPresent := nMSTA_Raw.8;
+    stMSTA.bHardwareProblem := nMSTA_Raw.9;
+    stMSTA.bMoving := nMSTA_Raw.10;
+    stMSTA.bGainSupport := nMSTA_Raw.11;
+    stMSTA.bCommError := nMSTA_Raw.12;
+    stMSTA.bMinusLimitSwitch := nMSTA_Raw.13;
+    stMSTA.bHomed := nMSTA_Raw.14;
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `ST_EpicsMotorMSTA`_
+
+
+FB_RangeComparison
+^^^^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_RangeComparison
+    VAR_INPUT PERSISTENT
+        (* The low part of the range. *)
+        {attribute 'pytmc' := 'pv: Low'}
+        fLow : LREAL;
+        (* The high part of the range. *)
+        {attribute 'pytmc' := 'pv: High'}
+        fHigh : LREAL;
+        (* Nominal value for this.  User-facing value. *)
+        {attribute 'pytmc' := '
+            pv: Nominal
+            io: io
+            field: DESC Nominal value for setting
+        '}
+        fNominal : LREAL;
+        (* Are the limits inclusive? *)
+        {attribute 'pytmc' := '
+            pv: Inclusive
+            field: ZNAM Exclusive
+            field: ONAM Inclusive
+        '}
+        bInclusive : BOOL := TRUE;
+    END_VAR
+    VAR_INPUT
+        (* The input value for comparison *)
+        {attribute 'pytmc' := 'pv: Value; io: input'}
+        fValue : LREAL;
+        (* Should the input value be trusted? *)
+        {attribute 'pytmc' := '
+            pv: Valid
+            io: input
+            field: ZNAM Data Invalid
+            field: ONAM Data Valid
+            field: ZSV MAJOR
+            field: OSV NO_ALARM
+        '}
+        bInputValid : BOOL := FALSE;
+
+    END_VAR
+    VAR_OUTPUT
+        {attribute 'pytmc' := '
+            pv: InRange
+            io: input
+            field: ZNAM Out of range
+            field: ONAM In range
+            field: ZSV MAJOR
+            field: OSV NO_ALARM
+        '}
+        bInRange : BOOL;
+    END_VAR
+    IF NOT bInputValid OR fHigh < fLow THEN
+        bInRange := FALSE;
+    ELSIF bInclusive THEN
+        bInRange := (fValue >= fLow) AND (fValue <= fHigh);
+    ELSE
+        bInRange := (fValue > fLow) AND (fValue < fHigh);
+    END_IF
+
+    END_FUNCTION_BLOCK
+
+
+
+
+FB_ShutterSafety
+^^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_ShutterSafety
+    VAR_INPUT
+
+        {attribute 'pytmc' := '
+            pv: Acknowledge
+            io: io
+            field: ZNAM FALSE
+            field: ONAM TRUE
+        '}
+        bAcknowledge : BOOL;
+
+        {attribute 'pytmc' := '
+            pv: UserOpen
+            io: io
+            field: ZNAM Close
+            field: ONAM Open
+        '}
+        bUserOpenRequest : BOOL;
+
+        {attribute 'pytmc' := '
+            pv: Override
+            io: io
+            field: ZNAM Normal mode
+            field: ONAM Override mode
+        '}
+        bOverride : BOOL;
+
+        nSourceIndex : UINT;
+
+    END_VAR
+    VAR_IN_OUT
+
+        (* VAR_IN_OUT -> reference to fbDestinations *)
+        fbDestinations : ARRAY [1..GVL_BTPS_Constants.nDestinations] OF FB_DestinationDataStore;
+
+    END_VAR
+    VAR_OUTPUT
+
+        {attribute 'pytmc' := '
+            pv: Safe
+            io: input
+            field: ZNAM Unsafe
+            field: ONAM Safe
+        '}
+        bSafeToOpen : BOOL;
+
+        {attribute 'pytmc' := '
+            pv: Error
+            io: input
+            field: ZNAM No error
+            field: ONAM Error
+            field: ZSV NO_ALARM
+            field: OSV MAJOR
+        '}
+        bLatchedError : BOOL;
+
+        {attribute 'pytmc' := '
+            pv: LSS:OpenRequest
+            io: input
+            field: ZNAM Request close
+            field: ONAM Request open
+        '}
+        bOpenSignal : BOOL;
+
+        (* Rising trigger indicator of a new error condition. *)
+        rtError : R_TRIG;
+        (* Rising trigger indicator of user requesting override. *)
+        rtOverrideSet : R_TRIG;
+        (* Falling trigger for a 'close shutter' request. *)
+        ftCloseRequest : F_TRIG;
+
+    END_VAR
+    VAR
+
+        nDestIndex : UINT;
+        bBtpsPermission : BOOL;
+
+    END_VAR
+    bLatchedError R= bAcknowledge;
+    bAcknowledge := FALSE;
+
+    IF nSourceIndex >= 1 AND nSourceIndex <= GVL_BTPS_Constants.nSources THEN
+        bBtpsPermission := FALSE;
+        FOR nDestIndex := 1 TO GVL_BTPS_Constants.nDestinations DO
+            bBtpsPermission := (
+                bBtpsPermission OR
+                fbDestinations[nDestIndex].stSourceDataStore[nSourceIndex].bChecksOK
+            );
+        END_FOR
+    ELSE
+        bBtpsPermission := FALSE;
+        bLatchedError := TRUE;
+    END_IF
+
+    (* Latch an error if we have no permission. *)
+    bLatchedError S= NOT bBtpsPermission;
+    rtError(CLK:=bLatchedError);
+
+    (* Reset the user open request on a new error (if not in override mode) *)
+    bUserOpenRequest R= rtError.Q AND NOT bOverride;
+
+    (* If the user requesets a shutter close, clear override mode. *)
+    ftCloseRequest(CLK:=bUserOpenRequest);
+    bOverride R= ftCloseRequest.Q;
+
+    (* Don't open immediately when in override mode.  Make the user request it. *)
+    rtOverrideSet(CLK:=bOverride);
+    bUserOpenRequest R= rtOverrideSet.Q AND NOT bBtpsPermission;
+
+    (* Lose permission on a latched error. *)
+    bBtpsPermission R= bLatchedError;
+
+    (* It's safe to open IF in override mode (user says so!) or we determined it. *)
+    bSafeToOpen := bOverride OR bBtpsPermission;
+
+    (* Only open the shutter if requested and it's safe. *)
+    bOpenSignal := bSafeToOpen AND bUserOpenRequest;
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `FB_DestinationDataStore`_
+    * `GVL_BTPS_Constants`_
+
+
+FB_Test_EpicsCentroidMonitor
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    {attribute 'call_after_init'}
+    FUNCTION_BLOCK FB_Test_EpicsCentroidMonitor EXTENDS TcUnit.FB_TestSuite
+    VAR_INPUT
+    END_VAR
+    VAR_OUTPUT
+    END_VAR
+    VAR
+    END_VAR
+    TestBasics();
+
+    END_FUNCTION_BLOCK
+
+    METHOD TestBasics
+    VAR_INPUT
+    END_VAR
+    VAR_INST
+        fbMonitor : FB_EpicsCentroidMonitor;
+        nCount : INT := 0;
+    END_VAR
+    TEST('Basic');
+
+    nCount := 0;
+
+    nCount := nCount + 1;
+    WriteCentroidValue(fbMonitor:=fbMonitor, fX:=0.0, fY:=0.0, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=0, tLastUpdate:=T#0S);
+    fbMonitor();
+
+    nCount := nCount + 1;
+    WriteCentroidValue(fbMonitor:=fbMonitor, fX:=0.1, fY:=0.1, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=0, tLastUpdate:=T#0S);
+    fbMonitor(fMinimumValidChange:=0.0);
+
+    AssertTrue(fbMonitor.bIsUpdating, Message:='Centroid not reporting updating');
+
+    TEST_FINISHED();
+
+    TEST('Min change');
+
+    nCount := nCount + 1;
+    WriteCentroidValue(fbMonitor:=fbMonitor, fX:=0.0, fY:=0.0, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=0, tLastUpdate:=T#0S);
+    fbMonitor(fMinimumValidChange:=0.1, fMaximumFrameTime:=0.2);
+
+    nCount := nCount + 1;
+    WriteCentroidValue(fbMonitor:=fbMonitor, fX:=0.05, fY:=0.05, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=0, tLastUpdate:=T#0.1S);
+    fbMonitor(fMinimumValidChange:=0.1, fMaximumFrameTime:=0.2);
+    AssertFalse(fbMonitor.bIsUpdating, Message:='Centroid update below threshold and is not updating');
+
+    nCount := nCount + 1;
+    WriteCentroidValue(fbMonitor:=fbMonitor, fX:=0.5, fY:=0.5, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=0, tLastUpdate:=T#0.1S);
+    fbMonitor(fMinimumValidChange:=0.1, fMaximumFrameTime:=0.2);
+    AssertTrue(fbMonitor.bIsUpdating, Message:='Centroid update above threshold and is updating');
+
+    TEST_FINISHED();
+
+    TEST('Severity invalidation');
+
+    nCount := nCount + 1;
+    WriteCentroidValue(fbMonitor:=fbMonitor, fX:=0.0, fY:=0.0, nCount:=nCount, nX_Severity:=2, nY_Severity:=0, nCount_Severity:=0, tLastUpdate:=T#0.2S);
+    fbMonitor(fMinimumValidChange:=0.0);
+    AssertFalse(fbMonitor.bValid, Message:='Invalid data - x severity');
+
+    nCount := nCount + 1;
+    WriteCentroidValue(fbMonitor:=fbMonitor, fX:=0.1, fY:=0.1, nCount:=nCount, nX_Severity:=0, nY_Severity:=2, nCount_Severity:=0, tLastUpdate:=T#0.2S);
+    fbMonitor(fMinimumValidChange:=0.0);
+    AssertFalse(fbMonitor.bValid, Message:='Invalid data - y severity');
+
+    nCount := nCount + 1;
+    WriteCentroidValue(fbMonitor:=fbMonitor, fX:=0.2, fY:=0.2, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=2, tLastUpdate:=T#0.2S);
+    fbMonitor(fMinimumValidChange:=0.0);
+    AssertFalse(fbMonitor.bValid, Message:='Invalid data - count severity');
+
+    nCount := nCount + 1;
+    WriteCentroidValue(fbMonitor:=fbMonitor, fX:=0.0, fY:=0.0, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=0, tLastUpdate:=T#0.1S);
+    fbMonitor(fMinimumValidChange:=0.0);
+    AssertTrue(fbMonitor.bValid, Message:='Data valid');
+    AssertTrue(fbMonitor.bIsUpdating, Message:='Data valid and updating');
+
+    TEST_FINISHED();
+    END_METHOD
+
+    METHOD WriteCentroidValue
+    VAR_IN_OUT
+        fbMonitor : FB_EpicsCentroidMonitor;
+    END_VAR
+    VAR_INPUT
+        fX : LREAL;
+        fY : LREAL;
+        nCount : INT;
+        nX_Severity : INT := 0;
+        nY_Severity : INT := 0;
+        nCount_Severity : INT := 0;
+        tLastUpdate : TIME;
+    END_VAR
+    WRITE_PROTECTED_INT(ADR(fbMonitor.fbCentroidX.iPLCInternalSeverity), nX_Severity);
+    WRITE_PROTECTED_INT(ADR(fbMonitor.fbCentroidY.iPLCInternalSeverity), nY_Severity);
+    WRITE_PROTECTED_INT(ADR(fbMonitor.fbArrayCounter.iPLCInternalSeverity), nCount_Severity);
+
+    WRITE_PROTECTED_LREAL(ADR(fbMonitor.fbCentroidX.fPLCInternalValue), fX);
+    WRITE_PROTECTED_LREAL(ADR(fbMonitor.fbCentroidY.fPLCInternalValue), fY);
+    WRITE_PROTECTED_LREAL(ADR(fbMonitor.fbArrayCounter.fPLCInternalValue), INT_TO_LREAL(nCount));
+
+    WRITE_PROTECTED_TIME(ADR(fbMonitor.tLastUpdate), TIME() - tLastUpdate);
+    END_METHOD
+
+
+Related:
+    * `FB_EpicsCentroidMonitor`_
+
+
+FB_Test_EpicsMotorMonitor
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    {attribute 'call_after_init'}
+    FUNCTION_BLOCK FB_Test_EpicsMotorMonitor EXTENDS TcUnit.FB_TestSuite
+    VAR_INPUT
+    END_VAR
+    VAR_OUTPUT
+    END_VAR
+    VAR
+    END_VAR
+    TestBasics();
+
+    END_FUNCTION_BLOCK
+
+    METHOD TestBasics
+    VAR_INPUT
+    END_VAR
+    VAR_INST
+        fbMonitor : FB_EpicsMotorMonitor;
+    END_VAR
+    TEST('Basic');
+
+    WriteData(fbMonitor:=fbMonitor, fRBV:=0.0, nMoving:=0, nStatus:=0, nRBV_Severity:=0, nStatus_Severity:=0, nMoving_Severity:=0);
+    fbMonitor();
+    AssertTrue(fbMonitor.bValid, Message:='Data valid');
+
+    TEST_FINISHED();
+
+
+    TEST('Severities');
+
+    WriteData(fbMonitor:=fbMonitor, fRBV:=0.0, nMoving:=0, nStatus:=0, nRBV_Severity:=2, nStatus_Severity:=0, nMoving_Severity:=0);
+    fbMonitor();
+    AssertFalse(fbMonitor.bValid, Message:='Invalid RBV');
+
+    WriteData(fbMonitor:=fbMonitor, fRBV:=0.0, nMoving:=0, nStatus:=0, nRBV_Severity:=0, nStatus_Severity:=2, nMoving_Severity:=0);
+    fbMonitor();
+    AssertFalse(fbMonitor.bValid, Message:='Invalid status');
+
+    WriteData(fbMonitor:=fbMonitor, fRBV:=0.0, nMoving:=0, nStatus:=0, nRBV_Severity:=0, nStatus_Severity:=0, nMoving_Severity:=2);
+    fbMonitor();
+    AssertFalse(fbMonitor.bValid, Message:='Invalid moving');
+
+    WriteData(fbMonitor:=fbMonitor, fRBV:=0.0, nMoving:=0, nStatus:=0, nRBV_Severity:=0, nStatus_Severity:=0, nMoving_Severity:=0);
+    fbMonitor();
+    AssertTrue(fbMonitor.bValid, Message:='All valid');
+
+    TEST_FINISHED();
+
+    TEST('Moving');
+
+    WriteData(fbMonitor:=fbMonitor, fRBV:=0.0, nMoving:=0 (* DMOV *), nStatus:=0, nRBV_Severity:=0, nStatus_Severity:=0, nMoving_Severity:=0);
+    fbMonitor();
+    AssertTrue(fbMonitor.bIsMoving, Message:='Moving');
+
+    WriteData(fbMonitor:=fbMonitor, fRBV:=0.0, nMoving:=1 (* DMOV *), nStatus:=0, nRBV_Severity:=0, nStatus_Severity:=0, nMoving_Severity:=0);
+    fbMonitor();
+    AssertFalse(fbMonitor.bIsMoving, Message:='Not moving');
+
+    TEST_FINISHED();
+
+    TEST('Position');
+
+    WriteData(fbMonitor:=fbMonitor, fRBV:=10.0, nMoving:=0, nStatus:=0, nRBV_Severity:=0, nStatus_Severity:=0, nMoving_Severity:=0);
+    fbMonitor();
+    AssertEquals_LREAL(Actual:=fbMonitor.fPosition, Expected:=10.0, Delta:=0.1, Message:='Position 1 OK');
+
+    WriteData(fbMonitor:=fbMonitor, fRBV:=20.0, nMoving:=0, nStatus:=0, nRBV_Severity:=0, nStatus_Severity:=0, nMoving_Severity:=0);
+    fbMonitor();
+    AssertEquals_LREAL(Actual:=fbMonitor.fPosition, Expected:=20.0, Delta:=0.1, Message:='Position 2 OK');
+
+    TEST_FINISHED();
+
+    TEST('MSTA set');
+
+    WriteData(fbMonitor:=fbMonitor, fRBV:=0.0, nMoving:=0, nStatus:=16#0FFFF, nRBV_Severity:=0, nStatus_Severity:=0, nMoving_Severity:=0);
+    fbMonitor();
+
+    AssertTrue(fbMonitor.stMSTA.bPositiveDirection, Message:='bPositiveDirection True');
+    AssertTrue(fbMonitor.stMSTA.bDone, Message:='bDone True');
+    AssertTrue(fbMonitor.stMSTA.bPlusLimitSwitch, Message:='bPlusLimitSwitch True');
+    AssertTrue(fbMonitor.stMSTA.bHomeLimitSwitch, Message:='bHomeLimitSwitch True');
+    AssertTrue(fbMonitor.stMSTA.bUnused0, Message:='bUnused0 True');
+    AssertTrue(fbMonitor.stMSTA.bClosedLoop, Message:='bClosedLoop True');
+    AssertTrue(fbMonitor.stMSTA.bSlipStall, Message:='bSlipStall True');
+    AssertTrue(fbMonitor.stMSTA.bHome, Message:='bHome True');
+    AssertTrue(fbMonitor.stMSTA.bEncoderPresent, Message:='bEncoderPresent True');
+    AssertTrue(fbMonitor.stMSTA.bHardwareProblem, Message:='bHardwareProblem True');
+    AssertTrue(fbMonitor.stMSTA.bMoving, Message:='bMoving True');
+    AssertTrue(fbMonitor.stMSTA.bGainSupport, Message:='bGainSupport True');
+    AssertTrue(fbMonitor.stMSTA.bCommError, Message:='bCommError True');
+    AssertTrue(fbMonitor.stMSTA.bMinusLimitSwitch, Message:='bMinusLimitSwitch True');
+    AssertTrue(fbMonitor.stMSTA.bHomed, Message:='bHomed True');
+
+    TEST_FINISHED();
+
+
+    TEST('MSTA zero');
+
+    WriteData(fbMonitor:=fbMonitor, fRBV:=0.0, nMoving:=0, nStatus:=16#0000, nRBV_Severity:=0, nStatus_Severity:=0, nMoving_Severity:=0);
+    fbMonitor();
+
+    AssertFalse(fbMonitor.stMSTA.bPositiveDirection, Message:='bPositiveDirection False');
+    AssertFalse(fbMonitor.stMSTA.bDone, Message:='bDone False');
+    AssertFalse(fbMonitor.stMSTA.bPlusLimitSwitch, Message:='bPlusLimitSwitch False');
+    AssertFalse(fbMonitor.stMSTA.bHomeLimitSwitch, Message:='bHomeLimitSwitch False');
+    AssertFalse(fbMonitor.stMSTA.bUnused0, Message:='bUnused0 False');
+    AssertFalse(fbMonitor.stMSTA.bClosedLoop, Message:='bClosedLoop False');
+    AssertFalse(fbMonitor.stMSTA.bSlipStall, Message:='bSlipStall False');
+    AssertFalse(fbMonitor.stMSTA.bHome, Message:='bHome False');
+    AssertFalse(fbMonitor.stMSTA.bEncoderPresent, Message:='bEncoderPresent False');
+    AssertFalse(fbMonitor.stMSTA.bHardwareProblem, Message:='bHardwareProblem False');
+    AssertFalse(fbMonitor.stMSTA.bMoving, Message:='bMoving False');
+    AssertFalse(fbMonitor.stMSTA.bGainSupport, Message:='bGainSupport False');
+    AssertFalse(fbMonitor.stMSTA.bCommError, Message:='bCommError False');
+    AssertFalse(fbMonitor.stMSTA.bMinusLimitSwitch, Message:='bMinusLimitSwitch False');
+    AssertFalse(fbMonitor.stMSTA.bHomed, Message:='bHomed False');
+
+    TEST_FINISHED();
+
+
+    TEST('MSTA something');
+
+    WriteData(fbMonitor:=fbMonitor, fRBV:=0.0, nMoving:=0, nStatus:=2#0100_0011_0000_0110, nRBV_Severity:=0, nStatus_Severity:=0, nMoving_Severity:=0);
+    fbMonitor();
+
+    AssertFalse(fbMonitor.stMSTA.bPositiveDirection, Message:='bPositiveDirection');
+    AssertTrue(fbMonitor.stMSTA.bDone, Message:='bDone');
+    AssertTrue(fbMonitor.stMSTA.bPlusLimitSwitch, Message:='bPlusLimitSwitch');
+    AssertFalse(fbMonitor.stMSTA.bHomeLimitSwitch, Message:='bHomeLimitSwitch');
+
+    AssertFalse(fbMonitor.stMSTA.bUnused0, Message:='bUnused0');
+    AssertFalse(fbMonitor.stMSTA.bClosedLoop, Message:='bClosedLoop');
+    AssertFalse(fbMonitor.stMSTA.bSlipStall, Message:='bSlipStall');
+    AssertFalse(fbMonitor.stMSTA.bHome, Message:='bHome');
+
+    AssertTrue(fbMonitor.stMSTA.bEncoderPresent, Message:='bEncoderPresent');
+    AssertTrue(fbMonitor.stMSTA.bHardwareProblem, Message:='bHardwareProblem');
+    AssertFalse(fbMonitor.stMSTA.bMoving, Message:='bMoving');
+    AssertFalse(fbMonitor.stMSTA.bGainSupport, Message:='bGainSupport');
+
+    AssertFalse(fbMonitor.stMSTA.bCommError, Message:='bCommError');
+    AssertFalse(fbMonitor.stMSTA.bMinusLimitSwitch, Message:='bMinusLimitSwitch');
+    AssertTrue(fbMonitor.stMSTA.bHomed, Message:='bHomed');
+
+    TEST_FINISHED();
+    END_METHOD
+
+    METHOD WriteData
+    VAR_IN_OUT
+        fbMonitor : FB_EpicsMotorMonitor;
+    END_VAR
+    VAR_INPUT
+        fRBV : LREAL;
+        nMoving : INT;
+        nStatus : UINT;
+        nRBV_Severity : INT := 0;
+        nStatus_Severity : INT := 0;
+        nMoving_Severity : INT := 0;
+    END_VAR
+    WRITE_PROTECTED_INT(ADR(fbMonitor.fbRBVCheck.iPLCInternalSeverity), nRBV_Severity);
+    WRITE_PROTECTED_INT(ADR(fbMonitor.fbMotorStatusCheck.iPLCInternalSeverity), nStatus_Severity);
+    WRITE_PROTECTED_INT(ADR(fbMonitor.fbMovingCheck.iPLCInternalSeverity), nMoving_Severity);
+
+    WRITE_PROTECTED_LREAL(ADR(fbMonitor.fbRBVCheck.fPLCInternalValue), fRBV);
+    WRITE_PROTECTED_LREAL(ADR(fbMonitor.fbMotorStatusCheck.fPLCInternalValue), UINT_TO_LREAL(nStatus));
+    WRITE_PROTECTED_LREAL(ADR(fbMonitor.fbMovingCheck.fPLCInternalValue), INT_TO_LREAL(nMoving));
+    END_METHOD
+
+
+Related:
+    * `FB_EpicsMotorMonitor`_
+
+
+FB_TestRangeComparison
+^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    {attribute 'call_after_init'}
+    FUNCTION_BLOCK FB_TestRangeComparison EXTENDS TcUnit.FB_TestSuite
+    VAR_INPUT
+    END_VAR
+    VAR_OUTPUT
+    END_VAR
+    VAR
+        fbRange : FB_RangeComparison;
+    END_VAR
+    TEST('Inclusive valid data');
+
+    fbRange.fLow := 0.0;
+    fbRange.fHigh := 10.0;
+    fbRange.fNominal := 0.0;
+    fbRange.bInclusive := TRUE;
+    fbRange.bInputValid := TRUE;
+
+    fbRange(fValue:=0.0);
+    AssertTrue(fbRange.bInRange, Message:='lower bound');
+    fbRange(fValue:=10.0);
+    AssertTrue(fbRange.bInRange, Message:='upper bound');
+    fbRange(fValue:=5.0);
+    AssertTrue(fbRange.bInRange, Message:='mid range');
+    fbRange(fValue:=-1.0);
+    AssertFalse(fbRange.bInRange, Message:='below range');
+    fbRange(fValue:=11.0);
+    AssertFalse(fbRange.bInRange, Message:='above range');
+
+    TEST_FINISHED();
+
+    TEST('Exclusive valid data');
+
+    fbRange.fLow := 0.0;
+    fbRange.fHigh := 10.0;
+    fbRange.fNominal := 0.0;
+    fbRange.bInclusive := FALSE;
+    fbRange.bInputValid := TRUE;
+
+    fbRange(fValue:=0.0);
+    AssertFalse(fbRange.bInRange, Message:='lower bound');
+    fbRange(fValue:=10.0);
+    AssertFalse(fbRange.bInRange, Message:='upper bound');
+    fbRange(fValue:=5.0);
+    AssertTrue(fbRange.bInRange, Message:='mid range');
+    fbRange(fValue:=-1.0);
+    AssertFalse(fbRange.bInRange, Message:='below range');
+    fbRange(fValue:=11.0);
+    AssertFalse(fbRange.bInRange, Message:='above range');
+
+    TEST_FINISHED();
+
+    TEST('Invalid data');
+
+    fbRange.fLow := 0.0;
+    fbRange.fHigh := 10.0;
+    fbRange.fNominal := 0.0;
+    fbRange.bInclusive := TRUE;
+    fbRange.bInputValid := FALSE;
+
+    fbRange(fValue:=0.0);
+    AssertFalse(fbRange.bInRange, Message:='lower bound');
+    fbRange(fValue:=10.0);
+    AssertFalse(fbRange.bInRange, Message:='upper bound');
+    fbRange(fValue:=5.0);
+    AssertFalse(fbRange.bInRange, Message:='mid range');
+    fbRange(fValue:=-1.0);
+    AssertFalse(fbRange.bInRange, Message:='below range');
+    fbRange(fValue:=11.0);
+    AssertFalse(fbRange.bInRange, Message:='above range');
+
+    TEST_FINISHED();
+
+
+    TEST('Bad range');
+
+    fbRange.fLow := 0.0;
+    fbRange.fHigh := 0.0;
+    fbRange.fNominal := 0.0;
+    fbRange.bInclusive := TRUE;
+    fbRange.bInputValid := FALSE;
+
+    fbRange(fValue:=0.0);
+    AssertFalse(fbRange.bInRange, Message:='lower bound');
+    fbRange(fValue:=10.0);
+    AssertFalse(fbRange.bInRange, Message:='upper bound');
+    fbRange(fValue:=5.0);
+    AssertFalse(fbRange.bInRange, Message:='mid range');
+    fbRange(fValue:=-1.0);
+    AssertFalse(fbRange.bInRange, Message:='below range');
+    fbRange(fValue:=11.0);
+    AssertFalse(fbRange.bInRange, Message:='above range');
+
+    TEST_FINISHED();
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `FB_RangeComparison`_
+
+
+FB_TestShutterSafety
+^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_TestShutterSafety EXTENDS TcUnit.FB_TestSuite
+    VAR_INPUT
+    END_VAR
+    VAR_OUTPUT
+    END_VAR
+    VAR
+        fbShutter : FB_ShutterSafety;
+        fbDestinations : ARRAY [1..GVL_BTPS_Constants.nDestinations] OF FB_DestinationDataStore;
+        nDest : UINT;
+        nSource : UINT;
+    END_VAR
+    TEST('Bad source index');
+
+    Reset();
+
+    fbShutter.bAcknowledge := FALSE;
+    fbShutter.bUserOpenRequest := FALSE;
+    fbShutter.bOverride := FALSE;
+    fbShutter.nSourceIndex := 0;
+
+    fbShutter(fbDestinations:=fbDestinations);
+    AssertFalse(fbShutter.bSafeToOpen, Message:='Bad source index');
+
+    TEST_FINISHED();
+
+    TEST('Safe to open');
+
+    Reset();
+
+    fbDestinations[1].stSourceDataStore[1].bChecksOK := TRUE;
+
+    fbShutter.bAcknowledge := FALSE;
+    fbShutter.bOverride := FALSE;
+
+    fbShutter(nSourceIndex:=1, bUserOpenRequest:=FALSE, fbDestinations:=fbDestinations);
+    AssertTrue(fbShutter.bSafeToOpen, Message:='Safe for source 1');
+    AssertFalse(fbShutter.bOpenSignal, Message:='Safe for source 1; close');
+    fbShutter(nSourceIndex:=1, bUserOpenRequest:=TRUE, fbDestinations:=fbDestinations);
+    AssertTrue(fbShutter.bSafeToOpen, Message:='Safe for source 1');
+    AssertTrue(fbShutter.bOpenSignal, Message:='Safe for source 1; open');
+
+    fbShutter(nSourceIndex:=2, bUserOpenRequest:=TRUE, fbDestinations:=fbDestinations);
+    AssertFalse(fbShutter.bSafeToOpen, Message:='Not safe for source 2');
+    AssertFalse(fbShutter.bOpenSignal, Message:='Not safe for source 2; close');
+
+    TEST_FINISHED();
+
+
+
+    TEST('Acknowledge error');
+
+    Reset();
+
+    fbDestinations[1].stSourceDataStore[1].bChecksOK := FALSE;
+    fbShutter(nSourceIndex:=1, bUserOpenRequest:=TRUE, fbDestinations:=fbDestinations, bAcknowledge:=False);
+    AssertFalse(fbShutter.bSafeToOpen, Message:='Not safe yet');
+    AssertFalse(fbShutter.bOpenSignal, Message:='Not safe yet; close');
+    AssertFalse(fbShutter.bUserOpenRequest, Message:='Reset open request on fail');
+    AssertTrue(fbShutter.bLatchedError, Message:='Latched error');
+
+    fbDestinations[1].stSourceDataStore[1].bChecksOK := TRUE;
+    fbShutter(nSourceIndex:=1, fbDestinations:=fbDestinations, bAcknowledge:=TRUE);
+    AssertTrue(fbShutter.bSafeToOpen, Message:='Safe for source 2');
+    AssertFalse(fbShutter.bOpenSignal, Message:='Open not yet requested');
+    AssertFalse(fbShutter.bLatchedError, Message:='Latched error cleared');
+
+    fbShutter(nSourceIndex:=1, bUserOpenRequest:=TRUE, fbDestinations:=fbDestinations, bAcknowledge:=FALSE);
+    AssertTrue(fbShutter.bSafeToOpen, Message:='Safe for source 2');
+    AssertTrue(fbShutter.bOpenSignal, Message:='Safe for source 2; open');
+    AssertFalse(fbShutter.bLatchedError, Message:='Latched error cleared');
+
+    TEST_FINISHED();
+
+
+
+    TEST('Override error');
+
+    Reset();
+
+    fbDestinations[1].stSourceDataStore[1].bChecksOK := FALSE;
+    fbShutter(nSourceIndex:=1, bUserOpenRequest:=TRUE, fbDestinations:=fbDestinations, bAcknowledge:=False);
+    AssertFalse(fbShutter.bSafeToOpen, Message:='Not safe yet');
+    AssertFalse(fbShutter.bOpenSignal, Message:='Not safe yet; close');
+    AssertFalse(fbShutter.bUserOpenRequest, Message:='Reset open request on fail');
+    AssertTrue(fbShutter.bLatchedError, Message:='Latched error');
+
+    fbShutter.bOverride := TRUE;
+
+    fbShutter(nSourceIndex:=1, fbDestinations:=fbDestinations);
+    AssertTrue(fbShutter.bSafeToOpen, Message:='Safe for source 2');
+    AssertFalse(fbShutter.bOpenSignal, Message:='Open not yet requested');
+    AssertTrue(fbShutter.bLatchedError, Message:='Latched error overridden not cleared');
+
+    fbShutter(nSourceIndex:=1, bUserOpenRequest:=TRUE, fbDestinations:=fbDestinations);
+    AssertTrue(fbShutter.bSafeToOpen, Message:='Safe for source 2');
+    AssertTrue(fbShutter.bOpenSignal, Message:='Safe for source 2; open');
+    AssertFalse(fbShutter.bLatchedError, Message:='Latched error still there');
+
+    fbShutter(nSourceIndex:=1, bUserOpenRequest:=FALSE, fbDestinations:=fbDestinations);
+    AssertTrue(fbShutter.bSafeToOpen, Message:='Safe for source 2');
+    AssertTrue(fbShutter.bOpenSignal, Message:='Safe for source 2; open');
+    AssertFalse(fbShutter.bLatchedError, Message:='Latched error still there');
+    AssertFalse(fbShutter.bOverride, Message:='Override set after shutter closure');
+
+    TEST_FINISHED();
+
+    END_FUNCTION_BLOCK
+
+    ACTION Reset:
+    fbShutter.bAcknowledge := TRUE;
+    fbShutter.bUserOpenRequest := FALSE;
+    fbShutter.bOverride := TRUE;
+    fbShutter.nSourceIndex := 1;
+
+    fbShutter(fbDestinations:=fbDestinations);
+
+    fbShutter.bAcknowledge := FALSE;
+    fbShutter.bUserOpenRequest := FALSE;
+    fbShutter.bOverride := FALSE;
+    fbShutter.nSourceIndex := 1;
+
+    fbShutter(fbDestinations:=fbDestinations);
+
+    FOR nDest := 1 TO GVL_BTPS_Constants.nDestinations DO
+        fbDestinations[nDest].stSourceDataStore[nSource].bChecksOK := FALSE;
+    END_FOR
+
+    WRITE_PROTECTED_BOOL(ADR(fbShutter.bLatchedError), FALSE);
+    WRITE_PROTECTED_BOOL(ADR(fbShutter.bOpenSignal), FALSE);
+    WRITE_PROTECTED_BOOL(ADR(fbShutter.bSafeToOpen), FALSE);
+    END_ACTION
+
+
+Related:
+    * `FB_DestinationDataStore`_
+    * `FB_ShutterSafety`_
+    * `GVL_BTPS_Constants`_
+
+
+MAIN
+^^^^
+
+::
+
+    PROGRAM MAIN
+    VAR
+        fbLogHandler : FB_LogHandler;
+    END_VAR
+    fbLogHandler();
+
+    // Run the Diagnostics PRG
+    DIAGNOSTICS();
+
+    // Run the Gauges PRG
+    PRG_GAUGES();
+
+    // Run the Valves PRG
+    PRG_VALVES();
+
+    // Run the Pumps PRG
+    PRG_PUMPS();
+
+    // Run the beam transport protection system code (BTPS)
+    PRG_BTPS();
+
+    END_PROGRAM
+
+
+Related:
+    * `DIAGNOSTICS`_
+    * `PRG_BTPS`_
+    * `PRG_GAUGES`_
+    * `PRG_PUMPS`_
+    * `PRG_VALVES`_
+
+
+PRG_BTPS
+^^^^^^^^
+
+::
+
+    PROGRAM PRG_BTPS
+    VAR
+
+        (* TODO NOTES *)
+        (*
+
+        1. Disable FP exceptions for the plc task
+
+        *)
+    END_VAR
+    GVL_BTPS.fbBay1Linear(bEnable:=TRUE);
+    GVL_BTPS.fbBay3Linear(bEnable:=TRUE);
+    GVL_BTPS.fbBay4Linear(bEnable:=TRUE);
+
+    GVL_BTPS.fbBay1Rotary(bEnable:=TRUE);
+    GVL_BTPS.fbBay3Rotary(bEnable:=TRUE);
+    GVL_BTPS.fbBay4Rotary(bEnable:=TRUE);
+
+    GVL_BTPS.fbBay1Goniometer(bEnable:=TRUE);
+    GVL_BTPS.fbBay3Goniometer(bEnable:=TRUE);
+    GVL_BTPS.fbBay4Goniometer(bEnable:=TRUE);
+
+    GVL_BTPS.fbBay1NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinimumValidChange:=GVL_BTPS_Retain.fMinCentroidChange);
+    GVL_BTPS.fbBay3NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinimumValidChange:=GVL_BTPS_Retain.fMinCentroidChange);
+    GVL_BTPS.fbBay4NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinimumValidChange:=GVL_BTPS_Retain.fMinCentroidChange);
+
+    GVL_BTPS.fbBay1FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinimumValidChange:=GVL_BTPS_Retain.fMinCentroidChange);
+    GVL_BTPS.fbBay3FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinimumValidChange:=GVL_BTPS_Retain.fMinCentroidChange);
+    GVL_BTPS.fbBay4FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinimumValidChange:=GVL_BTPS_Retain.fMinCentroidChange);
+
+    GVL_BTPS.fbDestinations[1](sName:='TMO IP1', fbDestinationValve:=GVL_BTPS.fbDestinationValves[1]);
+    GVL_BTPS.fbDestinations[2](sName:='TMO IP2', fbDestinationValve:=GVL_BTPS.fbDestinationValves[2]);
+    GVL_BTPS.fbDestinations[3](sName:='TMO IP3', fbDestinationValve:=GVL_BTPS.fbDestinationValves[3]);
+    GVL_BTPS.fbDestinations[4](sName:='RIX qRIXS', fbDestinationValve:=GVL_BTPS.fbDestinationValves[4]);
+    GVL_BTPS.fbDestinations[5](sName:='RIX ChemRIXS', fbDestinationValve:=GVL_BTPS.fbDestinationValves[5]);
+    GVL_BTPS.fbDestinations[6](sName:='XPP', fbDestinationValve:=GVL_BTPS.fbDestinationValves[6]);
+    GVL_BTPS.fbDestinations[7](sName:='Laser Lab', fbDestinationValve:=GVL_BTPS.fbDestinationValves[7]);
+
+    (* Shutter safety evaluation should always come at the end. *)
+    GVL_BTPS.fbShutterSafety1(nSourceIndex:=1, fbDestinations:=GVL_BTPS.fbDestinations);
+    // GVL_BTPS.fbShutterSafety2(nIndex:=2, fbDestinations:=GVL_BTPS.fbDestinations);
+    GVL_BTPS.fbShutterSafety3(nSourceIndex:=3, fbDestinations:=GVL_BTPS.fbDestinations);
+    GVL_BTPS.fbShutterSafety4(nSourceIndex:=4, fbDestinations:=GVL_BTPS.fbDestinations);
+
+    PRG_SavePeristentVariables();
+    PRG_RunTests();
+
+    END_PROGRAM
+
+
+Related:
+    * `GVL_BTPS`_
+    * `GVL_BTPS_Retain`_
+    * `PRG_RunTests`_
+    * `PRG_SavePeristentVariables`_
+
+
+PRG_COM
+^^^^^^^
+
+::
+
+    PROGRAM PRG_COM
+    VAR
+    END_VAR
+    //needs to run on a seperate task
+
+    (*Instanitate Serial port com function *)
+    //LXLHN_PTM_01
+    PTM_fbSerialLineControl(
+        Mode:= SERIALLINEMODE_EL6_22B,
+        pComIn:= ADR(PTM_stComIn),
+        pComOut:=ADR(PTM_stComOut),
+        SizeComIn:= SIZEOF(PTM_stComOut),
+        TxBuffer:= PTM_SerialTXBuffer,
+        RxBuffer:= PTM_SerialRXBuffer,
+        Error=> ,
+        ErrorID=> );
+
+    END_PROGRAM
+
+
+
+
+PRG_GAUGES
+^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_GAUGES
+    VAR
+    END_VAR
+    (* Switchbox Gauges *)
+        fb_PP_GPI_1.M_SetBits(30518);
+        fb_PP_GPI_1();
+
+        fb_PP_GPI_2.M_SetBits(30518);
+        fb_PP_GPI_2();
+
+        fb_DP_GPI.M_SetBits(30518);
+        fb_DP_GPI();
+
+        fb_PP_GCC.M_SetBits(30518);
+        fb_PP_GCC(PG := GVL_BTS_VAC.fb_PP_GPI_1.PG , IG=> );
+
+        fb_DP_GCC.M_SetBits(30518);
+        fb_DP_GCC(PG := GVL_BTS_VAC.fb_PP_GPI_1.PG , IG=> );
+
+    (* Transport Tube Gauges *)
+    // LS1
+        fb_LS1_GPI.M_SetBits(30518);
+        fb_LS1_GPI();
+        fb_LS1_GCC.M_SetBits(30518);
+        fb_LS1_GCC(PG := GVL_BTS_VAC.fb_LS1_GPI.PG , IG=> );
+
+    // LS5
+        fb_LS5_GPI.M_SetBits(30518);
+        fb_LS5_GPI();
+        fb_LS5_GCC.M_SetBits(30518);
+        fb_LS5_GCC(PG := GVL_BTS_VAC.fb_LS5_GPI.PG , IG=> );
+
+    // LS8
+        fb_LS8_GPI.M_SetBits(30518);
+        fb_LS8_GPI();
+        fb_LS8_GCC.M_SetBits(30518);
+        fb_LS8_GCC(PG := GVL_BTS_VAC.fb_LS8_GPI.PG , IG=> );
+
+    // LD2
+        fb_LD2_GPI.M_SetBits(30518);
+        fb_LD2_GPI();
+        fb_LD2_GCC.M_SetBits(30518);
+        fb_LD2_GCC(PG := GVL_BTS_VAC.fb_LD2_GPI.PG , IG=> );
+
+    // LD4
+        fb_LD4_GPI.M_SetBits(30518);
+        fb_LD4_GPI();
+        fb_LD4_GCC.M_SetBits(30518);
+        fb_LD4_GCC(PG := GVL_BTS_VAC.fb_LD4_GPI.PG , IG=> );
+
+    // LD6
+        fb_LD6_GPI.M_SetBits(30518);
+        fb_LD6_GPI();
+        fb_LD6_GCC.M_SetBits(30518);
+        fb_LD6_GCC(PG := GVL_BTS_VAC.fb_LD6_GPI.PG , IG=> );
+
+    // LD8
+        fb_LD8_GPI.M_SetBits(30518);
+        fb_LD8_GPI();
+        fb_LD8_GCC.M_SetBits(30518);
+        fb_LD8_GCC(PG := GVL_BTS_VAC.fb_LD8_GPI.PG , IG=> );
+
+    // LD9
+        fb_LD9_GPI.M_SetBits(30518);
+        fb_LD9_GPI();
+        fb_LD9_GCC.M_SetBits(30518);
+        fb_LD9_GCC(PG := GVL_BTS_VAC.fb_LD9_GPI.PG , IG=> );
+
+    // LD10
+        fb_LD10_GPI.M_SetBits(30518);
+        fb_LD10_GPI();
+        fb_LD10_GCC.M_SetBits(30518);
+        fb_LD10_GCC(PG := GVL_BTS_VAC.fb_LD10_GPI.PG , IG=> );
+
+    // LD14
+        fb_LD14_GPI.M_SetBits(30518);
+        fb_LD14_GPI();
+        fb_LD14_GCC.M_SetBits(30518);
+        fb_LD14_GCC(PG := GVL_BTS_VAC.fb_LD14_GPI.PG , IG=> );
+
+    (* Auto switch on cold cathode gauges if interlock permits *)
+
+    If xGCC_Enable_SW THEN
+        fb_PP_GCC.M_HVE(TRUE);
+        fb_DP_GCC.M_HVE(TRUE);
+        fb_LS1_GCC.M_HVE(TRUE);
+        fb_LS5_GCC.M_HVE(TRUE);
+        fb_LS8_GCC.M_HVE(TRUE);
+        fb_LD2_GCC.M_HVE(TRUE);
+        fb_LD4_GCC.M_HVE(TRUE);
+        fb_LD6_GCC.M_HVE(TRUE);
+        fb_LD8_GCC.M_HVE(TRUE);
+        fb_LD9_GCC.M_HVE(TRUE);
+        fb_LD10_GCC.M_HVE(TRUE);
+        fb_LD14_GCC.M_HVE(TRUE);
+
+        xGCC_Enable_SW := False;
+    END_IF
+
+    END_PROGRAM
+
+
+Related:
+    * `GVL_BTS_VAC`_
+
+
+PRG_PUMPS
+^^^^^^^^^
+
+::
+
+    PROGRAM PRG_PUMPS
+    VAR
+    END_VAR
+    (* Switchbox pumps *)
+    fb_PP_PMF();
+
+    //fb_PP_PTM(i_xExtIlkOK := fb_PP_VVC.M_IsClosed());
+    //F_TurboExtILKLogic_2(Turbo:=fb_PP_PTM.iq_stPTM,
+    //BackingGauge:= , InletGauge:=, ScrollPump:=fb_PP_PMF.q_stPump));
+    //GVL_BTS_VAC.fb_PP_PTM(i_xExtIlkOK := F_PumpStationTurboPumpInterlock());
+
+    fb_PP_PTM(i_xExtIlkOK := F_TurboExtILKLogic(Turbo:=fb_PP_PTM.iq_stPTM, BackingGauge:=fb_PP_GPI_2.PG,
+                                    InletGauge:=fb_PP_GPI_1.PG, VentValve:=fb_PP_VVC.iq_stValve,
+                                    ScrollPump:=fb_PP_PMF.q_stPump));
+
+    fb_PP_PIP(i_stGauge := fb_DP_GCC.IG);
+
+    (* Transport Tube pumps *)
+    // LS1
+    fb_LS1_PIP(i_stGauge := fb_LS1_GCC.IG, stPump=>);
+
+    // LS5
+    fb_LS5_PIP(i_stGauge := fb_LS5_GCC.IG, stPump=>);
+
+    // LS8
+    fb_LS8_PIP(i_stGauge := fb_LS8_GCC.IG, stPump=>);
+
+    // LD2
+    fb_LD2_PIP(i_stGauge := fb_LD2_GCC.IG, stPump=>);
+
+    // LD4
+    fb_LD4_PIP(i_stGauge := fb_LD4_GCC.IG, stPump=>);
+
+    // LD6
+    fb_LD6_PIP(i_stGauge := fb_LD6_GCC.IG, stPump=>);
+
+    // LD8
+    fb_LD8_PIP(i_stGauge := fb_LD8_GCC.IG, stPump=>);
+
+    // LD9
+    fb_LD9_PIP(i_stGauge := fb_LD9_GCC.IG, stPump=>);
+
+    // LD10
+    fb_LD10_PIP(i_stGauge := fb_LD10_GCC.IG, stPump=>);
+
+    // LD14
+    fb_LD14_PIP(i_stGauge := fb_LD14_GCC.IG, stPump=>);
+
+    (*Serial Interface*)
+    (*Assign adresses to the pfeiffer controller connected to this serial terminal*)
+    st_Pfeiffer_CTRL_PTM[1].iSerialAddress  :=1;	//LXLHN_PTM_01
+    st_Pfeiffer_CTRL_PTM[1].xEnableComm 	:= TRUE;
+    (* Instanitate the Function block for serial communication with Pfeiffer*)
+    PTM_COM(astPfeifferControl := st_Pfeiffer_CTRL_PTM,
+                    astPfeifferStatus:= st_Pfeiffer_RBK_PTM,
+                    SerialRXBuffer:= PTM_SerialRXBuffer,
+                    SerialTXBuffer:= PTM_SerialTXBuffer);
+    (* Copy Status Pv's into the PTM structure*)
+    fb_PP_PTM.M_Serial_IO(st_Pfeiffer_CTRL:=st_Pfeiffer_CTRL_PTM[1],st_Pfeiffer_RBK:=st_Pfeiffer_RBK_PTM[1]);
+
+    END_PROGRAM
+
+
+Related:
+    * `GVL_BTS_VAC`_
+
+
+PRG_RunTests
+^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_RunTests
+    VAR
+        fbRangeComparison : FB_TestRangeComparison;
+        fbShutterSafety : FB_TestShutterSafety;
+        fbCentroidTest : FB_Test_EpicsCentroidMonitor;
+        fbMotorTest : FB_Test_EpicsMotorMonitor;
+
+    END_VAR
+    TcUnit.RUN();
+
+    END_PROGRAM
+
+
+Related:
+    * `FB_TestRangeComparison`_
+    * `FB_TestShutterSafety`_
+    * `FB_Test_EpicsCentroidMonitor`_
+    * `FB_Test_EpicsMotorMonitor`_
+
+
+PRG_SavePeristentVariables
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_SavePeristentVariables
+    VAR
+        fbWritePersistentData: FB_WritePersistentData;
+        tonStart : TON;
+        tonInterval : TON;
+    END_VAR
+    tonInterval(
+        IN:=TRUE,
+        PT:=T#1ms (* Write 1ms after startup of the PLC *)
+
+    );
+
+    tonStart(
+        IN:=tonStart.Q AND NOT fbWritePersistentData.BUSY,
+        PT:=T#1m (* Write every minute *)
+    );
+
+    fbWritePersistentData(
+        NETID:='', (* This PLC *)
+        PORT:=851, (* Application port! *)
+        TMOUT:=T#10s,  (* Maximum time before considering this a failure *)
+        START:=tonStart.Q OR tonInterval.Q (* Start with tonStart goes high or periodically *)
+    );
+
+    END_PROGRAM
+
+
+
+
+PRG_VALVES
+^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_VALVES
+    VAR
+    END_VAR
+    (* Switchbox valves *)
+    fb_PP_VGC(
+        i_stUSG := fb_PP_GCC.IG,
+        i_stDSG := fb_DP_GCC.IG,
+        i_xDis_DPIlk := FALSE,
+        i_xEPS_OK := TRUE,
+        i_xPMPS_OK := TRUE,
+        i_xExt_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS,
+        io_fbFFHWO := g_FFOut,
+        fbArbiter := g_fbArbiter
+    );
+
+    fb_PP_VVC(
+        i_xExtILK_OK := fb_PP_VGC.M_IsClosed(),
+        i_xOverrideMode := xSystemOverrideMode_BTS
+    );
+
+    GVL_BTS_VAC.fb_PP_VRC_1(
+        i_xExtILK_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS
+    );
+
+    GVL_BTS_VAC.fb_PP_VRC_2(
+        i_xExtILK_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS
+    );
+
+    fb_VP_VVC_1(
+        i_xExtILK_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS
+    );
+
+    fb_VP_VVC_2(
+        i_xExtILK_OK := TRUE
+    );
+
+    (* Transport Tube vavles *)
+    // LS1
+    fb_LS1_VGC(
+        i_stUSG := fb_LS1_GCC.IG,
+        i_stDSG := fb_DP_GCC.IG,
+        i_xDis_DPIlk := FALSE,
+        i_xEPS_OK := TRUE,
+        i_xPMPS_OK := TRUE,
+        i_xExt_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS,
+        io_fbFFHWO := g_FFOut,
+        fbArbiter := g_fbArbiter,
+    );
+
+    // LS5
+    fb_LS5_VGC(
+        i_stUSG := fb_LS5_GPI.PG,
+        i_stDSG := fb_DP_GPI.PG,
+        i_xDis_DPIlk := FALSE,
+        i_xEPS_OK := TRUE,
+        i_xPMPS_OK := TRUE,
+        i_xExt_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS,
+        io_fbFFHWO := g_FFOut,
+        fbArbiter := g_fbArbiter
+    );
+
+    // LS8
+    fb_LS8_VGC(
+        i_stUSG := fb_LS8_GCC.IG,
+        i_stDSG := fb_DP_GCC.IG,
+        i_xDis_DPIlk := FALSE,
+        i_xEPS_OK := TRUE,
+        i_xPMPS_OK := TRUE,
+        i_xExt_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS,
+        io_fbFFHWO := g_FFOut,
+        fbArbiter := g_fbArbiter
+    );
+
+    // LD2
+    fb_LD2_VGC(
+        i_stUSG := fb_LD2_GCC.IG,
+        i_stDSG := fb_DP_GCC.IG,
+        i_xDis_DPIlk := FALSE,
+        i_xEPS_OK := TRUE,
+        i_xPMPS_OK := TRUE,
+        i_xExt_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS,
+        io_fbFFHWO := g_FFOut,
+        fbArbiter := g_fbArbiter
+    );
+
+    // LD4
+    fb_LD4_VGC(
+        i_stUSG := fb_LD4_GCC.IG,
+        i_stDSG := fb_DP_GCC.IG,
+        i_xDis_DPIlk := FALSE,
+        i_xEPS_OK := TRUE,
+        i_xPMPS_OK := TRUE,
+        i_xExt_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS,
+        io_fbFFHWO := g_FFOut,
+        fbArbiter := g_fbArbiter
+    );
+
+    // LD6
+    fb_LD6_VGC(
+        i_stUSG := fb_LD6_GCC.IG,
+        i_stDSG := fb_DP_GCC.IG,
+        i_xDis_DPIlk := FALSE,
+        i_xEPS_OK := TRUE,
+        i_xPMPS_OK := TRUE,
+        i_xExt_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS,
+        io_fbFFHWO := g_FFOut,
+        fbArbiter := g_fbArbiter
+    );
+
+    // LD8
+    fb_LD8_VGC(
+        i_stUSG := fb_LD8_GCC.IG,
+        i_stDSG := fb_DP_GCC.IG,
+        i_xDis_DPIlk := FALSE,
+        i_xEPS_OK := TRUE,
+        i_xPMPS_OK := TRUE,
+        i_xExt_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS,
+        io_fbFFHWO := g_FFOut,
+        fbArbiter := g_fbArbiter
+    );
+
+    // LD9
+    fb_LD9_VGC(
+        i_stUSG := fb_LD9_GCC.IG,
+        i_stDSG := fb_DP_GCC.IG,
+        i_xDis_DPIlk := FALSE,
+        i_xEPS_OK := TRUE,
+        i_xPMPS_OK := TRUE,
+        i_xExt_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS,
+        io_fbFFHWO := g_FFOut,
+        fbArbiter := g_fbArbiter
+    );
+
+    // LD10
+    fb_LD10_VGC(
+        i_stUSG := fb_LD10_GCC.IG,
+        i_stDSG := fb_DP_GCC.IG,
+        i_xDis_DPIlk := FALSE,
+        i_xEPS_OK := TRUE,
+        i_xPMPS_OK := TRUE,
+        i_xExt_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS,
+        io_fbFFHWO := g_FFOut,
+        fbArbiter := g_fbArbiter
+    );
+
+    // LD14
+    fb_LD14_VGC(
+        i_stUSG := fb_LD14_GCC.IG,
+        i_stDSG := fb_DP_GCC.IG,
+        i_xDis_DPIlk := FALSE,
+        i_xEPS_OK := TRUE,
+        i_xPMPS_OK := TRUE,
+        i_xExt_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS,
+        io_fbFFHWO := g_FFOut,
+        fbArbiter := g_fbArbiter
+    );
+
+    END_PROGRAM
+
+
+Related:
+    * `GVL_BTS_VAC`_
+

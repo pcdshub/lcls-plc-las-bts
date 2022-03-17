@@ -1,0 +1,21 @@
+
+Pragmas
+-------
+
+.. csv-table::
+    :header: PLC Name, Total Pragmas, Errors
+    :align: center
+
+    :ref:`las_bts <las_bts_overview_pragmas>`, 186, 0
+
+
+.. _las_bts_overview_pragmas:
+
+
+las_bts
+^^^^^^^
+
+Total pragmas found: 186
+Total linter errors: 0
+
+
