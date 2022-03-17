@@ -5,8 +5,10 @@
 STRUCT
     {attribute 'pytmc' := 'pv: Name; io: input'}
     sName : STRING;
-    {attribute 'pytmc' := 'pv: Valve'}
+
+    (*  Do not pragma valve; Use original PVs to access valve state *)
     fbSourceValve : REFERENCE TO FB_VGC;
+
     {attribute 'pytmc' := '
         pv: Valid
         io: input

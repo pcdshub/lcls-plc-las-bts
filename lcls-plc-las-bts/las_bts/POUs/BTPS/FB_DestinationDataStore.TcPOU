@@ -5,7 +5,7 @@
 VAR_INPUT
     {attribute 'pytmc' := 'pv: Name; io: input'}
     sName : STRING;
-    {attribute 'pytmc' := 'pv: DestValve'}
+    (*  Do not pragma valve; Use original PVs to access valve state *)
     fbDestinationValve : REFERENCE TO FB_VGC;
 
     {attribute 'pytmc' := '
@@ -36,7 +36,7 @@ END_VAR
 Update(
     stDataSource:=stSourceDataStore[1],
     sName:='Source 1',
-    fbSourceValve:=GVL_BTPS.fbBay1SourceValve,
+    fbSourceValve:=GVL_BTS_VAC.fb_LS1_VGC,
     fbLinear:=GVL_BTPS.fbBay1Linear,
     fbRotary:=GVL_BTPS.fbBay1Rotary,
     fbGoniometer:=GVL_BTPS.fbBay1Goniometer,
@@ -61,7 +61,7 @@ Update(
 Update(
     stDataSource:=stSourceDataStore[3],
     sName:='Source 3',
-    fbSourceValve:=GVL_BTPS.fbBay3SourceValve,
+    fbSourceValve:=GVL_BTS_VAC.fb_LS5_VGC,  (* This is not a typo; LS5 is for source 3 *)
     fbLinear:=GVL_BTPS.fbBay3Linear,
     fbRotary:=GVL_BTPS.fbBay3Rotary,
     fbGoniometer:=GVL_BTPS.fbBay3Goniometer,
@@ -72,7 +72,7 @@ Update(
 Update(
     stDataSource:=stSourceDataStore[4],
     sName:='Source 4',
-    fbSourceValve:=GVL_BTPS.fbBay4SourceValve,
+    fbSourceValve:=GVL_BTS_VAC.fb_LS8_VGC,  (* Similarly not a typo *)
     fbLinear:=GVL_BTPS.fbBay4Linear,
     fbRotary:=GVL_BTPS.fbBay4Rotary,
     fbGoniometer:=GVL_BTPS.fbBay4Goniometer,

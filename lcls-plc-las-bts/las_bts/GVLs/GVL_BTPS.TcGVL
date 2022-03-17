@@ -107,12 +107,6 @@ VAR_GLOBAL
     '}
     fbBay4FarFieldCamStats : FB_EpicsCentroidMonitor;
 
-    (* Temporary valves for testing *)
-    fbBay1SourceValve : FB_VGC;
-    fbBay3SourceValve : FB_VGC;
-    fbBay4SourceValve : FB_VGC;
-    fbDestinationValves : ARRAY [1..GVL_BTPS_Constants.nDestinations] OF FB_VGC;
-
     {attribute 'pytmc' := 'pv: @(BTPS):Shutter:01'}
     fbShutterSafety1 : FB_ShutterSafety;
     {attribute 'pytmc' := 'pv: @(BTPS):Shutter:03'}
