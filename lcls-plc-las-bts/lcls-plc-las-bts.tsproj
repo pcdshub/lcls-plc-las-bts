@@ -797,113 +797,51 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTPS.fbBay1SourceValve.i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
+							<Name>GVL_Shutters.fbBay1.bOpenStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTPS.fbBay1SourceValve.i_xClsLS</Name>
+							<Name>GVL_Shutters.fbBay1.bCloseStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTPS.fbBay3SourceValve.i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
+							<Name>GVL_Shutters.fbBay1.bLssStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTPS.fbBay3SourceValve.i_xClsLS</Name>
+							<Name>GVL_Shutters.fbBay2.bOpenStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTPS.fbBay4SourceValve.i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
+							<Name>GVL_Shutters.fbBay2.bCloseStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTPS.fbBay4SourceValve.i_xClsLS</Name>
+							<Name>GVL_Shutters.fbBay2.bLssStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[1].i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
+							<Name>GVL_Shutters.fbBay3.bOpenStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[1].i_xClsLS</Name>
+							<Name>GVL_Shutters.fbBay3.bCloseStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[2].i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
+							<Name>GVL_Shutters.fbBay3.bLssStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[2].i_xClsLS</Name>
+							<Name>GVL_Shutters.fbBay4.bOpenStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[3].i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
+							<Name>GVL_Shutters.fbBay4.bCloseStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[3].i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[4].i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[4].i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[5].i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[5].i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[6].i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[6].i_xClsLS</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[7].i_xOpnLS</Name>
-							<Comment>
-								<![CDATA[IO]]>
-							</Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[7].i_xClsLS</Name>
+							<Name>GVL_Shutters.fbBay4.bLssStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
@@ -1192,43 +1130,19 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTPS.fbBay1SourceValve.q_xOPN_DO</Name>
+							<Name>GVL_Shutters.fbBay1.bOpenRequest</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTPS.fbBay3SourceValve.q_xOPN_DO</Name>
+							<Name>GVL_Shutters.fbBay2.bOpenRequest</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTPS.fbBay4SourceValve.q_xOPN_DO</Name>
+							<Name>GVL_Shutters.fbBay3.bOpenRequest</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[1].q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[2].q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[3].q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[4].q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[5].q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[6].q_xOPN_DO</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>GVL_BTPS.fbDestinationValves[7].q_xOPN_DO</Name>
+							<Name>GVL_Shutters.fbBay4.bOpenRequest</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
@@ -1446,6 +1360,30 @@
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD6_GPI.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS5_GPI.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS8_GPI.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL1004_04_02">
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay1.bCloseStatus" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay1.bOpenStatus" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay2.bCloseStatus" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay2.bOpenStatus" VarB="Channel 3^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL1004_04_03">
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay3.bCloseStatus" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay3.bOpenStatus" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay4.bCloseStatus" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay4.bOpenStatus" VarB="Channel 3^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL1004_04_04">
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay1.bLssStatus" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay2.bLssStatus" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay3.bLssStatus" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay4.bLssStatus" VarB="Channel 4^Input" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL2624_04_01">
+				<Link VarA="PlcTask Outputs^GVL_Shutters.fbBay1.bOpenRequest" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Shutters.fbBay2.bOpenRequest" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Shutters.fbBay3.bOpenRequest" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Shutters.fbBay4.bOpenRequest" VarB="Channel 4^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL1004_00_01">
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PMF.i_xAlarm" VarB="Channel 3^Input" AutoLink="true"/>

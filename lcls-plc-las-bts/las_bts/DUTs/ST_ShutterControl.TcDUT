@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <DUT Name="ST_ShutterControl" Id="{b813667e-4e01-43d7-9664-bdcec5c66635}">
+    <Declaration><![CDATA[TYPE ST_ShutterControl :
+STRUCT
+
+    {attribute 'pytmc' := 'pv: REQ; io: io'}
+    bOpenRequest AT %Q* : BOOL;
+    {attribute 'pytmc' := 'pv: OPN; io: i'}
+    bOpenStatus AT %I* : BOOL;
+    {attribute 'pytmc' := 'pv: CLS; io: i'}
+    bCloseStatus AT %I* : BOOL;
+    {attribute 'pytmc' := 'pv: LSS; io: i'}
+    bLssStatus AT %I* : BOOL;
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
