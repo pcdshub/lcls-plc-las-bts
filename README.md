@@ -1,3 +1,11 @@
-TwinCat3 project files for laser hall beam transport vacuum system and shutter control
+## lcls-plc-las-bts TwinCAT Project
 
-- [ ] (optional) Configure [doctr](https://pypi.org/project/doctr/) and add the deploy key to the .travis.yml file for auto-generated documentation. Doctr is a python utility for automatically pushing a gh-pages branch through the travis build process. A repository requires some 1st time configuration using the `doctr` command line tool but once that is complete, the pushing process is fully automated. For instructions on configuring doctr: https://github.com/drdoctr/doctr#run-doctr-configure. The doctr command line tool can be found in the [PCDS conda environment](https://github.com/pcdshub/pcds-envs).
+LCLS Laser Hall TwinCAT project including support for:
+* Beam Transport Vacuum System (BTS vacuum)
+* Shutter Control
+* Beam Transport Protection System (BTPS)
+
+[Documentation](https://pcdshub.github.io/lcls-plc-las-bts/)
+
+Python support:
+* [BTPS](https://github.com/pcdshub/pcdsdevices/blob/master/pcdsdevices/lasers/btps.py)
