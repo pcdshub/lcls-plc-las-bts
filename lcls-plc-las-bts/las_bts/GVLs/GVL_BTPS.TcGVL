@@ -74,38 +74,38 @@ VAR_GLOBAL
         pv: @(BTPS):Chk:NF1
         link: @(SIM)LAS:LHN:BAY1:CAM:01:Stats2:
     '}
-    fbBay1NearFieldCamStats : FB_EpicsCentroidMonitor;
+    fbBay1NearFieldCamStats : FB_EpicsStatsMonitor;
 
     {attribute 'pytmc' := '
         pv: @(BTPS):Chk:NF3
         link: @(SIM)LAS:LHN:BAY3:CAM:01:Stats2:
     '}
-    fbBay3NearFieldCamStats : FB_EpicsCentroidMonitor;
+    fbBay3NearFieldCamStats : FB_EpicsStatsMonitor;
 
     {attribute 'pytmc' := '
         pv: @(BTPS):Chk:NF4
         link: @(SIM)LAS:LHN:BAY4:CAM:01:Stats2:
     '}
-    fbBay4NearFieldCamStats : FB_EpicsCentroidMonitor;
+    fbBay4NearFieldCamStats : FB_EpicsStatsMonitor;
 
     (* Far-field camera stats plugins, per bay *)
     {attribute 'pytmc' := '
         pv: @(BTPS):Chk:FF1
         link: @(SIM)LAS:LHN:BAY1:CAM:02:Stats2:
     '}
-    fbBay1FarFieldCamStats : FB_EpicsCentroidMonitor;
+    fbBay1FarFieldCamStats : FB_EpicsStatsMonitor;
 
     {attribute 'pytmc' := '
         pv: @(BTPS):Chk:FF3
         link: @(SIM)LAS:LHN:BAY3:CAM:02:Stats2:
     '}
-    fbBay3FarFieldCamStats : FB_EpicsCentroidMonitor;
+    fbBay3FarFieldCamStats : FB_EpicsStatsMonitor;
 
     {attribute 'pytmc' := '
         pv: @(BTPS):Chk:FF4
         link: @(SIM)LAS:LHN:BAY4:CAM:02:Stats2:
     '}
-    fbBay4FarFieldCamStats : FB_EpicsCentroidMonitor;
+    fbBay4FarFieldCamStats : FB_EpicsStatsMonitor;
 
     {attribute 'pytmc' := 'pv: @(BTPS):Shutter:01'}
     fbShutterSafety1 : FB_ShutterSafety;

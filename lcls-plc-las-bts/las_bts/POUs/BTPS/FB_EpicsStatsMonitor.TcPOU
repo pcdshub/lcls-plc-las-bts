@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="FB_EpicsCentroidMonitor" Id="{b49e72a7-c7c2-451d-96d1-aade68e9ce98}" SpecialFunc="None">
+  <POU Name="FB_EpicsStatsMonitor" Id="{b49e72a7-c7c2-451d-96d1-aade68e9ce98}" SpecialFunc="None">
     <Declaration><![CDATA[(*
     EPICS AreaDetector Stats Plugin Centroid Monitor
 
     Requires a "link" pragma to specify the full plugin prefix.
 
 *)
-FUNCTION_BLOCK FB_EpicsCentroidMonitor
+FUNCTION_BLOCK FB_EpicsStatsMonitor
 VAR_INPUT
     fMaximumFrameTime : LREAL := 0.2;
     (* Minimum change to be considered updating correctly - buggy detectors may need this. *)

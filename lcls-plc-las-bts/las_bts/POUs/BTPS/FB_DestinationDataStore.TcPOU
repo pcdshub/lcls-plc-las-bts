@@ -92,8 +92,8 @@ VAR_IN_OUT
 
     // The source information
     fbSourceValve : FB_VGC;
-    fbNearField : FB_EpicsCentroidMonitor;
-    fbFarField : FB_EpicsCentroidMonitor;
+    fbNearField : FB_EpicsStatsMonitor;
+    fbFarField : FB_EpicsStatsMonitor;
     fbLinear : FB_EpicsMotorMonitor;
     fbRotary : FB_EpicsMotorMonitor;
     fbGoniometer : FB_EpicsMotorMonitor;

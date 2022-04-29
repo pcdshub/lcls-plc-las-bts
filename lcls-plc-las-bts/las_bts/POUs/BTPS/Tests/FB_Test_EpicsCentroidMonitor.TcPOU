@@ -18,7 +18,7 @@ END_VAR
 VAR_INPUT
 END_VAR
 VAR_INST
-    fbMonitor : FB_EpicsCentroidMonitor;
+    fbMonitor : FB_EpicsStatsMonitor;
     nCount : INT := 0;
 END_VAR]]></Declaration>
       <Implementation>
@@ -86,7 +86,7 @@ TEST_FINISHED();
     <Method Name="WriteCentroidValue" Id="{4e3dbc52-94e8-4849-bc38-c135e919c1aa}">
       <Declaration><![CDATA[METHOD WriteCentroidValue
 VAR_IN_OUT
-    fbMonitor : FB_EpicsCentroidMonitor;
+    fbMonitor : FB_EpicsStatsMonitor;
 END_VAR
 VAR_INPUT
     fX : LREAL;
