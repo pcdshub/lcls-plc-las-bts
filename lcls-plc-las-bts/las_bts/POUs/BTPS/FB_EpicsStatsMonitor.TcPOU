@@ -2,7 +2,7 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
   <POU Name="FB_EpicsStatsMonitor" Id="{b49e72a7-c7c2-451d-96d1-aade68e9ce98}" SpecialFunc="None">
     <Declaration><![CDATA[(*
-    EPICS AreaDetector Stats Plugin Centroid Monitor
+    EPICS AreaDetector Stats Plugin Monitor
 
     Requires a "link" pragma to specify the full plugin prefix.
 
@@ -33,6 +33,12 @@ VAR_OUTPUT
     '}
     fCentroidY : LREAL;
     {attribute 'pytmc' := '
+        pv: Total
+        io: input
+        field: DESC Sum of all elements in the image
+    '}
+    fTotal : LREAL;
+    {attribute 'pytmc' := '
         pv: ArrayCount
         io: input
     '}
@@ -59,6 +65,12 @@ VAR
     '}
     fbCentroidY : FB_LREALFromEPICS;
 
+    {attribute 'pytmc' := '
+        pv: Total_
+        link: Total_RBV
+    '}
+    fbTotal : FB_LREALFromEPICS;
+
     fLastCentroidX : LREAL;
     fLastCentroidY : LREAL;
 
@@ -70,6 +82,8 @@ VAR
 
     // Last array count value
     nLastArrayCount : UDINT;
+    fLastTotal : LREAL;
+
     // Time of the last frame update
     tLastUpdate: TIME;
 
@@ -99,9 +113,11 @@ END_IF
 
 fbCentroidX();
 fbCentroidY();
+fbTotal();
 fbArrayCounter();
 
 bValid := (
+    fbTotal.bValid AND
     fbCentroidX.bValid AND
     fbCentroidY.bValid AND
     fbArrayCounter.bValid
@@ -109,37 +125,17 @@ bValid := (
 
 fCentroidX := fbCentroidX.fValue;
 fCentroidY := fbCentroidY.fValue;
+fTotal := fbTotal.fValue;
 nArrayCount := LREAL_TO_UDINT(fbArrayCounter.fValue);
 
-(*
-    Only consider that we have a new frame if:
-    1. The array count has been updated
-    2. X and Y values have changed even minimally
-        a. With background noise, this should not be a problem.
-        b. With an invalid black/white/stale image, this will indicate
-           'no new frame' despite an increasing array count.
-*)
-bHaveNewFrame := (
-    nArrayCount <> nLastArrayCount AND
-    ABS(fLastCentroidX - fCentroidX) >= fNewFrameMinimumChange AND
-    ABS(fLastCentroidY - fCentroidY) >= fNewFrameMinimumChange AND
-    TRUE
-);
+IF ABS(fTotal - fLastTotal) >= fMinimumValidChange THEN
 
-IF bHaveNewFrame THEN
-    bAboveThreshold := (
-        ABS(fLastCentroidX - fCentroidX) >= fMinimumValidChange AND
-        ABS(fLastCentroidY - fCentroidY) >= fMinimumValidChange
-    );
+    fFrameTime := TIME_TO_LREAL(TIME() - tLastUpdate) * 0.001; // Milliseconds -> seconds
+    tLastUpdate := TIME();
 
-    IF bAboveThreshold THEN
-        fFrameTime := TIME_TO_LREAL(TIME() - tLastUpdate) * 0.001; // Milliseconds -> seconds
-        tLastUpdate := TIME();
-
-        fLastCentroidX := fCentroidX;
-        fLastCentroidY := fCentroidY;
-    END_IF
-
+    fLastTotal := fTotal;
+    fLastCentroidX := fCentroidX;
+    fLastCentroidY := fCentroidY;
     nLastArrayCount := nArrayCount;
     bSawFrame := TRUE;
 

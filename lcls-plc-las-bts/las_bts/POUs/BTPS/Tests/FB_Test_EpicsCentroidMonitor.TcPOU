@@ -91,6 +91,7 @@ END_VAR
 VAR_INPUT
     fX : LREAL;
     fY : LREAL;
+    fTotal : LREAL;
     nCount : INT;
     nX_Severity : INT := 0;
     nY_Severity : INT := 0;
@@ -105,6 +106,7 @@ WRITE_PROTECTED_INT(ADR(fbMonitor.fbArrayCounter.iPLCInternalSeverity), nCount_S
 
 WRITE_PROTECTED_LREAL(ADR(fbMonitor.fbCentroidX.fPLCInternalValue), fX);
 WRITE_PROTECTED_LREAL(ADR(fbMonitor.fbCentroidY.fPLCInternalValue), fY);
+WRITE_PROTECTED_LREAL(ADR(fbMonitor.fbCentroidX.fPLCInternalValue), fTotal);
 WRITE_PROTECTED_LREAL(ADR(fbMonitor.fbArrayCounter.fPLCInternalValue), INT_TO_LREAL(nCount));
 
 WRITE_PROTECTED_TIME(ADR(fbMonitor.tLastUpdate), TIME() - tLastUpdate);
