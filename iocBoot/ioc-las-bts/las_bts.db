@@ -459,1445 +459,6 @@ record(bo, "LXLHN:VAC:GCC:ENABLE") {
   info(archive, "VAL")
 }
 
-record(bi, "$(BTPS):Chk:NF1:IsUpdating_RBV") {
-  # GVL_BTPS.fbBay1NearFieldCamStats.bIsUpdating
-  field(DESC, "GVL_BTPS.fbBay1NearF...Stats.bIsUpdating")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.bIsUpdating?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF1:CentroidX_RBV") {
-  # GVL_BTPS.fbBay1NearFieldCamStats.fCentroidX
-  field(DESC, "GVL_BTPS.fbBay1NearF...mStats.fCentroidX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fCentroidX?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF1:CentroidY_RBV") {
-  # GVL_BTPS.fbBay1NearFieldCamStats.fCentroidY
-  field(DESC, "GVL_BTPS.fbBay1NearF...mStats.fCentroidY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fCentroidY?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:NF1:ArrayCount_RBV") {
-  # GVL_BTPS.fbBay1NearFieldCamStats.nArrayCount
-  field(DESC, "GVL_BTPS.fbBay1NearF...Stats.nArrayCount")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.nArrayCount?")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF1:FrameTime_RBV") {
-  field(DESC, "Time between frame updates")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fFrameTime?")
-  field(PREC, "3")
-  field(EGU, "sec")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF1:CX_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fbCentroidX.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:NF1:CX_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY1:CAM:01:Stats2:CentroidX_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1NearFieldCamStats.fbCentroidX.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:NF1:CX_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fbCentroidX.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:NF1:CX_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:NF1:CX_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1NearFieldCamStats.fbCentroidX.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF1:CY_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fbCentroidY.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:NF1:CY_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY1:CAM:01:Stats2:CentroidY_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1NearFieldCamStats.fbCentroidY.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:NF1:CY_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fbCentroidY.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:NF1:CY_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:NF1:CY_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1NearFieldCamStats.fbCentroidY.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF1:Cnt_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fbArrayCounter.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:NF1:Cnt_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY1:CAM:01:Stats2:ArrayCounter_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1NearFieldCamStats.fbArrayCounter.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:NF1:Cnt_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fbArrayCounter.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:NF1:Cnt_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:NF1:Cnt_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1NearFieldCamStats.fbArrayCounter.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:NF1:HaveNewFrame_RBV") {
-  # GVL_BTPS.fbBay1NearFieldCamStats.bHaveNewFrame
-  field(DESC, "GVL_BTPS.fbBay1NearF...ats.bHaveNewFrame")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.bHaveNewFrame?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:NF1:AboveThreshold_RBV") {
-  # GVL_BTPS.fbBay1NearFieldCamStats.bAboveThreshold
-  field(DESC, "GVL_BTPS.fbBay1NearF...s.bAboveThreshold")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.bAboveThreshold?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:NF3:IsUpdating_RBV") {
-  # GVL_BTPS.fbBay3NearFieldCamStats.bIsUpdating
-  field(DESC, "GVL_BTPS.fbBay3NearF...Stats.bIsUpdating")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.bIsUpdating?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF3:CentroidX_RBV") {
-  # GVL_BTPS.fbBay3NearFieldCamStats.fCentroidX
-  field(DESC, "GVL_BTPS.fbBay3NearF...mStats.fCentroidX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fCentroidX?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF3:CentroidY_RBV") {
-  # GVL_BTPS.fbBay3NearFieldCamStats.fCentroidY
-  field(DESC, "GVL_BTPS.fbBay3NearF...mStats.fCentroidY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fCentroidY?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:NF3:ArrayCount_RBV") {
-  # GVL_BTPS.fbBay3NearFieldCamStats.nArrayCount
-  field(DESC, "GVL_BTPS.fbBay3NearF...Stats.nArrayCount")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.nArrayCount?")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF3:FrameTime_RBV") {
-  field(DESC, "Time between frame updates")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fFrameTime?")
-  field(PREC, "3")
-  field(EGU, "sec")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF3:CX_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fbCentroidX.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:NF3:CX_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY3:CAM:01:Stats2:CentroidX_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3NearFieldCamStats.fbCentroidX.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:NF3:CX_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fbCentroidX.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:NF3:CX_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:NF3:CX_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3NearFieldCamStats.fbCentroidX.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF3:CY_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fbCentroidY.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:NF3:CY_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY3:CAM:01:Stats2:CentroidY_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3NearFieldCamStats.fbCentroidY.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:NF3:CY_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fbCentroidY.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:NF3:CY_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:NF3:CY_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3NearFieldCamStats.fbCentroidY.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF3:Cnt_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fbArrayCounter.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:NF3:Cnt_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY3:CAM:01:Stats2:ArrayCounter_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3NearFieldCamStats.fbArrayCounter.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:NF3:Cnt_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fbArrayCounter.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:NF3:Cnt_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:NF3:Cnt_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3NearFieldCamStats.fbArrayCounter.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:NF3:HaveNewFrame_RBV") {
-  # GVL_BTPS.fbBay3NearFieldCamStats.bHaveNewFrame
-  field(DESC, "GVL_BTPS.fbBay3NearF...ats.bHaveNewFrame")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.bHaveNewFrame?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:NF3:AboveThreshold_RBV") {
-  # GVL_BTPS.fbBay3NearFieldCamStats.bAboveThreshold
-  field(DESC, "GVL_BTPS.fbBay3NearF...s.bAboveThreshold")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.bAboveThreshold?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:NF4:IsUpdating_RBV") {
-  # GVL_BTPS.fbBay4NearFieldCamStats.bIsUpdating
-  field(DESC, "GVL_BTPS.fbBay4NearF...Stats.bIsUpdating")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.bIsUpdating?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF4:CentroidX_RBV") {
-  # GVL_BTPS.fbBay4NearFieldCamStats.fCentroidX
-  field(DESC, "GVL_BTPS.fbBay4NearF...mStats.fCentroidX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fCentroidX?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF4:CentroidY_RBV") {
-  # GVL_BTPS.fbBay4NearFieldCamStats.fCentroidY
-  field(DESC, "GVL_BTPS.fbBay4NearF...mStats.fCentroidY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fCentroidY?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:NF4:ArrayCount_RBV") {
-  # GVL_BTPS.fbBay4NearFieldCamStats.nArrayCount
-  field(DESC, "GVL_BTPS.fbBay4NearF...Stats.nArrayCount")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.nArrayCount?")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF4:FrameTime_RBV") {
-  field(DESC, "Time between frame updates")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fFrameTime?")
-  field(PREC, "3")
-  field(EGU, "sec")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF4:CX_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fbCentroidX.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:NF4:CX_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY4:CAM:01:Stats2:CentroidX_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4NearFieldCamStats.fbCentroidX.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:NF4:CX_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fbCentroidX.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:NF4:CX_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:NF4:CX_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4NearFieldCamStats.fbCentroidX.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF4:CY_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fbCentroidY.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:NF4:CY_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY4:CAM:01:Stats2:CentroidY_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4NearFieldCamStats.fbCentroidY.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:NF4:CY_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fbCentroidY.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:NF4:CY_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:NF4:CY_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4NearFieldCamStats.fbCentroidY.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:NF4:Cnt_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fbArrayCounter.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:NF4:Cnt_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY4:CAM:01:Stats2:ArrayCounter_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4NearFieldCamStats.fbArrayCounter.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:NF4:Cnt_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fbArrayCounter.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:NF4:Cnt_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:NF4:Cnt_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4NearFieldCamStats.fbArrayCounter.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:NF4:HaveNewFrame_RBV") {
-  # GVL_BTPS.fbBay4NearFieldCamStats.bHaveNewFrame
-  field(DESC, "GVL_BTPS.fbBay4NearF...ats.bHaveNewFrame")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.bHaveNewFrame?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:NF4:AboveThreshold_RBV") {
-  # GVL_BTPS.fbBay4NearFieldCamStats.bAboveThreshold
-  field(DESC, "GVL_BTPS.fbBay4NearF...s.bAboveThreshold")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.bAboveThreshold?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:FF1:IsUpdating_RBV") {
-  # GVL_BTPS.fbBay1FarFieldCamStats.bIsUpdating
-  field(DESC, "GVL_BTPS.fbBay1FarFi...Stats.bIsUpdating")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.bIsUpdating?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF1:CentroidX_RBV") {
-  # GVL_BTPS.fbBay1FarFieldCamStats.fCentroidX
-  field(DESC, "GVL_BTPS.fbBay1FarFi...mStats.fCentroidX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fCentroidX?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF1:CentroidY_RBV") {
-  # GVL_BTPS.fbBay1FarFieldCamStats.fCentroidY
-  field(DESC, "GVL_BTPS.fbBay1FarFi...mStats.fCentroidY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fCentroidY?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:FF1:ArrayCount_RBV") {
-  # GVL_BTPS.fbBay1FarFieldCamStats.nArrayCount
-  field(DESC, "GVL_BTPS.fbBay1FarFi...Stats.nArrayCount")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.nArrayCount?")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF1:FrameTime_RBV") {
-  field(DESC, "Time between frame updates")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fFrameTime?")
-  field(PREC, "3")
-  field(EGU, "sec")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF1:CX_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fbCentroidX.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:FF1:CX_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY1:CAM:02:Stats2:CentroidX_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1FarFieldCamStats.fbCentroidX.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:FF1:CX_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fbCentroidX.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:FF1:CX_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:FF1:CX_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1FarFieldCamStats.fbCentroidX.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF1:CY_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fbCentroidY.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:FF1:CY_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY1:CAM:02:Stats2:CentroidY_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1FarFieldCamStats.fbCentroidY.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:FF1:CY_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fbCentroidY.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:FF1:CY_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:FF1:CY_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1FarFieldCamStats.fbCentroidY.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF1:Cnt_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fbArrayCounter.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:FF1:Cnt_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY1:CAM:02:Stats2:ArrayCounter_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1FarFieldCamStats.fbArrayCounter.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:FF1:Cnt_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fbArrayCounter.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:FF1:Cnt_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:FF1:Cnt_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1FarFieldCamStats.fbArrayCounter.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:FF1:HaveNewFrame_RBV") {
-  # GVL_BTPS.fbBay1FarFieldCamStats.bHaveNewFrame
-  field(DESC, "GVL_BTPS.fbBay1FarFi...ats.bHaveNewFrame")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.bHaveNewFrame?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:FF1:AboveThreshold_RBV") {
-  # GVL_BTPS.fbBay1FarFieldCamStats.bAboveThreshold
-  field(DESC, "GVL_BTPS.fbBay1FarFi...s.bAboveThreshold")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.bAboveThreshold?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:FF3:IsUpdating_RBV") {
-  # GVL_BTPS.fbBay3FarFieldCamStats.bIsUpdating
-  field(DESC, "GVL_BTPS.fbBay3FarFi...Stats.bIsUpdating")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.bIsUpdating?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF3:CentroidX_RBV") {
-  # GVL_BTPS.fbBay3FarFieldCamStats.fCentroidX
-  field(DESC, "GVL_BTPS.fbBay3FarFi...mStats.fCentroidX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fCentroidX?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF3:CentroidY_RBV") {
-  # GVL_BTPS.fbBay3FarFieldCamStats.fCentroidY
-  field(DESC, "GVL_BTPS.fbBay3FarFi...mStats.fCentroidY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fCentroidY?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:FF3:ArrayCount_RBV") {
-  # GVL_BTPS.fbBay3FarFieldCamStats.nArrayCount
-  field(DESC, "GVL_BTPS.fbBay3FarFi...Stats.nArrayCount")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.nArrayCount?")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF3:FrameTime_RBV") {
-  field(DESC, "Time between frame updates")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fFrameTime?")
-  field(PREC, "3")
-  field(EGU, "sec")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF3:CX_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fbCentroidX.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:FF3:CX_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY3:CAM:02:Stats2:CentroidX_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3FarFieldCamStats.fbCentroidX.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:FF3:CX_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fbCentroidX.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:FF3:CX_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:FF3:CX_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3FarFieldCamStats.fbCentroidX.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF3:CY_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fbCentroidY.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:FF3:CY_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY3:CAM:02:Stats2:CentroidY_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3FarFieldCamStats.fbCentroidY.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:FF3:CY_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fbCentroidY.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:FF3:CY_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:FF3:CY_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3FarFieldCamStats.fbCentroidY.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF3:Cnt_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fbArrayCounter.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:FF3:Cnt_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY3:CAM:02:Stats2:ArrayCounter_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3FarFieldCamStats.fbArrayCounter.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:FF3:Cnt_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fbArrayCounter.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:FF3:Cnt_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:FF3:Cnt_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3FarFieldCamStats.fbArrayCounter.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:FF3:HaveNewFrame_RBV") {
-  # GVL_BTPS.fbBay3FarFieldCamStats.bHaveNewFrame
-  field(DESC, "GVL_BTPS.fbBay3FarFi...ats.bHaveNewFrame")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.bHaveNewFrame?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:FF3:AboveThreshold_RBV") {
-  # GVL_BTPS.fbBay3FarFieldCamStats.bAboveThreshold
-  field(DESC, "GVL_BTPS.fbBay3FarFi...s.bAboveThreshold")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.bAboveThreshold?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:FF4:IsUpdating_RBV") {
-  # GVL_BTPS.fbBay4FarFieldCamStats.bIsUpdating
-  field(DESC, "GVL_BTPS.fbBay4FarFi...Stats.bIsUpdating")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.bIsUpdating?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF4:CentroidX_RBV") {
-  # GVL_BTPS.fbBay4FarFieldCamStats.fCentroidX
-  field(DESC, "GVL_BTPS.fbBay4FarFi...mStats.fCentroidX")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fCentroidX?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF4:CentroidY_RBV") {
-  # GVL_BTPS.fbBay4FarFieldCamStats.fCentroidY
-  field(DESC, "GVL_BTPS.fbBay4FarFi...mStats.fCentroidY")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fCentroidY?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:FF4:ArrayCount_RBV") {
-  # GVL_BTPS.fbBay4FarFieldCamStats.nArrayCount
-  field(DESC, "GVL_BTPS.fbBay4FarFi...Stats.nArrayCount")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.nArrayCount?")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF4:FrameTime_RBV") {
-  field(DESC, "Time between frame updates")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fFrameTime?")
-  field(PREC, "3")
-  field(EGU, "sec")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF4:CX_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fbCentroidX.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:FF4:CX_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY4:CAM:02:Stats2:CentroidX_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4FarFieldCamStats.fbCentroidX.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:FF4:CX_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fbCentroidX.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:FF4:CX_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:FF4:CX_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4FarFieldCamStats.fbCentroidX.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF4:CY_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fbCentroidY.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:FF4:CY_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY4:CAM:02:Stats2:CentroidY_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4FarFieldCamStats.fbCentroidY.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:FF4:CY_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fbCentroidY.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:FF4:CY_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:FF4:CY_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4FarFieldCamStats.fbCentroidY.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Chk:FF4:Cnt_:EPICSLink_RBV") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fbArrayCounter.fPLCInternalValue?")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Chk:FF4:Cnt_:EPICSLink") {
-  # Internal variable used to monitor EPICS PV in PLC
-  field(DESC, "Internal variable us...r EPICS PV in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynFloat64")
-  field(DOL, "$(SIM)LAS:LHN:BAY4:CAM:02:Stats2:ArrayCounter_RBV CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4FarFieldCamStats.fbArrayCounter.fPLCInternalValue=")
-  field(PREC, "3")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(longin, "$(BTPS):Chk:FF4:Cnt_:EPICSLink:LinkSeverity_RBV") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fbArrayCounter.iPLCInternalSeverity?")
-  info(archive, "VAL")
-}
-
-record(longout, "$(BTPS):Chk:FF4:Cnt_:EPICSLink:LinkSeverity") {
-  # Internal variable used to monitor EPICS PV severity in PLC
-  field(DESC, "Internal variable us...V severity in PLC")
-  field(SCAN, ".5 second")
-  field(DTYP, "asynInt32")
-  field(DOL, "$(BTPS):Chk:FF4:Cnt_:EPICSLink.SEVR CPP MS")
-  field(OMSL, "closed_loop")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4FarFieldCamStats.fbArrayCounter.iPLCInternalSeverity=")
-  info(autosaveFields_pass0, "VAL")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:FF4:HaveNewFrame_RBV") {
-  # GVL_BTPS.fbBay4FarFieldCamStats.bHaveNewFrame
-  field(DESC, "GVL_BTPS.fbBay4FarFi...ats.bHaveNewFrame")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.bHaveNewFrame?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(bi, "$(BTPS):Chk:FF4:AboveThreshold_RBV") {
-  # GVL_BTPS.fbBay4FarFieldCamStats.bAboveThreshold
-  field(DESC, "GVL_BTPS.fbBay4FarFi...s.bAboveThreshold")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynInt32")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.bAboveThreshold?")
-  field(ZNAM, "FALSE")
-  field(ONAM, "TRUE")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Config:MinCentroidNewFrame_RBV") {
-  field(DESC, "Minimum centroid change for new frame")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS_Retain.fMinCentroidNewFrame?")
-  field(PREC, "3")
-  field(EGU, "px")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Config:MinCentroidNewFrame") {
-  field(DESC, "Minimum centroid change for new frame")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS_Retain.fMinCentroidNewFrame=")
-  field(PREC, "3")
-  field(EGU, "px")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
 record(bi, "$(BTPS):Config:SystemOverride_RBV") {
   field(DESC, "Full system-level override")
   field(SCAN, "I/O Intr")
@@ -3240,6 +1801,1788 @@ record(longout, "$(BTPS):Chk:B4Gon:Msta_:EPICSLink:LinkSeverity") {
   field(OMSL, "closed_loop")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4Goniometer.fbMotorStatusCheck.iPLCInternalSeverity=")
   info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:NF1:IsUpdating_RBV") {
+  # GVL_BTPS.fbBay1NearFieldCamStats.bIsUpdating
+  field(DESC, "GVL_BTPS.fbBay1NearF...Stats.bIsUpdating")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.bIsUpdating?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF1:CentroidX_RBV") {
+  # GVL_BTPS.fbBay1NearFieldCamStats.fCentroidX
+  field(DESC, "GVL_BTPS.fbBay1NearF...mStats.fCentroidX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fCentroidX?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF1:CentroidY_RBV") {
+  # GVL_BTPS.fbBay1NearFieldCamStats.fCentroidY
+  field(DESC, "GVL_BTPS.fbBay1NearF...mStats.fCentroidY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fCentroidY?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF1:Total_RBV") {
+  field(DESC, "Sum of all elements in the image")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fTotal?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:NF1:ArrayCount_RBV") {
+  # GVL_BTPS.fbBay1NearFieldCamStats.nArrayCount
+  field(DESC, "GVL_BTPS.fbBay1NearF...Stats.nArrayCount")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.nArrayCount?")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF1:FrameTime_RBV") {
+  field(DESC, "Avg time between frame updates")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fFrameTime?")
+  field(PREC, "3")
+  field(EGU, "sec")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF1:CX_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fbCentroidX.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:NF1:CX_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY1:CAM:01:Stats2:CentroidX_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1NearFieldCamStats.fbCentroidX.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:NF1:CX_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fbCentroidX.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:NF1:CX_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:NF1:CX_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1NearFieldCamStats.fbCentroidX.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF1:CY_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fbCentroidY.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:NF1:CY_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY1:CAM:01:Stats2:CentroidY_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1NearFieldCamStats.fbCentroidY.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:NF1:CY_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fbCentroidY.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:NF1:CY_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:NF1:CY_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1NearFieldCamStats.fbCentroidY.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF1:Total_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fbTotal.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:NF1:Total_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY1:CAM:01:Stats2:Total_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1NearFieldCamStats.fbTotal.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:NF1:Total_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fbTotal.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:NF1:Total_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:NF1:Total_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1NearFieldCamStats.fbTotal.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF1:Cnt_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fbArrayCounter.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:NF1:Cnt_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY1:CAM:01:Stats2:ArrayCounter_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1NearFieldCamStats.fbArrayCounter.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:NF1:Cnt_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.fbArrayCounter.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:NF1:Cnt_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:NF1:Cnt_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1NearFieldCamStats.fbArrayCounter.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:NF1:HaveNewFrame_RBV") {
+  # GVL_BTPS.fbBay1NearFieldCamStats.bHaveNewFrame
+  field(DESC, "GVL_BTPS.fbBay1NearF...ats.bHaveNewFrame")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.bHaveNewFrame?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:NF1:AboveThreshold_RBV") {
+  # GVL_BTPS.fbBay1NearFieldCamStats.bAboveThreshold
+  field(DESC, "GVL_BTPS.fbBay1NearF...s.bAboveThreshold")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1NearFieldCamStats.bAboveThreshold?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:NF3:IsUpdating_RBV") {
+  # GVL_BTPS.fbBay3NearFieldCamStats.bIsUpdating
+  field(DESC, "GVL_BTPS.fbBay3NearF...Stats.bIsUpdating")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.bIsUpdating?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF3:CentroidX_RBV") {
+  # GVL_BTPS.fbBay3NearFieldCamStats.fCentroidX
+  field(DESC, "GVL_BTPS.fbBay3NearF...mStats.fCentroidX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fCentroidX?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF3:CentroidY_RBV") {
+  # GVL_BTPS.fbBay3NearFieldCamStats.fCentroidY
+  field(DESC, "GVL_BTPS.fbBay3NearF...mStats.fCentroidY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fCentroidY?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF3:Total_RBV") {
+  field(DESC, "Sum of all elements in the image")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fTotal?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:NF3:ArrayCount_RBV") {
+  # GVL_BTPS.fbBay3NearFieldCamStats.nArrayCount
+  field(DESC, "GVL_BTPS.fbBay3NearF...Stats.nArrayCount")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.nArrayCount?")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF3:FrameTime_RBV") {
+  field(DESC, "Avg time between frame updates")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fFrameTime?")
+  field(PREC, "3")
+  field(EGU, "sec")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF3:CX_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fbCentroidX.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:NF3:CX_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY3:CAM:01:Stats2:CentroidX_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3NearFieldCamStats.fbCentroidX.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:NF3:CX_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fbCentroidX.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:NF3:CX_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:NF3:CX_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3NearFieldCamStats.fbCentroidX.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF3:CY_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fbCentroidY.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:NF3:CY_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY3:CAM:01:Stats2:CentroidY_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3NearFieldCamStats.fbCentroidY.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:NF3:CY_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fbCentroidY.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:NF3:CY_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:NF3:CY_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3NearFieldCamStats.fbCentroidY.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF3:Total_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fbTotal.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:NF3:Total_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY3:CAM:01:Stats2:Total_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3NearFieldCamStats.fbTotal.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:NF3:Total_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fbTotal.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:NF3:Total_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:NF3:Total_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3NearFieldCamStats.fbTotal.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF3:Cnt_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fbArrayCounter.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:NF3:Cnt_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY3:CAM:01:Stats2:ArrayCounter_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3NearFieldCamStats.fbArrayCounter.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:NF3:Cnt_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.fbArrayCounter.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:NF3:Cnt_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:NF3:Cnt_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3NearFieldCamStats.fbArrayCounter.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:NF3:HaveNewFrame_RBV") {
+  # GVL_BTPS.fbBay3NearFieldCamStats.bHaveNewFrame
+  field(DESC, "GVL_BTPS.fbBay3NearF...ats.bHaveNewFrame")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.bHaveNewFrame?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:NF3:AboveThreshold_RBV") {
+  # GVL_BTPS.fbBay3NearFieldCamStats.bAboveThreshold
+  field(DESC, "GVL_BTPS.fbBay3NearF...s.bAboveThreshold")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3NearFieldCamStats.bAboveThreshold?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:NF4:IsUpdating_RBV") {
+  # GVL_BTPS.fbBay4NearFieldCamStats.bIsUpdating
+  field(DESC, "GVL_BTPS.fbBay4NearF...Stats.bIsUpdating")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.bIsUpdating?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF4:CentroidX_RBV") {
+  # GVL_BTPS.fbBay4NearFieldCamStats.fCentroidX
+  field(DESC, "GVL_BTPS.fbBay4NearF...mStats.fCentroidX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fCentroidX?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF4:CentroidY_RBV") {
+  # GVL_BTPS.fbBay4NearFieldCamStats.fCentroidY
+  field(DESC, "GVL_BTPS.fbBay4NearF...mStats.fCentroidY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fCentroidY?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF4:Total_RBV") {
+  field(DESC, "Sum of all elements in the image")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fTotal?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:NF4:ArrayCount_RBV") {
+  # GVL_BTPS.fbBay4NearFieldCamStats.nArrayCount
+  field(DESC, "GVL_BTPS.fbBay4NearF...Stats.nArrayCount")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.nArrayCount?")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF4:FrameTime_RBV") {
+  field(DESC, "Avg time between frame updates")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fFrameTime?")
+  field(PREC, "3")
+  field(EGU, "sec")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF4:CX_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fbCentroidX.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:NF4:CX_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY4:CAM:01:Stats2:CentroidX_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4NearFieldCamStats.fbCentroidX.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:NF4:CX_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fbCentroidX.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:NF4:CX_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:NF4:CX_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4NearFieldCamStats.fbCentroidX.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF4:CY_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fbCentroidY.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:NF4:CY_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY4:CAM:01:Stats2:CentroidY_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4NearFieldCamStats.fbCentroidY.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:NF4:CY_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fbCentroidY.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:NF4:CY_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:NF4:CY_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4NearFieldCamStats.fbCentroidY.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF4:Total_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fbTotal.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:NF4:Total_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY4:CAM:01:Stats2:Total_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4NearFieldCamStats.fbTotal.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:NF4:Total_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fbTotal.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:NF4:Total_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:NF4:Total_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4NearFieldCamStats.fbTotal.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:NF4:Cnt_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fbArrayCounter.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:NF4:Cnt_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY4:CAM:01:Stats2:ArrayCounter_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4NearFieldCamStats.fbArrayCounter.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:NF4:Cnt_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.fbArrayCounter.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:NF4:Cnt_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:NF4:Cnt_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4NearFieldCamStats.fbArrayCounter.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:NF4:HaveNewFrame_RBV") {
+  # GVL_BTPS.fbBay4NearFieldCamStats.bHaveNewFrame
+  field(DESC, "GVL_BTPS.fbBay4NearF...ats.bHaveNewFrame")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.bHaveNewFrame?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:NF4:AboveThreshold_RBV") {
+  # GVL_BTPS.fbBay4NearFieldCamStats.bAboveThreshold
+  field(DESC, "GVL_BTPS.fbBay4NearF...s.bAboveThreshold")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4NearFieldCamStats.bAboveThreshold?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:FF1:IsUpdating_RBV") {
+  # GVL_BTPS.fbBay1FarFieldCamStats.bIsUpdating
+  field(DESC, "GVL_BTPS.fbBay1FarFi...Stats.bIsUpdating")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.bIsUpdating?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF1:CentroidX_RBV") {
+  # GVL_BTPS.fbBay1FarFieldCamStats.fCentroidX
+  field(DESC, "GVL_BTPS.fbBay1FarFi...mStats.fCentroidX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fCentroidX?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF1:CentroidY_RBV") {
+  # GVL_BTPS.fbBay1FarFieldCamStats.fCentroidY
+  field(DESC, "GVL_BTPS.fbBay1FarFi...mStats.fCentroidY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fCentroidY?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF1:Total_RBV") {
+  field(DESC, "Sum of all elements in the image")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fTotal?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:FF1:ArrayCount_RBV") {
+  # GVL_BTPS.fbBay1FarFieldCamStats.nArrayCount
+  field(DESC, "GVL_BTPS.fbBay1FarFi...Stats.nArrayCount")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.nArrayCount?")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF1:FrameTime_RBV") {
+  field(DESC, "Avg time between frame updates")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fFrameTime?")
+  field(PREC, "3")
+  field(EGU, "sec")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF1:CX_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fbCentroidX.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:FF1:CX_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY1:CAM:02:Stats2:CentroidX_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1FarFieldCamStats.fbCentroidX.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:FF1:CX_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fbCentroidX.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:FF1:CX_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:FF1:CX_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1FarFieldCamStats.fbCentroidX.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF1:CY_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fbCentroidY.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:FF1:CY_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY1:CAM:02:Stats2:CentroidY_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1FarFieldCamStats.fbCentroidY.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:FF1:CY_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fbCentroidY.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:FF1:CY_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:FF1:CY_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1FarFieldCamStats.fbCentroidY.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF1:Total_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fbTotal.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:FF1:Total_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY1:CAM:02:Stats2:Total_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1FarFieldCamStats.fbTotal.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:FF1:Total_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fbTotal.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:FF1:Total_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:FF1:Total_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1FarFieldCamStats.fbTotal.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF1:Cnt_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fbArrayCounter.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:FF1:Cnt_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY1:CAM:02:Stats2:ArrayCounter_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1FarFieldCamStats.fbArrayCounter.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:FF1:Cnt_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.fbArrayCounter.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:FF1:Cnt_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:FF1:Cnt_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay1FarFieldCamStats.fbArrayCounter.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:FF1:HaveNewFrame_RBV") {
+  # GVL_BTPS.fbBay1FarFieldCamStats.bHaveNewFrame
+  field(DESC, "GVL_BTPS.fbBay1FarFi...ats.bHaveNewFrame")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.bHaveNewFrame?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:FF1:AboveThreshold_RBV") {
+  # GVL_BTPS.fbBay1FarFieldCamStats.bAboveThreshold
+  field(DESC, "GVL_BTPS.fbBay1FarFi...s.bAboveThreshold")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay1FarFieldCamStats.bAboveThreshold?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:FF3:IsUpdating_RBV") {
+  # GVL_BTPS.fbBay3FarFieldCamStats.bIsUpdating
+  field(DESC, "GVL_BTPS.fbBay3FarFi...Stats.bIsUpdating")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.bIsUpdating?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF3:CentroidX_RBV") {
+  # GVL_BTPS.fbBay3FarFieldCamStats.fCentroidX
+  field(DESC, "GVL_BTPS.fbBay3FarFi...mStats.fCentroidX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fCentroidX?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF3:CentroidY_RBV") {
+  # GVL_BTPS.fbBay3FarFieldCamStats.fCentroidY
+  field(DESC, "GVL_BTPS.fbBay3FarFi...mStats.fCentroidY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fCentroidY?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF3:Total_RBV") {
+  field(DESC, "Sum of all elements in the image")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fTotal?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:FF3:ArrayCount_RBV") {
+  # GVL_BTPS.fbBay3FarFieldCamStats.nArrayCount
+  field(DESC, "GVL_BTPS.fbBay3FarFi...Stats.nArrayCount")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.nArrayCount?")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF3:FrameTime_RBV") {
+  field(DESC, "Avg time between frame updates")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fFrameTime?")
+  field(PREC, "3")
+  field(EGU, "sec")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF3:CX_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fbCentroidX.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:FF3:CX_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY3:CAM:02:Stats2:CentroidX_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3FarFieldCamStats.fbCentroidX.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:FF3:CX_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fbCentroidX.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:FF3:CX_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:FF3:CX_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3FarFieldCamStats.fbCentroidX.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF3:CY_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fbCentroidY.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:FF3:CY_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY3:CAM:02:Stats2:CentroidY_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3FarFieldCamStats.fbCentroidY.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:FF3:CY_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fbCentroidY.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:FF3:CY_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:FF3:CY_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3FarFieldCamStats.fbCentroidY.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF3:Total_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fbTotal.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:FF3:Total_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY3:CAM:02:Stats2:Total_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3FarFieldCamStats.fbTotal.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:FF3:Total_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fbTotal.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:FF3:Total_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:FF3:Total_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3FarFieldCamStats.fbTotal.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF3:Cnt_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fbArrayCounter.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:FF3:Cnt_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY3:CAM:02:Stats2:ArrayCounter_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3FarFieldCamStats.fbArrayCounter.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:FF3:Cnt_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.fbArrayCounter.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:FF3:Cnt_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:FF3:Cnt_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay3FarFieldCamStats.fbArrayCounter.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:FF3:HaveNewFrame_RBV") {
+  # GVL_BTPS.fbBay3FarFieldCamStats.bHaveNewFrame
+  field(DESC, "GVL_BTPS.fbBay3FarFi...ats.bHaveNewFrame")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.bHaveNewFrame?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:FF3:AboveThreshold_RBV") {
+  # GVL_BTPS.fbBay3FarFieldCamStats.bAboveThreshold
+  field(DESC, "GVL_BTPS.fbBay3FarFi...s.bAboveThreshold")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay3FarFieldCamStats.bAboveThreshold?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:FF4:IsUpdating_RBV") {
+  # GVL_BTPS.fbBay4FarFieldCamStats.bIsUpdating
+  field(DESC, "GVL_BTPS.fbBay4FarFi...Stats.bIsUpdating")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.bIsUpdating?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF4:CentroidX_RBV") {
+  # GVL_BTPS.fbBay4FarFieldCamStats.fCentroidX
+  field(DESC, "GVL_BTPS.fbBay4FarFi...mStats.fCentroidX")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fCentroidX?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF4:CentroidY_RBV") {
+  # GVL_BTPS.fbBay4FarFieldCamStats.fCentroidY
+  field(DESC, "GVL_BTPS.fbBay4FarFi...mStats.fCentroidY")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fCentroidY?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF4:Total_RBV") {
+  field(DESC, "Sum of all elements in the image")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fTotal?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:FF4:ArrayCount_RBV") {
+  # GVL_BTPS.fbBay4FarFieldCamStats.nArrayCount
+  field(DESC, "GVL_BTPS.fbBay4FarFi...Stats.nArrayCount")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.nArrayCount?")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF4:FrameTime_RBV") {
+  field(DESC, "Avg time between frame updates")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fFrameTime?")
+  field(PREC, "3")
+  field(EGU, "sec")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF4:CX_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fbCentroidX.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:FF4:CX_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY4:CAM:02:Stats2:CentroidX_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4FarFieldCamStats.fbCentroidX.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:FF4:CX_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fbCentroidX.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:FF4:CX_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:FF4:CX_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4FarFieldCamStats.fbCentroidX.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF4:CY_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fbCentroidY.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:FF4:CY_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY4:CAM:02:Stats2:CentroidY_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4FarFieldCamStats.fbCentroidY.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:FF4:CY_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fbCentroidY.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:FF4:CY_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:FF4:CY_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4FarFieldCamStats.fbCentroidY.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF4:Total_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fbTotal.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:FF4:Total_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY4:CAM:02:Stats2:Total_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4FarFieldCamStats.fbTotal.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:FF4:Total_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fbTotal.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:FF4:Total_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:FF4:Total_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4FarFieldCamStats.fbTotal.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Chk:FF4:Cnt_:EPICSLink_RBV") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fbArrayCounter.fPLCInternalValue?")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Chk:FF4:Cnt_:EPICSLink") {
+  # Internal variable used to monitor EPICS PV in PLC
+  field(DESC, "Internal variable us...r EPICS PV in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynFloat64")
+  field(DOL, "$(SIM)LAS:LHN:BAY4:CAM:02:Stats2:ArrayCounter_RBV CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4FarFieldCamStats.fbArrayCounter.fPLCInternalValue=")
+  field(PREC, "3")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(longin, "$(BTPS):Chk:FF4:Cnt_:EPICSLink:LinkSeverity_RBV") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.fbArrayCounter.iPLCInternalSeverity?")
+  info(archive, "VAL")
+}
+
+record(longout, "$(BTPS):Chk:FF4:Cnt_:EPICSLink:LinkSeverity") {
+  # Internal variable used to monitor EPICS PV severity in PLC
+  field(DESC, "Internal variable us...V severity in PLC")
+  field(SCAN, ".5 second")
+  field(DTYP, "asynInt32")
+  field(DOL, "$(BTPS):Chk:FF4:Cnt_:EPICSLink.SEVR CPP MS")
+  field(OMSL, "closed_loop")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS.fbBay4FarFieldCamStats.fbArrayCounter.iPLCInternalSeverity=")
+  info(autosaveFields_pass0, "VAL")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:FF4:HaveNewFrame_RBV") {
+  # GVL_BTPS.fbBay4FarFieldCamStats.bHaveNewFrame
+  field(DESC, "GVL_BTPS.fbBay4FarFi...ats.bHaveNewFrame")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.bHaveNewFrame?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(bi, "$(BTPS):Chk:FF4:AboveThreshold_RBV") {
+  # GVL_BTPS.fbBay4FarFieldCamStats.bAboveThreshold
+  field(DESC, "GVL_BTPS.fbBay4FarFi...s.bAboveThreshold")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynInt32")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS.fbBay4FarFieldCamStats.bAboveThreshold?")
+  field(ZNAM, "FALSE")
+  field(ONAM, "TRUE")
   info(archive, "VAL")
 }
 
@@ -31708,54 +32051,6 @@ record(bi, "$(BTPS):DEST:07:SRC:04:FFCenterY:InRange_RBV") {
   info(archive, "VAL")
 }
 
-record(ai, "$(BTPS):Config:MaxFrameTime_RBV") {
-  field(DESC, "Maximum delay from frame to frame")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS_Retain.fMaximumFrameTime?")
-  field(PREC, "3")
-  field(EGU, "sec")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Config:MaxFrameTime") {
-  field(DESC, "Maximum delay from frame to frame")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS_Retain.fMaximumFrameTime=")
-  field(PREC, "3")
-  field(EGU, "sec")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
-record(ai, "$(BTPS):Config:MinCentroidChange_RBV") {
-  # Minimum centroid change to be considered valid
-  field(DESC, "Minimum centroid cha... considered valid")
-  field(SCAN, "I/O Intr")
-  field(PINI, "1")
-  field(TSE, "-2")
-  field(DTYP, "asynFloat64")
-  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS_Retain.fMinCentroidChange?")
-  field(PREC, "3")
-  field(EGU, "px")
-  info(autosaveFields_pass0, "PREC")
-  info(archive, "VAL")
-}
-
-record(ao, "$(BTPS):Config:MinCentroidChange") {
-  # Minimum centroid change to be considered valid
-  field(DESC, "Minimum centroid cha... considered valid")
-  field(DTYP, "asynFloat64")
-  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS_Retain.fMinCentroidChange=")
-  field(PREC, "3")
-  field(EGU, "px")
-  info(autosaveFields_pass0, "PREC VAL")
-  info(archive, "VAL")
-}
-
 record(bi, "LXLHN:VGC:01:Dis_DPIlk_RBV") {
   field(DESC, "GVL_BTS_VAC.fb_PP_VGC.i_xDis_DPIlk")
   field(SCAN, "I/O Intr")
@@ -50715,7 +51010,7 @@ record(bo, "LTLHN:LD14:GCC:01:LOGGER") {
 }
 
 record(bi, "LTLHN:LS1:LST:REQ_RBV") {
-  field(DESC, "GVL_Shutters.fbBay1.bOpenRequest")
+  field(DESC, "LSS Shutter Open Request")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -50727,7 +51022,7 @@ record(bi, "LTLHN:LS1:LST:REQ_RBV") {
 }
 
 record(bo, "LTLHN:LS1:LST:REQ") {
-  field(DESC, "GVL_Shutters.fbBay1.bOpenRequest")
+  field(DESC, "LSS Shutter Open Request")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Shutters.fbBay1.bOpenRequest=")
   field(ZNAM, "FALSE")
@@ -50737,7 +51032,7 @@ record(bo, "LTLHN:LS1:LST:REQ") {
 }
 
 record(bi, "LTLHN:LS1:LST:OPN_RBV") {
-  field(DESC, "GVL_Shutters.fbBay1.bOpenStatus")
+  field(DESC, "LSS Shutter Open")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -50749,7 +51044,7 @@ record(bi, "LTLHN:LS1:LST:OPN_RBV") {
 }
 
 record(bi, "LTLHN:LS1:LST:CLS_RBV") {
-  field(DESC, "GVL_Shutters.fbBay1.bCloseStatus")
+  field(DESC, "LSS Shutter Closed")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -50761,7 +51056,7 @@ record(bi, "LTLHN:LS1:LST:CLS_RBV") {
 }
 
 record(bi, "LTLHN:LS1:LST:LSS_RBV") {
-  field(DESC, "GVL_Shutters.fbBay1.bLssStatus")
+  field(DESC, "LSS Permission Status")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -50773,7 +51068,7 @@ record(bi, "LTLHN:LS1:LST:LSS_RBV") {
 }
 
 record(bi, "LTLHN:LS3:LST:REQ_RBV") {
-  field(DESC, "GVL_Shutters.fbBay2.bOpenRequest")
+  field(DESC, "LSS Shutter Open Request")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -50785,7 +51080,7 @@ record(bi, "LTLHN:LS3:LST:REQ_RBV") {
 }
 
 record(bo, "LTLHN:LS3:LST:REQ") {
-  field(DESC, "GVL_Shutters.fbBay2.bOpenRequest")
+  field(DESC, "LSS Shutter Open Request")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Shutters.fbBay2.bOpenRequest=")
   field(ZNAM, "FALSE")
@@ -50795,7 +51090,7 @@ record(bo, "LTLHN:LS3:LST:REQ") {
 }
 
 record(bi, "LTLHN:LS3:LST:OPN_RBV") {
-  field(DESC, "GVL_Shutters.fbBay2.bOpenStatus")
+  field(DESC, "LSS Shutter Open")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -50807,7 +51102,7 @@ record(bi, "LTLHN:LS3:LST:OPN_RBV") {
 }
 
 record(bi, "LTLHN:LS3:LST:CLS_RBV") {
-  field(DESC, "GVL_Shutters.fbBay2.bCloseStatus")
+  field(DESC, "LSS Shutter Closed")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -50819,7 +51114,7 @@ record(bi, "LTLHN:LS3:LST:CLS_RBV") {
 }
 
 record(bi, "LTLHN:LS3:LST:LSS_RBV") {
-  field(DESC, "GVL_Shutters.fbBay2.bLssStatus")
+  field(DESC, "LSS Permission Status")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -50831,7 +51126,7 @@ record(bi, "LTLHN:LS3:LST:LSS_RBV") {
 }
 
 record(bi, "LTLHN:LS5:LST:REQ_RBV") {
-  field(DESC, "GVL_Shutters.fbBay3.bOpenRequest")
+  field(DESC, "LSS Shutter Open Request")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -50843,7 +51138,7 @@ record(bi, "LTLHN:LS5:LST:REQ_RBV") {
 }
 
 record(bo, "LTLHN:LS5:LST:REQ") {
-  field(DESC, "GVL_Shutters.fbBay3.bOpenRequest")
+  field(DESC, "LSS Shutter Open Request")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Shutters.fbBay3.bOpenRequest=")
   field(ZNAM, "FALSE")
@@ -50853,7 +51148,7 @@ record(bo, "LTLHN:LS5:LST:REQ") {
 }
 
 record(bi, "LTLHN:LS5:LST:OPN_RBV") {
-  field(DESC, "GVL_Shutters.fbBay3.bOpenStatus")
+  field(DESC, "LSS Shutter Open")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -50865,7 +51160,7 @@ record(bi, "LTLHN:LS5:LST:OPN_RBV") {
 }
 
 record(bi, "LTLHN:LS5:LST:CLS_RBV") {
-  field(DESC, "GVL_Shutters.fbBay3.bCloseStatus")
+  field(DESC, "LSS Shutter Closed")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -50877,7 +51172,7 @@ record(bi, "LTLHN:LS5:LST:CLS_RBV") {
 }
 
 record(bi, "LTLHN:LS5:LST:LSS_RBV") {
-  field(DESC, "GVL_Shutters.fbBay3.bLssStatus")
+  field(DESC, "LSS Permission Status")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -50889,7 +51184,7 @@ record(bi, "LTLHN:LS5:LST:LSS_RBV") {
 }
 
 record(bi, "LTLHN:LS8:LST:REQ_RBV") {
-  field(DESC, "GVL_Shutters.fbBay4.bOpenRequest")
+  field(DESC, "LSS Shutter Open Request")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -50901,7 +51196,7 @@ record(bi, "LTLHN:LS8:LST:REQ_RBV") {
 }
 
 record(bo, "LTLHN:LS8:LST:REQ") {
-  field(DESC, "GVL_Shutters.fbBay4.bOpenRequest")
+  field(DESC, "LSS Shutter Open Request")
   field(DTYP, "asynInt32")
   field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_Shutters.fbBay4.bOpenRequest=")
   field(ZNAM, "FALSE")
@@ -50911,7 +51206,7 @@ record(bo, "LTLHN:LS8:LST:REQ") {
 }
 
 record(bi, "LTLHN:LS8:LST:OPN_RBV") {
-  field(DESC, "GVL_Shutters.fbBay4.bOpenStatus")
+  field(DESC, "LSS Shutter Open")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -50923,7 +51218,7 @@ record(bi, "LTLHN:LS8:LST:OPN_RBV") {
 }
 
 record(bi, "LTLHN:LS8:LST:CLS_RBV") {
-  field(DESC, "GVL_Shutters.fbBay4.bCloseStatus")
+  field(DESC, "LSS Shutter Closed")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -50935,7 +51230,7 @@ record(bi, "LTLHN:LS8:LST:CLS_RBV") {
 }
 
 record(bi, "LTLHN:LS8:LST:LSS_RBV") {
-  field(DESC, "GVL_Shutters.fbBay4.bLssStatus")
+  field(DESC, "LSS Permission Status")
   field(SCAN, "I/O Intr")
   field(PINI, "1")
   field(TSE, "-2")
@@ -50943,6 +51238,52 @@ record(bi, "LTLHN:LS8:LST:LSS_RBV") {
   field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_Shutters.fbBay4.bLssStatus?")
   field(ZNAM, "FALSE")
   field(ONAM, "TRUE")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Config:MaxFrameTime_RBV") {
+  field(DESC, "Maximum delay from frame to frame")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS_Retain.fMaximumFrameTime?")
+  field(PREC, "3")
+  field(EGU, "sec")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Config:MaxFrameTime") {
+  field(DESC, "Maximum delay from frame to frame")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS_Retain.fMaximumFrameTime=")
+  field(PREC, "3")
+  field(EGU, "sec")
+  info(autosaveFields_pass0, "PREC VAL")
+  info(archive, "VAL")
+}
+
+record(ai, "$(BTPS):Config:MinPixelChange_RBV") {
+  field(DESC, "Minimum px change to be considered valid")
+  field(SCAN, "I/O Intr")
+  field(PINI, "1")
+  field(TSE, "-2")
+  field(DTYP, "asynFloat64")
+  field(INP, "@asyn($(PORT),0,1)ADSPORT=851/POLL_RATE=1/GVL_BTPS_Retain.fMinPixelChange?")
+  field(PREC, "3")
+  field(EGU, "px")
+  info(autosaveFields_pass0, "PREC")
+  info(archive, "VAL")
+}
+
+record(ao, "$(BTPS):Config:MinPixelChange") {
+  field(DESC, "Minimum px change to be considered valid")
+  field(DTYP, "asynFloat64")
+  field(OUT, "@asyn($(PORT),0,1)ADSPORT=851/GVL_BTPS_Retain.fMinPixelChange=")
+  field(PREC, "3")
+  field(EGU, "px")
+  info(autosaveFields_pass0, "PREC VAL")
   info(archive, "VAL")
 }
 
