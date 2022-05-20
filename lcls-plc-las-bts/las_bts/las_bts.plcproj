@@ -68,10 +68,10 @@
     <Compile Include="POUs\BTPS\FB_DestinationDataStore.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\BTPS\FB_EpicsCentroidMonitor.TcPOU">
+    <Compile Include="POUs\BTPS\FB_EpicsMotorMonitor.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\BTPS\FB_EpicsMotorMonitor.TcPOU">
+    <Compile Include="POUs\BTPS\FB_EpicsStatsMonitor.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\BTPS\FB_RangeComparison.TcPOU">

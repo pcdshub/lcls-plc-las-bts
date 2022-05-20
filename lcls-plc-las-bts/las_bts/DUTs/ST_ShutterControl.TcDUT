@@ -4,13 +4,29 @@
     <Declaration><![CDATA[TYPE ST_ShutterControl :
 STRUCT
 
-    {attribute 'pytmc' := 'pv: REQ; io: io'}
+    {attribute 'pytmc' := '
+        pv: REQ
+        io: io
+        field: DESC LSS Shutter Open Request
+    '}
     bOpenRequest AT %Q* : BOOL;
-    {attribute 'pytmc' := 'pv: OPN; io: i'}
+    {attribute 'pytmc' := '
+        pv: OPN
+        io: i
+        field: DESC LSS Shutter Open
+    '}
     bOpenStatus AT %I* : BOOL;
-    {attribute 'pytmc' := 'pv: CLS; io: i'}
+    {attribute 'pytmc' := '
+        pv: CLS
+        io: i
+        field: DESC LSS Shutter Closed
+    '}
     bCloseStatus AT %I* : BOOL;
-    {attribute 'pytmc' := 'pv: LSS; io: i'}
+    {attribute 'pytmc' := '
+        pv: LSS
+        io: i
+        field: DESC LSS Permission Status
+    '}
     bLssStatus AT %I* : BOOL;
 
 END_STRUCT

@@ -5,6 +5,14 @@
 VAR_INPUT
 
     {attribute 'pytmc' := '
+        pv: LSSPermission
+        io: i
+        field: ZNAM FALSE
+        field: ONAM TRUE
+    '}
+    bLSSPermission : BOOL;
+
+    {attribute 'pytmc' := '
         pv: Acknowledge
         io: io
         field: ZNAM FALSE
@@ -111,6 +119,16 @@ bOverride R= ftCloseRequest.Q;
 (* Don't open immediately when in override mode.  Make the user request it. *)
 rtOverrideSet(CLK:=bOverride);
 bUserOpenRequest R= rtOverrideSet.Q AND NOT bBtpsPermission;
+
+(* LSS permission goes low -> stop override and reset user open
+
+NOTE: We do not have these connected yet, so we can't test this.
+TODO: connect bLssPermission
+TODO: Double-check logic
+
+    bOverride R= NOT bLssPermission;
+    bUserOpenRequest R= NOT bLssPermission;
+*)
 
 (* Lose permission on a latched error. *)
 bBtpsPermission R= bLatchedError;

@@ -1,19 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="FB_EpicsCentroidMonitor" Id="{b49e72a7-c7c2-451d-96d1-aade68e9ce98}" SpecialFunc="None">
+  <POU Name="FB_EpicsStatsMonitor" Id="{f6189eab-0a14-4059-9efd-caffaccf73fa}" SpecialFunc="None">
     <Declaration><![CDATA[(*
-    EPICS AreaDetector Stats Plugin Centroid Monitor
+    EPICS AreaDetector Stats Plugin Monitor
 
     Requires a "link" pragma to specify the full plugin prefix.
 
 *)
-FUNCTION_BLOCK FB_EpicsCentroidMonitor
+FUNCTION_BLOCK FB_EpicsStatsMonitor
 VAR_INPUT
     fMaximumFrameTime : LREAL := 0.2;
-    (* Minimum change to be considered updating correctly - buggy detectors may need this. *)
-    fMinimumValidChange : LREAL := 1E-6;
-    (* Minimum change in pixels to be considered a new value for X, Y *)
-    fNewFrameMinimumChange : LREAL := 1E-6;
+    (* Minimum change in pixels to be considered a new frame, using pixel sum (total) as a metric *)
+    fMinPixelSumChange : LREAL := 1E-6;
     bEnable : BOOL := TRUE;
 END_VAR
 VAR_OUTPUT
@@ -33,6 +31,12 @@ VAR_OUTPUT
     '}
     fCentroidY : LREAL;
     {attribute 'pytmc' := '
+        pv: Total
+        io: input
+        field: DESC Sum of all elements in the image
+    '}
+    fTotal : LREAL;
+    {attribute 'pytmc' := '
         pv: ArrayCount
         io: input
     '}
@@ -41,12 +45,17 @@ VAR_OUTPUT
     {attribute 'pytmc' := '
         pv: FrameTime
         io: input
-        field: DESC Time between frame updates
+        field: DESC Avg time between frame updates
         field: EGU sec
     '}
     fFrameTime : LREAL;
 END_VAR
 VAR
+    (* The previous frame times, used for averaging *)
+    fFrameTimes : ARRAY [1..nFrameArraySize] OF LREAL;
+    bFrameTimeValid : ARRAY [1..nFrameArraySize] OF BOOL;
+    nFrameIndex : UINT;
+
     {attribute 'pytmc' := '
         pv: CX_
         link: CentroidX_RBV
@@ -59,6 +68,12 @@ VAR
     '}
     fbCentroidY : FB_LREALFromEPICS;
 
+    {attribute 'pytmc' := '
+        pv: Total_
+        link: Total_RBV
+    '}
+    fbTotal : FB_LREALFromEPICS;
+
     fLastCentroidX : LREAL;
     fLastCentroidY : LREAL;
 
@@ -70,8 +85,16 @@ VAR
 
     // Last array count value
     nLastArrayCount : UDINT;
+    fLastTotal : LREAL;
+    fInternalMaximumFrameTime : LREAL;
+    nIdx : UINT;
+
     // Time of the last frame update
     tLastUpdate: TIME;
+    tSinceLastFrame : TIME;
+    tMaximumFrameTime : TIME;
+
+    tonLastGoodFrame : TON;
 
     bInit : BOOL;
     // Did we see a frame update yet? (FALSE at startup; TRUE after first frame.)
@@ -79,10 +102,16 @@ VAR
     // Do we have a new frame? Has the array count updated, and position change above fNewFrameMinimumChange?
     {attribute 'pytmc' := 'pv: HaveNewFrame; io: i'}
     bHaveNewFrame : BOOL;
-    // For this new frame, is it above the threshold fMinimumValidChange?
+    // For this new frame, is it above the threshold fNewFrameMinimumChange?
     {attribute 'pytmc' := 'pv: AboveThreshold; io: i'}
     bAboveThreshold : BOOL;
 
+    tCheckFrame : TON;
+
+END_VAR
+VAR CONSTANT
+    nFrameArraySize : UINT := 10;
+    fInvalidFrameTime : LREAL := 0.0;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF NOT bEnable THEN
@@ -91,17 +120,19 @@ END_VAR]]></Declaration>
 END_IF
 
 IF NOT bInit THEN
-    tLastUpdate := TIME();
-    fFrameTime := 1000.0;
-    bSawFrame := FALSE;
     bInit := TRUE;
+    fLastTotal := 0;
+    bSawFrame := FALSE;
+    tLastUpdate := TIME();
 END_IF
 
 fbCentroidX();
 fbCentroidY();
+fbTotal();
 fbArrayCounter();
 
 bValid := (
+    fbTotal.bValid AND
     fbCentroidX.bValid AND
     fbCentroidY.bValid AND
     fbArrayCounter.bValid
@@ -109,43 +140,30 @@ bValid := (
 
 fCentroidX := fbCentroidX.fValue;
 fCentroidY := fbCentroidY.fValue;
+fTotal := fbTotal.fValue;
 nArrayCount := LREAL_TO_UDINT(fbArrayCounter.fValue);
 
-(*
-    Only consider that we have a new frame if:
-    1. The array count has been updated
-    2. X and Y values have changed even minimally
-        a. With background noise, this should not be a problem.
-        b. With an invalid black/white/stale image, this will indicate
-           'no new frame' despite an increasing array count.
-*)
-bHaveNewFrame := (
-    nArrayCount <> nLastArrayCount AND
-    ABS(fLastCentroidX - fCentroidX) >= fNewFrameMinimumChange AND
-    ABS(fLastCentroidY - fCentroidY) >= fNewFrameMinimumChange AND
-    TRUE
-);
+tonLastGoodFrame.PT := T#60S;
+tonLastGoodFrame(IN:=TRUE);
 
-IF bHaveNewFrame THEN
-    bAboveThreshold := (
-        ABS(fLastCentroidX - fCentroidX) >= fMinimumValidChange AND
-        ABS(fLastCentroidY - fCentroidY) >= fMinimumValidChange
-    );
+IF ABS(fTotal - fLastTotal) >= fMinPixelSumChange AND fMinPixelSumChange > 0.0 THEN
 
-    IF bAboveThreshold THEN
-        fFrameTime := TIME_TO_LREAL(TIME() - tLastUpdate) * 0.001; // Milliseconds -> seconds
-        tLastUpdate := TIME();
+    fFrameTime := TIME_TO_LREAL(tonLastGoodFrame.ET) * 0.001; // ms to seconds
 
-        fLastCentroidX := fCentroidX;
-        fLastCentroidY := fCentroidY;
-    END_IF
-
-    nLastArrayCount := nArrayCount;
+    tonLastGoodFrame(IN:=FALSE);
+    tonLastGoodFrame(IN:=TRUE);
     bSawFrame := TRUE;
 
+    fLastTotal := fTotal;
+    fLastCentroidX := fCentroidX;
+    fLastCentroidY := fCentroidY;
+    nLastArrayCount := nArrayCount;
+
+ELSIF TIME_TO_LREAL(tonLastGoodFrame.ET) * 0.001 > fMaximumFrameTime THEN
+    fFrameTime := TIME_TO_LREAL(tonLastGoodFrame.ET) * 0.001; // ms to seconds
 END_IF
 
-bIsUpdating := bSawFrame AND (fFrameTime <= fMaximumFrameTime);]]></ST>
+bIsUpdating := bSawFrame AND (fFrameTime < fMaximumFrameTime);]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

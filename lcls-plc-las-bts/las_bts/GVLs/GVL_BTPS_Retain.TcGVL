@@ -12,18 +12,11 @@ VAR_GLOBAL PERSISTENT
     fMaximumFrameTime : LREAL := 5.0;
 
     {attribute 'pytmc' := '
-        pv: @(BTPS):Config:MinCentroidChange
-        field: DESC Minimum centroid change to be considered valid
+        pv: @(BTPS):Config:MinPixelChange
+        field: DESC Minimum px change to be considered valid
         field: EGU px
     '}
-    fMinCentroidChange : LREAL := 0.05;
-
-    {attribute 'pytmc' := '
-        pv: @(BTPS):Config:MinCentroidNewFrame
-        field: DESC Minimum centroid change for new frame
-        field: EGU px
-    '}
-    fMinCentroidNewFrame : LREAL := 0.05;
+    fMinPixelChange : LREAL := 0.05;
 
     {attribute 'pytmc' := '
         pv: @(BTPS):Config:SystemOverride
