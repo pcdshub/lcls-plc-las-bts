@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{A344EE5D-B75E-4BC9-C154-A21AB423052B}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{94093D4B-FBAC-EA00-B721-5C3444633ABE}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="Tc2_SerialCom">ComBuffer</Name>
@@ -8277,11 +8277,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_BOOL</Name>
@@ -8414,11 +8409,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8578,11 +8568,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>CalculateAndSetNumberOfAssertsForTest</Name>
@@ -8717,11 +8702,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8880,11 +8860,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9390,11 +9365,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10170,11 +10140,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_TIME</Name>
@@ -10553,11 +10518,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_INT</Name>
@@ -10649,11 +10609,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10781,11 +10736,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LWORD</Name>
@@ -10887,11 +10837,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -11206,11 +11151,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AreAllTestsFinished</Name>
@@ -11380,11 +11320,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -11569,11 +11504,6 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
-        <Local>
-          <Name>__Index__0</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LREAL</Name>
@@ -11671,11 +11601,6 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Local>
-        <Local>
-          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -29015,224 +28940,6 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
       </Properties>
     </DataType>
     <DataType>
-      <Name>FB_ShutterSafety</Name>
-      <BitSize>384</BitSize>
-      <SubItem>
-        <Name>bAcknowledge</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>32</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Acknowledge
-        io: io
-        field: ZNAM FALSE
-        field: ONAM TRUE
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bUserOpenRequest</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>40</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: UserOpen
-        io: io
-        field: ZNAM Close
-        field: ONAM Open
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bOverride</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>48</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Override
-        io: io
-        field: ZNAM Normal mode
-        field: ONAM Override mode
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>nSourceIndex</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>64</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbDestinations</Name>
-        <Type>FB_DestinationDataStore</Type>
-        <ArrayInfo ReferenceTo="true">
-          <LBound>1</LBound>
-          <Elements>7</Elements>
-        </ArrayInfo>
-        <Comment> VAR_IN_OUT -&gt; reference to fbDestinations </Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>96</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>InOut</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bSafeToOpen</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>128</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Safe
-        io: input
-        field: ZNAM Unsafe
-        field: ONAM Safe
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bLatchedError</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>136</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Error
-        io: input
-        field: ZNAM No error
-        field: ONAM Error
-        field: ZSV NO_ALARM
-        field: OSV MAJOR
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bOpenSignal</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>144</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: LSS:OpenRequest
-        io: input
-        field: ZNAM Request close
-        field: ONAM Request open
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>rtError</Name>
-        <Type Namespace="Tc2_Standard">R_TRIG</Type>
-        <Comment> Rising trigger indicator of a new error condition. </Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>160</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>rtOverrideSet</Name>
-        <Type Namespace="Tc2_Standard">R_TRIG</Type>
-        <Comment> Rising trigger indicator of user requesting override. </Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>224</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>ftCloseRequest</Name>
-        <Type Namespace="Tc2_Standard">F_TRIG</Type>
-        <Comment> Falling trigger for a 'close shutter' request. </Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>288</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>nDestIndex</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>352</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bBtpsPermission</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>368</BitOffs>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
-    <DataType>
       <Name Namespace="LCLS_Vacuum">ST_VVC</Name>
       <BitSize>40</BitSize>
       <SubItem>
@@ -35204,6 +34911,245 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
         <Hide GUID="{3FEAA938-D042-4B1E-8ADD-BB2F7BE872B0}"/>
       </Hides>
     </DataType>
+    <DataType>
+      <Name>FB_ShutterSafety</Name>
+      <BitSize>384</BitSize>
+      <SubItem>
+        <Name>bLSSPermission</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>32</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: LSSPermission
+        io: i
+        field: ZNAM FALSE
+        field: ONAM TRUE
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bAcknowledge</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>40</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Acknowledge
+        io: io
+        field: ZNAM FALSE
+        field: ONAM TRUE
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bUserOpenRequest</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>48</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: UserOpen
+        io: io
+        field: ZNAM Close
+        field: ONAM Open
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bOverride</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>56</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Override
+        io: io
+        field: ZNAM Normal mode
+        field: ONAM Override mode
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>nSourceIndex</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>64</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbDestinations</Name>
+        <Type>FB_DestinationDataStore</Type>
+        <ArrayInfo ReferenceTo="true">
+          <LBound>1</LBound>
+          <Elements>7</Elements>
+        </ArrayInfo>
+        <Comment> VAR_IN_OUT -&gt; reference to fbDestinations </Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>96</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>InOut</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bSafeToOpen</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>128</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Safe
+        io: input
+        field: ZNAM Unsafe
+        field: ONAM Safe
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bLatchedError</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>136</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Error
+        io: input
+        field: ZNAM No error
+        field: ONAM Error
+        field: ZSV NO_ALARM
+        field: OSV MAJOR
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bOpenSignal</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>144</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: LSS:OpenRequest
+        io: input
+        field: ZNAM Request close
+        field: ONAM Request open
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>rtError</Name>
+        <Type Namespace="Tc2_Standard">R_TRIG</Type>
+        <Comment> Rising trigger indicator of a new error condition. </Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>160</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>rtOverrideSet</Name>
+        <Type Namespace="Tc2_Standard">R_TRIG</Type>
+        <Comment> Rising trigger indicator of user requesting override. </Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>224</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>ftCloseRequest</Name>
+        <Type Namespace="Tc2_Standard">F_TRIG</Type>
+        <Comment> Falling trigger for a 'close shutter' request. </Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>288</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>nDestIndex</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>352</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bBtpsPermission</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>368</BitOffs>
+      </SubItem>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
   </DataTypes>
   <Modules>
     <Module GUID="{97BEB12C-531D-448A-BE72-706714BB6964}" TcSmClass="TComPlcObjDef">
@@ -35637,7 +35583,7 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>ComTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>42991616</ByteSize>
+          <ByteSize>43122688</ByteSize>
           <Symbol>
             <Name>GVL_COM.PTM_stComIn</Name>
             <Comment>SERIAL IO //EL6021_00_05</Comment>
@@ -35686,7 +35632,7 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>ComTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>42991616</ByteSize>
+          <ByteSize>43122688</ByteSize>
           <Symbol>
             <Name>GVL_COM.PTM_stComOut</Name>
             <BitSize>192</BitSize>
@@ -35734,7 +35680,7 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>ComTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>42991616</ByteSize>
+          <ByteSize>43122688</ByteSize>
           <Symbol>
             <Name>GVL_COM.PTM_SerialRXBuffer</Name>
             <Comment> Define COM Ports/Buffers incl. library Tc2_SerialCom
@@ -35839,7 +35785,7 @@ LXLHN_PTM_01</Comment>
           <AreaNo AreaType="InputDst" CreateSymbols="true">16</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>1</ContextId>
-          <ByteSize>42991616</ByteSize>
+          <ByteSize>43122688</ByteSize>
           <Symbol>
             <Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
             <Comment> AMS Net ID used for FB_EcatDiag, among others </Comment>
@@ -37485,7 +37431,7 @@ LXLHN_PTM_01</Comment>
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">17</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>1</ContextId>
-          <ByteSize>42991616</ByteSize>
+          <ByteSize>43122688</ByteSize>
           <Symbol>
             <Name>GVL_BTS_VAC.g_FFOut.q_xFastFaultOut</Name>
             <BitSize>8</BitSize>
@@ -38185,7 +38131,7 @@ LXLHN_PTM_01</Comment>
           <AreaNo AreaType="Internal" CreateSymbols="true">19</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>1</ContextId>
-          <ByteSize>42991616</ByteSize>
+          <ByteSize>43122688</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -47282,51 +47228,6 @@ LXLHN_PTM_01</Comment>
             <BitOffs>331033216</BitOffs>
           </Symbol>
           <Symbol>
-            <Name>GVL_BTPS.fbShutterSafety1</Name>
-            <BitSize>384</BitSize>
-            <BaseType>FB_ShutterSafety</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: @(BTPS):Shutter:01</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>331039232</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTPS.fbShutterSafety3</Name>
-            <BitSize>384</BitSize>
-            <BaseType>FB_ShutterSafety</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: @(BTPS):Shutter:03</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>331039616</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTPS.fbShutterSafety4</Name>
-            <BitSize>384</BitSize>
-            <BaseType>FB_ShutterSafety</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: @(BTPS):Shutter:04</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>331040000</BitOffs>
-          </Symbol>
-          <Symbol>
             <Name>GVL_BTPS.fbDestinations</Name>
             <BitSize>115136</BitSize>
             <BaseType>FB_DestinationDataStore</BaseType>
@@ -49546,12 +49447,82 @@ LXLHN_PTM_01</Comment>
             </Properties>
             <BitOffs>338388320</BitOffs>
           </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS_Retain.nMaxDroppedFrames</Name>
+            <BitSize>16</BitSize>
+            <BaseType>UINT</BaseType>
+            <Default>
+              <Value>3</Value>
+            </Default>
+            <Properties>
+              <Property>
+                <Name>TcPersistent</Name>
+              </Property>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>
+        pv: @(BTPS):Config:MaxDroppedFrames
+        field: DESC Buffer size for frame time array
+        field: EGU frames
+    </Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>338413648</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS.fbShutterSafety1</Name>
+            <BitSize>384</BitSize>
+            <BaseType>FB_ShutterSafety</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: @(BTPS):Shutter:01</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>343531904</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS.fbShutterSafety3</Name>
+            <BitSize>384</BitSize>
+            <BaseType>FB_ShutterSafety</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: @(BTPS):Shutter:03</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>343532288</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS.fbShutterSafety4</Name>
+            <BitSize>384</BitSize>
+            <BaseType>FB_ShutterSafety</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: @(BTPS):Shutter:04</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>343532672</BitOffs>
+          </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">20</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>1</ContextId>
-          <ByteSize>42991616</ByteSize>
+          <ByteSize>43122688</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -49620,7 +49591,7 @@ LXLHN_PTM_01</Comment>
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2022-05-20T09:05:40</Value>
+          <Value>2022-05-20T11:13:23</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
