@@ -2360,8 +2360,104 @@ FB_DestinationDataStore
 
 
  
-FB_EpicsCentroidMonitor
-^^^^^^^^^^^^^^^^^^^^^^^
+FB_EpicsMotorMonitor
+^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):Dmov_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '.DMOV', '']
+      - | io: output
+        | link: [None, '.DMOV', '']
+
+
+    * - $(PREFIX):Dmov_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):Dmov_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):Dmov_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '.DMOV', '']
+      - | io: output
+        | link: [None, '.DMOV', '']
+
+
+    * - $(PREFIX):Msta_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '.MSTA', '']
+      - | io: output
+        | link: [None, '.MSTA', '']
+
+
+    * - $(PREFIX):Msta_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):Msta_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):Msta_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '.MSTA', '']
+      - | io: output
+        | link: [None, '.MSTA', '']
+
+
+    * - $(PREFIX):RBV_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '.RBV', '']
+      - | io: output
+        | link: [None, '.RBV', '']
+
+
+    * - $(PREFIX):RBV_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '.RBV', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):RBV_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: [None, '.RBV', '*EPICSLink.SEVR']
+
+
+    * - $(PREFIX):RBV_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '.RBV', '']
+      - | io: output
+        | link: [None, '.RBV', '']
+
+
+ 
+FB_EpicsStatsMonitor
+^^^^^^^^^^^^^^^^^^^^
 
 .. list-table::
     :header-rows: 1
@@ -2481,7 +2577,7 @@ FB_EpicsCentroidMonitor
 
     * - $(PREFIX):FrameTime_RBV
       - ai
-      - Time between frame updates
+      - Avg time between frame updates
       - | field: EGU sec
         | io: input
 
@@ -2498,100 +2594,38 @@ FB_EpicsCentroidMonitor
       - | io: input
 
 
- 
-FB_EpicsMotorMonitor
-^^^^^^^^^^^^^^^^^^^^
-
-.. list-table::
-    :header-rows: 1
-    :align: center
-
-    * - Record
-      - Type
-      - Description
-      - Pragma
-    * - $(PREFIX):Dmov_:EPICSLink
+    * - $(PREFIX):Total_:EPICSLink
       - ao
-      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '.DMOV', '']
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'Total_RBV', '']
       - | io: output
-        | link: [None, '.DMOV', '']
+        | link: [None, 'Total_RBV', '']
 
 
-    * - $(PREFIX):Dmov_:EPICSLink:LinkSeverity
+    * - $(PREFIX):Total_:EPICSLink:LinkSeverity
       - longout
-      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '.DMOV', '*EPICSLink.SEVR']
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'Total_RBV', '*EPICSLink.SEVR']
       - | io: output
-        | link: [None, '.DMOV', '*EPICSLink.SEVR']
+        | link: [None, 'Total_RBV', '*EPICSLink.SEVR']
 
 
-    * - $(PREFIX):Dmov_:EPICSLink:LinkSeverity_RBV
+    * - $(PREFIX):Total_:EPICSLink:LinkSeverity_RBV
       - longin
-      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '.DMOV', '*EPICSLink.SEVR']
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, 'Total_RBV', '*EPICSLink.SEVR']
       - | io: output
-        | link: [None, '.DMOV', '*EPICSLink.SEVR']
+        | link: [None, 'Total_RBV', '*EPICSLink.SEVR']
 
 
-    * - $(PREFIX):Dmov_:EPICSLink_RBV
+    * - $(PREFIX):Total_:EPICSLink_RBV
       - ai
-      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '.DMOV', '']
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, 'Total_RBV', '']
       - | io: output
-        | link: [None, '.DMOV', '']
+        | link: [None, 'Total_RBV', '']
 
 
-    * - $(PREFIX):Msta_:EPICSLink
-      - ao
-      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '.MSTA', '']
-      - | io: output
-        | link: [None, '.MSTA', '']
-
-
-    * - $(PREFIX):Msta_:EPICSLink:LinkSeverity
-      - longout
-      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '.MSTA', '*EPICSLink.SEVR']
-      - | io: output
-        | link: [None, '.MSTA', '*EPICSLink.SEVR']
-
-
-    * - $(PREFIX):Msta_:EPICSLink:LinkSeverity_RBV
-      - longin
-      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '.MSTA', '*EPICSLink.SEVR']
-      - | io: output
-        | link: [None, '.MSTA', '*EPICSLink.SEVR']
-
-
-    * - $(PREFIX):Msta_:EPICSLink_RBV
+    * - $(PREFIX):Total_RBV
       - ai
-      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '.MSTA', '']
-      - | io: output
-        | link: [None, '.MSTA', '']
-
-
-    * - $(PREFIX):RBV_:EPICSLink
-      - ao
-      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '.RBV', '']
-      - | io: output
-        | link: [None, '.RBV', '']
-
-
-    * - $(PREFIX):RBV_:EPICSLink:LinkSeverity
-      - longout
-      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '.RBV', '*EPICSLink.SEVR']
-      - | io: output
-        | link: [None, '.RBV', '*EPICSLink.SEVR']
-
-
-    * - $(PREFIX):RBV_:EPICSLink:LinkSeverity_RBV
-      - longin
-      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: [None, '.RBV', '*EPICSLink.SEVR']
-      - | io: output
-        | link: [None, '.RBV', '*EPICSLink.SEVR']
-
-
-    * - $(PREFIX):RBV_:EPICSLink_RBV
-      - ai
-      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: [None, '.RBV', '']
-      - | io: output
-        | link: [None, '.RBV', '']
+      - Sum of all elements in the image
+      - | io: input
 
 
  
@@ -2727,6 +2761,14 @@ FB_ShutterSafety
       - $(SYMBOL).bOpenSignal
       - | field: ONAM Request open
         | field: ZNAM Request close
+        | io: input
+
+
+    * - $(PREFIX):LSSPermission_RBV
+      - bi
+      - $(SYMBOL).bLSSPermission
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
         | io: input
 
 
@@ -17524,31 +17566,31 @@ ST_ShutterControl
       - Pragma
     * - $(PREFIX):CLS_RBV
       - bi
-      - $(SYMBOL).bCloseStatus
+      - LSS Shutter Closed
       - | io: input
 
 
     * - $(PREFIX):LSS_RBV
       - bi
-      - $(SYMBOL).bLssStatus
+      - LSS Permission Status
       - | io: input
 
 
     * - $(PREFIX):OPN_RBV
       - bi
-      - $(SYMBOL).bOpenStatus
+      - LSS Shutter Open
       - | io: input
 
 
     * - $(PREFIX):REQ
       - bo
-      - $(SYMBOL).bOpenRequest
+      - LSS Shutter Open Request
       - | io: output
 
 
     * - $(PREFIX):REQ_RBV
       - bi
-      - $(SYMBOL).bOpenRequest
+      - LSS Shutter Open Request
       - | io: output
 
 
@@ -19028,7 +19070,7 @@ Database Records
 
     * - $(BTPS):Chk:FF1:FrameTime_RBV
       - ai
-      - Time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY1:CAM:02:Stats2:', None]
+      - Avg time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY1:CAM:02:Stats2:', None]
       - | field: EGU sec
         | io: input
         | link: ['@(SIM)LAS:LHN:BAY1:CAM:02:Stats2:', None]
@@ -19044,6 +19086,41 @@ Database Records
     * - $(BTPS):Chk:FF1:IsUpdating_RBV
       - bi
       - GVL_BTPS.fbBay1FarFieldCamStats.bIsUpdating; Linked to PV: ['@(SIM)LAS:LHN:BAY1:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY1:CAM:02:Stats2:', None]
+
+
+    * - $(BTPS):Chk:FF1:Total_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY1:CAM:02:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY1:CAM:02:Stats2:', 'Total_RBV', '']
+
+
+    * - $(BTPS):Chk:FF1:Total_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY1:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY1:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - $(BTPS):Chk:FF1:Total_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY1:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY1:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - $(BTPS):Chk:FF1:Total_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY1:CAM:02:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY1:CAM:02:Stats2:', 'Total_RBV', '']
+
+
+    * - $(BTPS):Chk:FF1:Total_RBV
+      - ai
+      - Sum of all elements in the image; Linked to PV: ['@(SIM)LAS:LHN:BAY1:CAM:02:Stats2:', None]
       - | io: input
         | link: ['@(SIM)LAS:LHN:BAY1:CAM:02:Stats2:', None]
 
@@ -19162,7 +19239,7 @@ Database Records
 
     * - $(BTPS):Chk:FF3:FrameTime_RBV
       - ai
-      - Time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+      - Avg time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
       - | field: EGU sec
         | io: input
         | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
@@ -19178,6 +19255,41 @@ Database Records
     * - $(BTPS):Chk:FF3:IsUpdating_RBV
       - bi
       - GVL_BTPS.fbBay3FarFieldCamStats.bIsUpdating; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+
+
+    * - $(BTPS):Chk:FF3:Total_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'Total_RBV', '']
+
+
+    * - $(BTPS):Chk:FF3:Total_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - $(BTPS):Chk:FF3:Total_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - $(BTPS):Chk:FF3:Total_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'Total_RBV', '']
+
+
+    * - $(BTPS):Chk:FF3:Total_RBV
+      - ai
+      - Sum of all elements in the image; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
       - | io: input
         | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
 
@@ -19296,7 +19408,7 @@ Database Records
 
     * - $(BTPS):Chk:FF4:FrameTime_RBV
       - ai
-      - Time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY4:CAM:02:Stats2:', None]
+      - Avg time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY4:CAM:02:Stats2:', None]
       - | field: EGU sec
         | io: input
         | link: ['@(SIM)LAS:LHN:BAY4:CAM:02:Stats2:', None]
@@ -19312,6 +19424,41 @@ Database Records
     * - $(BTPS):Chk:FF4:IsUpdating_RBV
       - bi
       - GVL_BTPS.fbBay4FarFieldCamStats.bIsUpdating; Linked to PV: ['@(SIM)LAS:LHN:BAY4:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY4:CAM:02:Stats2:', None]
+
+
+    * - $(BTPS):Chk:FF4:Total_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY4:CAM:02:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY4:CAM:02:Stats2:', 'Total_RBV', '']
+
+
+    * - $(BTPS):Chk:FF4:Total_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY4:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY4:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - $(BTPS):Chk:FF4:Total_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY4:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY4:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - $(BTPS):Chk:FF4:Total_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY4:CAM:02:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY4:CAM:02:Stats2:', 'Total_RBV', '']
+
+
+    * - $(BTPS):Chk:FF4:Total_RBV
+      - ai
+      - Sum of all elements in the image; Linked to PV: ['@(SIM)LAS:LHN:BAY4:CAM:02:Stats2:', None]
       - | io: input
         | link: ['@(SIM)LAS:LHN:BAY4:CAM:02:Stats2:', None]
 
@@ -19430,7 +19577,7 @@ Database Records
 
     * - $(BTPS):Chk:NF1:FrameTime_RBV
       - ai
-      - Time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY1:CAM:01:Stats2:', None]
+      - Avg time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY1:CAM:01:Stats2:', None]
       - | field: EGU sec
         | io: input
         | link: ['@(SIM)LAS:LHN:BAY1:CAM:01:Stats2:', None]
@@ -19446,6 +19593,41 @@ Database Records
     * - $(BTPS):Chk:NF1:IsUpdating_RBV
       - bi
       - GVL_BTPS.fbBay1NearFieldCamStats.bIsUpdating; Linked to PV: ['@(SIM)LAS:LHN:BAY1:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY1:CAM:01:Stats2:', None]
+
+
+    * - $(BTPS):Chk:NF1:Total_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY1:CAM:01:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY1:CAM:01:Stats2:', 'Total_RBV', '']
+
+
+    * - $(BTPS):Chk:NF1:Total_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY1:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY1:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - $(BTPS):Chk:NF1:Total_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY1:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY1:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - $(BTPS):Chk:NF1:Total_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY1:CAM:01:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY1:CAM:01:Stats2:', 'Total_RBV', '']
+
+
+    * - $(BTPS):Chk:NF1:Total_RBV
+      - ai
+      - Sum of all elements in the image; Linked to PV: ['@(SIM)LAS:LHN:BAY1:CAM:01:Stats2:', None]
       - | io: input
         | link: ['@(SIM)LAS:LHN:BAY1:CAM:01:Stats2:', None]
 
@@ -19564,7 +19746,7 @@ Database Records
 
     * - $(BTPS):Chk:NF3:FrameTime_RBV
       - ai
-      - Time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+      - Avg time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
       - | field: EGU sec
         | io: input
         | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
@@ -19580,6 +19762,41 @@ Database Records
     * - $(BTPS):Chk:NF3:IsUpdating_RBV
       - bi
       - GVL_BTPS.fbBay3NearFieldCamStats.bIsUpdating; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+
+
+    * - $(BTPS):Chk:NF3:Total_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'Total_RBV', '']
+
+
+    * - $(BTPS):Chk:NF3:Total_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - $(BTPS):Chk:NF3:Total_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - $(BTPS):Chk:NF3:Total_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'Total_RBV', '']
+
+
+    * - $(BTPS):Chk:NF3:Total_RBV
+      - ai
+      - Sum of all elements in the image; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
       - | io: input
         | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
 
@@ -19698,7 +19915,7 @@ Database Records
 
     * - $(BTPS):Chk:NF4:FrameTime_RBV
       - ai
-      - Time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY4:CAM:01:Stats2:', None]
+      - Avg time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY4:CAM:01:Stats2:', None]
       - | field: EGU sec
         | io: input
         | link: ['@(SIM)LAS:LHN:BAY4:CAM:01:Stats2:', None]
@@ -19718,6 +19935,41 @@ Database Records
         | link: ['@(SIM)LAS:LHN:BAY4:CAM:01:Stats2:', None]
 
 
+    * - $(BTPS):Chk:NF4:Total_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY4:CAM:01:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY4:CAM:01:Stats2:', 'Total_RBV', '']
+
+
+    * - $(BTPS):Chk:NF4:Total_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY4:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY4:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - $(BTPS):Chk:NF4:Total_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY4:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY4:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - $(BTPS):Chk:NF4:Total_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY4:CAM:01:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY4:CAM:01:Stats2:', 'Total_RBV', '']
+
+
+    * - $(BTPS):Chk:NF4:Total_RBV
+      - ai
+      - Sum of all elements in the image; Linked to PV: ['@(SIM)LAS:LHN:BAY4:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY4:CAM:01:Stats2:', None]
+
+
     * - $(BTPS):Config:MaxFrameTime
       - ao
       - Maximum delay from frame to frame
@@ -19732,30 +19984,16 @@ Database Records
         | io: output
 
 
-    * - $(BTPS):Config:MinCentroidChange
+    * - $(BTPS):Config:MinPixelChange
       - ao
-      - Minimum centroid change to be considered valid
+      - Minimum px change to be considered valid
       - | field: EGU px
         | io: output
 
 
-    * - $(BTPS):Config:MinCentroidChange_RBV
+    * - $(BTPS):Config:MinPixelChange_RBV
       - ai
-      - Minimum centroid change to be considered valid
-      - | field: EGU px
-        | io: output
-
-
-    * - $(BTPS):Config:MinCentroidNewFrame
-      - ao
-      - Minimum centroid change for new frame
-      - | field: EGU px
-        | io: output
-
-
-    * - $(BTPS):Config:MinCentroidNewFrame_RBV
-      - ai
-      - Minimum centroid change for new frame
+      - Minimum px change to be considered valid
       - | field: EGU px
         | io: output
 
@@ -36214,6 +36452,14 @@ Database Records
         | io: input
 
 
+    * - $(BTPS):Shutter:01:LSSPermission_RBV
+      - bi
+      - GVL_BTPS.fbShutterSafety1.bLSSPermission
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
     * - $(BTPS):Shutter:01:Override
       - bo
       - GVL_BTPS.fbShutterSafety1.bOverride
@@ -36288,6 +36534,14 @@ Database Records
         | io: input
 
 
+    * - $(BTPS):Shutter:03:LSSPermission_RBV
+      - bi
+      - GVL_BTPS.fbShutterSafety3.bLSSPermission
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
     * - $(BTPS):Shutter:03:Override
       - bo
       - GVL_BTPS.fbShutterSafety3.bOverride
@@ -36359,6 +36613,14 @@ Database Records
       - GVL_BTPS.fbShutterSafety4.bOpenSignal
       - | field: ONAM Request open
         | field: ZNAM Request close
+        | io: input
+
+
+    * - $(BTPS):Shutter:04:LSSPermission_RBV
+      - bi
+      - GVL_BTPS.fbShutterSafety4.bLSSPermission
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
         | io: input
 
 
@@ -43791,31 +44053,31 @@ Database Records
 
     * - LTLHN:LS1:LST:CLS_RBV
       - bi
-      - GVL_Shutters.fbBay1.bCloseStatus
+      - LSS Shutter Closed
       - | io: input
 
 
     * - LTLHN:LS1:LST:LSS_RBV
       - bi
-      - GVL_Shutters.fbBay1.bLssStatus
+      - LSS Permission Status
       - | io: input
 
 
     * - LTLHN:LS1:LST:OPN_RBV
       - bi
-      - GVL_Shutters.fbBay1.bOpenStatus
+      - LSS Shutter Open
       - | io: input
 
 
     * - LTLHN:LS1:LST:REQ
       - bo
-      - GVL_Shutters.fbBay1.bOpenRequest
+      - LSS Shutter Open Request
       - | io: output
 
 
     * - LTLHN:LS1:LST:REQ_RBV
       - bi
-      - GVL_Shutters.fbBay1.bOpenRequest
+      - LSS Shutter Open Request
       - | io: output
 
 
@@ -44390,31 +44652,31 @@ Database Records
 
     * - LTLHN:LS3:LST:CLS_RBV
       - bi
-      - GVL_Shutters.fbBay2.bCloseStatus
+      - LSS Shutter Closed
       - | io: input
 
 
     * - LTLHN:LS3:LST:LSS_RBV
       - bi
-      - GVL_Shutters.fbBay2.bLssStatus
+      - LSS Permission Status
       - | io: input
 
 
     * - LTLHN:LS3:LST:OPN_RBV
       - bi
-      - GVL_Shutters.fbBay2.bOpenStatus
+      - LSS Shutter Open
       - | io: input
 
 
     * - LTLHN:LS3:LST:REQ
       - bo
-      - GVL_Shutters.fbBay2.bOpenRequest
+      - LSS Shutter Open Request
       - | io: output
 
 
     * - LTLHN:LS3:LST:REQ_RBV
       - bi
-      - GVL_Shutters.fbBay2.bOpenRequest
+      - LSS Shutter Open Request
       - | io: output
 
 
@@ -44812,31 +45074,31 @@ Database Records
 
     * - LTLHN:LS5:LST:CLS_RBV
       - bi
-      - GVL_Shutters.fbBay3.bCloseStatus
+      - LSS Shutter Closed
       - | io: input
 
 
     * - LTLHN:LS5:LST:LSS_RBV
       - bi
-      - GVL_Shutters.fbBay3.bLssStatus
+      - LSS Permission Status
       - | io: input
 
 
     * - LTLHN:LS5:LST:OPN_RBV
       - bi
-      - GVL_Shutters.fbBay3.bOpenStatus
+      - LSS Shutter Open
       - | io: input
 
 
     * - LTLHN:LS5:LST:REQ
       - bo
-      - GVL_Shutters.fbBay3.bOpenRequest
+      - LSS Shutter Open Request
       - | io: output
 
 
     * - LTLHN:LS5:LST:REQ_RBV
       - bi
-      - GVL_Shutters.fbBay3.bOpenRequest
+      - LSS Shutter Open Request
       - | io: output
 
 
@@ -45803,31 +46065,31 @@ Database Records
 
     * - LTLHN:LS8:LST:CLS_RBV
       - bi
-      - GVL_Shutters.fbBay4.bCloseStatus
+      - LSS Shutter Closed
       - | io: input
 
 
     * - LTLHN:LS8:LST:LSS_RBV
       - bi
-      - GVL_Shutters.fbBay4.bLssStatus
+      - LSS Permission Status
       - | io: input
 
 
     * - LTLHN:LS8:LST:OPN_RBV
       - bi
-      - GVL_Shutters.fbBay4.bOpenStatus
+      - LSS Shutter Open
       - | io: input
 
 
     * - LTLHN:LS8:LST:REQ
       - bo
-      - GVL_Shutters.fbBay4.bOpenRequest
+      - LSS Shutter Open Request
       - | io: output
 
 
     * - LTLHN:LS8:LST:REQ_RBV
       - bi
-      - GVL_Shutters.fbBay4.bOpenRequest
+      - LSS Shutter Open Request
       - | io: output
 
 

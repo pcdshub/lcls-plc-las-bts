@@ -73,8 +73,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#diagnostics">DIAGNOSTICS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#f-isvalveready">F_IsValveReady</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fb-destinationdatastore">FB_DestinationDataStore</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fb-epicscentroidmonitor">FB_EpicsCentroidMonitor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fb-epicsmotormonitor">FB_EpicsMotorMonitor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fb-epicsstatsmonitor">FB_EpicsStatsMonitor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fb-rangecomparison">FB_RangeComparison</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fb-shuttersafety">FB_ShutterSafety</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fb-test-epicscentroidmonitor">FB_Test_EpicsCentroidMonitor</a></li>
@@ -171,13 +171,29 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">ST_ShutterControl</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
 
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: REQ; io: io&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">REQ</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">DESC</span> <span class="n">LSS</span> <span class="n">Shutter</span> <span class="n">Open</span> <span class="n">Request</span>
+    <span class="s1">&#39;}</span>
     <span class="n">bOpenRequest</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: OPN; io: i&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">OPN</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">DESC</span> <span class="n">LSS</span> <span class="n">Shutter</span> <span class="n">Open</span>
+    <span class="s1">&#39;}</span>
     <span class="n">bOpenStatus</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: CLS; io: i&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">CLS</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">DESC</span> <span class="n">LSS</span> <span class="n">Shutter</span> <span class="n">Closed</span>
+    <span class="s1">&#39;}</span>
     <span class="n">bCloseStatus</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LSS; io: i&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LSS</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">DESC</span> <span class="n">LSS</span> <span class="n">Permission</span> <span class="n">Status</span>
+    <span class="s1">&#39;}</span>
     <span class="n">bLssStatus</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
 
 <span class="n">END_STRUCT</span>
@@ -329,38 +345,38 @@
         <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">NF1</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY1</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay1NearFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsCentroidMonitor</span><span class="p">;</span>
+    <span class="n">fbBay1NearFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">NF3</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY3</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay3NearFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsCentroidMonitor</span><span class="p">;</span>
+    <span class="n">fbBay3NearFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">NF4</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY4</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay4NearFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsCentroidMonitor</span><span class="p">;</span>
+    <span class="n">fbBay4NearFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
 
     <span class="p">(</span><span class="o">*</span> <span class="n">Far</span><span class="o">-</span><span class="n">field</span> <span class="n">camera</span> <span class="n">stats</span> <span class="n">plugins</span><span class="p">,</span> <span class="n">per</span> <span class="n">bay</span> <span class="o">*</span><span class="p">)</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">FF1</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY1</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay1FarFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsCentroidMonitor</span><span class="p">;</span>
+    <span class="n">fbBay1FarFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">FF3</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY3</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay3FarFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsCentroidMonitor</span><span class="p">;</span>
+    <span class="n">fbBay3FarFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">FF4</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY4</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay4FarFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsCentroidMonitor</span><span class="p">;</span>
+    <span class="n">fbBay4FarFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: @(BTPS):Shutter:01&#39;</span><span class="p">}</span>
     <span class="n">fbShutterSafety1</span> <span class="p">:</span> <span class="n">FB_ShutterSafety</span><span class="p">;</span>
@@ -378,8 +394,8 @@
 <dl class="simple">
 <dt>Related:</dt><dd><ul class="simple">
 <li><p><a class="reference internal" href="#fb-destinationdatastore">FB_DestinationDataStore</a></p></li>
-<li><p><a class="reference internal" href="#fb-epicscentroidmonitor">FB_EpicsCentroidMonitor</a></p></li>
 <li><p><a class="reference internal" href="#fb-epicsmotormonitor">FB_EpicsMotorMonitor</a></p></li>
+<li><p><a class="reference internal" href="#fb-epicsstatsmonitor">FB_EpicsStatsMonitor</a></p></li>
 <li><p><a class="reference internal" href="#fb-shuttersafety">FB_ShutterSafety</a></p></li>
 <li><p><a class="reference internal" href="#gvl-btps-constants">GVL_BTPS_Constants</a></p></li>
 </ul>
@@ -422,18 +438,11 @@
     <span class="n">fMaximumFrameTime</span> <span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">5.0</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Config</span><span class="p">:</span><span class="n">MinCentroidChange</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">DESC</span> <span class="n">Minimum</span> <span class="n">centroid</span> <span class="n">change</span> <span class="n">to</span> <span class="n">be</span> <span class="n">considered</span> <span class="n">valid</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Config</span><span class="p">:</span><span class="n">MinPixelChange</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">DESC</span> <span class="n">Minimum</span> <span class="n">px</span> <span class="n">change</span> <span class="n">to</span> <span class="n">be</span> <span class="n">considered</span> <span class="n">valid</span>
         <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">px</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fMinCentroidChange</span> <span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">0.05</span><span class="p">;</span>
-
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Config</span><span class="p">:</span><span class="n">MinCentroidNewFrame</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">DESC</span> <span class="n">Minimum</span> <span class="n">centroid</span> <span class="n">change</span> <span class="k">for</span> <span class="n">new</span> <span class="n">frame</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">px</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">fMinCentroidNewFrame</span> <span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">0.05</span><span class="p">;</span>
+    <span class="n">fMinPixelChange</span> <span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">0.05</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Config</span><span class="p">:</span><span class="n">SystemOverride</span>
@@ -1078,8 +1087,8 @@ END_FUNCTION
 
     <span class="o">//</span> <span class="n">The</span> <span class="n">source</span> <span class="n">information</span>
     <span class="n">fbSourceValve</span> <span class="p">:</span> <span class="n">FB_VGC</span><span class="p">;</span>
-    <span class="n">fbNearField</span> <span class="p">:</span> <span class="n">FB_EpicsCentroidMonitor</span><span class="p">;</span>
-    <span class="n">fbFarField</span> <span class="p">:</span> <span class="n">FB_EpicsCentroidMonitor</span><span class="p">;</span>
+    <span class="n">fbNearField</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
+    <span class="n">fbFarField</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
     <span class="n">fbLinear</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
     <span class="n">fbRotary</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
     <span class="n">fbGoniometer</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
@@ -1149,8 +1158,8 @@ END_FUNCTION
 </div>
 <dl class="simple">
 <dt>Related:</dt><dd><ul class="simple">
-<li><p><a class="reference internal" href="#fb-epicscentroidmonitor">FB_EpicsCentroidMonitor</a></p></li>
 <li><p><a class="reference internal" href="#fb-epicsmotormonitor">FB_EpicsMotorMonitor</a></p></li>
+<li><p><a class="reference internal" href="#fb-epicsstatsmonitor">FB_EpicsStatsMonitor</a></p></li>
 <li><p><a class="reference internal" href="#f-isvalveready">F_IsValveReady</a></p></li>
 <li><p><a class="reference internal" href="#gvl-btps">GVL_BTPS</a></p></li>
 <li><p><a class="reference internal" href="#gvl-btps-constants">GVL_BTPS_Constants</a></p></li>
@@ -1159,157 +1168,6 @@ END_FUNCTION
 </ul>
 </dd>
 </dl>
-</section>
-<section id="fb-epicscentroidmonitor">
-<h2>FB_EpicsCentroidMonitor<a class="headerlink" href="#fb-epicscentroidmonitor" title="Permalink to this headline"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(*
-    EPICS AreaDetector Stats Plugin Centroid Monitor
-
-    Requires a &quot;link&quot; pragma to specify the full plugin prefix.
-
-*)
-FUNCTION_BLOCK FB_EpicsCentroidMonitor
-VAR_INPUT
-    fMaximumFrameTime : LREAL := 0.2;
-    (* Minimum change to be considered updating correctly - buggy detectors may need this. *)
-    fMinimumValidChange : LREAL := 1E-6;
-    (* Minimum change in pixels to be considered a new value for X, Y *)
-    fNewFrameMinimumChange : LREAL := 1E-6;
-    bEnable : BOOL := TRUE;
-END_VAR
-VAR_OUTPUT
-    {attribute &#39;pytmc&#39; := &#39;
-        pv: IsUpdating
-        io: input
-    &#39;}
-    bIsUpdating : BOOL;
-    {attribute &#39;pytmc&#39; := &#39;
-        pv: CentroidX
-        io: input
-    &#39;}
-    fCentroidX : LREAL;
-    {attribute &#39;pytmc&#39; := &#39;
-        pv: CentroidY
-        io: input
-    &#39;}
-    fCentroidY : LREAL;
-    {attribute &#39;pytmc&#39; := &#39;
-        pv: ArrayCount
-        io: input
-    &#39;}
-    nArrayCount : UDINT;
-    bValid : BOOL;
-    {attribute &#39;pytmc&#39; := &#39;
-        pv: FrameTime
-        io: input
-        field: DESC Time between frame updates
-        field: EGU sec
-    &#39;}
-    fFrameTime : LREAL;
-END_VAR
-VAR
-    {attribute &#39;pytmc&#39; := &#39;
-        pv: CX_
-        link: CentroidX_RBV
-    &#39;}
-    fbCentroidX : FB_LREALFromEPICS;
-
-    {attribute &#39;pytmc&#39; := &#39;
-        pv: CY_
-        link: CentroidY_RBV
-    &#39;}
-    fbCentroidY : FB_LREALFromEPICS;
-
-    fLastCentroidX : LREAL;
-    fLastCentroidY : LREAL;
-
-    {attribute &#39;pytmc&#39; := &#39;
-        pv: Cnt_
-        link: ArrayCounter_RBV
-    &#39;}
-    fbArrayCounter : FB_LREALFromEPICS;
-
-    // Last array count value
-    nLastArrayCount : UDINT;
-    // Time of the last frame update
-    tLastUpdate: TIME;
-
-    bInit : BOOL;
-    // Did we see a frame update yet? (FALSE at startup; TRUE after first frame.)
-    bSawFrame : BOOL;
-    // Do we have a new frame? Has the array count updated, and position change above fNewFrameMinimumChange?
-    {attribute &#39;pytmc&#39; := &#39;pv: HaveNewFrame; io: i&#39;}
-    bHaveNewFrame : BOOL;
-    // For this new frame, is it above the threshold fMinimumValidChange?
-    {attribute &#39;pytmc&#39; := &#39;pv: AboveThreshold; io: i&#39;}
-    bAboveThreshold : BOOL;
-
-END_VAR
-IF NOT bEnable THEN
-    bValid := FALSE;
-    RETURN;
-END_IF
-
-IF NOT bInit THEN
-    tLastUpdate := TIME();
-    fFrameTime := 1000.0;
-    bSawFrame := FALSE;
-    bInit := TRUE;
-END_IF
-
-fbCentroidX();
-fbCentroidY();
-fbArrayCounter();
-
-bValid := (
-    fbCentroidX.bValid AND
-    fbCentroidY.bValid AND
-    fbArrayCounter.bValid
-);
-
-fCentroidX := fbCentroidX.fValue;
-fCentroidY := fbCentroidY.fValue;
-nArrayCount := LREAL_TO_UDINT(fbArrayCounter.fValue);
-
-(*
-    Only consider that we have a new frame if:
-    1. The array count has been updated
-    2. X and Y values have changed even minimally
-        a. With background noise, this should not be a problem.
-        b. With an invalid black/white/stale image, this will indicate
-           &#39;no new frame&#39; despite an increasing array count.
-*)
-bHaveNewFrame := (
-    nArrayCount &lt;&gt; nLastArrayCount AND
-    ABS(fLastCentroidX - fCentroidX) &gt;= fNewFrameMinimumChange AND
-    ABS(fLastCentroidY - fCentroidY) &gt;= fNewFrameMinimumChange AND
-    TRUE
-);
-
-IF bHaveNewFrame THEN
-    bAboveThreshold := (
-        ABS(fLastCentroidX - fCentroidX) &gt;= fMinimumValidChange AND
-        ABS(fLastCentroidY - fCentroidY) &gt;= fMinimumValidChange
-    );
-
-    IF bAboveThreshold THEN
-        fFrameTime := TIME_TO_LREAL(TIME() - tLastUpdate) * 0.001; // Milliseconds -&gt; seconds
-        tLastUpdate := TIME();
-
-        fLastCentroidX := fCentroidX;
-        fLastCentroidY := fCentroidY;
-    END_IF
-
-    nLastArrayCount := nArrayCount;
-    bSawFrame := TRUE;
-
-END_IF
-
-bIsUpdating := bSawFrame AND (fFrameTime &lt;= fMaximumFrameTime);
-
-END_FUNCTION_BLOCK
-</pre></div>
-</div>
 </section>
 <section id="fb-epicsmotormonitor">
 <h2>FB_EpicsMotorMonitor<a class="headerlink" href="#fb-epicsmotormonitor" title="Permalink to this headline"></a></h2>
@@ -1397,6 +1255,175 @@ END_FUNCTION_BLOCK
 </dd>
 </dl>
 </section>
+<section id="fb-epicsstatsmonitor">
+<h2>FB_EpicsStatsMonitor<a class="headerlink" href="#fb-epicsstatsmonitor" title="Permalink to this headline"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(*
+    EPICS AreaDetector Stats Plugin Monitor
+
+    Requires a &quot;link&quot; pragma to specify the full plugin prefix.
+
+*)
+FUNCTION_BLOCK FB_EpicsStatsMonitor
+VAR_INPUT
+    fMaximumFrameTime : LREAL := 0.2;
+    (* Minimum change in pixels to be considered a new frame, using pixel sum (total) as a metric *)
+    fMinPixelSumChange : LREAL := 1E-6;
+    bEnable : BOOL := TRUE;
+END_VAR
+VAR_OUTPUT
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: IsUpdating
+        io: input
+    &#39;}
+    bIsUpdating : BOOL;
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: CentroidX
+        io: input
+    &#39;}
+    fCentroidX : LREAL;
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: CentroidY
+        io: input
+    &#39;}
+    fCentroidY : LREAL;
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: Total
+        io: input
+        field: DESC Sum of all elements in the image
+    &#39;}
+    fTotal : LREAL;
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: ArrayCount
+        io: input
+    &#39;}
+    nArrayCount : UDINT;
+    bValid : BOOL;
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: FrameTime
+        io: input
+        field: DESC Avg time between frame updates
+        field: EGU sec
+    &#39;}
+    fFrameTime : LREAL;
+END_VAR
+VAR
+    (* The previous frame times, used for averaging *)
+    fFrameTimes : ARRAY [1..nFrameArraySize] OF LREAL;
+    bFrameTimeValid : ARRAY [1..nFrameArraySize] OF BOOL;
+    nFrameIndex : UINT;
+
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: CX_
+        link: CentroidX_RBV
+    &#39;}
+    fbCentroidX : FB_LREALFromEPICS;
+
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: CY_
+        link: CentroidY_RBV
+    &#39;}
+    fbCentroidY : FB_LREALFromEPICS;
+
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: Total_
+        link: Total_RBV
+    &#39;}
+    fbTotal : FB_LREALFromEPICS;
+
+    fLastCentroidX : LREAL;
+    fLastCentroidY : LREAL;
+
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: Cnt_
+        link: ArrayCounter_RBV
+    &#39;}
+    fbArrayCounter : FB_LREALFromEPICS;
+
+    // Last array count value
+    nLastArrayCount : UDINT;
+    fLastTotal : LREAL;
+    fInternalMaximumFrameTime : LREAL;
+    nIdx : UINT;
+
+    // Time of the last frame update
+    tLastUpdate: TIME;
+    tSinceLastFrame : TIME;
+    tMaximumFrameTime : TIME;
+
+    tonLastGoodFrame : TON;
+
+    bInit : BOOL;
+    // Did we see a frame update yet? (FALSE at startup; TRUE after first frame.)
+    bSawFrame : BOOL;
+    // Do we have a new frame? Has the array count updated, and position change above fNewFrameMinimumChange?
+    {attribute &#39;pytmc&#39; := &#39;pv: HaveNewFrame; io: i&#39;}
+    bHaveNewFrame : BOOL;
+    // For this new frame, is it above the threshold fNewFrameMinimumChange?
+    {attribute &#39;pytmc&#39; := &#39;pv: AboveThreshold; io: i&#39;}
+    bAboveThreshold : BOOL;
+
+    tCheckFrame : TON;
+
+END_VAR
+VAR CONSTANT
+    nFrameArraySize : UINT := 10;
+    fInvalidFrameTime : LREAL := 0.0;
+END_VAR
+IF NOT bEnable THEN
+    bValid := FALSE;
+    RETURN;
+END_IF
+
+IF NOT bInit THEN
+    bInit := TRUE;
+    fLastTotal := 0;
+    bSawFrame := FALSE;
+    tLastUpdate := TIME();
+END_IF
+
+fbCentroidX();
+fbCentroidY();
+fbTotal();
+fbArrayCounter();
+
+bValid := (
+    fbTotal.bValid AND
+    fbCentroidX.bValid AND
+    fbCentroidY.bValid AND
+    fbArrayCounter.bValid
+);
+
+fCentroidX := fbCentroidX.fValue;
+fCentroidY := fbCentroidY.fValue;
+fTotal := fbTotal.fValue;
+nArrayCount := LREAL_TO_UDINT(fbArrayCounter.fValue);
+
+tonLastGoodFrame.PT := T#60S;
+tonLastGoodFrame(IN:=TRUE);
+
+IF ABS(fTotal - fLastTotal) &gt;= fMinPixelSumChange AND fMinPixelSumChange &gt; 0.0 THEN
+
+    fFrameTime := TIME_TO_LREAL(tonLastGoodFrame.ET) * 0.001; // ms to seconds
+
+    tonLastGoodFrame(IN:=FALSE);
+    tonLastGoodFrame(IN:=TRUE);
+    bSawFrame := TRUE;
+
+    fLastTotal := fTotal;
+    fLastCentroidX := fCentroidX;
+    fLastCentroidY := fCentroidY;
+    nLastArrayCount := nArrayCount;
+
+ELSIF TIME_TO_LREAL(tonLastGoodFrame.ET) * 0.001 &gt; fMaximumFrameTime THEN
+    fFrameTime := TIME_TO_LREAL(tonLastGoodFrame.ET) * 0.001; // ms to seconds
+END_IF
+
+bIsUpdating := bSawFrame AND (fFrameTime &lt; fMaximumFrameTime);
+
+END_FUNCTION_BLOCK
+</pre></div>
+</div>
+</section>
 <section id="fb-rangecomparison">
 <h2>FB_RangeComparison<a class="headerlink" href="#fb-rangecomparison" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FUNCTION_BLOCK FB_RangeComparison
@@ -1465,6 +1492,14 @@ END_FUNCTION_BLOCK
 <h2>FB_ShutterSafety<a class="headerlink" href="#fb-shuttersafety" title="Permalink to this headline"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_ShutterSafety</span>
 <span class="n">VAR_INPUT</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LSSPermission</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">FALSE</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">TRUE</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">bLSSPermission</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="n">pv</span><span class="p">:</span> <span class="n">Acknowledge</span>
@@ -1572,6 +1607,16 @@ END_FUNCTION_BLOCK
 <span class="n">rtOverrideSet</span><span class="p">(</span><span class="n">CLK</span><span class="o">:=</span><span class="n">bOverride</span><span class="p">);</span>
 <span class="n">bUserOpenRequest</span> <span class="n">R</span><span class="o">=</span> <span class="n">rtOverrideSet</span><span class="o">.</span><span class="n">Q</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="n">bBtpsPermission</span><span class="p">;</span>
 
+<span class="p">(</span><span class="o">*</span> <span class="n">LSS</span> <span class="n">permission</span> <span class="n">goes</span> <span class="n">low</span> <span class="o">-&gt;</span> <span class="n">stop</span> <span class="n">override</span> <span class="ow">and</span> <span class="n">reset</span> <span class="n">user</span> <span class="nb">open</span>
+
+<span class="n">NOTE</span><span class="p">:</span> <span class="n">We</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">have</span> <span class="n">these</span> <span class="n">connected</span> <span class="n">yet</span><span class="p">,</span> <span class="n">so</span> <span class="n">we</span> <span class="n">can</span><span class="s1">&#39;t test this.</span>
+<span class="n">TODO</span><span class="p">:</span> <span class="n">connect</span> <span class="n">bLssPermission</span>
+<span class="n">TODO</span><span class="p">:</span> <span class="n">Double</span><span class="o">-</span><span class="n">check</span> <span class="n">logic</span>
+
+    <span class="n">bOverride</span> <span class="n">R</span><span class="o">=</span> <span class="n">NOT</span> <span class="n">bLssPermission</span><span class="p">;</span>
+    <span class="n">bUserOpenRequest</span> <span class="n">R</span><span class="o">=</span> <span class="n">NOT</span> <span class="n">bLssPermission</span><span class="p">;</span>
+<span class="o">*</span><span class="p">)</span>
+
 <span class="p">(</span><span class="o">*</span> <span class="n">Lose</span> <span class="n">permission</span> <span class="n">on</span> <span class="n">a</span> <span class="n">latched</span> <span class="n">error</span><span class="o">.</span> <span class="o">*</span><span class="p">)</span>
 <span class="n">bBtpsPermission</span> <span class="n">R</span><span class="o">=</span> <span class="n">bLatchedError</span><span class="p">;</span>
 
@@ -1594,113 +1639,139 @@ END_FUNCTION_BLOCK
 </section>
 <section id="fb-test-epicscentroidmonitor">
 <h2>FB_Test_EpicsCentroidMonitor<a class="headerlink" href="#fb-test-epicscentroidmonitor" title="Permalink to this headline"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;call_after_init&#39;</span><span class="p">}</span>
-<span class="n">FUNCTION_BLOCK</span> <span class="n">FB_Test_EpicsCentroidMonitor</span> <span class="n">EXTENDS</span> <span class="n">TcUnit</span><span class="o">.</span><span class="n">FB_TestSuite</span>
-<span class="n">VAR_INPUT</span>
-<span class="n">END_VAR</span>
-<span class="n">VAR_OUTPUT</span>
-<span class="n">END_VAR</span>
-<span class="n">VAR</span>
-<span class="n">END_VAR</span>
-<span class="n">TestBasics</span><span class="p">();</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{attribute &#39;call_after_init&#39;}
+FUNCTION_BLOCK FB_Test_EpicsCentroidMonitor EXTENDS TcUnit.FB_TestSuite
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+END_VAR
+TestBasics();
 
-<span class="n">END_FUNCTION_BLOCK</span>
+END_FUNCTION_BLOCK
 
-<span class="n">METHOD</span> <span class="n">TestBasics</span>
-<span class="n">VAR_INPUT</span>
-<span class="n">END_VAR</span>
-<span class="n">VAR_INST</span>
-    <span class="n">fbMonitor</span> <span class="p">:</span> <span class="n">FB_EpicsCentroidMonitor</span><span class="p">;</span>
-    <span class="n">nCount</span> <span class="p">:</span> <span class="n">INT</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">TEST</span><span class="p">(</span><span class="s1">&#39;Basic&#39;</span><span class="p">);</span>
+METHOD TestBasics
+VAR_INPUT
+END_VAR
+VAR_INST
+    fbMonitor : FB_EpicsStatsMonitor;
+    nCount : INT := 0;
+END_VAR
+TEST(&#39;Updating_OK&#39;);
 
-<span class="n">nCount</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
+fbMonitor.nMaxDroppedFrames := 2;
+fbMonitor.fMaximumFrameTime := 10.0;
+fbMonitor.fMinPixelSumChange := 0.5;
 
-<span class="n">nCount</span> <span class="o">:=</span> <span class="n">nCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">WriteCentroidValue</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">:=</span><span class="n">fbMonitor</span><span class="p">,</span> <span class="n">fX</span><span class="o">:=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">fY</span><span class="o">:=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">nCount</span><span class="o">:=</span><span class="n">nCount</span><span class="p">,</span> <span class="n">nX_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nY_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nCount_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tLastUpdate</span><span class="o">:=</span><span class="n">T</span><span class="c1">#0S);</span>
-<span class="n">fbMonitor</span><span class="p">();</span>
+WriteCentroidValue(fbMonitor:=fbMonitor, tLastUpdate:=T#0S, fX:=0.0, fY:=0.0, fTotal:=0.0, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=0, nTotal_Severity:=0);
+fbMonitor();
 
-<span class="n">nCount</span> <span class="o">:=</span> <span class="n">nCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">WriteCentroidValue</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">:=</span><span class="n">fbMonitor</span><span class="p">,</span> <span class="n">fX</span><span class="o">:=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">fY</span><span class="o">:=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">nCount</span><span class="o">:=</span><span class="n">nCount</span><span class="p">,</span> <span class="n">nX_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nY_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nCount_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tLastUpdate</span><span class="o">:=</span><span class="n">T</span><span class="c1">#0S);</span>
-<span class="n">fbMonitor</span><span class="p">(</span><span class="n">fMinimumValidChange</span><span class="o">:=</span><span class="mf">0.0</span><span class="p">);</span>
+WriteCentroidValue(fbMonitor:=fbMonitor, tLastUpdate:=T#1S, fX:=0.1, fY:=0.1, fTotal:=1.0, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=0, nTotal_Severity:=0);
+fbMonitor();
 
-<span class="n">AssertTrue</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">.</span><span class="n">bIsUpdating</span><span class="p">,</span> <span class="n">Message</span><span class="o">:=</span><span class="s1">&#39;Centroid not reporting updating&#39;</span><span class="p">);</span>
+WriteCentroidValue(fbMonitor:=fbMonitor, tLastUpdate:=T#2S, fX:=0.1, fY:=0.1, fTotal:=2.0, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=0, nTotal_Severity:=0);
+fbMonitor();
 
-<span class="n">TEST_FINISHED</span><span class="p">();</span>
+AssertTrue(fbMonitor.bIsUpdating, Message:=&#39;Centroid not reporting updating&#39;);
+AssertEquals_LREAL(fbMonitor.fFrameTime, 1.5, 1E-6, Message:=&#39;Update time inaccurate&#39;);
+AssertEquals_LREAL(fbMonitor.fFrameTimes[1], 1.0, 1E-6, Message:=&#39;Update time inaccurate&#39;);
+AssertEquals_LREAL(fbMonitor.fFrameTimes[2], 2.0, 1E-6, Message:=&#39;Update time inaccurate&#39;);
 
-<span class="n">TEST</span><span class="p">(</span><span class="s1">&#39;Min change&#39;</span><span class="p">);</span>
+WriteCentroidValue(fbMonitor:=fbMonitor, tLastUpdate:=T#2S, fX:=0.1, fY:=0.1, fTotal:=3.0, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=0, nTotal_Severity:=0);
+fbMonitor();
 
-<span class="n">nCount</span> <span class="o">:=</span> <span class="n">nCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">WriteCentroidValue</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">:=</span><span class="n">fbMonitor</span><span class="p">,</span> <span class="n">fX</span><span class="o">:=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">fY</span><span class="o">:=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">nCount</span><span class="o">:=</span><span class="n">nCount</span><span class="p">,</span> <span class="n">nX_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nY_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nCount_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tLastUpdate</span><span class="o">:=</span><span class="n">T</span><span class="c1">#0S);</span>
-<span class="n">fbMonitor</span><span class="p">(</span><span class="n">fMinimumValidChange</span><span class="o">:=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="mf">0.2</span><span class="p">);</span>
+AssertEquals_LREAL(fbMonitor.fFrameTimes[1], 2.0, 1E-6, Message:=&#39;Update time inaccurate&#39;);
+AssertEquals_LREAL(fbMonitor.fFrameTimes[2], 2.0, 1E-6, Message:=&#39;Update time inaccurate&#39;);
 
-<span class="n">nCount</span> <span class="o">:=</span> <span class="n">nCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">WriteCentroidValue</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">:=</span><span class="n">fbMonitor</span><span class="p">,</span> <span class="n">fX</span><span class="o">:=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">fY</span><span class="o">:=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">nCount</span><span class="o">:=</span><span class="n">nCount</span><span class="p">,</span> <span class="n">nX_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nY_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nCount_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tLastUpdate</span><span class="o">:=</span><span class="n">T</span><span class="c1">#0.1S);</span>
-<span class="n">fbMonitor</span><span class="p">(</span><span class="n">fMinimumValidChange</span><span class="o">:=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="mf">0.2</span><span class="p">);</span>
-<span class="n">AssertFalse</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">.</span><span class="n">bIsUpdating</span><span class="p">,</span> <span class="n">Message</span><span class="o">:=</span><span class="s1">&#39;Centroid update below threshold and is not updating&#39;</span><span class="p">);</span>
+TEST_FINISHED();
 
-<span class="n">nCount</span> <span class="o">:=</span> <span class="n">nCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">WriteCentroidValue</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">:=</span><span class="n">fbMonitor</span><span class="p">,</span> <span class="n">fX</span><span class="o">:=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">fY</span><span class="o">:=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">nCount</span><span class="o">:=</span><span class="n">nCount</span><span class="p">,</span> <span class="n">nX_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nY_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nCount_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tLastUpdate</span><span class="o">:=</span><span class="n">T</span><span class="c1">#0.1S);</span>
-<span class="n">fbMonitor</span><span class="p">(</span><span class="n">fMinimumValidChange</span><span class="o">:=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="mf">0.2</span><span class="p">);</span>
-<span class="n">AssertTrue</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">.</span><span class="n">bIsUpdating</span><span class="p">,</span> <span class="n">Message</span><span class="o">:=</span><span class="s1">&#39;Centroid update above threshold and is updating&#39;</span><span class="p">);</span>
+(*
+TEST(&#39;Updating_Not_OK&#39;);
 
-<span class="n">TEST_FINISHED</span><span class="p">();</span>
+fbMonitor.Initialize();
 
-<span class="n">TEST</span><span class="p">(</span><span class="s1">&#39;Severity invalidation&#39;</span><span class="p">);</span>
+fbMonitor.nMaxDroppedFrames := 2;
+fbMonitor.fMaximumFrameTime := 10.0;
+fbMonitor.fMinPixelSumChange := 0.5;
 
-<span class="n">nCount</span> <span class="o">:=</span> <span class="n">nCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">WriteCentroidValue</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">:=</span><span class="n">fbMonitor</span><span class="p">,</span> <span class="n">fX</span><span class="o">:=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">fY</span><span class="o">:=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">nCount</span><span class="o">:=</span><span class="n">nCount</span><span class="p">,</span> <span class="n">nX_Severity</span><span class="o">:=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nY_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nCount_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tLastUpdate</span><span class="o">:=</span><span class="n">T</span><span class="c1">#0.2S);</span>
-<span class="n">fbMonitor</span><span class="p">(</span><span class="n">fMinimumValidChange</span><span class="o">:=</span><span class="mf">0.0</span><span class="p">);</span>
-<span class="n">AssertFalse</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">.</span><span class="n">bValid</span><span class="p">,</span> <span class="n">Message</span><span class="o">:=</span><span class="s1">&#39;Invalid data - x severity&#39;</span><span class="p">);</span>
+WriteCentroidValue(fbMonitor:=fbMonitor, tLastUpdate:=T#0S, fX:=0.0, fY:=0.0, fTotal:=0.0, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=0, nTotal_Severity:=0);
+fbMonitor();
 
-<span class="n">nCount</span> <span class="o">:=</span> <span class="n">nCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">WriteCentroidValue</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">:=</span><span class="n">fbMonitor</span><span class="p">,</span> <span class="n">fX</span><span class="o">:=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">fY</span><span class="o">:=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">nCount</span><span class="o">:=</span><span class="n">nCount</span><span class="p">,</span> <span class="n">nX_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nY_Severity</span><span class="o">:=</span><span class="mi">2</span><span class="p">,</span> <span class="n">nCount_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tLastUpdate</span><span class="o">:=</span><span class="n">T</span><span class="c1">#0.2S);</span>
-<span class="n">fbMonitor</span><span class="p">(</span><span class="n">fMinimumValidChange</span><span class="o">:=</span><span class="mf">0.0</span><span class="p">);</span>
-<span class="n">AssertFalse</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">.</span><span class="n">bValid</span><span class="p">,</span> <span class="n">Message</span><span class="o">:=</span><span class="s1">&#39;Invalid data - y severity&#39;</span><span class="p">);</span>
+WriteCentroidValue(fbMonitor:=fbMonitor, tLastUpdate:=T#11S, fX:=0.1, fY:=0.1, fTotal:=0.0, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=0, nTotal_Severity:=0);
+fbMonitor();
 
-<span class="n">nCount</span> <span class="o">:=</span> <span class="n">nCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">WriteCentroidValue</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">:=</span><span class="n">fbMonitor</span><span class="p">,</span> <span class="n">fX</span><span class="o">:=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">fY</span><span class="o">:=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">nCount</span><span class="o">:=</span><span class="n">nCount</span><span class="p">,</span> <span class="n">nX_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nY_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nCount_Severity</span><span class="o">:=</span><span class="mi">2</span><span class="p">,</span> <span class="n">tLastUpdate</span><span class="o">:=</span><span class="n">T</span><span class="c1">#0.2S);</span>
-<span class="n">fbMonitor</span><span class="p">(</span><span class="n">fMinimumValidChange</span><span class="o">:=</span><span class="mf">0.0</span><span class="p">);</span>
-<span class="n">AssertFalse</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">.</span><span class="n">bValid</span><span class="p">,</span> <span class="n">Message</span><span class="o">:=</span><span class="s1">&#39;Invalid data - count severity&#39;</span><span class="p">);</span>
+WriteCentroidValue(fbMonitor:=fbMonitor, tLastUpdate:=T#11S, fX:=0.1, fY:=0.1, fTotal:=0.0, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=0, nTotal_Severity:=0);
+fbMonitor();
 
-<span class="n">nCount</span> <span class="o">:=</span> <span class="n">nCount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">WriteCentroidValue</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">:=</span><span class="n">fbMonitor</span><span class="p">,</span> <span class="n">fX</span><span class="o">:=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">fY</span><span class="o">:=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">nCount</span><span class="o">:=</span><span class="n">nCount</span><span class="p">,</span> <span class="n">nX_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nY_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nCount_Severity</span><span class="o">:=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tLastUpdate</span><span class="o">:=</span><span class="n">T</span><span class="c1">#0.1S);</span>
-<span class="n">fbMonitor</span><span class="p">(</span><span class="n">fMinimumValidChange</span><span class="o">:=</span><span class="mf">0.0</span><span class="p">);</span>
-<span class="n">AssertTrue</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">.</span><span class="n">bValid</span><span class="p">,</span> <span class="n">Message</span><span class="o">:=</span><span class="s1">&#39;Data valid&#39;</span><span class="p">);</span>
-<span class="n">AssertTrue</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">.</span><span class="n">bIsUpdating</span><span class="p">,</span> <span class="n">Message</span><span class="o">:=</span><span class="s1">&#39;Data valid and updating&#39;</span><span class="p">);</span>
+AssertFalse(fbMonitor.bIsUpdating, Message:=&#39;Centroid not updating&#39;);
+AssertEquals_LREAL(fbMonitor.fFrameTime, fbMonitor.fMaximumFrameTime, 1E-6, Message:=&#39;Update time inaccurate&#39;);
+AssertEquals_LREAL(fbMonitor.fFrameTimes[1], fbMonitor.fMaximumFrameTime, 1E-6, Message:=&#39;Update time inaccurate&#39;);
+AssertEquals_LREAL(fbMonitor.fFrameTimes[2], fbMonitor.fMaximumFrameTime, 1E-6, Message:=&#39;Update time inaccurate&#39;);
 
-<span class="n">TEST_FINISHED</span><span class="p">();</span>
-<span class="n">END_METHOD</span>
+TEST_FINISHED();
 
-<span class="n">METHOD</span> <span class="n">WriteCentroidValue</span>
-<span class="n">VAR_IN_OUT</span>
-    <span class="n">fbMonitor</span> <span class="p">:</span> <span class="n">FB_EpicsCentroidMonitor</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">VAR_INPUT</span>
-    <span class="n">fX</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
-    <span class="n">fY</span> <span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
-    <span class="n">nCount</span> <span class="p">:</span> <span class="n">INT</span><span class="p">;</span>
-    <span class="n">nX_Severity</span> <span class="p">:</span> <span class="n">INT</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">nY_Severity</span> <span class="p">:</span> <span class="n">INT</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">nCount_Severity</span> <span class="p">:</span> <span class="n">INT</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">tLastUpdate</span> <span class="p">:</span> <span class="n">TIME</span><span class="p">;</span>
-<span class="n">END_VAR</span>
-<span class="n">WRITE_PROTECTED_INT</span><span class="p">(</span><span class="n">ADR</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">.</span><span class="n">fbCentroidX</span><span class="o">.</span><span class="n">iPLCInternalSeverity</span><span class="p">),</span> <span class="n">nX_Severity</span><span class="p">);</span>
-<span class="n">WRITE_PROTECTED_INT</span><span class="p">(</span><span class="n">ADR</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">.</span><span class="n">fbCentroidY</span><span class="o">.</span><span class="n">iPLCInternalSeverity</span><span class="p">),</span> <span class="n">nY_Severity</span><span class="p">);</span>
-<span class="n">WRITE_PROTECTED_INT</span><span class="p">(</span><span class="n">ADR</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">.</span><span class="n">fbArrayCounter</span><span class="o">.</span><span class="n">iPLCInternalSeverity</span><span class="p">),</span> <span class="n">nCount_Severity</span><span class="p">);</span>
+// TODO: how to make that timer trigger?
+*)
 
-<span class="n">WRITE_PROTECTED_LREAL</span><span class="p">(</span><span class="n">ADR</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">.</span><span class="n">fbCentroidX</span><span class="o">.</span><span class="n">fPLCInternalValue</span><span class="p">),</span> <span class="n">fX</span><span class="p">);</span>
-<span class="n">WRITE_PROTECTED_LREAL</span><span class="p">(</span><span class="n">ADR</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">.</span><span class="n">fbCentroidY</span><span class="o">.</span><span class="n">fPLCInternalValue</span><span class="p">),</span> <span class="n">fY</span><span class="p">);</span>
-<span class="n">WRITE_PROTECTED_LREAL</span><span class="p">(</span><span class="n">ADR</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">.</span><span class="n">fbArrayCounter</span><span class="o">.</span><span class="n">fPLCInternalValue</span><span class="p">),</span> <span class="n">INT_TO_LREAL</span><span class="p">(</span><span class="n">nCount</span><span class="p">));</span>
+TEST(&#39;Severity invalidation&#39;);
 
-<span class="n">WRITE_PROTECTED_TIME</span><span class="p">(</span><span class="n">ADR</span><span class="p">(</span><span class="n">fbMonitor</span><span class="o">.</span><span class="n">tLastUpdate</span><span class="p">),</span> <span class="n">TIME</span><span class="p">()</span> <span class="o">-</span> <span class="n">tLastUpdate</span><span class="p">);</span>
-<span class="n">END_METHOD</span>
+WriteCentroidValue(fbMonitor:=fbMonitor, fX:=0.0, fY:=0.0, fTotal:=0.0, nCount:=nCount, nX_Severity:=2, nY_Severity:=0, nCount_Severity:=0, nTotal_Severity:=0, tLastUpdate:=T#0.2S);
+fbMonitor(fMinPixelSumChange:=0.0);
+AssertFalse(fbMonitor.bValid, Message:=&#39;Invalid data - x severity&#39;);
+
+WriteCentroidValue(fbMonitor:=fbMonitor, fX:=0.1, fY:=0.1, fTotal:=0.0, nCount:=nCount, nX_Severity:=0, nY_Severity:=2, nCount_Severity:=0, nTotal_Severity:=0, tLastUpdate:=T#0.2S);
+fbMonitor(fMinPixelSumChange:=0.0);
+AssertFalse(fbMonitor.bValid, Message:=&#39;Invalid data - y severity&#39;);
+
+WriteCentroidValue(fbMonitor:=fbMonitor, fX:=0.2, fY:=0.2, fTotal:=0.0, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=2, nTotal_Severity:=0, tLastUpdate:=T#0.2S);
+fbMonitor(fMinPixelSumChange:=0.0);
+AssertFalse(fbMonitor.bValid, Message:=&#39;Invalid data - count severity&#39;);
+
+WriteCentroidValue(fbMonitor:=fbMonitor, fX:=0.2, fY:=0.2, fTotal:=0.0, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=0, nTotal_Severity:=2, tLastUpdate:=T#0.2S);
+fbMonitor(fMinPixelSumChange:=0.0);
+AssertFalse(fbMonitor.bValid, Message:=&#39;Invalid data - total severity&#39;);
+
+WriteCentroidValue(fbMonitor:=fbMonitor, fX:=0.0, fY:=0.0, fTotal:=fbMonitor.fMinPixelSumChange, nCount:=nCount, nX_Severity:=0, nY_Severity:=0, nCount_Severity:=0, nTotal_Severity:=0, tLastUpdate:=T#0.1S);
+fbMonitor(fMinPixelSumChange:=0.0);
+AssertTrue(fbMonitor.bValid, Message:=&#39;Data valid&#39;);
+AssertTrue(fbMonitor.bIsUpdating, Message:=&#39;Data valid and updating&#39;);
+
+TEST_FINISHED();
+END_METHOD
+
+METHOD WriteCentroidValue
+VAR_IN_OUT
+    fbMonitor : FB_EpicsStatsMonitor;
+END_VAR
+VAR_INPUT
+    fX : LREAL;
+    fY : LREAL;
+    fTotal : LREAL;
+    nCount : INT;
+    nX_Severity : INT := 0;
+    nY_Severity : INT := 0;
+    nCount_Severity : INT := 0;
+    nTotal_Severity : INT := 0;
+    tLastUpdate : TIME;
+END_VAR
+WRITE_PROTECTED_INT(ADR(fbMonitor.fbCentroidX.iPLCInternalSeverity), nX_Severity);
+WRITE_PROTECTED_INT(ADR(fbMonitor.fbCentroidY.iPLCInternalSeverity), nY_Severity);
+WRITE_PROTECTED_INT(ADR(fbMonitor.fbArrayCounter.iPLCInternalSeverity), nCount_Severity);
+WRITE_PROTECTED_INT(ADR(fbMonitor.fbTotal.iPLCInternalSeverity), nTotal_Severity);
+
+WRITE_PROTECTED_LREAL(ADR(fbMonitor.fbCentroidX.fPLCInternalValue), fX);
+WRITE_PROTECTED_LREAL(ADR(fbMonitor.fbCentroidY.fPLCInternalValue), fY);
+WRITE_PROTECTED_LREAL(ADR(fbMonitor.fbTotal.fPLCInternalValue), fTotal);
+WRITE_PROTECTED_LREAL(ADR(fbMonitor.fbArrayCounter.fPLCInternalValue), INT_TO_LREAL(nCount));
+
+WRITE_PROTECTED_TIME(ADR(fbMonitor.tLastUpdate), TIME() - tLastUpdate);
+END_METHOD
 </pre></div>
 </div>
 <dl class="simple">
 <dt>Related:</dt><dd><ul class="simple">
-<li><p><a class="reference internal" href="#fb-epicscentroidmonitor">FB_EpicsCentroidMonitor</a></p></li>
+<li><p><a class="reference internal" href="#fb-epicsstatsmonitor">FB_EpicsStatsMonitor</a></p></li>
 </ul>
 </dd>
 </dl>
@@ -2191,13 +2262,13 @@ END_FUNCTION_BLOCK
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay3Goniometer</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay4Goniometer</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay1NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinimumValidChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinCentroidChange</span><span class="p">,</span> <span class="n">fNewFrameMinimumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinCentroidNewFrame</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay3NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinimumValidChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinCentroidChange</span><span class="p">,</span> <span class="n">fNewFrameMinimumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinCentroidNewFrame</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay4NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinimumValidChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinCentroidChange</span><span class="p">,</span> <span class="n">fNewFrameMinimumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinCentroidNewFrame</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay1NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay3NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay4NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
 
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay1FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinimumValidChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinCentroidChange</span><span class="p">,</span> <span class="n">fNewFrameMinimumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinCentroidNewFrame</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay3FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinimumValidChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinCentroidChange</span><span class="p">,</span> <span class="n">fNewFrameMinimumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinCentroidNewFrame</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay4FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinimumValidChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinCentroidChange</span><span class="p">,</span> <span class="n">fNewFrameMinimumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinCentroidNewFrame</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay1FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay3FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay4FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
 
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;TMO IP1&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD8_VGC</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">2</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;TMO IP2&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD10_VGC</span><span class="p">);</span>
