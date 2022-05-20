@@ -12,7 +12,6 @@ VAR_INPUT
     fMaximumFrameTime : LREAL := 0.2;
     (* Minimum change in pixels to be considered a new frame, using pixel sum (total) as a metric *)
     fMinPixelSumChange : LREAL := 1E-6;
-    nMaxDroppedFrames : UINT := nFrameArraySize;
     bEnable : BOOL := TRUE;
 END_VAR
 VAR_OUTPUT
@@ -119,7 +118,10 @@ END_VAR]]></Declaration>
 END_IF
 
 IF NOT bInit THEN
-    Initialize();
+    bInit := TRUE;
+    fLastTotal := 0;
+    bSawFrame := FALSE;
+    tLastUpdate := TIME();
 END_IF
 
 fbCentroidX();
@@ -139,111 +141,25 @@ fCentroidY := fbCentroidY.fValue;
 fTotal := fbTotal.fValue;
 nArrayCount := LREAL_TO_UDINT(fbArrayCounter.fValue);
 
+(* Time since we saw a good frame *)
+tSinceLastFrame := TIME() - tLastUpdate;
+
 IF ABS(fTotal - fLastTotal) >= fMinPixelSumChange AND fMinPixelSumChange > 0.0 THEN
 
-    fFrameTime := UpdateAverageFrameTime(
-        TIME_TO_LREAL(TIME() - tLastUpdate) * 0.001 // Milliseconds -> seconds
-    );
     tLastUpdate := TIME();
+    fFrameTime := TIME_TO_LREAL(tSinceLastFrame) * 0.001; // ms to seconds
+    bSawFrame := TRUE;
 
     fLastTotal := fTotal;
     fLastCentroidX := fCentroidX;
     fLastCentroidY := fCentroidY;
     nLastArrayCount := nArrayCount;
 
+ELSIF TIME_TO_LREAL(tSinceLastFrame) * 0.001 >= fMaximumFrameTime THEN
+    fFrameTime := TIME_TO_LREAL(tSinceLastFrame) * 0.001; // ms to seconds
 END_IF
 
-CheckDroppedFrame();
-
-bIsUpdating := fFrameTime < fMaximumFrameTime;]]></ST>
+bIsUpdating := bSawFrame AND (fFrameTime < fMaximumFrameTime);]]></ST>
     </Implementation>
-    <Method Name="CheckDroppedFrame" Id="{52894328-46dc-4131-a736-2a9aa20b568e}">
-      <Declaration><![CDATA[METHOD CheckDroppedFrame : LREAL
-VAR_INPUT
-END_VAR
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[tMaximumFrameTime := LREAL_TO_TIME(fMaximumFrameTime * 1000.0);
-
-tCheckFrame(IN:=TRUE, PT:=tMaximumFrameTime);
-IF tCheckFrame.Q THEN
-    tCheckFrame(IN:=FALSE);
-
-    tSinceLastFrame := TIME() - tLastUpdate;
-    IF tSinceLastFrame >= tMaximumFrameTime THEN
-        fFrameTime := UpdateAverageFrameTime(fMaximumFrameTime);
-    END_IF
-END_IF]]></ST>
-      </Implementation>
-    </Method>
-    <Method Name="Initialize" Id="{75414550-e392-4693-bb9f-39d91b075534}">
-      <Declaration><![CDATA[METHOD Initialize : BOOL
-VAR_INPUT
-END_VAR
-
-VAR
-    nIdx : UINT;
-END_VAR
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[tLastUpdate := TIME();
-fFrameTime := MAX(fMaximumFrameTime, 1000.0);
-tLastUpdate := TIME() - T#1H;
-bInit := TRUE;
-fInternalMaximumFrameTime := fMaximumFrameTime;
-fFrameTime := fMaximumFrameTime;
-nFrameIndex := 0;
-fLastTotal := 0;
-
-FOR nIdx := 1 To nFrameArraySize DO
-    fFrameTimes[nIdx] := fInvalidFrameTime;
-    bFrameTimeValid[nIdx] := FALSE;
-END_FOR]]></ST>
-      </Implementation>
-    </Method>
-    <Method Name="UpdateAverageFrameTime" Id="{affafbe4-b495-446a-86d4-1b30dca77eca}">
-      <Declaration><![CDATA[METHOD UpdateAverageFrameTime : LREAL
-VAR_INPUT
-    fNewFrameTime : LREAL;
-END_VAR
-VAR
-    nIdx : UINT;
-    nValidFrames : UINT;
-    fFrameAvg : LREAL;
-    nLastArrayIndex : UINT;
-END_VAR
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[nLastArrayIndex := MAX(MIN(nMaxDroppedFrames, nFrameArraySize), 1);
-
-nFrameIndex := nFrameIndex + 1;
-
-IF nFrameIndex <= 0 OR nFrameIndex > nLastArrayIndex THEN
-    nFrameIndex := 1;
-END_IF
-
-IF nFrameIndex >= 1 AND nFrameIndex <= nFrameArraySize THEN
-    fFrameTimes[nFrameIndex] := fNewFrameTime;
-    bFrameTimeValid[nFrameIndex] := TRUE;
-END_IF
-
-fFrameAvg := 0.0;
-nValidFrames := 0;
-
-FOR nIdx := 1 TO nLastArrayIndex DO
-    IF bFrameTimeValid[nIdx] THEN
-        fFrameAvg := fFrameAvg + fFrameTimes[nIdx];
-        nValidFrames := nValidFrames + 1;
-    END_IF
-END_FOR
-
-IF nValidFrames > 0 THEN
-    UpdateAverageFrameTime := fFrameAvg / nLastArrayIndex;
-ELSE
-    UpdateAverageFrameTime := fMaximumFrameTime;
-END_IF
-]]></ST>
-      </Implementation>
-    </Method>
   </POU>
 </TcPlcObject>

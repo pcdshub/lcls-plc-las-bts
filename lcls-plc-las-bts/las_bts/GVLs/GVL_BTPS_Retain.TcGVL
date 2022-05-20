@@ -19,13 +19,6 @@ VAR_GLOBAL PERSISTENT
     fMinPixelChange : LREAL := 0.05;
 
     {attribute 'pytmc' := '
-        pv: @(BTPS):Config:MaxDroppedFrames
-        field: DESC Buffer size for frame time array
-        field: EGU frames
-    '}
-    nMaxDroppedFrames : UINT := 3;
-
-    {attribute 'pytmc' := '
         pv: @(BTPS):Config:SystemOverride
         field: DESC Full system-level override
     '}
