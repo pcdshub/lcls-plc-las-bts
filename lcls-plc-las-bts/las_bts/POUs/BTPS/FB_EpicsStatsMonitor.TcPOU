@@ -94,6 +94,8 @@ VAR
     tSinceLastFrame : TIME;
     tMaximumFrameTime : TIME;
 
+    tonLastGoodFrame : TON;
+
     bInit : BOOL;
     // Did we see a frame update yet? (FALSE at startup; TRUE after first frame.)
     bSawFrame : BOOL;
@@ -141,13 +143,15 @@ fCentroidY := fbCentroidY.fValue;
 fTotal := fbTotal.fValue;
 nArrayCount := LREAL_TO_UDINT(fbArrayCounter.fValue);
 
-(* Time since we saw a good frame *)
-tSinceLastFrame := TIME() - tLastUpdate;
+tonLastGoodFrame.PT := T#60S;
+tonLastGoodFrame(IN:=TRUE);
 
 IF ABS(fTotal - fLastTotal) >= fMinPixelSumChange AND fMinPixelSumChange > 0.0 THEN
 
-    tLastUpdate := TIME();
-    fFrameTime := TIME_TO_LREAL(tSinceLastFrame) * 0.001; // ms to seconds
+    fFrameTime := TIME_TO_LREAL(tonLastGoodFrame.ET) * 0.001; // ms to seconds
+
+    tonLastGoodFrame(IN:=FALSE);
+    tonLastGoodFrame(IN:=TRUE);
     bSawFrame := TRUE;
 
     fLastTotal := fTotal;
@@ -155,8 +159,8 @@ IF ABS(fTotal - fLastTotal) >= fMinPixelSumChange AND fMinPixelSumChange > 0.0 T
     fLastCentroidY := fCentroidY;
     nLastArrayCount := nArrayCount;
 
-ELSIF TIME_TO_LREAL(tSinceLastFrame) * 0.001 >= fMaximumFrameTime THEN
-    fFrameTime := TIME_TO_LREAL(tSinceLastFrame) * 0.001; // ms to seconds
+ELSIF TIME_TO_LREAL(tonLastGoodFrame.ET) * 0.001 > fMaximumFrameTime THEN
+    fFrameTime := TIME_TO_LREAL(tonLastGoodFrame.ET) * 0.001; // ms to seconds
 END_IF
 
 bIsUpdating := bSawFrame AND (fFrameTime < fMaximumFrameTime);]]></ST>
