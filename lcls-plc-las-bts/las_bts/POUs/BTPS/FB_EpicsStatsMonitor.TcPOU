@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
-  <POU Name="FB_EpicsStatsMonitor" Id="{b49e72a7-c7c2-451d-96d1-aade68e9ce98}" SpecialFunc="None">
+  <POU Name="FB_EpicsStatsMonitor" Id="{f6189eab-0a14-4059-9efd-caffaccf73fa}" SpecialFunc="None">
     <Declaration><![CDATA[(*
     EPICS AreaDetector Stats Plugin Monitor
 
@@ -10,10 +10,9 @@
 FUNCTION_BLOCK FB_EpicsStatsMonitor
 VAR_INPUT
     fMaximumFrameTime : LREAL := 0.2;
-    (* Minimum change to be considered updating correctly - buggy detectors may need this. *)
-    fMinimumValidChange : LREAL := 1E-6;
-    (* Minimum change in pixels to be considered a new value for X, Y *)
-    fNewFrameMinimumChange : LREAL := 1E-6;
+    (* Minimum change in pixels to be considered a new frame, using pixel sum (total) as a metric *)
+    fMinPixelSumChange : LREAL := 1E-6;
+    nMaxDroppedFrames : UINT := nFrameArraySize;
     bEnable : BOOL := TRUE;
 END_VAR
 VAR_OUTPUT
@@ -47,12 +46,17 @@ VAR_OUTPUT
     {attribute 'pytmc' := '
         pv: FrameTime
         io: input
-        field: DESC Time between frame updates
+        field: DESC Avg time between frame updates
         field: EGU sec
     '}
     fFrameTime : LREAL;
 END_VAR
 VAR
+    (* The previous frame times, used for averaging *)
+    fFrameTimes : ARRAY [1..nFrameArraySize] OF LREAL;
+    bFrameTimeValid : ARRAY [1..nFrameArraySize] OF BOOL;
+    nFrameIndex : UINT;
+
     {attribute 'pytmc' := '
         pv: CX_
         link: CentroidX_RBV
@@ -83,9 +87,13 @@ VAR
     // Last array count value
     nLastArrayCount : UDINT;
     fLastTotal : LREAL;
+    fInternalMaximumFrameTime : LREAL;
+    nIdx : UINT;
 
     // Time of the last frame update
     tLastUpdate: TIME;
+    tSinceLastFrame : TIME;
+    tMaximumFrameTime : TIME;
 
     bInit : BOOL;
     // Did we see a frame update yet? (FALSE at startup; TRUE after first frame.)
@@ -93,10 +101,16 @@ VAR
     // Do we have a new frame? Has the array count updated, and position change above fNewFrameMinimumChange?
     {attribute 'pytmc' := 'pv: HaveNewFrame; io: i'}
     bHaveNewFrame : BOOL;
-    // For this new frame, is it above the threshold fMinimumValidChange?
+    // For this new frame, is it above the threshold fNewFrameMinimumChange?
     {attribute 'pytmc' := 'pv: AboveThreshold; io: i'}
     bAboveThreshold : BOOL;
 
+    tCheckFrame : TON;
+
+END_VAR
+VAR CONSTANT
+    nFrameArraySize : UINT := 10;
+    fInvalidFrameTime : LREAL := 0.0;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF NOT bEnable THEN
@@ -105,10 +119,7 @@ END_VAR]]></Declaration>
 END_IF
 
 IF NOT bInit THEN
-    tLastUpdate := TIME();
-    fFrameTime := 1000.0;
-    bSawFrame := FALSE;
-    bInit := TRUE;
+    Initialize();
 END_IF
 
 fbCentroidX();
@@ -128,20 +139,111 @@ fCentroidY := fbCentroidY.fValue;
 fTotal := fbTotal.fValue;
 nArrayCount := LREAL_TO_UDINT(fbArrayCounter.fValue);
 
-IF ABS(fTotal - fLastTotal) >= fMinimumValidChange THEN
+IF ABS(fTotal - fLastTotal) >= fMinPixelSumChange AND fMinPixelSumChange > 0.0 THEN
 
-    fFrameTime := TIME_TO_LREAL(TIME() - tLastUpdate) * 0.001; // Milliseconds -> seconds
+    fFrameTime := UpdateAverageFrameTime(
+        TIME_TO_LREAL(TIME() - tLastUpdate) * 0.001 // Milliseconds -> seconds
+    );
     tLastUpdate := TIME();
 
     fLastTotal := fTotal;
     fLastCentroidX := fCentroidX;
     fLastCentroidY := fCentroidY;
     nLastArrayCount := nArrayCount;
-    bSawFrame := TRUE;
 
 END_IF
 
-bIsUpdating := bSawFrame AND (fFrameTime <= fMaximumFrameTime);]]></ST>
+CheckDroppedFrame();
+
+bIsUpdating := fFrameTime < fMaximumFrameTime;]]></ST>
     </Implementation>
+    <Method Name="CheckDroppedFrame" Id="{52894328-46dc-4131-a736-2a9aa20b568e}">
+      <Declaration><![CDATA[METHOD CheckDroppedFrame : LREAL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[tMaximumFrameTime := LREAL_TO_TIME(fMaximumFrameTime * 1000.0);
+
+tCheckFrame(IN:=TRUE, PT:=tMaximumFrameTime);
+IF tCheckFrame.Q THEN
+    tCheckFrame(IN:=FALSE);
+
+    tSinceLastFrame := TIME() - tLastUpdate;
+    IF tSinceLastFrame >= tMaximumFrameTime THEN
+        fFrameTime := UpdateAverageFrameTime(fMaximumFrameTime);
+    END_IF
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Initialize" Id="{75414550-e392-4693-bb9f-39d91b075534}">
+      <Declaration><![CDATA[METHOD Initialize : BOOL
+VAR_INPUT
+END_VAR
+
+VAR
+    nIdx : UINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[tLastUpdate := TIME();
+fFrameTime := MAX(fMaximumFrameTime, 1000.0);
+tLastUpdate := TIME() - T#1H;
+bInit := TRUE;
+fInternalMaximumFrameTime := fMaximumFrameTime;
+fFrameTime := fMaximumFrameTime;
+nFrameIndex := 0;
+fLastTotal := 0;
+
+FOR nIdx := 1 To nFrameArraySize DO
+    fFrameTimes[nIdx] := fInvalidFrameTime;
+    bFrameTimeValid[nIdx] := FALSE;
+END_FOR]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="UpdateAverageFrameTime" Id="{affafbe4-b495-446a-86d4-1b30dca77eca}">
+      <Declaration><![CDATA[METHOD UpdateAverageFrameTime : LREAL
+VAR_INPUT
+    fNewFrameTime : LREAL;
+END_VAR
+VAR
+    nIdx : UINT;
+    nValidFrames : UINT;
+    fFrameAvg : LREAL;
+    nLastArrayIndex : UINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[nLastArrayIndex := MAX(MIN(nMaxDroppedFrames, nFrameArraySize), 1);
+
+nFrameIndex := nFrameIndex + 1;
+
+IF nFrameIndex <= 0 OR nFrameIndex > nLastArrayIndex THEN
+    nFrameIndex := 1;
+END_IF
+
+IF nFrameIndex >= 1 AND nFrameIndex <= nFrameArraySize THEN
+    fFrameTimes[nFrameIndex] := fNewFrameTime;
+    bFrameTimeValid[nFrameIndex] := TRUE;
+END_IF
+
+fFrameAvg := 0.0;
+nValidFrames := 0;
+
+FOR nIdx := 1 TO nLastArrayIndex DO
+    IF bFrameTimeValid[nIdx] THEN
+        fFrameAvg := fFrameAvg + fFrameTimes[nIdx];
+        nValidFrames := nValidFrames + 1;
+    END_IF
+END_FOR
+
+IF nValidFrames > 0 THEN
+    UpdateAverageFrameTime := fFrameAvg / nLastArrayIndex;
+ELSE
+    UpdateAverageFrameTime := fMaximumFrameTime;
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
   </POU>
 </TcPlcObject>
