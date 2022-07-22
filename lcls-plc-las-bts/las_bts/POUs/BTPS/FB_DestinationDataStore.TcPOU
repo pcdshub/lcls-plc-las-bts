@@ -35,49 +35,35 @@ END_VAR
 
 Update(
     stDataSource:=stSourceDataStore[1],
-    sName:='Source 1',
+    sName:='LS1 (From laser bay 1)',
     fbSourceValve:=GVL_BTS_VAC.fb_LS1_VGC,
-    fbLinear:=GVL_BTPS.fbBay1Linear,
-    fbRotary:=GVL_BTPS.fbBay1Rotary,
-    fbGoniometer:=GVL_BTPS.fbBay1Goniometer,
-    fbNearField:=GVL_BTPS.fbBay1NearFieldCamStats,
-    fbFarField:=GVL_BTPS.fbBay1FarFieldCamStats
-);
-
-// Future use:
-(*
-Update(
-    stDataSource:=stSourceDataStore2,
-    sName:='Source 2',
-    fbSourceValve:=GVL_BTPS.fbBay2SourceValve,
-    fbLinear:=GVL_BTPS.fbBay2Linear,
-    fbRotary:=GVL_BTPS.fbBay2Rotary,
-    fbGoniometer:=GVL_BTPS.fbBay2Goniometer,
-    fbNearField:=GVL_BTPS.fbBay2NearFieldCamStats,
-    fbFarField:=GVL_BTPS.fbBay2FarFieldCamStats
-);
-*)
-
-Update(
-    stDataSource:=stSourceDataStore[3],
-    sName:='Source 3',
-    fbSourceValve:=GVL_BTS_VAC.fb_LS5_VGC,  (* This is not a typo; LS5 is for source 3 *)
-    fbLinear:=GVL_BTPS.fbBay3Linear,
-    fbRotary:=GVL_BTPS.fbBay3Rotary,
-    fbGoniometer:=GVL_BTPS.fbBay3Goniometer,
-    fbNearField:=GVL_BTPS.fbBay3NearFieldCamStats,
-    fbFarField:=GVL_BTPS.fbBay3FarFieldCamStats
+    fbLinear:=GVL_BTPS.fbLS1Linear,
+    fbRotary:=GVL_BTPS.fbLS1Rotary,
+    fbGoniometer:=GVL_BTPS.fbLS1Goniometer,
+    fbNearField:=GVL_BTPS.fbLS1NearFieldCamStats,
+    fbFarField:=GVL_BTPS.fbLS1FarFieldCamStats
 );
 
 Update(
-    stDataSource:=stSourceDataStore[4],
-    sName:='Source 4',
-    fbSourceValve:=GVL_BTS_VAC.fb_LS8_VGC,  (* Similarly not a typo *)
-    fbLinear:=GVL_BTPS.fbBay4Linear,
-    fbRotary:=GVL_BTPS.fbBay4Rotary,
-    fbGoniometer:=GVL_BTPS.fbBay4Goniometer,
-    fbNearField:=GVL_BTPS.fbBay4NearFieldCamStats,
-    fbFarField:=GVL_BTPS.fbBay4FarFieldCamStats
+    stDataSource:=stSourceDataStore[5],
+    sName:='LS5 (From laser bay 3)',
+    fbSourceValve:=GVL_BTS_VAC.fb_LS5_VGC,
+    fbLinear:=GVL_BTPS.fbLS5Linear,
+    fbRotary:=GVL_BTPS.fbLS5Rotary,
+    fbGoniometer:=GVL_BTPS.fbLS5Goniometer,
+    fbNearField:=GVL_BTPS.fbLS5NearFieldCamStats,
+    fbFarField:=GVL_BTPS.fbLS5FarFieldCamStats
+);
+
+Update(
+    stDataSource:=stSourceDataStore[8],
+    sName:='LS8 (From laser bay 4)',
+    fbSourceValve:=GVL_BTS_VAC.fb_LS8_VGC,
+    fbLinear:=GVL_BTPS.fbLS8Linear,
+    fbRotary:=GVL_BTPS.fbLS8Rotary,
+    fbGoniometer:=GVL_BTPS.fbLS8Goniometer,
+    fbNearField:=GVL_BTPS.fbLS8NearFieldCamStats,
+    fbFarField:=GVL_BTPS.fbLS8FarFieldCamStats
 );
 ]]></ST>
     </Implementation>
