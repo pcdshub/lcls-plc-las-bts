@@ -10,7 +10,7 @@ VAR_GLOBAL
         LAS:BTS:MCS2:01:m7 (ioc-las-bts-mcs1, las_bts_mcs2_01_m7)
     *)
     {attribute 'pytmc' := '
-        pv: LTLHN:BTPS:Chk:LS1Lin
+        pv: LTLHN:BTPS:Chk:LS1:Lin
         link: @(SIM)LAS:BTS:MCS2:01:m1
     '}
     fbLS1Linear : FB_EpicsMotorMonitor;
