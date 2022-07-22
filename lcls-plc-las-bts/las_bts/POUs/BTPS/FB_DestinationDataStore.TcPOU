@@ -3,13 +3,15 @@
   <POU Name="FB_DestinationDataStore" Id="{95d6d775-de95-4d9d-948d-6053fdff2857}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_DestinationDataStore
 VAR_INPUT
-    {attribute 'pytmc' := 'pv: Name; io: input'}
+    {attribute 'pytmc' := '
+        pv: BTPS:Name; io: input
+    '}
     sName : STRING;
     (*  Do not pragma valve; Use original PVs to access valve state *)
     fbDestinationValve : REFERENCE TO FB_VGC;
 
     {attribute 'pytmc' := '
-        pv: ExitValveReady
+        pv: BTPS:ExitValveReady
         io: input
         field: ZNAM Not ready
         field: ONAM Ready
@@ -18,7 +20,10 @@ VAR_INPUT
     '}
     bExitValveReady : BOOL;
 
-    {attribute 'pytmc' := 'pv: SRC'}
+    {attribute 'pytmc' := '
+        pv: LS
+        expand: %s:BTPS
+    '}
     stSourceDataStore : ARRAY [1..GVL_BTPS_Constants.nSources] OF ST_SourceDataStore;
 END_VAR
 VAR_OUTPUT
