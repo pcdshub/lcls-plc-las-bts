@@ -149,7 +149,9 @@ stDataSource.bChecksOK := (
     stDataSource.bEntryValveReady AND
     bExitValveReady AND
     TRUE
-);]]></ST>
+);
+
+stDataSource.bInPosition := stDataSource.fbLinear.bInputValid AND stDataSource.fbLinear.bInRange;]]></ST>
       </Implementation>
     </Method>
   </POU>

@@ -39,6 +39,15 @@ STRUCT
     '}
     bChecksOK : BOOL;
 
+    {attribute 'pytmc' := '
+        pv: InPosition
+        io: input
+        field: ZNAM FALSE
+        field: ONAM TRUE
+        field: DESC Linear stage in position for dest
+    '}
+    bInPosition : BOOL;
+
     {attribute 'pytmc' := 'pv: Linear'}
     fbLinear : FB_RangeComparison;
     {attribute 'pytmc' := 'pv: Rotary'}

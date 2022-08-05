@@ -73,6 +73,17 @@ VAR_OUTPUT
     '}
     bOpenSignal : BOOL;
 
+    {attribute 'pytmc' := '
+        pv: CurrentLD
+        io: input
+        field: DESC Current laser destination (LD)
+        field: LOW 0
+        field: HIGH 15
+        field: LSV MAJOR
+        field: HSV MAJOR
+    '}
+    nCurrentLD : INT;
+
     (* Rising trigger indicator of a new error condition. *)
     rtError : R_TRIG;
     (* Rising trigger indicator of user requesting override. *)
@@ -89,8 +100,12 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[bLatchedError R= bAcknowledge;
+      <ST><![CDATA[
+bLatchedError R= bAcknowledge;
 bAcknowledge := FALSE;
+
+// Figure out the current destination below
+nCurrentLD := 0;
 
 IF nSourceIndex >= 1 AND nSourceIndex <= GVL_BTPS_Constants.nSources THEN
     bBtpsPermission := FALSE;
@@ -99,6 +114,15 @@ IF nSourceIndex >= 1 AND nSourceIndex <= GVL_BTPS_Constants.nSources THEN
             bBtpsPermission OR
             fbDestinations[nDestIndex].stSourceDataStore[nSourceIndex].bChecksOK
         );
+        IF fbDestinations[nDestIndex].stSourceDataStore[nSourceIndex].bInPosition THEN
+            IF nCurrentLD = 0 THEN
+                (* First "valid" destination we've seen *)
+                nCurrentLD := UINT_TO_INT(nDestIndex);
+            ELSE
+                (* Multiple "valid" destinations? This means none are valid *)
+                nCurrentLD := -1;
+            END_IF
+        END_IF
     END_FOR
 ELSE
     bBtpsPermission := FALSE;
