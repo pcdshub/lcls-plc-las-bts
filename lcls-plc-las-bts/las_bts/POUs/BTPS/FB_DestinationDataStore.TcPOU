@@ -21,6 +21,17 @@ VAR_INPUT
     bExitValveReady : BOOL;
 
     {attribute 'pytmc' := '
+        pv: BTPS:YieldsControl
+        io: output
+        field: DESC Destination yields control to others
+        field: ZNAM Using beam
+        field: ONAM Yielding
+        field: ZSV MINOR
+        field: OSV NO_ALARM
+    '}
+    bYieldsControl : BOOL;
+
+    {attribute 'pytmc' := '
         pv: LS
         expand: %s:BTPS
     '}
@@ -33,10 +44,16 @@ END_VAR
 VAR
     nIndex : UINT;
     stSource: REFERENCE TO ST_SourceDataStore;
+    bInit : BOOL := FALSE;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[bExitValveReady := F_IsValveReady(fbDestinationValve);
+      <ST><![CDATA[IF NOT bInit THEN
+    bYieldsControl := TRUE;
+    bInit := TRUE;
+END_IF
+
+bExitValveReady := F_IsValveReady(fbDestinationValve);
 
 Update(
     stDataSource:=stSourceDataStore[1],
