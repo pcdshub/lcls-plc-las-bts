@@ -5,24 +5,38 @@
 VAR_GLOBAL PERSISTENT
 
     {attribute 'pytmc' := '
-        pv: @(BTPS):Config:MaxFrameTime
+        pv: LTLHN:BTPS:Config:MaxFrameTime
         field: DESC Maximum delay from frame to frame
         field: EGU sec
+        io: io
     '}
     fMaximumFrameTime : LREAL := 5.0;
 
     {attribute 'pytmc' := '
-        pv: @(BTPS):Config:MinPixelChange
+        pv: LTLHN:BTPS:Config:MinPixelChange
         field: DESC Minimum px change to be considered valid
         field: EGU px
+        io: io
     '}
     fMinPixelChange : LREAL := 0.05;
 
     {attribute 'pytmc' := '
-        pv: @(BTPS):Config:SystemOverride
+        pv: LTLHN:BTPS:Config:SystemOverride
         field: DESC Full system-level override
+        io: io
     '}
     bSystemOverride : BOOL;
+
+    {attribute 'pytmc' := '
+        pv: LTLHN:BTPS:Config:Maintenance
+        io: io
+        field: DESC System undergoing maintenance
+        field: ZNAM Normal operation
+        field: ONAM Maintenance
+        field: ZSV NO_ALARM
+        field: OSV MAJOR
+    '}
+    bMaintenanceMode : BOOL;
 
 END_VAR]]></Declaration>
   </GVL>

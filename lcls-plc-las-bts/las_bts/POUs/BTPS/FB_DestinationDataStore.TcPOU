@@ -3,13 +3,15 @@
   <POU Name="FB_DestinationDataStore" Id="{95d6d775-de95-4d9d-948d-6053fdff2857}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_DestinationDataStore
 VAR_INPUT
-    {attribute 'pytmc' := 'pv: Name; io: input'}
+    {attribute 'pytmc' := '
+        pv: BTPS:Name; io: input
+    '}
     sName : STRING;
     (*  Do not pragma valve; Use original PVs to access valve state *)
     fbDestinationValve : REFERENCE TO FB_VGC;
 
     {attribute 'pytmc' := '
-        pv: ExitValveReady
+        pv: BTPS:ExitValveReady
         io: input
         field: ZNAM Not ready
         field: ONAM Ready
@@ -18,7 +20,21 @@ VAR_INPUT
     '}
     bExitValveReady : BOOL;
 
-    {attribute 'pytmc' := 'pv: SRC'}
+    {attribute 'pytmc' := '
+        pv: BTPS:YieldsControl
+        io: output
+        field: DESC Destination yields control to others
+        field: ZNAM Using beam
+        field: ONAM Yielding
+        field: ZSV MINOR
+        field: OSV NO_ALARM
+    '}
+    bYieldsControl : BOOL;
+
+    {attribute 'pytmc' := '
+        pv: LS
+        expand: %s:BTPS
+    '}
     stSourceDataStore : ARRAY [1..GVL_BTPS_Constants.nSources] OF ST_SourceDataStore;
 END_VAR
 VAR_OUTPUT
@@ -28,56 +44,48 @@ END_VAR
 VAR
     nIndex : UINT;
     stSource: REFERENCE TO ST_SourceDataStore;
+    bInit : BOOL := FALSE;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[bExitValveReady := F_IsValveReady(fbDestinationValve);
+      <ST><![CDATA[IF NOT bInit THEN
+    bYieldsControl := TRUE;
+    bInit := TRUE;
+END_IF
+
+bExitValveReady := F_IsValveReady(fbDestinationValve);
 
 Update(
     stDataSource:=stSourceDataStore[1],
-    sName:='Source 1',
+    sName:='LS1 (From laser bay 1)',
     fbSourceValve:=GVL_BTS_VAC.fb_LS1_VGC,
-    fbLinear:=GVL_BTPS.fbBay1Linear,
-    fbRotary:=GVL_BTPS.fbBay1Rotary,
-    fbGoniometer:=GVL_BTPS.fbBay1Goniometer,
-    fbNearField:=GVL_BTPS.fbBay1NearFieldCamStats,
-    fbFarField:=GVL_BTPS.fbBay1FarFieldCamStats
-);
-
-// Future use:
-(*
-Update(
-    stDataSource:=stSourceDataStore2,
-    sName:='Source 2',
-    fbSourceValve:=GVL_BTPS.fbBay2SourceValve,
-    fbLinear:=GVL_BTPS.fbBay2Linear,
-    fbRotary:=GVL_BTPS.fbBay2Rotary,
-    fbGoniometer:=GVL_BTPS.fbBay2Goniometer,
-    fbNearField:=GVL_BTPS.fbBay2NearFieldCamStats,
-    fbFarField:=GVL_BTPS.fbBay2FarFieldCamStats
-);
-*)
-
-Update(
-    stDataSource:=stSourceDataStore[3],
-    sName:='Source 3',
-    fbSourceValve:=GVL_BTS_VAC.fb_LS5_VGC,  (* This is not a typo; LS5 is for source 3 *)
-    fbLinear:=GVL_BTPS.fbBay3Linear,
-    fbRotary:=GVL_BTPS.fbBay3Rotary,
-    fbGoniometer:=GVL_BTPS.fbBay3Goniometer,
-    fbNearField:=GVL_BTPS.fbBay3NearFieldCamStats,
-    fbFarField:=GVL_BTPS.fbBay3FarFieldCamStats
+    fbLinear:=GVL_BTPS.fbLS1Linear,
+    fbRotary:=GVL_BTPS.fbLS1Rotary,
+    fbGoniometer:=GVL_BTPS.fbLS1Goniometer,
+    fbNearField:=GVL_BTPS.fbLS1NearFieldCamStats,
+    fbFarField:=GVL_BTPS.fbLS1FarFieldCamStats
 );
 
 Update(
-    stDataSource:=stSourceDataStore[4],
-    sName:='Source 4',
-    fbSourceValve:=GVL_BTS_VAC.fb_LS8_VGC,  (* Similarly not a typo *)
-    fbLinear:=GVL_BTPS.fbBay4Linear,
-    fbRotary:=GVL_BTPS.fbBay4Rotary,
-    fbGoniometer:=GVL_BTPS.fbBay4Goniometer,
-    fbNearField:=GVL_BTPS.fbBay4NearFieldCamStats,
-    fbFarField:=GVL_BTPS.fbBay4FarFieldCamStats
+    stDataSource:=stSourceDataStore[5],
+    sName:='LS5 (From laser bay 3)',
+    fbSourceValve:=GVL_BTS_VAC.fb_LS5_VGC,
+    fbLinear:=GVL_BTPS.fbLS5Linear,
+    fbRotary:=GVL_BTPS.fbLS5Rotary,
+    fbGoniometer:=GVL_BTPS.fbLS5Goniometer,
+    fbNearField:=GVL_BTPS.fbLS5NearFieldCamStats,
+    fbFarField:=GVL_BTPS.fbLS5FarFieldCamStats
+);
+
+Update(
+    stDataSource:=stSourceDataStore[8],
+    sName:='LS8 (From laser bay 4)',
+    fbSourceValve:=GVL_BTS_VAC.fb_LS8_VGC,
+    fbLinear:=GVL_BTPS.fbLS8Linear,
+    fbRotary:=GVL_BTPS.fbLS8Rotary,
+    fbGoniometer:=GVL_BTPS.fbLS8Goniometer,
+    fbNearField:=GVL_BTPS.fbLS8NearFieldCamStats,
+    fbFarField:=GVL_BTPS.fbLS8FarFieldCamStats
 );
 ]]></ST>
     </Implementation>
@@ -158,7 +166,9 @@ stDataSource.bChecksOK := (
     stDataSource.bEntryValveReady AND
     bExitValveReady AND
     TRUE
-);]]></ST>
+);
+
+stDataSource.bInPosition := stDataSource.fbLinear.bInputValid AND stDataSource.fbLinear.bInRange;]]></ST>
       </Implementation>
     </Method>
   </POU>

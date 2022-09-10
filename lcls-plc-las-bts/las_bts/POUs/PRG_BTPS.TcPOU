@@ -7,46 +7,44 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[GVL_BTPS.fbBay1Linear(bEnable:=TRUE);
-GVL_BTPS.fbBay3Linear(bEnable:=TRUE);
-GVL_BTPS.fbBay4Linear(bEnable:=TRUE);
+      <ST><![CDATA[GVL_BTPS.fbLS1Linear(bEnable:=TRUE);
+GVL_BTPS.fbLS5Linear(bEnable:=TRUE);
+GVL_BTPS.fbLS8Linear(bEnable:=TRUE);
 
-GVL_BTPS.fbBay1Rotary(bEnable:=TRUE);
-GVL_BTPS.fbBay3Rotary(bEnable:=TRUE);
-GVL_BTPS.fbBay4Rotary(bEnable:=TRUE);
+GVL_BTPS.fbLS1Rotary(bEnable:=TRUE);
+GVL_BTPS.fbLS5Rotary(bEnable:=TRUE);
+GVL_BTPS.fbLS8Rotary(bEnable:=TRUE);
 
-GVL_BTPS.fbBay1Goniometer(bEnable:=TRUE);
-GVL_BTPS.fbBay3Goniometer(bEnable:=TRUE);
-GVL_BTPS.fbBay4Goniometer(bEnable:=TRUE);
+GVL_BTPS.fbLS1Goniometer(bEnable:=TRUE);
+GVL_BTPS.fbLS5Goniometer(bEnable:=TRUE);
+GVL_BTPS.fbLS8Goniometer(bEnable:=TRUE);
 
-GVL_BTPS.fbBay1NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
-GVL_BTPS.fbBay3NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
-GVL_BTPS.fbBay4NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+GVL_BTPS.fbLS1NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+GVL_BTPS.fbLS5NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+GVL_BTPS.fbLS8NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
 
-GVL_BTPS.fbBay1FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
-GVL_BTPS.fbBay3FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
-GVL_BTPS.fbBay4FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+GVL_BTPS.fbLS1FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+GVL_BTPS.fbLS5FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+GVL_BTPS.fbLS8FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
 
-GVL_BTPS.fbDestinations[1](sName:='TMO IP1', fbDestinationValve:=GVL_BTS_VAC.fb_LD8_VGC);
-GVL_BTPS.fbDestinations[2](sName:='TMO IP2', fbDestinationValve:=GVL_BTS_VAC.fb_LD10_VGC);
-GVL_BTPS.fbDestinations[3](sName:='TMO IP3', fbDestinationValve:=GVL_BTS_VAC.fb_LD2_VGC);
-GVL_BTPS.fbDestinations[4](sName:='RIX qRIXS', fbDestinationValve:=GVL_BTS_VAC.fb_LD6_VGC);
-GVL_BTPS.fbDestinations[5](sName:='RIX ChemRIXS', fbDestinationValve:=GVL_BTS_VAC.fb_LD4_VGC);
-GVL_BTPS.fbDestinations[6](sName:='XPP', fbDestinationValve:=GVL_BTS_VAC.fb_LD14_VGC);
-GVL_BTPS.fbDestinations[7](sName:='Laser Lab', fbDestinationValve:=GVL_BTS_VAC.fb_LD9_VGC);
+GVL_BTPS.fbDestinations[2](sName:='TMO IP3', fbDestinationValve:=GVL_BTS_VAC.fb_LD2_VGC);
+GVL_BTPS.fbDestinations[4](sName:='RIX ChemRIXS', fbDestinationValve:=GVL_BTS_VAC.fb_LD4_VGC);
+GVL_BTPS.fbDestinations[6](sName:='RIX qRIXS', fbDestinationValve:=GVL_BTS_VAC.fb_LD6_VGC);
+GVL_BTPS.fbDestinations[8](sName:='TMO IP1', fbDestinationValve:=GVL_BTS_VAC.fb_LD8_VGC);
+GVL_BTPS.fbDestinations[9](sName:='Laser Lab', fbDestinationValve:=GVL_BTS_VAC.fb_LD9_VGC);
+GVL_BTPS.fbDestinations[10](sName:='TMO IP2', fbDestinationValve:=GVL_BTS_VAC.fb_LD10_VGC);
+GVL_BTPS.fbDestinations[14](sName:='XPP', fbDestinationValve:=GVL_BTS_VAC.fb_LD14_VGC);
 
 (* Shutter safety evaluation should always come at the end. *)
-GVL_BTPS.fbShutterSafety1(nSourceIndex:=1, fbDestinations:=GVL_BTPS.fbDestinations);
-// GVL_BTPS.fbShutterSafety2(nIndex:=2, fbDestinations:=GVL_BTPS.fbDestinations);
-GVL_BTPS.fbShutterSafety3(nSourceIndex:=3, fbDestinations:=GVL_BTPS.fbDestinations);
-GVL_BTPS.fbShutterSafety4(nSourceIndex:=4, fbDestinations:=GVL_BTPS.fbDestinations);
+GVL_BTPS.fbSafetyLS1(nSourceIndex:=1, fbDestinations:=GVL_BTPS.fbDestinations);
+GVL_BTPS.fbSafetyLS5(nSourceIndex:=5, fbDestinations:=GVL_BTPS.fbDestinations);
+GVL_BTPS.fbSafetyLS8(nSourceIndex:=8, fbDestinations:=GVL_BTPS.fbDestinations);
 
 (* Based on the shutter safety result; send open or close request to shutters *)
 IF NOT GVL_BTPS_Retain.bSystemOverride THEN
-    GVL_Shutters.fbBay1.bOpenRequest := GVL_BTPS.fbShutterSafety1.bOpenSignal;
-    // GVL_Shutters.fbBay2.bOpenRequest := GVL_BTPS.fbShutterSafety2.bOpenSignal;
-    GVL_Shutters.fbBay3.bOpenRequest := GVL_BTPS.fbShutterSafety3.bOpenSignal;
-    GVL_Shutters.fbBay4.bOpenRequest := GVL_BTPS.fbShutterSafety4.bOpenSignal;
+    GVL_Shutters.fbLS1.bOpenRequest := GVL_BTPS.fbSafetyLS1.bOpenSignal;
+    GVL_Shutters.fbLS5.bOpenRequest := GVL_BTPS.fbSafetyLS5.bOpenSignal;
+    GVL_Shutters.fbLS8.bOpenRequest := GVL_BTPS.fbSafetyLS8.bOpenSignal;
 END_IF
 
 (* Periodically save persistent variables with source/destination store information *)

@@ -797,51 +797,51 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Shutters.fbBay1.bOpenStatus</Name>
+							<Name>GVL_Shutters.fbLS1.bOpenStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Shutters.fbBay1.bCloseStatus</Name>
+							<Name>GVL_Shutters.fbLS1.bCloseStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Shutters.fbBay1.bLssStatus</Name>
+							<Name>GVL_Shutters.fbLS1.bLssStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Shutters.fbBay2.bOpenStatus</Name>
+							<Name>GVL_Shutters.fbLS3.bOpenStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Shutters.fbBay2.bCloseStatus</Name>
+							<Name>GVL_Shutters.fbLS3.bCloseStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Shutters.fbBay2.bLssStatus</Name>
+							<Name>GVL_Shutters.fbLS3.bLssStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Shutters.fbBay3.bOpenStatus</Name>
+							<Name>GVL_Shutters.fbLS5.bOpenStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Shutters.fbBay3.bCloseStatus</Name>
+							<Name>GVL_Shutters.fbLS5.bCloseStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Shutters.fbBay3.bLssStatus</Name>
+							<Name>GVL_Shutters.fbLS5.bLssStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Shutters.fbBay4.bOpenStatus</Name>
+							<Name>GVL_Shutters.fbLS8.bOpenStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Shutters.fbBay4.bCloseStatus</Name>
+							<Name>GVL_Shutters.fbLS8.bCloseStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Shutters.fbBay4.bLssStatus</Name>
+							<Name>GVL_Shutters.fbLS8.bLssStatus</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
@@ -1130,19 +1130,19 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Shutters.fbBay1.bOpenRequest</Name>
+							<Name>GVL_Shutters.fbLS1.bOpenRequest</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Shutters.fbBay2.bOpenRequest</Name>
+							<Name>GVL_Shutters.fbLS3.bOpenRequest</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Shutters.fbBay3.bOpenRequest</Name>
+							<Name>GVL_Shutters.fbLS5.bOpenRequest</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_Shutters.fbBay4.bOpenRequest</Name>
+							<Name>GVL_Shutters.fbLS8.bOpenRequest</Name>
 							<Type>BOOL</Type>
 						</Var>
 					</Vars>
@@ -1177,6 +1177,36 @@
 							<OwnerB Name="TIID^EtherCAT1^EK1100_02_00^EL1002_02_02">
 								<Link VarA="GVL_BTS_VAC.fb_PP_VRC_2.i_xClsLS" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
 								<Link VarA="GVL_BTS_VAC.fb_PP_VRC_2.i_xOpnLS" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
+					<UnrestoredVarLinks ImportTime="2022-07-22T09:11:31">
+						<OwnerA Name="OutputSrc" Prefix="TIPC^las_bts^las_bts Instance" Type="2">
+							<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL2624_04_01">
+								<Link VarA="GVL_Shutters.fbBay1.bOpenRequest" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Output" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_Shutters.fbBay2.bOpenRequest" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Output" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_Shutters.fbBay3.bOpenRequest" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Output" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_Shutters.fbBay4.bOpenRequest" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Output" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+						<OwnerA Name="InputDst" Prefix="TIPC^las_bts^las_bts Instance" Type="1">
+							<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL1004_04_02">
+								<Link VarA="GVL_Shutters.fbBay1.bCloseStatus" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_Shutters.fbBay1.bOpenStatus" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_Shutters.fbBay2.bCloseStatus" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_Shutters.fbBay2.bOpenStatus" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL1004_04_03">
+								<Link VarA="GVL_Shutters.fbBay3.bCloseStatus" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_Shutters.fbBay3.bOpenStatus" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_Shutters.fbBay4.bCloseStatus" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_Shutters.fbBay4.bOpenStatus" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL1004_04_04">
+								<Link VarA="GVL_Shutters.fbBay1.bLssStatus" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_Shutters.fbBay2.bLssStatus" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_Shutters.fbBay3.bLssStatus" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="GVL_Shutters.fbBay4.bLssStatus" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" AutoLink="true" Size="1" RestoreInfo="ANotFound"/>
 							</OwnerB>
 						</OwnerA>
 					</UnrestoredVarLinks>
@@ -1362,28 +1392,28 @@
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS8_GPI.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL1004_04_02">
-				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay1.bCloseStatus" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay1.bOpenStatus" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay2.bCloseStatus" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay2.bOpenStatus" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbLS1.bCloseStatus" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbLS1.bOpenStatus" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbLS3.bCloseStatus" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbLS3.bOpenStatus" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL1004_04_03">
-				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay3.bCloseStatus" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay3.bOpenStatus" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay4.bCloseStatus" VarB="Channel 4^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay4.bOpenStatus" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbLS5.bCloseStatus" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbLS5.bOpenStatus" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbLS8.bCloseStatus" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbLS8.bOpenStatus" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL1004_04_04">
-				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay1.bLssStatus" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay2.bLssStatus" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay3.bLssStatus" VarB="Channel 3^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Shutters.fbBay4.bLssStatus" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbLS1.bLssStatus" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbLS3.bLssStatus" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbLS5.bLssStatus" VarB="Channel 3^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbLS8.bLssStatus" VarB="Channel 4^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL2624_04_01">
-				<Link VarA="PlcTask Outputs^GVL_Shutters.fbBay1.bOpenRequest" VarB="Channel 1^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Shutters.fbBay2.bOpenRequest" VarB="Channel 2^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Shutters.fbBay3.bOpenRequest" VarB="Channel 3^Output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^GVL_Shutters.fbBay4.bOpenRequest" VarB="Channel 4^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Shutters.fbLS1.bOpenRequest" VarB="Channel 1^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Shutters.fbLS3.bOpenRequest" VarB="Channel 2^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Shutters.fbLS5.bOpenRequest" VarB="Channel 3^Output" AutoLink="true"/>
+				<Link VarA="PlcTask Outputs^GVL_Shutters.fbLS8.bOpenRequest" VarB="Channel 4^Output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1200_00_00^EL1004_00_01">
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_PP_PMF.i_xAlarm" VarB="Channel 3^Input" AutoLink="true"/>
