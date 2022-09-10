@@ -133,6 +133,15 @@ ST_SourceDataStore
         '}
         bChecksOK : BOOL;
 
+        {attribute 'pytmc' := '
+            pv: InPosition
+            io: input
+            field: ZNAM FALSE
+            field: ONAM TRUE
+            field: DESC Linear stage in position for dest
+        '}
+        bInPosition : BOOL;
+
         {attribute 'pytmc' := 'pv: Linear'}
         fbLinear : FB_RangeComparison;
         {attribute 'pytmc' := 'pv: Rotary'}
@@ -174,20 +183,20 @@ GVL_BTPS
             LAS:BTS:MCS2:01:m7 (ioc-las-bts-mcs1, las_bts_mcs2_01_m7)
         *)
         {attribute 'pytmc' := '
-            pv: @(BTPS):Chk:B1Lin
+            pv: LTLHN:BTPS:Chk:LS1:Lin
             link: @(SIM)LAS:BTS:MCS2:01:m1
         '}
-        fbBay1Linear : FB_EpicsMotorMonitor;
+        fbLS1Linear : FB_EpicsMotorMonitor;
         {attribute 'pytmc' := '
-            pv: @(BTPS):Chk:B3Lin
+            pv: LTLHN:BTPS:Chk:LS5:Lin
             link: @(SIM)LAS:BTS:MCS2:01:m4
         '}
-        fbBay3Linear : FB_EpicsMotorMonitor;
+        fbLS5Linear : FB_EpicsMotorMonitor;
         {attribute 'pytmc' := '
-            pv: @(BTPS):Chk:B4Lin
+            pv: LTLHN:BTPS:Chk:LS8:Lin
             link: @(SIM)LAS:BTS:MCS2:01:m7
         '}
-        fbBay4Linear : FB_EpicsMotorMonitor;
+        fbLS8Linear : FB_EpicsMotorMonitor;
 
         (*
             Motor - Rotary
@@ -196,20 +205,20 @@ GVL_BTPS
                 LAS:BTS:MCS2:01:m8 (ioc-las-bts-mcs1, las_bts_mcs2_01_m8)
         *)
         {attribute 'pytmc' := '
-            pv: @(BTPS):Chk:B1Rot
+            pv: LTLHN:BTPS:Chk:LS1:Rot
             link: @(SIM)LAS:BTS:MCS2:01:m2
         '}
-        fbBay1Rotary : FB_EpicsMotorMonitor;
+        fbLS1Rotary : FB_EpicsMotorMonitor;
         {attribute 'pytmc' := '
-            pv: @(BTPS):Chk:B3Rot
+            pv: LTLHN:BTPS:Chk:LS5:Rot
             link: @(SIM)LAS:BTS:MCS2:01:m6
         '}
-        fbBay3Rotary : FB_EpicsMotorMonitor;
+        fbLS5Rotary : FB_EpicsMotorMonitor;
         {attribute 'pytmc' := '
-            pv: @(BTPS):Chk:B4Rot
+            pv: LTLHN:BTPS:Chk:LS8:Rot
             link: @(SIM)LAS:BTS:MCS2:01:m8
         '}
-        fbBay4Rotary : FB_EpicsMotorMonitor;
+        fbLS8Rotary : FB_EpicsMotorMonitor;
 
         (*
             Motor - Goniometer
@@ -218,67 +227,70 @@ GVL_BTPS
                 LAS:BTS:MCS2:01:m9 (ioc-las-bts-mcs1, las_bts_mcs2_01_m9)
         *)
         {attribute 'pytmc' := '
-            pv: @(BTPS):Chk:B1Gon
+            pv: LTLHN:BTPS:Chk:LS1:Gon
             link: @(SIM)LAS:BTS:MCS2:01:m3
         '}
-        fbBay1Goniometer : FB_EpicsMotorMonitor;
+        fbLS1Goniometer : FB_EpicsMotorMonitor;
         {attribute 'pytmc' := '
-            pv: @(BTPS):Chk:B3Gon
+            pv: LTLHN:BTPS:Chk:LS5:Gon
             link: @(SIM)LAS:BTS:MCS2:01:m5
         '}
-        fbBay3Goniometer : FB_EpicsMotorMonitor;
+        fbLS5Goniometer : FB_EpicsMotorMonitor;
         {attribute 'pytmc' := '
-            pv: @(BTPS):Chk:B4Gon
+            pv: LTLHN:BTPS:Chk:LS8:Gon
             link: @(SIM)LAS:BTS:MCS2:01:m9
         '}
-        fbBay4Goniometer : FB_EpicsMotorMonitor;
+        fbLS8Goniometer : FB_EpicsMotorMonitor;
 
         (* Near field camera stats plugins, per bay *)
         {attribute 'pytmc' := '
-            pv: @(BTPS):Chk:NF1
+            pv: LTLHN:BTPS:Chk:LS1:NF
             link: @(SIM)LAS:LHN:BAY1:CAM:01:Stats2:
         '}
-        fbBay1NearFieldCamStats : FB_EpicsStatsMonitor;
+        fbLS1NearFieldCamStats : FB_EpicsStatsMonitor;
 
         {attribute 'pytmc' := '
-            pv: @(BTPS):Chk:NF3
+            pv: LTLHN:BTPS:Chk:LS5:NF
             link: @(SIM)LAS:LHN:BAY3:CAM:01:Stats2:
         '}
-        fbBay3NearFieldCamStats : FB_EpicsStatsMonitor;
+        fbLS5NearFieldCamStats : FB_EpicsStatsMonitor;
 
         {attribute 'pytmc' := '
-            pv: @(BTPS):Chk:NF4
+            pv: LTLHN:BTPS:Chk:LS8:NF
             link: @(SIM)LAS:LHN:BAY4:CAM:01:Stats2:
         '}
-        fbBay4NearFieldCamStats : FB_EpicsStatsMonitor;
+        fbLS8NearFieldCamStats : FB_EpicsStatsMonitor;
 
         (* Far-field camera stats plugins, per bay *)
         {attribute 'pytmc' := '
-            pv: @(BTPS):Chk:FF1
+            pv: LTLHN:BTPS:Chk:LS1:FF
             link: @(SIM)LAS:LHN:BAY1:CAM:02:Stats2:
         '}
-        fbBay1FarFieldCamStats : FB_EpicsStatsMonitor;
+        fbLS1FarFieldCamStats : FB_EpicsStatsMonitor;
 
         {attribute 'pytmc' := '
-            pv: @(BTPS):Chk:FF3
+            pv: LTLHN:BTPS:Chk:LS5:FF
             link: @(SIM)LAS:LHN:BAY3:CAM:02:Stats2:
         '}
-        fbBay3FarFieldCamStats : FB_EpicsStatsMonitor;
+        fbLS5FarFieldCamStats : FB_EpicsStatsMonitor;
 
         {attribute 'pytmc' := '
-            pv: @(BTPS):Chk:FF4
+            pv: LTLHN:BTPS:Chk:LS8:FF
             link: @(SIM)LAS:LHN:BAY4:CAM:02:Stats2:
         '}
-        fbBay4FarFieldCamStats : FB_EpicsStatsMonitor;
+        fbLS8FarFieldCamStats : FB_EpicsStatsMonitor;
 
-        {attribute 'pytmc' := 'pv: @(BTPS):Shutter:01'}
-        fbShutterSafety1 : FB_ShutterSafety;
-        {attribute 'pytmc' := 'pv: @(BTPS):Shutter:03'}
-        fbShutterSafety3 : FB_ShutterSafety;
-        {attribute 'pytmc' := 'pv: @(BTPS):Shutter:04'}
-        fbShutterSafety4 : FB_ShutterSafety;
+        {attribute 'pytmc' := 'pv: LTLHN:LS1:BTPS'}
+        fbSafetyLS1 : FB_ShutterSafety;
+        {attribute 'pytmc' := 'pv: LTLHN:LS5:BTPS'}
+        fbSafetyLS5 : FB_ShutterSafety;
+        {attribute 'pytmc' := 'pv: LTLHN:LS8:BTPS'}
+        fbSafetyLS8 : FB_ShutterSafety;
 
-        {attribute 'pytmc' := 'pv: @(BTPS):DEST'}
+        {attribute 'pytmc' := '
+            pv: LTLHN:LD
+            expand: %d
+        '}
         fbDestinations : ARRAY [1..GVL_BTPS_Constants.nDestinations] OF FB_DestinationDataStore;
 
     END_VAR
@@ -299,21 +311,19 @@ GVL_BTPS_Constants
 
     {attribute 'qualified_only'}
     VAR_GLOBAL CONSTANT
-        nSources : UINT := 4;
+        nSources : UINT := 8;
         (* Destinations
 
-            LTLHN:LD8:VGC:01 (ioc-las-bts) - TMO - IP1
-            LTLHN:LD10:VGC:01 (ioc-las-bts) - TMO - IP2
             LTLHN:LD2:VGC:01 (ioc-las-bts) - TMO - IP3
-
-            LTLHN:LD6:VGC:01 (ioc-las-bts) - RIX - qRIXS
             LTLHN:LD4:VGC:01 (ioc-las-bts) - RIX - ChemRIXS
+            LTLHN:LD6:VGC:01 (ioc-las-bts) - RIX - qRIXS
+            LTLHN:LD8:VGC:01 (ioc-las-bts) - TMO - IP1
+            LTLHN:LD9:VGC:01 (ioc-las-bts) - Laser Lab
+            LTLHN:LD10:VGC:01 (ioc-las-bts) - TMO - IP2
             LTLHN:LD14:VGC:01 (ioc-las-bts) - XPP
 
-            LTLHN:LD9:VGC:01 (ioc-las-bts) - Laser Lab
-
         *)
-        nDestinations: UINT := 7;
+        nDestinations: UINT := 14;
     END_VAR
 
 
@@ -328,24 +338,38 @@ GVL_BTPS_Retain
     VAR_GLOBAL PERSISTENT
 
         {attribute 'pytmc' := '
-            pv: @(BTPS):Config:MaxFrameTime
+            pv: LTLHN:BTPS:Config:MaxFrameTime
             field: DESC Maximum delay from frame to frame
             field: EGU sec
+            io: io
         '}
         fMaximumFrameTime : LREAL := 5.0;
 
         {attribute 'pytmc' := '
-            pv: @(BTPS):Config:MinPixelChange
+            pv: LTLHN:BTPS:Config:MinPixelChange
             field: DESC Minimum px change to be considered valid
             field: EGU px
+            io: io
         '}
         fMinPixelChange : LREAL := 0.05;
 
         {attribute 'pytmc' := '
-            pv: @(BTPS):Config:SystemOverride
+            pv: LTLHN:BTPS:Config:SystemOverride
             field: DESC Full system-level override
+            io: io
         '}
         bSystemOverride : BOOL;
+
+        {attribute 'pytmc' := '
+            pv: LTLHN:BTPS:Config:Maintenance
+            io: io
+            field: DESC System undergoing maintenance
+            field: ZNAM Normal operation
+            field: ONAM Maintenance
+            field: ZSV NO_ALARM
+            field: OSV MAJOR
+        '}
+        bMaintenanceMode : BOOL;
 
     END_VAR
 
@@ -790,7 +814,7 @@ GVL_Shutters
             .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_04^Channel 1^Input;
         '}
         {attribute 'pytmc' := 'pv: LTLHN:LS1:LST'}
-        fbBay1 : ST_ShutterControl;
+        fbLS1 : ST_ShutterControl;
 
         {attribute 'TcLinkTo' := '
             .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_01^Channel 2^Output;
@@ -799,7 +823,7 @@ GVL_Shutters
             .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_04^Channel 2^Input;
         '}
         {attribute 'pytmc' := 'pv: LTLHN:LS3:LST'}
-        fbBay2 : ST_ShutterControl;
+        fbLS3 : ST_ShutterControl;
 
         {attribute 'TcLinkTo' := '
             .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_01^Channel 3^Output;
@@ -808,7 +832,7 @@ GVL_Shutters
             .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_04^Channel 3^Input;
         '}
         {attribute 'pytmc' := 'pv: LTLHN:LS5:LST'}
-        fbBay3 : ST_ShutterControl;
+        fbLS5 : ST_ShutterControl;
 
         {attribute 'TcLinkTo' := '
             .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_01^Channel 4^Output;
@@ -817,7 +841,7 @@ GVL_Shutters
             .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_04^Channel 4^Input;
         '}
         {attribute 'pytmc' := 'pv: LTLHN:LS8:LST'}
-        fbBay4 : ST_ShutterControl;
+        fbLS8 : ST_ShutterControl;
 
     END_VAR
 
@@ -926,13 +950,15 @@ FB_DestinationDataStore
 
     FUNCTION_BLOCK FB_DestinationDataStore
     VAR_INPUT
-        {attribute 'pytmc' := 'pv: Name; io: input'}
+        {attribute 'pytmc' := '
+            pv: BTPS:Name; io: input
+        '}
         sName : STRING;
         (*  Do not pragma valve; Use original PVs to access valve state *)
         fbDestinationValve : REFERENCE TO FB_VGC;
 
         {attribute 'pytmc' := '
-            pv: ExitValveReady
+            pv: BTPS:ExitValveReady
             io: input
             field: ZNAM Not ready
             field: ONAM Ready
@@ -941,7 +967,21 @@ FB_DestinationDataStore
         '}
         bExitValveReady : BOOL;
 
-        {attribute 'pytmc' := 'pv: SRC'}
+        {attribute 'pytmc' := '
+            pv: BTPS:YieldsControl
+            io: output
+            field: DESC Destination yields control to others
+            field: ZNAM Using beam
+            field: ONAM Yielding
+            field: ZSV MINOR
+            field: OSV NO_ALARM
+        '}
+        bYieldsControl : BOOL;
+
+        {attribute 'pytmc' := '
+            pv: LS
+            expand: %s:BTPS
+        '}
         stSourceDataStore : ARRAY [1..GVL_BTPS_Constants.nSources] OF ST_SourceDataStore;
     END_VAR
     VAR_OUTPUT
@@ -951,54 +991,46 @@ FB_DestinationDataStore
     VAR
         nIndex : UINT;
         stSource: REFERENCE TO ST_SourceDataStore;
+        bInit : BOOL := FALSE;
     END_VAR
+    IF NOT bInit THEN
+        bYieldsControl := TRUE;
+        bInit := TRUE;
+    END_IF
+
     bExitValveReady := F_IsValveReady(fbDestinationValve);
 
     Update(
         stDataSource:=stSourceDataStore[1],
-        sName:='Source 1',
+        sName:='LS1 (From laser bay 1)',
         fbSourceValve:=GVL_BTS_VAC.fb_LS1_VGC,
-        fbLinear:=GVL_BTPS.fbBay1Linear,
-        fbRotary:=GVL_BTPS.fbBay1Rotary,
-        fbGoniometer:=GVL_BTPS.fbBay1Goniometer,
-        fbNearField:=GVL_BTPS.fbBay1NearFieldCamStats,
-        fbFarField:=GVL_BTPS.fbBay1FarFieldCamStats
-    );
-
-    // Future use:
-    (*
-    Update(
-        stDataSource:=stSourceDataStore2,
-        sName:='Source 2',
-        fbSourceValve:=GVL_BTPS.fbBay2SourceValve,
-        fbLinear:=GVL_BTPS.fbBay2Linear,
-        fbRotary:=GVL_BTPS.fbBay2Rotary,
-        fbGoniometer:=GVL_BTPS.fbBay2Goniometer,
-        fbNearField:=GVL_BTPS.fbBay2NearFieldCamStats,
-        fbFarField:=GVL_BTPS.fbBay2FarFieldCamStats
-    );
-    *)
-
-    Update(
-        stDataSource:=stSourceDataStore[3],
-        sName:='Source 3',
-        fbSourceValve:=GVL_BTS_VAC.fb_LS5_VGC,  (* This is not a typo; LS5 is for source 3 *)
-        fbLinear:=GVL_BTPS.fbBay3Linear,
-        fbRotary:=GVL_BTPS.fbBay3Rotary,
-        fbGoniometer:=GVL_BTPS.fbBay3Goniometer,
-        fbNearField:=GVL_BTPS.fbBay3NearFieldCamStats,
-        fbFarField:=GVL_BTPS.fbBay3FarFieldCamStats
+        fbLinear:=GVL_BTPS.fbLS1Linear,
+        fbRotary:=GVL_BTPS.fbLS1Rotary,
+        fbGoniometer:=GVL_BTPS.fbLS1Goniometer,
+        fbNearField:=GVL_BTPS.fbLS1NearFieldCamStats,
+        fbFarField:=GVL_BTPS.fbLS1FarFieldCamStats
     );
 
     Update(
-        stDataSource:=stSourceDataStore[4],
-        sName:='Source 4',
-        fbSourceValve:=GVL_BTS_VAC.fb_LS8_VGC,  (* Similarly not a typo *)
-        fbLinear:=GVL_BTPS.fbBay4Linear,
-        fbRotary:=GVL_BTPS.fbBay4Rotary,
-        fbGoniometer:=GVL_BTPS.fbBay4Goniometer,
-        fbNearField:=GVL_BTPS.fbBay4NearFieldCamStats,
-        fbFarField:=GVL_BTPS.fbBay4FarFieldCamStats
+        stDataSource:=stSourceDataStore[5],
+        sName:='LS5 (From laser bay 3)',
+        fbSourceValve:=GVL_BTS_VAC.fb_LS5_VGC,
+        fbLinear:=GVL_BTPS.fbLS5Linear,
+        fbRotary:=GVL_BTPS.fbLS5Rotary,
+        fbGoniometer:=GVL_BTPS.fbLS5Goniometer,
+        fbNearField:=GVL_BTPS.fbLS5NearFieldCamStats,
+        fbFarField:=GVL_BTPS.fbLS5FarFieldCamStats
+    );
+
+    Update(
+        stDataSource:=stSourceDataStore[8],
+        sName:='LS8 (From laser bay 4)',
+        fbSourceValve:=GVL_BTS_VAC.fb_LS8_VGC,
+        fbLinear:=GVL_BTPS.fbLS8Linear,
+        fbRotary:=GVL_BTPS.fbLS8Rotary,
+        fbGoniometer:=GVL_BTPS.fbLS8Goniometer,
+        fbNearField:=GVL_BTPS.fbLS8NearFieldCamStats,
+        fbFarField:=GVL_BTPS.fbLS8FarFieldCamStats
     );
 
     END_FUNCTION_BLOCK
@@ -1079,6 +1111,8 @@ FB_DestinationDataStore
         bExitValveReady AND
         TRUE
     );
+
+    stDataSource.bInPosition := stDataSource.fbLinear.bInputValid AND stDataSource.fbLinear.bInRange;
     END_METHOD
 
 
@@ -1496,6 +1530,17 @@ FB_ShutterSafety
         '}
         bOpenSignal : BOOL;
 
+        {attribute 'pytmc' := '
+            pv: CurrentLD
+            io: input
+            field: DESC Current laser destination (LD)
+            field: LOW 0
+            field: HIGH 15
+            field: LSV MAJOR
+            field: HSV MAJOR
+        '}
+        nCurrentLD : INT;
+
         (* Rising trigger indicator of a new error condition. *)
         rtError : R_TRIG;
         (* Rising trigger indicator of user requesting override. *)
@@ -1513,6 +1558,9 @@ FB_ShutterSafety
     bLatchedError R= bAcknowledge;
     bAcknowledge := FALSE;
 
+    // Figure out the current destination below
+    nCurrentLD := 0;
+
     IF nSourceIndex >= 1 AND nSourceIndex <= GVL_BTPS_Constants.nSources THEN
         bBtpsPermission := FALSE;
         FOR nDestIndex := 1 TO GVL_BTPS_Constants.nDestinations DO
@@ -1520,6 +1568,15 @@ FB_ShutterSafety
                 bBtpsPermission OR
                 fbDestinations[nDestIndex].stSourceDataStore[nSourceIndex].bChecksOK
             );
+            IF fbDestinations[nDestIndex].stSourceDataStore[nSourceIndex].bInPosition THEN
+                IF nCurrentLD = 0 THEN
+                    (* First "valid" destination we've seen *)
+                    nCurrentLD := UINT_TO_INT(nDestIndex);
+                ELSE
+                    (* Multiple "valid" destinations? This means none are valid *)
+                    nCurrentLD := -1;
+                END_IF
+            END_IF
         END_FOR
     ELSE
         bBtpsPermission := FALSE;
@@ -2184,46 +2241,44 @@ PRG_BTPS
     VAR
 
     END_VAR
-    GVL_BTPS.fbBay1Linear(bEnable:=TRUE);
-    GVL_BTPS.fbBay3Linear(bEnable:=TRUE);
-    GVL_BTPS.fbBay4Linear(bEnable:=TRUE);
+    GVL_BTPS.fbLS1Linear(bEnable:=TRUE);
+    GVL_BTPS.fbLS5Linear(bEnable:=TRUE);
+    GVL_BTPS.fbLS8Linear(bEnable:=TRUE);
 
-    GVL_BTPS.fbBay1Rotary(bEnable:=TRUE);
-    GVL_BTPS.fbBay3Rotary(bEnable:=TRUE);
-    GVL_BTPS.fbBay4Rotary(bEnable:=TRUE);
+    GVL_BTPS.fbLS1Rotary(bEnable:=TRUE);
+    GVL_BTPS.fbLS5Rotary(bEnable:=TRUE);
+    GVL_BTPS.fbLS8Rotary(bEnable:=TRUE);
 
-    GVL_BTPS.fbBay1Goniometer(bEnable:=TRUE);
-    GVL_BTPS.fbBay3Goniometer(bEnable:=TRUE);
-    GVL_BTPS.fbBay4Goniometer(bEnable:=TRUE);
+    GVL_BTPS.fbLS1Goniometer(bEnable:=TRUE);
+    GVL_BTPS.fbLS5Goniometer(bEnable:=TRUE);
+    GVL_BTPS.fbLS8Goniometer(bEnable:=TRUE);
 
-    GVL_BTPS.fbBay1NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
-    GVL_BTPS.fbBay3NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
-    GVL_BTPS.fbBay4NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+    GVL_BTPS.fbLS1NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+    GVL_BTPS.fbLS5NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+    GVL_BTPS.fbLS8NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
 
-    GVL_BTPS.fbBay1FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
-    GVL_BTPS.fbBay3FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
-    GVL_BTPS.fbBay4FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+    GVL_BTPS.fbLS1FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+    GVL_BTPS.fbLS5FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+    GVL_BTPS.fbLS8FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
 
-    GVL_BTPS.fbDestinations[1](sName:='TMO IP1', fbDestinationValve:=GVL_BTS_VAC.fb_LD8_VGC);
-    GVL_BTPS.fbDestinations[2](sName:='TMO IP2', fbDestinationValve:=GVL_BTS_VAC.fb_LD10_VGC);
-    GVL_BTPS.fbDestinations[3](sName:='TMO IP3', fbDestinationValve:=GVL_BTS_VAC.fb_LD2_VGC);
-    GVL_BTPS.fbDestinations[4](sName:='RIX qRIXS', fbDestinationValve:=GVL_BTS_VAC.fb_LD6_VGC);
-    GVL_BTPS.fbDestinations[5](sName:='RIX ChemRIXS', fbDestinationValve:=GVL_BTS_VAC.fb_LD4_VGC);
-    GVL_BTPS.fbDestinations[6](sName:='XPP', fbDestinationValve:=GVL_BTS_VAC.fb_LD14_VGC);
-    GVL_BTPS.fbDestinations[7](sName:='Laser Lab', fbDestinationValve:=GVL_BTS_VAC.fb_LD9_VGC);
+    GVL_BTPS.fbDestinations[2](sName:='TMO IP3', fbDestinationValve:=GVL_BTS_VAC.fb_LD2_VGC);
+    GVL_BTPS.fbDestinations[4](sName:='RIX ChemRIXS', fbDestinationValve:=GVL_BTS_VAC.fb_LD4_VGC);
+    GVL_BTPS.fbDestinations[6](sName:='RIX qRIXS', fbDestinationValve:=GVL_BTS_VAC.fb_LD6_VGC);
+    GVL_BTPS.fbDestinations[8](sName:='TMO IP1', fbDestinationValve:=GVL_BTS_VAC.fb_LD8_VGC);
+    GVL_BTPS.fbDestinations[9](sName:='Laser Lab', fbDestinationValve:=GVL_BTS_VAC.fb_LD9_VGC);
+    GVL_BTPS.fbDestinations[10](sName:='TMO IP2', fbDestinationValve:=GVL_BTS_VAC.fb_LD10_VGC);
+    GVL_BTPS.fbDestinations[14](sName:='XPP', fbDestinationValve:=GVL_BTS_VAC.fb_LD14_VGC);
 
     (* Shutter safety evaluation should always come at the end. *)
-    GVL_BTPS.fbShutterSafety1(nSourceIndex:=1, fbDestinations:=GVL_BTPS.fbDestinations);
-    // GVL_BTPS.fbShutterSafety2(nIndex:=2, fbDestinations:=GVL_BTPS.fbDestinations);
-    GVL_BTPS.fbShutterSafety3(nSourceIndex:=3, fbDestinations:=GVL_BTPS.fbDestinations);
-    GVL_BTPS.fbShutterSafety4(nSourceIndex:=4, fbDestinations:=GVL_BTPS.fbDestinations);
+    GVL_BTPS.fbSafetyLS1(nSourceIndex:=1, fbDestinations:=GVL_BTPS.fbDestinations);
+    GVL_BTPS.fbSafetyLS5(nSourceIndex:=5, fbDestinations:=GVL_BTPS.fbDestinations);
+    GVL_BTPS.fbSafetyLS8(nSourceIndex:=8, fbDestinations:=GVL_BTPS.fbDestinations);
 
     (* Based on the shutter safety result; send open or close request to shutters *)
     IF NOT GVL_BTPS_Retain.bSystemOverride THEN
-        GVL_Shutters.fbBay1.bOpenRequest := GVL_BTPS.fbShutterSafety1.bOpenSignal;
-        // GVL_Shutters.fbBay2.bOpenRequest := GVL_BTPS.fbShutterSafety2.bOpenSignal;
-        GVL_Shutters.fbBay3.bOpenRequest := GVL_BTPS.fbShutterSafety3.bOpenSignal;
-        GVL_Shutters.fbBay4.bOpenRequest := GVL_BTPS.fbShutterSafety4.bOpenSignal;
+        GVL_Shutters.fbLS1.bOpenRequest := GVL_BTPS.fbSafetyLS1.bOpenSignal;
+        GVL_Shutters.fbLS5.bOpenRequest := GVL_BTPS.fbSafetyLS5.bOpenSignal;
+        GVL_Shutters.fbLS8.bOpenRequest := GVL_BTPS.fbSafetyLS8.bOpenSignal;
     END_IF
 
     (* Periodically save persistent variables with source/destination store information *)

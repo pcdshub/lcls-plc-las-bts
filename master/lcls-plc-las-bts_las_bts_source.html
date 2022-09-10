@@ -14,6 +14,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/doctr-versions-menu.js"></script>
     <script src="_static/js/theme.js"></script>
@@ -118,9 +119,9 @@
            <div itemprop="articleBody">
              
   <section id="duts">
-<h1>DUTs<a class="headerlink" href="#duts" title="Permalink to this headline"></a></h1>
+<h1>DUTs<a class="headerlink" href="#duts" title="Permalink to this heading"></a></h1>
 <section id="st-epicsmotormsta">
-<h2>ST_EpicsMotorMSTA<a class="headerlink" href="#st-epicsmotormsta" title="Permalink to this headline"></a></h2>
+<h2>ST_EpicsMotorMSTA<a class="headerlink" href="#st-epicsmotormsta" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">ST_EpicsMotorMSTA</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
 
@@ -167,7 +168,7 @@
 </dl>
 </section>
 <section id="st-shuttercontrol">
-<h2>ST_ShutterControl<a class="headerlink" href="#st-shuttercontrol" title="Permalink to this headline"></a></h2>
+<h2>ST_ShutterControl<a class="headerlink" href="#st-shuttercontrol" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">ST_ShutterControl</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
 
@@ -202,7 +203,7 @@
 </div>
 </section>
 <section id="st-sourcedatastore">
-<h2>ST_SourceDataStore<a class="headerlink" href="#st-sourcedatastore" title="Permalink to this headline"></a></h2>
+<h2>ST_SourceDataStore<a class="headerlink" href="#st-sourcedatastore" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">ST_SourceDataStore</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: Name; io: input&#39;</span><span class="p">}</span>
@@ -241,6 +242,15 @@
     <span class="s1">&#39;}</span>
     <span class="n">bChecksOK</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
 
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">InPosition</span>
+        <span class="n">io</span><span class="p">:</span> <span class="nb">input</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">FALSE</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">TRUE</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">DESC</span> <span class="n">Linear</span> <span class="n">stage</span> <span class="ow">in</span> <span class="n">position</span> <span class="k">for</span> <span class="n">dest</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">bInPosition</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: Linear&#39;</span><span class="p">}</span>
     <span class="n">fbLinear</span> <span class="p">:</span> <span class="n">FB_RangeComparison</span><span class="p">;</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: Rotary&#39;</span><span class="p">}</span>
@@ -269,9 +279,9 @@
 </section>
 </section>
 <section id="gvls">
-<h1>GVLs<a class="headerlink" href="#gvls" title="Permalink to this headline"></a></h1>
+<h1>GVLs<a class="headerlink" href="#gvls" title="Permalink to this heading"></a></h1>
 <section id="gvl-btps">
-<h2>GVL_BTPS<a class="headerlink" href="#gvl-btps" title="Permalink to this headline"></a></h2>
+<h2>GVL_BTPS<a class="headerlink" href="#gvl-btps" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="p">(</span><span class="o">*</span>
@@ -281,20 +291,20 @@
         <span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m7</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="o">-</span><span class="n">mcs1</span><span class="p">,</span> <span class="n">las_bts_mcs2_01_m7</span><span class="p">)</span>
     <span class="o">*</span><span class="p">)</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">B1Lin</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS1</span><span class="p">:</span><span class="n">Lin</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m1</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay1Linear</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+    <span class="n">fbLS1Linear</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">B3Lin</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS5</span><span class="p">:</span><span class="n">Lin</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m4</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay3Linear</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+    <span class="n">fbLS5Linear</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">B4Lin</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS8</span><span class="p">:</span><span class="n">Lin</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m7</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay4Linear</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+    <span class="n">fbLS8Linear</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
 
     <span class="p">(</span><span class="o">*</span>
         <span class="n">Motor</span> <span class="o">-</span> <span class="n">Rotary</span>
@@ -303,20 +313,20 @@
             <span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m8</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="o">-</span><span class="n">mcs1</span><span class="p">,</span> <span class="n">las_bts_mcs2_01_m8</span><span class="p">)</span>
     <span class="o">*</span><span class="p">)</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">B1Rot</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS1</span><span class="p">:</span><span class="n">Rot</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m2</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay1Rotary</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+    <span class="n">fbLS1Rotary</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">B3Rot</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS5</span><span class="p">:</span><span class="n">Rot</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m6</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay3Rotary</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+    <span class="n">fbLS5Rotary</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">B4Rot</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS8</span><span class="p">:</span><span class="n">Rot</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m8</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay4Rotary</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+    <span class="n">fbLS8Rotary</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
 
     <span class="p">(</span><span class="o">*</span>
         <span class="n">Motor</span> <span class="o">-</span> <span class="n">Goniometer</span>
@@ -325,67 +335,70 @@
             <span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m9</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="o">-</span><span class="n">mcs1</span><span class="p">,</span> <span class="n">las_bts_mcs2_01_m9</span><span class="p">)</span>
     <span class="o">*</span><span class="p">)</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">B1Gon</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS1</span><span class="p">:</span><span class="n">Gon</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m3</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay1Goniometer</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+    <span class="n">fbLS1Goniometer</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">B3Gon</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS5</span><span class="p">:</span><span class="n">Gon</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m5</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay3Goniometer</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+    <span class="n">fbLS5Goniometer</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">B4Gon</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS8</span><span class="p">:</span><span class="n">Gon</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m9</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay4Goniometer</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+    <span class="n">fbLS8Goniometer</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
 
     <span class="p">(</span><span class="o">*</span> <span class="n">Near</span> <span class="n">field</span> <span class="n">camera</span> <span class="n">stats</span> <span class="n">plugins</span><span class="p">,</span> <span class="n">per</span> <span class="n">bay</span> <span class="o">*</span><span class="p">)</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">NF1</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS1</span><span class="p">:</span><span class="n">NF</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY1</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay1NearFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
+    <span class="n">fbLS1NearFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">NF3</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS5</span><span class="p">:</span><span class="n">NF</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY3</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay3NearFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
+    <span class="n">fbLS5NearFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">NF4</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS8</span><span class="p">:</span><span class="n">NF</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY4</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay4NearFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
+    <span class="n">fbLS8NearFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
 
     <span class="p">(</span><span class="o">*</span> <span class="n">Far</span><span class="o">-</span><span class="n">field</span> <span class="n">camera</span> <span class="n">stats</span> <span class="n">plugins</span><span class="p">,</span> <span class="n">per</span> <span class="n">bay</span> <span class="o">*</span><span class="p">)</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">FF1</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS1</span><span class="p">:</span><span class="n">FF</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY1</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay1FarFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
+    <span class="n">fbLS1FarFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">FF3</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS5</span><span class="p">:</span><span class="n">FF</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY3</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay3FarFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
+    <span class="n">fbLS5FarFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Chk</span><span class="p">:</span><span class="n">FF4</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS8</span><span class="p">:</span><span class="n">FF</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY4</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
     <span class="s1">&#39;}</span>
-    <span class="n">fbBay4FarFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
+    <span class="n">fbLS8FarFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
 
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: @(BTPS):Shutter:01&#39;</span><span class="p">}</span>
-    <span class="n">fbShutterSafety1</span> <span class="p">:</span> <span class="n">FB_ShutterSafety</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: @(BTPS):Shutter:03&#39;</span><span class="p">}</span>
-    <span class="n">fbShutterSafety3</span> <span class="p">:</span> <span class="n">FB_ShutterSafety</span><span class="p">;</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: @(BTPS):Shutter:04&#39;</span><span class="p">}</span>
-    <span class="n">fbShutterSafety4</span> <span class="p">:</span> <span class="n">FB_ShutterSafety</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS1:BTPS&#39;</span><span class="p">}</span>
+    <span class="n">fbSafetyLS1</span> <span class="p">:</span> <span class="n">FB_ShutterSafety</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS5:BTPS&#39;</span><span class="p">}</span>
+    <span class="n">fbSafetyLS5</span> <span class="p">:</span> <span class="n">FB_ShutterSafety</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS8:BTPS&#39;</span><span class="p">}</span>
+    <span class="n">fbSafetyLS8</span> <span class="p">:</span> <span class="n">FB_ShutterSafety</span><span class="p">;</span>
 
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: @(BTPS):DEST&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">LD</span>
+        <span class="n">expand</span><span class="p">:</span> <span class="o">%</span><span class="n">d</span>
+    <span class="s1">&#39;}</span>
     <span class="n">fbDestinations</span> <span class="p">:</span> <span class="n">ARRAY</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="n">GVL_BTPS_Constants</span><span class="o">.</span><span class="n">nDestinations</span><span class="p">]</span> <span class="n">OF</span> <span class="n">FB_DestinationDataStore</span><span class="p">;</span>
 
 <span class="n">END_VAR</span>
@@ -403,59 +416,71 @@
 </dl>
 </section>
 <section id="gvl-btps-constants">
-<h2>GVL_BTPS_Constants<a class="headerlink" href="#gvl-btps-constants" title="Permalink to this headline"></a></h2>
+<h2>GVL_BTPS_Constants<a class="headerlink" href="#gvl-btps-constants" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
-    <span class="n">nSources</span> <span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="n">nSources</span> <span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">8</span><span class="p">;</span>
     <span class="p">(</span><span class="o">*</span> <span class="n">Destinations</span>
 
-        <span class="n">LTLHN</span><span class="p">:</span><span class="n">LD8</span><span class="p">:</span><span class="n">VGC</span><span class="p">:</span><span class="mi">01</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="p">)</span> <span class="o">-</span> <span class="n">TMO</span> <span class="o">-</span> <span class="n">IP1</span>
-        <span class="n">LTLHN</span><span class="p">:</span><span class="n">LD10</span><span class="p">:</span><span class="n">VGC</span><span class="p">:</span><span class="mi">01</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="p">)</span> <span class="o">-</span> <span class="n">TMO</span> <span class="o">-</span> <span class="n">IP2</span>
         <span class="n">LTLHN</span><span class="p">:</span><span class="n">LD2</span><span class="p">:</span><span class="n">VGC</span><span class="p">:</span><span class="mi">01</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="p">)</span> <span class="o">-</span> <span class="n">TMO</span> <span class="o">-</span> <span class="n">IP3</span>
-
-        <span class="n">LTLHN</span><span class="p">:</span><span class="n">LD6</span><span class="p">:</span><span class="n">VGC</span><span class="p">:</span><span class="mi">01</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="p">)</span> <span class="o">-</span> <span class="n">RIX</span> <span class="o">-</span> <span class="n">qRIXS</span>
         <span class="n">LTLHN</span><span class="p">:</span><span class="n">LD4</span><span class="p">:</span><span class="n">VGC</span><span class="p">:</span><span class="mi">01</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="p">)</span> <span class="o">-</span> <span class="n">RIX</span> <span class="o">-</span> <span class="n">ChemRIXS</span>
+        <span class="n">LTLHN</span><span class="p">:</span><span class="n">LD6</span><span class="p">:</span><span class="n">VGC</span><span class="p">:</span><span class="mi">01</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="p">)</span> <span class="o">-</span> <span class="n">RIX</span> <span class="o">-</span> <span class="n">qRIXS</span>
+        <span class="n">LTLHN</span><span class="p">:</span><span class="n">LD8</span><span class="p">:</span><span class="n">VGC</span><span class="p">:</span><span class="mi">01</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="p">)</span> <span class="o">-</span> <span class="n">TMO</span> <span class="o">-</span> <span class="n">IP1</span>
+        <span class="n">LTLHN</span><span class="p">:</span><span class="n">LD9</span><span class="p">:</span><span class="n">VGC</span><span class="p">:</span><span class="mi">01</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="p">)</span> <span class="o">-</span> <span class="n">Laser</span> <span class="n">Lab</span>
+        <span class="n">LTLHN</span><span class="p">:</span><span class="n">LD10</span><span class="p">:</span><span class="n">VGC</span><span class="p">:</span><span class="mi">01</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="p">)</span> <span class="o">-</span> <span class="n">TMO</span> <span class="o">-</span> <span class="n">IP2</span>
         <span class="n">LTLHN</span><span class="p">:</span><span class="n">LD14</span><span class="p">:</span><span class="n">VGC</span><span class="p">:</span><span class="mi">01</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="p">)</span> <span class="o">-</span> <span class="n">XPP</span>
 
-        <span class="n">LTLHN</span><span class="p">:</span><span class="n">LD9</span><span class="p">:</span><span class="n">VGC</span><span class="p">:</span><span class="mi">01</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="p">)</span> <span class="o">-</span> <span class="n">Laser</span> <span class="n">Lab</span>
-
     <span class="o">*</span><span class="p">)</span>
-    <span class="n">nDestinations</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="n">nDestinations</span><span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">14</span><span class="p">;</span>
 <span class="n">END_VAR</span>
 </pre></div>
 </div>
 </section>
 <section id="gvl-btps-retain">
-<h2>GVL_BTPS_Retain<a class="headerlink" href="#gvl-btps-retain" title="Permalink to this headline"></a></h2>
+<h2>GVL_BTPS_Retain<a class="headerlink" href="#gvl-btps-retain" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span> <span class="n">PERSISTENT</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Config</span><span class="p">:</span><span class="n">MaxFrameTime</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Config</span><span class="p">:</span><span class="n">MaxFrameTime</span>
         <span class="n">field</span><span class="p">:</span> <span class="n">DESC</span> <span class="n">Maximum</span> <span class="n">delay</span> <span class="kn">from</span> <span class="nn">frame</span> <span class="n">to</span> <span class="n">frame</span>
         <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">sec</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
     <span class="s1">&#39;}</span>
     <span class="n">fMaximumFrameTime</span> <span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">5.0</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Config</span><span class="p">:</span><span class="n">MinPixelChange</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Config</span><span class="p">:</span><span class="n">MinPixelChange</span>
         <span class="n">field</span><span class="p">:</span> <span class="n">DESC</span> <span class="n">Minimum</span> <span class="n">px</span> <span class="n">change</span> <span class="n">to</span> <span class="n">be</span> <span class="n">considered</span> <span class="n">valid</span>
         <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">px</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
     <span class="s1">&#39;}</span>
     <span class="n">fMinPixelChange</span> <span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">0.05</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">BTPS</span><span class="p">):</span><span class="n">Config</span><span class="p">:</span><span class="n">SystemOverride</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Config</span><span class="p">:</span><span class="n">SystemOverride</span>
         <span class="n">field</span><span class="p">:</span> <span class="n">DESC</span> <span class="n">Full</span> <span class="n">system</span><span class="o">-</span><span class="n">level</span> <span class="n">override</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
     <span class="s1">&#39;}</span>
     <span class="n">bSystemOverride</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Config</span><span class="p">:</span><span class="n">Maintenance</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">DESC</span> <span class="n">System</span> <span class="n">undergoing</span> <span class="n">maintenance</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">Normal</span> <span class="n">operation</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">Maintenance</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZSV</span> <span class="n">NO_ALARM</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">OSV</span> <span class="n">MAJOR</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">bMaintenanceMode</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
 
 <span class="n">END_VAR</span>
 </pre></div>
 </div>
 </section>
 <section id="gvl-bts-vac">
-<h2>GVL_BTS_VAC<a class="headerlink" href="#gvl-bts-vac" title="Permalink to this headline"></a></h2>
+<h2>GVL_BTS_VAC<a class="headerlink" href="#gvl-bts-vac" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="p">(</span><span class="o">*</span> <span class="n">Valves</span> <span class="o">*</span><span class="p">)</span>
@@ -785,7 +810,7 @@
 </div>
 </section>
 <section id="gvl-com">
-<h2>GVL_COM<a class="headerlink" href="#gvl-com" title="Permalink to this headline"></a></h2>
+<h2>GVL_COM<a class="headerlink" href="#gvl-com" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="o">//</span> <span class="n">Define</span> <span class="n">COM</span> <span class="n">Ports</span><span class="o">/</span><span class="n">Buffers</span> <span class="n">incl</span><span class="o">.</span> <span class="n">library</span> <span class="n">Tc2_SerialCom</span>
@@ -854,7 +879,7 @@
 </div>
 </section>
 <section id="gvl-constants">
-<h2>GVL_Constants<a class="headerlink" href="#gvl-constants" title="Permalink to this headline"></a></h2>
+<h2>GVL_Constants<a class="headerlink" href="#gvl-constants" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
     <span class="n">ATM_PRESS</span> <span class="p">:</span> <span class="n">INT</span> <span class="o">:=</span> <span class="mi">760</span><span class="p">;</span> <span class="o">//</span> <span class="n">Atmospheric</span> <span class="n">pressure</span> <span class="ow">in</span> <span class="n">Torr</span>
     <span class="n">ATM_PRESS_ERR_RNG</span> <span class="p">:</span> <span class="n">INT</span> <span class="o">:=</span> <span class="mi">10</span><span class="p">;</span> <span class="o">//</span> <span class="n">Error</span> <span class="nb">range</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">still</span> <span class="n">considered</span> <span class="n">atmospheric</span> <span class="n">pressure</span>
@@ -866,7 +891,7 @@
 </div>
 </section>
 <section id="gvl-shutters">
-<h2>GVL_Shutters<a class="headerlink" href="#gvl-shutters" title="Permalink to this headline"></a></h2>
+<h2>GVL_Shutters<a class="headerlink" href="#gvl-shutters" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
 
@@ -877,7 +902,7 @@
         <span class="o">.</span><span class="n">bLssStatus</span>         <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL1004_04_04</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
     <span class="s1">&#39;}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS1:LST&#39;</span><span class="p">}</span>
-    <span class="n">fbBay1</span> <span class="p">:</span> <span class="n">ST_ShutterControl</span><span class="p">;</span>
+    <span class="n">fbLS1</span> <span class="p">:</span> <span class="n">ST_ShutterControl</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="o">.</span><span class="n">bOpenRequest</span>       <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL2624_04_01</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
@@ -886,7 +911,7 @@
         <span class="o">.</span><span class="n">bLssStatus</span>         <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL1004_04_04</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
     <span class="s1">&#39;}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS3:LST&#39;</span><span class="p">}</span>
-    <span class="n">fbBay2</span> <span class="p">:</span> <span class="n">ST_ShutterControl</span><span class="p">;</span>
+    <span class="n">fbLS3</span> <span class="p">:</span> <span class="n">ST_ShutterControl</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="o">.</span><span class="n">bOpenRequest</span>       <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL2624_04_01</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
@@ -895,7 +920,7 @@
         <span class="o">.</span><span class="n">bLssStatus</span>         <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL1004_04_04</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
     <span class="s1">&#39;}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS5:LST&#39;</span><span class="p">}</span>
-    <span class="n">fbBay3</span> <span class="p">:</span> <span class="n">ST_ShutterControl</span><span class="p">;</span>
+    <span class="n">fbLS5</span> <span class="p">:</span> <span class="n">ST_ShutterControl</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="o">.</span><span class="n">bOpenRequest</span>       <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL2624_04_01</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
@@ -904,7 +929,7 @@
         <span class="o">.</span><span class="n">bLssStatus</span>         <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL1004_04_04</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
     <span class="s1">&#39;}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS8:LST&#39;</span><span class="p">}</span>
-    <span class="n">fbBay4</span> <span class="p">:</span> <span class="n">ST_ShutterControl</span><span class="p">;</span>
+    <span class="n">fbLS8</span> <span class="p">:</span> <span class="n">ST_ShutterControl</span><span class="p">;</span>
 
 <span class="n">END_VAR</span>
 </pre></div>
@@ -917,7 +942,7 @@
 </dl>
 </section>
 <section id="gvl-variables">
-<h2>GVL_Variables<a class="headerlink" href="#gvl-variables" title="Permalink to this headline"></a></h2>
+<h2>GVL_Variables<a class="headerlink" href="#gvl-variables" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -935,9 +960,9 @@
 </section>
 </section>
 <section id="pous">
-<h1>POUs<a class="headerlink" href="#pous" title="Permalink to this headline"></a></h1>
+<h1>POUs<a class="headerlink" href="#pous" title="Permalink to this heading"></a></h1>
 <section id="diagnostics">
-<h2>DIAGNOSTICS<a class="headerlink" href="#diagnostics" title="Permalink to this headline"></a></h2>
+<h2>DIAGNOSTICS<a class="headerlink" href="#diagnostics" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">DIAGNOSTICS</span>
 <span class="n">VAR</span>
     <span class="o">//</span><span class="n">Change</span> <span class="n">the</span> <span class="n">PLC</span> <span class="n">String</span> <span class="n">Name</span> <span class="n">to</span> <span class="n">the</span> <span class="n">actual</span> <span class="n">PLC</span> <span class="n">NAME</span>
@@ -976,7 +1001,7 @@
 </div>
 </section>
 <section id="f-isvalveready">
-<h2>F_IsValveReady<a class="headerlink" href="#f-isvalveready" title="Permalink to this headline"></a></h2>
+<h2>F_IsValveReady<a class="headerlink" href="#f-isvalveready" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FUNCTION F_IsValveReady : BOOL
 VAR_IN_OUT
     fbValve : FB_VGC;
@@ -997,16 +1022,18 @@ END_FUNCTION
 </div>
 </section>
 <section id="fb-destinationdatastore">
-<h2>FB_DestinationDataStore<a class="headerlink" href="#fb-destinationdatastore" title="Permalink to this headline"></a></h2>
+<h2>FB_DestinationDataStore<a class="headerlink" href="#fb-destinationdatastore" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_DestinationDataStore</span>
 <span class="n">VAR_INPUT</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: Name; io: input&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">BTPS</span><span class="p">:</span><span class="n">Name</span><span class="p">;</span> <span class="n">io</span><span class="p">:</span> <span class="nb">input</span>
+    <span class="s1">&#39;}</span>
     <span class="n">sName</span> <span class="p">:</span> <span class="n">STRING</span><span class="p">;</span>
     <span class="p">(</span><span class="o">*</span>  <span class="n">Do</span> <span class="ow">not</span> <span class="n">pragma</span> <span class="n">valve</span><span class="p">;</span> <span class="n">Use</span> <span class="n">original</span> <span class="n">PVs</span> <span class="n">to</span> <span class="n">access</span> <span class="n">valve</span> <span class="n">state</span> <span class="o">*</span><span class="p">)</span>
     <span class="n">fbDestinationValve</span> <span class="p">:</span> <span class="n">REFERENCE</span> <span class="n">TO</span> <span class="n">FB_VGC</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">ExitValveReady</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">BTPS</span><span class="p">:</span><span class="n">ExitValveReady</span>
         <span class="n">io</span><span class="p">:</span> <span class="nb">input</span>
         <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">Not</span> <span class="n">ready</span>
         <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">Ready</span>
@@ -1015,7 +1042,21 @@ END_FUNCTION
     <span class="s1">&#39;}</span>
     <span class="n">bExitValveReady</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
 
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: SRC&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">BTPS</span><span class="p">:</span><span class="n">YieldsControl</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">output</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">DESC</span> <span class="n">Destination</span> <span class="n">yields</span> <span class="n">control</span> <span class="n">to</span> <span class="n">others</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">Using</span> <span class="n">beam</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">Yielding</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">ZSV</span> <span class="n">MINOR</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">OSV</span> <span class="n">NO_ALARM</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">bYieldsControl</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LS</span>
+        <span class="n">expand</span><span class="p">:</span> <span class="o">%</span><span class="n">s</span><span class="p">:</span><span class="n">BTPS</span>
+    <span class="s1">&#39;}</span>
     <span class="n">stSourceDataStore</span> <span class="p">:</span> <span class="n">ARRAY</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="n">GVL_BTPS_Constants</span><span class="o">.</span><span class="n">nSources</span><span class="p">]</span> <span class="n">OF</span> <span class="n">ST_SourceDataStore</span><span class="p">;</span>
 <span class="n">END_VAR</span>
 <span class="n">VAR_OUTPUT</span>
@@ -1025,54 +1066,46 @@ END_FUNCTION
 <span class="n">VAR</span>
     <span class="n">nIndex</span> <span class="p">:</span> <span class="n">UINT</span><span class="p">;</span>
     <span class="n">stSource</span><span class="p">:</span> <span class="n">REFERENCE</span> <span class="n">TO</span> <span class="n">ST_SourceDataStore</span><span class="p">;</span>
+    <span class="n">bInit</span> <span class="p">:</span> <span class="n">BOOL</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
 <span class="n">END_VAR</span>
+<span class="n">IF</span> <span class="n">NOT</span> <span class="n">bInit</span> <span class="n">THEN</span>
+    <span class="n">bYieldsControl</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">bInit</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
 <span class="n">bExitValveReady</span> <span class="o">:=</span> <span class="n">F_IsValveReady</span><span class="p">(</span><span class="n">fbDestinationValve</span><span class="p">);</span>
 
 <span class="n">Update</span><span class="p">(</span>
     <span class="n">stDataSource</span><span class="o">:=</span><span class="n">stSourceDataStore</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-    <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Source 1&#39;</span><span class="p">,</span>
+    <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;LS1 (From laser bay 1)&#39;</span><span class="p">,</span>
     <span class="n">fbSourceValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LS1_VGC</span><span class="p">,</span>
-    <span class="n">fbLinear</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay1Linear</span><span class="p">,</span>
-    <span class="n">fbRotary</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay1Rotary</span><span class="p">,</span>
-    <span class="n">fbGoniometer</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay1Goniometer</span><span class="p">,</span>
-    <span class="n">fbNearField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay1NearFieldCamStats</span><span class="p">,</span>
-    <span class="n">fbFarField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay1FarFieldCamStats</span>
-<span class="p">);</span>
-
-<span class="o">//</span> <span class="n">Future</span> <span class="n">use</span><span class="p">:</span>
-<span class="p">(</span><span class="o">*</span>
-<span class="n">Update</span><span class="p">(</span>
-    <span class="n">stDataSource</span><span class="o">:=</span><span class="n">stSourceDataStore2</span><span class="p">,</span>
-    <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Source 2&#39;</span><span class="p">,</span>
-    <span class="n">fbSourceValve</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay2SourceValve</span><span class="p">,</span>
-    <span class="n">fbLinear</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay2Linear</span><span class="p">,</span>
-    <span class="n">fbRotary</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay2Rotary</span><span class="p">,</span>
-    <span class="n">fbGoniometer</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay2Goniometer</span><span class="p">,</span>
-    <span class="n">fbNearField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay2NearFieldCamStats</span><span class="p">,</span>
-    <span class="n">fbFarField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay2FarFieldCamStats</span>
-<span class="p">);</span>
-<span class="o">*</span><span class="p">)</span>
-
-<span class="n">Update</span><span class="p">(</span>
-    <span class="n">stDataSource</span><span class="o">:=</span><span class="n">stSourceDataStore</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
-    <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Source 3&#39;</span><span class="p">,</span>
-    <span class="n">fbSourceValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LS5_VGC</span><span class="p">,</span>  <span class="p">(</span><span class="o">*</span> <span class="n">This</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">typo</span><span class="p">;</span> <span class="n">LS5</span> <span class="ow">is</span> <span class="k">for</span> <span class="n">source</span> <span class="mi">3</span> <span class="o">*</span><span class="p">)</span>
-    <span class="n">fbLinear</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay3Linear</span><span class="p">,</span>
-    <span class="n">fbRotary</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay3Rotary</span><span class="p">,</span>
-    <span class="n">fbGoniometer</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay3Goniometer</span><span class="p">,</span>
-    <span class="n">fbNearField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay3NearFieldCamStats</span><span class="p">,</span>
-    <span class="n">fbFarField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay3FarFieldCamStats</span>
+    <span class="n">fbLinear</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS1Linear</span><span class="p">,</span>
+    <span class="n">fbRotary</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS1Rotary</span><span class="p">,</span>
+    <span class="n">fbGoniometer</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS1Goniometer</span><span class="p">,</span>
+    <span class="n">fbNearField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS1NearFieldCamStats</span><span class="p">,</span>
+    <span class="n">fbFarField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS1FarFieldCamStats</span>
 <span class="p">);</span>
 
 <span class="n">Update</span><span class="p">(</span>
-    <span class="n">stDataSource</span><span class="o">:=</span><span class="n">stSourceDataStore</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span>
-    <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Source 4&#39;</span><span class="p">,</span>
-    <span class="n">fbSourceValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LS8_VGC</span><span class="p">,</span>  <span class="p">(</span><span class="o">*</span> <span class="n">Similarly</span> <span class="ow">not</span> <span class="n">a</span> <span class="n">typo</span> <span class="o">*</span><span class="p">)</span>
-    <span class="n">fbLinear</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay4Linear</span><span class="p">,</span>
-    <span class="n">fbRotary</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay4Rotary</span><span class="p">,</span>
-    <span class="n">fbGoniometer</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay4Goniometer</span><span class="p">,</span>
-    <span class="n">fbNearField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay4NearFieldCamStats</span><span class="p">,</span>
-    <span class="n">fbFarField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay4FarFieldCamStats</span>
+    <span class="n">stDataSource</span><span class="o">:=</span><span class="n">stSourceDataStore</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span>
+    <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;LS5 (From laser bay 3)&#39;</span><span class="p">,</span>
+    <span class="n">fbSourceValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LS5_VGC</span><span class="p">,</span>
+    <span class="n">fbLinear</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS5Linear</span><span class="p">,</span>
+    <span class="n">fbRotary</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS5Rotary</span><span class="p">,</span>
+    <span class="n">fbGoniometer</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS5Goniometer</span><span class="p">,</span>
+    <span class="n">fbNearField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS5NearFieldCamStats</span><span class="p">,</span>
+    <span class="n">fbFarField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS5FarFieldCamStats</span>
+<span class="p">);</span>
+
+<span class="n">Update</span><span class="p">(</span>
+    <span class="n">stDataSource</span><span class="o">:=</span><span class="n">stSourceDataStore</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span>
+    <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;LS8 (From laser bay 4)&#39;</span><span class="p">,</span>
+    <span class="n">fbSourceValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LS8_VGC</span><span class="p">,</span>
+    <span class="n">fbLinear</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8Linear</span><span class="p">,</span>
+    <span class="n">fbRotary</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8Rotary</span><span class="p">,</span>
+    <span class="n">fbGoniometer</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8Goniometer</span><span class="p">,</span>
+    <span class="n">fbNearField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8NearFieldCamStats</span><span class="p">,</span>
+    <span class="n">fbFarField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8FarFieldCamStats</span>
 <span class="p">);</span>
 
 <span class="n">END_FUNCTION_BLOCK</span>
@@ -1153,6 +1186,8 @@ END_FUNCTION
     <span class="n">bExitValveReady</span> <span class="n">AND</span>
     <span class="n">TRUE</span>
 <span class="p">);</span>
+
+<span class="n">stDataSource</span><span class="o">.</span><span class="n">bInPosition</span> <span class="o">:=</span> <span class="n">stDataSource</span><span class="o">.</span><span class="n">fbLinear</span><span class="o">.</span><span class="n">bInputValid</span> <span class="n">AND</span> <span class="n">stDataSource</span><span class="o">.</span><span class="n">fbLinear</span><span class="o">.</span><span class="n">bInRange</span><span class="p">;</span>
 <span class="n">END_METHOD</span>
 </pre></div>
 </div>
@@ -1170,7 +1205,7 @@ END_FUNCTION
 </dl>
 </section>
 <section id="fb-epicsmotormonitor">
-<h2>FB_EpicsMotorMonitor<a class="headerlink" href="#fb-epicsmotormonitor" title="Permalink to this headline"></a></h2>
+<h2>FB_EpicsMotorMonitor<a class="headerlink" href="#fb-epicsmotormonitor" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span>
     <span class="n">EPICS</span> <span class="n">Motor</span> <span class="n">Record</span> <span class="n">Monitoring</span> <span class="n">tool</span>
 
@@ -1256,7 +1291,7 @@ END_FUNCTION
 </dl>
 </section>
 <section id="fb-epicsstatsmonitor">
-<h2>FB_EpicsStatsMonitor<a class="headerlink" href="#fb-epicsstatsmonitor" title="Permalink to this headline"></a></h2>
+<h2>FB_EpicsStatsMonitor<a class="headerlink" href="#fb-epicsstatsmonitor" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(*
     EPICS AreaDetector Stats Plugin Monitor
 
@@ -1425,7 +1460,7 @@ END_FUNCTION_BLOCK
 </div>
 </section>
 <section id="fb-rangecomparison">
-<h2>FB_RangeComparison<a class="headerlink" href="#fb-rangecomparison" title="Permalink to this headline"></a></h2>
+<h2>FB_RangeComparison<a class="headerlink" href="#fb-rangecomparison" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FUNCTION_BLOCK FB_RangeComparison
 VAR_INPUT PERSISTENT
     (* The low part of the range. *)
@@ -1489,144 +1524,167 @@ END_FUNCTION_BLOCK
 </div>
 </section>
 <section id="fb-shuttersafety">
-<h2>FB_ShutterSafety<a class="headerlink" href="#fb-shuttersafety" title="Permalink to this headline"></a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_ShutterSafety</span>
-<span class="n">VAR_INPUT</span>
+<h2>FB_ShutterSafety<a class="headerlink" href="#fb-shuttersafety" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FUNCTION_BLOCK FB_ShutterSafety
+VAR_INPUT
 
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">LSSPermission</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">FALSE</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">TRUE</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">bLSSPermission</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: LSSPermission
+        io: i
+        field: ZNAM FALSE
+        field: ONAM TRUE
+    &#39;}
+    bLSSPermission : BOOL;
 
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">Acknowledge</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">FALSE</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">TRUE</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">bAcknowledge</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: Acknowledge
+        io: io
+        field: ZNAM FALSE
+        field: ONAM TRUE
+    &#39;}
+    bAcknowledge : BOOL;
 
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">UserOpen</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">Close</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">Open</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">bUserOpenRequest</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: UserOpen
+        io: io
+        field: ZNAM Close
+        field: ONAM Open
+    &#39;}
+    bUserOpenRequest : BOOL;
 
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">Override</span>
-        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">Normal</span> <span class="n">mode</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">Override</span> <span class="n">mode</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">bOverride</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: Override
+        io: io
+        field: ZNAM Normal mode
+        field: ONAM Override mode
+    &#39;}
+    bOverride : BOOL;
 
-    <span class="n">nSourceIndex</span> <span class="p">:</span> <span class="n">UINT</span><span class="p">;</span>
+    nSourceIndex : UINT;
 
-<span class="n">END_VAR</span>
-<span class="n">VAR_IN_OUT</span>
+END_VAR
+VAR_IN_OUT
 
-    <span class="p">(</span><span class="o">*</span> <span class="n">VAR_IN_OUT</span> <span class="o">-&gt;</span> <span class="n">reference</span> <span class="n">to</span> <span class="n">fbDestinations</span> <span class="o">*</span><span class="p">)</span>
-    <span class="n">fbDestinations</span> <span class="p">:</span> <span class="n">ARRAY</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="n">GVL_BTPS_Constants</span><span class="o">.</span><span class="n">nDestinations</span><span class="p">]</span> <span class="n">OF</span> <span class="n">FB_DestinationDataStore</span><span class="p">;</span>
+    (* VAR_IN_OUT -&gt; reference to fbDestinations *)
+    fbDestinations : ARRAY [1..GVL_BTPS_Constants.nDestinations] OF FB_DestinationDataStore;
 
-<span class="n">END_VAR</span>
-<span class="n">VAR_OUTPUT</span>
+END_VAR
+VAR_OUTPUT
 
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">Safe</span>
-        <span class="n">io</span><span class="p">:</span> <span class="nb">input</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">Unsafe</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">Safe</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">bSafeToOpen</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: Safe
+        io: input
+        field: ZNAM Unsafe
+        field: ONAM Safe
+    &#39;}
+    bSafeToOpen : BOOL;
 
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">Error</span>
-        <span class="n">io</span><span class="p">:</span> <span class="nb">input</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">No</span> <span class="n">error</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">Error</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ZSV</span> <span class="n">NO_ALARM</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">OSV</span> <span class="n">MAJOR</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">bLatchedError</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: Error
+        io: input
+        field: ZNAM No error
+        field: ONAM Error
+        field: ZSV NO_ALARM
+        field: OSV MAJOR
+    &#39;}
+    bLatchedError : BOOL;
 
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="n">pv</span><span class="p">:</span> <span class="n">LSS</span><span class="p">:</span><span class="n">OpenRequest</span>
-        <span class="n">io</span><span class="p">:</span> <span class="nb">input</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="n">Request</span> <span class="n">close</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="n">Request</span> <span class="nb">open</span>
-    <span class="s1">&#39;}</span>
-    <span class="n">bOpenSignal</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: LSS:OpenRequest
+        io: input
+        field: ZNAM Request close
+        field: ONAM Request open
+    &#39;}
+    bOpenSignal : BOOL;
 
-    <span class="p">(</span><span class="o">*</span> <span class="n">Rising</span> <span class="n">trigger</span> <span class="n">indicator</span> <span class="n">of</span> <span class="n">a</span> <span class="n">new</span> <span class="n">error</span> <span class="n">condition</span><span class="o">.</span> <span class="o">*</span><span class="p">)</span>
-    <span class="n">rtError</span> <span class="p">:</span> <span class="n">R_TRIG</span><span class="p">;</span>
-    <span class="p">(</span><span class="o">*</span> <span class="n">Rising</span> <span class="n">trigger</span> <span class="n">indicator</span> <span class="n">of</span> <span class="n">user</span> <span class="n">requesting</span> <span class="n">override</span><span class="o">.</span> <span class="o">*</span><span class="p">)</span>
-    <span class="n">rtOverrideSet</span> <span class="p">:</span> <span class="n">R_TRIG</span><span class="p">;</span>
-    <span class="p">(</span><span class="o">*</span> <span class="n">Falling</span> <span class="n">trigger</span> <span class="k">for</span> <span class="n">a</span> <span class="s1">&#39;close shutter&#39;</span> <span class="n">request</span><span class="o">.</span> <span class="o">*</span><span class="p">)</span>
-    <span class="n">ftCloseRequest</span> <span class="p">:</span> <span class="n">F_TRIG</span><span class="p">;</span>
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: CurrentLD
+        io: input
+        field: DESC Current laser destination (LD)
+        field: LOW 0
+        field: HIGH 15
+        field: LSV MAJOR
+        field: HSV MAJOR
+    &#39;}
+    nCurrentLD : INT;
 
-<span class="n">END_VAR</span>
-<span class="n">VAR</span>
+    (* Rising trigger indicator of a new error condition. *)
+    rtError : R_TRIG;
+    (* Rising trigger indicator of user requesting override. *)
+    rtOverrideSet : R_TRIG;
+    (* Falling trigger for a &#39;close shutter&#39; request. *)
+    ftCloseRequest : F_TRIG;
 
-    <span class="n">nDestIndex</span> <span class="p">:</span> <span class="n">UINT</span><span class="p">;</span>
-    <span class="n">bBtpsPermission</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+END_VAR
+VAR
 
-<span class="n">END_VAR</span>
-<span class="n">bLatchedError</span> <span class="n">R</span><span class="o">=</span> <span class="n">bAcknowledge</span><span class="p">;</span>
-<span class="n">bAcknowledge</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    nDestIndex : UINT;
+    bBtpsPermission : BOOL;
 
-<span class="n">IF</span> <span class="n">nSourceIndex</span> <span class="o">&gt;=</span> <span class="mi">1</span> <span class="n">AND</span> <span class="n">nSourceIndex</span> <span class="o">&lt;=</span> <span class="n">GVL_BTPS_Constants</span><span class="o">.</span><span class="n">nSources</span> <span class="n">THEN</span>
-    <span class="n">bBtpsPermission</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
-    <span class="n">FOR</span> <span class="n">nDestIndex</span> <span class="o">:=</span> <span class="mi">1</span> <span class="n">TO</span> <span class="n">GVL_BTPS_Constants</span><span class="o">.</span><span class="n">nDestinations</span> <span class="n">DO</span>
-        <span class="n">bBtpsPermission</span> <span class="o">:=</span> <span class="p">(</span>
-            <span class="n">bBtpsPermission</span> <span class="n">OR</span>
-            <span class="n">fbDestinations</span><span class="p">[</span><span class="n">nDestIndex</span><span class="p">]</span><span class="o">.</span><span class="n">stSourceDataStore</span><span class="p">[</span><span class="n">nSourceIndex</span><span class="p">]</span><span class="o">.</span><span class="n">bChecksOK</span>
-        <span class="p">);</span>
-    <span class="n">END_FOR</span>
-<span class="n">ELSE</span>
-    <span class="n">bBtpsPermission</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
-    <span class="n">bLatchedError</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
-<span class="n">END_IF</span>
+END_VAR
+bLatchedError R= bAcknowledge;
+bAcknowledge := FALSE;
 
-<span class="p">(</span><span class="o">*</span> <span class="n">Latch</span> <span class="n">an</span> <span class="n">error</span> <span class="k">if</span> <span class="n">we</span> <span class="n">have</span> <span class="n">no</span> <span class="n">permission</span><span class="o">.</span> <span class="o">*</span><span class="p">)</span>
-<span class="n">bLatchedError</span> <span class="n">S</span><span class="o">=</span> <span class="n">NOT</span> <span class="n">bBtpsPermission</span><span class="p">;</span>
-<span class="n">rtError</span><span class="p">(</span><span class="n">CLK</span><span class="o">:=</span><span class="n">bLatchedError</span><span class="p">);</span>
+// Figure out the current destination below
+nCurrentLD := 0;
 
-<span class="p">(</span><span class="o">*</span> <span class="n">Reset</span> <span class="n">the</span> <span class="n">user</span> <span class="nb">open</span> <span class="n">request</span> <span class="n">on</span> <span class="n">a</span> <span class="n">new</span> <span class="n">error</span> <span class="p">(</span><span class="k">if</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">override</span> <span class="n">mode</span><span class="p">)</span> <span class="o">*</span><span class="p">)</span>
-<span class="n">bUserOpenRequest</span> <span class="n">R</span><span class="o">=</span> <span class="n">rtError</span><span class="o">.</span><span class="n">Q</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="n">bOverride</span><span class="p">;</span>
+IF nSourceIndex &gt;= 1 AND nSourceIndex &lt;= GVL_BTPS_Constants.nSources THEN
+    bBtpsPermission := FALSE;
+    FOR nDestIndex := 1 TO GVL_BTPS_Constants.nDestinations DO
+        bBtpsPermission := (
+            bBtpsPermission OR
+            fbDestinations[nDestIndex].stSourceDataStore[nSourceIndex].bChecksOK
+        );
+        IF fbDestinations[nDestIndex].stSourceDataStore[nSourceIndex].bInPosition THEN
+            IF nCurrentLD = 0 THEN
+                (* First &quot;valid&quot; destination we&#39;ve seen *)
+                nCurrentLD := UINT_TO_INT(nDestIndex);
+            ELSE
+                (* Multiple &quot;valid&quot; destinations? This means none are valid *)
+                nCurrentLD := -1;
+            END_IF
+        END_IF
+    END_FOR
+ELSE
+    bBtpsPermission := FALSE;
+    bLatchedError := TRUE;
+END_IF
 
-<span class="p">(</span><span class="o">*</span> <span class="n">If</span> <span class="n">the</span> <span class="n">user</span> <span class="n">requesets</span> <span class="n">a</span> <span class="n">shutter</span> <span class="n">close</span><span class="p">,</span> <span class="n">clear</span> <span class="n">override</span> <span class="n">mode</span><span class="o">.</span> <span class="o">*</span><span class="p">)</span>
-<span class="n">ftCloseRequest</span><span class="p">(</span><span class="n">CLK</span><span class="o">:=</span><span class="n">bUserOpenRequest</span><span class="p">);</span>
-<span class="n">bOverride</span> <span class="n">R</span><span class="o">=</span> <span class="n">ftCloseRequest</span><span class="o">.</span><span class="n">Q</span><span class="p">;</span>
+(* Latch an error if we have no permission. *)
+bLatchedError S= NOT bBtpsPermission;
+rtError(CLK:=bLatchedError);
 
-<span class="p">(</span><span class="o">*</span> <span class="n">Don</span><span class="s1">&#39;t open immediately when in override mode.  Make the user request it. *)</span>
-<span class="n">rtOverrideSet</span><span class="p">(</span><span class="n">CLK</span><span class="o">:=</span><span class="n">bOverride</span><span class="p">);</span>
-<span class="n">bUserOpenRequest</span> <span class="n">R</span><span class="o">=</span> <span class="n">rtOverrideSet</span><span class="o">.</span><span class="n">Q</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="n">bBtpsPermission</span><span class="p">;</span>
+(* Reset the user open request on a new error (if not in override mode) *)
+bUserOpenRequest R= rtError.Q AND NOT bOverride;
 
-<span class="p">(</span><span class="o">*</span> <span class="n">LSS</span> <span class="n">permission</span> <span class="n">goes</span> <span class="n">low</span> <span class="o">-&gt;</span> <span class="n">stop</span> <span class="n">override</span> <span class="ow">and</span> <span class="n">reset</span> <span class="n">user</span> <span class="nb">open</span>
+(* If the user requesets a shutter close, clear override mode. *)
+ftCloseRequest(CLK:=bUserOpenRequest);
+bOverride R= ftCloseRequest.Q;
 
-<span class="n">NOTE</span><span class="p">:</span> <span class="n">We</span> <span class="n">do</span> <span class="ow">not</span> <span class="n">have</span> <span class="n">these</span> <span class="n">connected</span> <span class="n">yet</span><span class="p">,</span> <span class="n">so</span> <span class="n">we</span> <span class="n">can</span><span class="s1">&#39;t test this.</span>
-<span class="n">TODO</span><span class="p">:</span> <span class="n">connect</span> <span class="n">bLssPermission</span>
-<span class="n">TODO</span><span class="p">:</span> <span class="n">Double</span><span class="o">-</span><span class="n">check</span> <span class="n">logic</span>
+(* Don&#39;t open immediately when in override mode.  Make the user request it. *)
+rtOverrideSet(CLK:=bOverride);
+bUserOpenRequest R= rtOverrideSet.Q AND NOT bBtpsPermission;
 
-    <span class="n">bOverride</span> <span class="n">R</span><span class="o">=</span> <span class="n">NOT</span> <span class="n">bLssPermission</span><span class="p">;</span>
-    <span class="n">bUserOpenRequest</span> <span class="n">R</span><span class="o">=</span> <span class="n">NOT</span> <span class="n">bLssPermission</span><span class="p">;</span>
-<span class="o">*</span><span class="p">)</span>
+(* LSS permission goes low -&gt; stop override and reset user open
 
-<span class="p">(</span><span class="o">*</span> <span class="n">Lose</span> <span class="n">permission</span> <span class="n">on</span> <span class="n">a</span> <span class="n">latched</span> <span class="n">error</span><span class="o">.</span> <span class="o">*</span><span class="p">)</span>
-<span class="n">bBtpsPermission</span> <span class="n">R</span><span class="o">=</span> <span class="n">bLatchedError</span><span class="p">;</span>
+NOTE: We do not have these connected yet, so we can&#39;t test this.
+TODO: connect bLssPermission
+TODO: Double-check logic
 
-<span class="p">(</span><span class="o">*</span> <span class="n">It</span><span class="s1">&#39;s safe to open IF in override mode (user says so!) or we determined it. *)</span>
-<span class="n">bSafeToOpen</span> <span class="o">:=</span> <span class="n">bOverride</span> <span class="n">OR</span> <span class="n">bBtpsPermission</span><span class="p">;</span>
+    bOverride R= NOT bLssPermission;
+    bUserOpenRequest R= NOT bLssPermission;
+*)
 
-<span class="p">(</span><span class="o">*</span> <span class="n">Only</span> <span class="nb">open</span> <span class="n">the</span> <span class="n">shutter</span> <span class="k">if</span> <span class="n">requested</span> <span class="ow">and</span> <span class="n">it</span><span class="s1">&#39;s safe. *)</span>
-<span class="n">bOpenSignal</span> <span class="o">:=</span> <span class="n">bSafeToOpen</span> <span class="n">AND</span> <span class="n">bUserOpenRequest</span><span class="p">;</span>
+(* Lose permission on a latched error. *)
+bBtpsPermission R= bLatchedError;
 
-<span class="n">END_FUNCTION_BLOCK</span>
+(* It&#39;s safe to open IF in override mode (user says so!) or we determined it. *)
+bSafeToOpen := bOverride OR bBtpsPermission;
+
+(* Only open the shutter if requested and it&#39;s safe. *)
+bOpenSignal := bSafeToOpen AND bUserOpenRequest;
+
+END_FUNCTION_BLOCK
 </pre></div>
 </div>
 <dl class="simple">
@@ -1638,7 +1696,7 @@ END_FUNCTION_BLOCK
 </dl>
 </section>
 <section id="fb-test-epicscentroidmonitor">
-<h2>FB_Test_EpicsCentroidMonitor<a class="headerlink" href="#fb-test-epicscentroidmonitor" title="Permalink to this headline"></a></h2>
+<h2>FB_Test_EpicsCentroidMonitor<a class="headerlink" href="#fb-test-epicscentroidmonitor" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{attribute &#39;call_after_init&#39;}
 FUNCTION_BLOCK FB_Test_EpicsCentroidMonitor EXTENDS TcUnit.FB_TestSuite
 VAR_INPUT
@@ -1777,7 +1835,7 @@ END_METHOD
 </dl>
 </section>
 <section id="fb-test-epicsmotormonitor">
-<h2>FB_Test_EpicsMotorMonitor<a class="headerlink" href="#fb-test-epicsmotormonitor" title="Permalink to this headline"></a></h2>
+<h2>FB_Test_EpicsMotorMonitor<a class="headerlink" href="#fb-test-epicsmotormonitor" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;call_after_init&#39;</span><span class="p">}</span>
 <span class="n">FUNCTION_BLOCK</span> <span class="n">FB_Test_EpicsMotorMonitor</span> <span class="n">EXTENDS</span> <span class="n">TcUnit</span><span class="o">.</span><span class="n">FB_TestSuite</span>
 <span class="n">VAR_INPUT</span>
@@ -1954,7 +2012,7 @@ END_METHOD
 </dl>
 </section>
 <section id="fb-testrangecomparison">
-<h2>FB_TestRangeComparison<a class="headerlink" href="#fb-testrangecomparison" title="Permalink to this headline"></a></h2>
+<h2>FB_TestRangeComparison<a class="headerlink" href="#fb-testrangecomparison" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;call_after_init&#39;</span><span class="p">}</span>
 <span class="n">FUNCTION_BLOCK</span> <span class="n">FB_TestRangeComparison</span> <span class="n">EXTENDS</span> <span class="n">TcUnit</span><span class="o">.</span><span class="n">FB_TestSuite</span>
 <span class="n">VAR_INPUT</span>
@@ -2060,7 +2118,7 @@ END_METHOD
 </dl>
 </section>
 <section id="fb-testshuttersafety">
-<h2>FB_TestShutterSafety<a class="headerlink" href="#fb-testshuttersafety" title="Permalink to this headline"></a></h2>
+<h2>FB_TestShutterSafety<a class="headerlink" href="#fb-testshuttersafety" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_TestShutterSafety</span> <span class="n">EXTENDS</span> <span class="n">TcUnit</span><span class="o">.</span><span class="n">FB_TestSuite</span>
 <span class="n">VAR_INPUT</span>
 <span class="n">END_VAR</span>
@@ -2204,7 +2262,7 @@ END_METHOD
 </dl>
 </section>
 <section id="main">
-<h2>MAIN<a class="headerlink" href="#main" title="Permalink to this headline"></a></h2>
+<h2>MAIN<a class="headerlink" href="#main" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">MAIN</span>
 <span class="n">VAR</span>
     <span class="n">fbLogHandler</span> <span class="p">:</span> <span class="n">FB_LogHandler</span><span class="p">;</span>
@@ -2245,51 +2303,49 @@ END_METHOD
 </dl>
 </section>
 <section id="prg-btps">
-<h2>PRG_BTPS<a class="headerlink" href="#prg-btps" title="Permalink to this headline"></a></h2>
+<h2>PRG_BTPS<a class="headerlink" href="#prg-btps" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_BTPS</span>
 <span class="n">VAR</span>
 
 <span class="n">END_VAR</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay1Linear</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay3Linear</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay4Linear</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS1Linear</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS5Linear</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8Linear</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay1Rotary</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay3Rotary</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay4Rotary</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS1Rotary</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS5Rotary</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8Rotary</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay1Goniometer</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay3Goniometer</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay4Goniometer</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS1Goniometer</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS5Goniometer</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8Goniometer</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay1NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay3NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay4NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS1NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS5NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
 
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay1FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay3FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbBay4FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS1FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS5FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
 
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">1</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;TMO IP1&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD8_VGC</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">2</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;TMO IP2&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD10_VGC</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">3</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;TMO IP3&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD2_VGC</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">4</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;RIX qRIXS&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD6_VGC</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">5</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;RIX ChemRIXS&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD4_VGC</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">6</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;XPP&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD14_VGC</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">7</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Laser Lab&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD9_VGC</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">2</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;TMO IP3&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD2_VGC</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">4</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;RIX ChemRIXS&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD4_VGC</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">6</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;RIX qRIXS&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD6_VGC</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">8</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;TMO IP1&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD8_VGC</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">9</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;Laser Lab&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD9_VGC</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">10</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;TMO IP2&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD10_VGC</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">14</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;XPP&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD14_VGC</span><span class="p">);</span>
 
 <span class="p">(</span><span class="o">*</span> <span class="n">Shutter</span> <span class="n">safety</span> <span class="n">evaluation</span> <span class="n">should</span> <span class="n">always</span> <span class="n">come</span> <span class="n">at</span> <span class="n">the</span> <span class="n">end</span><span class="o">.</span> <span class="o">*</span><span class="p">)</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbShutterSafety1</span><span class="p">(</span><span class="n">nSourceIndex</span><span class="o">:=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fbDestinations</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">);</span>
-<span class="o">//</span> <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbShutterSafety2</span><span class="p">(</span><span class="n">nIndex</span><span class="o">:=</span><span class="mi">2</span><span class="p">,</span> <span class="n">fbDestinations</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbShutterSafety3</span><span class="p">(</span><span class="n">nSourceIndex</span><span class="o">:=</span><span class="mi">3</span><span class="p">,</span> <span class="n">fbDestinations</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">);</span>
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbShutterSafety4</span><span class="p">(</span><span class="n">nSourceIndex</span><span class="o">:=</span><span class="mi">4</span><span class="p">,</span> <span class="n">fbDestinations</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS1</span><span class="p">(</span><span class="n">nSourceIndex</span><span class="o">:=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fbDestinations</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS5</span><span class="p">(</span><span class="n">nSourceIndex</span><span class="o">:=</span><span class="mi">5</span><span class="p">,</span> <span class="n">fbDestinations</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS8</span><span class="p">(</span><span class="n">nSourceIndex</span><span class="o">:=</span><span class="mi">8</span><span class="p">,</span> <span class="n">fbDestinations</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">);</span>
 
 <span class="p">(</span><span class="o">*</span> <span class="n">Based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">shutter</span> <span class="n">safety</span> <span class="n">result</span><span class="p">;</span> <span class="n">send</span> <span class="nb">open</span> <span class="ow">or</span> <span class="n">close</span> <span class="n">request</span> <span class="n">to</span> <span class="n">shutters</span> <span class="o">*</span><span class="p">)</span>
 <span class="n">IF</span> <span class="n">NOT</span> <span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">bSystemOverride</span> <span class="n">THEN</span>
-    <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbBay1</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbShutterSafety1</span><span class="o">.</span><span class="n">bOpenSignal</span><span class="p">;</span>
-    <span class="o">//</span> <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbBay2</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbShutterSafety2</span><span class="o">.</span><span class="n">bOpenSignal</span><span class="p">;</span>
-    <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbBay3</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbShutterSafety3</span><span class="o">.</span><span class="n">bOpenSignal</span><span class="p">;</span>
-    <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbBay4</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbShutterSafety4</span><span class="o">.</span><span class="n">bOpenSignal</span><span class="p">;</span>
+    <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS1</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS1</span><span class="o">.</span><span class="n">bOpenSignal</span><span class="p">;</span>
+    <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS5</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS5</span><span class="o">.</span><span class="n">bOpenSignal</span><span class="p">;</span>
+    <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS8</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS8</span><span class="o">.</span><span class="n">bOpenSignal</span><span class="p">;</span>
 <span class="n">END_IF</span>
 
 <span class="p">(</span><span class="o">*</span> <span class="n">Periodically</span> <span class="n">save</span> <span class="n">persistent</span> <span class="n">variables</span> <span class="k">with</span> <span class="n">source</span><span class="o">/</span><span class="n">destination</span> <span class="n">store</span> <span class="n">information</span> <span class="o">*</span><span class="p">)</span>
@@ -2310,7 +2366,7 @@ END_METHOD
 </dl>
 </section>
 <section id="prg-com">
-<h2>PRG_COM<a class="headerlink" href="#prg-com" title="Permalink to this headline"></a></h2>
+<h2>PRG_COM<a class="headerlink" href="#prg-com" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_COM</span>
 <span class="n">VAR</span>
 <span class="n">END_VAR</span>
@@ -2333,7 +2389,7 @@ END_METHOD
 </div>
 </section>
 <section id="prg-gauges">
-<h2>PRG_GAUGES<a class="headerlink" href="#prg-gauges" title="Permalink to this headline"></a></h2>
+<h2>PRG_GAUGES<a class="headerlink" href="#prg-gauges" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_GAUGES</span>
 <span class="n">VAR</span>
 <span class="n">END_VAR</span>
@@ -2444,7 +2500,7 @@ END_METHOD
 </dl>
 </section>
 <section id="prg-pumps">
-<h2>PRG_PUMPS<a class="headerlink" href="#prg-pumps" title="Permalink to this headline"></a></h2>
+<h2>PRG_PUMPS<a class="headerlink" href="#prg-pumps" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_PUMPS</span>
 <span class="n">VAR</span>
 <span class="n">END_VAR</span>
@@ -2516,7 +2572,7 @@ END_METHOD
 </dl>
 </section>
 <section id="prg-runtests">
-<h2>PRG_RunTests<a class="headerlink" href="#prg-runtests" title="Permalink to this headline"></a></h2>
+<h2>PRG_RunTests<a class="headerlink" href="#prg-runtests" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_RunTests</span>
 <span class="n">VAR</span>
     <span class="n">fbRangeComparison</span> <span class="p">:</span> <span class="n">FB_TestRangeComparison</span><span class="p">;</span>
@@ -2541,7 +2597,7 @@ END_METHOD
 </dl>
 </section>
 <section id="prg-saveperistentvariables">
-<h2>PRG_SavePeristentVariables<a class="headerlink" href="#prg-saveperistentvariables" title="Permalink to this headline"></a></h2>
+<h2>PRG_SavePeristentVariables<a class="headerlink" href="#prg-saveperistentvariables" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>PROGRAM PRG_SavePeristentVariables
 VAR
     fbWritePersistentData: FB_WritePersistentData;
@@ -2571,7 +2627,7 @@ END_PROGRAM
 </div>
 </section>
 <section id="prg-valves">
-<h2>PRG_VALVES<a class="headerlink" href="#prg-valves" title="Permalink to this headline"></a></h2>
+<h2>PRG_VALVES<a class="headerlink" href="#prg-valves" title="Permalink to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_VALVES</span>
 <span class="n">VAR</span>
 <span class="n">END_VAR</span>
