@@ -7212,6 +7212,214 @@ LCLS_Vacuum.FB_MKS275
 
 
  
+LCLS_Vacuum.FB_MKS422
+^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+    :header-rows: 1
+    :align: center
+
+    * - Record
+      - Type
+      - Description
+      - Pragma
+    * - $(PREFIX):AT_VAC_RBV
+      - bi
+      - $(SYMBOL).IG.xAT_VAC
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):Auto_On
+      - bo
+      - $(SYMBOL).IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):Auto_On_RBV
+      - bi
+      - $(SYMBOL).IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - $(PREFIX):AutoOn_timer_RBV
+      - longin
+      - $(SYMBOL).IG.iAutoOnTimer
+      - | io: input
+
+
+    * - $(PREFIX):DISC_ACTIVE_RBV
+      - bi
+      - $(SYMBOL).IG.i_xDisc_Active
+      - | field: ONAM DISC ACTIVE
+        | field: ZNAM NO DISC
+        | io: input
+
+
+    * - $(PREFIX):HV_DIS_DO_RBV
+      - bi
+      - $(SYMBOL).IG.q_xHV_DIS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - $(PREFIX):HV_ON_RBV
+      - bi
+      - $(SYMBOL).IG.i_xHV_ON
+      - | io: input
+
+
+    * - $(PREFIX):HV_SW
+      - bo
+      - $(SYMBOL).IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):HV_SW_RBV
+      - bi
+      - $(SYMBOL).IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):ILK_OK_RBV
+      - bi
+      - $(SYMBOL).IG.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - $(PREFIX):LOGGER
+      - bo
+      - $(SYMBOL).IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):LOGGER_RBV
+      - bi
+      - $(SYMBOL).IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - $(PREFIX):PRESS_AI_RBV
+      - longin
+      - $(SYMBOL).IG.i_iPRESS_R
+      - | io: input
+
+
+    * - $(PREFIX):PRESS_OK_RBV
+      - bi
+      - $(SYMBOL).IG.xPRESS_OK
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - $(PREFIX):PRESS_RBV
+      - ai
+      - $(SYMBOL).IG.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - $(PREFIX):PRO_SP
+      - ao
+      - $(SYMBOL).IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - $(PREFIX):PRO_SP_RBV
+      - ai
+      - $(SYMBOL).IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - $(PREFIX):SP_HYS
+      - ao
+      - $(SYMBOL).IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - $(PREFIX):SP_HYS_RBV
+      - ai
+      - $(SYMBOL).IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - $(PREFIX):STATE_RBV
+      - mbbi
+      - $(SYMBOL).IG.eState
+      - | field: FRST Starting
+        | field: FVST Valid
+        | field: ONST GaugeDisconnected
+        | field: SVST ValidLo
+        | field: SXST ValidHi
+        | field: THST PressInvalid
+        | field: TWST OoR
+        | field: ZRST Off
+        | io: input
+
+
+    * - $(PREFIX):VAC_SP
+      - ao
+      - $(SYMBOL).IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - $(PREFIX):VAC_SP_RBV
+      - ai
+      - $(SYMBOL).IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+ 
 LCLS_Vacuum.FB_MKS500
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -8556,7 +8764,7 @@ LCLS_Vacuum.FB_VVC
         | io: output
 
 
-              
+                                        
 LCLS_Vacuum.ST_KashiyamaDryPump
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -97700,6 +97908,1186 @@ Database Records
         | link: ['@(SIM)LAS:BTS:MCS2:01:m2', '.RBV', '*EPICSLink.SEVR']
 
 
+    * - LTLHN:BTPS:Chk:LS3:FF:AboveThreshold_RBV
+      - bi
+      - GVL_BTPS.fbLS3FarFieldCamStats.bAboveThreshold; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:HaveNewFrame_RBV
+      - bi
+      - GVL_BTPS.fbLS3FarFieldCamStats.bHaveNewFrame; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:IsUpdating_RBV
+      - bi
+      - GVL_BTPS.fbLS3FarFieldCamStats.bIsUpdating; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:CentroidX_RBV
+      - ai
+      - GVL_BTPS.fbLS3FarFieldCamStats.fCentroidX; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:CentroidY_RBV
+      - ai
+      - GVL_BTPS.fbLS3FarFieldCamStats.fCentroidY; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:FrameTime_RBV
+      - ai
+      - Avg time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+      - | field: EGU sec
+        | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:Total_RBV
+      - ai
+      - Sum of all elements in the image; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:Cnt_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'ArrayCounter_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'ArrayCounter_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:Cnt_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'ArrayCounter_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'ArrayCounter_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:Cnt_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:Cnt_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:CX_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidX_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidX_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:CX_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidX_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidX_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:CX_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:CX_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:CY_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidY_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidY_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:CY_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidY_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidY_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:CY_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:CY_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:Total_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'Total_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:Total_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'Total_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:Total_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:Total_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:FF:ArrayCount_RBV
+      - longin
+      - GVL_BTPS.fbLS3FarFieldCamStats.nArrayCount; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS3:Gon:Msta_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m15', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m15', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Gon:Msta_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m15', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m15', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Gon:Msta_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m15', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m15', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Gon:Msta_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m15', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m15', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Gon:Dmov_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m15', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m15', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Gon:Dmov_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m15', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m15', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Gon:Dmov_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m15', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m15', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Gon:Dmov_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m15', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m15', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Gon:RBV_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m15', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m15', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Gon:RBV_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m15', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m15', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Gon:RBV_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m15', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m15', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Gon:RBV_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m15', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m15', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Lin:Msta_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m13', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m13', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Lin:Msta_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m13', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m13', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Lin:Msta_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m13', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m13', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Lin:Msta_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m13', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m13', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Lin:Dmov_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m13', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m13', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Lin:Dmov_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m13', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m13', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Lin:Dmov_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m13', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m13', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Lin:Dmov_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m13', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m13', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Lin:RBV_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m13', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m13', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Lin:RBV_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m13', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m13', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Lin:RBV_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m13', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m13', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Lin:RBV_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m13', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m13', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:AboveThreshold_RBV
+      - bi
+      - GVL_BTPS.fbLS3NearFieldCamStats.bAboveThreshold; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:HaveNewFrame_RBV
+      - bi
+      - GVL_BTPS.fbLS3NearFieldCamStats.bHaveNewFrame; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:IsUpdating_RBV
+      - bi
+      - GVL_BTPS.fbLS3NearFieldCamStats.bIsUpdating; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:CentroidX_RBV
+      - ai
+      - GVL_BTPS.fbLS3NearFieldCamStats.fCentroidX; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:CentroidY_RBV
+      - ai
+      - GVL_BTPS.fbLS3NearFieldCamStats.fCentroidY; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:FrameTime_RBV
+      - ai
+      - Avg time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+      - | field: EGU sec
+        | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:Total_RBV
+      - ai
+      - Sum of all elements in the image; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:Cnt_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'ArrayCounter_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'ArrayCounter_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:Cnt_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'ArrayCounter_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'ArrayCounter_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:Cnt_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:Cnt_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:CX_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidX_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidX_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:CX_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidX_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidX_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:CX_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:CX_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:CY_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidY_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidY_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:CY_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidY_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidY_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:CY_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:CY_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:Total_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'Total_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:Total_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'Total_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:Total_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:Total_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:NF:ArrayCount_RBV
+      - longin
+      - GVL_BTPS.fbLS3NearFieldCamStats.nArrayCount; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS3:Rot:Msta_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m14', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m14', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Rot:Msta_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m14', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m14', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Rot:Msta_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m14', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m14', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Rot:Msta_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m14', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m14', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Rot:Dmov_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m14', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m14', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Rot:Dmov_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m14', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m14', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Rot:Dmov_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m14', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m14', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Rot:Dmov_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m14', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m14', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Rot:RBV_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m14', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m14', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Rot:RBV_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m14', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m14', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Rot:RBV_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m14', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m14', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS3:Rot:RBV_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m14', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m14', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:AboveThreshold_RBV
+      - bi
+      - GVL_BTPS.fbLS4FarFieldCamStats.bAboveThreshold; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:HaveNewFrame_RBV
+      - bi
+      - GVL_BTPS.fbLS4FarFieldCamStats.bHaveNewFrame; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:IsUpdating_RBV
+      - bi
+      - GVL_BTPS.fbLS4FarFieldCamStats.bIsUpdating; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:CentroidX_RBV
+      - ai
+      - GVL_BTPS.fbLS4FarFieldCamStats.fCentroidX; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:CentroidY_RBV
+      - ai
+      - GVL_BTPS.fbLS4FarFieldCamStats.fCentroidY; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:FrameTime_RBV
+      - ai
+      - Avg time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+      - | field: EGU sec
+        | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:Total_RBV
+      - ai
+      - Sum of all elements in the image; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:Cnt_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'ArrayCounter_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'ArrayCounter_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:Cnt_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'ArrayCounter_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'ArrayCounter_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:Cnt_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:Cnt_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:CX_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidX_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidX_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:CX_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidX_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidX_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:CX_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:CX_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:CY_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidY_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidY_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:CY_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidY_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidY_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:CY_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:CY_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:Total_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'Total_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:Total_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'Total_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:Total_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:Total_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:FF:ArrayCount_RBV
+      - longin
+      - GVL_BTPS.fbLS4FarFieldCamStats.nArrayCount; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS4:Gon:Msta_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m11', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m11', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Gon:Msta_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m11', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m11', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Gon:Msta_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m11', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m11', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Gon:Msta_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m11', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m11', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Gon:Dmov_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m11', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m11', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Gon:Dmov_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m11', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m11', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Gon:Dmov_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m11', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m11', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Gon:Dmov_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m11', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m11', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Gon:RBV_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m11', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m11', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Gon:RBV_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m11', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m11', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Gon:RBV_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m11', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m11', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Gon:RBV_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m11', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m11', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Lin:Msta_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m10', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m10', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Lin:Msta_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m10', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m10', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Lin:Msta_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m10', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m10', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Lin:Msta_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m10', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m10', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Lin:Dmov_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m10', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m10', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Lin:Dmov_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m10', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m10', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Lin:Dmov_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m10', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m10', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Lin:Dmov_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m10', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m10', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Lin:RBV_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m10', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m10', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Lin:RBV_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m10', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m10', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Lin:RBV_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m10', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m10', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Lin:RBV_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m10', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m10', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:AboveThreshold_RBV
+      - bi
+      - GVL_BTPS.fbLS4NearFieldCamStats.bAboveThreshold; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:HaveNewFrame_RBV
+      - bi
+      - GVL_BTPS.fbLS4NearFieldCamStats.bHaveNewFrame; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:IsUpdating_RBV
+      - bi
+      - GVL_BTPS.fbLS4NearFieldCamStats.bIsUpdating; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:CentroidX_RBV
+      - ai
+      - GVL_BTPS.fbLS4NearFieldCamStats.fCentroidX; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:CentroidY_RBV
+      - ai
+      - GVL_BTPS.fbLS4NearFieldCamStats.fCentroidY; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:FrameTime_RBV
+      - ai
+      - Avg time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+      - | field: EGU sec
+        | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:Total_RBV
+      - ai
+      - Sum of all elements in the image; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:Cnt_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'ArrayCounter_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'ArrayCounter_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:Cnt_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'ArrayCounter_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'ArrayCounter_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:Cnt_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:Cnt_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:CX_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidX_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidX_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:CX_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidX_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidX_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:CX_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:CX_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:CY_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidY_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidY_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:CY_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidY_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidY_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:CY_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:CY_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:Total_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'Total_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:Total_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'Total_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:Total_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:Total_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:NF:ArrayCount_RBV
+      - longin
+      - GVL_BTPS.fbLS4NearFieldCamStats.nArrayCount; Linked to PV: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY2:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS4:Rot:Msta_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m12', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m12', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Rot:Msta_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m12', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m12', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Rot:Msta_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m12', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m12', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Rot:Msta_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m12', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m12', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Rot:Dmov_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m12', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m12', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Rot:Dmov_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m12', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m12', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Rot:Dmov_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m12', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m12', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Rot:Dmov_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m12', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m12', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Rot:RBV_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m12', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m12', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Rot:RBV_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m12', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m12', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Rot:RBV_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m12', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m12', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS4:Rot:RBV_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m12', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m12', '.RBV', '*EPICSLink.SEVR']
+
+
     * - LTLHN:BTPS:Chk:LS5:FF:AboveThreshold_RBV
       - bi
       - GVL_BTPS.fbLS5FarFieldCamStats.bAboveThreshold; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
@@ -98288,6 +99676,596 @@ Database Records
       - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m6', '.RBV', '*EPICSLink.SEVR']
       - | io: output
         | link: ['@(SIM)LAS:BTS:MCS2:01:m6', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:AboveThreshold_RBV
+      - bi
+      - GVL_BTPS.fbLS6FarFieldCamStats.bAboveThreshold; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:HaveNewFrame_RBV
+      - bi
+      - GVL_BTPS.fbLS6FarFieldCamStats.bHaveNewFrame; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:IsUpdating_RBV
+      - bi
+      - GVL_BTPS.fbLS6FarFieldCamStats.bIsUpdating; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:CentroidX_RBV
+      - ai
+      - GVL_BTPS.fbLS6FarFieldCamStats.fCentroidX; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:CentroidY_RBV
+      - ai
+      - GVL_BTPS.fbLS6FarFieldCamStats.fCentroidY; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:FrameTime_RBV
+      - ai
+      - Avg time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+      - | field: EGU sec
+        | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:Total_RBV
+      - ai
+      - Sum of all elements in the image; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:Cnt_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'ArrayCounter_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'ArrayCounter_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:Cnt_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'ArrayCounter_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'ArrayCounter_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:Cnt_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:Cnt_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:CX_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'CentroidX_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'CentroidX_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:CX_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'CentroidX_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'CentroidX_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:CX_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:CX_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:CY_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'CentroidY_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'CentroidY_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:CY_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'CentroidY_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'CentroidY_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:CY_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:CY_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:Total_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'Total_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:Total_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'Total_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:Total_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:Total_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:FF:ArrayCount_RBV
+      - longin
+      - GVL_BTPS.fbLS6FarFieldCamStats.nArrayCount; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:02:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS6:Gon:Msta_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m18', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m18', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Gon:Msta_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m18', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m18', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Gon:Msta_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m18', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m18', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Gon:Msta_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m18', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m18', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Gon:Dmov_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m18', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m18', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Gon:Dmov_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m18', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m18', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Gon:Dmov_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m18', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m18', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Gon:Dmov_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m18', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m18', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Gon:RBV_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m18', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m18', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Gon:RBV_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m18', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m18', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Gon:RBV_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m18', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m18', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Gon:RBV_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m18', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m18', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Lin:Msta_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m16', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m16', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Lin:Msta_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m16', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m16', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Lin:Msta_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m16', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m16', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Lin:Msta_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m16', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m16', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Lin:Dmov_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m16', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m16', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Lin:Dmov_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m16', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m16', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Lin:Dmov_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m16', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m16', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Lin:Dmov_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m16', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m16', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Lin:RBV_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m16', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m16', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Lin:RBV_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m16', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m16', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Lin:RBV_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m16', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m16', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Lin:RBV_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m16', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m16', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:AboveThreshold_RBV
+      - bi
+      - GVL_BTPS.fbLS6NearFieldCamStats.bAboveThreshold; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:HaveNewFrame_RBV
+      - bi
+      - GVL_BTPS.fbLS6NearFieldCamStats.bHaveNewFrame; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:IsUpdating_RBV
+      - bi
+      - GVL_BTPS.fbLS6NearFieldCamStats.bIsUpdating; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:CentroidX_RBV
+      - ai
+      - GVL_BTPS.fbLS6NearFieldCamStats.fCentroidX; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:CentroidY_RBV
+      - ai
+      - GVL_BTPS.fbLS6NearFieldCamStats.fCentroidY; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:FrameTime_RBV
+      - ai
+      - Avg time between frame updates; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+      - | field: EGU sec
+        | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:Total_RBV
+      - ai
+      - Sum of all elements in the image; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:Cnt_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'ArrayCounter_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'ArrayCounter_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:Cnt_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'ArrayCounter_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'ArrayCounter_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:Cnt_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:Cnt_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'ArrayCounter_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:CX_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'CentroidX_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'CentroidX_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:CX_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'CentroidX_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'CentroidX_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:CX_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:CX_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'CentroidX_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:CY_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'CentroidY_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'CentroidY_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:CY_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'CentroidY_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'CentroidY_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:CY_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:CY_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'CentroidY_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:Total_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'Total_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:Total_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'Total_RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'Total_RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:Total_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:Total_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', 'Total_RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:NF:ArrayCount_RBV
+      - longin
+      - GVL_BTPS.fbLS6NearFieldCamStats.nArrayCount; Linked to PV: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+      - | io: input
+        | link: ['@(SIM)LAS:LHN:BAY3:CAM:01:Stats2:', None]
+
+
+    * - LTLHN:BTPS:Chk:LS6:Rot:Msta_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m17', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m17', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Rot:Msta_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m17', '.MSTA', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m17', '.MSTA', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Rot:Msta_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m17', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m17', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Rot:Msta_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m17', '.MSTA', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m17', '.MSTA', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Rot:Dmov_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m17', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m17', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Rot:Dmov_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m17', '.DMOV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m17', '.DMOV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Rot:Dmov_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m17', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m17', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Rot:Dmov_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m17', '.DMOV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m17', '.DMOV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Rot:RBV_:EPICSLink_RBV
+      - ai
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m17', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m17', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Rot:RBV_:EPICSLink
+      - ao
+      - Internal variable used to monitor EPICS PV in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m17', '.RBV', '']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m17', '.RBV', '']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Rot:RBV_:EPICSLink:LinkSeverity_RBV
+      - longin
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m17', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m17', '.RBV', '*EPICSLink.SEVR']
+
+
+    * - LTLHN:BTPS:Chk:LS6:Rot:RBV_:EPICSLink:LinkSeverity
+      - longout
+      - Internal variable used to monitor EPICS PV severity in PLC; Linked to PV: ['@(SIM)LAS:BTS:MCS2:01:m17', '.RBV', '*EPICSLink.SEVR']
+      - | io: output
+        | link: ['@(SIM)LAS:BTS:MCS2:01:m17', '.RBV', '*EPICSLink.SEVR']
 
 
     * - LTLHN:BTPS:Chk:LS8:FF:AboveThreshold_RBV
@@ -98972,6 +100950,190 @@ Database Records
         | io: input
 
 
+    * - LTLHN:LS3:BTPS:Acknowledge_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS3.bAcknowledge
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS3:BTPS:Acknowledge
+      - bo
+      - GVL_BTPS.fbSafetyLS3.bAcknowledge
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS3:BTPS:LSSPermission_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS3.bLSSPermission
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS3:BTPS:Error_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS3.bLatchedError
+      - | field: ONAM Error
+        | field: OSV MAJOR
+        | field: ZNAM No error
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LTLHN:LS3:BTPS:LSS:OpenRequest_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS3.bOpenSignal
+      - | field: ONAM Request open
+        | field: ZNAM Request close
+        | io: input
+
+
+    * - LTLHN:LS3:BTPS:Override_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS3.bOverride
+      - | field: ONAM Override mode
+        | field: ZNAM Normal mode
+        | io: output
+
+
+    * - LTLHN:LS3:BTPS:Override
+      - bo
+      - GVL_BTPS.fbSafetyLS3.bOverride
+      - | field: ONAM Override mode
+        | field: ZNAM Normal mode
+        | io: output
+
+
+    * - LTLHN:LS3:BTPS:Safe_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS3.bSafeToOpen
+      - | field: ONAM Safe
+        | field: ZNAM Unsafe
+        | io: input
+
+
+    * - LTLHN:LS3:BTPS:UserOpen_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS3.bUserOpenRequest
+      - | field: ONAM Open
+        | field: ZNAM Close
+        | io: output
+
+
+    * - LTLHN:LS3:BTPS:UserOpen
+      - bo
+      - GVL_BTPS.fbSafetyLS3.bUserOpenRequest
+      - | field: ONAM Open
+        | field: ZNAM Close
+        | io: output
+
+
+    * - LTLHN:LS3:BTPS:CurrentLD_RBV
+      - longin
+      - Current laser destination (LD)
+      - | field: HIGH 15
+        | field: HSV MAJOR
+        | field: LOW 0
+        | field: LSV MAJOR
+        | io: input
+
+
+    * - LTLHN:LS4:BTPS:Acknowledge_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS4.bAcknowledge
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS4:BTPS:Acknowledge
+      - bo
+      - GVL_BTPS.fbSafetyLS4.bAcknowledge
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS4:BTPS:LSSPermission_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS4.bLSSPermission
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS4:BTPS:Error_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS4.bLatchedError
+      - | field: ONAM Error
+        | field: OSV MAJOR
+        | field: ZNAM No error
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LTLHN:LS4:BTPS:LSS:OpenRequest_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS4.bOpenSignal
+      - | field: ONAM Request open
+        | field: ZNAM Request close
+        | io: input
+
+
+    * - LTLHN:LS4:BTPS:Override_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS4.bOverride
+      - | field: ONAM Override mode
+        | field: ZNAM Normal mode
+        | io: output
+
+
+    * - LTLHN:LS4:BTPS:Override
+      - bo
+      - GVL_BTPS.fbSafetyLS4.bOverride
+      - | field: ONAM Override mode
+        | field: ZNAM Normal mode
+        | io: output
+
+
+    * - LTLHN:LS4:BTPS:Safe_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS4.bSafeToOpen
+      - | field: ONAM Safe
+        | field: ZNAM Unsafe
+        | io: input
+
+
+    * - LTLHN:LS4:BTPS:UserOpen_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS4.bUserOpenRequest
+      - | field: ONAM Open
+        | field: ZNAM Close
+        | io: output
+
+
+    * - LTLHN:LS4:BTPS:UserOpen
+      - bo
+      - GVL_BTPS.fbSafetyLS4.bUserOpenRequest
+      - | field: ONAM Open
+        | field: ZNAM Close
+        | io: output
+
+
+    * - LTLHN:LS4:BTPS:CurrentLD_RBV
+      - longin
+      - Current laser destination (LD)
+      - | field: HIGH 15
+        | field: HSV MAJOR
+        | field: LOW 0
+        | field: LSV MAJOR
+        | io: input
+
+
     * - LTLHN:LS5:BTPS:Acknowledge_RBV
       - bi
       - GVL_BTPS.fbSafetyLS5.bAcknowledge
@@ -99055,6 +101217,98 @@ Database Records
 
 
     * - LTLHN:LS5:BTPS:CurrentLD_RBV
+      - longin
+      - Current laser destination (LD)
+      - | field: HIGH 15
+        | field: HSV MAJOR
+        | field: LOW 0
+        | field: LSV MAJOR
+        | io: input
+
+
+    * - LTLHN:LS6:BTPS:Acknowledge_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS6.bAcknowledge
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS6:BTPS:Acknowledge
+      - bo
+      - GVL_BTPS.fbSafetyLS6.bAcknowledge
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS6:BTPS:LSSPermission_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS6.bLSSPermission
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS6:BTPS:Error_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS6.bLatchedError
+      - | field: ONAM Error
+        | field: OSV MAJOR
+        | field: ZNAM No error
+        | field: ZSV NO_ALARM
+        | io: input
+
+
+    * - LTLHN:LS6:BTPS:LSS:OpenRequest_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS6.bOpenSignal
+      - | field: ONAM Request open
+        | field: ZNAM Request close
+        | io: input
+
+
+    * - LTLHN:LS6:BTPS:Override_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS6.bOverride
+      - | field: ONAM Override mode
+        | field: ZNAM Normal mode
+        | io: output
+
+
+    * - LTLHN:LS6:BTPS:Override
+      - bo
+      - GVL_BTPS.fbSafetyLS6.bOverride
+      - | field: ONAM Override mode
+        | field: ZNAM Normal mode
+        | io: output
+
+
+    * - LTLHN:LS6:BTPS:Safe_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS6.bSafeToOpen
+      - | field: ONAM Safe
+        | field: ZNAM Unsafe
+        | io: input
+
+
+    * - LTLHN:LS6:BTPS:UserOpen_RBV
+      - bi
+      - GVL_BTPS.fbSafetyLS6.bUserOpenRequest
+      - | field: ONAM Open
+        | field: ZNAM Close
+        | io: output
+
+
+    * - LTLHN:LS6:BTPS:UserOpen
+      - bo
+      - GVL_BTPS.fbSafetyLS6.bUserOpenRequest
+      - | field: ONAM Open
+        | field: ZNAM Close
+        | io: output
+
+
+    * - LTLHN:LS6:BTPS:CurrentLD_RBV
       - longin
       - Current laser destination (LD)
       - | field: HIGH 15
@@ -107296,6 +109550,1928 @@ Database Records
       - | io: output
 
 
+    * - LTLHN:LS3:GCC:01:STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.eState
+      - | field: FRST Starting
+        | field: FVST Valid
+        | field: ONST GaugeDisconnected
+        | field: SVST ValidLo
+        | field: SXST ValidHi
+        | field: THST PressInvalid
+        | field: TWST OoR
+        | field: ZRST Off
+        | io: input
+
+
+    * - LTLHN:LS3:GCC:01:AutoOn_timer_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.iAutoOnTimer
+      - | io: input
+
+
+    * - LTLHN:LS3:GCC:01:PRESS_AI_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.i_iPRESS_R
+      - | io: input
+
+
+    * - LTLHN:LS3:GCC:01:DISC_ACTIVE_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.i_xDisc_Active
+      - | field: ONAM DISC ACTIVE
+        | field: ZNAM NO DISC
+        | io: input
+
+
+    * - LTLHN:LS3:GCC:01:HV_ON_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.i_xHV_ON
+      - | io: input
+
+
+    * - LTLHN:LS3:GCC:01:HV_DIS_DO_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.q_xHV_DIS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS3:GCC:01:SP_HYS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:GCC:01:SP_HYS
+      - ao
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:GCC:01:PRESS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - LTLHN:LS3:GCC:01:PRO_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:GCC:01:PRO_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:GCC:01:VAC_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:GCC:01:VAC_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:GCC:01:AT_VAC_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.xAT_VAC
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS3:GCC:01:Auto_On_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS3:GCC:01:Auto_On
+      - bo
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS3:GCC:01:HV_SW_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS3:GCC:01:HV_SW
+      - bo
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS3:GCC:01:ILK_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - LTLHN:LS3:GCC:01:LOGGER_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS3:GCC:01:LOGGER
+      - bo
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS3:GCC:01:PRESS_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GCC.IG.xPRESS_OK
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - LTLHN:LS3:GPI:01:STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.eState
+      - | field: FRST Starting
+        | field: FVST Valid
+        | field: ONST GaugeDisconnected
+        | field: SVST ValidLo
+        | field: SXST ValidHi
+        | field: THST PressInvalid
+        | field: TWST OoR
+        | field: ZRST Off
+        | io: input
+
+
+    * - LTLHN:LS3:GPI:01:AutoOn_timer_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.iAutoOnTimer
+      - | io: input
+
+
+    * - LTLHN:LS3:GPI:01:PRESS_AI_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.i_iPRESS_R
+      - | io: input
+
+
+    * - LTLHN:LS3:GPI:01:DISC_ACTIVE_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.i_xDisc_Active
+      - | field: ONAM DISC ACTIVE
+        | field: ZNAM NO DISC
+        | io: input
+
+
+    * - LTLHN:LS3:GPI:01:HV_ON_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.i_xHV_ON
+      - | io: input
+
+
+    * - LTLHN:LS3:GPI:01:HV_DIS_DO_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.q_xHV_DIS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS3:GPI:01:SP_HYS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:GPI:01:SP_HYS
+      - ao
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:GPI:01:PRESS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - LTLHN:LS3:GPI:01:PRO_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:GPI:01:PRO_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:GPI:01:VAC_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:GPI:01:VAC_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:GPI:01:AT_VAC_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.xAT_VAC
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS3:GPI:01:Auto_On_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS3:GPI:01:Auto_On
+      - bo
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS3:GPI:01:HV_SW_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS3:GPI:01:HV_SW
+      - bo
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS3:GPI:01:ILK_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - LTLHN:LS3:GPI:01:LOGGER_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS3:GPI:01:LOGGER
+      - bo
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS3:GPI:01:PRESS_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_GPI.PG.xPRESS_OK
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - LTLHN:LS3:PIP:01:Inverted_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.bOutputInverted
+      - | field: ONAM INVERTED
+        | field: ZNAM NORMAL
+        | io: output
+
+
+    * - LTLHN:LS3:PIP:01:Inverted
+      - bo
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.bOutputInverted
+      - | field: ONAM INVERTED
+        | field: ZNAM NORMAL
+        | io: output
+
+
+    * - LTLHN:LS3:PIP:01:STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.eState
+      - | field: FRST STOPPING
+        | field: ONST STARTING
+        | field: THST FAULT
+        | field: TWST RUNNING
+        | field: ZRST STOPPED
+        | io: input
+
+
+    * - LTLHN:LS3:PIP:01:AutoOn_timer_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.iAutoOnTimer
+      - | io: input
+
+
+    * - LTLHN:LS3:PIP:01:AI_Offset_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.iOffset
+      - | io: output
+
+
+    * - LTLHN:LS3:PIP:01:AI_Offset
+      - longout
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.iOffset
+      - | io: output
+
+
+    * - LTLHN:LS3:PIP:01:PRESS_AI_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.i_iPRESS
+      - | io: input
+
+
+    * - LTLHN:LS3:PIP:01:HV_DI_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.i_xHV_DI
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS3:PIP:01:FORCE_START_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.pv_xOvrdStart
+      - | field: ONAM FORCE START
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS3:PIP:01:FORCE_START
+      - bo
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.pv_xOvrdStart
+      - | field: ONAM FORCE START
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS3:PIP:01:HV_DO_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.q_xHVEna_DO
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - LTLHN:LS3:PIP:01:AT_VAC_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.rHVEna_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:PIP:01:AT_VAC_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.rHVEna_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:PIP:01:SP_HYS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:PIP:01:SP_HYS
+      - ao
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:PIP:01:PRESS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - LTLHN:LS3:PIP:01:ILK_DEVICE_RBV
+      - waveform
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.sIlkDeviceName
+      - | io: input
+
+
+    * - LTLHN:LS3:PIP:01:Auto_On_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS3:PIP:01:Auto_On
+      - bo
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS3:PIP:01:ERROR_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.xError
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS3:PIP:01:HV_SW_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.xHVEna_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS3:PIP:01:HV_SW
+      - bo
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.xHVEna_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS3:PIP:01:ILK_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - LTLHN:LS3:PIP:01:LOGGER_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS3:PIP:01:LOGGER
+      - bo
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS3:PIP:01:OVRD_ON_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - LTLHN:LS3:PIP:01:OVRD_ON
+      - bo
+      - GVL_BTS_VAC.fb_LS3_PIP.stPump.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:Dis_DPIlk_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.i_xDis_DPIlk
+      - | io: output
+
+
+    * - LTLHN:LS3:VGC:01:Dis_DPIlk
+      - bo
+      - GVL_BTS_VAC.fb_LS3_VGC.i_xDis_DPIlk
+      - | io: output
+
+
+    * - LTLHN:LS3:VGC:01:EPS_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.i_xEPS_OK
+      - | io: output
+
+
+    * - LTLHN:LS3:VGC:01:EPS_OK
+      - bo
+      - GVL_BTS_VAC.fb_LS3_VGC.i_xEPS_OK
+      - | io: output
+
+
+    * - LTLHN:LS3:VGC:01:FF_Reset_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.i_xReset
+      - | io: output
+
+
+    * - LTLHN:LS3:VGC:01:FF_Reset
+      - bo
+      - GVL_BTS_VAC.fb_LS3_VGC.i_xReset
+      - | io: output
+
+
+    * - LTLHN:LS3:VGC:01:ERROR_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.bErrorPresent
+      - | field: ONAM ERROR PRESENT
+        | field: ZNAM NO ERROR
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:ERROR
+      - bo
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.bErrorPresent
+      - | field: ONAM ERROR PRESENT
+        | field: ZNAM NO ERROR
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:POS_STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.eState
+      - | field: FRST OPEN_F
+        | field: ONST CLOSED
+        | field: THST INVALID
+        | field: TWST MOVING
+        | field: ZRST OPEN
+        | io: input
+        | type: mbbi
+
+
+    * - LTLHN:LS3:VGC:01:STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.eVGC_State
+      - | field: EIST Close Timeout
+        | field: FRST Ext Fault
+        | field: FVST AT Vacuum
+        | field: NIST Open Timeout
+        | field: ONST At Vacuum
+        | field: SVST Vacuum Fault
+        | field: SXST Triggered
+        | field: THST Lost Vacuum
+        | field: TWST Differential Pressure
+        | field: ZRST Vented
+        | io: input
+
+
+    * - LTLHN:LS3:VGC:01:CLS_DI_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.i_xClsLS
+      - | field: ONAM CLOSE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS3:VGC:01:OPN_DI_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.i_xOpnLS
+      - | field: ONAM OPEN
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS3:VGC:01:ALM_RST_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.pv_xAlmRst
+      - | io: output
+
+
+    * - LTLHN:LS3:VGC:01:ALM_RST
+      - bo
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.pv_xAlmRst
+      - | io: output
+
+
+    * - LTLHN:LS3:VGC:01:OPN_SW_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:OPN_SW
+      - bo
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:FORCE_OPN_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.pv_xOvrdOpn
+      - | field: ONAM FORCE OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:FORCE_OPN
+      - bo
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.pv_xOvrdOpn
+      - | field: ONAM FORCE OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:OPN_DO_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.q_xOPN_DO
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS3:VGC:01:AT_VAC_HYS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.rAT_VAC_HYS
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:AT_VAC_HYS
+      - ao
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.rAT_VAC_HYS
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:AT_VAC_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.rAT_VAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:AT_VAC_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.rAT_VAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:HYST_PERC_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.rHYST_PERC
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:HYST_PERC
+      - ao
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.rHYST_PERC
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:ErrMsg_RBV
+      - waveform
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.sErrorMessage
+      - | io: output
+
+
+    * - LTLHN:LS3:VGC:01:ErrMsg
+      - waveform
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.sErrorMessage
+      - | io: output
+
+
+    * - LTLHN:LS3:VGC:01:ILK_DEVICE_DS_RBV
+      - waveform
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.sIlkDSDeviceName
+      - | io: input
+
+
+    * - LTLHN:LS3:VGC:01:ILK_DEVICE_US_RBV
+      - waveform
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.sIlkUSDeviceName
+      - | io: input
+
+
+    * - LTLHN:LS3:VGC:01:AT_VAC_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.xAT_VAC
+      - | field: ONAM AT VAC
+        | field: ZNAM NOT AT VAC
+        | io: input
+
+
+    * - LTLHN:LS3:VGC:01:DP_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.xDP_OK
+      - | field: ONAM DP OK
+        | field: ZNAM DP NOT OK
+        | io: input
+
+
+    * - LTLHN:LS3:VGC:01:ERR_DifPres_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.xERR_DifPres
+      - | field: ONAM Diffrential error present
+        | field: ZNAM NO ERROR
+        | io: input
+
+
+    * - LTLHN:LS3:VGC:01:ERR_Ext_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.xERR_ExtFault
+      - | field: ONAM External error present
+        | field: ZNAM NO ERROR
+        | io: input
+
+
+    * - LTLHN:LS3:VGC:01:ERR_SP_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.xERR_SP
+      - | field: ONAM Setpoint error present
+        | field: ZNAM NO ERROR
+        | io: input
+
+
+    * - LTLHN:LS3:VGC:01:EXT_ILK_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.xEXT_OK
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - LTLHN:LS3:VGC:01:LOGGER_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:LOGGER
+      - bo
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:OPN_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.xOPN_OK
+      - | field: ONAM OPN ILK OK
+        | field: ZNAM OPN ILK NOT OK
+        | io: input
+
+
+    * - LTLHN:LS3:VGC:01:OVRD_ON_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:OVRD_ON
+      - bo
+      - GVL_BTS_VAC.fb_LS3_VGC.iq_stValve.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:MPS_FAULT_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.xMPS_OK
+      - | field: ONAM MPS OK
+        | field: ZNAM MPS FAULT
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:MPS_FAULT_OK
+      - bo
+      - GVL_BTS_VAC.fb_LS3_VGC.xMPS_OK
+      - | field: ONAM MPS OK
+        | field: ZNAM MPS FAULT
+        | io: output
+
+
+    * - LTLHN:LS3:VGC:01:MPS_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS3_VGC.xPMPS_OK
+      - | io: output
+
+
+    * - LTLHN:LS3:VGC:01:MPS_OK
+      - bo
+      - GVL_BTS_VAC.fb_LS3_VGC.xPMPS_OK
+      - | io: output
+
+
+    * - LTLHN:LS4:GCC:01:STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.eState
+      - | field: FRST Starting
+        | field: FVST Valid
+        | field: ONST GaugeDisconnected
+        | field: SVST ValidLo
+        | field: SXST ValidHi
+        | field: THST PressInvalid
+        | field: TWST OoR
+        | field: ZRST Off
+        | io: input
+
+
+    * - LTLHN:LS4:GCC:01:AutoOn_timer_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.iAutoOnTimer
+      - | io: input
+
+
+    * - LTLHN:LS4:GCC:01:PRESS_AI_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.i_iPRESS_R
+      - | io: input
+
+
+    * - LTLHN:LS4:GCC:01:DISC_ACTIVE_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.i_xDisc_Active
+      - | field: ONAM DISC ACTIVE
+        | field: ZNAM NO DISC
+        | io: input
+
+
+    * - LTLHN:LS4:GCC:01:HV_ON_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.i_xHV_ON
+      - | io: input
+
+
+    * - LTLHN:LS4:GCC:01:HV_DIS_DO_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.q_xHV_DIS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS4:GCC:01:SP_HYS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:GCC:01:SP_HYS
+      - ao
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:GCC:01:PRESS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - LTLHN:LS4:GCC:01:PRO_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:GCC:01:PRO_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:GCC:01:VAC_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:GCC:01:VAC_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:GCC:01:AT_VAC_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.xAT_VAC
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS4:GCC:01:Auto_On_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS4:GCC:01:Auto_On
+      - bo
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS4:GCC:01:HV_SW_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS4:GCC:01:HV_SW
+      - bo
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS4:GCC:01:ILK_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - LTLHN:LS4:GCC:01:LOGGER_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS4:GCC:01:LOGGER
+      - bo
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS4:GCC:01:PRESS_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GCC.IG.xPRESS_OK
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - LTLHN:LS4:GPI:01:STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.eState
+      - | field: FRST Starting
+        | field: FVST Valid
+        | field: ONST GaugeDisconnected
+        | field: SVST ValidLo
+        | field: SXST ValidHi
+        | field: THST PressInvalid
+        | field: TWST OoR
+        | field: ZRST Off
+        | io: input
+
+
+    * - LTLHN:LS4:GPI:01:AutoOn_timer_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.iAutoOnTimer
+      - | io: input
+
+
+    * - LTLHN:LS4:GPI:01:PRESS_AI_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.i_iPRESS_R
+      - | io: input
+
+
+    * - LTLHN:LS4:GPI:01:DISC_ACTIVE_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.i_xDisc_Active
+      - | field: ONAM DISC ACTIVE
+        | field: ZNAM NO DISC
+        | io: input
+
+
+    * - LTLHN:LS4:GPI:01:HV_ON_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.i_xHV_ON
+      - | io: input
+
+
+    * - LTLHN:LS4:GPI:01:HV_DIS_DO_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.q_xHV_DIS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS4:GPI:01:SP_HYS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:GPI:01:SP_HYS
+      - ao
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:GPI:01:PRESS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - LTLHN:LS4:GPI:01:PRO_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:GPI:01:PRO_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:GPI:01:VAC_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:GPI:01:VAC_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:GPI:01:AT_VAC_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.xAT_VAC
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS4:GPI:01:Auto_On_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS4:GPI:01:Auto_On
+      - bo
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS4:GPI:01:HV_SW_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS4:GPI:01:HV_SW
+      - bo
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS4:GPI:01:ILK_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - LTLHN:LS4:GPI:01:LOGGER_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS4:GPI:01:LOGGER
+      - bo
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS4:GPI:01:PRESS_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_GPI.PG.xPRESS_OK
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - LTLHN:LS4:PIP:01:Inverted_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.bOutputInverted
+      - | field: ONAM INVERTED
+        | field: ZNAM NORMAL
+        | io: output
+
+
+    * - LTLHN:LS4:PIP:01:Inverted
+      - bo
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.bOutputInverted
+      - | field: ONAM INVERTED
+        | field: ZNAM NORMAL
+        | io: output
+
+
+    * - LTLHN:LS4:PIP:01:STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.eState
+      - | field: FRST STOPPING
+        | field: ONST STARTING
+        | field: THST FAULT
+        | field: TWST RUNNING
+        | field: ZRST STOPPED
+        | io: input
+
+
+    * - LTLHN:LS4:PIP:01:AutoOn_timer_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.iAutoOnTimer
+      - | io: input
+
+
+    * - LTLHN:LS4:PIP:01:AI_Offset_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.iOffset
+      - | io: output
+
+
+    * - LTLHN:LS4:PIP:01:AI_Offset
+      - longout
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.iOffset
+      - | io: output
+
+
+    * - LTLHN:LS4:PIP:01:PRESS_AI_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.i_iPRESS
+      - | io: input
+
+
+    * - LTLHN:LS4:PIP:01:HV_DI_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.i_xHV_DI
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS4:PIP:01:FORCE_START_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.pv_xOvrdStart
+      - | field: ONAM FORCE START
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS4:PIP:01:FORCE_START
+      - bo
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.pv_xOvrdStart
+      - | field: ONAM FORCE START
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS4:PIP:01:HV_DO_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.q_xHVEna_DO
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - LTLHN:LS4:PIP:01:AT_VAC_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.rHVEna_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:PIP:01:AT_VAC_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.rHVEna_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:PIP:01:SP_HYS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:PIP:01:SP_HYS
+      - ao
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:PIP:01:PRESS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - LTLHN:LS4:PIP:01:ILK_DEVICE_RBV
+      - waveform
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.sIlkDeviceName
+      - | io: input
+
+
+    * - LTLHN:LS4:PIP:01:Auto_On_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS4:PIP:01:Auto_On
+      - bo
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS4:PIP:01:ERROR_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.xError
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS4:PIP:01:HV_SW_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.xHVEna_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS4:PIP:01:HV_SW
+      - bo
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.xHVEna_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS4:PIP:01:ILK_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - LTLHN:LS4:PIP:01:LOGGER_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS4:PIP:01:LOGGER
+      - bo
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS4:PIP:01:OVRD_ON_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - LTLHN:LS4:PIP:01:OVRD_ON
+      - bo
+      - GVL_BTS_VAC.fb_LS4_PIP.stPump.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:Dis_DPIlk_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.i_xDis_DPIlk
+      - | io: output
+
+
+    * - LTLHN:LS4:VGC:01:Dis_DPIlk
+      - bo
+      - GVL_BTS_VAC.fb_LS4_VGC.i_xDis_DPIlk
+      - | io: output
+
+
+    * - LTLHN:LS4:VGC:01:EPS_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.i_xEPS_OK
+      - | io: output
+
+
+    * - LTLHN:LS4:VGC:01:EPS_OK
+      - bo
+      - GVL_BTS_VAC.fb_LS4_VGC.i_xEPS_OK
+      - | io: output
+
+
+    * - LTLHN:LS4:VGC:01:FF_Reset_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.i_xReset
+      - | io: output
+
+
+    * - LTLHN:LS4:VGC:01:FF_Reset
+      - bo
+      - GVL_BTS_VAC.fb_LS4_VGC.i_xReset
+      - | io: output
+
+
+    * - LTLHN:LS4:VGC:01:ERROR_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.bErrorPresent
+      - | field: ONAM ERROR PRESENT
+        | field: ZNAM NO ERROR
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:ERROR
+      - bo
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.bErrorPresent
+      - | field: ONAM ERROR PRESENT
+        | field: ZNAM NO ERROR
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:POS_STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.eState
+      - | field: FRST OPEN_F
+        | field: ONST CLOSED
+        | field: THST INVALID
+        | field: TWST MOVING
+        | field: ZRST OPEN
+        | io: input
+        | type: mbbi
+
+
+    * - LTLHN:LS4:VGC:01:STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.eVGC_State
+      - | field: EIST Close Timeout
+        | field: FRST Ext Fault
+        | field: FVST AT Vacuum
+        | field: NIST Open Timeout
+        | field: ONST At Vacuum
+        | field: SVST Vacuum Fault
+        | field: SXST Triggered
+        | field: THST Lost Vacuum
+        | field: TWST Differential Pressure
+        | field: ZRST Vented
+        | io: input
+
+
+    * - LTLHN:LS4:VGC:01:CLS_DI_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.i_xClsLS
+      - | field: ONAM CLOSE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS4:VGC:01:OPN_DI_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.i_xOpnLS
+      - | field: ONAM OPEN
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS4:VGC:01:ALM_RST_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.pv_xAlmRst
+      - | io: output
+
+
+    * - LTLHN:LS4:VGC:01:ALM_RST
+      - bo
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.pv_xAlmRst
+      - | io: output
+
+
+    * - LTLHN:LS4:VGC:01:OPN_SW_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:OPN_SW
+      - bo
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:FORCE_OPN_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.pv_xOvrdOpn
+      - | field: ONAM FORCE OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:FORCE_OPN
+      - bo
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.pv_xOvrdOpn
+      - | field: ONAM FORCE OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:OPN_DO_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.q_xOPN_DO
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS4:VGC:01:AT_VAC_HYS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.rAT_VAC_HYS
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:AT_VAC_HYS
+      - ao
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.rAT_VAC_HYS
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:AT_VAC_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.rAT_VAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:AT_VAC_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.rAT_VAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:HYST_PERC_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.rHYST_PERC
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:HYST_PERC
+      - ao
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.rHYST_PERC
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:ErrMsg_RBV
+      - waveform
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.sErrorMessage
+      - | io: output
+
+
+    * - LTLHN:LS4:VGC:01:ErrMsg
+      - waveform
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.sErrorMessage
+      - | io: output
+
+
+    * - LTLHN:LS4:VGC:01:ILK_DEVICE_DS_RBV
+      - waveform
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.sIlkDSDeviceName
+      - | io: input
+
+
+    * - LTLHN:LS4:VGC:01:ILK_DEVICE_US_RBV
+      - waveform
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.sIlkUSDeviceName
+      - | io: input
+
+
+    * - LTLHN:LS4:VGC:01:AT_VAC_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.xAT_VAC
+      - | field: ONAM AT VAC
+        | field: ZNAM NOT AT VAC
+        | io: input
+
+
+    * - LTLHN:LS4:VGC:01:DP_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.xDP_OK
+      - | field: ONAM DP OK
+        | field: ZNAM DP NOT OK
+        | io: input
+
+
+    * - LTLHN:LS4:VGC:01:ERR_DifPres_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.xERR_DifPres
+      - | field: ONAM Diffrential error present
+        | field: ZNAM NO ERROR
+        | io: input
+
+
+    * - LTLHN:LS4:VGC:01:ERR_Ext_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.xERR_ExtFault
+      - | field: ONAM External error present
+        | field: ZNAM NO ERROR
+        | io: input
+
+
+    * - LTLHN:LS4:VGC:01:ERR_SP_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.xERR_SP
+      - | field: ONAM Setpoint error present
+        | field: ZNAM NO ERROR
+        | io: input
+
+
+    * - LTLHN:LS4:VGC:01:EXT_ILK_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.xEXT_OK
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - LTLHN:LS4:VGC:01:LOGGER_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:LOGGER
+      - bo
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:OPN_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.xOPN_OK
+      - | field: ONAM OPN ILK OK
+        | field: ZNAM OPN ILK NOT OK
+        | io: input
+
+
+    * - LTLHN:LS4:VGC:01:OVRD_ON_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:OVRD_ON
+      - bo
+      - GVL_BTS_VAC.fb_LS4_VGC.iq_stValve.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:MPS_FAULT_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.xMPS_OK
+      - | field: ONAM MPS OK
+        | field: ZNAM MPS FAULT
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:MPS_FAULT_OK
+      - bo
+      - GVL_BTS_VAC.fb_LS4_VGC.xMPS_OK
+      - | field: ONAM MPS OK
+        | field: ZNAM MPS FAULT
+        | io: output
+
+
+    * - LTLHN:LS4:VGC:01:MPS_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS4_VGC.xPMPS_OK
+      - | io: output
+
+
+    * - LTLHN:LS4:VGC:01:MPS_OK
+      - bo
+      - GVL_BTS_VAC.fb_LS4_VGC.xPMPS_OK
+      - | io: output
+
+
     * - LTLHN:LS5:GCC:01:STATE_RBV
       - mbbi
       - GVL_BTS_VAC.fb_LS5_GCC.IG.eState
@@ -108254,6 +112430,967 @@ Database Records
     * - LTLHN:LS5:VGC:01:MPS_OK
       - bo
       - GVL_BTS_VAC.fb_LS5_VGC.xPMPS_OK
+      - | io: output
+
+
+    * - LTLHN:LS6:GCC:01:STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.eState
+      - | field: FRST Starting
+        | field: FVST Valid
+        | field: ONST GaugeDisconnected
+        | field: SVST ValidLo
+        | field: SXST ValidHi
+        | field: THST PressInvalid
+        | field: TWST OoR
+        | field: ZRST Off
+        | io: input
+
+
+    * - LTLHN:LS6:GCC:01:AutoOn_timer_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.iAutoOnTimer
+      - | io: input
+
+
+    * - LTLHN:LS6:GCC:01:PRESS_AI_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.i_iPRESS_R
+      - | io: input
+
+
+    * - LTLHN:LS6:GCC:01:DISC_ACTIVE_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.i_xDisc_Active
+      - | field: ONAM DISC ACTIVE
+        | field: ZNAM NO DISC
+        | io: input
+
+
+    * - LTLHN:LS6:GCC:01:HV_ON_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.i_xHV_ON
+      - | io: input
+
+
+    * - LTLHN:LS6:GCC:01:HV_DIS_DO_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.q_xHV_DIS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS6:GCC:01:SP_HYS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:GCC:01:SP_HYS
+      - ao
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:GCC:01:PRESS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - LTLHN:LS6:GCC:01:PRO_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:GCC:01:PRO_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:GCC:01:VAC_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:GCC:01:VAC_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:GCC:01:AT_VAC_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.xAT_VAC
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS6:GCC:01:Auto_On_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS6:GCC:01:Auto_On
+      - bo
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS6:GCC:01:HV_SW_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS6:GCC:01:HV_SW
+      - bo
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS6:GCC:01:ILK_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - LTLHN:LS6:GCC:01:LOGGER_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS6:GCC:01:LOGGER
+      - bo
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS6:GCC:01:PRESS_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GCC.IG.xPRESS_OK
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - LTLHN:LS6:GPI:01:STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.eState
+      - | field: FRST Starting
+        | field: FVST Valid
+        | field: ONST GaugeDisconnected
+        | field: SVST ValidLo
+        | field: SXST ValidHi
+        | field: THST PressInvalid
+        | field: TWST OoR
+        | field: ZRST Off
+        | io: input
+
+
+    * - LTLHN:LS6:GPI:01:AutoOn_timer_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.iAutoOnTimer
+      - | io: input
+
+
+    * - LTLHN:LS6:GPI:01:PRESS_AI_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.i_iPRESS_R
+      - | io: input
+
+
+    * - LTLHN:LS6:GPI:01:DISC_ACTIVE_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.i_xDisc_Active
+      - | field: ONAM DISC ACTIVE
+        | field: ZNAM NO DISC
+        | io: input
+
+
+    * - LTLHN:LS6:GPI:01:HV_ON_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.i_xHV_ON
+      - | io: input
+
+
+    * - LTLHN:LS6:GPI:01:HV_DIS_DO_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.q_xHV_DIS
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS6:GPI:01:SP_HYS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:GPI:01:SP_HYS
+      - ao
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:GPI:01:PRESS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - LTLHN:LS6:GPI:01:PRO_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:GPI:01:PRO_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.rPRO_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:GPI:01:VAC_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:GPI:01:VAC_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.rVAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:GPI:01:AT_VAC_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.xAT_VAC
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS6:GPI:01:Auto_On_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS6:GPI:01:Auto_On
+      - bo
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS6:GPI:01:HV_SW_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS6:GPI:01:HV_SW
+      - bo
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.xHV_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS6:GPI:01:ILK_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - LTLHN:LS6:GPI:01:LOGGER_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS6:GPI:01:LOGGER
+      - bo
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS6:GPI:01:PRESS_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_GPI.PG.xPRESS_OK
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - LTLHN:LS6:PIP:01:Inverted_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.bOutputInverted
+      - | field: ONAM INVERTED
+        | field: ZNAM NORMAL
+        | io: output
+
+
+    * - LTLHN:LS6:PIP:01:Inverted
+      - bo
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.bOutputInverted
+      - | field: ONAM INVERTED
+        | field: ZNAM NORMAL
+        | io: output
+
+
+    * - LTLHN:LS6:PIP:01:STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.eState
+      - | field: FRST STOPPING
+        | field: ONST STARTING
+        | field: THST FAULT
+        | field: TWST RUNNING
+        | field: ZRST STOPPED
+        | io: input
+
+
+    * - LTLHN:LS6:PIP:01:AutoOn_timer_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.iAutoOnTimer
+      - | io: input
+
+
+    * - LTLHN:LS6:PIP:01:AI_Offset_RBV
+      - longin
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.iOffset
+      - | io: output
+
+
+    * - LTLHN:LS6:PIP:01:AI_Offset
+      - longout
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.iOffset
+      - | io: output
+
+
+    * - LTLHN:LS6:PIP:01:PRESS_AI_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.i_iPRESS
+      - | io: input
+
+
+    * - LTLHN:LS6:PIP:01:HV_DI_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.i_xHV_DI
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS6:PIP:01:FORCE_START_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.pv_xOvrdStart
+      - | field: ONAM FORCE START
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS6:PIP:01:FORCE_START
+      - bo
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.pv_xOvrdStart
+      - | field: ONAM FORCE START
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS6:PIP:01:HV_DO_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.q_xHVEna_DO
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: input
+
+
+    * - LTLHN:LS6:PIP:01:AT_VAC_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.rHVEna_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:PIP:01:AT_VAC_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.rHVEna_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:PIP:01:SP_HYS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:PIP:01:SP_HYS
+      - ao
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.rHYS_PR
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:PIP:01:PRESS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.rPRESS
+      - | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: input
+
+
+    * - LTLHN:LS6:PIP:01:ILK_DEVICE_RBV
+      - waveform
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.sIlkDeviceName
+      - | io: input
+
+
+    * - LTLHN:LS6:PIP:01:Auto_On_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS6:PIP:01:Auto_On
+      - bo
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.xAutoOn
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS6:PIP:01:ERROR_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.xError
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS6:PIP:01:HV_SW_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.xHVEna_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS6:PIP:01:HV_SW
+      - bo
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.xHVEna_SW
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS6:PIP:01:ILK_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.xILKOk
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - LTLHN:LS6:PIP:01:LOGGER_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS6:PIP:01:LOGGER
+      - bo
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS6:PIP:01:OVRD_ON_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - LTLHN:LS6:PIP:01:OVRD_ON
+      - bo
+      - GVL_BTS_VAC.fb_LS6_PIP.stPump.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:Dis_DPIlk_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.i_xDis_DPIlk
+      - | io: output
+
+
+    * - LTLHN:LS6:VGC:01:Dis_DPIlk
+      - bo
+      - GVL_BTS_VAC.fb_LS6_VGC.i_xDis_DPIlk
+      - | io: output
+
+
+    * - LTLHN:LS6:VGC:01:EPS_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.i_xEPS_OK
+      - | io: output
+
+
+    * - LTLHN:LS6:VGC:01:EPS_OK
+      - bo
+      - GVL_BTS_VAC.fb_LS6_VGC.i_xEPS_OK
+      - | io: output
+
+
+    * - LTLHN:LS6:VGC:01:FF_Reset_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.i_xReset
+      - | io: output
+
+
+    * - LTLHN:LS6:VGC:01:FF_Reset
+      - bo
+      - GVL_BTS_VAC.fb_LS6_VGC.i_xReset
+      - | io: output
+
+
+    * - LTLHN:LS6:VGC:01:ERROR_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.bErrorPresent
+      - | field: ONAM ERROR PRESENT
+        | field: ZNAM NO ERROR
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:ERROR
+      - bo
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.bErrorPresent
+      - | field: ONAM ERROR PRESENT
+        | field: ZNAM NO ERROR
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:POS_STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.eState
+      - | field: FRST OPEN_F
+        | field: ONST CLOSED
+        | field: THST INVALID
+        | field: TWST MOVING
+        | field: ZRST OPEN
+        | io: input
+        | type: mbbi
+
+
+    * - LTLHN:LS6:VGC:01:STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.eVGC_State
+      - | field: EIST Close Timeout
+        | field: FRST Ext Fault
+        | field: FVST AT Vacuum
+        | field: NIST Open Timeout
+        | field: ONST At Vacuum
+        | field: SVST Vacuum Fault
+        | field: SXST Triggered
+        | field: THST Lost Vacuum
+        | field: TWST Differential Pressure
+        | field: ZRST Vented
+        | io: input
+
+
+    * - LTLHN:LS6:VGC:01:CLS_DI_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.i_xClsLS
+      - | field: ONAM CLOSE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS6:VGC:01:OPN_DI_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.i_xOpnLS
+      - | field: ONAM OPEN
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS6:VGC:01:ALM_RST_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.pv_xAlmRst
+      - | io: output
+
+
+    * - LTLHN:LS6:VGC:01:ALM_RST
+      - bo
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.pv_xAlmRst
+      - | io: output
+
+
+    * - LTLHN:LS6:VGC:01:OPN_SW_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:OPN_SW
+      - bo
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:FORCE_OPN_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.pv_xOvrdOpn
+      - | field: ONAM FORCE OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:FORCE_OPN
+      - bo
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.pv_xOvrdOpn
+      - | field: ONAM FORCE OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:OPN_DO_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.q_xOPN_DO
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LTLHN:LS6:VGC:01:AT_VAC_HYS_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.rAT_VAC_HYS
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:AT_VAC_HYS
+      - ao
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.rAT_VAC_HYS
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:AT_VAC_SP_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.rAT_VAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:AT_VAC_SP
+      - ao
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.rAT_VAC_SP
+      - | autosave_pass1: VAL DESC
+        | field: EGU "TORR"
+        | field: HOPR 1000
+        | field: LOPR 0
+        | field: PREC 2
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:HYST_PERC_RBV
+      - ai
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.rHYST_PERC
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:HYST_PERC
+      - ao
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.rHYST_PERC
+      - | autosave_pass1: VAL DESC
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:ErrMsg_RBV
+      - waveform
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.sErrorMessage
+      - | io: output
+
+
+    * - LTLHN:LS6:VGC:01:ErrMsg
+      - waveform
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.sErrorMessage
+      - | io: output
+
+
+    * - LTLHN:LS6:VGC:01:ILK_DEVICE_DS_RBV
+      - waveform
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.sIlkDSDeviceName
+      - | io: input
+
+
+    * - LTLHN:LS6:VGC:01:ILK_DEVICE_US_RBV
+      - waveform
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.sIlkUSDeviceName
+      - | io: input
+
+
+    * - LTLHN:LS6:VGC:01:AT_VAC_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.xAT_VAC
+      - | field: ONAM AT VAC
+        | field: ZNAM NOT AT VAC
+        | io: input
+
+
+    * - LTLHN:LS6:VGC:01:DP_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.xDP_OK
+      - | field: ONAM DP OK
+        | field: ZNAM DP NOT OK
+        | io: input
+
+
+    * - LTLHN:LS6:VGC:01:ERR_DifPres_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.xERR_DifPres
+      - | field: ONAM Diffrential error present
+        | field: ZNAM NO ERROR
+        | io: input
+
+
+    * - LTLHN:LS6:VGC:01:ERR_Ext_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.xERR_ExtFault
+      - | field: ONAM External error present
+        | field: ZNAM NO ERROR
+        | io: input
+
+
+    * - LTLHN:LS6:VGC:01:ERR_SP_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.xERR_SP
+      - | field: ONAM Setpoint error present
+        | field: ZNAM NO ERROR
+        | io: input
+
+
+    * - LTLHN:LS6:VGC:01:EXT_ILK_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.xEXT_OK
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - LTLHN:LS6:VGC:01:LOGGER_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:LOGGER
+      - bo
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:OPN_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.xOPN_OK
+      - | field: ONAM OPN ILK OK
+        | field: ZNAM OPN ILK NOT OK
+        | io: input
+
+
+    * - LTLHN:LS6:VGC:01:OVRD_ON_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:OVRD_ON
+      - bo
+      - GVL_BTS_VAC.fb_LS6_VGC.iq_stValve.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:MPS_FAULT_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.xMPS_OK
+      - | field: ONAM MPS OK
+        | field: ZNAM MPS FAULT
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:MPS_FAULT_OK
+      - bo
+      - GVL_BTS_VAC.fb_LS6_VGC.xMPS_OK
+      - | field: ONAM MPS OK
+        | field: ZNAM MPS FAULT
+        | io: output
+
+
+    * - LTLHN:LS6:VGC:01:MPS_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_LS6_VGC.xPMPS_OK
+      - | io: output
+
+
+    * - LTLHN:LS6:VGC:01:MPS_OK
+      - bo
+      - GVL_BTS_VAC.fb_LS6_VGC.xPMPS_OK
       - | io: output
 
 
@@ -111208,6 +116345,184 @@ Database Records
         | io: output
 
 
+    * - LXLHN:VRC:04:ERROR_RBV
+      - bi
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.bErrorPresent
+      - | field: ONAM ERROR PRESENT
+        | field: ZNAM NO ERROR
+        | io: output
+
+
+    * - LXLHN:VRC:04:ERROR
+      - bo
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.bErrorPresent
+      - | field: ONAM ERROR PRESENT
+        | field: ZNAM NO ERROR
+        | io: output
+
+
+    * - LXLHN:VRC:04:POS_STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.eState
+      - | field: FRST OPEN_F
+        | field: ONST CLOSED
+        | field: THST INVALID
+        | field: TWST MOVING
+        | field: ZRST OPEN
+        | io: input
+        | type: mbbi
+
+
+    * - LXLHN:VRC:04:STATE_RBV
+      - mbbi
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.eVGC_State
+      - | field: EIST Close Timeout
+        | field: FRST Ext Fault
+        | field: FVST AT Vacuum
+        | field: NIST Open Timeout
+        | field: ONST At Vacuum
+        | field: SVST Vacuum Fault
+        | field: SXST Triggered
+        | field: THST Lost Vacuum
+        | field: TWST Differential Pressure
+        | field: ZRST Vented
+        | io: input
+
+
+    * - LXLHN:VRC:04:CLS_DI_RBV
+      - bi
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.i_xClsLS
+      - | field: ONAM CLOSE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LXLHN:VRC:04:OPN_DI_RBV
+      - bi
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.i_xOpnLS
+      - | field: ONAM OPEN
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LXLHN:VRC:04:ALM_RST_RBV
+      - bi
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.pv_xAlmRst
+      - | io: output
+
+
+    * - LXLHN:VRC:04:ALM_RST
+      - bo
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.pv_xAlmRst
+      - | io: output
+
+
+    * - LXLHN:VRC:04:OPN_SW_RBV
+      - bi
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - LXLHN:VRC:04:OPN_SW
+      - bo
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - LXLHN:VRC:04:FORCE_OPN_RBV
+      - bi
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.pv_xOvrdOpn
+      - | field: ONAM FORCE OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LXLHN:VRC:04:FORCE_OPN
+      - bo
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.pv_xOvrdOpn
+      - | field: ONAM FORCE OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LXLHN:VRC:04:OPN_DO_RBV
+      - bi
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.q_xOPN_DO
+      - | field: ONAM TRUE
+        | field: ZNAM FALSE
+        | io: input
+
+
+    * - LXLHN:VRC:04:ErrMsg_RBV
+      - waveform
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.sErrorMessage
+      - | io: output
+
+
+    * - LXLHN:VRC:04:ErrMsg
+      - waveform
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.sErrorMessage
+      - | io: output
+
+
+    * - LXLHN:VRC:04:CLS_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.xCLS_OK
+      - | io: input
+
+
+    * - LXLHN:VRC:04:EXT_ILK_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.xEXT_OK
+      - | field: ONAM OK
+        | field: ZNAM NOT OK
+        | io: input
+
+
+    * - LXLHN:VRC:04:LOGGER_RBV
+      - bi
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LXLHN:VRC:04:LOGGER
+      - bo
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.xLog
+      - | field: ONAM ON
+        | field: ZNAM OFF
+        | io: output
+
+
+    * - LXLHN:VRC:04:OPN_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.xOPN_OK
+      - | field: ONAM OPN ILK OK
+        | field: ZNAM OPN ILK NOT OK
+        | io: input
+
+
+    * - LXLHN:VRC:04:OVRD_ON_RBV
+      - bi
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - LXLHN:VRC:04:OVRD_ON
+      - bo
+      - GVL_BTS_VAC.fb_PP_VRC_4.iq_stValve.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
     * - LXLHN:VVC:01:OPN_SW_RBV
       - bi
       - GVL_BTS_VAC.fb_PP_VVC.iq_stValve.pv_xOPN_SW
@@ -111400,6 +116715,70 @@ Database Records
         | io: output
 
 
+    * - LXLHN:VVC:04:OPN_SW_RBV
+      - bi
+      - GVL_BTS_VAC.fb_VP_VVC_4.iq_stValve.pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - LXLHN:VVC:04:OPN_SW
+      - bo
+      - GVL_BTS_VAC.fb_VP_VVC_4.iq_stValve.pv_xOPN_SW
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: output
+
+
+    * - LXLHN:VVC:04:OPN_DO_RBV
+      - bi
+      - GVL_BTS_VAC.fb_VP_VVC_4.iq_stValve.q_xOPN_DO
+      - | field: ONAM OPEN
+        | field: ZNAM CLOSE
+        | io: input
+
+
+    * - LXLHN:VVC:04:OPN_OK_RBV
+      - bi
+      - GVL_BTS_VAC.fb_VP_VVC_4.iq_stValve.xOPN_OK
+      - | field: ONAM OPN ILK OK
+        | field: ZNAM OPN ILK NOT OK
+        | io: input
+
+
+    * - LXLHN:VVC:04:OVRD_ON_RBV
+      - bi
+      - GVL_BTS_VAC.fb_VP_VVC_4.iq_stValve.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - LXLHN:VVC:04:OVRD_ON
+      - bo
+      - GVL_BTS_VAC.fb_VP_VVC_4.iq_stValve.xOverrideMode
+      - | field: ONAM Override ON
+        | field: ZNAM Override OFF
+        | io: output
+
+
+    * - LXLHN:VVC:04:FORCE_OPN_RBV
+      - bi
+      - GVL_BTS_VAC.fb_VP_VVC_4.iq_stValve.xOvrdOpn
+      - | field: ONAM OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
+    * - LXLHN:VVC:04:FORCE_OPN
+      - bo
+      - GVL_BTS_VAC.fb_VP_VVC_4.iq_stValve.xOvrdOpn
+      - | field: ONAM OPEN
+        | field: ZNAM FALSE
+        | io: output
+
+
     * - $(PREFIX)LCLSGeneral:GlobalLogTrickleTrip_RBV
       - bi
       - Tripped by overall log count
@@ -111496,6 +116875,36 @@ Database Records
       - | io: input
 
 
+    * - LTLHN:LS4:LST:CLS_RBV
+      - bi
+      - LSS Shutter Closed
+      - | io: input
+
+
+    * - LTLHN:LS4:LST:LSS_RBV
+      - bi
+      - LSS Permission Status
+      - | io: input
+
+
+    * - LTLHN:LS4:LST:REQ_RBV
+      - bi
+      - LSS Shutter Open Request
+      - | io: output
+
+
+    * - LTLHN:LS4:LST:REQ
+      - bo
+      - LSS Shutter Open Request
+      - | io: output
+
+
+    * - LTLHN:LS4:LST:OPN_RBV
+      - bi
+      - LSS Shutter Open
+      - | io: input
+
+
     * - LTLHN:LS5:LST:CLS_RBV
       - bi
       - LSS Shutter Closed
@@ -111521,6 +116930,36 @@ Database Records
 
 
     * - LTLHN:LS5:LST:OPN_RBV
+      - bi
+      - LSS Shutter Open
+      - | io: input
+
+
+    * - LTLHN:LS6:LST:CLS_RBV
+      - bi
+      - LSS Shutter Closed
+      - | io: input
+
+
+    * - LTLHN:LS6:LST:LSS_RBV
+      - bi
+      - LSS Permission Status
+      - | io: input
+
+
+    * - LTLHN:LS6:LST:REQ_RBV
+      - bi
+      - LSS Shutter Open Request
+      - | io: output
+
+
+    * - LTLHN:LS6:LST:REQ
+      - bo
+      - LSS Shutter Open Request
+      - | io: output
+
+
+    * - LTLHN:LS6:LST:OPN_RBV
       - bi
       - LSS Shutter Open
       - | io: input
