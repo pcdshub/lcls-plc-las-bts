@@ -1,22 +1,24 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DUTs &mdash; pcdshub/lcls-plc-las-bts  documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
+      <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/doctr-versions-menu.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -28,11 +30,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> pcdshub/lcls-plc-las-bts
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pcdshub/lcls-plc-las-bts
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -42,6 +48,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="lcls-plc-las-bts_pragmas.html">Pragmas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lcls-plc-las-bts_nc.html">NC Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-las-bts_ethercat.html">EtherCAT Terminals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lcls-plc-las-bts_boxes.html">Boxes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="lcls-plc-las-bts_links.html">Links</a></li>
 </ul>
@@ -89,6 +96,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#prg-pumps">PRG_PUMPS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-runtests">PRG_RunTests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-saveperistentvariables">PRG_SavePeristentVariables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-shutterrequest">PRG_ShutterRequest</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#prg-valves">PRG_VALVES</a></li>
 </ul>
 </li>
@@ -107,8 +115,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>DUTs</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">DUTs</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/lcls-plc-las-bts_las_bts_source.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -119,9 +127,9 @@
            <div itemprop="articleBody">
              
   <section id="duts">
-<h1>DUTs<a class="headerlink" href="#duts" title="Permalink to this heading"></a></h1>
+<h1>DUTs<a class="headerlink" href="#duts" title="Link to this heading"></a></h1>
 <section id="st-epicsmotormsta">
-<h2>ST_EpicsMotorMSTA<a class="headerlink" href="#st-epicsmotormsta" title="Permalink to this heading"></a></h2>
+<h2>ST_EpicsMotorMSTA<a class="headerlink" href="#st-epicsmotormsta" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">ST_EpicsMotorMSTA</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
 
@@ -168,7 +176,7 @@
 </dl>
 </section>
 <section id="st-shuttercontrol">
-<h2>ST_ShutterControl<a class="headerlink" href="#st-shuttercontrol" title="Permalink to this heading"></a></h2>
+<h2>ST_ShutterControl<a class="headerlink" href="#st-shuttercontrol" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">ST_ShutterControl</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
 
@@ -203,7 +211,7 @@
 </div>
 </section>
 <section id="st-sourcedatastore">
-<h2>ST_SourceDataStore<a class="headerlink" href="#st-sourcedatastore" title="Permalink to this heading"></a></h2>
+<h2>ST_SourceDataStore<a class="headerlink" href="#st-sourcedatastore" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TYPE</span> <span class="n">ST_SourceDataStore</span> <span class="p">:</span>
 <span class="n">STRUCT</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: Name; io: input&#39;</span><span class="p">}</span>
@@ -279,9 +287,9 @@
 </section>
 </section>
 <section id="gvls">
-<h1>GVLs<a class="headerlink" href="#gvls" title="Permalink to this heading"></a></h1>
+<h1>GVLs<a class="headerlink" href="#gvls" title="Link to this heading"></a></h1>
 <section id="gvl-btps">
-<h2>GVL_BTPS<a class="headerlink" href="#gvl-btps" title="Permalink to this heading"></a></h2>
+<h2>GVL_BTPS<a class="headerlink" href="#gvl-btps" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="p">(</span><span class="o">*</span>
@@ -289,6 +297,9 @@
         <span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m1</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="o">-</span><span class="n">mcs1</span><span class="p">,</span> <span class="n">las_bts_mcs2_01_m1</span><span class="p">)</span>
         <span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m4</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="o">-</span><span class="n">mcs1</span><span class="p">,</span> <span class="n">las_bts_mcs2_01_m4</span><span class="p">)</span>
         <span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m7</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="o">-</span><span class="n">mcs1</span><span class="p">,</span> <span class="n">las_bts_mcs2_01_m7</span><span class="p">)</span>
+        <span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m13</span>
+        <span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m10</span>
+        <span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m16</span>
     <span class="o">*</span><span class="p">)</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS1</span><span class="p">:</span><span class="n">Lin</span>
@@ -305,12 +316,30 @@
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m7</span>
     <span class="s1">&#39;}</span>
     <span class="n">fbLS8Linear</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS3</span><span class="p">:</span><span class="n">Lin</span>
+        <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m13</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbLS3Linear</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS4</span><span class="p">:</span><span class="n">Lin</span>
+        <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m10</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbLS4Linear</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS6</span><span class="p">:</span><span class="n">Lin</span>
+        <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m16</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbLS6Linear</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
 
     <span class="p">(</span><span class="o">*</span>
         <span class="n">Motor</span> <span class="o">-</span> <span class="n">Rotary</span>
             <span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m2</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="o">-</span><span class="n">mcs1</span><span class="p">,</span> <span class="n">las_bts_mcs2_01_m2</span><span class="p">)</span>
             <span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m6</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="o">-</span><span class="n">mcs1</span><span class="p">,</span> <span class="n">las_bts_mcs2_01_m6</span><span class="p">)</span>
             <span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m8</span> <span class="p">(</span><span class="n">ioc</span><span class="o">-</span><span class="n">las</span><span class="o">-</span><span class="n">bts</span><span class="o">-</span><span class="n">mcs1</span><span class="p">,</span> <span class="n">las_bts_mcs2_01_m8</span><span class="p">)</span>
+            <span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m14</span>
+            <span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m12</span>
+            <span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m17</span>
     <span class="o">*</span><span class="p">)</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS1</span><span class="p">:</span><span class="n">Rot</span>
@@ -327,6 +356,21 @@
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m8</span>
     <span class="s1">&#39;}</span>
     <span class="n">fbLS8Rotary</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS3</span><span class="p">:</span><span class="n">Rot</span>
+        <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m14</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbLS3Rotary</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS4</span><span class="p">:</span><span class="n">Rot</span>
+        <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m12</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbLS4Rotary</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS6</span><span class="p">:</span><span class="n">Rot</span>
+        <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m17</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbLS6Rotary</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
 
     <span class="p">(</span><span class="o">*</span>
         <span class="n">Motor</span> <span class="o">-</span> <span class="n">Goniometer</span>
@@ -350,7 +394,26 @@
     <span class="s1">&#39;}</span>
     <span class="n">fbLS8Goniometer</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
 
-    <span class="p">(</span><span class="o">*</span> <span class="n">Near</span> <span class="n">field</span> <span class="n">camera</span> <span class="n">stats</span> <span class="n">plugins</span><span class="p">,</span> <span class="n">per</span> <span class="n">bay</span> <span class="o">*</span><span class="p">)</span>
+<span class="o">//</span><span class="mi">1</span><span class="n">um</span> <span class="o">/</span> <span class="mi">800</span><span class="n">nm</span> <span class="n">Lines</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS3</span><span class="p">:</span><span class="n">Gon</span>
+        <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m15</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbLS3Goniometer</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS4</span><span class="p">:</span><span class="n">Gon</span>
+        <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m11</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbLS4Goniometer</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS6</span><span class="p">:</span><span class="n">Gon</span>
+        <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">BTS</span><span class="p">:</span><span class="n">MCS2</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">m18</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbLS6Goniometer</span> <span class="p">:</span> <span class="n">FB_EpicsMotorMonitor</span><span class="p">;</span>
+
+<span class="p">(</span><span class="o">*</span> <span class="n">Near</span> <span class="n">field</span> <span class="n">camera</span> <span class="n">stats</span> <span class="n">plugins</span><span class="p">,</span> <span class="n">per</span> <span class="n">bay</span> <span class="o">*</span><span class="p">)</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS1</span><span class="p">:</span><span class="n">NF</span>
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY1</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
@@ -368,6 +431,24 @@
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY4</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
     <span class="s1">&#39;}</span>
     <span class="n">fbLS8NearFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
+<span class="o">//</span> <span class="mi">1</span><span class="n">um</span><span class="o">/</span> <span class="mi">800</span> <span class="n">nm</span> <span class="n">line</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS3</span><span class="p">:</span><span class="n">NF</span>
+        <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY2</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbLS3NearFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS4</span><span class="p">:</span><span class="n">NF</span>
+        <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY2</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbLS4NearFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS6</span><span class="p">:</span><span class="n">NF</span>
+        <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY3</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbLS6NearFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
 
     <span class="p">(</span><span class="o">*</span> <span class="n">Far</span><span class="o">-</span><span class="n">field</span> <span class="n">camera</span> <span class="n">stats</span> <span class="n">plugins</span><span class="p">,</span> <span class="n">per</span> <span class="n">bay</span> <span class="o">*</span><span class="p">)</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -387,6 +468,24 @@
         <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY4</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
     <span class="s1">&#39;}</span>
     <span class="n">fbLS8FarFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
+<span class="o">//</span><span class="mi">1</span><span class="n">um</span> <span class="ow">and</span> <span class="mi">800</span><span class="n">nm</span> <span class="n">Lines</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS3</span><span class="p">:</span><span class="n">FF</span>
+        <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY2</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbLS3FarFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS4</span><span class="p">:</span><span class="n">FF</span>
+        <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY2</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbLS4FarFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Chk</span><span class="p">:</span><span class="n">LS6</span><span class="p">:</span><span class="n">FF</span>
+        <span class="n">link</span><span class="p">:</span> <span class="o">@</span><span class="p">(</span><span class="n">SIM</span><span class="p">)</span><span class="n">LAS</span><span class="p">:</span><span class="n">LHN</span><span class="p">:</span><span class="n">BAY3</span><span class="p">:</span><span class="n">CAM</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="n">Stats2</span><span class="p">:</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbLS6FarFieldCamStats</span> <span class="p">:</span> <span class="n">FB_EpicsStatsMonitor</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS1:BTPS&#39;</span><span class="p">}</span>
     <span class="n">fbSafetyLS1</span> <span class="p">:</span> <span class="n">FB_ShutterSafety</span><span class="p">;</span>
@@ -394,6 +493,12 @@
     <span class="n">fbSafetyLS5</span> <span class="p">:</span> <span class="n">FB_ShutterSafety</span><span class="p">;</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS8:BTPS&#39;</span><span class="p">}</span>
     <span class="n">fbSafetyLS8</span> <span class="p">:</span> <span class="n">FB_ShutterSafety</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS3:BTPS&#39;</span><span class="p">}</span>
+    <span class="n">fbSafetyLS3</span> <span class="p">:</span> <span class="n">FB_ShutterSafety</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS4:BTPS&#39;</span><span class="p">}</span>
+    <span class="n">fbSafetyLS4</span> <span class="p">:</span> <span class="n">FB_ShutterSafety</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS6:BTPS&#39;</span><span class="p">}</span>
+    <span class="n">fbSafetyLS6</span> <span class="p">:</span> <span class="n">FB_ShutterSafety</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">LD</span>
@@ -416,7 +521,7 @@
 </dl>
 </section>
 <section id="gvl-btps-constants">
-<h2>GVL_BTPS_Constants<a class="headerlink" href="#gvl-btps-constants" title="Permalink to this heading"></a></h2>
+<h2>GVL_BTPS_Constants<a class="headerlink" href="#gvl-btps-constants" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
     <span class="n">nSources</span> <span class="p">:</span> <span class="n">UINT</span> <span class="o">:=</span> <span class="mi">8</span><span class="p">;</span>
@@ -437,13 +542,13 @@
 </div>
 </section>
 <section id="gvl-btps-retain">
-<h2>GVL_BTPS_Retain<a class="headerlink" href="#gvl-btps-retain" title="Permalink to this heading"></a></h2>
+<h2>GVL_BTPS_Retain<a class="headerlink" href="#gvl-btps-retain" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span> <span class="n">PERSISTENT</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="n">pv</span><span class="p">:</span> <span class="n">LTLHN</span><span class="p">:</span><span class="n">BTPS</span><span class="p">:</span><span class="n">Config</span><span class="p">:</span><span class="n">MaxFrameTime</span>
-        <span class="n">field</span><span class="p">:</span> <span class="n">DESC</span> <span class="n">Maximum</span> <span class="n">delay</span> <span class="kn">from</span> <span class="nn">frame</span> <span class="n">to</span> <span class="n">frame</span>
+        <span class="n">field</span><span class="p">:</span> <span class="n">DESC</span> <span class="n">Maximum</span> <span class="n">delay</span> <span class="kn">from</span><span class="w"> </span><span class="nn">frame</span> <span class="n">to</span> <span class="n">frame</span>
         <span class="n">field</span><span class="p">:</span> <span class="n">EGU</span> <span class="n">sec</span>
         <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
     <span class="s1">&#39;}</span>
@@ -480,7 +585,7 @@
 </div>
 </section>
 <section id="gvl-bts-vac">
-<h2>GVL_BTS_VAC<a class="headerlink" href="#gvl-bts-vac" title="Permalink to this heading"></a></h2>
+<h2>GVL_BTS_VAC<a class="headerlink" href="#gvl-bts-vac" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="p">(</span><span class="o">*</span> <span class="n">Valves</span> <span class="o">*</span><span class="p">)</span>
@@ -525,6 +630,17 @@
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>        <span class="o">:=</span>    <span class="s1">&#39; pv: LXLHN:VVC:03 &#39;</span><span class="p">}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.q_xOPN_DO                     :=      TIIB[EL2004_02_05]^Channel 2^Output&#39;</span><span class="p">}</span>
     <span class="n">fb_VP_VVC_2</span> <span class="p">:</span> <span class="n">FB_VVC</span><span class="p">;</span> <span class="o">//</span> <span class="n">Vent</span> <span class="n">valve</span><span class="p">,</span> <span class="n">Slow</span><span class="p">,</span> <span class="n">Switchbox</span>
+
+<span class="o">//</span> <span class="n">Vent</span> <span class="n">Valve</span> <span class="n">addition</span>
+    <span class="n">st_VP_VVC_4</span> <span class="p">:</span> <span class="n">ST_VVC</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>        <span class="o">:=</span>    <span class="s1">&#39; pv: LXLHN:VVC:04 &#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.q_xOPN_DO                     :=      TIIB[EL2004_02_15]^Channel 1^Output&#39;</span><span class="p">}</span>
+    <span class="n">fb_VP_VVC_4</span> <span class="p">:</span> <span class="n">FB_VVC</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>        <span class="o">:=</span>    <span class="s1">&#39; pv: LXLHN:VRC:04 &#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_xOpnLS                      :=      TIIB[EL1004_03_17]^Channel 1^Input;</span>
+                                 <span class="o">.</span><span class="n">i_xClsLS</span>                  <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL1004_03_17</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="s1">&#39;}</span>
+    <span class="n">fb_PP_VRC_4</span> <span class="p">:</span> <span class="n">FB_VRC</span><span class="p">;</span> <span class="o">//</span> <span class="n">Turbo</span> <span class="n">Isolation</span> <span class="n">Valve</span>
 
 
     <span class="p">(</span><span class="o">*</span> <span class="n">Pumps</span> <span class="o">*</span><span class="p">)</span>
@@ -712,11 +828,9 @@
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_iPRESS_R            :=      TIIB[EL3174_03_13]^AI Standard Channel 3^Value &#39;</span><span class="p">}</span>
     <span class="n">fb_LD6_GPI</span> <span class="p">:</span> <span class="n">FB_MKS275</span><span class="p">;</span> <span class="o">//</span> <span class="n">Output</span> <span class="n">tube</span> <span class="n">LD6</span> <span class="n">ATM</span> <span class="n">gauge</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>        <span class="o">:=</span>    <span class="s1">&#39; pv: LTLHN:LD6:GCC:01 &#39;</span><span class="p">}</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_iPRESS_R            :=      TIIB[EL3174_03_11]^AI Standard Channel 3^Value;</span>
-                                 <span class="o">.</span><span class="n">i_xHV_ON</span>          <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL1124_03_09</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
-                                 <span class="o">.</span><span class="n">i_xDisc_Active</span>    <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL1124_03_09</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
-                                 <span class="o">.</span><span class="n">q_xHV_DIS</span>                 <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL2624_03_02</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Output</span>     <span class="s1">&#39;}</span>
-    <span class="n">fb_LD6_GCC</span> <span class="p">:</span> <span class="n">FB_MKS500</span><span class="p">;</span> <span class="o">//</span> <span class="n">Output</span> <span class="n">tube</span> <span class="n">LD6</span><span class="p">,</span> <span class="n">Cold</span> <span class="n">Cathode</span> <span class="n">gauge</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_iPRESS_R            :=      TIIB[EL3064_02_16]^AI Standard Channel 2^Value;</span>
+                                 <span class="o">.</span><span class="n">q_xHV_DIS</span>         <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL2794_02_17</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="s1">&#39;}</span>
+    <span class="n">fb_LD6_GCC</span> <span class="p">:</span> <span class="n">FB_MKS422</span><span class="p">;</span> <span class="o">//</span> <span class="n">Output</span> <span class="n">tube</span> <span class="n">LD6</span><span class="p">,</span> <span class="n">Cold</span> <span class="n">Cathode</span> <span class="n">gauge</span>
 
     <span class="o">//</span> <span class="n">LD8</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>        <span class="o">:=</span>    <span class="s1">&#39; pv: LTLHN:LD8:VGC:01 &#39;</span><span class="p">}</span>
@@ -802,6 +916,66 @@
                                  <span class="o">.</span><span class="n">q_xHV_DIS</span>                 <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL2624_03_01</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Output</span>     <span class="s1">&#39;}</span>
     <span class="n">fb_LD14_GCC</span> <span class="p">:</span> <span class="n">FB_MKS500</span><span class="p">;</span> <span class="o">//</span> <span class="n">Output</span> <span class="n">tube</span> <span class="n">LD14</span><span class="p">,</span> <span class="n">Cold</span> <span class="n">Cathode</span> <span class="n">gauge</span>
 
+    <span class="o">////</span><span class="n">Bay</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">Line</span> <span class="n">Upgrade</span>
+    <span class="o">//</span> <span class="n">LS3</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>        <span class="o">:=</span>    <span class="s1">&#39; pv: LTLHN:LS3:GCC:01 &#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_iPRESS_R            :=      TIIB[EL3174_01_8A]^AI Standard Channel 2^Value;</span>
+                                 <span class="o">.</span><span class="n">i_xHV_ON</span>          <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL1124_01_06</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                                 <span class="o">.</span><span class="n">i_xDisc_Active</span>    <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL1124_01_06</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                                 <span class="o">.</span><span class="n">q_xHV_DIS</span>                 <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL2624_01_01</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Output</span><span class="s1">&#39;}</span>
+    <span class="n">fb_LS3_GCC</span> <span class="p">:</span> <span class="n">FB_MKS500</span><span class="p">;</span> <span class="o">//</span> <span class="n">LS3</span><span class="p">,</span> <span class="n">Cold</span> <span class="n">Cathode</span> <span class="n">gauge</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>        <span class="o">:=</span>    <span class="s1">&#39; pv: LTLHN:LS3:GPI:01 &#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_iPRESS_R            :=      TIIB[EL3174_01_11]^AI Standard Channel 4^Value &#39;</span><span class="p">}</span>
+    <span class="n">fb_LS3_GPI</span> <span class="p">:</span> <span class="n">FB_MKS275</span><span class="p">;</span> <span class="o">//</span> <span class="n">LS3</span> <span class="n">Pirani</span> <span class="n">gauge</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>        <span class="o">:=</span>    <span class="s1">&#39; pv: LTLHN:LS3:VGC:01 &#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_xOpnLS                      :=      TIIB[EL1004_00_16]^Channel 1^Input;</span>
+                                 <span class="o">.</span><span class="n">i_xClsLS</span>                  <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL1004_00_16</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                                 <span class="o">.</span><span class="n">q_xOPN_DO</span>                 <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL2004_00_17</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Output</span><span class="s1">&#39;}</span>
+    <span class="n">fb_LS3_VGC</span> <span class="p">:</span> <span class="n">FB_VGC</span><span class="p">;</span> <span class="o">//</span> <span class="n">Gate</span> <span class="n">valve</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>    <span class="o">:=</span>        <span class="s1">&#39; pv: LTLHN:LS3:PIP:01 &#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_iPRESS                      :=      TIIB[EL3064_01_15]^AI Standard Channel 1^Value;</span>
+                                 <span class="o">.</span><span class="n">i_xSP_DI</span>                  <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL1004_01_16</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                                 <span class="o">.</span><span class="n">q_xHVEna_DO</span>               <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL2794_01_17</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Output</span><span class="s1">&#39;}</span>
+    <span class="n">fb_LS3_PIP</span> <span class="p">:</span> <span class="n">FB_PIP_Gamma</span><span class="p">;</span> <span class="o">//</span> <span class="n">Ion</span> <span class="n">Pump</span>
+    <span class="o">//</span><span class="n">LS4</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>        <span class="o">:=</span>    <span class="s1">&#39; pv: LTLHN:LS4:GCC:01 &#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_iPRESS_R            :=      TIIB[EL3174_01_8A]^AI Standard Channel 3^Value;</span>
+                                 <span class="o">.</span><span class="n">i_xHV_ON</span>          <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL1124_01_08</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                                 <span class="o">.</span><span class="n">i_xDisc_Active</span>    <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL1124_01_08</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                                 <span class="o">.</span><span class="n">q_xHV_DIS</span>                 <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL2624_01_01</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">Output</span>     <span class="s1">&#39;}</span>
+    <span class="n">fb_LS4_GCC</span> <span class="p">:</span> <span class="n">FB_MKS500</span><span class="p">;</span> <span class="o">//</span> <span class="n">LS4</span><span class="p">,</span> <span class="n">Cold</span> <span class="n">Cathode</span> <span class="n">gauge</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>        <span class="o">:=</span>    <span class="s1">&#39; pv: LTLHN:LS4:GPI:01 &#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_iPRESS_R            :=      TIIB[EL3174_01_09]^AI Standard Channel 3^Value &#39;</span><span class="p">}</span>
+    <span class="n">fb_LS4_GPI</span> <span class="p">:</span> <span class="n">FB_MKS275</span><span class="p">;</span> <span class="o">//</span> <span class="n">LS4</span> <span class="n">Pirani</span> <span class="n">gauge</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>        <span class="o">:=</span>    <span class="s1">&#39; pv: LTLHN:LS4:VGC:01 &#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_xOpnLS                      :=      TIIB[EL1004_00_16]^Channel 3^Input;</span>
+                                 <span class="o">.</span><span class="n">i_xClsLS</span>                  <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL1004_00_16</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                                 <span class="o">.</span><span class="n">q_xOPN_DO</span>                 <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL2004_00_17</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Output</span><span class="s1">&#39;}</span>
+    <span class="n">fb_LS4_VGC</span> <span class="p">:</span> <span class="n">FB_VGC</span><span class="p">;</span> <span class="o">//</span> <span class="n">Gate</span> <span class="n">valve</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>    <span class="o">:=</span>        <span class="s1">&#39; pv: LTLHN:LS4:PIP:01 &#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_iPRESS                      :=      TIIB[EL3064_01_15]^AI Standard Channel 2^Value;</span>
+                                 <span class="o">.</span><span class="n">i_xSP_DI</span>                  <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL1004_01_16</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                                 <span class="o">.</span><span class="n">q_xHVEna_DO</span>               <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL2794_01_17</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Output</span><span class="s1">&#39;}</span>
+    <span class="n">fb_LS4_PIP</span> <span class="p">:</span> <span class="n">FB_PIP_Gamma</span><span class="p">;</span> <span class="o">//</span> <span class="n">Ion</span> <span class="n">Pump</span>
+    <span class="o">//</span><span class="n">LS6</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>        <span class="o">:=</span>    <span class="s1">&#39; pv: LTLHN:LS6:GCC:01 &#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_iPRESS_R            :=      TIIB[EL3064_02_16]^AI Standard Channel 1^Value;</span>
+                                 <span class="o">.</span><span class="n">q_xHV_DIS</span>         <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL2794_02_17</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Input</span><span class="s1">&#39;}</span>
+    <span class="n">fb_LS6_GCC</span> <span class="p">:</span> <span class="n">FB_MKS422</span><span class="p">;</span> <span class="o">//</span> <span class="n">LS6</span><span class="p">,</span> <span class="n">Cold</span> <span class="n">Cathode</span> <span class="n">gauge</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>        <span class="o">:=</span>    <span class="s1">&#39; pv: LTLHN:LS6:GPI:01 &#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_iPRESS_R            :=      TIIB[EL3174_01_09]^AI Standard Channel 3^Value &#39;</span><span class="p">}</span>
+    <span class="n">fb_LS6_GPI</span> <span class="p">:</span> <span class="n">FB_MKS275</span><span class="p">;</span> <span class="o">//</span> <span class="n">LS6</span> <span class="n">Pirani</span> <span class="n">gauge</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>        <span class="o">:=</span>    <span class="s1">&#39; pv: LTLHN:LS6:VGC:01 &#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_xOpnLS                      :=      TIIB[EL1004_02_13]^Channel 1^Input;</span>
+                                 <span class="o">.</span><span class="n">i_xClsLS</span>                  <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL1004_02_13</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                                 <span class="o">.</span><span class="n">q_xOPN_DO</span>                 <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL2004_02_14</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Output</span><span class="s1">&#39;}</span>
+    <span class="n">fb_LS6_VGC</span> <span class="p">:</span> <span class="n">FB_VGC</span><span class="p">;</span> <span class="o">//</span> <span class="n">Gate</span> <span class="n">valve</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span>    <span class="o">:=</span>        <span class="s1">&#39; pv: LTLHN:LS6:PIP:01 &#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span>        <span class="s1">&#39;.i_iPRESS                      :=      TIIB[EL3064_01_15]^AI Standard Channel 3^Value;</span>
+                                 <span class="o">.</span><span class="n">i_xSP_DI</span>                  <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL1004_01_16</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+                                 <span class="o">.</span><span class="n">q_xHVEna_DO</span>               <span class="o">:=</span>      <span class="n">TIIB</span><span class="p">[</span><span class="n">EL2794_01_17</span><span class="p">]</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Output</span><span class="s1">&#39;}</span>
+    <span class="n">fb_LS6_PIP</span> <span class="p">:</span> <span class="n">FB_PIP_Gamma</span><span class="p">;</span> <span class="o">//</span> <span class="n">Ion</span> <span class="n">Pump</span>
     <span class="o">//</span><span class="n">Preemptive</span> <span class="n">Arbiter</span> <span class="n">Content</span>
     <span class="n">g_fbArbiter</span>    <span class="p">:</span>   <span class="n">FB_Arbiter</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 
@@ -810,7 +984,7 @@
 </div>
 </section>
 <section id="gvl-com">
-<h2>GVL_COM<a class="headerlink" href="#gvl-com" title="Permalink to this heading"></a></h2>
+<h2>GVL_COM<a class="headerlink" href="#gvl-com" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="o">//</span> <span class="n">Define</span> <span class="n">COM</span> <span class="n">Ports</span><span class="o">/</span><span class="n">Buffers</span> <span class="n">incl</span><span class="o">.</span> <span class="n">library</span> <span class="n">Tc2_SerialCom</span>
@@ -879,7 +1053,7 @@
 </div>
 </section>
 <section id="gvl-constants">
-<h2>GVL_Constants<a class="headerlink" href="#gvl-constants" title="Permalink to this heading"></a></h2>
+<h2>GVL_Constants<a class="headerlink" href="#gvl-constants" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
     <span class="n">ATM_PRESS</span> <span class="p">:</span> <span class="n">INT</span> <span class="o">:=</span> <span class="mi">760</span><span class="p">;</span> <span class="o">//</span> <span class="n">Atmospheric</span> <span class="n">pressure</span> <span class="ow">in</span> <span class="n">Torr</span>
     <span class="n">ATM_PRESS_ERR_RNG</span> <span class="p">:</span> <span class="n">INT</span> <span class="o">:=</span> <span class="mi">10</span><span class="p">;</span> <span class="o">//</span> <span class="n">Error</span> <span class="nb">range</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">still</span> <span class="n">considered</span> <span class="n">atmospheric</span> <span class="n">pressure</span>
@@ -891,7 +1065,7 @@
 </div>
 </section>
 <section id="gvl-shutters">
-<h2>GVL_Shutters<a class="headerlink" href="#gvl-shutters" title="Permalink to this heading"></a></h2>
+<h2>GVL_Shutters<a class="headerlink" href="#gvl-shutters" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
 
@@ -903,15 +1077,6 @@
     <span class="s1">&#39;}</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS1:LST&#39;</span><span class="p">}</span>
     <span class="n">fbLS1</span> <span class="p">:</span> <span class="n">ST_ShutterControl</span><span class="p">;</span>
-
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
-        <span class="o">.</span><span class="n">bOpenRequest</span>       <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL2624_04_01</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
-        <span class="o">.</span><span class="n">bOpenStatus</span>        <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL1004_04_02</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
-        <span class="o">.</span><span class="n">bCloseStatus</span>       <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL1004_04_02</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
-        <span class="o">.</span><span class="n">bLssStatus</span>         <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL1004_04_04</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
-    <span class="s1">&#39;}</span>
-    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS3:LST&#39;</span><span class="p">}</span>
-    <span class="n">fbLS3</span> <span class="p">:</span> <span class="n">ST_ShutterControl</span><span class="p">;</span>
 
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
         <span class="o">.</span><span class="n">bOpenRequest</span>       <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL2624_04_01</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
@@ -931,6 +1096,35 @@
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS8:LST&#39;</span><span class="p">}</span>
     <span class="n">fbLS8</span> <span class="p">:</span> <span class="n">ST_ShutterControl</span><span class="p">;</span>
 
+<span class="o">//</span> <span class="n">Shutter</span> <span class="n">controls</span> <span class="k">for</span> <span class="mi">1</span><span class="n">um</span> <span class="n">Line</span>
+
+<span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="o">.</span><span class="n">bOpenRequest</span>       <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL2624_04_05</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">bOpenStatus</span>        <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL1004_04_06</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">bCloseStatus</span>       <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL1004_04_06</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">bLssStatus</span>         <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL1004_04_07</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">1</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS3:LST&#39;</span><span class="p">}</span>
+    <span class="n">fbLS3</span> <span class="p">:</span> <span class="n">ST_ShutterControl</span><span class="p">;</span>
+
+<span class="o">//</span> <span class="n">Shutter</span> <span class="n">controls</span> <span class="k">for</span> <span class="mi">800</span><span class="n">nm</span> <span class="n">Line</span>
+<span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="o">.</span><span class="n">bOpenRequest</span>       <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL2624_04_01</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">bOpenStatus</span>        <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL1004_04_02</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">bCloseStatus</span>       <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL1004_04_02</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">bLssStatus</span>         <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL1004_04_04</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS4:LST&#39;</span><span class="p">}</span>
+    <span class="n">fbLS4</span> <span class="p">:</span> <span class="n">ST_ShutterControl</span><span class="p">;</span>
+<span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="o">.</span><span class="n">bOpenRequest</span>       <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL2624_04_05</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Output</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">bOpenStatus</span>        <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL1004_04_06</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">3</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">bCloseStatus</span>       <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL1004_04_06</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">4</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+        <span class="o">.</span><span class="n">bLssStatus</span>         <span class="o">:=</span>      <span class="n">TIID</span><span class="o">^</span><span class="n">EtherCAT1</span><span class="o">^</span><span class="n">EK1100_04_00</span><span class="o">^</span><span class="n">EL1004_04_07</span><span class="o">^</span><span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Input</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: LTLHN:LS6:LST&#39;</span><span class="p">}</span>
+    <span class="n">fbLS6</span> <span class="p">:</span> <span class="n">ST_ShutterControl</span><span class="p">;</span>
+
 <span class="n">END_VAR</span>
 </pre></div>
 </div>
@@ -942,7 +1136,7 @@
 </dl>
 </section>
 <section id="gvl-variables">
-<h2>GVL_Variables<a class="headerlink" href="#gvl-variables" title="Permalink to this heading"></a></h2>
+<h2>GVL_Variables<a class="headerlink" href="#gvl-variables" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
 <span class="n">VAR_GLOBAL</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -960,9 +1154,9 @@
 </section>
 </section>
 <section id="pous">
-<h1>POUs<a class="headerlink" href="#pous" title="Permalink to this heading"></a></h1>
+<h1>POUs<a class="headerlink" href="#pous" title="Link to this heading"></a></h1>
 <section id="diagnostics">
-<h2>DIAGNOSTICS<a class="headerlink" href="#diagnostics" title="Permalink to this heading"></a></h2>
+<h2>DIAGNOSTICS<a class="headerlink" href="#diagnostics" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">DIAGNOSTICS</span>
 <span class="n">VAR</span>
     <span class="o">//</span><span class="n">Change</span> <span class="n">the</span> <span class="n">PLC</span> <span class="n">String</span> <span class="n">Name</span> <span class="n">to</span> <span class="n">the</span> <span class="n">actual</span> <span class="n">PLC</span> <span class="n">NAME</span>
@@ -1001,7 +1195,7 @@
 </div>
 </section>
 <section id="f-isvalveready">
-<h2>F_IsValveReady<a class="headerlink" href="#f-isvalveready" title="Permalink to this heading"></a></h2>
+<h2>F_IsValveReady<a class="headerlink" href="#f-isvalveready" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FUNCTION F_IsValveReady : BOOL
 VAR_IN_OUT
     fbValve : FB_VGC;
@@ -1022,7 +1216,7 @@ END_FUNCTION
 </div>
 </section>
 <section id="fb-destinationdatastore">
-<h2>FB_DestinationDataStore<a class="headerlink" href="#fb-destinationdatastore" title="Permalink to this heading"></a></h2>
+<h2>FB_DestinationDataStore<a class="headerlink" href="#fb-destinationdatastore" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_DestinationDataStore</span>
 <span class="n">VAR_INPUT</span>
     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
@@ -1106,6 +1300,39 @@ END_FUNCTION
     <span class="n">fbGoniometer</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8Goniometer</span><span class="p">,</span>
     <span class="n">fbNearField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8NearFieldCamStats</span><span class="p">,</span>
     <span class="n">fbFarField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8FarFieldCamStats</span>
+<span class="p">);</span>
+
+<span class="n">Update</span><span class="p">(</span>
+    <span class="n">stDataSource</span><span class="o">:=</span><span class="n">stSourceDataStore</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+    <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;LS3 (From laser bay 2)&#39;</span><span class="p">,</span>
+    <span class="n">fbSourceValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LS3_VGC</span><span class="p">,</span>
+    <span class="n">fbLinear</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS3Linear</span><span class="p">,</span>
+    <span class="n">fbRotary</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS3Rotary</span><span class="p">,</span>
+    <span class="n">fbGoniometer</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS3Goniometer</span><span class="p">,</span>
+    <span class="n">fbNearField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS3NearFieldCamStats</span><span class="p">,</span>
+    <span class="n">fbFarField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS3FarFieldCamStats</span>
+<span class="p">);</span>
+
+<span class="n">Update</span><span class="p">(</span>
+    <span class="n">stDataSource</span><span class="o">:=</span><span class="n">stSourceDataStore</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span>
+    <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;LS4 (From laser bay 2)&#39;</span><span class="p">,</span>
+    <span class="n">fbSourceValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LS4_VGC</span><span class="p">,</span>
+    <span class="n">fbLinear</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS4Linear</span><span class="p">,</span>
+    <span class="n">fbRotary</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS4Rotary</span><span class="p">,</span>
+    <span class="n">fbGoniometer</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS4Goniometer</span><span class="p">,</span>
+    <span class="n">fbNearField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS4NearFieldCamStats</span><span class="p">,</span>
+    <span class="n">fbFarField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS4FarFieldCamStats</span>
+<span class="p">);</span>
+
+<span class="n">Update</span><span class="p">(</span>
+    <span class="n">stDataSource</span><span class="o">:=</span><span class="n">stSourceDataStore</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span>
+    <span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;LS6 (From laser bay 3)&#39;</span><span class="p">,</span>
+    <span class="n">fbSourceValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LS6_VGC</span><span class="p">,</span>
+    <span class="n">fbLinear</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS6Linear</span><span class="p">,</span>
+    <span class="n">fbRotary</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS6Rotary</span><span class="p">,</span>
+    <span class="n">fbGoniometer</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS6Goniometer</span><span class="p">,</span>
+    <span class="n">fbNearField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS6NearFieldCamStats</span><span class="p">,</span>
+    <span class="n">fbFarField</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS6FarFieldCamStats</span>
 <span class="p">);</span>
 
 <span class="n">END_FUNCTION_BLOCK</span>
@@ -1205,7 +1432,7 @@ END_FUNCTION
 </dl>
 </section>
 <section id="fb-epicsmotormonitor">
-<h2>FB_EpicsMotorMonitor<a class="headerlink" href="#fb-epicsmotormonitor" title="Permalink to this heading"></a></h2>
+<h2>FB_EpicsMotorMonitor<a class="headerlink" href="#fb-epicsmotormonitor" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">*</span>
     <span class="n">EPICS</span> <span class="n">Motor</span> <span class="n">Record</span> <span class="n">Monitoring</span> <span class="n">tool</span>
 
@@ -1291,7 +1518,7 @@ END_FUNCTION
 </dl>
 </section>
 <section id="fb-epicsstatsmonitor">
-<h2>FB_EpicsStatsMonitor<a class="headerlink" href="#fb-epicsstatsmonitor" title="Permalink to this heading"></a></h2>
+<h2>FB_EpicsStatsMonitor<a class="headerlink" href="#fb-epicsstatsmonitor" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(*
     EPICS AreaDetector Stats Plugin Monitor
 
@@ -1460,7 +1687,7 @@ END_FUNCTION_BLOCK
 </div>
 </section>
 <section id="fb-rangecomparison">
-<h2>FB_RangeComparison<a class="headerlink" href="#fb-rangecomparison" title="Permalink to this heading"></a></h2>
+<h2>FB_RangeComparison<a class="headerlink" href="#fb-rangecomparison" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FUNCTION_BLOCK FB_RangeComparison
 VAR_INPUT PERSISTENT
     (* The low part of the range. *)
@@ -1524,7 +1751,7 @@ END_FUNCTION_BLOCK
 </div>
 </section>
 <section id="fb-shuttersafety">
-<h2>FB_ShutterSafety<a class="headerlink" href="#fb-shuttersafety" title="Permalink to this heading"></a></h2>
+<h2>FB_ShutterSafety<a class="headerlink" href="#fb-shuttersafety" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FUNCTION_BLOCK FB_ShutterSafety
 VAR_INPUT
 
@@ -1561,6 +1788,7 @@ VAR_INPUT
     bOverride : BOOL;
 
     nSourceIndex : UINT;
+    Shutter_Enable : BOOL;
 
 END_VAR
 VAR_IN_OUT
@@ -1670,7 +1898,6 @@ bUserOpenRequest R= rtOverrideSet.Q AND NOT bBtpsPermission;
 NOTE: We do not have these connected yet, so we can&#39;t test this.
 TODO: connect bLssPermission
 TODO: Double-check logic
-
     bOverride R= NOT bLssPermission;
     bUserOpenRequest R= NOT bLssPermission;
 *)
@@ -1696,7 +1923,7 @@ END_FUNCTION_BLOCK
 </dl>
 </section>
 <section id="fb-test-epicscentroidmonitor">
-<h2>FB_Test_EpicsCentroidMonitor<a class="headerlink" href="#fb-test-epicscentroidmonitor" title="Permalink to this heading"></a></h2>
+<h2>FB_Test_EpicsCentroidMonitor<a class="headerlink" href="#fb-test-epicscentroidmonitor" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{attribute &#39;call_after_init&#39;}
 FUNCTION_BLOCK FB_Test_EpicsCentroidMonitor EXTENDS TcUnit.FB_TestSuite
 VAR_INPUT
@@ -1835,7 +2062,7 @@ END_METHOD
 </dl>
 </section>
 <section id="fb-test-epicsmotormonitor">
-<h2>FB_Test_EpicsMotorMonitor<a class="headerlink" href="#fb-test-epicsmotormonitor" title="Permalink to this heading"></a></h2>
+<h2>FB_Test_EpicsMotorMonitor<a class="headerlink" href="#fb-test-epicsmotormonitor" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;call_after_init&#39;</span><span class="p">}</span>
 <span class="n">FUNCTION_BLOCK</span> <span class="n">FB_Test_EpicsMotorMonitor</span> <span class="n">EXTENDS</span> <span class="n">TcUnit</span><span class="o">.</span><span class="n">FB_TestSuite</span>
 <span class="n">VAR_INPUT</span>
@@ -2012,7 +2239,7 @@ END_METHOD
 </dl>
 </section>
 <section id="fb-testrangecomparison">
-<h2>FB_TestRangeComparison<a class="headerlink" href="#fb-testrangecomparison" title="Permalink to this heading"></a></h2>
+<h2>FB_TestRangeComparison<a class="headerlink" href="#fb-testrangecomparison" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;call_after_init&#39;</span><span class="p">}</span>
 <span class="n">FUNCTION_BLOCK</span> <span class="n">FB_TestRangeComparison</span> <span class="n">EXTENDS</span> <span class="n">TcUnit</span><span class="o">.</span><span class="n">FB_TestSuite</span>
 <span class="n">VAR_INPUT</span>
@@ -2118,7 +2345,7 @@ END_METHOD
 </dl>
 </section>
 <section id="fb-testshuttersafety">
-<h2>FB_TestShutterSafety<a class="headerlink" href="#fb-testshuttersafety" title="Permalink to this heading"></a></h2>
+<h2>FB_TestShutterSafety<a class="headerlink" href="#fb-testshuttersafety" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_TestShutterSafety</span> <span class="n">EXTENDS</span> <span class="n">TcUnit</span><span class="o">.</span><span class="n">FB_TestSuite</span>
 <span class="n">VAR_INPUT</span>
 <span class="n">END_VAR</span>
@@ -2262,7 +2489,7 @@ END_METHOD
 </dl>
 </section>
 <section id="main">
-<h2>MAIN<a class="headerlink" href="#main" title="Permalink to this heading"></a></h2>
+<h2>MAIN<a class="headerlink" href="#main" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">MAIN</span>
 <span class="n">VAR</span>
     <span class="n">fbLogHandler</span> <span class="p">:</span> <span class="n">FB_LogHandler</span><span class="p">;</span>
@@ -2284,6 +2511,9 @@ END_METHOD
 <span class="o">//</span> <span class="n">Run</span> <span class="n">the</span> <span class="n">beam</span> <span class="n">transport</span> <span class="n">protection</span> <span class="n">system</span> <span class="n">code</span> <span class="p">(</span><span class="n">BTPS</span><span class="p">)</span>
 <span class="n">PRG_BTPS</span><span class="p">();</span>
 
+<span class="o">//</span> <span class="n">Run</span> <span class="n">Evaluation</span> <span class="n">of</span> <span class="n">Shutter</span> <span class="n">Request</span>
+<span class="n">PRG_ShutterRequest</span><span class="p">();</span>
+
 <span class="o">//</span> <span class="n">Uncomment</span> <span class="n">me</span> <span class="n">to</span> <span class="n">run</span> <span class="n">tests</span>
 <span class="p">(</span><span class="o">*</span> <span class="n">PRG_RunTests</span><span class="p">();</span> <span class="o">*</span><span class="p">)</span>
 
@@ -2297,13 +2527,14 @@ END_METHOD
 <li><p><a class="reference internal" href="#prg-gauges">PRG_GAUGES</a></p></li>
 <li><p><a class="reference internal" href="#prg-pumps">PRG_PUMPS</a></p></li>
 <li><p><a class="reference internal" href="#prg-runtests">PRG_RunTests</a></p></li>
+<li><p><a class="reference internal" href="#prg-shutterrequest">PRG_ShutterRequest</a></p></li>
 <li><p><a class="reference internal" href="#prg-valves">PRG_VALVES</a></p></li>
 </ul>
 </dd>
 </dl>
 </section>
 <section id="prg-btps">
-<h2>PRG_BTPS<a class="headerlink" href="#prg-btps" title="Permalink to this heading"></a></h2>
+<h2>PRG_BTPS<a class="headerlink" href="#prg-btps" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_BTPS</span>
 <span class="n">VAR</span>
 
@@ -2311,24 +2542,40 @@ END_METHOD
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS1Linear</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS5Linear</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8Linear</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS3Linear</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS4Linear</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS6Linear</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS1Rotary</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS5Rotary</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8Rotary</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS3Rotary</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS4Rotary</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS6Rotary</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS1Goniometer</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS5Goniometer</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8Goniometer</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS3Goniometer</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS4Goniometer</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS6Goniometer</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
 
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS1NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS5NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS3NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS4NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS6NearFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
 
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS1FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS5FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS8FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS3FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS4FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbLS6FarFieldCamStats</span><span class="p">(</span><span class="n">bEnable</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span> <span class="n">fMaximumFrameTime</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMaximumFrameTime</span><span class="p">,</span> <span class="n">fMinPixelSumChange</span><span class="o">:=</span><span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">fMinPixelChange</span><span class="p">);</span>
 
-<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">2</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;TMO IP3&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD2_VGC</span><span class="p">);</span>
+
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">2</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;RIX IP3&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD2_VGC</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">4</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;RIX ChemRIXS&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD4_VGC</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">6</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;RIX qRIXS&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD6_VGC</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">[</span><span class="mi">8</span><span class="p">](</span><span class="n">sName</span><span class="o">:=</span><span class="s1">&#39;TMO IP1&#39;</span><span class="p">,</span> <span class="n">fbDestinationValve</span><span class="o">:=</span><span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD8_VGC</span><span class="p">);</span>
@@ -2340,12 +2587,18 @@ END_METHOD
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS1</span><span class="p">(</span><span class="n">nSourceIndex</span><span class="o">:=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fbDestinations</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS5</span><span class="p">(</span><span class="n">nSourceIndex</span><span class="o">:=</span><span class="mi">5</span><span class="p">,</span> <span class="n">fbDestinations</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">);</span>
 <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS8</span><span class="p">(</span><span class="n">nSourceIndex</span><span class="o">:=</span><span class="mi">8</span><span class="p">,</span> <span class="n">fbDestinations</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS3</span><span class="p">(</span><span class="n">nSourceIndex</span><span class="o">:=</span><span class="mi">3</span><span class="p">,</span> <span class="n">fbDestinations</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS4</span><span class="p">(</span><span class="n">nSourceIndex</span><span class="o">:=</span><span class="mi">4</span><span class="p">,</span> <span class="n">fbDestinations</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">);</span>
+<span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS6</span><span class="p">(</span><span class="n">nSourceIndex</span><span class="o">:=</span><span class="mi">6</span><span class="p">,</span> <span class="n">fbDestinations</span><span class="o">:=</span><span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbDestinations</span><span class="p">);</span>
 
 <span class="p">(</span><span class="o">*</span> <span class="n">Based</span> <span class="n">on</span> <span class="n">the</span> <span class="n">shutter</span> <span class="n">safety</span> <span class="n">result</span><span class="p">;</span> <span class="n">send</span> <span class="nb">open</span> <span class="ow">or</span> <span class="n">close</span> <span class="n">request</span> <span class="n">to</span> <span class="n">shutters</span> <span class="o">*</span><span class="p">)</span>
 <span class="n">IF</span> <span class="n">NOT</span> <span class="n">GVL_BTPS_Retain</span><span class="o">.</span><span class="n">bSystemOverride</span> <span class="n">THEN</span>
     <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS1</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS1</span><span class="o">.</span><span class="n">bOpenSignal</span><span class="p">;</span>
     <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS5</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS5</span><span class="o">.</span><span class="n">bOpenSignal</span><span class="p">;</span>
     <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS8</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS8</span><span class="o">.</span><span class="n">bOpenSignal</span><span class="p">;</span>
+    <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS3</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS3</span><span class="o">.</span><span class="n">bOpenSignal</span><span class="p">;</span>
+    <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS4</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS4</span><span class="o">.</span><span class="n">bOpenSignal</span><span class="p">;</span>
+    <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS6</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">GVL_BTPS</span><span class="o">.</span><span class="n">fbSafetyLS6</span><span class="o">.</span><span class="n">bOpenSignal</span><span class="p">;</span>
 <span class="n">END_IF</span>
 
 <span class="p">(</span><span class="o">*</span> <span class="n">Periodically</span> <span class="n">save</span> <span class="n">persistent</span> <span class="n">variables</span> <span class="k">with</span> <span class="n">source</span><span class="o">/</span><span class="n">destination</span> <span class="n">store</span> <span class="n">information</span> <span class="o">*</span><span class="p">)</span>
@@ -2366,7 +2619,7 @@ END_METHOD
 </dl>
 </section>
 <section id="prg-com">
-<h2>PRG_COM<a class="headerlink" href="#prg-com" title="Permalink to this heading"></a></h2>
+<h2>PRG_COM<a class="headerlink" href="#prg-com" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_COM</span>
 <span class="n">VAR</span>
 <span class="n">END_VAR</span>
@@ -2389,7 +2642,7 @@ END_METHOD
 </div>
 </section>
 <section id="prg-gauges">
-<h2>PRG_GAUGES<a class="headerlink" href="#prg-gauges" title="Permalink to this heading"></a></h2>
+<h2>PRG_GAUGES<a class="headerlink" href="#prg-gauges" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_GAUGES</span>
 <span class="n">VAR</span>
 <span class="n">END_VAR</span>
@@ -2443,7 +2696,6 @@ END_METHOD
 <span class="o">//</span> <span class="n">LD6</span>
     <span class="n">fb_LD6_GPI</span><span class="o">.</span><span class="n">M_SetBits</span><span class="p">(</span><span class="mi">30518</span><span class="p">);</span>
     <span class="n">fb_LD6_GPI</span><span class="p">();</span>
-    <span class="n">fb_LD6_GCC</span><span class="o">.</span><span class="n">M_SetBits</span><span class="p">(</span><span class="mi">30518</span><span class="p">);</span>
     <span class="n">fb_LD6_GCC</span><span class="p">(</span><span class="n">PG</span> <span class="o">:=</span> <span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD6_GPI</span><span class="o">.</span><span class="n">PG</span> <span class="p">,</span> <span class="n">IG</span><span class="o">=&gt;</span> <span class="p">);</span>
 
 <span class="o">//</span> <span class="n">LD8</span>
@@ -2470,6 +2722,24 @@ END_METHOD
     <span class="n">fb_LD14_GCC</span><span class="o">.</span><span class="n">M_SetBits</span><span class="p">(</span><span class="mi">30518</span><span class="p">);</span>
     <span class="n">fb_LD14_GCC</span><span class="p">(</span><span class="n">PG</span> <span class="o">:=</span> <span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LD14_GPI</span><span class="o">.</span><span class="n">PG</span> <span class="p">,</span> <span class="n">IG</span><span class="o">=&gt;</span> <span class="p">);</span>
 
+<span class="o">//</span><span class="mi">1</span><span class="n">um</span> <span class="n">upgrade</span> <span class="n">lines</span>
+<span class="o">//</span> <span class="n">LS3</span>
+    <span class="n">fb_LS3_GPI</span><span class="o">.</span><span class="n">M_SetBits</span><span class="p">(</span><span class="mi">30518</span><span class="p">);</span>
+    <span class="n">fb_LS3_GPI</span><span class="p">();</span>
+    <span class="n">fb_LS3_GCC</span><span class="o">.</span><span class="n">M_SetBits</span><span class="p">(</span><span class="mi">30518</span><span class="p">);</span>
+    <span class="n">fb_LS3_GCC</span><span class="p">(</span><span class="n">PG</span> <span class="o">:=</span> <span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LS3_GPI</span><span class="o">.</span><span class="n">PG</span> <span class="p">,</span> <span class="n">IG</span><span class="o">=&gt;</span> <span class="p">);</span>
+<span class="o">//</span><span class="n">LS4</span>
+    <span class="n">fb_LS4_GPI</span><span class="o">.</span><span class="n">M_SetBits</span><span class="p">(</span><span class="mi">30518</span><span class="p">);</span>
+    <span class="n">fb_LS4_GPI</span><span class="p">();</span>
+    <span class="n">fb_LS4_GCC</span><span class="o">.</span><span class="n">M_SetBits</span><span class="p">(</span><span class="mi">30518</span><span class="p">);</span>
+    <span class="n">fb_LS4_GCC</span><span class="p">(</span><span class="n">PG</span> <span class="o">:=</span> <span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LS4_GPI</span><span class="o">.</span><span class="n">PG</span> <span class="p">,</span> <span class="n">IG</span><span class="o">=&gt;</span> <span class="p">);</span>
+
+<span class="o">//</span><span class="n">LS6</span>
+    <span class="n">fb_LS6_GPI</span><span class="o">.</span><span class="n">M_SetBits</span><span class="p">(</span><span class="mi">30518</span><span class="p">);</span>
+    <span class="n">fb_LS6_GPI</span><span class="p">();</span>
+    <span class="n">fb_LS6_GCC</span><span class="p">(</span><span class="n">PG</span> <span class="o">:=</span> <span class="n">GVL_BTS_VAC</span><span class="o">.</span><span class="n">fb_LS6_GPI</span><span class="o">.</span><span class="n">PG</span> <span class="p">,</span> <span class="n">IG</span><span class="o">=&gt;</span> <span class="p">);</span>
+
+
 <span class="p">(</span><span class="o">*</span> <span class="n">Auto</span> <span class="n">switch</span> <span class="n">on</span> <span class="n">cold</span> <span class="n">cathode</span> <span class="n">gauges</span> <span class="k">if</span> <span class="n">interlock</span> <span class="n">permits</span> <span class="o">*</span><span class="p">)</span>
 
 <span class="n">If</span> <span class="n">xGCC_Enable_SW</span> <span class="n">THEN</span>
@@ -2485,7 +2755,9 @@ END_METHOD
     <span class="n">fb_LD9_GCC</span><span class="o">.</span><span class="n">M_HVE</span><span class="p">(</span><span class="n">TRUE</span><span class="p">);</span>
     <span class="n">fb_LD10_GCC</span><span class="o">.</span><span class="n">M_HVE</span><span class="p">(</span><span class="n">TRUE</span><span class="p">);</span>
     <span class="n">fb_LD14_GCC</span><span class="o">.</span><span class="n">M_HVE</span><span class="p">(</span><span class="n">TRUE</span><span class="p">);</span>
-
+    <span class="n">fb_LS3_GCC</span><span class="o">.</span><span class="n">M_HVE</span><span class="p">(</span><span class="n">TRUE</span><span class="p">);</span>
+    <span class="n">fb_LS4_GCC</span><span class="o">.</span><span class="n">M_HVE</span><span class="p">(</span><span class="n">TRUE</span><span class="p">);</span>
+    <span class="n">fb_LS6_GCC</span><span class="o">.</span><span class="n">M_HVE</span><span class="p">(</span><span class="n">TRUE</span><span class="p">);</span>
     <span class="n">xGCC_Enable_SW</span> <span class="o">:=</span> <span class="kc">False</span><span class="p">;</span>
 <span class="n">END_IF</span>
 
@@ -2500,7 +2772,7 @@ END_METHOD
 </dl>
 </section>
 <section id="prg-pumps">
-<h2>PRG_PUMPS<a class="headerlink" href="#prg-pumps" title="Permalink to this heading"></a></h2>
+<h2>PRG_PUMPS<a class="headerlink" href="#prg-pumps" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_PUMPS</span>
 <span class="n">VAR</span>
 <span class="n">END_VAR</span>
@@ -2549,6 +2821,14 @@ END_METHOD
 <span class="o">//</span> <span class="n">LD14</span>
 <span class="n">fb_LD14_PIP</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">fb_LD14_GCC</span><span class="o">.</span><span class="n">IG</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span>
 
+
+<span class="o">//</span><span class="n">LS3</span>
+<span class="n">fb_LS3_PIP</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">fb_LS3_GCC</span><span class="o">.</span><span class="n">IG</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span>
+<span class="o">//</span><span class="n">LS4</span>
+<span class="n">fb_LS4_PIP</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">fb_LS4_GCC</span><span class="o">.</span><span class="n">IG</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span>
+<span class="o">//</span><span class="n">LS6</span>
+<span class="n">fb_LS6_PIP</span><span class="p">(</span><span class="n">i_stGauge</span> <span class="o">:=</span> <span class="n">fb_LS6_GCC</span><span class="o">.</span><span class="n">IG</span><span class="p">,</span> <span class="n">stPump</span><span class="o">=&gt;</span><span class="p">);</span>
+
 <span class="p">(</span><span class="o">*</span><span class="n">Serial</span> <span class="n">Interface</span><span class="o">*</span><span class="p">)</span>
 <span class="p">(</span><span class="o">*</span><span class="n">Assign</span> <span class="n">adresses</span> <span class="n">to</span> <span class="n">the</span> <span class="n">pfeiffer</span> <span class="n">controller</span> <span class="n">connected</span> <span class="n">to</span> <span class="n">this</span> <span class="n">serial</span> <span class="n">terminal</span><span class="o">*</span><span class="p">)</span>
 <span class="n">st_Pfeiffer_CTRL_PTM</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">iSerialAddress</span>  <span class="o">:=</span><span class="mi">1</span><span class="p">;</span>        <span class="o">//</span><span class="n">LXLHN_PTM_01</span>
@@ -2572,7 +2852,7 @@ END_METHOD
 </dl>
 </section>
 <section id="prg-runtests">
-<h2>PRG_RunTests<a class="headerlink" href="#prg-runtests" title="Permalink to this heading"></a></h2>
+<h2>PRG_RunTests<a class="headerlink" href="#prg-runtests" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_RunTests</span>
 <span class="n">VAR</span>
     <span class="n">fbRangeComparison</span> <span class="p">:</span> <span class="n">FB_TestRangeComparison</span><span class="p">;</span>
@@ -2597,7 +2877,7 @@ END_METHOD
 </dl>
 </section>
 <section id="prg-saveperistentvariables">
-<h2>PRG_SavePeristentVariables<a class="headerlink" href="#prg-saveperistentvariables" title="Permalink to this heading"></a></h2>
+<h2>PRG_SavePeristentVariables<a class="headerlink" href="#prg-saveperistentvariables" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>PROGRAM PRG_SavePeristentVariables
 VAR
     fbWritePersistentData: FB_WritePersistentData;
@@ -2626,10 +2906,56 @@ END_PROGRAM
 </pre></div>
 </div>
 </section>
+<section id="prg-shutterrequest">
+<h2>PRG_ShutterRequest<a class="headerlink" href="#prg-shutterrequest" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_ShutterRequest</span>
+<span class="n">VAR</span>
+<span class="n">END_VAR</span>
+<span class="o">/////</span><span class="n">Shutter</span> <span class="n">Request</span> <span class="n">Program</span> <span class="n">evaluates</span> <span class="n">the</span> <span class="n">LSS</span> <span class="n">Permission</span> <span class="n">state</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">DI</span> <span class="ow">and</span> <span class="n">acts</span> <span class="n">on</span> <span class="n">the</span> <span class="n">Open</span> <span class="n">Request</span> <span class="n">state</span>
+<span class="o">////</span> <span class="mi">1</span><span class="n">um</span> <span class="n">Lines</span>
+<span class="o">//</span><span class="n">LS3</span>
+<span class="n">IF</span> <span class="p">(</span><span class="n">NOT</span> <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS3</span><span class="o">.</span><span class="n">bLssStatus</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS3</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="o">//</span><span class="n">LS6</span>
+<span class="n">IF</span> <span class="p">(</span><span class="n">NOT</span> <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS6</span><span class="o">.</span><span class="n">bLssStatus</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS6</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="o">/////</span><span class="mi">800</span> <span class="n">nm</span>
+<span class="o">//</span><span class="n">LS1</span>
+<span class="n">IF</span> <span class="p">(</span><span class="n">NOT</span> <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS1</span><span class="o">.</span><span class="n">bLssStatus</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS1</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+<span class="o">//</span><span class="n">LS4</span>
+<span class="n">IF</span> <span class="p">(</span><span class="n">NOT</span> <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS4</span><span class="o">.</span><span class="n">bLssStatus</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS4</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+<span class="o">//</span><span class="n">LS5</span>
+<span class="n">IF</span> <span class="p">(</span><span class="n">NOT</span> <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS5</span><span class="o">.</span><span class="n">bLssStatus</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS5</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+<span class="o">//</span><span class="n">LS8</span>
+<span class="n">IF</span> <span class="p">(</span><span class="n">NOT</span> <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS8</span><span class="o">.</span><span class="n">bLssStatus</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">GVL_Shutters</span><span class="o">.</span><span class="n">fbLS8</span><span class="o">.</span><span class="n">bOpenRequest</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#gvl-shutters">GVL_Shutters</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
 <section id="prg-valves">
-<h2>PRG_VALVES<a class="headerlink" href="#prg-valves" title="Permalink to this heading"></a></h2>
+<h2>PRG_VALVES<a class="headerlink" href="#prg-valves" title="Link to this heading"></a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_VALVES</span>
 <span class="n">VAR</span>
+    <span class="n">Valve_opn_ok</span> <span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
 <span class="n">END_VAR</span>
 <span class="p">(</span><span class="o">*</span> <span class="n">Switchbox</span> <span class="n">valves</span> <span class="o">*</span><span class="p">)</span>
 <span class="n">fb_PP_VGC</span><span class="p">(</span>
@@ -2666,6 +2992,32 @@ END_PROGRAM
 
 <span class="n">fb_VP_VVC_2</span><span class="p">(</span>
     <span class="n">i_xExtILK_OK</span> <span class="o">:=</span> <span class="n">TRUE</span>
+<span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Vent</span> <span class="n">manifold</span> <span class="n">valve</span> <span class="o">-</span> <span class="n">interlock</span> <span class="n">logic</span> <span class="k">with</span> <span class="n">slow</span> <span class="ow">or</span> <span class="n">fast</span> <span class="n">vent</span>
+<span class="n">IF</span> <span class="p">(</span><span class="n">fb_PP_PMF</span><span class="o">.</span><span class="n">q_stPump</span><span class="o">.</span><span class="n">eState</span> <span class="o">&lt;&gt;</span> <span class="n">E_PumpState</span><span class="o">.</span><span class="n">pumpSTOPPED</span><span class="p">)</span>  <span class="n">THEN</span>  <span class="o">//</span> <span class="n">Condition</span> <span class="n">to</span> <span class="n">evaluate</span> <span class="k">if</span> <span class="n">Roughing</span> <span class="n">Pump</span> <span class="ow">is</span> <span class="n">ON</span>
+    <span class="n">fb_VP_VVC_4</span><span class="o">.</span><span class="n">i_xExtILK_OK</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">fb_VP_VVC_2</span><span class="o">.</span><span class="n">i_xExtILK_OK</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">fb_VP_VVC_1</span><span class="o">.</span><span class="n">i_xExtILK_OK</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">ELSE</span>
+    <span class="n">fb_VP_VVC_4</span><span class="o">.</span><span class="n">i_xExtILK_OK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">fb_VP_VVC_2</span><span class="o">.</span><span class="n">i_xExtILK_OK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">fb_VP_VVC_1</span><span class="o">.</span><span class="n">i_xExtILK_OK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">IF</span> <span class="p">(</span><span class="n">fb_VP_VVC_2</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">q_xOPN_DO</span> <span class="n">OR</span> <span class="n">fb_VP_VVC_1</span><span class="o">.</span><span class="n">iq_stValve</span><span class="o">.</span><span class="n">q_xOPN_DO</span><span class="p">)</span> <span class="n">THEN</span>
+            <span class="n">fb_VP_VVC_4</span><span class="o">.</span><span class="n">M_Set_OPN_SW</span><span class="p">(</span><span class="n">TRUE</span><span class="p">);</span>
+        <span class="n">ELSE</span>
+            <span class="n">fb_VP_VVC_4</span><span class="o">.</span><span class="n">M_Set_OPN_SW</span><span class="p">(</span><span class="n">FALSE</span><span class="p">);</span>
+        <span class="n">END_IF</span>
+<span class="n">END_IF</span>
+
+<span class="n">fb_VP_VVC_4</span><span class="p">(</span>
+    <span class="n">i_xOverrideMode</span> <span class="o">:=</span> <span class="n">xSystemOverrideMode_BTS</span>
+<span class="p">);</span>
+
+<span class="o">//</span> <span class="n">Turbo</span> <span class="n">Isolation</span> <span class="n">valve</span> <span class="o">-</span> <span class="n">Interlocked</span> <span class="k">with</span> <span class="n">turbo</span> <span class="n">pump</span> <span class="n">operation</span>
+<span class="n">fb_PP_VRC_4</span><span class="p">(</span>
+    <span class="n">i_xExtILK_OK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
+    <span class="n">i_xOverrideMode</span> <span class="o">:=</span> <span class="n">xSystemOverrideMode_BTS</span>
 <span class="p">);</span>
 
 <span class="p">(</span><span class="o">*</span> <span class="n">Transport</span> <span class="n">Tube</span> <span class="n">vavles</span> <span class="o">*</span><span class="p">)</span>
@@ -2799,6 +3151,46 @@ END_PROGRAM
     <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">g_fbArbiter</span>
 <span class="p">);</span>
 
+
+<span class="o">////</span> <span class="n">LS3</span>
+<span class="n">fb_LS3_VGC</span><span class="p">(</span>
+    <span class="n">i_stUSG</span> <span class="o">:=</span> <span class="n">fb_LS3_GPI</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+    <span class="n">i_stDSG</span> <span class="o">:=</span> <span class="n">fb_DP_GPI</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+    <span class="n">i_xDis_DPIlk</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">,</span>
+    <span class="n">i_xEPS_OK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
+    <span class="n">i_xPMPS_OK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
+    <span class="n">i_xExt_OK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
+    <span class="n">i_xOverrideMode</span> <span class="o">:=</span> <span class="n">xSystemOverrideMode_BTS</span><span class="p">,</span>
+    <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">g_FFOut</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">g_fbArbiter</span>
+<span class="p">);</span>
+
+<span class="o">//</span> <span class="n">LS4</span>
+<span class="n">fb_LS4_VGC</span><span class="p">(</span>
+    <span class="n">i_stUSG</span> <span class="o">:=</span> <span class="n">fb_LS4_GPI</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+    <span class="n">i_stDSG</span> <span class="o">:=</span> <span class="n">fb_DP_GPI</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+    <span class="n">i_xDis_DPIlk</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">,</span>
+    <span class="n">i_xEPS_OK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
+    <span class="n">i_xPMPS_OK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
+    <span class="n">i_xExt_OK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
+    <span class="n">i_xOverrideMode</span> <span class="o">:=</span> <span class="n">xSystemOverrideMode_BTS</span><span class="p">,</span>
+    <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">g_FFOut</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">g_fbArbiter</span>
+<span class="p">);</span>
+
+<span class="o">//</span> <span class="n">LS6</span>
+<span class="n">fb_LS6_VGC</span><span class="p">(</span>
+    <span class="n">i_stUSG</span> <span class="o">:=</span> <span class="n">fb_LS6_GPI</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+    <span class="n">i_stDSG</span> <span class="o">:=</span> <span class="n">fb_DP_GPI</span><span class="o">.</span><span class="n">PG</span><span class="p">,</span>
+    <span class="n">i_xDis_DPIlk</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">,</span>
+    <span class="n">i_xEPS_OK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
+    <span class="n">i_xPMPS_OK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
+    <span class="n">i_xExt_OK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
+    <span class="n">i_xOverrideMode</span> <span class="o">:=</span> <span class="n">xSystemOverrideMode_BTS</span><span class="p">,</span>
+    <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">g_FFOut</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">g_fbArbiter</span>
+<span class="p">);</span>
+
 <span class="n">END_PROGRAM</span>
 </pre></div>
 </div>
@@ -2821,7 +3213,7 @@ END_PROGRAM
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2025, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -6,7 +6,7 @@ Pragmas
     :header: PLC Name, Total Pragmas, Errors
     :align: center
 
-    :ref:`las_bts <las_bts_overview_pragmas>`, 207, 0
+    :ref:`las_bts <las_bts_overview_pragmas>`, 257, 0
 
 
 .. _las_bts_overview_pragmas:
@@ -15,7 +15,7 @@ Pragmas
 las_bts
 ^^^^^^^
 
-Total pragmas found: 207
+Total pragmas found: 257
 Total linter errors: 0
 
 

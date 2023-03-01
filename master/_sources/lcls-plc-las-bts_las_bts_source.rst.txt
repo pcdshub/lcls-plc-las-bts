@@ -181,6 +181,9 @@ GVL_BTPS
             LAS:BTS:MCS2:01:m1 (ioc-las-bts-mcs1, las_bts_mcs2_01_m1)
             LAS:BTS:MCS2:01:m4 (ioc-las-bts-mcs1, las_bts_mcs2_01_m4)
             LAS:BTS:MCS2:01:m7 (ioc-las-bts-mcs1, las_bts_mcs2_01_m7)
+            LAS:BTS:MCS2:01:m13
+            LAS:BTS:MCS2:01:m10
+            LAS:BTS:MCS2:01:m16
         *)
         {attribute 'pytmc' := '
             pv: LTLHN:BTPS:Chk:LS1:Lin
@@ -197,12 +200,30 @@ GVL_BTPS
             link: @(SIM)LAS:BTS:MCS2:01:m7
         '}
         fbLS8Linear : FB_EpicsMotorMonitor;
+        {attribute 'pytmc' := '
+            pv: LTLHN:BTPS:Chk:LS3:Lin
+            link: @(SIM)LAS:BTS:MCS2:01:m13
+        '}
+        fbLS3Linear : FB_EpicsMotorMonitor;
+        {attribute 'pytmc' := '
+            pv: LTLHN:BTPS:Chk:LS4:Lin
+            link: @(SIM)LAS:BTS:MCS2:01:m10
+        '}
+        fbLS4Linear : FB_EpicsMotorMonitor;
+        {attribute 'pytmc' := '
+            pv: LTLHN:BTPS:Chk:LS6:Lin
+            link: @(SIM)LAS:BTS:MCS2:01:m16
+        '}
+        fbLS6Linear : FB_EpicsMotorMonitor;
 
         (*
             Motor - Rotary
                 LAS:BTS:MCS2:01:m2 (ioc-las-bts-mcs1, las_bts_mcs2_01_m2)
                 LAS:BTS:MCS2:01:m6 (ioc-las-bts-mcs1, las_bts_mcs2_01_m6)
                 LAS:BTS:MCS2:01:m8 (ioc-las-bts-mcs1, las_bts_mcs2_01_m8)
+                LAS:BTS:MCS2:01:m14
+                LAS:BTS:MCS2:01:m12
+                LAS:BTS:MCS2:01:m17
         *)
         {attribute 'pytmc' := '
             pv: LTLHN:BTPS:Chk:LS1:Rot
@@ -219,6 +240,21 @@ GVL_BTPS
             link: @(SIM)LAS:BTS:MCS2:01:m8
         '}
         fbLS8Rotary : FB_EpicsMotorMonitor;
+        {attribute 'pytmc' := '
+            pv: LTLHN:BTPS:Chk:LS3:Rot
+            link: @(SIM)LAS:BTS:MCS2:01:m14
+        '}
+        fbLS3Rotary : FB_EpicsMotorMonitor;
+        {attribute 'pytmc' := '
+            pv: LTLHN:BTPS:Chk:LS4:Rot
+            link: @(SIM)LAS:BTS:MCS2:01:m12
+        '}
+        fbLS4Rotary : FB_EpicsMotorMonitor;
+        {attribute 'pytmc' := '
+            pv: LTLHN:BTPS:Chk:LS6:Rot
+            link: @(SIM)LAS:BTS:MCS2:01:m17
+        '}
+        fbLS6Rotary : FB_EpicsMotorMonitor;
 
         (*
             Motor - Goniometer
@@ -242,7 +278,26 @@ GVL_BTPS
         '}
         fbLS8Goniometer : FB_EpicsMotorMonitor;
 
-        (* Near field camera stats plugins, per bay *)
+    //1um / 800nm Lines
+        {attribute 'pytmc' := '
+            pv: LTLHN:BTPS:Chk:LS3:Gon
+            link: @(SIM)LAS:BTS:MCS2:01:m15
+        '}
+        fbLS3Goniometer : FB_EpicsMotorMonitor;
+
+        {attribute 'pytmc' := '
+            pv: LTLHN:BTPS:Chk:LS4:Gon
+            link: @(SIM)LAS:BTS:MCS2:01:m11
+        '}
+        fbLS4Goniometer : FB_EpicsMotorMonitor;
+
+        {attribute 'pytmc' := '
+            pv: LTLHN:BTPS:Chk:LS6:Gon
+            link: @(SIM)LAS:BTS:MCS2:01:m18
+        '}
+        fbLS6Goniometer : FB_EpicsMotorMonitor;
+
+    (* Near field camera stats plugins, per bay *)
         {attribute 'pytmc' := '
             pv: LTLHN:BTPS:Chk:LS1:NF
             link: @(SIM)LAS:LHN:BAY1:CAM:01:Stats2:
@@ -260,6 +315,24 @@ GVL_BTPS
             link: @(SIM)LAS:LHN:BAY4:CAM:01:Stats2:
         '}
         fbLS8NearFieldCamStats : FB_EpicsStatsMonitor;
+    // 1um/ 800 nm line
+        {attribute 'pytmc' := '
+            pv: LTLHN:BTPS:Chk:LS3:NF
+            link: @(SIM)LAS:LHN:BAY2:CAM:01:Stats2:
+        '}
+        fbLS3NearFieldCamStats : FB_EpicsStatsMonitor;
+
+        {attribute 'pytmc' := '
+            pv: LTLHN:BTPS:Chk:LS4:NF
+            link: @(SIM)LAS:LHN:BAY2:CAM:01:Stats2:
+        '}
+        fbLS4NearFieldCamStats : FB_EpicsStatsMonitor;
+
+        {attribute 'pytmc' := '
+            pv: LTLHN:BTPS:Chk:LS6:NF
+            link: @(SIM)LAS:LHN:BAY3:CAM:01:Stats2:
+        '}
+        fbLS6NearFieldCamStats : FB_EpicsStatsMonitor;
 
         (* Far-field camera stats plugins, per bay *)
         {attribute 'pytmc' := '
@@ -279,6 +352,24 @@ GVL_BTPS
             link: @(SIM)LAS:LHN:BAY4:CAM:02:Stats2:
         '}
         fbLS8FarFieldCamStats : FB_EpicsStatsMonitor;
+    //1um and 800nm Lines
+        {attribute 'pytmc' := '
+            pv: LTLHN:BTPS:Chk:LS3:FF
+            link: @(SIM)LAS:LHN:BAY2:CAM:02:Stats2:
+        '}
+        fbLS3FarFieldCamStats : FB_EpicsStatsMonitor;
+
+        {attribute 'pytmc' := '
+            pv: LTLHN:BTPS:Chk:LS4:FF
+            link: @(SIM)LAS:LHN:BAY2:CAM:02:Stats2:
+        '}
+        fbLS4FarFieldCamStats : FB_EpicsStatsMonitor;
+
+        {attribute 'pytmc' := '
+            pv: LTLHN:BTPS:Chk:LS6:FF
+            link: @(SIM)LAS:LHN:BAY3:CAM:02:Stats2:
+        '}
+        fbLS6FarFieldCamStats : FB_EpicsStatsMonitor;
 
         {attribute 'pytmc' := 'pv: LTLHN:LS1:BTPS'}
         fbSafetyLS1 : FB_ShutterSafety;
@@ -286,6 +377,12 @@ GVL_BTPS
         fbSafetyLS5 : FB_ShutterSafety;
         {attribute 'pytmc' := 'pv: LTLHN:LS8:BTPS'}
         fbSafetyLS8 : FB_ShutterSafety;
+        {attribute 'pytmc' := 'pv: LTLHN:LS3:BTPS'}
+        fbSafetyLS3 : FB_ShutterSafety;
+        {attribute 'pytmc' := 'pv: LTLHN:LS4:BTPS'}
+        fbSafetyLS4 : FB_ShutterSafety;
+        {attribute 'pytmc' := 'pv: LTLHN:LS6:BTPS'}
+        fbSafetyLS6 : FB_ShutterSafety;
 
         {attribute 'pytmc' := '
             pv: LTLHN:LD
@@ -425,6 +522,17 @@ GVL_BTS_VAC
         {attribute 'pytmc' 	  :=	' pv: LXLHN:VVC:03 '}
         {attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_05]^Channel 2^Output'}
         fb_VP_VVC_2 : FB_VVC; // Vent valve, Slow, Switchbox
+
+    // Vent Valve addition
+        st_VP_VVC_4 : ST_VVC;
+        {attribute 'pytmc' 	  :=	' pv: LXLHN:VVC:04 '}
+        {attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_15]^Channel 1^Output'}
+        fb_VP_VVC_4 : FB_VVC;
+
+        {attribute 'pytmc' 	  :=	' pv: LXLHN:VRC:04 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_03_17]^Channel 1^Input;
+                                     .i_xClsLS			:=	TIIB[EL1004_03_17]^Channel 2^Input'}
+        fb_PP_VRC_4 : FB_VRC; // Turbo Isolation Valve
 
 
         (* Pumps *)
@@ -612,11 +720,9 @@ GVL_BTS_VAC
         {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_13]^AI Standard Channel 3^Value '}
         fb_LD6_GPI : FB_MKS275; // Output tube LD6 ATM gauge
         {attribute 'pytmc' 	  :=	' pv: LTLHN:LD6:GCC:01 '}
-        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 3^Value;
-                                     .i_xHV_ON	    	:=	TIIB[EL1124_03_09]^Channel 1^Input;
-                                     .i_xDisc_Active	:=	TIIB[EL1124_03_09]^Channel 2^Input;
-                                     .q_xHV_DIS			:= 	TIIB[EL2624_03_02]^Channel 3^Output	'}
-        fb_LD6_GCC : FB_MKS500; // Output tube LD6, Cold Cathode gauge
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3064_02_16]^AI Standard Channel 2^Value;
+                                     .q_xHV_DIS	    	:=	TIIB[EL2794_02_17]^Channel 2^Input'}
+        fb_LD6_GCC : FB_MKS422; // Output tube LD6, Cold Cathode gauge
 
         // LD8
         {attribute 'pytmc'	  :=	' pv: LTLHN:LD8:VGC:01 '}
@@ -702,6 +808,66 @@ GVL_BTS_VAC
                                      .q_xHV_DIS			:= 	TIIB[EL2624_03_01]^Channel 3^Output	'}
         fb_LD14_GCC : FB_MKS500; // Output tube LD14, Cold Cathode gauge
 
+        ////Bay 2 - Line Upgrade
+        // LS3
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LS3:GCC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_8A]^AI Standard Channel 2^Value;
+                                     .i_xHV_ON	    	:=	TIIB[EL1124_01_06]^Channel 3^Input;
+                                     .i_xDisc_Active	:=	TIIB[EL1124_01_06]^Channel 4^Input;
+                                     .q_xHV_DIS			:= 	TIIB[EL2624_01_01]^Channel 3^Output'}
+        fb_LS3_GCC : FB_MKS500; // LS3, Cold Cathode gauge
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LS3:GPI:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_11]^AI Standard Channel 4^Value '}
+        fb_LS3_GPI : FB_MKS275; // LS3 Pirani gauge
+        {attribute 'pytmc'	  :=	' pv: LTLHN:LS3:VGC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_00_16]^Channel 1^Input;
+                                     .i_xClsLS			:=	TIIB[EL1004_00_16]^Channel 2^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_00_17]^Channel 1^Output'}
+        fb_LS3_VGC : FB_VGC; // Gate valve
+        {attribute 'pytmc'    := 	' pv: LTLHN:LS3:PIP:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_01_15]^AI Standard Channel 1^Value;
+                                     .i_xSP_DI			:= 	TIIB[EL1004_01_16]^Channel 1^Input;
+                                     .q_xHVEna_DO		:= 	TIIB[EL2794_01_17]^Channel 1^Output'}
+        fb_LS3_PIP : FB_PIP_Gamma; // Ion Pump
+        //LS4
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LS4:GCC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_8A]^AI Standard Channel 3^Value;
+                                     .i_xHV_ON	    	:=	TIIB[EL1124_01_08]^Channel 3^Input;
+                                     .i_xDisc_Active	:=	TIIB[EL1124_01_08]^Channel 4^Input;
+                                     .q_xHV_DIS			:= 	TIIB[EL2624_01_01]^Channel 4^Output	'}
+        fb_LS4_GCC : FB_MKS500; // LS4, Cold Cathode gauge
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LS4:GPI:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_09]^AI Standard Channel 3^Value '}
+        fb_LS4_GPI : FB_MKS275; // LS4 Pirani gauge
+        {attribute 'pytmc'	  :=	' pv: LTLHN:LS4:VGC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_00_16]^Channel 3^Input;
+                                     .i_xClsLS			:=	TIIB[EL1004_00_16]^Channel 4^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_00_17]^Channel 2^Output'}
+        fb_LS4_VGC : FB_VGC; // Gate valve
+        {attribute 'pytmc'    := 	' pv: LTLHN:LS4:PIP:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_01_15]^AI Standard Channel 2^Value;
+                                     .i_xSP_DI			:= 	TIIB[EL1004_01_16]^Channel 2^Input;
+                                     .q_xHVEna_DO		:= 	TIIB[EL2794_01_17]^Channel 2^Output'}
+        fb_LS4_PIP : FB_PIP_Gamma; // Ion Pump
+        //LS6
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LS6:GCC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3064_02_16]^AI Standard Channel 1^Value;
+                                     .q_xHV_DIS	    	:=	TIIB[EL2794_02_17]^Channel 1^Input'}
+        fb_LS6_GCC : FB_MKS422; // LS6, Cold Cathode gauge
+
+        {attribute 'pytmc' 	  :=	' pv: LTLHN:LS6:GPI:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_09]^AI Standard Channel 3^Value '}
+        fb_LS6_GPI : FB_MKS275; // LS6 Pirani gauge
+        {attribute 'pytmc'	  :=	' pv: LTLHN:LS6:VGC:01 '}
+        {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_02_13]^Channel 1^Input;
+                                     .i_xClsLS			:=	TIIB[EL1004_02_13]^Channel 2^Input;
+                                     .q_xOPN_DO			:=	TIIB[EL2004_02_14]^Channel 1^Output'}
+        fb_LS6_VGC : FB_VGC; // Gate valve
+        {attribute 'pytmc'    := 	' pv: LTLHN:LS6:PIP:01 '}
+        {attribute 'TcLinkTo' := 	'.i_iPRESS			:=	TIIB[EL3064_01_15]^AI Standard Channel 3^Value;
+                                     .i_xSP_DI			:= 	TIIB[EL1004_01_16]^Channel 3^Input;
+                                     .q_xHVEna_DO		:= 	TIIB[EL2794_01_17]^Channel 3^Output'}
+        fb_LS6_PIP : FB_PIP_Gamma; // Ion Pump
         //Preemptive Arbiter Content
         g_fbArbiter    :   FB_Arbiter(1);
 
@@ -817,15 +983,6 @@ GVL_Shutters
         fbLS1 : ST_ShutterControl;
 
         {attribute 'TcLinkTo' := '
-            .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_01^Channel 2^Output;
-            .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_02^Channel 3^Input;
-            .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_02^Channel 4^Input;
-            .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_04^Channel 2^Input;
-        '}
-        {attribute 'pytmc' := 'pv: LTLHN:LS3:LST'}
-        fbLS3 : ST_ShutterControl;
-
-        {attribute 'TcLinkTo' := '
             .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_01^Channel 3^Output;
             .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_03^Channel 1^Input;
             .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_03^Channel 2^Input;
@@ -842,6 +999,35 @@ GVL_Shutters
         '}
         {attribute 'pytmc' := 'pv: LTLHN:LS8:LST'}
         fbLS8 : ST_ShutterControl;
+
+    // Shutter controls for 1um Line
+
+    {attribute 'TcLinkTo' := '
+            .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_05^Channel 1^Output;
+            .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 1^Input;
+            .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 2^Input;
+            .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_07^Channel 1^Input;
+        '}
+        {attribute 'pytmc' := 'pv: LTLHN:LS3:LST'}
+        fbLS3 : ST_ShutterControl;
+
+    // Shutter controls for 800nm Line
+    {attribute 'TcLinkTo' := '
+            .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_01^Channel 2^Output;
+            .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_02^Channel 3^Input;
+            .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_02^Channel 4^Input;
+            .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_04^Channel 2^Input
+        '}
+        {attribute 'pytmc' := 'pv: LTLHN:LS4:LST'}
+        fbLS4 : ST_ShutterControl;
+    {attribute 'TcLinkTo' := '
+            .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_05^Channel 3^Output;
+            .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 3^Input;
+            .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 4^Input;
+            .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_07^Channel 2^Input;
+        '}
+        {attribute 'pytmc' := 'pv: LTLHN:LS6:LST'}
+        fbLS6 : ST_ShutterControl;
 
     END_VAR
 
@@ -1031,6 +1217,39 @@ FB_DestinationDataStore
         fbGoniometer:=GVL_BTPS.fbLS8Goniometer,
         fbNearField:=GVL_BTPS.fbLS8NearFieldCamStats,
         fbFarField:=GVL_BTPS.fbLS8FarFieldCamStats
+    );
+
+    Update(
+        stDataSource:=stSourceDataStore[3],
+        sName:='LS3 (From laser bay 2)',
+        fbSourceValve:=GVL_BTS_VAC.fb_LS3_VGC,
+        fbLinear:=GVL_BTPS.fbLS3Linear,
+        fbRotary:=GVL_BTPS.fbLS3Rotary,
+        fbGoniometer:=GVL_BTPS.fbLS3Goniometer,
+        fbNearField:=GVL_BTPS.fbLS3NearFieldCamStats,
+        fbFarField:=GVL_BTPS.fbLS3FarFieldCamStats
+    );
+
+    Update(
+        stDataSource:=stSourceDataStore[4],
+        sName:='LS4 (From laser bay 2)',
+        fbSourceValve:=GVL_BTS_VAC.fb_LS4_VGC,
+        fbLinear:=GVL_BTPS.fbLS4Linear,
+        fbRotary:=GVL_BTPS.fbLS4Rotary,
+        fbGoniometer:=GVL_BTPS.fbLS4Goniometer,
+        fbNearField:=GVL_BTPS.fbLS4NearFieldCamStats,
+        fbFarField:=GVL_BTPS.fbLS4FarFieldCamStats
+    );
+
+    Update(
+        stDataSource:=stSourceDataStore[6],
+        sName:='LS6 (From laser bay 3)',
+        fbSourceValve:=GVL_BTS_VAC.fb_LS6_VGC,
+        fbLinear:=GVL_BTPS.fbLS6Linear,
+        fbRotary:=GVL_BTPS.fbLS6Rotary,
+        fbGoniometer:=GVL_BTPS.fbLS6Goniometer,
+        fbNearField:=GVL_BTPS.fbLS6NearFieldCamStats,
+        fbFarField:=GVL_BTPS.fbLS6FarFieldCamStats
     );
 
     END_FUNCTION_BLOCK
@@ -1494,6 +1713,7 @@ FB_ShutterSafety
         bOverride : BOOL;
 
         nSourceIndex : UINT;
+        Shutter_Enable : BOOL;
 
     END_VAR
     VAR_IN_OUT
@@ -1603,7 +1823,6 @@ FB_ShutterSafety
     NOTE: We do not have these connected yet, so we can't test this.
     TODO: connect bLssPermission
     TODO: Double-check logic
-
         bOverride R= NOT bLssPermission;
         bUserOpenRequest R= NOT bLssPermission;
     *)
@@ -2217,6 +2436,9 @@ MAIN
     // Run the beam transport protection system code (BTPS)
     PRG_BTPS();
 
+    // Run Evaluation of Shutter Request
+    PRG_ShutterRequest();
+
     // Uncomment me to run tests
     (* PRG_RunTests(); *)
 
@@ -2229,6 +2451,7 @@ Related:
     * `PRG_GAUGES`_
     * `PRG_PUMPS`_
     * `PRG_RunTests`_
+    * `PRG_ShutterRequest`_
     * `PRG_VALVES`_
 
 
@@ -2244,24 +2467,40 @@ PRG_BTPS
     GVL_BTPS.fbLS1Linear(bEnable:=TRUE);
     GVL_BTPS.fbLS5Linear(bEnable:=TRUE);
     GVL_BTPS.fbLS8Linear(bEnable:=TRUE);
+    GVL_BTPS.fbLS3Linear(bEnable:=TRUE);
+    GVL_BTPS.fbLS4Linear(bEnable:=TRUE);
+    GVL_BTPS.fbLS6Linear(bEnable:=TRUE);
 
     GVL_BTPS.fbLS1Rotary(bEnable:=TRUE);
     GVL_BTPS.fbLS5Rotary(bEnable:=TRUE);
     GVL_BTPS.fbLS8Rotary(bEnable:=TRUE);
+    GVL_BTPS.fbLS3Rotary(bEnable:=TRUE);
+    GVL_BTPS.fbLS4Rotary(bEnable:=TRUE);
+    GVL_BTPS.fbLS6Rotary(bEnable:=TRUE);
 
     GVL_BTPS.fbLS1Goniometer(bEnable:=TRUE);
     GVL_BTPS.fbLS5Goniometer(bEnable:=TRUE);
     GVL_BTPS.fbLS8Goniometer(bEnable:=TRUE);
+    GVL_BTPS.fbLS3Goniometer(bEnable:=TRUE);
+    GVL_BTPS.fbLS4Goniometer(bEnable:=TRUE);
+    GVL_BTPS.fbLS6Goniometer(bEnable:=TRUE);
 
     GVL_BTPS.fbLS1NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
     GVL_BTPS.fbLS5NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
     GVL_BTPS.fbLS8NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+    GVL_BTPS.fbLS3NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+    GVL_BTPS.fbLS4NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+    GVL_BTPS.fbLS6NearFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
 
     GVL_BTPS.fbLS1FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
     GVL_BTPS.fbLS5FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
     GVL_BTPS.fbLS8FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+    GVL_BTPS.fbLS3FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+    GVL_BTPS.fbLS4FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
+    GVL_BTPS.fbLS6FarFieldCamStats(bEnable:=TRUE, fMaximumFrameTime:=GVL_BTPS_Retain.fMaximumFrameTime, fMinPixelSumChange:=GVL_BTPS_Retain.fMinPixelChange);
 
-    GVL_BTPS.fbDestinations[2](sName:='TMO IP3', fbDestinationValve:=GVL_BTS_VAC.fb_LD2_VGC);
+
+    GVL_BTPS.fbDestinations[2](sName:='RIX IP3', fbDestinationValve:=GVL_BTS_VAC.fb_LD2_VGC);
     GVL_BTPS.fbDestinations[4](sName:='RIX ChemRIXS', fbDestinationValve:=GVL_BTS_VAC.fb_LD4_VGC);
     GVL_BTPS.fbDestinations[6](sName:='RIX qRIXS', fbDestinationValve:=GVL_BTS_VAC.fb_LD6_VGC);
     GVL_BTPS.fbDestinations[8](sName:='TMO IP1', fbDestinationValve:=GVL_BTS_VAC.fb_LD8_VGC);
@@ -2273,12 +2512,18 @@ PRG_BTPS
     GVL_BTPS.fbSafetyLS1(nSourceIndex:=1, fbDestinations:=GVL_BTPS.fbDestinations);
     GVL_BTPS.fbSafetyLS5(nSourceIndex:=5, fbDestinations:=GVL_BTPS.fbDestinations);
     GVL_BTPS.fbSafetyLS8(nSourceIndex:=8, fbDestinations:=GVL_BTPS.fbDestinations);
+    GVL_BTPS.fbSafetyLS3(nSourceIndex:=3, fbDestinations:=GVL_BTPS.fbDestinations);
+    GVL_BTPS.fbSafetyLS4(nSourceIndex:=4, fbDestinations:=GVL_BTPS.fbDestinations);
+    GVL_BTPS.fbSafetyLS6(nSourceIndex:=6, fbDestinations:=GVL_BTPS.fbDestinations);
 
     (* Based on the shutter safety result; send open or close request to shutters *)
     IF NOT GVL_BTPS_Retain.bSystemOverride THEN
         GVL_Shutters.fbLS1.bOpenRequest := GVL_BTPS.fbSafetyLS1.bOpenSignal;
         GVL_Shutters.fbLS5.bOpenRequest := GVL_BTPS.fbSafetyLS5.bOpenSignal;
         GVL_Shutters.fbLS8.bOpenRequest := GVL_BTPS.fbSafetyLS8.bOpenSignal;
+        GVL_Shutters.fbLS3.bOpenRequest := GVL_BTPS.fbSafetyLS3.bOpenSignal;
+        GVL_Shutters.fbLS4.bOpenRequest := GVL_BTPS.fbSafetyLS4.bOpenSignal;
+        GVL_Shutters.fbLS6.bOpenRequest := GVL_BTPS.fbSafetyLS6.bOpenSignal;
     END_IF
 
     (* Periodically save persistent variables with source/destination store information *)
@@ -2380,7 +2625,6 @@ PRG_GAUGES
     // LD6
         fb_LD6_GPI.M_SetBits(30518);
         fb_LD6_GPI();
-        fb_LD6_GCC.M_SetBits(30518);
         fb_LD6_GCC(PG := GVL_BTS_VAC.fb_LD6_GPI.PG , IG=> );
 
     // LD8
@@ -2407,6 +2651,24 @@ PRG_GAUGES
         fb_LD14_GCC.M_SetBits(30518);
         fb_LD14_GCC(PG := GVL_BTS_VAC.fb_LD14_GPI.PG , IG=> );
 
+    //1um upgrade lines
+    // LS3
+        fb_LS3_GPI.M_SetBits(30518);
+        fb_LS3_GPI();
+        fb_LS3_GCC.M_SetBits(30518);
+        fb_LS3_GCC(PG := GVL_BTS_VAC.fb_LS3_GPI.PG , IG=> );
+    //LS4
+        fb_LS4_GPI.M_SetBits(30518);
+        fb_LS4_GPI();
+        fb_LS4_GCC.M_SetBits(30518);
+        fb_LS4_GCC(PG := GVL_BTS_VAC.fb_LS4_GPI.PG , IG=> );
+
+    //LS6
+        fb_LS6_GPI.M_SetBits(30518);
+        fb_LS6_GPI();
+        fb_LS6_GCC(PG := GVL_BTS_VAC.fb_LS6_GPI.PG , IG=> );
+
+
     (* Auto switch on cold cathode gauges if interlock permits *)
 
     If xGCC_Enable_SW THEN
@@ -2422,7 +2684,9 @@ PRG_GAUGES
         fb_LD9_GCC.M_HVE(TRUE);
         fb_LD10_GCC.M_HVE(TRUE);
         fb_LD14_GCC.M_HVE(TRUE);
-
+        fb_LS3_GCC.M_HVE(TRUE);
+        fb_LS4_GCC.M_HVE(TRUE);
+        fb_LS6_GCC.M_HVE(TRUE);
         xGCC_Enable_SW := False;
     END_IF
 
@@ -2485,6 +2749,14 @@ PRG_PUMPS
 
     // LD14
     fb_LD14_PIP(i_stGauge := fb_LD14_GCC.IG, stPump=>);
+
+
+    //LS3
+    fb_LS3_PIP(i_stGauge := fb_LS3_GCC.IG, stPump=>);
+    //LS4
+    fb_LS4_PIP(i_stGauge := fb_LS4_GCC.IG, stPump=>);
+    //LS6
+    fb_LS6_PIP(i_stGauge := fb_LS6_GCC.IG, stPump=>);
 
     (*Serial Interface*)
     (*Assign adresses to the pfeiffer controller connected to this serial terminal*)
@@ -2564,6 +2836,51 @@ PRG_SavePeristentVariables
 
 
 
+PRG_ShutterRequest
+^^^^^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_ShutterRequest
+    VAR
+    END_VAR
+    /////Shutter Request Program evaluates the LSS Permission state from the DI and acts on the Open Request state
+    //// 1um Lines
+    //LS3
+    IF (NOT GVL_Shutters.fbLS3.bLssStatus) THEN
+        GVL_Shutters.fbLS3.bOpenRequest := FALSE;
+    END_IF
+
+    //LS6
+    IF (NOT GVL_Shutters.fbLS6.bLssStatus) THEN
+        GVL_Shutters.fbLS6.bOpenRequest := FALSE;
+    END_IF
+
+    /////800 nm
+    //LS1
+    IF (NOT GVL_Shutters.fbLS1.bLssStatus) THEN
+        GVL_Shutters.fbLS1.bOpenRequest := FALSE;
+    END_IF
+    //LS4
+    IF (NOT GVL_Shutters.fbLS4.bLssStatus) THEN
+        GVL_Shutters.fbLS4.bOpenRequest := FALSE;
+    END_IF
+    //LS5
+    IF (NOT GVL_Shutters.fbLS5.bLssStatus) THEN
+        GVL_Shutters.fbLS5.bOpenRequest := FALSE;
+    END_IF
+    //LS8
+    IF (NOT GVL_Shutters.fbLS8.bLssStatus) THEN
+        GVL_Shutters.fbLS8.bOpenRequest := FALSE;
+    END_IF
+
+    END_PROGRAM
+
+
+Related:
+    * `GVL_Shutters`_
+
+
 PRG_VALVES
 ^^^^^^^^^^
 
@@ -2571,6 +2888,7 @@ PRG_VALVES
 
     PROGRAM PRG_VALVES
     VAR
+        Valve_opn_ok : BOOL;
     END_VAR
     (* Switchbox valves *)
     fb_PP_VGC(
@@ -2607,6 +2925,32 @@ PRG_VALVES
 
     fb_VP_VVC_2(
         i_xExtILK_OK := TRUE
+    );
+
+    // Vent manifold valve - interlock logic with slow or fast vent
+    IF (fb_PP_PMF.q_stPump.eState <> E_PumpState.pumpSTOPPED)  THEN  // Condition to evaluate if Roughing Pump is ON
+        fb_VP_VVC_4.i_xExtILK_OK := FALSE;
+        fb_VP_VVC_2.i_xExtILK_OK := FALSE;
+        fb_VP_VVC_1.i_xExtILK_OK := FALSE;
+    ELSE
+        fb_VP_VVC_4.i_xExtILK_OK := TRUE;
+        fb_VP_VVC_2.i_xExtILK_OK := TRUE;
+        fb_VP_VVC_1.i_xExtILK_OK := TRUE;
+            IF (fb_VP_VVC_2.iq_stValve.q_xOPN_DO OR fb_VP_VVC_1.iq_stValve.q_xOPN_DO) THEN
+                fb_VP_VVC_4.M_Set_OPN_SW(TRUE);
+            ELSE
+                fb_VP_VVC_4.M_Set_OPN_SW(FALSE);
+            END_IF
+    END_IF
+
+    fb_VP_VVC_4(
+        i_xOverrideMode := xSystemOverrideMode_BTS
+    );
+
+    // Turbo Isolation valve - Interlocked with turbo pump operation
+    fb_PP_VRC_4(
+        i_xExtILK_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS
     );
 
     (* Transport Tube vavles *)
@@ -2731,6 +3075,46 @@ PRG_VALVES
     fb_LD14_VGC(
         i_stUSG := fb_LD14_GCC.IG,
         i_stDSG := fb_DP_GCC.IG,
+        i_xDis_DPIlk := FALSE,
+        i_xEPS_OK := TRUE,
+        i_xPMPS_OK := TRUE,
+        i_xExt_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS,
+        io_fbFFHWO := g_FFOut,
+        fbArbiter := g_fbArbiter
+    );
+
+
+    //// LS3
+    fb_LS3_VGC(
+        i_stUSG := fb_LS3_GPI.PG,
+        i_stDSG := fb_DP_GPI.PG,
+        i_xDis_DPIlk := FALSE,
+        i_xEPS_OK := TRUE,
+        i_xPMPS_OK := TRUE,
+        i_xExt_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS,
+        io_fbFFHWO := g_FFOut,
+        fbArbiter := g_fbArbiter
+    );
+
+    // LS4
+    fb_LS4_VGC(
+        i_stUSG := fb_LS4_GPI.PG,
+        i_stDSG := fb_DP_GPI.PG,
+        i_xDis_DPIlk := FALSE,
+        i_xEPS_OK := TRUE,
+        i_xPMPS_OK := TRUE,
+        i_xExt_OK := TRUE,
+        i_xOverrideMode := xSystemOverrideMode_BTS,
+        io_fbFFHWO := g_FFOut,
+        fbArbiter := g_fbArbiter
+    );
+
+    // LS6
+    fb_LS6_VGC(
+        i_stUSG := fb_LS6_GPI.PG,
+        i_stDSG := fb_DP_GPI.PG,
         i_xDis_DPIlk := FALSE,
         i_xEPS_OK := TRUE,
         i_xPMPS_OK := TRUE,
