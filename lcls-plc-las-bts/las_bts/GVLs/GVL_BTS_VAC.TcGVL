@@ -48,12 +48,12 @@ VAR_GLOBAL
 
 // Vent Valve addition
     st_VP_VVC_4 : ST_VVC;
-	{attribute 'pytmc' 	  :=	' pv: LXLHN:VVC:04 '}
+    {attribute 'pytmc' 	  :=	' pv: LXLHN:VVC:04 '}
     {attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_15]^Channel 1^Output'}
     fb_VP_VVC_4 : FB_VVC;
-	
-	st_VP_VVC_5 : ST_VVC;
-	{attribute 'pytmc' 	  :=	' pv: LXLHN:VVC:05 '}
+
+    st_VP_VVC_5 : ST_VVC;
+    {attribute 'pytmc' 	  :=	' pv: LXLHN:VVC:05 '}
     {attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_15]^Channel 2^Output'}
     fb_VP_VVC_5 : FB_VVC;
 

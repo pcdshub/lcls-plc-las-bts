@@ -3,7 +3,7 @@
   <POU Name="PRG_VALVES" Id="{ba00eb5d-cf41-4398-aa63-3ea5e5b61133}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_VALVES
 VAR
-	Valve_opn_ok : BOOL;
+    Valve_opn_ok : BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -47,13 +47,13 @@ fb_VP_VVC_2(
 // Vent manifold valve with no interlocks
 fb_VP_VVC_4(
     i_xExtILK_OK := TRUE,
-	i_xOverrideMode := xSystemOverrideMode_BTS
+    i_xOverrideMode := xSystemOverrideMode_BTS
 );
 
-// Roughing pump 
+// Roughing pump
 fb_VP_VVC_5(
     i_xExtILK_OK := TRUE,
-	i_xOverrideMode := xSystemOverrideMode_BTS
+    i_xOverrideMode := xSystemOverrideMode_BTS
 );
 Valve_opn_ok:= fb_PP_PMF.q_stPump.eState;   // Temporary variable to check pump status
 fb_VP_VVC_5.M_Set_OPN_SW(value:= (fb_PP_PMF.q_stPump.eState = E_PumpState.pumpRUNNING) );
