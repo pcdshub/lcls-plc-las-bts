@@ -51,6 +51,14 @@ fb_LD10_PIP(i_stGauge := fb_LD10_GCC.IG, stPump=>);
 // LD14
 fb_LD14_PIP(i_stGauge := fb_LD14_GCC.IG, stPump=>);
 
+
+//LS3 
+fb_LS3_PIP(i_stGauge := fb_LS3_GCC.IG, stPump=>);
+//LS4
+fb_LS4_PIP(i_stGauge := fb_LS4_GCC.IG, stPump=>);
+//LS6
+fb_LS6_PIP(i_stGauge := fb_LS6_GCC.IG, stPump=>);
+
 (*Serial Interface*)
 (*Assign adresses to the pfeiffer controller connected to this serial terminal*)
 st_Pfeiffer_CTRL_PTM[1].iSerialAddress  :=1;	//LXLHN_PTM_01
