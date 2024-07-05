@@ -52,10 +52,12 @@ VAR_GLOBAL
     {attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_15]^Channel 1^Output'}
     fb_VP_VVC_4 : FB_VVC;
 
-    st_VP_VVC_5 : ST_VVC;
-    {attribute 'pytmc' 	  :=	' pv: LXLHN:VVC:05 '}
-    {attribute 'TcLinkTo' := 	'.q_xOPN_DO			:=	TIIB[EL2004_02_15]^Channel 2^Output'}
-    fb_VP_VVC_5 : FB_VVC;
+    {attribute 'pytmc' 	  :=	' pv: LXLHN:VRC:04 '}
+    {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_03_17]^Channel 1^Input;
+                                 .i_xClsLS			:=	TIIB[EL1004_03_17]^Channel 2^Input;
+                                 .q_xOPN_DO			:=	TIIB[EL2004_02_15]^Channel 2^Output'}
+    fb_PP_VRC_4 : FB_VRC; // Turbo Isolation Valve
+    
 
     (* Pumps *)
     {attribute 'pytmc' 	  := '
@@ -342,7 +344,7 @@ VAR_GLOBAL
     fb_LS3_GCC : FB_MKS500; // LS3, Cold Cathode gauge
 	{attribute 'pytmc' 	  :=	' pv: LTLHN:LS3:GPI:01 '}
     {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_11]^AI Standard Channel 4^Value '}
-    fb_LD3_GPI : FB_MKS275; // LS3 Pirani gauge
+    fb_LS3_GPI : FB_MKS275; // LS3 Pirani gauge
 	{attribute 'pytmc'	  :=	' pv: LTLHN:LS3:VGC:01 '}
     {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_00_16]^Channel 1^Input;
                                  .i_xClsLS			:=	TIIB[EL1004_00_16]^Channel 2^Input;
@@ -379,10 +381,11 @@ VAR_GLOBAL
                                  .i_xHV_ON	    	:=	TIIB[EL1124_01_08]^Channel 1^Input;
                                  .i_xDisc_Active	:=	TIIB[EL1124_01_08]^Channel 2^Input;
                                  .q_xHV_DIS			:= 	TIIB[EL2624_01_01]^Channel 1^Output	'}
-    fb_LS6_GCC : FB_MKS500; // LS4, Cold Cathode gauge
+    fb_LS6_GCC : FB_MKS422; // LS6, Cold Cathode gauge
+	
 	{attribute 'pytmc' 	  :=	' pv: LTLHN:LS6:GPI:01 '}
     {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_09]^AI Standard Channel 3^Value '}
-    fb_LS6_GPI : FB_MKS275; // LS4 Pirani gauge
+    fb_LS6_GPI : FB_MKS275; // LS6 Pirani gauge
 	{attribute 'pytmc'	  :=	' pv: LTLHN:LS6:VGC:01 '}
     {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_00_16]^Channel 3^Input;
                                  .i_xClsLS			:=	TIIB[EL1004_00_16]^Channel 4^Input;
