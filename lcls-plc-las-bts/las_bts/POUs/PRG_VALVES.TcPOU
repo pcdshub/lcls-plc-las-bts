@@ -46,10 +46,10 @@ fb_VP_VVC_2(
 
 // Vent manifold valve - interlock logic with slow or fast vent
 fb_VP_VVC_4(
-    i_xExtILK_OK := TRUE,
+    i_xExtILK_OK := FALSE,
     i_xOverrideMode := xSystemOverrideMode_BTS
 );
-fb_VP_VVC_4.M_Set_OPN_SW(value := (fb_VP_VVC_2.M_IsOpen OR fb_VP_VVC_1.M_IsOpen)); // Open when Slow vent or N21 purge valve is OPEN
+fb_VP_VVC_4.M_Set_OPN_SW(value := (fb_VP_VVC_2.M_IsOpen OR fb_VP_VVC_3.M_IsOpen)); // Open when Slow vent or N21 purge valve is OPEN
 
 // Turbo Isolation valve - Interlocked with turbo pump operation
 fb_PP_VRC_4(
