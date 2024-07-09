@@ -81,7 +81,7 @@ END_VAR]]></Declaration>
     fb_LD14_GPI();
     fb_LD14_GCC.M_SetBits(30518);
     fb_LD14_GCC(PG := GVL_BTS_VAC.fb_LD14_GPI.PG , IG=> );
-	
+
 //1um upgrade lines
 
 
@@ -91,16 +91,16 @@ END_VAR]]></Declaration>
     fb_LS3_GCC.M_SetBits(30518);
     fb_LS3_GCC(PG := GVL_BTS_VAC.fb_LS3_GPI.PG , IG=> );
 //LS4
-	fb_LS4_GPI.M_SetBits(30518);
-	fb_LS4_GPI();
-	fb_LS4_GCC.M_SetBits(30518);
-	fb_LS4_GCC(PG := GVL_BTS_VAC.fb_LS4_GPI.PG , IG=> );
+    fb_LS4_GPI.M_SetBits(30518);
+    fb_LS4_GPI();
+    fb_LS4_GCC.M_SetBits(30518);
+    fb_LS4_GCC(PG := GVL_BTS_VAC.fb_LS4_GPI.PG , IG=> );
 
 //LS6
-	fb_LS6_GPI.M_SetBits(30518);
-	fb_LS6_GPI();
-	fb_LS6_GCC.M_SetBits(30518);
-	fb_LS6_GCC(PG := GVL_BTS_VAC.fb_LS6_GPI.PG , IG=> );
+    fb_LS6_GPI.M_SetBits(30518);
+    fb_LS6_GPI();
+    fb_LS6_GCC.M_SetBits(30518);
+    fb_LS6_GCC(PG := GVL_BTS_VAC.fb_LS6_GPI.PG , IG=> );
 
 
 (* Auto switch on cold cathode gauges if interlock permits *)

@@ -39,7 +39,7 @@ VAR_GLOBAL
     '}
     {attribute 'pytmc' := 'pv: LTLHN:LS8:LST'}
     fbLS8 : ST_ShutterControl;
-// Shutter controls for 1um Line upgrades 
+// Shutter controls for 1um Line upgrades
 (*
 {attribute 'TcLinkTo' := '
         .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_01^Channel 1^Output;
