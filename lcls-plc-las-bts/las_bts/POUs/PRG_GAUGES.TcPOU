@@ -99,7 +99,6 @@ END_VAR]]></Declaration>
 //LS6
     fb_LS6_GPI.M_SetBits(30518);
     fb_LS6_GPI();
-    fb_LS6_GCC.M_SetBits(30518);
     fb_LS6_GCC(PG := GVL_BTS_VAC.fb_LS6_GPI.PG , IG=> );
 
 

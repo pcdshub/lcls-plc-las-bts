@@ -49,14 +49,16 @@ fb_VP_VVC_4(
     i_xExtILK_OK := FALSE,
     i_xOverrideMode := xSystemOverrideMode_BTS
 );
-fb_VP_VVC_4.M_Set_OPN_SW(value := (fb_VP_VVC_2.M_IsOpen OR fb_VP_VVC_3.M_IsOpen)); // Open when Slow vent or N21 purge valve is OPEN
+
+fb_VP_VVC_4.M_Set_OPN_SW(value := (fb_VP_VVC_2.iq_stValve.q_xOPN_DO OR fb_VP_VVC_1.iq_stValve.q_xOPN_DO )); // Open when Slow vent or N21 purge valve is OPEN
+
 
 // Turbo Isolation valve - Interlocked with turbo pump operation
 fb_PP_VRC_4(
-    i_xExtILK_OK := TRUE,
+    i_xExtILK_OK := FALSE,
     i_xOverrideMode := xSystemOverrideMode_BTS
 );
-Valve_opn_ok:= fb_PP_PMF.q_stPump.eState;   // Temporary variable to check pump status
+//Valve_opn_ok:= fb_PP_PMF.q_stPump.eState;   // Temporary variable to check pump status
 fb_PP_VRC_4.M_Set_OPN_SW(value:= (fb_PP_PMF.q_stPump.eState = E_PumpState.pumpRUNNING) );
 
 (* Transport Tube vavles *)

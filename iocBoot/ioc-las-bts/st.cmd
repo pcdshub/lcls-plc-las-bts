@@ -1,11 +1,11 @@
-#!/reg/g/pcds/epics/ioc/common/ads-ioc/R0.6.0//bin/rhel7-x86_64/adsIoc
+#!c:/Repos/ads-ioc/R0.6.1///bin/rhel7-x86_64/adsIoc
 ################### AUTO-GENERATED DO NOT EDIT ###################
 #
 #         Project: lcls-plc-las-bts.tsproj
 #        PLC name: las_bts (las_bts Instance)
-# Generated using: pytmc 2.14.0
-# Project version: f1c0937
-#    Project hash: f1c0937c92d3a07565a01b1a2a7ff4029ecc3ab6
+# Generated using: pytmc 2.15.2.dev0+g73bd2d9.d20230727
+# Project version: unknown
+#    Project hash: unknown
 #     PLC IP/host: 172.21.160.49
 #      PLC Net ID: 172.21.160.49.1.1
 #  ** Production mode IOC **
@@ -26,7 +26,7 @@
 
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
-epicsEnvSet("ENGINEER", "klauer" )
+epicsEnvSet("ENGINEER", "" )
 epicsEnvSet("LOCATION", "PLC:LAS:BTS" )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
@@ -42,14 +42,14 @@ epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "172.21.160.49")
 epicsEnvSet("AMSID",            "172.21.160.49.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "12052")
+epicsEnvSet("ADS_MAX_PARAMS",   "12707")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
 epicsEnvSet("ADS_TIME_SOURCE",  "0")
 
 # Add a route to the PLC automatically:
-system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.160.49 ^172.*")
+system("${ADS_IOC_TOP}/scripts/add_route.sh 172.21.160.49 ^172.*$")
 
 # adsAsynPortDriverConfigure(portName, ipaddr, amsaddr, amsport,
 #    asynParamTableSize, priority, noAutoConnect, defaultSampleTimeMS,
@@ -88,7 +88,7 @@ dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:LAS:BTS,IDX=1
 dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:LAS:BTS,IDX=2")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:LAS:BTS")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:LAS:BTS,PROJECT=lcls-plc-las-bts.tsproj,HASH=f1c0937,VERSION=f1c0937,PYTMC=2.14.0,PLC_HOST=172.21.160.49")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:LAS:BTS,PROJECT=lcls-plc-las-bts.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.15.2.dev0+g73bd2d9.d20230727,PLC_HOST=172.21.160.49")
 
 #   LCLSVacuumSerialDriverLib: * -> 1.2.2 (SLAC - LCLS)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:LAS:BTS,DEPENDENCY=LCLSVacuumSerialDriverLib,VERSION=1.2.2,VENDOR=SLAC - LCLS")
@@ -110,8 +110,8 @@ cd "$(IOC_TOP)"
 ## PLC Project Database files ##
 dbLoadRecords("las_bts.db", "PORT=$(ASYN_PORT),SIM=,PREFIX=PLC:LAS:BTS:,IOCNAME=$(IOC),IOC=$(IOC)")
 
-# Total records: 11052
-callbackSetQueueSize(24104)
+# Total records: 11707
+callbackSetQueueSize(25414)
 
 # Autosave and archive settings:
 save_restoreSet_status_prefix("PLC:LAS:BTS:")
