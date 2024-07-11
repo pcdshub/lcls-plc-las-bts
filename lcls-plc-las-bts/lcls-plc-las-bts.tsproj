@@ -1457,8 +1457,8 @@
 			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL1124_01_08">
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD8_GCC.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD8_GCC.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS4_GCC.i_xDisc_Active" VarB="Channel 2^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS4_GCC.i_xHV_ON" VarB="Channel 1^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS4_GCC.i_xDisc_Active" VarB="Channel 4^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS4_GCC.i_xHV_ON" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL2624_01_01">
 				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LD8_GCC.q_xHV_DIS" VarB="Channel 1^Output" AutoLink="true"/>
@@ -1474,6 +1474,11 @@
 				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LS3_PIP.q_xHVEna_DO" VarB="Channel 1^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LS4_PIP.q_xHVEna_DO" VarB="Channel 2^Output" AutoLink="true"/>
 				<Link VarA="PlcTask Outputs^GVL_BTS_VAC.fb_LS6_PIP.q_xHVEna_DO" VarB="Channel 3^Output" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL3064_01_15">
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS3_PIP.i_iPRESS" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS4_PIP.i_iPRESS" VarB="AI Standard Channel 2^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS6_PIP.i_iPRESS" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1100_01_00^EL3174_01_09">
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_DP_GCC.i_iPRESS_R" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
@@ -1615,7 +1620,6 @@
 			<OwnerB Name="TIID^EtherCAT1^EK1100_03_00^EL3174_03_11">
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD4_GCC.i_iPRESS_R" VarB="AI Standard Channel 4^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LD6_GCC.i_iPRESS_R" VarB="AI Standard Channel 3^Value" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS4_GCC.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS5_GCC.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS6_GCC.i_iPRESS_R" VarB="AI Standard Channel 1^Value" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^GVL_BTS_VAC.fb_LS8_GCC.i_iPRESS_R" VarB="AI Standard Channel 2^Value" AutoLink="true"/>

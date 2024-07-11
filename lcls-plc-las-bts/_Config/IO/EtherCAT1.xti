@@ -45,7 +45,7 @@
 			<EtherCAT PortABoxInfo="#x01000013"/>
 		</Box>
 		<Box File="EK1100_02_00.xti" Id="40">
-			<EtherCAT PortABoxInfo="#x01000027"/>
+			<EtherCAT PortABoxInfo="#x01000070"/>
 		</Box>
 		<Box File="EK1100_03_00.xti" Id="59">
 			<EtherCAT PortABoxInfo="#x0100003a"/>

@@ -337,7 +337,7 @@ VAR_GLOBAL
     ////Bay 2 - Line Upgrade
     // LS3
     {attribute 'pytmc' 	  :=	' pv: LTLHN:LS3:GCC:01 '}
-    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_08B]^AI Standard Channel 2^Value;
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_08A]^AI Standard Channel 2^Value;
                                  .i_xHV_ON	    	:=	TIIB[EL1124_01_06]^Channel 3^Input;
                                  .i_xDisc_Active	:=	TIIB[EL1124_01_06]^Channel 4^Input;
                                  .q_xHV_DIS			:= 	TIIB[EL2624_01_01]^Channel 3^Output	'}
@@ -357,9 +357,9 @@ VAR_GLOBAL
     fb_LS3_PIP : FB_PIP_Gamma; // Ion Pump
     //LS4
     {attribute 'pytmc' 	  :=	' pv: LTLHN:LS4:GCC:01 '}
-    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 1^Value;
-                                 .i_xHV_ON	    	:=	TIIB[EL1124_01_08]^Channel 1^Input;
-                                 .i_xDisc_Active	:=	TIIB[EL1124_01_08]^Channel 2^Input;
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_01_08A]^AI Standard Channel 3^Value;
+                                 .i_xHV_ON	    	:=	TIIB[EL1124_01_08]^Channel 3^Input;
+                                 .i_xDisc_Active	:=	TIIB[EL1124_01_08]^Channel 4^Input;
                                  .q_xHV_DIS			:= 	TIIB[EL2624_01_01]^Channel 4^Output	'}
     fb_LS4_GCC : FB_MKS500; // LS4, Cold Cathode gauge
     {attribute 'pytmc' 	  :=	' pv: LTLHN:LS4:GPI:01 '}

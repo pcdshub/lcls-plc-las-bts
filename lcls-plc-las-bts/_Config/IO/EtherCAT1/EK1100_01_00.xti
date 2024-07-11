@@ -31,8 +31,11 @@
 		<Box File="EL1124_01_08.xti" Id="28">
 			<EtherCAT PortABoxInfo="#x0100001b"/>
 		</Box>
-		<Box File="EL3174_01_09.xti" Id="30">
+		<Box File="EL3174_01_8A.xti" Id="100">
 			<EtherCAT PortABoxInfo="#x0100001c"/>
+		</Box>
+		<Box File="EL3174_01_09.xti" Id="30">
+			<EtherCAT PortABoxInfo="#x01000064"/>
 		</Box>
 		<Box File="EL3174_01_10.xti" Id="31">
 			<EtherCAT PortABoxInfo="#x0100001e"/>
@@ -43,26 +46,23 @@
 		<Box File="EL9070_01_12.xti" Id="32">
 			<EtherCAT PortABoxInfo="#x0100001d"/>
 		</Box>
-		<Box File="EL9410_01_13.xti" Id="33">
+		<Box File="EL9410_01_13.xti" Id="108">
 			<EtherCAT PortABoxInfo="#x0100001d"/>
 		</Box>
 		<Box File="EL9184_01_14.xti" Id="34">
-			<EtherCAT PortABoxInfo="#x01000021"/>
+			<EtherCAT PortABoxInfo="#x0100006c"/>
 		</Box>
-		<Box File="EL1004_01_15.xti" Id="35">
-			<EtherCAT PortABoxInfo="#x01000021"/>
+		<Box File="EL3064_01_15.xti" Id="109">
+			<EtherCAT PortABoxInfo="#x0100006c"/>
 		</Box>
-		<Box File="EL1004_01_16.xti" Id="36">
-			<EtherCAT PortABoxInfo="#x01000023"/>
+		<Box File="EL1004_01_16.xti" Id="110">
+			<EtherCAT PortABoxInfo="#x0100006d"/>
 		</Box>
-		<Box File="EL2794_01_17.xti" Id="37">
-			<EtherCAT PortABoxInfo="#x01000024"/>
+		<Box File="EL2794_01_17.xti" Id="111">
+			<EtherCAT PortABoxInfo="#x0100006e"/>
 		</Box>
-		<Box File="EK1122_01_01.xti" Id="38">
-			<EtherCAT PortABoxInfo="#x01000025"/>
-		</Box>
-		<Box File="EK1110_01_01.xti" Id="39">
-			<EtherCAT PortABoxInfo="#x02000026"/>
+		<Box File="EK1110_01_18.xti" Id="112">
+			<EtherCAT PortABoxInfo="#x0100006f"/>
 		</Box>
 	</Box>
 </TcSmItem>

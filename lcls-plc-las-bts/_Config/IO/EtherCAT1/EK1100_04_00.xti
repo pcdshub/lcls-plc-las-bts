@@ -19,8 +19,17 @@
 		<Box File="EL1004_04_04.xti" Id="151">
 			<EtherCAT PortABoxInfo="#x01000096"/>
 		</Box>
-		<Box File="EL9011_04_05.xti" Id="152">
+		<Box File="EL2624_05_05.xti" Id="158">
 			<EtherCAT PortABoxInfo="#x01000097"/>
+		</Box>
+		<Box File="EL1004_05_06.xti" Id="159">
+			<EtherCAT PortABoxInfo="#x0100009e"/>
+		</Box>
+		<Box File="EL1004_05_07.xti" Id="160">
+			<EtherCAT PortABoxInfo="#x0100009f"/>
+		</Box>
+		<Box File="EL9011_04_08.xti" Id="152">
+			<EtherCAT PortABoxInfo="#x010000a0"/>
 		</Box>
 	</Box>
 </TcSmItem>
