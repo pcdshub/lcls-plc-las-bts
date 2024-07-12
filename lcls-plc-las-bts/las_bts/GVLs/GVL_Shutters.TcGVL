@@ -30,7 +30,7 @@ VAR_GLOBAL
     '}
     {attribute 'pytmc' := 'pv: LTLHN:LS8:LST'}
     fbLS8 : ST_ShutterControl;
-	
+
 // Shutter controls for 1um Line
 
 {attribute 'TcLinkTo' := '

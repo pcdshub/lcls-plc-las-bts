@@ -37,7 +37,7 @@ VAR_INPUT
     bOverride : BOOL;
 
     nSourceIndex : UINT;
-	Shutter_Enable : BOOL; 
+    Shutter_Enable : BOOL;
 
 END_VAR
 VAR_IN_OUT

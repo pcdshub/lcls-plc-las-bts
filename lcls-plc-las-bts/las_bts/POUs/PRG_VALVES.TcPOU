@@ -46,18 +46,18 @@ fb_VP_VVC_2(
 
 // Vent manifold valve - interlock logic with slow or fast vent
 IF (fb_PP_PMF.q_stPump.eState <> E_PumpState.pumpSTOPPED)  THEN  // Condition to evaluate if Roughing Pump is ON
-	fb_VP_VVC_4.i_xExtILK_OK := FALSE; 
-	fb_VP_VVC_2.i_xExtILK_OK := FALSE;
-	fb_VP_VVC_1.i_xExtILK_OK := FALSE; 		
+    fb_VP_VVC_4.i_xExtILK_OK := FALSE;
+    fb_VP_VVC_2.i_xExtILK_OK := FALSE;
+    fb_VP_VVC_1.i_xExtILK_OK := FALSE;
 ELSE
-	fb_VP_VVC_4.i_xExtILK_OK := TRUE; 
-	fb_VP_VVC_2.i_xExtILK_OK := TRUE; 
-	fb_VP_VVC_1.i_xExtILK_OK := TRUE; 
-		IF (fb_VP_VVC_2.iq_stValve.q_xOPN_DO OR fb_VP_VVC_1.iq_stValve.q_xOPN_DO) THEN
-			fb_VP_VVC_4.M_Set_OPN_SW(TRUE); 
-		ELSE 
-			fb_VP_VVC_4.M_Set_OPN_SW(FALSE);
-		END_IF
+    fb_VP_VVC_4.i_xExtILK_OK := TRUE;
+    fb_VP_VVC_2.i_xExtILK_OK := TRUE;
+    fb_VP_VVC_1.i_xExtILK_OK := TRUE;
+        IF (fb_VP_VVC_2.iq_stValve.q_xOPN_DO OR fb_VP_VVC_1.iq_stValve.q_xOPN_DO) THEN
+            fb_VP_VVC_4.M_Set_OPN_SW(TRUE);
+        ELSE
+            fb_VP_VVC_4.M_Set_OPN_SW(FALSE);
+        END_IF
 END_IF
 
 fb_VP_VVC_4(
