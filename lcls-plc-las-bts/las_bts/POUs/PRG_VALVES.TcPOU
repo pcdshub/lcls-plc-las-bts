@@ -45,40 +45,31 @@ fb_VP_VVC_2(
 );
 
 // Vent manifold valve - interlock logic with slow or fast vent
-fb_VP_VVC_4(
-    i_xExtILK_OK := FALSE,
-    i_xOverrideMode := xSystemOverrideMode_BTS
-);
-(*
-IF (fb_VP_VVC_2.iq_stValve.q_xOPN_DO OR fb_VP_VVC_1.iq_stValve.q_xOPN_DO) THEN 
-	st_VP_VVC_4.pv_xOPN_SW := TRUE; 
-ELSE
-	st_VP_VVC_4.pv_xOPN_SW := FALSE;
-END_IF
-*)
-IF (fb_PP_PMF.q_stPump.eState <> E_PumpState.pumpSTOPPED)  THEN 
+IF (fb_PP_PMF.q_stPump.eState <> E_PumpState.pumpSTOPPED)  THEN  // Condition to evaluate if Roughing Pump is ON
 	fb_VP_VVC_4.i_xExtILK_OK := FALSE; 
 	fb_VP_VVC_2.i_xExtILK_OK := FALSE;
-	fb_VP_VVC_1.i_xExtILK_OK := FALSE; 	
+	fb_VP_VVC_1.i_xExtILK_OK := FALSE; 		
 ELSE
 	fb_VP_VVC_4.i_xExtILK_OK := TRUE; 
 	fb_VP_VVC_2.i_xExtILK_OK := TRUE; 
 	fb_VP_VVC_1.i_xExtILK_OK := TRUE; 
 		IF (fb_VP_VVC_2.iq_stValve.q_xOPN_DO OR fb_VP_VVC_1.iq_stValve.q_xOPN_DO) THEN
-			GVL_BTS_VAC.st_VP_VVC_4.pv_xOPN_SW:= TRUE; 
-			//GVL_BTS_VAC.fb_VP_VVC_4.M_Set_OPN_SW.value := TRUE; 
-		// st_VP_VVC_4.pv_xOPN_SW := TRUE;
+			fb_VP_VVC_4.M_Set_OPN_SW(TRUE); 
 		ELSE 
-			st_VP_VVC_4.pv_xOPN_SW := FALSE;
-	END_IF
+			fb_VP_VVC_4.M_Set_OPN_SW(FALSE);
+		END_IF
 END_IF
+
+fb_VP_VVC_4(
+    //i_xExtILK_OK := FALSE,
+    i_xOverrideMode := xSystemOverrideMode_BTS
+);
 
 // Turbo Isolation valve - Interlocked with turbo pump operation
 fb_PP_VRC_4(
     i_xExtILK_OK := FALSE,
     i_xOverrideMode := xSystemOverrideMode_BTS
 );
-//Valve_opn_ok:= fb_PP_PMF.q_stPump.eState;   // Temporary variable to check pump status
 fb_PP_VRC_4.M_Set_OPN_SW(value:= (fb_PP_PMF.q_stPump.eState = E_PumpState.pumpRUNNING) );
 
 (* Transport Tube vavles *)

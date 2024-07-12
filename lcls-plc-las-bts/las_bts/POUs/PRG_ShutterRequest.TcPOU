@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="PRG_ShutterRequest" Id="{1bd4d0bb-ac46-414e-a614-0aa82d92a3d6}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_ShutterRequest
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[/////Shutter Request Program evaluates the LSS Permission state from the DI and acts on the Open Request state
+//// 1um Lines
+//LS3
+IF (NOT GVL_Shutters.fbLS3.bLssStatus) THEN
+	GVL_Shutters.fbLS3.bOpenRequest := FALSE; 
+END_IF
+
+//LS6
+IF (NOT GVL_Shutters.fbLS6.bLssStatus) THEN
+	GVL_Shutters.fbLS6.bOpenRequest := FALSE; 
+END_IF
+
+/////800 nm
+//LS1
+IF (NOT GVL_Shutters.fbLS1.bLssStatus) THEN
+	GVL_Shutters.fbLS1.bOpenRequest := FALSE; 
+END_IF
+//LS4
+IF (NOT GVL_Shutters.fbLS4.bLssStatus) THEN
+	GVL_Shutters.fbLS4.bOpenRequest := FALSE; 
+END_IF
+//LS5
+IF (NOT GVL_Shutters.fbLS5.bLssStatus) THEN
+	GVL_Shutters.fbLS5.bOpenRequest := FALSE; 
+END_IF
+//LS8
+IF (NOT GVL_Shutters.fbLS8.bLssStatus) THEN
+	GVL_Shutters.fbLS8.bOpenRequest := FALSE; 
+END_IF
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

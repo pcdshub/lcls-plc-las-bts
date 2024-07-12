@@ -119,6 +119,9 @@
     <Compile Include="POUs\PRG_SavePeristentVariables.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\PRG_ShutterRequest.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\PRG_VALVES.TcPOU">
       <SubType>Code</SubType>
     </Compile>

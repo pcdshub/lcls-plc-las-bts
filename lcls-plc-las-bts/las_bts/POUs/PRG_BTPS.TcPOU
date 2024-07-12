@@ -64,9 +64,9 @@ IF NOT GVL_BTPS_Retain.bSystemOverride THEN
     GVL_Shutters.fbLS1.bOpenRequest := GVL_BTPS.fbSafetyLS1.bOpenSignal;
     GVL_Shutters.fbLS5.bOpenRequest := GVL_BTPS.fbSafetyLS5.bOpenSignal;
     GVL_Shutters.fbLS8.bOpenRequest := GVL_BTPS.fbSafetyLS8.bOpenSignal;
-    //GVL_Shutters.fbLS3.bOpenRequest := GVL_BTPS.fbSafetyLS3.bOpenSignal;
-    //GVL_Shutters.fbLS4.bOpenRequest := GVL_BTPS.fbSafetyLS4.bOpenSignal;
-    //GVL_Shutters.fbLS6.bOpenRequest := GVL_BTPS.fbSafetyLS6.bOpenSignal;
+    GVL_Shutters.fbLS3.bOpenRequest := GVL_BTPS.fbSafetyLS3.bOpenSignal;
+    GVL_Shutters.fbLS4.bOpenRequest := GVL_BTPS.fbSafetyLS4.bOpenSignal;
+    GVL_Shutters.fbLS6.bOpenRequest := GVL_BTPS.fbSafetyLS6.bOpenSignal;
 END_IF
 
 (* Periodically save persistent variables with source/destination store information *)
