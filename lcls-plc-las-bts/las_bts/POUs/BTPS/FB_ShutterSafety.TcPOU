@@ -37,6 +37,7 @@ VAR_INPUT
     bOverride : BOOL;
 
     nSourceIndex : UINT;
+    Shutter_Enable : BOOL;
 
 END_VAR
 VAR_IN_OUT
@@ -149,7 +150,6 @@ bUserOpenRequest R= rtOverrideSet.Q AND NOT bBtpsPermission;
 NOTE: We do not have these connected yet, so we can't test this.
 TODO: connect bLssPermission
 TODO: Double-check logic
-
     bOverride R= NOT bLssPermission;
     bUserOpenRequest R= NOT bLssPermission;
 *)

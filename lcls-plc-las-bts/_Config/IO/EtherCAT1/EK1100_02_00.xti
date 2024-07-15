@@ -52,14 +52,14 @@
 		<Box File="EL2004_02_15.xti" Id="55">
 			<EtherCAT PortABoxInfo="#x01000036"/>
 		</Box>
-		<Box File="EL1008_02_16.xti" Id="72">
+		<Box File="EL3064_02_16.xti" Id="129">
 			<EtherCAT PortABoxInfo="#x01000037"/>
 		</Box>
-		<Box File="EL2008_02_17.xti" Id="57">
-			<EtherCAT PortABoxInfo="#x01000048"/>
+		<Box File="EL2794_02_17.xti" Id="130">
+			<EtherCAT PortABoxInfo="#x01000081"/>
 		</Box>
 		<Box File="EK1110_02_01.xti" Id="58">
-			<EtherCAT PortABoxInfo="#x01000039"/>
+			<EtherCAT PortABoxInfo="#x01000082"/>
 		</Box>
 	</Box>
 </TcSmItem>

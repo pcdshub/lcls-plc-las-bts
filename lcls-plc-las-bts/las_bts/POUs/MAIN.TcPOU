@@ -23,6 +23,9 @@ PRG_PUMPS();
 // Run the beam transport protection system code (BTPS)
 PRG_BTPS();
 
+// Run Evaluation of Shutter Request
+PRG_ShutterRequest();
+
 // Uncomment me to run tests
 (* PRG_RunTests(); *)]]></ST>
     </Implementation>

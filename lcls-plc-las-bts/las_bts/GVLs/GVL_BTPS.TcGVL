@@ -8,6 +8,9 @@ VAR_GLOBAL
         LAS:BTS:MCS2:01:m1 (ioc-las-bts-mcs1, las_bts_mcs2_01_m1)
         LAS:BTS:MCS2:01:m4 (ioc-las-bts-mcs1, las_bts_mcs2_01_m4)
         LAS:BTS:MCS2:01:m7 (ioc-las-bts-mcs1, las_bts_mcs2_01_m7)
+        LAS:BTS:MCS2:01:m13
+        LAS:BTS:MCS2:01:m10
+        LAS:BTS:MCS2:01:m16
     *)
     {attribute 'pytmc' := '
         pv: LTLHN:BTPS:Chk:LS1:Lin
@@ -24,12 +27,30 @@ VAR_GLOBAL
         link: @(SIM)LAS:BTS:MCS2:01:m7
     '}
     fbLS8Linear : FB_EpicsMotorMonitor;
+    {attribute 'pytmc' := '
+        pv: LTLHN:BTPS:Chk:LS3:Lin
+        link: @(SIM)LAS:BTS:MCS2:01:m13
+    '}
+    fbLS3Linear : FB_EpicsMotorMonitor;
+    {attribute 'pytmc' := '
+        pv: LTLHN:BTPS:Chk:LS4:Lin
+        link: @(SIM)LAS:BTS:MCS2:01:m10
+    '}
+    fbLS4Linear : FB_EpicsMotorMonitor;
+    {attribute 'pytmc' := '
+        pv: LTLHN:BTPS:Chk:LS6:Lin
+        link: @(SIM)LAS:BTS:MCS2:01:m16
+    '}
+    fbLS6Linear : FB_EpicsMotorMonitor;
 
     (*
         Motor - Rotary
             LAS:BTS:MCS2:01:m2 (ioc-las-bts-mcs1, las_bts_mcs2_01_m2)
             LAS:BTS:MCS2:01:m6 (ioc-las-bts-mcs1, las_bts_mcs2_01_m6)
             LAS:BTS:MCS2:01:m8 (ioc-las-bts-mcs1, las_bts_mcs2_01_m8)
+            LAS:BTS:MCS2:01:m14
+            LAS:BTS:MCS2:01:m12
+            LAS:BTS:MCS2:01:m17
     *)
     {attribute 'pytmc' := '
         pv: LTLHN:BTPS:Chk:LS1:Rot
@@ -46,6 +67,21 @@ VAR_GLOBAL
         link: @(SIM)LAS:BTS:MCS2:01:m8
     '}
     fbLS8Rotary : FB_EpicsMotorMonitor;
+    {attribute 'pytmc' := '
+        pv: LTLHN:BTPS:Chk:LS3:Rot
+        link: @(SIM)LAS:BTS:MCS2:01:m14
+    '}
+    fbLS3Rotary : FB_EpicsMotorMonitor;
+    {attribute 'pytmc' := '
+        pv: LTLHN:BTPS:Chk:LS4:Rot
+        link: @(SIM)LAS:BTS:MCS2:01:m12
+    '}
+    fbLS4Rotary : FB_EpicsMotorMonitor;
+    {attribute 'pytmc' := '
+        pv: LTLHN:BTPS:Chk:LS6:Rot
+        link: @(SIM)LAS:BTS:MCS2:01:m17
+    '}
+    fbLS6Rotary : FB_EpicsMotorMonitor;
 
     (*
         Motor - Goniometer
@@ -69,7 +105,26 @@ VAR_GLOBAL
     '}
     fbLS8Goniometer : FB_EpicsMotorMonitor;
 
-    (* Near field camera stats plugins, per bay *)
+//1um / 800nm Lines
+    {attribute 'pytmc' := '
+        pv: LTLHN:BTPS:Chk:LS3:Gon
+        link: @(SIM)LAS:BTS:MCS2:01:m15
+    '}
+    fbLS3Goniometer : FB_EpicsMotorMonitor;
+
+    {attribute 'pytmc' := '
+        pv: LTLHN:BTPS:Chk:LS4:Gon
+        link: @(SIM)LAS:BTS:MCS2:01:m11
+    '}
+    fbLS4Goniometer : FB_EpicsMotorMonitor;
+
+    {attribute 'pytmc' := '
+        pv: LTLHN:BTPS:Chk:LS6:Gon
+        link: @(SIM)LAS:BTS:MCS2:01:m18
+    '}
+    fbLS6Goniometer : FB_EpicsMotorMonitor;
+
+(* Near field camera stats plugins, per bay *)
     {attribute 'pytmc' := '
         pv: LTLHN:BTPS:Chk:LS1:NF
         link: @(SIM)LAS:LHN:BAY1:CAM:01:Stats2:
@@ -87,6 +142,24 @@ VAR_GLOBAL
         link: @(SIM)LAS:LHN:BAY4:CAM:01:Stats2:
     '}
     fbLS8NearFieldCamStats : FB_EpicsStatsMonitor;
+// 1um/ 800 nm line
+    {attribute 'pytmc' := '
+        pv: LTLHN:BTPS:Chk:LS3:NF
+        link: @(SIM)LAS:LHN:BAY2:CAM:01:Stats2:
+    '}
+    fbLS3NearFieldCamStats : FB_EpicsStatsMonitor;
+
+    {attribute 'pytmc' := '
+        pv: LTLHN:BTPS:Chk:LS4:NF
+        link: @(SIM)LAS:LHN:BAY2:CAM:01:Stats2:
+    '}
+    fbLS4NearFieldCamStats : FB_EpicsStatsMonitor;
+
+    {attribute 'pytmc' := '
+        pv: LTLHN:BTPS:Chk:LS6:NF
+        link: @(SIM)LAS:LHN:BAY3:CAM:01:Stats2:
+    '}
+    fbLS6NearFieldCamStats : FB_EpicsStatsMonitor;
 
     (* Far-field camera stats plugins, per bay *)
     {attribute 'pytmc' := '
@@ -106,6 +179,24 @@ VAR_GLOBAL
         link: @(SIM)LAS:LHN:BAY4:CAM:02:Stats2:
     '}
     fbLS8FarFieldCamStats : FB_EpicsStatsMonitor;
+//1um and 800nm Lines
+    {attribute 'pytmc' := '
+        pv: LTLHN:BTPS:Chk:LS3:FF
+        link: @(SIM)LAS:LHN:BAY2:CAM:02:Stats2:
+    '}
+    fbLS3FarFieldCamStats : FB_EpicsStatsMonitor;
+
+    {attribute 'pytmc' := '
+        pv: LTLHN:BTPS:Chk:LS4:FF
+        link: @(SIM)LAS:LHN:BAY2:CAM:02:Stats2:
+    '}
+    fbLS4FarFieldCamStats : FB_EpicsStatsMonitor;
+
+    {attribute 'pytmc' := '
+        pv: LTLHN:BTPS:Chk:LS6:FF
+        link: @(SIM)LAS:LHN:BAY3:CAM:02:Stats2:
+    '}
+    fbLS6FarFieldCamStats : FB_EpicsStatsMonitor;
 
     {attribute 'pytmc' := 'pv: LTLHN:LS1:BTPS'}
     fbSafetyLS1 : FB_ShutterSafety;
@@ -113,6 +204,12 @@ VAR_GLOBAL
     fbSafetyLS5 : FB_ShutterSafety;
     {attribute 'pytmc' := 'pv: LTLHN:LS8:BTPS'}
     fbSafetyLS8 : FB_ShutterSafety;
+    {attribute 'pytmc' := 'pv: LTLHN:LS3:BTPS'}
+    fbSafetyLS3 : FB_ShutterSafety;
+    {attribute 'pytmc' := 'pv: LTLHN:LS4:BTPS'}
+    fbSafetyLS4 : FB_ShutterSafety;
+    {attribute 'pytmc' := 'pv: LTLHN:LS6:BTPS'}
+    fbSafetyLS6 : FB_ShutterSafety;
 
     {attribute 'pytmc' := '
         pv: LTLHN:LD

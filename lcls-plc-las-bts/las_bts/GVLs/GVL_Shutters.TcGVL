@@ -14,15 +14,6 @@ VAR_GLOBAL
     fbLS1 : ST_ShutterControl;
 
     {attribute 'TcLinkTo' := '
-        .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_01^Channel 2^Output;
-        .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_02^Channel 3^Input;
-        .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_02^Channel 4^Input;
-        .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_04^Channel 2^Input;
-    '}
-    {attribute 'pytmc' := 'pv: LTLHN:LS3:LST'}
-    fbLS3 : ST_ShutterControl;
-
-    {attribute 'TcLinkTo' := '
         .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_01^Channel 3^Output;
         .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_03^Channel 1^Input;
         .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_03^Channel 2^Input;
@@ -39,6 +30,35 @@ VAR_GLOBAL
     '}
     {attribute 'pytmc' := 'pv: LTLHN:LS8:LST'}
     fbLS8 : ST_ShutterControl;
+
+// Shutter controls for 1um Line
+
+{attribute 'TcLinkTo' := '
+        .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_05^Channel 1^Output;
+        .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 1^Input;
+        .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 2^Input;
+        .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_07^Channel 1^Input;
+    '}
+    {attribute 'pytmc' := 'pv: LTLHN:LS3:LST'}
+    fbLS3 : ST_ShutterControl;
+
+// Shutter controls for 800nm Line
+{attribute 'TcLinkTo' := '
+        .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_01^Channel 2^Output;
+        .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_02^Channel 3^Input;
+        .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_02^Channel 4^Input;
+        .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_04^Channel 2^Input
+    '}
+    {attribute 'pytmc' := 'pv: LTLHN:LS4:LST'}
+    fbLS4 : ST_ShutterControl;
+{attribute 'TcLinkTo' := '
+        .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_05^Channel 3^Output;
+        .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 3^Input;
+        .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 4^Input;
+        .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_07^Channel 2^Input;
+    '}
+    {attribute 'pytmc' := 'pv: LTLHN:LS6:LST'}
+    fbLS6 : ST_ShutterControl;
 
 END_VAR]]></Declaration>
   </GVL>

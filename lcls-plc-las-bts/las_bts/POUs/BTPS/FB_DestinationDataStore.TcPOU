@@ -87,6 +87,40 @@ Update(
     fbNearField:=GVL_BTPS.fbLS8NearFieldCamStats,
     fbFarField:=GVL_BTPS.fbLS8FarFieldCamStats
 );
+
+Update(
+    stDataSource:=stSourceDataStore[3],
+    sName:='LS3 (From laser bay 2)',
+    fbSourceValve:=GVL_BTS_VAC.fb_LS3_VGC,
+    fbLinear:=GVL_BTPS.fbLS3Linear,
+    fbRotary:=GVL_BTPS.fbLS3Rotary,
+    fbGoniometer:=GVL_BTPS.fbLS3Goniometer,
+    fbNearField:=GVL_BTPS.fbLS3NearFieldCamStats,
+    fbFarField:=GVL_BTPS.fbLS3FarFieldCamStats
+);
+
+Update(
+    stDataSource:=stSourceDataStore[4],
+    sName:='LS4 (From laser bay 2)',
+    fbSourceValve:=GVL_BTS_VAC.fb_LS4_VGC,
+    fbLinear:=GVL_BTPS.fbLS4Linear,
+    fbRotary:=GVL_BTPS.fbLS4Rotary,
+    fbGoniometer:=GVL_BTPS.fbLS4Goniometer,
+    fbNearField:=GVL_BTPS.fbLS4NearFieldCamStats,
+    fbFarField:=GVL_BTPS.fbLS4FarFieldCamStats
+);
+
+Update(
+    stDataSource:=stSourceDataStore[6],
+    sName:='LS6 (From laser bay 3)',
+    fbSourceValve:=GVL_BTS_VAC.fb_LS6_VGC,
+    fbLinear:=GVL_BTPS.fbLS6Linear,
+    fbRotary:=GVL_BTPS.fbLS6Rotary,
+    fbGoniometer:=GVL_BTPS.fbLS6Goniometer,
+    fbNearField:=GVL_BTPS.fbLS6NearFieldCamStats,
+    fbFarField:=GVL_BTPS.fbLS6FarFieldCamStats
+);
+
 ]]></ST>
     </Implementation>
     <Method Name="Update" Id="{99a0d2c7-b05c-4070-8558-74c8b8a2c372}">
