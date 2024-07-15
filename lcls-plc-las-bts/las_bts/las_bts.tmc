@@ -27903,7 +27903,7 @@ These features aren't disabled, they just aren't used, think child/parent classe
     </DataType>
     <DataType>
       <Name Namespace="LCLS_General">FB_EcatDiag</Name>
-      <Comment> 
+      <Comment>
 Ecat bus diagnostic tool
 2015-11-4 Alex Wallace
 This function block checks the states of all slaves on the ecat bus network, 
