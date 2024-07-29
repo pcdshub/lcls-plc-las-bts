@@ -55,7 +55,7 @@ VAR_GLOBAL
         .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_05^Channel 3^Output;
         .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 3^Input;
         .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 4^Input;
-        .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_07^Channel 2^Input;
+        .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_07^Channel 3^Input;
     '}
     {attribute 'pytmc' := 'pv: LTLHN:LS6:LST'}
     fbLS6 : ST_ShutterControl;

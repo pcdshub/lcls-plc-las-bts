@@ -1697,7 +1697,7 @@
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL1004_04_07">
 				<Link VarA="PlcTask Inputs^GVL_Shutters.fbLS3.bLssStatus" VarB="Channel 1^Input" AutoLink="true"/>
-				<Link VarA="PlcTask Inputs^GVL_Shutters.fbLS6.bLssStatus" VarB="Channel 2^Input" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^GVL_Shutters.fbLS6.bLssStatus" VarB="Channel 3^Input" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^EtherCAT1^EK1100_04_00^EL2624_04_01">
 				<Link VarA="PlcTask Outputs^GVL_Shutters.fbLS1.bOpenRequest" VarB="Channel 1^Output" AutoLink="true"/>
