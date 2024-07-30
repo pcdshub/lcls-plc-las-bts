@@ -61,7 +61,6 @@ ELSE
 END_IF
 
 fb_VP_VVC_4(
-    //i_xExtILK_OK := FALSE,
     i_xOverrideMode := xSystemOverrideMode_BTS
 );
 
