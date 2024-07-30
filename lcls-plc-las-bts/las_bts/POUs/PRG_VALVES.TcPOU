@@ -66,10 +66,10 @@ fb_VP_VVC_4(
 );
 
 // Turbo Isolation valve - Interlocked with turbo pump operation
-IF (fb_PP_PMF.q_stPump.eState <> E_PumpState.pumpSTOPPED) THEN		// IF Roughing Pump is NOT stopped 
-	fb_PP_VRC_4.M_Set_OPN_SW(TRUE);
-ELSE
+IF (fb_PP_PMF.q_stPump.eState <> E_PumpState.pumpRUNNING) THEN		// IF Roughing Pump is NOT stopped 
 	fb_PP_VRC_4.M_Set_OPN_SW(FALSE);
+ELSE
+	fb_PP_VRC_4.M_Set_OPN_SW(TRUE);
 END_IF
 
 IF (fb_PP_PMF.q_stPump.eState = E_PumpState.pumpSTOPPING) THEN
