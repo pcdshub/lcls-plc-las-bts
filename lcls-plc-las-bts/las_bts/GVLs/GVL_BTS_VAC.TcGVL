@@ -379,7 +379,7 @@ VAR_GLOBAL
     {attribute 'pytmc' 	  :=	' pv: LTLHN:LS6:GCC:01 '}
     {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 1^Value;
                                  .i_xHV_ON	    	:=	TIIB[EL1124_01_08]^Channel 1^Input;
-                                 .i_xDisc_Active	:=	TIIB[EL1124_01_08]^Channel 2^Input;'}
+                                 .i_xDisc_Active	:=	TIIB[EL1124_01_08]^Channel 2^Input'}
     fb_LS6_GCC : FB_MKS422; // LS6, Cold Cathode gauge
 
     {attribute 'pytmc' 	  :=	' pv: LTLHN:LS6:GPI:01 '}

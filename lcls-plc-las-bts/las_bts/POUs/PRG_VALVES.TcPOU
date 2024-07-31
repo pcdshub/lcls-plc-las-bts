@@ -230,7 +230,7 @@ fb_LS4_VGC(
 );
 
 // LS6
-fb_LS3_VGC(
+fb_LS6_VGC(
     i_stUSG := fb_LS6_GPI.PG,
     i_stDSG := fb_DP_GPI.PG,
     i_xDis_DPIlk := FALSE,
