@@ -53,6 +53,8 @@
 		<Box File="EK1100_04_00.xti" Id="147">
 			<EtherCAT PortABoxInfo="#x0100004b"/>
 		</Box>
-		<EtherCAT/>
+		<EtherCAT>
+			<Redundancy Mode="2" PreviousPort="33554452"/>
+		</EtherCAT>
 	</Device>
 </TcSmItem>

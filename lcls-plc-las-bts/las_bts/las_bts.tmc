@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{9187ACB9-7855-6576-1E07-41007712AF55}" GeneratedBy="TwinCAT XAE Plc">
+<TcModuleClass xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleClass" Hash="{9F412B90-5FAD-74AD-4A6C-F564E1D91389}" GeneratedBy="TwinCAT XAE Plc">
   <DataTypes>
     <DataType>
       <Name Namespace="Tc2_SerialCom">ComBuffer</Name>
@@ -1082,9 +1082,6 @@
       <Name Namespace="LCLS_General.Tc3_EventLogger">I_ArgumentsChangeListener</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>OnArgumentsChanged</Name>
-      </Method>
     </DataType>
     <DataType>
       <Name GUID="{C3BF7AA5-0A83-4CFA-9A7A-04C1DFD0E5DD}" TcBaseType="true" CName="ITcAsyncResult*">ITcAsyncResult</Name>
@@ -1128,31 +1125,31 @@
         <Name>bBusy</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>121313124</GetCodeOffs>
+        <GetCodeOffs>121313100</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>bError</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>121313156</GetCodeOffs>
+        <GetCodeOffs>121313132</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>hrErrorCode</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>121313164</GetCodeOffs>
+        <GetCodeOffs>121313140</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nStringSize</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>121313148</GetCodeOffs>
+        <GetCodeOffs>121313124</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sResult</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>121313160</GetCodeOffs>
+        <GetCodeOffs>121313136</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="0">__getbBusy</Name>
@@ -1510,71 +1507,6 @@
       <Name Namespace="LCLS_General.Tc3_EventLogger">I_TcSourceInfo</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name RpcEnable="plc">__getguid</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000021}" RpcDirection="out">GUID</ReturnType>
-        <ReturnBitSize>128</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getipData</Name>
-        <ReturnType GUID="{F7BF6767-548B-493C-899B-06A477976F11}" RpcDirection="out">ITcSourceInfo</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>conditionalshow</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getnId</Name>
-        <ReturnType RpcDirection="out">UDINT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>monitoring</Name>
-            <Value>call</Value>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getsName</Name>
-        <ReturnType RpcDirection="out">STRING(255)</ReturnType>
-        <ReturnBitSize>2048</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>monitoring</Name>
-            <Value>call</Value>
-          </Property>
-          <Property>
-            <Name>TcEncoding</Name>
-            <Value>UTF-8</Value>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name>EqualsTo</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>ipOther</Name>
-          <Type Namespace="LCLS_General.Tc3_EventLogger">I_TcSourceInfo</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name GUID="{F00C83AD-DEC8-486E-AE99-5E0A75C26DE0}" TcBaseType="true" CName="TcEventEntry">TcEventEntry</Name>
@@ -1602,289 +1534,11 @@
       <Name Namespace="LCLS_General.Tc3_EventLogger">I_TcEventBase</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name RpcEnable="plc">__geteSeverity</Name>
-        <ReturnType GUID="{B57D3F4A-0836-49B0-81C3-BED5F4817EC9}" RpcDirection="out">TcEventSeverity</ReturnType>
-        <ReturnBitSize>16</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>monitoring</Name>
-            <Value>call</Value>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getEventClass</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000021}" RpcDirection="out">GUID</ReturnType>
-        <ReturnBitSize>128</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getipSourceInfo</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger" RpcDirection="out">I_TcSourceInfo</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>monitoring</Name>
-            <Value>call</Value>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getnEventId</Name>
-        <ReturnType RpcDirection="out">UDINT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>monitoring</Name>
-            <Value>call</Value>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getsEventClassName</Name>
-        <ReturnType RpcDirection="out">STRING(255)</ReturnType>
-        <ReturnBitSize>2048</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>monitoring</Name>
-            <Value>call</Value>
-          </Property>
-          <Property>
-            <Name>TcEncoding</Name>
-            <Value>UTF-8</Value>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getsEventText</Name>
-        <ReturnType RpcDirection="out">STRING(255)</ReturnType>
-        <ReturnBitSize>2048</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>monitoring</Name>
-            <Value>call</Value>
-          </Property>
-          <Property>
-            <Name>TcEncoding</Name>
-            <Value>UTF-8</Value>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getstEventEntry</Name>
-        <ReturnType GUID="{F00C83AD-DEC8-486E-AE99-5E0A75C26DE0}" RpcDirection="out">TcEventEntry</ReturnType>
-        <ReturnBitSize>192</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name>EqualsTo</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>ipOther</Name>
-          <Type Namespace="LCLS_General.Tc3_EventLogger">I_TcEventBase</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>EqualsToEventClass</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>OtherEventClass</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000021}">GUID</Type>
-          <BitSize>128</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>EqualsToEventEntry</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>OtherEventClass</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000021}">GUID</Type>
-          <BitSize>128</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nOtherEventID</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>eOtherSeverity</Name>
-          <Type GUID="{B57D3F4A-0836-49B0-81C3-BED5F4817EC9}">TcEventSeverity</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>EqualsToEventEntryEx</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>stOther</Name>
-          <Type GUID="{F00C83AD-DEC8-486E-AE99-5E0A75C26DE0}">TcEventEntry</Type>
-          <BitSize>192</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>GetJsonAttribute</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>sJsonAttribute</Name>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nJsonAttribute</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>RequestEventClassName</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>nLangId</Name>
-          <Comment> English(US)=1033 ; German(Germay)=1031</Comment>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>sResult</Name>
-          <Comment> buffer for result text</Comment>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nResultSize</Name>
-          <Comment> size of buffer in bytes</Comment>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>bError</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>hrErrorCode</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>RequestEventText</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>nLangId</Name>
-          <Comment> English(US)=1033 ; German(Germay)=1031</Comment>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>sResult</Name>
-          <Comment> buffer for result text</Comment>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nResultSize</Name>
-          <Comment> size of buffer in bytes</Comment>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>bError</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>hrErrorCode</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name>IQueryInterface</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name RpcEnable="plc" VTableIndex="1">__GetInterfacePointer</Name>
-        <ReturnType RpcDirection="out">BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>pRef</Name>
-          <Type PointerTo="2" RpcDirection="in">DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc" VTableIndex="2">__GetInterfaceReference</Name>
-        <ReturnType RpcDirection="out">BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>nInterfaceId</Name>
-          <Type RpcDirection="in">DINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>pRef</Name>
-          <Type PointerTo="2" RpcDirection="in">DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name GUID="{939C2FD3-7468-4E5B-AA5D-A64A143B36A8}" TcBaseType="true" CName="TcEventArgumentType">TcEventArgumentType</Name>
@@ -2076,282 +1730,6 @@
       <Name Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</Name>
       <BitSize>32</BitSize>
       <ExtendsType>IQueryInterface</ExtendsType>
-      <Method>
-        <Name RpcEnable="plc">__getipData</Name>
-        <ReturnType GUID="{BFC9A87A-F6DE-499A-AC45-F3B1A59315F9}" RpcDirection="out">ITcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>conditionalshow</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name>AddBlob</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>pData</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>cbData</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddBool</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddByte</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>BYTE</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddDInt</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddDWord</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddEventReferenceEx</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>stEventEntry</Name>
-          <Type GUID="{F00C83AD-DEC8-486E-AE99-5E0A75C26DE0}">TcEventEntry</Type>
-          <BitSize>192</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddEventReferenceId</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>nEventId</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddEventReferenceIdGuid</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>nEventId</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>EventClass</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000021}">GUID</Type>
-          <BitSize>128</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddInt</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddLInt</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>LINT</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddLReal</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>LREAL</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddReal</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>REAL</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddSInt</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>SINT</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddString</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddStringByValue</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddUDInt</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddUInt</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddULInt</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>ULINT</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddUSInt</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>USINT</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddUtf8EncodedString</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddWord</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>WORD</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddWString</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type ReferenceTo="true">WSTRING(80)</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddWStringByValue</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>WSTRING(255)</Type>
-          <BitSize>4096</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>Clear</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-      </Method>
     </DataType>
     <DataType>
       <Name Namespace="LCLS_General.Tc3_EventLogger">FB_TcSourceInfo</Name>
@@ -2361,15 +1739,15 @@
         <Name>nId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>121313068</GetCodeOffs>
-        <SetCodeOffs>121313092</SetCodeOffs>
+        <GetCodeOffs>121313044</GetCodeOffs>
+        <SetCodeOffs>121313068</SetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>121313104</GetCodeOffs>
-        <SetCodeOffs>121313116</SetCodeOffs>
+        <GetCodeOffs>121313080</GetCodeOffs>
+        <SetCodeOffs>121313092</SetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="9">__setbCutInstancePathByLastInst</Name>
@@ -2637,31 +2015,31 @@
         <Name>eSeverity</Name>
         <Type GUID="{B57D3F4A-0836-49B0-81C3-BED5F4817EC9}">TcEventSeverity</Type>
         <BitSize>16</BitSize>
-        <GetCodeOffs>121313212</GetCodeOffs>
+        <GetCodeOffs>121313188</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>ipSourceInfo</Name>
         <Type Namespace="LCLS_General.Tc3_EventLogger">I_TcSourceInfo</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>121313192</GetCodeOffs>
+        <GetCodeOffs>121313168</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nEventId</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>121313280</GetCodeOffs>
+        <GetCodeOffs>121313256</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventClassName</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>121313240</GetCodeOffs>
+        <GetCodeOffs>121313216</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventText</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>121313284</GetCodeOffs>
+        <GetCodeOffs>121313260</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>EqualsToEventClass</Name>
@@ -3164,16 +2542,6 @@
       <Name Namespace="LCLS_General.Tc3_EventLogger">I_TcMessage</Name>
       <BitSize>32</BitSize>
       <ExtendsType Namespace="LCLS_General.Tc3_EventLogger">I_TcEventBase</ExtendsType>
-      <Method>
-        <Name>Send</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>nTimeStamp</Name>
-          <Type>ULINT</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name GUID="{6474ED2C-E483-454E-A67D-233E6D337C08}" TcBaseType="true" CName="ITcMessage*">ITcMessage</Name>
@@ -3234,7 +2602,7 @@
         <Name>nTimeSent</Name>
         <Type>ULINT</Type>
         <BitSize>64</BitSize>
-        <GetCodeOffs>121313308</GetCodeOffs>
+        <GetCodeOffs>121313284</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name>SetJsonAttribute</Name>
@@ -4739,16 +4107,6 @@
       <Name Namespace="TcUnit">I_TestResults</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>GetAreTestResultsAvailable</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-      </Method>
-      <Method>
-        <Name>GetTestSuiteResults</Name>
-        <ReturnType Namespace="TcUnit" ReferenceTo="true">ST_TestSuiteResults</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-      </Method>
     </DataType>
     <DataType>
       <Name>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Name>
@@ -4821,9 +4179,6 @@
       <Name Namespace="TcUnit">I_TestResultLogger</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>LogTestSuiteResults</Name>
-      </Method>
     </DataType>
     <DataType>
       <Name>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Name>
@@ -7897,29 +7252,6 @@
       <Name Namespace="TcUnit">I_AssertMessageFormatter</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>LogAssertFailure</Name>
-        <Parameter>
-          <Name>Expected</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Actual</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name Namespace="TcUnit">FB_AdjustAssertFailureMessageToMax253CharLength</Name>
@@ -8277,6 +7609,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_BOOL</Name>
@@ -8409,6 +7746,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8568,6 +7910,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>CalculateAndSetNumberOfAssertsForTest</Name>
@@ -8702,6 +8049,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -8860,6 +8212,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -9365,6 +8722,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10140,6 +9502,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_TIME</Name>
@@ -10518,6 +9885,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_INT</Name>
@@ -10609,6 +9981,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -10736,6 +10113,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LWORD</Name>
@@ -10837,6 +10219,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -11151,6 +10538,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AreAllTestsFinished</Name>
@@ -11320,6 +10712,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -11504,6 +10901,11 @@
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_LREAL</Name>
@@ -11601,6 +11003,11 @@
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -13829,16 +13236,6 @@ These features aren't disabled, they just aren't used, think child/parent classe
       <Name Namespace="LCLS_Vacuum.PMPS.TcUnit">I_TestResults</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>GetAreTestResultsAvailable</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-      </Method>
-      <Method>
-        <Name>GetTestSuiteResults</Name>
-        <ReturnType Namespace="LCLS_Vacuum.PMPS.TcUnit" ReferenceTo="true">ST_TestSuiteResults</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-      </Method>
     </DataType>
     <DataType>
       <Name Namespace="LCLS_Vacuum.PMPS.TcUnit">FB_TestResults</Name>
@@ -13904,9 +13301,6 @@ These features aren't disabled, they just aren't used, think child/parent classe
       <Name Namespace="LCLS_Vacuum.PMPS.TcUnit">I_TestResultLogger</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>LogTestSuiteResults</Name>
-      </Method>
     </DataType>
     <DataType>
       <Name Namespace="LCLS_Vacuum.PMPS.TcUnit">FB_AdsTestResultLogger</Name>
@@ -16132,29 +15526,6 @@ These features aren't disabled, they just aren't used, think child/parent classe
       <Name Namespace="LCLS_Vacuum.PMPS.TcUnit">I_AssertMessageFormatter</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>LogAssertFailure</Name>
-        <Parameter>
-          <Name>Expected</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Actual</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name Namespace="LCLS_Vacuum.PMPS.TcUnit">FB_AdjustAssertFailureMessageToMax253CharLength</Name>
@@ -16567,6 +15938,11 @@ These features aren't disabled, they just aren't used, think child/parent classe
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>FindTestSuiteInstancePath</Name>
@@ -16825,6 +16201,11 @@ These features aren't disabled, they just aren't used, think child/parent classe
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_BYTE</Name>
@@ -16926,6 +16307,11 @@ These features aren't disabled, they just aren't used, think child/parent classe
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -17085,6 +16471,11 @@ These features aren't disabled, they just aren't used, think child/parent classe
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_LTIME</Name>
@@ -17207,6 +16598,11 @@ These features aren't disabled, they just aren't used, think child/parent classe
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -17348,6 +16744,11 @@ These features aren't disabled, they just aren't used, think child/parent classe
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -18109,6 +17510,11 @@ These features aren't disabled, they just aren't used, think child/parent classe
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>SetHasStartedRunning</Name>
@@ -18269,6 +17675,11 @@ These features aren't disabled, they just aren't used, think child/parent classe
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>GetHasStartedRunning</Name>
@@ -18371,6 +17782,11 @@ These features aren't disabled, they just aren't used, think child/parent classe
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -18525,6 +17941,11 @@ These features aren't disabled, they just aren't used, think child/parent classe
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertEquals_DINT</Name>
@@ -18647,6 +18068,11 @@ These features aren't disabled, they just aren't used, think child/parent classe
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -18822,6 +18248,11 @@ These features aren't disabled, they just aren't used, think child/parent classe
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -19104,6 +18535,11 @@ These features aren't disabled, they just aren't used, think child/parent classe
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -19900,6 +19336,11 @@ These features aren't disabled, they just aren't used, think child/parent classe
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
+        <Local>
+          <Name>__Index__0</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
       </Method>
       <Method>
         <Name>AssertArrayEquals_UDINT</Name>
@@ -19991,6 +19432,11 @@ These features aren't disabled, they just aren't used, think child/parent classe
         </Local>
         <Local>
           <Name>ActualsIndex</Name>
+          <Type>DINT</Type>
+          <BitSize>32</BitSize>
+        </Local>
+        <Local>
+          <Name>__Index__0</Name>
           <Type>DINT</Type>
           <BitSize>32</BitSize>
         </Local>
@@ -22257,8 +21703,8 @@ These features aren't disabled, they just aren't used, think child/parent classe
         <Name>nTimestamp</Name>
         <Type>ULINT</Type>
         <BitSize>64</BitSize>
-        <GetCodeOffs>121319032</GetCodeOffs>
-        <SetCodeOffs>121319040</SetCodeOffs>
+        <GetCodeOffs>121319008</GetCodeOffs>
+        <SetCodeOffs>121319016</SetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="44">__getnTimestamp</Name>
@@ -22394,46 +21840,6 @@ These features aren't disabled, they just aren't used, think child/parent classe
       <Name Namespace="LCLS_General.Tc3_EventLogger">I_Listener</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>OnAlarmCleared</Name>
-        <Parameter>
-          <Name>fbEvent</Name>
-          <Type Namespace="LCLS_General.Tc3_EventLogger" ReferenceTo="true">FB_TcEvent</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>OnAlarmConfirmed</Name>
-        <Parameter>
-          <Name>fbEvent</Name>
-          <Type Namespace="LCLS_General.Tc3_EventLogger" ReferenceTo="true">FB_TcEvent</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>OnAlarmDisposed</Name>
-        <Parameter>
-          <Name>fbEvent</Name>
-          <Type Namespace="LCLS_General.Tc3_EventLogger" ReferenceTo="true">FB_TcEvent</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>OnAlarmRaised</Name>
-        <Parameter>
-          <Name>fbEvent</Name>
-          <Type Namespace="LCLS_General.Tc3_EventLogger" ReferenceTo="true">FB_TcEvent</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>OnMessageSent</Name>
-        <Parameter>
-          <Name>fbEvent</Name>
-          <Type Namespace="LCLS_General.Tc3_EventLogger" ReferenceTo="true">FB_TcEvent</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name GUID="{70904B1B-F00E-4FCB-BE59-151086E9B8F6}" CName="ITcEventFilterConfig*">ITcEventFilterConfig</Name>
@@ -23552,31 +22958,31 @@ These features aren't disabled, they just aren't used, think child/parent classe
         <Name>bBusy</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>121318640</GetCodeOffs>
+        <GetCodeOffs>121318616</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>bError</Name>
         <Type>BOOL</Type>
         <BitSize>8</BitSize>
-        <GetCodeOffs>121318672</GetCodeOffs>
+        <GetCodeOffs>121318648</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>hrErrorCode</Name>
         <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>121318676</GetCodeOffs>
+        <GetCodeOffs>121318652</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>nStringSize</Name>
         <Type>UDINT</Type>
         <BitSize>32</BitSize>
-        <GetCodeOffs>121318664</GetCodeOffs>
+        <GetCodeOffs>121318640</GetCodeOffs>
       </PropertyItem>
       <PropertyItem>
         <Name>sEventText</Name>
         <Type>STRING(255)</Type>
         <BitSize>2048</BitSize>
-        <GetCodeOffs>121318684</GetCodeOffs>
+        <GetCodeOffs>121318660</GetCodeOffs>
       </PropertyItem>
       <Method>
         <Name RpcEnable="plc" VTableIndex="0">__getbBusy</Name>
@@ -32321,69 +31727,11 @@ be up-to-date and valid within `tTimeout` seconds.
       <Name Namespace="PMPS">I_HigherAuthority</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>CheckRequest</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>nReqID</Name>
-          <Type>DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>RemoveRequest</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>nReqID</Name>
-          <Comment>StateID to remove</Comment>
-          <Type>DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>RequestBP</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>nReqID</Name>
-          <Comment>StateID of state requesting beam parameter set</Comment>
-          <Type>DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>stReqBP</Name>
-          <Comment>Requested beam params</Comment>
-          <Type Namespace="PMPS">ST_BeamParams</Type>
-          <BitSize>1696</BitSize>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name Namespace="PMPS">I_LowerAuthority</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name RpcEnable="plc" VTableIndex="1">__getnLowerAuthorityID</Name>
-        <ReturnType RpcDirection="out">DWORD</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name>ElevateRequest</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>HigherAuthority</Name>
-          <Type Namespace="PMPS">I_HigherAuthority</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name Namespace="PMPS">T_HashTableEntry</Name>
@@ -35583,6 +34931,281 @@ This function block also implements PMPS and EPS interlocks, as well as Fast MPS
           </Properties>
         </Parameter>
       </Method>
+      <Properties>
+        <Property>
+          <Name>PouType</Name>
+          <Value>FunctionBlock</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name>FB_ShutterSafety</Name>
+      <BitSize>416</BitSize>
+      <SubItem>
+        <Name>bLSSPermission</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>32</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: LSSPermission
+        io: i
+        field: ZNAM FALSE
+        field: ONAM TRUE
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bAcknowledge</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>40</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Acknowledge
+        io: io
+        field: ZNAM FALSE
+        field: ONAM TRUE
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bUserOpenRequest</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>48</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: UserOpen
+        io: io
+        field: ZNAM Close
+        field: ONAM Open
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bOverride</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>56</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Override
+        io: io
+        field: ZNAM Normal mode
+        field: ONAM Override mode
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>nSourceIndex</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>64</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>Shutter_Enable</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>80</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Input</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>fbDestinations</Name>
+        <Type>FB_DestinationDataStore</Type>
+        <ArrayInfo ReferenceTo="true">
+          <LBound>1</LBound>
+          <Elements>14</Elements>
+        </ArrayInfo>
+        <Comment> VAR_IN_OUT -&gt; reference to fbDestinations </Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>96</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>InOut</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bSafeToOpen</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>128</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Safe
+        io: input
+        field: ZNAM Unsafe
+        field: ONAM Safe
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bLatchedError</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>136</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: Error
+        io: input
+        field: ZNAM No error
+        field: ONAM Error
+        field: ZSV NO_ALARM
+        field: OSV MAJOR
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>bOpenSignal</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>144</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: LSS:OpenRequest
+        io: input
+        field: ZNAM Request close
+        field: ONAM Request open
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>nCurrentLD</Name>
+        <Type>INT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>160</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+          <Property>
+            <Name>pytmc</Name>
+            <Value>
+        pv: CurrentLD
+        io: input
+        field: DESC Current laser destination (LD)
+        field: LOW 0
+        field: HIGH 15
+        field: LSV MAJOR
+        field: HSV MAJOR
+    </Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>rtError</Name>
+        <Type Namespace="Tc2_Standard">R_TRIG</Type>
+        <Comment> Rising trigger indicator of a new error condition. </Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>192</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>rtOverrideSet</Name>
+        <Type Namespace="Tc2_Standard">R_TRIG</Type>
+        <Comment> Rising trigger indicator of user requesting override. </Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>256</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>ftCloseRequest</Name>
+        <Type Namespace="Tc2_Standard">F_TRIG</Type>
+        <Comment> Falling trigger for a 'close shutter' request. </Comment>
+        <BitSize>64</BitSize>
+        <BitOffs>320</BitOffs>
+        <Properties>
+          <Property>
+            <Name>ItemType</Name>
+            <Value>Output</Value>
+          </Property>
+        </Properties>
+      </SubItem>
+      <SubItem>
+        <Name>nDestIndex</Name>
+        <Type>UINT</Type>
+        <BitSize>16</BitSize>
+        <BitOffs>384</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bBtpsPermission</Name>
+        <Type>BOOL</Type>
+        <BitSize>8</BitSize>
+        <BitOffs>400</BitOffs>
+      </SubItem>
       <Properties>
         <Property>
           <Name>PouType</Name>
@@ -41809,281 +41432,6 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
         <Hide GUID="{9E76D1D7-D744-4E3D-B111-F6F94B60E6AB}"/>
       </Hides>
     </DataType>
-    <DataType>
-      <Name>FB_ShutterSafety</Name>
-      <BitSize>416</BitSize>
-      <SubItem>
-        <Name>bLSSPermission</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>32</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: LSSPermission
-        io: i
-        field: ZNAM FALSE
-        field: ONAM TRUE
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bAcknowledge</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>40</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Acknowledge
-        io: io
-        field: ZNAM FALSE
-        field: ONAM TRUE
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bUserOpenRequest</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>48</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: UserOpen
-        io: io
-        field: ZNAM Close
-        field: ONAM Open
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bOverride</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>56</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Override
-        io: io
-        field: ZNAM Normal mode
-        field: ONAM Override mode
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>nSourceIndex</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>64</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>Shutter_Enable</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>80</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Input</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>fbDestinations</Name>
-        <Type>FB_DestinationDataStore</Type>
-        <ArrayInfo ReferenceTo="true">
-          <LBound>1</LBound>
-          <Elements>14</Elements>
-        </ArrayInfo>
-        <Comment> VAR_IN_OUT -&gt; reference to fbDestinations </Comment>
-        <BitSize>32</BitSize>
-        <BitOffs>96</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>InOut</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bSafeToOpen</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>128</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Safe
-        io: input
-        field: ZNAM Unsafe
-        field: ONAM Safe
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bLatchedError</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>136</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: Error
-        io: input
-        field: ZNAM No error
-        field: ONAM Error
-        field: ZSV NO_ALARM
-        field: OSV MAJOR
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>bOpenSignal</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>144</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: LSS:OpenRequest
-        io: input
-        field: ZNAM Request close
-        field: ONAM Request open
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>nCurrentLD</Name>
-        <Type>INT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>160</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-          <Property>
-            <Name>pytmc</Name>
-            <Value>
-        pv: CurrentLD
-        io: input
-        field: DESC Current laser destination (LD)
-        field: LOW 0
-        field: HIGH 15
-        field: LSV MAJOR
-        field: HSV MAJOR
-    </Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>rtError</Name>
-        <Type Namespace="Tc2_Standard">R_TRIG</Type>
-        <Comment> Rising trigger indicator of a new error condition. </Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>192</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>rtOverrideSet</Name>
-        <Type Namespace="Tc2_Standard">R_TRIG</Type>
-        <Comment> Rising trigger indicator of user requesting override. </Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>256</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>ftCloseRequest</Name>
-        <Type Namespace="Tc2_Standard">F_TRIG</Type>
-        <Comment> Falling trigger for a 'close shutter' request. </Comment>
-        <BitSize>64</BitSize>
-        <BitOffs>320</BitOffs>
-        <Properties>
-          <Property>
-            <Name>ItemType</Name>
-            <Value>Output</Value>
-          </Property>
-        </Properties>
-      </SubItem>
-      <SubItem>
-        <Name>nDestIndex</Name>
-        <Type>UINT</Type>
-        <BitSize>16</BitSize>
-        <BitOffs>384</BitOffs>
-      </SubItem>
-      <SubItem>
-        <Name>bBtpsPermission</Name>
-        <Type>BOOL</Type>
-        <BitSize>8</BitSize>
-        <BitOffs>400</BitOffs>
-      </SubItem>
-      <Properties>
-        <Property>
-          <Name>PouType</Name>
-          <Value>FunctionBlock</Value>
-        </Property>
-      </Properties>
-    </DataType>
   </DataTypes>
   <Modules>
     <Module GUID="{97BEB12C-531D-448A-BE72-706714BB6964}" TcSmClass="TComPlcObjDef">
@@ -42517,7 +41865,7 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
           <AreaNo AreaType="InputDst" CreateSymbols="true">0</AreaNo>
           <Name>ComTask Inputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>122224640</ByteSize>
+          <ByteSize>122159104</ByteSize>
           <Symbol>
             <Name>GVL_COM.PTM_stComIn</Name>
             <Comment>SERIAL IO //EL6021_00_05</Comment>
@@ -42559,14 +41907,14 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970346464</BitOffs>
+            <BitOffs>970346144</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">1</AreaNo>
           <Name>ComTask Outputs</Name>
           <ContextId>0</ContextId>
-          <ByteSize>122224640</ByteSize>
+          <ByteSize>122159104</ByteSize>
           <Symbol>
             <Name>GVL_COM.PTM_stComOut</Name>
             <BitSize>192</BitSize>
@@ -42607,14 +41955,14 @@ This function provides ILK and Set Point Protection for the Cold Cathode</Commen
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970346656</BitOffs>
+            <BitOffs>970346336</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="Internal" CreateSymbols="true">3</AreaNo>
           <Name>ComTask Internal</Name>
           <ContextId>0</ContextId>
-          <ByteSize>122224640</ByteSize>
+          <ByteSize>122159104</ByteSize>
           <Symbol>
             <Name>GVL_COM.PTM_SerialRXBuffer</Name>
             <Comment> Define COM Ports/Buffers incl. library Tc2_SerialCom
@@ -42626,7 +41974,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970331008</BitOffs>
+            <BitOffs>970330688</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_COM.PTM_SerialTXBuffer</Name>
@@ -42637,7 +41985,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970333520</BitOffs>
+            <BitOffs>970333200</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_COM.PTM_fbSerialLineControl</Name>
@@ -42649,7 +41997,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970336032</BitOffs>
+            <BitOffs>970335712</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._AppInfo</Name>
@@ -42663,7 +42011,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970348256</BitOffs>
+            <BitOffs>970348032</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskPouOid_ComTask</Name>
@@ -42677,7 +42025,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970350304</BitOffs>
+            <BitOffs>970352128</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskOid_ComTask</Name>
@@ -42691,7 +42039,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970352384</BitOffs>
+            <BitOffs>970352160</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList.__ComTask</Name>
@@ -42712,14 +42060,14 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970352480</BitOffs>
+            <BitOffs>970352256</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="InputDst" CreateSymbols="true">16</AreaNo>
           <Name>PlcTask Inputs</Name>
           <ContextId>1</ContextId>
-          <ByteSize>122224640</ByteSize>
+          <ByteSize>122159104</ByteSize>
           <Symbol>
             <Name>LCLS_General.DefaultGlobals.stSys.I_EcatMaster1</Name>
             <Comment> AMS Net ID used for FB_EcatDiag, among others </Comment>
@@ -43709,33 +43057,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>966773936</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTS_VAC.fb_LD6_GCC.i_xHV_ON</Name>
-            <Comment>  True when High Voltage is on  // 'TcLinkTo' (EL1124) ^Input</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>966773960</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTS_VAC.fb_LD6_GCC.i_xDisc_Active</Name>
-            <Comment> Discharge Current Active // 'TcLinkTo' (EL1124) ^Input</Comment>
-            <BitSize>8</BitSize>
-            <BaseType>BOOL</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcAddressType</Name>
-                <Value>Input</Value>
-              </Property>
-            </Properties>
-            <BitOffs>966773968</BitOffs>
+            <BitOffs>966773696</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD8_VGC.i_xOpnLS</Name>
@@ -43748,7 +43070,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>966950912</BitOffs>
+            <BitOffs>966950592</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD8_VGC.i_xClsLS</Name>
@@ -43760,7 +43082,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>966950920</BitOffs>
+            <BitOffs>966950600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD8_PIP.i_iPRESS</Name>
@@ -43772,7 +43094,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967037360</BitOffs>
+            <BitOffs>967037040</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD8_PIP.i_xSP_DI</Name>
@@ -43785,7 +43107,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967037376</BitOffs>
+            <BitOffs>967037056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD8_GPI.i_iPRESS_R</Name>
@@ -43798,7 +43120,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967127360</BitOffs>
+            <BitOffs>967127040</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD8_GCC.i_iPRESS_R</Name>
@@ -43811,7 +43133,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967215216</BitOffs>
+            <BitOffs>967214896</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD8_GCC.i_xHV_ON</Name>
@@ -43824,7 +43146,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967215240</BitOffs>
+            <BitOffs>967214920</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD8_GCC.i_xDisc_Active</Name>
@@ -43837,7 +43159,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967215248</BitOffs>
+            <BitOffs>967214928</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD9_VGC.i_xOpnLS</Name>
@@ -43850,7 +43172,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967392192</BitOffs>
+            <BitOffs>967391872</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD9_VGC.i_xClsLS</Name>
@@ -43862,7 +43184,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967392200</BitOffs>
+            <BitOffs>967391880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD9_PIP.i_iPRESS</Name>
@@ -43874,7 +43196,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967478640</BitOffs>
+            <BitOffs>967478320</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD9_PIP.i_xSP_DI</Name>
@@ -43887,7 +43209,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967478656</BitOffs>
+            <BitOffs>967478336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD9_GPI.i_iPRESS_R</Name>
@@ -43900,7 +43222,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967568640</BitOffs>
+            <BitOffs>967568320</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD9_GCC.i_iPRESS_R</Name>
@@ -43913,7 +43235,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967656496</BitOffs>
+            <BitOffs>967656176</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD9_GCC.i_xHV_ON</Name>
@@ -43926,7 +43248,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967656520</BitOffs>
+            <BitOffs>967656200</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD9_GCC.i_xDisc_Active</Name>
@@ -43939,7 +43261,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967656528</BitOffs>
+            <BitOffs>967656208</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD10_VGC.i_xOpnLS</Name>
@@ -43952,7 +43274,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967833472</BitOffs>
+            <BitOffs>967833152</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD10_VGC.i_xClsLS</Name>
@@ -43964,7 +43286,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967833480</BitOffs>
+            <BitOffs>967833160</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD10_PIP.i_iPRESS</Name>
@@ -43976,7 +43298,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967919920</BitOffs>
+            <BitOffs>967919600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD10_PIP.i_xSP_DI</Name>
@@ -43989,7 +43311,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>967919936</BitOffs>
+            <BitOffs>967919616</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD10_GPI.i_iPRESS_R</Name>
@@ -44002,7 +43324,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968009920</BitOffs>
+            <BitOffs>968009600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD10_GCC.i_iPRESS_R</Name>
@@ -44015,7 +43337,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968097776</BitOffs>
+            <BitOffs>968097456</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD10_GCC.i_xHV_ON</Name>
@@ -44028,7 +43350,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968097800</BitOffs>
+            <BitOffs>968097480</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD10_GCC.i_xDisc_Active</Name>
@@ -44041,7 +43363,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968097808</BitOffs>
+            <BitOffs>968097488</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD14_VGC.i_xOpnLS</Name>
@@ -44054,7 +43376,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968274752</BitOffs>
+            <BitOffs>968274432</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD14_VGC.i_xClsLS</Name>
@@ -44066,7 +43388,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968274760</BitOffs>
+            <BitOffs>968274440</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD14_PIP.i_iPRESS</Name>
@@ -44078,7 +43400,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968361200</BitOffs>
+            <BitOffs>968360880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD14_PIP.i_xSP_DI</Name>
@@ -44091,7 +43413,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968361216</BitOffs>
+            <BitOffs>968360896</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD14_GPI.i_iPRESS_R</Name>
@@ -44104,7 +43426,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968451200</BitOffs>
+            <BitOffs>968450880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD14_GCC.i_iPRESS_R</Name>
@@ -44117,7 +43439,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968539056</BitOffs>
+            <BitOffs>968538736</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD14_GCC.i_xHV_ON</Name>
@@ -44130,7 +43452,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968539080</BitOffs>
+            <BitOffs>968538760</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD14_GCC.i_xDisc_Active</Name>
@@ -44143,7 +43465,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968539088</BitOffs>
+            <BitOffs>968538768</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS3_GCC.i_iPRESS_R</Name>
@@ -44156,7 +43478,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968627056</BitOffs>
+            <BitOffs>968626736</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS3_GCC.i_xHV_ON</Name>
@@ -44169,7 +43491,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968627080</BitOffs>
+            <BitOffs>968626760</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS3_GCC.i_xDisc_Active</Name>
@@ -44182,7 +43504,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968627088</BitOffs>
+            <BitOffs>968626768</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS3_GPI.i_iPRESS_R</Name>
@@ -44195,7 +43517,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968713536</BitOffs>
+            <BitOffs>968713216</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS3_VGC.i_xOpnLS</Name>
@@ -44208,7 +43530,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968890368</BitOffs>
+            <BitOffs>968890048</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS3_VGC.i_xClsLS</Name>
@@ -44220,7 +43542,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968890376</BitOffs>
+            <BitOffs>968890056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS3_PIP.i_iPRESS</Name>
@@ -44232,7 +43554,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968976816</BitOffs>
+            <BitOffs>968976496</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS3_PIP.i_xSP_DI</Name>
@@ -44245,7 +43567,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>968976832</BitOffs>
+            <BitOffs>968976512</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS4_GCC.i_iPRESS_R</Name>
@@ -44258,7 +43580,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>969068336</BitOffs>
+            <BitOffs>969068016</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS4_GCC.i_xHV_ON</Name>
@@ -44271,7 +43593,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>969068360</BitOffs>
+            <BitOffs>969068040</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS4_GCC.i_xDisc_Active</Name>
@@ -44284,7 +43606,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>969068368</BitOffs>
+            <BitOffs>969068048</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS4_GPI.i_iPRESS_R</Name>
@@ -44297,7 +43619,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>969154816</BitOffs>
+            <BitOffs>969154496</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS4_VGC.i_xOpnLS</Name>
@@ -44310,7 +43632,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>969331648</BitOffs>
+            <BitOffs>969331328</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS4_VGC.i_xClsLS</Name>
@@ -44322,7 +43644,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>969331656</BitOffs>
+            <BitOffs>969331336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS4_PIP.i_iPRESS</Name>
@@ -44334,7 +43656,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>969418096</BitOffs>
+            <BitOffs>969417776</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS4_PIP.i_xSP_DI</Name>
@@ -44347,7 +43669,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>969418112</BitOffs>
+            <BitOffs>969417792</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS6_GCC.i_iPRESS_R</Name>
@@ -44360,7 +43682,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>969509376</BitOffs>
+            <BitOffs>969509056</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS6_GPI.i_iPRESS_R</Name>
@@ -44373,7 +43695,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>969595776</BitOffs>
+            <BitOffs>969595456</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS6_VGC.i_xOpnLS</Name>
@@ -44386,7 +43708,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>969772608</BitOffs>
+            <BitOffs>969772288</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS6_VGC.i_xClsLS</Name>
@@ -44398,7 +43720,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>969772616</BitOffs>
+            <BitOffs>969772296</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS6_PIP.i_iPRESS</Name>
@@ -44410,7 +43732,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>969859056</BitOffs>
+            <BitOffs>969858736</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS6_PIP.i_xSP_DI</Name>
@@ -44423,7 +43745,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>969859072</BitOffs>
+            <BitOffs>969858752</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS1.bOpenStatus</Name>
@@ -44443,7 +43765,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>970346888</BitOffs>
+            <BitOffs>970346568</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS1.bCloseStatus</Name>
@@ -44463,7 +43785,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>970346896</BitOffs>
+            <BitOffs>970346576</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS1.bLssStatus</Name>
@@ -44483,7 +43805,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>970346904</BitOffs>
+            <BitOffs>970346584</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS5.bOpenStatus</Name>
@@ -44503,7 +43825,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>970346920</BitOffs>
+            <BitOffs>970346600</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS5.bCloseStatus</Name>
@@ -44523,7 +43845,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>970346928</BitOffs>
+            <BitOffs>970346608</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS5.bLssStatus</Name>
@@ -44543,7 +43865,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>970346936</BitOffs>
+            <BitOffs>970346616</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS8.bOpenStatus</Name>
@@ -44563,7 +43885,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>970346952</BitOffs>
+            <BitOffs>970346632</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS8.bCloseStatus</Name>
@@ -44583,7 +43905,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>970346960</BitOffs>
+            <BitOffs>970346640</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS8.bLssStatus</Name>
@@ -44603,7 +43925,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>970346968</BitOffs>
+            <BitOffs>970346648</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS3.bOpenStatus</Name>
@@ -44623,7 +43945,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>974742744</BitOffs>
+            <BitOffs>970346664</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS3.bCloseStatus</Name>
@@ -44643,7 +43965,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>974742752</BitOffs>
+            <BitOffs>970346672</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS3.bLssStatus</Name>
@@ -44663,7 +43985,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>974742760</BitOffs>
+            <BitOffs>970346680</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS4.bOpenStatus</Name>
@@ -44683,7 +44005,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>974745448</BitOffs>
+            <BitOffs>970346696</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS4.bCloseStatus</Name>
@@ -44703,7 +44025,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>974745456</BitOffs>
+            <BitOffs>970346704</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS4.bLssStatus</Name>
@@ -44723,7 +44045,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>974745464</BitOffs>
+            <BitOffs>970346712</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS6.bOpenStatus</Name>
@@ -44743,7 +44065,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>974745640</BitOffs>
+            <BitOffs>970346728</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS6.bCloseStatus</Name>
@@ -44763,7 +44085,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>974745648</BitOffs>
+            <BitOffs>970346736</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS6.bLssStatus</Name>
@@ -44783,14 +44105,14 @@ LXLHN_PTM_01</Comment>
                 <Value>Input</Value>
               </Property>
             </Properties>
-            <BitOffs>974745656</BitOffs>
+            <BitOffs>970346744</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="OutputSrc" CreateSymbols="true">17</AreaNo>
           <Name>PlcTask Outputs</Name>
           <ContextId>1</ContextId>
-          <ByteSize>122224640</ByteSize>
+          <ByteSize>122159104</ByteSize>
           <Symbol>
             <Name>GVL_BTS_VAC.g_FFOut.q_xFastFaultOut</Name>
             <BitSize>8</BitSize>
@@ -45267,16 +44589,19 @@ LXLHN_PTM_01</Comment>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD6_GCC.q_xHV_DIS</Name>
-            <Comment> Enable High Voltage when True // 'TcLinkTo' (EP2624) ^Output</Comment>
+            <Comment> Disable Gauge High Voltage when True // 'TcLinkTo' (EL2794) ^Output</Comment>
             <BitSize>8</BitSize>
             <BaseType>BOOL</BaseType>
+            <Default>
+              <Value>1</Value>
+            </Default>
             <Properties>
               <Property>
                 <Name>TcAddressType</Name>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>966773952</BitOffs>
+            <BitOffs>966773712</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD8_VGC.q_xOPN_DO</Name>
@@ -45288,7 +44613,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>966950928</BitOffs>
+            <BitOffs>966950608</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD8_PIP.q_xHVEna_DO</Name>
@@ -45301,7 +44626,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>967037344</BitOffs>
+            <BitOffs>967037024</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD8_GCC.q_xHV_DIS</Name>
@@ -45314,7 +44639,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>967215232</BitOffs>
+            <BitOffs>967214912</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD9_VGC.q_xOPN_DO</Name>
@@ -45326,7 +44651,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>967392208</BitOffs>
+            <BitOffs>967391888</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD9_PIP.q_xHVEna_DO</Name>
@@ -45339,7 +44664,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>967478624</BitOffs>
+            <BitOffs>967478304</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD9_GCC.q_xHV_DIS</Name>
@@ -45352,7 +44677,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>967656512</BitOffs>
+            <BitOffs>967656192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD10_VGC.q_xOPN_DO</Name>
@@ -45364,7 +44689,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>967833488</BitOffs>
+            <BitOffs>967833168</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD10_PIP.q_xHVEna_DO</Name>
@@ -45377,7 +44702,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>967919904</BitOffs>
+            <BitOffs>967919584</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD10_GCC.q_xHV_DIS</Name>
@@ -45390,7 +44715,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>968097792</BitOffs>
+            <BitOffs>968097472</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD14_VGC.q_xOPN_DO</Name>
@@ -45402,7 +44727,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>968274768</BitOffs>
+            <BitOffs>968274448</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD14_PIP.q_xHVEna_DO</Name>
@@ -45415,7 +44740,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>968361184</BitOffs>
+            <BitOffs>968360864</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD14_GCC.q_xHV_DIS</Name>
@@ -45428,7 +44753,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>968539072</BitOffs>
+            <BitOffs>968538752</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS3_GCC.q_xHV_DIS</Name>
@@ -45441,7 +44766,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>968627072</BitOffs>
+            <BitOffs>968626752</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS3_VGC.q_xOPN_DO</Name>
@@ -45453,7 +44778,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>968890384</BitOffs>
+            <BitOffs>968890064</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS3_PIP.q_xHVEna_DO</Name>
@@ -45466,7 +44791,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>968976800</BitOffs>
+            <BitOffs>968976480</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS4_GCC.q_xHV_DIS</Name>
@@ -45479,7 +44804,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>969068352</BitOffs>
+            <BitOffs>969068032</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS4_VGC.q_xOPN_DO</Name>
@@ -45491,7 +44816,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>969331664</BitOffs>
+            <BitOffs>969331344</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS4_PIP.q_xHVEna_DO</Name>
@@ -45504,7 +44829,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>969418080</BitOffs>
+            <BitOffs>969417760</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS6_GCC.q_xHV_DIS</Name>
@@ -45520,7 +44845,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>969509392</BitOffs>
+            <BitOffs>969509072</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS6_VGC.q_xOPN_DO</Name>
@@ -45532,7 +44857,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>969772624</BitOffs>
+            <BitOffs>969772304</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS6_PIP.q_xHVEna_DO</Name>
@@ -45545,7 +44870,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>969859040</BitOffs>
+            <BitOffs>969858720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS1.bOpenRequest</Name>
@@ -45565,7 +44890,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>970346880</BitOffs>
+            <BitOffs>970346560</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS5.bOpenRequest</Name>
@@ -45585,7 +44910,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>970346912</BitOffs>
+            <BitOffs>970346592</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS8.bOpenRequest</Name>
@@ -45605,7 +44930,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>970346944</BitOffs>
+            <BitOffs>970346624</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS3.bOpenRequest</Name>
@@ -45625,7 +44950,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>974742736</BitOffs>
+            <BitOffs>970346656</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS4.bOpenRequest</Name>
@@ -45645,7 +44970,7 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>974745440</BitOffs>
+            <BitOffs>970346688</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS6.bOpenRequest</Name>
@@ -45665,14 +44990,14 @@ LXLHN_PTM_01</Comment>
                 <Value>Output</Value>
               </Property>
             </Properties>
-            <BitOffs>974745632</BitOffs>
+            <BitOffs>970346720</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="Internal" CreateSymbols="true">19</AreaNo>
           <Name>PlcTask Internal</Name>
           <ContextId>1</ContextId>
-          <ByteSize>122224640</ByteSize>
+          <ByteSize>122159104</ByteSize>
           <Symbol>
             <Name>DefaultGlobals.stSys</Name>
             <Comment>Included for you</Comment>
@@ -55356,6 +54681,96 @@ LXLHN_PTM_01</Comment>
             <BitOffs>961306112</BitOffs>
           </Symbol>
           <Symbol>
+            <Name>GVL_BTPS.fbSafetyLS1</Name>
+            <BitSize>416</BitSize>
+            <BaseType>FB_ShutterSafety</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: LTLHN:LS1:BTPS</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>961312320</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS.fbSafetyLS5</Name>
+            <BitSize>416</BitSize>
+            <BaseType>FB_ShutterSafety</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: LTLHN:LS5:BTPS</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>961312736</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS.fbSafetyLS8</Name>
+            <BitSize>416</BitSize>
+            <BaseType>FB_ShutterSafety</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: LTLHN:LS8:BTPS</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>961313152</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS.fbSafetyLS3</Name>
+            <BitSize>416</BitSize>
+            <BaseType>FB_ShutterSafety</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: LTLHN:LS3:BTPS</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>961313568</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS.fbSafetyLS4</Name>
+            <BitSize>416</BitSize>
+            <BaseType>FB_ShutterSafety</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: LTLHN:LS4:BTPS</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>961313984</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_BTPS.fbSafetyLS6</Name>
+            <BitSize>416</BitSize>
+            <BaseType>FB_ShutterSafety</BaseType>
+            <Properties>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: LTLHN:LS6:BTPS</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>961314400</BitOffs>
+          </Symbol>
+          <Symbol>
             <Name>GVL_BTPS.fbDestinations</Name>
             <BitSize>449792</BitSize>
             <BaseType>FB_DestinationDataStore</BaseType>
@@ -55731,8 +55146,7 @@ LXLHN_PTM_01</Comment>
               <Property>
                 <Name>TcLinkTo</Name>
                 <Value>.i_xOpnLS			:=	TIIB[EL1004_03_17]^Channel 1^Input;
-                                 .i_xClsLS			:=	TIIB[EL1004_03_17]^Channel 2^Input;
-                                 .q_xOPN_DO			:=	TIIB[EL2004_02_15]^Channel 2^Output</Value>
+                                 .i_xClsLS			:=	TIIB[EL1004_03_17]^Channel 2^Input</Value>
               </Property>
               <Property>
                 <Name>TcVarGlobal</Name>
@@ -56469,8 +55883,8 @@ LXLHN_PTM_01</Comment>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD6_GCC</Name>
             <Comment> Output tube LD6, Cold Cathode gauge</Comment>
-            <BitSize>88000</BitSize>
-            <BaseType Namespace="LCLS_Vacuum">FB_MKS500</BaseType>
+            <BitSize>87680</BitSize>
+            <BaseType Namespace="LCLS_Vacuum">FB_MKS422</BaseType>
             <Properties>
               <Property>
                 <Name>pytmc</Name>
@@ -56478,10 +55892,8 @@ LXLHN_PTM_01</Comment>
               </Property>
               <Property>
                 <Name>TcLinkTo</Name>
-                <Value>.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 3^Value;
-                                 .i_xHV_ON	    	:=	TIIB[EL1124_03_09]^Channel 1^Input;
-                                 .i_xDisc_Active	:=	TIIB[EL1124_03_09]^Channel 2^Input;
-                                 .q_xHV_DIS			:= 	TIIB[EL2624_03_02]^Channel 3^Output	</Value>
+                <Value>.i_iPRESS_R		:=	TIIB[EL3064_02_16]^AI Standard Channel 2^Value;
+                                 .q_xHV_DIS	    	:=	TIIB[EL2794_02_17]^Channel 2^Input</Value>
               </Property>
               <Property>
                 <Name>TcVarGlobal</Name>
@@ -56509,7 +55921,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>966774336</BitOffs>
+            <BitOffs>966774016</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD8_PIP</Name>
@@ -56531,7 +55943,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>966951040</BitOffs>
+            <BitOffs>966950720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD8_GPI</Name>
@@ -56551,7 +55963,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>967041280</BitOffs>
+            <BitOffs>967040960</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD8_GCC</Name>
@@ -56574,7 +55986,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>967127616</BitOffs>
+            <BitOffs>967127296</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD9_VGC</Name>
@@ -56596,7 +56008,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>967215616</BitOffs>
+            <BitOffs>967215296</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD9_PIP</Name>
@@ -56618,7 +56030,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>967392320</BitOffs>
+            <BitOffs>967392000</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD9_GPI</Name>
@@ -56638,7 +56050,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>967482560</BitOffs>
+            <BitOffs>967482240</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD9_GCC</Name>
@@ -56661,7 +56073,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>967568896</BitOffs>
+            <BitOffs>967568576</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD10_VGC</Name>
@@ -56683,7 +56095,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>967656896</BitOffs>
+            <BitOffs>967656576</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD10_PIP</Name>
@@ -56705,7 +56117,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>967833600</BitOffs>
+            <BitOffs>967833280</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD10_GPI</Name>
@@ -56725,7 +56137,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>967923840</BitOffs>
+            <BitOffs>967923520</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD10_GCC</Name>
@@ -56748,7 +56160,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>968010176</BitOffs>
+            <BitOffs>968009856</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD14_VGC</Name>
@@ -56770,7 +56182,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>968098176</BitOffs>
+            <BitOffs>968097856</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD14_PIP</Name>
@@ -56792,7 +56204,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>968274880</BitOffs>
+            <BitOffs>968274560</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD14_GPI</Name>
@@ -56812,7 +56224,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>968365120</BitOffs>
+            <BitOffs>968364800</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LD14_GCC</Name>
@@ -56835,7 +56247,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>968451456</BitOffs>
+            <BitOffs>968451136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS3_GCC</Name>
@@ -56858,7 +56270,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>968539456</BitOffs>
+            <BitOffs>968539136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS3_GPI</Name>
@@ -56878,7 +56290,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>968627456</BitOffs>
+            <BitOffs>968627136</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS3_VGC</Name>
@@ -56900,7 +56312,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>968713792</BitOffs>
+            <BitOffs>968713472</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS3_PIP</Name>
@@ -56922,7 +56334,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>968890496</BitOffs>
+            <BitOffs>968890176</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS4_GCC</Name>
@@ -56945,7 +56357,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>968980736</BitOffs>
+            <BitOffs>968980416</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS4_GPI</Name>
@@ -56965,7 +56377,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>969068736</BitOffs>
+            <BitOffs>969068416</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS4_VGC</Name>
@@ -56987,7 +56399,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>969155072</BitOffs>
+            <BitOffs>969154752</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS4_PIP</Name>
@@ -57009,7 +56421,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>969331776</BitOffs>
+            <BitOffs>969331456</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS6_GCC</Name>
@@ -57023,15 +56435,14 @@ LXLHN_PTM_01</Comment>
               </Property>
               <Property>
                 <Name>TcLinkTo</Name>
-                <Value>.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 1^Value;
-                                 .i_xHV_ON	    	:=	TIIB[EL1124_01_08]^Channel 1^Input;
-                                 .i_xDisc_Active	:=	TIIB[EL1124_01_08]^Channel 2^Input;</Value>
+                <Value>.i_iPRESS_R		:=	TIIB[EL3064_02_16]^AI Standard Channel 1^Value;
+                                 .q_xHV_DIS	    	:=	TIIB[EL2794_02_17]^Channel 1^Input</Value>
               </Property>
               <Property>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>969422016</BitOffs>
+            <BitOffs>969421696</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS6_GPI</Name>
@@ -57051,7 +56462,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>969509696</BitOffs>
+            <BitOffs>969509376</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS6_VGC</Name>
@@ -57073,7 +56484,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>969596032</BitOffs>
+            <BitOffs>969595712</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.fb_LS6_PIP</Name>
@@ -57095,7 +56506,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>969772736</BitOffs>
+            <BitOffs>969772416</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_BTS_VAC.g_fbArbiter</Name>
@@ -57110,7 +56521,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>969862976</BitOffs>
+            <BitOffs>969862656</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Constants.PTM_INTERLOCK_SP</Name>
@@ -57124,7 +56535,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970346848</BitOffs>
+            <BitOffs>970346528</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS1</Name>
@@ -57148,7 +56559,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970346880</BitOffs>
+            <BitOffs>970346560</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS5</Name>
@@ -57172,7 +56583,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970346912</BitOffs>
+            <BitOffs>970346592</BitOffs>
           </Symbol>
           <Symbol>
             <Name>GVL_Shutters.fbLS8</Name>
@@ -57196,7 +56607,81 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970346944</BitOffs>
+            <BitOffs>970346624</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Shutters.fbLS3</Name>
+            <Comment> Shutter controls for 1um Line</Comment>
+            <BitSize>32</BitSize>
+            <BaseType>ST_ShutterControl</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>
+        .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_05^Channel 1^Output;
+        .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 1^Input;
+        .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 2^Input;
+        .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_07^Channel 1^Input;
+    </Value>
+              </Property>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: LTLHN:LS3:LST</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>970346656</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Shutters.fbLS4</Name>
+            <Comment> Shutter controls for 800nm Line</Comment>
+            <BitSize>32</BitSize>
+            <BaseType>ST_ShutterControl</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>
+        .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_01^Channel 2^Output;
+        .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_02^Channel 3^Input;
+        .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_02^Channel 4^Input;
+        .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_04^Channel 2^Input
+    </Value>
+              </Property>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: LTLHN:LS4:LST</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>970346688</BitOffs>
+          </Symbol>
+          <Symbol>
+            <Name>GVL_Shutters.fbLS6</Name>
+            <BitSize>32</BitSize>
+            <BaseType>ST_ShutterControl</BaseType>
+            <Properties>
+              <Property>
+                <Name>TcLinkTo</Name>
+                <Value>
+        .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_05^Channel 3^Output;
+        .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 3^Input;
+        .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 4^Input;
+        .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_07^Channel 2^Input;
+    </Value>
+              </Property>
+              <Property>
+                <Name>pytmc</Name>
+                <Value>pv: LTLHN:LS6:LST</Value>
+              </Property>
+              <Property>
+                <Name>TcVarGlobal</Name>
+              </Property>
+            </Properties>
+            <BitOffs>970346720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.RuntimeVersion</Name>
@@ -57226,7 +56711,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970346976</BitOffs>
+            <BitOffs>970346752</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.CompilerVersion</Name>
@@ -57256,7 +56741,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970347040</BitOffs>
+            <BitOffs>970346816</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.bSimulationMode</Name>
@@ -57271,7 +56756,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970347104</BitOffs>
+            <BitOffs>970346880</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.bFPUSupport</Name>
@@ -57285,7 +56770,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970347112</BitOffs>
+            <BitOffs>970346888</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.nRegisterSize</Name>
@@ -57300,7 +56785,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970347120</BitOffs>
+            <BitOffs>970346896</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.nPackMode</Name>
@@ -57315,7 +56800,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970347136</BitOffs>
+            <BitOffs>970346912</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.RuntimeVersionNumeric</Name>
@@ -57329,7 +56814,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970347168</BitOffs>
+            <BitOffs>970346944</BitOffs>
           </Symbol>
           <Symbol>
             <Name>Constants.CompilerVersionNumeric</Name>
@@ -57343,7 +56828,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970347200</BitOffs>
+            <BitOffs>970346976</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_LicenseInfoVarList._LicenseInfo</Name>
@@ -57412,7 +56897,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970347232</BitOffs>
+            <BitOffs>970347008</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskInfo</Name>
@@ -57430,7 +56915,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970350336</BitOffs>
+            <BitOffs>970350080</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskPouOid_PlcTask</Name>
@@ -57444,7 +56929,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970352416</BitOffs>
+            <BitOffs>970352192</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList._TaskOid_PlcTask</Name>
@@ -57458,7 +56943,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970352448</BitOffs>
+            <BitOffs>970352224</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TwinCAT_SystemInfoVarList.__PlcTask</Name>
@@ -57479,7 +56964,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970353184</BitOffs>
+            <BitOffs>970352960</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcSystemEventClass</Name>
@@ -57548,7 +57033,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970366560</BitOffs>
+            <BitOffs>970366336</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcGeneralAdsEventClass</Name>
@@ -57617,7 +57102,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970366688</BitOffs>
+            <BitOffs>970366464</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcRouterEventClass</Name>
@@ -57686,7 +57171,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970366816</BitOffs>
+            <BitOffs>970366592</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.TcRTimeEventClass</Name>
@@ -57755,7 +57240,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970366944</BitOffs>
+            <BitOffs>970366720</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.Win32EventClass</Name>
@@ -57824,7 +57309,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970367072</BitOffs>
+            <BitOffs>970366848</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENT_CLASSES.LCLSGeneralEventClass</Name>
@@ -57893,7 +57378,7 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970367200</BitOffs>
+            <BitOffs>970366976</BitOffs>
           </Symbol>
           <Symbol>
             <Name>TC_EVENTS.LCLSGeneralEventClass</Name>
@@ -57916,178 +57401,14 @@ LXLHN_PTM_01</Comment>
                 <Name>TcVarGlobal</Name>
               </Property>
             </Properties>
-            <BitOffs>970397536</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Shutters.fbLS3</Name>
-            <Comment> Shutter controls for 1um Line</Comment>
-            <BitSize>32</BitSize>
-            <BaseType>ST_ShutterControl</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>
-        .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_05^Channel 1^Output;
-        .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 1^Input;
-        .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 2^Input;
-        .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_07^Channel 1^Input;
-    </Value>
-              </Property>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: LTLHN:LS3:LST</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>974742736</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Shutters.fbLS4</Name>
-            <Comment> Shutter controls for 800nm Line</Comment>
-            <BitSize>32</BitSize>
-            <BaseType>ST_ShutterControl</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>
-        .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_01^Channel 2^Output;
-        .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_02^Channel 3^Input;
-        .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_02^Channel 4^Input;
-        .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_04^Channel 2^Input
-    </Value>
-              </Property>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: LTLHN:LS4:LST</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>974745440</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_Shutters.fbLS6</Name>
-            <BitSize>32</BitSize>
-            <BaseType>ST_ShutterControl</BaseType>
-            <Properties>
-              <Property>
-                <Name>TcLinkTo</Name>
-                <Value>
-        .bOpenRequest	:=	TIID^EtherCAT1^EK1100_04_00^EL2624_04_05^Channel 3^Output;
-        .bOpenStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 3^Input;
-        .bCloseStatus	:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_06^Channel 4^Input;
-        .bLssStatus		:=	TIID^EtherCAT1^EK1100_04_00^EL1004_04_07^Channel 2^Input;
-    </Value>
-              </Property>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: LTLHN:LS6:LST</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>974745632</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTPS.fbSafetyLS1</Name>
-            <BitSize>416</BitSize>
-            <BaseType>FB_ShutterSafety</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: LTLHN:LS1:BTPS</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>974757888</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTPS.fbSafetyLS5</Name>
-            <BitSize>416</BitSize>
-            <BaseType>FB_ShutterSafety</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: LTLHN:LS5:BTPS</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>974758304</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTPS.fbSafetyLS8</Name>
-            <BitSize>416</BitSize>
-            <BaseType>FB_ShutterSafety</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: LTLHN:LS8:BTPS</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>974758720</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTPS.fbSafetyLS3</Name>
-            <BitSize>416</BitSize>
-            <BaseType>FB_ShutterSafety</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: LTLHN:LS3:BTPS</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>974759136</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTPS.fbSafetyLS4</Name>
-            <BitSize>416</BitSize>
-            <BaseType>FB_ShutterSafety</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: LTLHN:LS4:BTPS</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>974759552</BitOffs>
-          </Symbol>
-          <Symbol>
-            <Name>GVL_BTPS.fbSafetyLS6</Name>
-            <BitSize>416</BitSize>
-            <BaseType>FB_ShutterSafety</BaseType>
-            <Properties>
-              <Property>
-                <Name>pytmc</Name>
-                <Value>pv: LTLHN:LS6:BTPS</Value>
-              </Property>
-              <Property>
-                <Name>TcVarGlobal</Name>
-              </Property>
-            </Properties>
-            <BitOffs>974759968</BitOffs>
+            <BitOffs>970397312</BitOffs>
           </Symbol>
         </DataArea>
         <DataArea>
           <AreaNo AreaType="RetainSrc" CreateSymbols="true">20</AreaNo>
           <Name>PlcTask Retains</Name>
           <ContextId>1</ContextId>
-          <ByteSize>122224640</ByteSize>
+          <ByteSize>122159104</ByteSize>
           <Symbol>
             <Name>PMPS_GVL.SuccessfulPreemption</Name>
             <Comment> Any time BPTM applies a new BP request which is confirmed</Comment>
@@ -58156,7 +57477,7 @@ LXLHN_PTM_01</Comment>
         </Property>
         <Property>
           <Name>ChangeDate</Name>
-          <Value>2024-07-12T14:17:41</Value>
+          <Value>2024-08-08T13:47:04</Value>
         </Property>
         <Property>
           <Name>GeneratedCodeSize</Name>
