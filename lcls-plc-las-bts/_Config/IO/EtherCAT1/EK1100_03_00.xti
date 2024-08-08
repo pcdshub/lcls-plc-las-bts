@@ -55,11 +55,11 @@
 		<Box File="EL9184_03_16.xti" Id="73">
 			<EtherCAT PortABoxInfo="#x0100004d"/>
 		</Box>
-		<Box File="EL1004_03_17.xti" Id="145">
+		<Box File="EL1004_03_17.xti" Id="144">
 			<EtherCAT PortABoxInfo="#x0100004d"/>
 		</Box>
 		<Box File="EK1110_03_01.xti" Id="75">
-			<EtherCAT PortABoxInfo="#x01000091"/>
+			<EtherCAT PortABoxInfo="#x01000090"/>
 		</Box>
 	</Box>
 </TcSmItem>
