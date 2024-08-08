@@ -1082,9 +1082,6 @@
       <Name Namespace="LCLS_General.Tc3_EventLogger">I_ArgumentsChangeListener</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>OnArgumentsChanged</Name>
-      </Method>
     </DataType>
     <DataType>
       <Name GUID="{C3BF7AA5-0A83-4CFA-9A7A-04C1DFD0E5DD}" TcBaseType="true" CName="ITcAsyncResult*">ITcAsyncResult</Name>
@@ -1510,71 +1507,6 @@
       <Name Namespace="LCLS_General.Tc3_EventLogger">I_TcSourceInfo</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name RpcEnable="plc">__getguid</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000021}" RpcDirection="out">GUID</ReturnType>
-        <ReturnBitSize>128</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getipData</Name>
-        <ReturnType GUID="{F7BF6767-548B-493C-899B-06A477976F11}" RpcDirection="out">ITcSourceInfo</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>conditionalshow</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getnId</Name>
-        <ReturnType RpcDirection="out">UDINT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>monitoring</Name>
-            <Value>call</Value>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getsName</Name>
-        <ReturnType RpcDirection="out">STRING(255)</ReturnType>
-        <ReturnBitSize>2048</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>monitoring</Name>
-            <Value>call</Value>
-          </Property>
-          <Property>
-            <Name>TcEncoding</Name>
-            <Value>UTF-8</Value>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name>EqualsTo</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>ipOther</Name>
-          <Type Namespace="LCLS_General.Tc3_EventLogger">I_TcSourceInfo</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name GUID="{F00C83AD-DEC8-486E-AE99-5E0A75C26DE0}" TcBaseType="true" CName="TcEventEntry">TcEventEntry</Name>
@@ -1602,289 +1534,11 @@
       <Name Namespace="LCLS_General.Tc3_EventLogger">I_TcEventBase</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name RpcEnable="plc">__geteSeverity</Name>
-        <ReturnType GUID="{B57D3F4A-0836-49B0-81C3-BED5F4817EC9}" RpcDirection="out">TcEventSeverity</ReturnType>
-        <ReturnBitSize>16</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>monitoring</Name>
-            <Value>call</Value>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getEventClass</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000021}" RpcDirection="out">GUID</ReturnType>
-        <ReturnBitSize>128</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getipSourceInfo</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger" RpcDirection="out">I_TcSourceInfo</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>monitoring</Name>
-            <Value>call</Value>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getnEventId</Name>
-        <ReturnType RpcDirection="out">UDINT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>monitoring</Name>
-            <Value>call</Value>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getsEventClassName</Name>
-        <ReturnType RpcDirection="out">STRING(255)</ReturnType>
-        <ReturnBitSize>2048</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>monitoring</Name>
-            <Value>call</Value>
-          </Property>
-          <Property>
-            <Name>TcEncoding</Name>
-            <Value>UTF-8</Value>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getsEventText</Name>
-        <ReturnType RpcDirection="out">STRING(255)</ReturnType>
-        <ReturnBitSize>2048</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>monitoring</Name>
-            <Value>call</Value>
-          </Property>
-          <Property>
-            <Name>TcEncoding</Name>
-            <Value>UTF-8</Value>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc">__getstEventEntry</Name>
-        <ReturnType GUID="{F00C83AD-DEC8-486E-AE99-5E0A75C26DE0}" RpcDirection="out">TcEventEntry</ReturnType>
-        <ReturnBitSize>192</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name>EqualsTo</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>ipOther</Name>
-          <Type Namespace="LCLS_General.Tc3_EventLogger">I_TcEventBase</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>EqualsToEventClass</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>OtherEventClass</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000021}">GUID</Type>
-          <BitSize>128</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>EqualsToEventEntry</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>OtherEventClass</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000021}">GUID</Type>
-          <BitSize>128</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nOtherEventID</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>eOtherSeverity</Name>
-          <Type GUID="{B57D3F4A-0836-49B0-81C3-BED5F4817EC9}">TcEventSeverity</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>EqualsToEventEntryEx</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>stOther</Name>
-          <Type GUID="{F00C83AD-DEC8-486E-AE99-5E0A75C26DE0}">TcEventEntry</Type>
-          <BitSize>192</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>GetJsonAttribute</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>sJsonAttribute</Name>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nJsonAttribute</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>RequestEventClassName</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>nLangId</Name>
-          <Comment> English(US)=1033 ; German(Germay)=1031</Comment>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>sResult</Name>
-          <Comment> buffer for result text</Comment>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nResultSize</Name>
-          <Comment> size of buffer in bytes</Comment>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>bError</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>hrErrorCode</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>RequestEventText</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>nLangId</Name>
-          <Comment> English(US)=1033 ; German(Germay)=1031</Comment>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>sResult</Name>
-          <Comment> buffer for result text</Comment>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>nResultSize</Name>
-          <Comment> size of buffer in bytes</Comment>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>bError</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-        <Parameter>
-          <Name>hrErrorCode</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>Output</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name>IQueryInterface</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name RpcEnable="plc" VTableIndex="1">__GetInterfacePointer</Name>
-        <ReturnType RpcDirection="out">BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>pRef</Name>
-          <Type PointerTo="2" RpcDirection="in">DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name RpcEnable="plc" VTableIndex="2">__GetInterfaceReference</Name>
-        <ReturnType RpcDirection="out">BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>nInterfaceId</Name>
-          <Type RpcDirection="in">DINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>pRef</Name>
-          <Type PointerTo="2" RpcDirection="in">DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name GUID="{939C2FD3-7468-4E5B-AA5D-A64A143B36A8}" TcBaseType="true" CName="TcEventArgumentType">TcEventArgumentType</Name>
@@ -2076,282 +1730,6 @@
       <Name Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</Name>
       <BitSize>32</BitSize>
       <ExtendsType>IQueryInterface</ExtendsType>
-      <Method>
-        <Name RpcEnable="plc">__getipData</Name>
-        <ReturnType GUID="{BFC9A87A-F6DE-499A-AC45-F3B1A59315F9}" RpcDirection="out">ITcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-          <Property>
-            <Name>conditionalshow</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name>AddBlob</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>pData</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>cbData</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddBool</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>BOOL</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddByte</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>BYTE</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddDInt</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>DINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddDWord</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddEventReferenceEx</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>stEventEntry</Name>
-          <Type GUID="{F00C83AD-DEC8-486E-AE99-5E0A75C26DE0}">TcEventEntry</Type>
-          <BitSize>192</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddEventReferenceId</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>nEventId</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddEventReferenceIdGuid</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>nEventId</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>EventClass</Name>
-          <Type GUID="{18071995-0000-0000-0000-000000000021}">GUID</Type>
-          <BitSize>128</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddInt</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>INT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddLInt</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>LINT</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddLReal</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>LREAL</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddReal</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>REAL</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddSInt</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>SINT</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddString</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddStringByValue</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddUDInt</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>UDINT</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddUInt</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>UINT</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddULInt</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>ULINT</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddUSInt</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>USINT</Type>
-          <BitSize>8</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddUtf8EncodedString</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type ReferenceTo="true">STRING(80)</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddWord</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>WORD</Type>
-          <BitSize>16</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddWString</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type ReferenceTo="true">WSTRING(80)</Type>
-          <BitSize>32</BitSize>
-          <Properties>
-            <Property>
-              <Name>ItemType</Name>
-              <Value>InOut</Value>
-            </Property>
-          </Properties>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>AddWStringByValue</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>value</Name>
-          <Type>WSTRING(255)</Type>
-          <BitSize>4096</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>Clear</Name>
-        <ReturnType Namespace="LCLS_General.Tc3_EventLogger">I_TcArguments</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-      </Method>
     </DataType>
     <DataType>
       <Name Namespace="LCLS_General.Tc3_EventLogger">FB_TcSourceInfo</Name>
@@ -3164,16 +2542,6 @@
       <Name Namespace="LCLS_General.Tc3_EventLogger">I_TcMessage</Name>
       <BitSize>32</BitSize>
       <ExtendsType Namespace="LCLS_General.Tc3_EventLogger">I_TcEventBase</ExtendsType>
-      <Method>
-        <Name>Send</Name>
-        <ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Parameter>
-          <Name>nTimeStamp</Name>
-          <Type>ULINT</Type>
-          <BitSize>64</BitSize>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name GUID="{6474ED2C-E483-454E-A67D-233E6D337C08}" TcBaseType="true" CName="ITcMessage*">ITcMessage</Name>
@@ -4739,16 +4107,6 @@
       <Name Namespace="TcUnit">I_TestResults</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>GetAreTestResultsAvailable</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-      </Method>
-      <Method>
-        <Name>GetTestSuiteResults</Name>
-        <ReturnType Namespace="TcUnit" ReferenceTo="true">ST_TestSuiteResults</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-      </Method>
     </DataType>
     <DataType>
       <Name>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestSuites)</Name>
@@ -4821,9 +4179,6 @@
       <Name Namespace="TcUnit">I_TestResultLogger</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>LogTestSuiteResults</Name>
-      </Method>
     </DataType>
     <DataType>
       <Name>UINT (UINT#1..GVL_Param_TcUnit.MaxNumberOfTestsForEachTestSuite)</Name>
@@ -7897,29 +7252,6 @@
       <Name Namespace="TcUnit">I_AssertMessageFormatter</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>LogAssertFailure</Name>
-        <Parameter>
-          <Name>Expected</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Actual</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name Namespace="TcUnit">FB_AdjustAssertFailureMessageToMax253CharLength</Name>
@@ -13904,16 +13236,6 @@ These features aren't disabled, they just aren't used, think child/parent classe
       <Name Namespace="LCLS_Vacuum.PMPS.TcUnit">I_TestResults</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>GetAreTestResultsAvailable</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-      </Method>
-      <Method>
-        <Name>GetTestSuiteResults</Name>
-        <ReturnType Namespace="LCLS_Vacuum.PMPS.TcUnit" ReferenceTo="true">ST_TestSuiteResults</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-      </Method>
     </DataType>
     <DataType>
       <Name Namespace="LCLS_Vacuum.PMPS.TcUnit">FB_TestResults</Name>
@@ -13979,9 +13301,6 @@ These features aren't disabled, they just aren't used, think child/parent classe
       <Name Namespace="LCLS_Vacuum.PMPS.TcUnit">I_TestResultLogger</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>LogTestSuiteResults</Name>
-      </Method>
     </DataType>
     <DataType>
       <Name Namespace="LCLS_Vacuum.PMPS.TcUnit">FB_AdsTestResultLogger</Name>
@@ -16207,29 +15526,6 @@ These features aren't disabled, they just aren't used, think child/parent classe
       <Name Namespace="LCLS_Vacuum.PMPS.TcUnit">I_AssertMessageFormatter</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>LogAssertFailure</Name>
-        <Parameter>
-          <Name>Expected</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Actual</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>Message</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>TestInstancePath</Name>
-          <Type Namespace="Tc2_System">T_MaxString</Type>
-          <BitSize>2048</BitSize>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name Namespace="LCLS_Vacuum.PMPS.TcUnit">FB_AdjustAssertFailureMessageToMax253CharLength</Name>
@@ -22544,46 +21840,6 @@ These features aren't disabled, they just aren't used, think child/parent classe
       <Name Namespace="LCLS_General.Tc3_EventLogger">I_Listener</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>OnAlarmCleared</Name>
-        <Parameter>
-          <Name>fbEvent</Name>
-          <Type Namespace="LCLS_General.Tc3_EventLogger" ReferenceTo="true">FB_TcEvent</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>OnAlarmConfirmed</Name>
-        <Parameter>
-          <Name>fbEvent</Name>
-          <Type Namespace="LCLS_General.Tc3_EventLogger" ReferenceTo="true">FB_TcEvent</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>OnAlarmDisposed</Name>
-        <Parameter>
-          <Name>fbEvent</Name>
-          <Type Namespace="LCLS_General.Tc3_EventLogger" ReferenceTo="true">FB_TcEvent</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>OnAlarmRaised</Name>
-        <Parameter>
-          <Name>fbEvent</Name>
-          <Type Namespace="LCLS_General.Tc3_EventLogger" ReferenceTo="true">FB_TcEvent</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>OnMessageSent</Name>
-        <Parameter>
-          <Name>fbEvent</Name>
-          <Type Namespace="LCLS_General.Tc3_EventLogger" ReferenceTo="true">FB_TcEvent</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name GUID="{70904B1B-F00E-4FCB-BE59-151086E9B8F6}" CName="ITcEventFilterConfig*">ITcEventFilterConfig</Name>
@@ -28053,7 +27309,7 @@ These features aren't disabled, they just aren't used, think child/parent classe
     </DataType>
     <DataType>
       <Name Namespace="LCLS_General">FB_EcatDiag</Name>
-      <Comment> 
+      <Comment>
 Ecat bus diagnostic tool
 2015-11-4 Alex Wallace
 This function block checks the states of all slaves on the ecat bus network, 
@@ -32471,69 +31727,11 @@ be up-to-date and valid within `tTimeout` seconds.
       <Name Namespace="PMPS">I_HigherAuthority</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name>CheckRequest</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>nReqID</Name>
-          <Type>DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>RemoveRequest</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>nReqID</Name>
-          <Comment>StateID to remove</Comment>
-          <Type>DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
-      <Method>
-        <Name>RequestBP</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>nReqID</Name>
-          <Comment>StateID of state requesting beam parameter set</Comment>
-          <Type>DWORD</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-        <Parameter>
-          <Name>stReqBP</Name>
-          <Comment>Requested beam params</Comment>
-          <Type Namespace="PMPS">ST_BeamParams</Type>
-          <BitSize>1696</BitSize>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name Namespace="PMPS">I_LowerAuthority</Name>
       <BitSize>32</BitSize>
       <ExtendsType GUID="{18071995-0000-0000-0000-000000000018}">PVOID</ExtendsType>
-      <Method>
-        <Name RpcEnable="plc" VTableIndex="1">__getnLowerAuthorityID</Name>
-        <ReturnType RpcDirection="out">DWORD</ReturnType>
-        <ReturnBitSize>32</ReturnBitSize>
-        <Properties>
-          <Property>
-            <Name>property</Name>
-          </Property>
-        </Properties>
-      </Method>
-      <Method>
-        <Name>ElevateRequest</Name>
-        <ReturnType>BOOL</ReturnType>
-        <ReturnBitSize>8</ReturnBitSize>
-        <Parameter>
-          <Name>HigherAuthority</Name>
-          <Type Namespace="PMPS">I_HigherAuthority</Type>
-          <BitSize>32</BitSize>
-        </Parameter>
-      </Method>
     </DataType>
     <DataType>
       <Name Namespace="PMPS">T_HashTableEntry</Name>
