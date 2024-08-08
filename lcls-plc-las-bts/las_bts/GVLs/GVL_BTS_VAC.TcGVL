@@ -54,8 +54,7 @@ VAR_GLOBAL
 
     {attribute 'pytmc' 	  :=	' pv: LXLHN:VRC:04 '}
     {attribute 'TcLinkTo' := 	'.i_xOpnLS			:=	TIIB[EL1004_03_17]^Channel 1^Input;
-                                 .i_xClsLS			:=	TIIB[EL1004_03_17]^Channel 2^Input;
-                                 .q_xOPN_DO			:=	TIIB[EL2004_02_15]^Channel 2^Output'}
+                                 .i_xClsLS			:=	TIIB[EL1004_03_17]^Channel 2^Input'}
     fb_PP_VRC_4 : FB_VRC; // Turbo Isolation Valve
 
 
@@ -244,11 +243,9 @@ VAR_GLOBAL
     {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_13]^AI Standard Channel 3^Value '}
     fb_LD6_GPI : FB_MKS275; // Output tube LD6 ATM gauge
     {attribute 'pytmc' 	  :=	' pv: LTLHN:LD6:GCC:01 '}
-    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 3^Value;
-                                 .i_xHV_ON	    	:=	TIIB[EL1124_03_09]^Channel 1^Input;
-                                 .i_xDisc_Active	:=	TIIB[EL1124_03_09]^Channel 2^Input;
-                                 .q_xHV_DIS			:= 	TIIB[EL2624_03_02]^Channel 3^Output	'}
-    fb_LD6_GCC : FB_MKS500; // Output tube LD6, Cold Cathode gauge
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3064_02_16]^AI Standard Channel 2^Value;
+                                 .q_xHV_DIS	    	:=	TIIB[EL2794_02_17]^Channel 2^Input'}
+    fb_LD6_GCC : FB_MKS422; // Output tube LD6, Cold Cathode gauge
 
     // LD8
     {attribute 'pytmc'	  :=	' pv: LTLHN:LD8:VGC:01 '}
@@ -377,9 +374,8 @@ VAR_GLOBAL
     fb_LS4_PIP : FB_PIP_Gamma; // Ion Pump
     //LS6
     {attribute 'pytmc' 	  :=	' pv: LTLHN:LS6:GCC:01 '}
-    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3174_03_11]^AI Standard Channel 1^Value;
-                                 .i_xHV_ON	    	:=	TIIB[EL1124_01_08]^Channel 1^Input;
-                                 .i_xDisc_Active	:=	TIIB[EL1124_01_08]^Channel 2^Input'}
+    {attribute 'TcLinkTo' := 	'.i_iPRESS_R		:=	TIIB[EL3064_02_16]^AI Standard Channel 1^Value;
+                                 .q_xHV_DIS	    	:=	TIIB[EL2794_02_17]^Channel 1^Input'}
     fb_LS6_GCC : FB_MKS422; // LS6, Cold Cathode gauge
 
     {attribute 'pytmc' 	  :=	' pv: LTLHN:LS6:GPI:01 '}
