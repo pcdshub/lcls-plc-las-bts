@@ -42,7 +42,7 @@ epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "172.21.160.49")
 epicsEnvSet("AMSID",            "172.21.160.49.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "12707")
+epicsEnvSet("ADS_MAX_PARAMS",   "12722")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
@@ -110,8 +110,8 @@ cd "$(IOC_TOP)"
 ## PLC Project Database files ##
 dbLoadRecords("las_bts.db", "PORT=$(ASYN_PORT),SIM=,PREFIX=PLC:LAS:BTS:,IOCNAME=$(IOC),IOC=$(IOC)")
 
-# Total records: 11707
-callbackSetQueueSize(25414)
+# Total records: 11722
+callbackSetQueueSize(25444)
 
 # Autosave and archive settings:
 save_restoreSet_status_prefix("PLC:LAS:BTS:")

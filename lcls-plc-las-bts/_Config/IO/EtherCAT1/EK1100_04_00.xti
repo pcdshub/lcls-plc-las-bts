@@ -28,7 +28,7 @@
 		<Box File="EL1004_04_07.xti" Id="160">
 			<EtherCAT PortABoxInfo="#x0100009f"/>
 		</Box>
-		<Box File="EL9011_04_08.xti" Id="152">
+		<Box File="EK1110_04_08.xti" Id="163">
 			<EtherCAT PortABoxInfo="#x010000a0"/>
 		</Box>
 	</Box>
