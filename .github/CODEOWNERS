@@ -1,0 +1,20 @@
+# default group
+* @pcdshub/las-members
+
+# language-specific group(s)
+## TWINCAT files
+*.tsproj @pcdshub/las-members @pcdshub/twincat-reviewers
+*.plcproj @pcdshub/las-members @pcdshub/twincat-reviewers
+*.tmc @pcdshub/las-members @pcdshub/twincat-reviewers
+*.tpr @pcdshub/las-members @pcdshub/twincat-reviewers
+*.xti @pcdshub/las-members @pcdshub/twincat-reviewers
+*.TcTTO @pcdshub/las-members @pcdshub/twincat-reviewers
+*.TcPOU @pcdshub/las-members @pcdshub/twincat-reviewers
+*.TcDUT @pcdshub/las-members @pcdshub/twincat-reviewers
+*.TcGVL @pcdshub/las-members @pcdshub/twincat-reviewers
+*.TcVis @pcdshub/las-members @pcdshub/twincat-reviewers
+*.TcVMO @pcdshub/las-members @pcdshub/twincat-reviewers
+*.TcGTLO @pcdshub/las-members @pcdshub/twincat-reviewers
+
+# github folder holds administrative files
+.github/** @pcdshub/software-admin
